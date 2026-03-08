@@ -1,0 +1,979 @@
+a.DgSelAll:link
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+a.DgSelAll:visited
+{
+	color: white;
+	text-decoration: none;
+}
+a.DgSelAll:hover
+{
+	color: #cc0066;
+	text-decoration: none;
+}
+a.DgSelAll:active
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+a.TMenu:link
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+a.TMenu:visited
+{
+	color: white;
+	text-decoration: none;
+}
+a.TMenu:hover
+{
+	color: #cc0066;
+	text-decoration: none;
+}
+a.TMenu:active
+{
+	color: #000000;
+	text-decoration: none;
+}
+.A1
+{
+	font-family: "宋体";
+	text-decoration: none;
+}
+.A1:hover
+{
+	font-style: normal;
+	font-family: "宋体";
+	text-decoration: underline;
+}
+.content
+{
+	font-size: 14px;
+	color: #2d2d2d;
+	line-height: 23px;
+	font-family: "verdana";
+	text-decoration: none;
+}
+.content2
+{
+	font-size: 14px;
+	color: #2d2d2d;
+	font-family: "verdana";
+	text-decoration: none;
+}
+.contentL
+{
+	font-size: 14px;
+	color: #2d2d2d;
+	font-family: Lucida Sans Unicode,Verdana,宋体;
+	text-decoration: none;
+	line-height: 2;
+	margin-left: 20px;
+}
+.dl
+{
+	font-size: 14px;
+	color: #2d2d2d;
+	font-family: Lucida Sans Unicode,Verdana,宋体;
+	text-decoration: none;
+	line-height: 2;
+	margin-left: 20px;
+}
+.title
+{
+	font-size: 15px;
+	color: Black;
+	font-family: Lucida Sans Unicode,Verdana,宋体;
+	font-weight: bolder;
+	text-decoration: none;
+}
+.NameControl
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.MultiLineValueControl
+{
+	font-size: 14px;
+	color: #000000;
+	font-family: Verdana;
+	text-decoration: none;
+	background-color: #f0f8ff;
+}
+.ValueControl
+{
+	font-size: 14px;
+	color: #000000;
+	font-family: Verdana;
+	text-decoration: none;
+	background-color: #f0f8ff;
+	}
+.NameTD
+{
+	font-size: 14px;
+	color: #3366FF;
+	font-family: 宋体;
+	background-color: #E7E7FF;
+	text-decoration: none;
+}
+.ValueTD
+{
+	font-size: 14px;
+	color: #000000;
+	font-family: Verdana;
+	background-color: #f0f8ff;
+	text-decoration: none;
+}
+
+.tdTitleBg
+{
+	background-color: #d2d6db;
+}
+.PageTitleH1
+{
+	font-weight: bold;
+	font-size: 14px;
+	color: #666666;
+	text-decoration: none;
+	font-family: 'Times New Roman' , Times, serif;
+}
+.RegionTitleH1
+{
+	font-weight: normal;
+	font-size: 16px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.RegionTitleH2
+{
+	font-weight: bold;
+	font-size: 15px;
+	color: silver;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.RegionTitleH2_2
+{
+	font-weight: bold;
+	font-size: 15px;
+	color: #3366CC;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.RegionTitleH3
+{
+	font-weight: normal;
+	font-size: 14px;
+	vertical-align: baseline;
+	color: #000000;
+	padding-top: 3px;
+	font-family: 宋体;
+	height: 21px;
+	background-color: #dcdcdc;
+	text-decoration: none;
+}
+.MemoStyle1
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: #a9a9a9;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.MemoStyleH5
+{
+	font-weight: bold;
+	font-size: 14px;
+	color: #a9a9a9;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.ErrMsg
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: #ff0000;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.InfoMsg
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: #330066;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.NameLabelRightAlign
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+	text-align: right;
+}
+.ValueLabelH1
+{
+	font-weight: normal;
+	font-size: 15px;
+	color: #696969;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.NormalContral
+{
+	font-size: 14px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.NotCanUse
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: #808080;
+	font-family: Verdana;
+	background-color: #dcdcdc;
+	text-decoration: none;
+}
+.GridValue
+{
+	font-size: 14px;
+	color: black;
+	font-family: Verdana;
+}
+.NameLabel
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: #3366FF;
+	font-family: Verdana;
+	text-decoration: none;
+}
+#externalLink4
+{
+	position: absolute;
+	left: 30px;
+	top: 324px;
+	height: 18px;
+	width: 199px;
+	font-size: 11px;
+	color: #FFFFFF;
+}
+
+.btn btn-outline-info btn-sm
+{
+	background: url(images/button_submit.gif) repeat-x #e3f1fa;
+	border: 1px solid #aed0ea;
+	padding: 0px 10px;
+	line-height: 24px;
+	color: #3d80b3;
+	cursor: pointer;
+}
+
+.Radio_Defa
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: #000000;
+	font-family: Verdana;
+	text-decoration: none;
+	height: 20px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.LinkBut
+
+.LinkButton_Defa
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: #0033CC;
+	font-family: Verdana;
+	text-decoration: none;
+	vertical-align: middle;
+	text-align: center;
+}
+a.LinkButton_Defa:link
+{
+	font-size: 14px;
+	color: #0a246a;
+	text-decoration: none;
+}
+_Defa:visited
+{
+	font-size: 14px;
+	color: #0a246a;
+	text-decoration: none;
+}
+a.LinkButton_Defa:hover
+{
+	font-size: 14px;
+	color: #cc0000;
+	text-decoration: none;
+}
+a.LinkButton_Defa:active
+{
+	font-size: 14px;
+	color: #FFFFFF;
+	text-decoration: underline;
+	background-color: #3333CC;
+}
+
+a.LinkButton_White:link
+{
+	font-size: 14px;
+	color: #FFFFFF;
+	text-decoration: none;
+	line-height: 24px;
+	height: 20px;
+}
+a.LinkButton_White:visited
+{
+	font-size: 14px;
+	color: #FFFFFF;
+	text-decoration: none;
+	line-height: 24px;
+	height: 20px;
+}
+a.LinkButton_White:hover
+{
+	font-size: 14px;
+	color: #cc0000;
+	text-decoration: none;
+	line-height: 24px;
+	height: 20px;
+}
+a.LinkButton_White:active
+{
+	font-size: 14px;
+	color: #FFFFFF;
+	text-decoration: underline;
+	background-color: #3333CC;
+	line-height: 24px;
+	height: 20px;
+}
+
+
+.MyMenu
+{
+	z-index: 1000;
+}
+a.Menu_Main:link
+{
+	font-size: 14px;
+	color: #0a246a;
+	text-decoration: none;
+	list-style-position: outside;
+	z-index: 300;
+}
+a.Menu_Main:visited
+{
+	font-size: 14px;
+	color: #0a246a;
+	text-decoration: none;
+	list-style-position: outside;
+	z-index: 300;
+}
+a.Menu_Main:hover
+{
+	font-size: 14px;
+	color: #cc0000;
+	text-decoration: none;
+	list-style-position: outside;
+	z-index: 300;
+}
+a.Menu_Main:active
+{
+	font-size: 15px;
+	color: #FFFFFF;
+	text-decoration: underline;
+	font-weight: bold;
+	background-color: #3333CC;
+	list-style-position: outside;
+	z-index: 300;
+}
+
+a.Menu_Sub:link
+{
+	font-size: 14px;
+	text-decoration: none;
+	list-style-position: outside;
+	z-index: 300;
+	color: #3333FF;
+	background-color: #CCCCCC;
+}
+a.Menu_Sub:visited
+{
+	font-size: 14px;
+	text-decoration: none;
+	list-style-position: outside;
+	z-index: 300;
+	color: #3366FF;
+	background-color: #CCCCCC;
+}
+a.Menu_Sub:hover
+{
+	font-size: 14px;
+	text-decoration: none;
+	list-style-position: outside;
+	z-index: 300;
+	color: #FF3300;
+	background-color: #3366FF;
+}
+a.Menu_Sub:active
+{
+	font-size: 14px;
+	text-decoration: underline;
+	list-style-position: outside;
+	z-index: 300;
+	color: #FFFFFF;
+	background-color: #3366FF;
+}
+
+.Button_DefaInPager
+{
+	font-weight: normal;
+	font-size: 13px;
+	color: #000000;
+	font-family: Verdana;
+	text-decoration: none;
+	height: 22px;
+	vertical-align: middle;
+	text-align: center;
+}
+.Label_DefaInPager
+{
+	font-size: 13px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+	background-color: #f0f8ff;
+	text-align: right;
+}
+
+.TextBox_Defa
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.Textbox_DefaInPager
+{
+	font-weight: normal;
+	font-size: 13px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+	height: 18px;
+}
+.TreeView_Defa
+{
+	font-size: 14px;
+	color: #2d2d2d;
+	line-height: 17px;
+	text-decoration: none;
+}
+.Check_Defa
+{
+	font-size: 14px;
+	color: #2d2d2d;
+	line-height: 17px;
+	text-decoration: none;
+}
+.Label_Defa
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.Label_Memo1
+{
+	font-weight: bold;
+	font-size: 14px;
+	color: #C0C0C0;
+	font-family: Verdana;
+	text-decoration: none;
+	line-height: 18px;
+}
+.Label_Memo2
+{
+	font-weight: bold;
+	font-size: 20px;
+	color: #3366FF;
+	font-family: Vrinda;
+	text-decoration: none;
+	line-height: 22px;
+}
+
+.Label_Memo3
+{
+	font-weight: bold;
+	font-size: 16px;
+	color: #3366FF;
+	font-family: Vrinda;
+	text-decoration: none;
+	line-height: 20px;
+}
+.Label_White
+{
+	font-weight: bold;
+	font-size: 13px;
+	color: #FFFFFF;
+	font-family: Verdana;
+	text-decoration: none;
+	line-height: 18px;
+}
+.Label_White2
+{
+	font-weight: bold;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-family: Verdana;
+	text-decoration: none;
+	line-height: 20px;
+}
+
+select.nice
+{
+	position: relative;
+	left: -2px;
+	top: -2px;
+	font-size: 14px;
+	width: 183px;
+	line-height: 20px;
+	border: 0px;
+	color: #414141;
+	height: 20px;
+}
+
+.DropDown_Defa
+{
+
+	
+	line-height: 20px;
+	color: #333333;
+	height: 22px;
+
+	font-weight: normal;
+	font-size: 14px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.DropDown_DefaInPager
+{
+	font-weight: normal;
+	font-size: 13px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+
+.mnuLevel1
+{
+	border-style: ridge;
+	font-size: 16px;
+	color: #666666;
+	font-family: 宋体;
+	font-weight: normal;
+	text-decoration: none;
+	background-color: #E3EAEB;
+	line-height: 26px;
+	border-spacing: 1px;
+}
+.mnuLevel2
+{
+	border-style: double;
+	font-size: 15px;
+	color: #0000FF;
+	font-family: 宋体;
+	font-weight: normal;
+	text-decoration: none;
+	background-color: #D0D0D0;
+	line-height: 20px;
+	border-spacing: 1px;
+}
+.mnuLevel3
+{
+	border-style: outset;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-family: 宋体;
+	font-weight: bolder;
+	background-color: #669999;
+	line-height: 20px;
+	border-spacing: 1px;
+	text-transform: none;
+	font-variant: normal;
+	font-style: normal;
+}
+.mnuLevel3_Sel
+{
+	border-style: outset;
+	font-size: 14px;
+	color: #FF3300;
+	font-family: 宋体;
+	font-weight: bolder;
+	background-color: #669999;
+	line-height: 20px;
+	border-spacing: 1px;
+	text-transform: none;
+	font-variant: normal;
+	font-style: normal;
+}
+.mnuLevel4
+{
+	border-style: outset;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-family: 宋体;
+	font-weight: bolder;
+	background-color: #669999;
+	line-height: 20px;
+	border-spacing: 1px;
+	text-transform: none;
+	font-variant: normal;
+	font-style: normal;
+}
+.mnuLevel5
+{
+	border-style: outset;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-family: 宋体;
+	font-weight: bolder;
+	background-color: #669999;
+	line-height: 20px;
+	border-spacing: 1px;
+	text-transform: none;
+	font-variant: normal;
+	font-style: normal;
+}
+.mnuLevel6
+{
+	border-style: outset;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-family: 宋体;
+	font-weight: bolder;
+	background-color: #669999;
+	line-height: 20px;
+	border-spacing: 1px;
+	text-transform: none;
+	font-variant: normal;
+	font-style: normal;
+}
+.mnuLevel7
+{
+	border-style: outset;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-family: 宋体;
+	font-weight: bolder;
+	background-color: #669999;
+	line-height: 20px;
+	border-spacing: 1px;
+	text-transform: none;
+	font-variant: normal;
+	font-style: normal;
+}
+.mnuLevel8
+{
+	border-style: outset;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-family: 宋体;
+	font-weight: bolder;
+	background-color: #669999;
+	line-height: 20px;
+	border-spacing: 1px;
+	text-transform: none;
+	font-variant: normal;
+	font-style: normal;
+}
+.mnuLevel9
+{
+	border-style: outset;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-family: 宋体;
+	font-weight: bolder;
+	background-color: #669999;
+	line-height: 20px;
+	border-spacing: 1px;
+	text-transform: none;
+	font-variant: normal;
+	font-style: normal;
+}
+
+.mnuLevel_HL1
+{
+	border-color: #009999;
+	border-width: 3px;
+	border-style: solid none none none;
+	font-size: 16px;
+	color: #FFFFFF;
+	font-family: 宋体;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #0099FF;
+	line-height: 26px;
+}
+.mnuLevel_HL2
+{
+	border-style: none;
+	font-size: 16px;
+	color: #666666;
+	font-family: 宋体;
+	font-weight: normal;
+	text-decoration: none;
+	background-color: #E3EAEB;
+	line-height: 26px;
+	border-spacing: 1px;
+}
+
+.mnuLevel_H2
+{
+	font-size: 15px;
+	color: #FFFFFF;
+	font-family: 宋体;
+	font-weight: normal;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	line-height: 18px;
+}
+.mnuLevel_Content4Tea {
+    font-size: 13px;
+    color: #003300;
+    font-family: 新宋体;
+    font-weight: lighter;
+    line-height: 13px;
+    border-spacing: 0px;
+    text-transform: none;
+    font-variant: normal;
+    font-style: normal;
+}
+.mnuLevel_Content4Tea4Sel
+{
+	font-size: 14px;
+	color: #FF0066;
+	font-family: 新宋体;
+	font-weight: lighter;
+	line-height: 24px;
+	border-spacing: 1px;
+	text-transform: none;
+	font-variant: normal;
+	font-style: normal;
+}
+.mnuLevel_Content
+{
+	font-size: 14px;
+	color: #FFFFFF;
+	font-family: 新宋体;
+	font-weight: lighter;
+	line-height: 24px;
+	border-spacing: 1px;
+	text-transform: none;
+	font-variant: normal;
+	font-style: normal;
+}
+a.mnuLevel_Content:link
+{
+	font-size: 14px;
+	color: #3366FF;
+	text-decoration: none;
+	font-family: 新宋体;
+}
+a.mnuLevel_Content:visited
+{
+	font-size: 14px;
+	color: #3366FF;
+	text-decoration: none;
+}
+a.mnuLevel_Content:hover
+{
+	font-size: 14px;
+	color: #cc0000;
+	text-decoration: none;
+}
+a.mnuLevel_Content:active
+{
+	font-size: 14px;
+	color: #FFFFFF;
+	text-decoration: underline;
+	background-color: #3333CC;
+}
+.mnuLevel_ACCC_Sel
+{
+	border-width: 2px;
+	border-style: solid none none none;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-family: 宋体;
+	font-weight: bolder;
+	background-color: #669999;
+	line-height: 20px;
+	text-transform: none;
+	font-variant: normal;
+	font-style: normal;
+}
+
+.mnuLevel_H22
+{
+	border-style: double none none none;
+	border-width: 2px 0px 0px 0px;
+	border-color: #FFFFFF;
+	font-size: 15px;
+	color: #0099FF;
+	font-family: 宋体;
+	font-weight: normal;
+	text-decoration: none;
+	background-color: #D0D0D0;
+	line-height: 24px;
+}
+
+.mnuLevel_H23
+{
+	border-style: double none none none;
+	border-width: 1px 0px 0px 0px;
+	border-color: #FFFFFF;
+	font-size: 14px;
+	color: #0099FF;
+	font-family: 宋体;
+	font-weight: normal;
+	text-decoration: none;
+	background-color: #D0D0D0;
+	line-height: 17px;
+	border-spacing: 0px;
+}
+/*Hover Menu*/
+.popupMenu
+{
+	position: absolute;
+	visibility: hidden;
+	background-color: #F5F7F8;
+}
+
+.popupHover
+{
+	background-image: url(images/header-opened.png);
+	background-repeat: repeat-x;
+	background-position: left top;
+	background-color: #F5F7F8;
+}
+.footer_font
+{
+	font-size: 13px;
+	color: #2d2d2d;
+	font-family: "verdana";
+	text-decoration: none;
+	line-height: 20px;
+}
+.qry_FldTitle
+{
+	color: #bf6627;
+	font-size: 13px;
+	font-weight: bold;
+}
+.qry_FldTitle2
+{
+	color: #bf6627;
+	font-size: 13px;
+	font-weight: bold;
+}
+.qry_FldTitle3
+{
+	color: #bf6627;
+	font-size: 14px;
+	font-weight: bold;
+}
+.qry_FldContent
+{
+	color: #bc7323;
+	font-size: 13px;
+}
+.qry_FldContent2
+{
+	color: #bc7323;
+	font-size: 13px;
+}
+.qry_TextBox_Defa
+{
+	font-weight: normal;
+	font-size: 13px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+
+.EditRegionTitleH1
+{
+	font-weight: bold;
+	font-size: 14px;
+	color: #3366CC;
+	font-family: Verdana;
+	text-decoration: none;
+	line-height: 30px;
+}
+.EditRegion_FldTitle1
+{
+	color: #666666;
+	font-size: 14px;
+	font-weight: normal;
+}
+.EditRegion_TextBox_Defa
+{
+	font-weight: normal;
+	font-size: 13px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+
+.topTitle
+{
+	color: #bf6627;
+	font-size: 13px;
+	font-weight: bold;
+}
+.topTitle2
+{
+	color: #bf6627;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.topContent
+{
+	color: #bc7323;
+	font-size: 13px;
+}
+.topContent2
+{
+	color: #bc7323;
+	font-size: 13px;
+}
+.Grid头标题颜色
+{
+	color: #3366CC;
+}
+
+.Grid行案例名称颜色
+{
+	color: #0099FF;
+}

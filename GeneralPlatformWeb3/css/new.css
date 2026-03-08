@@ -1,0 +1,82 @@
+﻿
+/* 模式窗口 */
+.ModalMask
+{
+	opacity: .4;
+	filter: alpha(opacity=40);
+	background-color: #333333;
+}
+
+.Modal
+{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #888888;
+	border-right-width: 3px;
+	border-right-color: #888888;
+	border-bottom-width: 3px;
+	border-bottom-color: #888888;
+	background-color: #eeeeee;
+	font-size: 75%;
+}
+
+.ModalTitle
+{
+	font-size: 16px;
+	padding: 5px;
+	padding-bottom: 7px;
+	border-style: solid;
+	border-width: 0px;
+	border-bottom-width: 1px;
+	border-color: #cccccc;
+	background-color: #e2eecd;
+	color: #698d73;
+	font-weight: bold;
+	cursor: move;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.ModalClose
+{
+	width: 33px;
+	height: 12px;
+	background-image: url(image/close.gif);
+	background-repeat: no-repeat;
+	overflow: hidden;
+	cursor: pointer;
+	float: right;
+}
+
+.ModalContent
+{
+	background-color: #ffffff;
+}
+
+.ModalFooter
+{
+	border-style: solid;
+	border-width: 0px;
+	border-top-width: 1px;
+	border-color: #cccccc;
+	background-color: #eeeeee;
+	padding: 2px;
+}
+
+.ModalResize
+{
+	width: 14px;
+	height: 14px;
+	background-image: url(image/resize.gif);
+	background-repeat: no-repeat;
+	overflow: hidden;
+	float: right;
+	cursor: se-resize;
+}
+/*固定长度，不换行，超长用省略号*/
+.ellipsis
+{
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}

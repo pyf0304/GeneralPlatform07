@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="E:\Builder\GeneralPlatform_WS" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="配置文件1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="vUserDownLoadDetailLogService.asmx" publishTime="01/19/2013 15:22:03" />
+    <file relUrl="PrjSite4DownLoadService.asmx" publishTime="01/19/2013 10:26:44" />
+    <file relUrl="ViewPotenceService.asmx" publishTime="03/14/2011 13:01:30" />
+    <file relUrl="UserRolesService.asmx" publishTime="06/07/2009 16:52:44" />
+    <file relUrl="UserStateService.asmx" publishTime="06/07/2009 16:52:39" />
+    <file relUrl="bin/GeneralPlatform_Entity.pdb" publishTime="05/14/2013 15:41:38" />
+    <file relUrl="Global.asax" publishTime="06/07/2009 16:52:45" />
+    <file relUrl="bin/PubDataBase.xml" publishTime="05/06/2013 17:47:07" />
+    <file relUrl="vUsersService.asmx" publishTime="06/11/2009 13:57:32" />
+    <file relUrl="UserRoleRelationService.asmx" publishTime="06/07/2009 16:52:44" />
+    <file relUrl="bin/GeneralPlatform_WS.dll" publishTime="05/15/2013 08:05:34" />
+    <file relUrl="PrjUserRelationService.asmx" publishTime="09/29/2009 02:16:38" />
+    <file relUrl="ProjectsService.asmx" publishTime="11/17/2008 12:00:25" />
+    <file relUrl="RoleMenusService.asmx" publishTime="06/04/2010 09:14:49" />
+    <file relUrl="bin/GeneralPlatform_DAL.pdb" publishTime="05/14/2013 15:41:49" />
+    <file relUrl="Service1.asmx" publishTime="11/16/2008 15:21:43" />
+    <file relUrl="UsersService.asmx" publishTime="06/07/2009 16:52:44" />
+    <file relUrl="vPrjFileRelaService.asmx" publishTime="01/19/2013 15:20:24" />
+    <file relUrl="TSysParaService.asmx" publishTime="09/05/2009 11:18:33" />
+    <file relUrl="SubjectRelationService.asmx" publishTime="08/28/2009 11:25:08" />
+    <file relUrl="UserCodePathService.asmx" publishTime="01/19/2013 10:27:51" />
+    <file relUrl="CommDBFunction.asmx" publishTime="06/03/2010 19:30:05" />
+    <file relUrl="UserDownLoadDetailLogService.asmx" publishTime="01/19/2013 10:30:10" />
+    <file relUrl="UserRoleRelation2Service.asmx" publishTime="11/17/2008 09:37:30" />
+    <file relUrl="LoginService.asmx" publishTime="06/07/2009 16:52:45" />
+    <file relUrl="CodeTypeService.asmx" publishTime="01/19/2013 15:15:55" />
+    <file relUrl="PrjFileRelaService.asmx" publishTime="01/19/2013 15:17:52" />
+    <file relUrl="vPrjSite4DownLoadService.asmx" publishTime="01/19/2013 15:21:43" />
+    <file relUrl="bin/TzPubFunction.xml" publishTime="04/25/2013 20:35:53" />
+    <file relUrl="bin/GeneralPlatform_WS.pdb" publishTime="05/15/2013 08:05:34" />
+    <file relUrl="bin/PubDataBase.dll" publishTime="05/06/2013 17:47:07" />
+    <file relUrl="vUserDownLoadLogService.asmx" publishTime="01/19/2013 15:22:14" />
+    <file relUrl="bin/GeneralPlatform_DAL.xml" publishTime="05/14/2013 15:41:49" />
+    <file relUrl="DepartmentInfoService.asmx" publishTime="06/07/2009 16:52:45" />
+    <file relUrl="PrjMenusService.asmx" publishTime="06/07/2009 16:52:45" />
+    <file relUrl="UserDownLoadLogService.asmx" publishTime="01/19/2013 10:29:04" />
+    <file relUrl="SubjectRelationServiceEx.asmx" publishTime="08/28/2009 14:45:01" />
+    <file relUrl="bin/GeneralPlatform_DAL.dll" publishTime="05/14/2013 15:41:49" />
+    <file relUrl="PrjPotenceService.asmx" publishTime="06/03/2010 11:55:57" />
+    <file relUrl="vRoleMenusService.asmx" publishTime="06/16/2009 00:09:29" />
+    <file relUrl="bin/GeneralPlatform_Business.dll" publishTime="05/15/2013 08:05:33" />
+    <file relUrl="bin/GeneralPlatform_Entity.dll" publishTime="05/14/2013 15:41:39" />
+    <file relUrl="ConnStr/Web.Config" publishTime="05/14/2013 16:10:34" />
+    <file relUrl="UsersServiceEx.asmx" publishTime="06/07/2009 16:52:44" />
+    <file relUrl="Web.config" publishTime="03/10/2013 14:38:36" />
+    <file relUrl="bin/GeneralPlatform_Business.pdb" publishTime="05/15/2013 08:05:33" />
+    <file relUrl="UserGroupPotenceService.asmx" publishTime="06/04/2010 09:09:19" />
+    <file relUrl="bin/TzPubFunction.dll" publishTime="04/25/2013 20:35:53" />
+    <file relUrl="MenuAndPotence.asmx" publishTime="07/29/2011 17:21:13" />
+    <file relUrl="vRelaOfPotenceAndSymbolService.asmx" publishTime="06/16/2009 14:28:37" />
+    <file relUrl="UserMenusService.asmx" publishTime="06/03/2010 11:46:46" />
+  </publishProfile>
+</publishData>

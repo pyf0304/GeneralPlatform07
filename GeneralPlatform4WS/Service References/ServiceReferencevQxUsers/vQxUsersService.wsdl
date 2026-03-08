@@ -1,0 +1,1126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="vQxUsers_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUsers_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetTopDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetTopDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUsers_GetTopDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetDataSetByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetDataSetByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUsers_GetDataSetByRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetvQxUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxUsersEN" type="tns:clsvQxUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsvQxUsersEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentAbbrName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpDepartmentId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpDepartmentName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserStateId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserStateName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EffectiveDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="id_College" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EffitiveBeginDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EffitiveEndDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StuTeacherId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IdentityID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IdentityDesc" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="openid" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsSynch" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="SynchDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUser" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sf_UpdFldSetStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="_IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="_StrTag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_Checked" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="_IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="_ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="_DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="_TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="vQxUsers_GetvQxUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxUsers_GetvQxUsersResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxUsersEN" type="tns:clsvQxUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetObjByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetObjByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUsers_GetObjByUserIdResult" type="tns:clsvQxUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetvQxUsersV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxUsersEN" type="tns:clsvQxUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetvQxUsersVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxUsers_GetvQxUsersVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxUsersEN" type="tns:clsvQxUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUsers_GetObjLstResult" type="tns:ArrayOfClsvQxUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsvQxUsersEN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsvQxUsersEN" nillable="true" type="tns:clsvQxUsersEN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjLstByRangeResult" type="tns:ArrayOfClsvQxUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetTopObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetTopObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUsers_GetTopObjLstResult" type="tns:ArrayOfClsvQxUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetFirstID_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetFirstID_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUsers_GetFirstID_SResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetFirstObj_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_GetFirstObj_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUsers_GetFirstObj_SResult" type="tns:clsvQxUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjByUserIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstJSONObjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intPageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByPagerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_funGetRecCountByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_funGetRecCountByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxUsers_funGetRecCountByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxUsers_IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxUsers_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxUsersEN" type="tns:clsvQxUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsvQxUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUsers_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_SerializeObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_SerializeObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUsers_SerializeObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_SerializeTopObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUsers_SerializeTopObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUsers_SerializeTopObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="vQxUsers_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetTopDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetTopDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetTopDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetTopDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetDataSetByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetDataSetByRange" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetDataSetByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetDataSetByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetvQxUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetvQxUsers" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetvQxUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetvQxUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetObjByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetObjByUserId" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetObjByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetObjByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetvQxUsersVSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetvQxUsersV" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetvQxUsersVSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetvQxUsersVResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetObjLst" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetTopObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetTopObjLst" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetTopObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetTopObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetFirstID_SSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetFirstID_S" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetFirstID_SSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetFirstID_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetFirstObj_SSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetFirstObj_S" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_GetFirstObj_SSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_GetFirstObj_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObj" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPager" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_funGetRecCountByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_funGetRecCountByCond" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_funGetRecCountByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_funGetRecCountByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_SerializeObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_SerializeObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_SerializeObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_SerializeObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_SerializeTopObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUsers_SerializeTopObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxUsers_SerializeTopObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUsers_SerializeTopObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="vQxUsersServiceSoap">
+    <wsdl:operation name="vQxUsers_GetDataSet">
+      <wsdl:input message="tns:vQxUsers_GetDataSetSoapIn" />
+      <wsdl:output message="tns:vQxUsers_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetTopDataSet">
+      <wsdl:input message="tns:vQxUsers_GetTopDataSetSoapIn" />
+      <wsdl:output message="tns:vQxUsers_GetTopDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetDataSetByRange">
+      <wsdl:input message="tns:vQxUsers_GetDataSetByRangeSoapIn" />
+      <wsdl:output message="tns:vQxUsers_GetDataSetByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetvQxUsers">
+      <wsdl:input message="tns:vQxUsers_GetvQxUsersSoapIn" />
+      <wsdl:output message="tns:vQxUsers_GetvQxUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetObjByUserId">
+      <wsdl:input message="tns:vQxUsers_GetObjByUserIdSoapIn" />
+      <wsdl:output message="tns:vQxUsers_GetObjByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetvQxUsersV">
+      <wsdl:input message="tns:vQxUsers_GetvQxUsersVSoapIn" />
+      <wsdl:output message="tns:vQxUsers_GetvQxUsersVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetObjLst">
+      <wsdl:input message="tns:vQxUsers_GetObjLstSoapIn" />
+      <wsdl:output message="tns:vQxUsers_GetObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <wsdl:input message="tns:GetObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetTopObjLst">
+      <wsdl:input message="tns:vQxUsers_GetTopObjLstSoapIn" />
+      <wsdl:output message="tns:vQxUsers_GetTopObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetFirstID_S">
+      <wsdl:input message="tns:vQxUsers_GetFirstID_SSoapIn" />
+      <wsdl:output message="tns:vQxUsers_GetFirstID_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetFirstObj_S">
+      <wsdl:input message="tns:vQxUsers_GetFirstObj_SSoapIn" />
+      <wsdl:output message="tns:vQxUsers_GetFirstObj_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByUserId">
+      <wsdl:input message="tns:GetJSONObjByUserIdSoapIn" />
+      <wsdl:output message="tns:GetJSONObjByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <wsdl:input message="tns:GetFirstJSONObjSoapIn" />
+      <wsdl:output message="tns:GetFirstJSONObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <wsdl:input message="tns:GetJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <wsdl:input message="tns:GetTopJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetTopJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <wsdl:input message="tns:GetJSONObjLstByPagerSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByPagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <wsdl:input message="tns:GetJSONObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_funGetRecCountByCond">
+      <wsdl:input message="tns:vQxUsers_funGetRecCountByCondSoapIn" />
+      <wsdl:output message="tns:vQxUsers_funGetRecCountByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_IsExistRecord">
+      <wsdl:input message="tns:vQxUsers_IsExistRecordSoapIn" />
+      <wsdl:output message="tns:vQxUsers_IsExistRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_IsExist">
+      <wsdl:input message="tns:vQxUsers_IsExistSoapIn" />
+      <wsdl:output message="tns:vQxUsers_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_SerializeObjToXMLStr">
+      <wsdl:input message="tns:vQxUsers_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxUsers_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_SerializeObjLstToXMLStr">
+      <wsdl:input message="tns:vQxUsers_SerializeObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxUsers_SerializeObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_SerializeTopObjLstToXMLStr">
+      <wsdl:input message="tns:vQxUsers_SerializeTopObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxUsers_SerializeTopObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="vQxUsersServiceSoap" type="tns:vQxUsersServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxUsers_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetTopDataSet">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetDataSetByRange">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetvQxUsers">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_GetvQxUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetObjByUserId">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_GetObjByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetvQxUsersV">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_GetvQxUsersV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetObjLst">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetTopObjLst">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetFirstID_S">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetFirstObj_S">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_funGetRecCountByCond">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_IsExist">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_SerializeObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_SerializeTopObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxUsers_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vQxUsersServiceSoap12" type="tns:vQxUsersServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxUsers_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetTopDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetDataSetByRange">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetvQxUsers">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_GetvQxUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetObjByUserId">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_GetObjByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetvQxUsersV">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_GetvQxUsersV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetObjLst">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetTopObjLst">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetFirstID_S">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_GetFirstObj_S">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_funGetRecCountByCond">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_SerializeObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUsers_SerializeTopObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxUsers_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="vQxUsersService">
+    <wsdl:port name="vQxUsersServiceSoap" binding="tns:vQxUsersServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/UserManage/vQxUsersService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vQxUsersServiceSoap12" binding="tns:vQxUsersServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/UserManage/vQxUsersService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

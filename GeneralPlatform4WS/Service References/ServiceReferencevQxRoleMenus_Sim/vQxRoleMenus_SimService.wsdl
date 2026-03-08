@@ -1,0 +1,1116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="vQxRoleMenus_Sim_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxRoleMenus_Sim_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetTopDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetTopDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxRoleMenus_Sim_GetTopDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetDataSetByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetDataSetByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxRoleMenus_Sim_GetDataSetByRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetvQxRoleMenus_Sim">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxRoleMenus_SimEN" type="tns:clsvQxRoleMenus_SimEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsvQxRoleMenus_SimEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="QxPrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpMenuId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LinkFile" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="qsParameters" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImgFile" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrderNum" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsLeafNode" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuSetId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuTitle" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PageDispModeId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="InUse" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpMenuName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sf_UpdFldSetStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checked" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="vQxRoleMenus_Sim_GetvQxRoleMenus_SimResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxRoleMenus_Sim_GetvQxRoleMenus_SimResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxRoleMenus_SimEN" type="tns:clsvQxRoleMenus_SimEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetObjBymId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetObjBymIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxRoleMenus_Sim_GetObjBymIdResult" type="tns:clsvQxRoleMenus_SimEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetvQxRoleMenus_SimV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxRoleMenus_SimEN" type="tns:clsvQxRoleMenus_SimEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetvQxRoleMenus_SimVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxRoleMenus_Sim_GetvQxRoleMenus_SimVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxRoleMenus_SimEN" type="tns:clsvQxRoleMenus_SimEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxRoleMenus_Sim_GetObjLstResult" type="tns:ArrayOfClsvQxRoleMenus_SimEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsvQxRoleMenus_SimEN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsvQxRoleMenus_SimEN" nillable="true" type="tns:clsvQxRoleMenus_SimEN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjLstByRangeResult" type="tns:ArrayOfClsvQxRoleMenus_SimEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetTopObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetTopObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxRoleMenus_Sim_GetTopObjLstResult" type="tns:ArrayOfClsvQxRoleMenus_SimEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetFirstID_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetFirstID_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxRoleMenus_Sim_GetFirstID_SResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetFirstObj_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_GetFirstObj_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxRoleMenus_Sim_GetFirstObj_SResult" type="tns:clsvQxRoleMenus_SimEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjBymId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjBymIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjBymIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstJSONObjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intPageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByPagerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_funGetRecCountByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_funGetRecCountByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxRoleMenus_Sim_funGetRecCountByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxRoleMenus_Sim_IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxRoleMenus_Sim_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxRoleMenus_SimEN" type="tns:clsvQxRoleMenus_SimEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsvQxRoleMenus_SimEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxRoleMenus_Sim_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_SerializeObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_SerializeObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxRoleMenus_Sim_SerializeObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_SerializeTopObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_Sim_SerializeTopObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxRoleMenus_Sim_SerializeTopObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="vQxRoleMenus_Sim_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetTopDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetTopDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetTopDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetTopDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetDataSetByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetDataSetByRange" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetDataSetByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetDataSetByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetvQxRoleMenus_SimSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetvQxRoleMenus_Sim" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetvQxRoleMenus_SimSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetvQxRoleMenus_SimResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetObjBymIdSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetObjBymId" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetObjBymIdSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetObjBymIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetvQxRoleMenus_SimVSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetvQxRoleMenus_SimV" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetvQxRoleMenus_SimVSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetvQxRoleMenus_SimVResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetObjLst" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetTopObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetTopObjLst" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetTopObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetTopObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetFirstID_SSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetFirstID_S" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetFirstID_SSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetFirstID_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetFirstObj_SSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetFirstObj_S" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_GetFirstObj_SSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_GetFirstObj_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjBymIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjBymId" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjBymIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjBymIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObj" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPager" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_funGetRecCountByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_funGetRecCountByCond" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_funGetRecCountByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_funGetRecCountByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_SerializeObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_SerializeObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_SerializeObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_SerializeObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_SerializeTopObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_SerializeTopObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_Sim_SerializeTopObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_Sim_SerializeTopObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="vQxRoleMenus_SimServiceSoap">
+    <wsdl:operation name="vQxRoleMenus_Sim_GetDataSet">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_GetDataSetSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetTopDataSet">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_GetTopDataSetSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_GetTopDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetDataSetByRange">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_GetDataSetByRangeSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_GetDataSetByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetvQxRoleMenus_Sim">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_GetvQxRoleMenus_SimSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_GetvQxRoleMenus_SimSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetObjBymId">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_GetObjBymIdSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_GetObjBymIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetvQxRoleMenus_SimV">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_GetvQxRoleMenus_SimVSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_GetvQxRoleMenus_SimVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetObjLst">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_GetObjLstSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_GetObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <wsdl:input message="tns:GetObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetTopObjLst">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_GetTopObjLstSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_GetTopObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetFirstID_S">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_GetFirstID_SSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_GetFirstID_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetFirstObj_S">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_GetFirstObj_SSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_GetFirstObj_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjBymId">
+      <wsdl:input message="tns:GetJSONObjBymIdSoapIn" />
+      <wsdl:output message="tns:GetJSONObjBymIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <wsdl:input message="tns:GetFirstJSONObjSoapIn" />
+      <wsdl:output message="tns:GetFirstJSONObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <wsdl:input message="tns:GetJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <wsdl:input message="tns:GetTopJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetTopJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <wsdl:input message="tns:GetJSONObjLstByPagerSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByPagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <wsdl:input message="tns:GetJSONObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_funGetRecCountByCond">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_funGetRecCountByCondSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_funGetRecCountByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_IsExistRecord">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_IsExistRecordSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_IsExistRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_IsExist">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_IsExistSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_SerializeObjToXMLStr">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_SerializeObjLstToXMLStr">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_SerializeObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_SerializeObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_SerializeTopObjLstToXMLStr">
+      <wsdl:input message="tns:vQxRoleMenus_Sim_SerializeTopObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_Sim_SerializeTopObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="vQxRoleMenus_SimServiceSoap" type="tns:vQxRoleMenus_SimServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxRoleMenus_Sim_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetTopDataSet">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetDataSetByRange">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetvQxRoleMenus_Sim">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetvQxRoleMenus_Sim" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetObjBymId">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetObjBymId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetvQxRoleMenus_SimV">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetvQxRoleMenus_SimV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetObjLst">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetTopObjLst">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetFirstID_S">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetFirstObj_S">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjBymId">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjBymId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_funGetRecCountByCond">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_IsExist">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_SerializeObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_SerializeTopObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vQxRoleMenus_SimServiceSoap12" type="tns:vQxRoleMenus_SimServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxRoleMenus_Sim_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetTopDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetDataSetByRange">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetvQxRoleMenus_Sim">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetvQxRoleMenus_Sim" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetObjBymId">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetObjBymId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetvQxRoleMenus_SimV">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetvQxRoleMenus_SimV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetObjLst">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetTopObjLst">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetFirstID_S">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_GetFirstObj_S">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjBymId">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjBymId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_funGetRecCountByCond">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_SerializeObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_Sim_SerializeTopObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_Sim_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="vQxRoleMenus_SimService">
+    <wsdl:port name="vQxRoleMenus_SimServiceSoap" binding="tns:vQxRoleMenus_SimServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/MenuManage/vQxRoleMenus_SimService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vQxRoleMenus_SimServiceSoap12" binding="tns:vQxRoleMenus_SimServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/MenuManage/vQxRoleMenus_SimService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UserMenus_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserMenus_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserMenus_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_GetUserMenus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserMenus" type="tns:clsUserMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsUserMenusEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsUseRoleMenu" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserMenus_GetUserMenusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserMenus_GetUserMenusResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserMenus" type="tns:clsUserMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_GetUserMenusV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserMenus" type="tns:clsUserMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_GetUserMenusVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserMenus_GetUserMenusVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserMenus" type="tns:clsUserMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserMenus_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserMenus_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_GetMaxStrId">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserMenus_GetMaxStrIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserMenus_GetMaxStrIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserMenus" type="tns:clsUserMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserMenus_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserMenus" type="tns:clsUserMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserMenus_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserMenus_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_DelUserMenuss">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrStdId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserMenus_DelUserMenussResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserMenus_DelUserMenussResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserMenus" type="tns:clsUserMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsUserMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UserMenus_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:UserMenus_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:UserMenus_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserMenus_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserMenus_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_GetUserMenusSoapIn">
+    <wsdl:part name="parameters" element="tns:UserMenus_GetUserMenus" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_GetUserMenusSoapOut">
+    <wsdl:part name="parameters" element="tns:UserMenus_GetUserMenusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_GetUserMenusVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserMenus_GetUserMenusV" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_GetUserMenusVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserMenus_GetUserMenusVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:UserMenus_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:UserMenus_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:UserMenus_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:UserMenus_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_GetMaxStrIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UserMenus_GetMaxStrId" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_GetMaxStrIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UserMenus_GetMaxStrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserMenus_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserMenus_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserMenus_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserMenus_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:UserMenus_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:UserMenus_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_DelUserMenussSoapIn">
+    <wsdl:part name="parameters" element="tns:UserMenus_DelUserMenuss" />
+  </wsdl:message>
+  <wsdl:message name="UserMenus_DelUserMenussSoapOut">
+    <wsdl:part name="parameters" element="tns:UserMenus_DelUserMenussResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserMenusServiceSoap">
+    <wsdl:operation name="UserMenus_GetDataSet">
+      <wsdl:input message="tns:UserMenus_GetDataSetSoapIn" />
+      <wsdl:output message="tns:UserMenus_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_GetDataSetV">
+      <wsdl:input message="tns:UserMenus_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:UserMenus_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_GetUserMenus">
+      <wsdl:input message="tns:UserMenus_GetUserMenusSoapIn" />
+      <wsdl:output message="tns:UserMenus_GetUserMenusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_GetUserMenusV">
+      <wsdl:input message="tns:UserMenus_GetUserMenusVSoapIn" />
+      <wsdl:output message="tns:UserMenus_GetUserMenusVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_IsExistRecordByCond">
+      <wsdl:input message="tns:UserMenus_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:UserMenus_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_IsExist">
+      <wsdl:input message="tns:UserMenus_IsExistSoapIn" />
+      <wsdl:output message="tns:UserMenus_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_GetMaxStrId">
+      <wsdl:input message="tns:UserMenus_GetMaxStrIdSoapIn" />
+      <wsdl:output message="tns:UserMenus_GetMaxStrIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_AddNewRecordBySql2">
+      <wsdl:input message="tns:UserMenus_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:UserMenus_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_UpdateBySql2">
+      <wsdl:input message="tns:UserMenus_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:UserMenus_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_DelRecord">
+      <wsdl:input message="tns:UserMenus_DelRecordSoapIn" />
+      <wsdl:output message="tns:UserMenus_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_DelUserMenuss">
+      <wsdl:input message="tns:UserMenus_DelUserMenussSoapIn" />
+      <wsdl:output message="tns:UserMenus_DelUserMenussSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserMenusServiceSoap" type="tns:UserMenusServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserMenus_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/UserMenus_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/UserMenus_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_GetUserMenus">
+      <soap:operation soapAction="http://tempuri.org/UserMenus_GetUserMenus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_GetUserMenusV">
+      <soap:operation soapAction="http://tempuri.org/UserMenus_GetUserMenusV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/UserMenus_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_IsExist">
+      <soap:operation soapAction="http://tempuri.org/UserMenus_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_GetMaxStrId">
+      <soap:operation soapAction="http://tempuri.org/UserMenus_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserMenus_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserMenus_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/UserMenus_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_DelUserMenuss">
+      <soap:operation soapAction="http://tempuri.org/UserMenus_DelUserMenuss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserMenusServiceSoap12" type="tns:UserMenusServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserMenus_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/UserMenus_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/UserMenus_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_GetUserMenus">
+      <soap12:operation soapAction="http://tempuri.org/UserMenus_GetUserMenus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_GetUserMenusV">
+      <soap12:operation soapAction="http://tempuri.org/UserMenus_GetUserMenusV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/UserMenus_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/UserMenus_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_GetMaxStrId">
+      <soap12:operation soapAction="http://tempuri.org/UserMenus_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserMenus_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserMenus_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/UserMenus_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMenus_DelUserMenuss">
+      <soap12:operation soapAction="http://tempuri.org/UserMenus_DelUserMenuss" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserMenusService">
+    <wsdl:port name="UserMenusServiceSoap" binding="tns:UserMenusServiceSoap">
+      <soap:address location="http://localhost:9259/UserMenusService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserMenusServiceSoap12" binding="tns:UserMenusServiceSoap12">
+      <soap12:address location="http://localhost:9259/UserMenusService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

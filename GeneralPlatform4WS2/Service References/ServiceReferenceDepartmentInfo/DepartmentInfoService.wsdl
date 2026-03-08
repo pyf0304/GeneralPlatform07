@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DepartmentInfo_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DepartmentInfo_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DepartmentInfo_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_GetDepartmentInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objDepartmentInfo" type="tns:clsDepartmentInfoEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsDepartmentInfoEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpDepartmentId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartMentId4Card" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsAcademy" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="SubjectTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentAbbrName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrderNum" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsExam" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="InUse" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DepartmentInfo_GetDepartmentInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DepartmentInfo_GetDepartmentInfoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDepartmentInfo" type="tns:clsDepartmentInfoEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_GetDepartmentInfoV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objDepartmentInfo" type="tns:clsDepartmentInfoEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_GetDepartmentInfoVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DepartmentInfo_GetDepartmentInfoVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDepartmentInfo" type="tns:clsDepartmentInfoEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DepartmentInfo_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDepartmentId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DepartmentInfo_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objDepartmentInfo" type="tns:clsDepartmentInfoEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DepartmentInfo_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objDepartmentInfo" type="tns:clsDepartmentInfoEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DepartmentInfo_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDepartmentId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DepartmentInfo_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_DelDepartmentInfos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrStdId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepartmentInfo_DelDepartmentInfosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DepartmentInfo_DelDepartmentInfosResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objDepartmentInfo" type="tns:clsDepartmentInfoEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsDepartmentInfoEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DepartmentInfo_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_GetDepartmentInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_GetDepartmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_GetDepartmentInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_GetDepartmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_GetDepartmentInfoVSoapIn">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_GetDepartmentInfoV" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_GetDepartmentInfoVSoapOut">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_GetDepartmentInfoVResponse" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_DelDepartmentInfosSoapIn">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_DelDepartmentInfos" />
+  </wsdl:message>
+  <wsdl:message name="DepartmentInfo_DelDepartmentInfosSoapOut">
+    <wsdl:part name="parameters" element="tns:DepartmentInfo_DelDepartmentInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DepartmentInfoServiceSoap">
+    <wsdl:operation name="DepartmentInfo_GetDataSet">
+      <wsdl:input message="tns:DepartmentInfo_GetDataSetSoapIn" />
+      <wsdl:output message="tns:DepartmentInfo_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_GetDataSetV">
+      <wsdl:input message="tns:DepartmentInfo_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:DepartmentInfo_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_GetDepartmentInfo">
+      <wsdl:input message="tns:DepartmentInfo_GetDepartmentInfoSoapIn" />
+      <wsdl:output message="tns:DepartmentInfo_GetDepartmentInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_GetDepartmentInfoV">
+      <wsdl:input message="tns:DepartmentInfo_GetDepartmentInfoVSoapIn" />
+      <wsdl:output message="tns:DepartmentInfo_GetDepartmentInfoVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_IsExistRecordByCond">
+      <wsdl:input message="tns:DepartmentInfo_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:DepartmentInfo_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_IsExist">
+      <wsdl:input message="tns:DepartmentInfo_IsExistSoapIn" />
+      <wsdl:output message="tns:DepartmentInfo_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_AddNewRecordBySql2">
+      <wsdl:input message="tns:DepartmentInfo_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:DepartmentInfo_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_UpdateBySql2">
+      <wsdl:input message="tns:DepartmentInfo_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:DepartmentInfo_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_DelRecord">
+      <wsdl:input message="tns:DepartmentInfo_DelRecordSoapIn" />
+      <wsdl:output message="tns:DepartmentInfo_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_DelDepartmentInfos">
+      <wsdl:input message="tns:DepartmentInfo_DelDepartmentInfosSoapIn" />
+      <wsdl:output message="tns:DepartmentInfo_DelDepartmentInfosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DepartmentInfoServiceSoap" type="tns:DepartmentInfoServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DepartmentInfo_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/DepartmentInfo_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/DepartmentInfo_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_GetDepartmentInfo">
+      <soap:operation soapAction="http://tempuri.org/DepartmentInfo_GetDepartmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_GetDepartmentInfoV">
+      <soap:operation soapAction="http://tempuri.org/DepartmentInfo_GetDepartmentInfoV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/DepartmentInfo_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_IsExist">
+      <soap:operation soapAction="http://tempuri.org/DepartmentInfo_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/DepartmentInfo_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/DepartmentInfo_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/DepartmentInfo_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_DelDepartmentInfos">
+      <soap:operation soapAction="http://tempuri.org/DepartmentInfo_DelDepartmentInfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DepartmentInfoServiceSoap12" type="tns:DepartmentInfoServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DepartmentInfo_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/DepartmentInfo_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/DepartmentInfo_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_GetDepartmentInfo">
+      <soap12:operation soapAction="http://tempuri.org/DepartmentInfo_GetDepartmentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_GetDepartmentInfoV">
+      <soap12:operation soapAction="http://tempuri.org/DepartmentInfo_GetDepartmentInfoV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/DepartmentInfo_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/DepartmentInfo_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/DepartmentInfo_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/DepartmentInfo_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/DepartmentInfo_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepartmentInfo_DelDepartmentInfos">
+      <soap12:operation soapAction="http://tempuri.org/DepartmentInfo_DelDepartmentInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DepartmentInfoService">
+    <wsdl:port name="DepartmentInfoServiceSoap" binding="tns:DepartmentInfoServiceSoap">
+      <soap:address location="http://localhost:9259/DepartmentInfoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DepartmentInfoServiceSoap12" binding="tns:DepartmentInfoServiceSoap12">
+      <soap12:address location="http://localhost:9259/DepartmentInfoService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

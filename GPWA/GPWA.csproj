@@ -1,0 +1,93 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <BaseOutputPath>E:\TzAppData\GeneralPlatform07\GPWA\bin</BaseOutputPath>
+    <BaseIntermediateOutputPath>E:\TzAppData\GeneralPlatform07\GPWA\obj</BaseIntermediateOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="App_Start\**" />
+    <Compile Remove="obj\**" />
+    <Compile Remove="WebApi\FunClass\**" />
+    <Compile Remove="WebApi\J2EEModule\**" />
+    <Compile Remove="WebApi\NewsBulletin\**" />
+    <Content Remove="App_Start\**" />
+    <Content Remove="obj\**" />
+    <Content Remove="WebApi\FunClass\**" />
+    <Content Remove="WebApi\J2EEModule\**" />
+    <Content Remove="WebApi\NewsBulletin\**" />
+    <EmbeddedResource Remove="App_Start\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <EmbeddedResource Remove="WebApi\FunClass\**" />
+    <EmbeddedResource Remove="WebApi\J2EEModule\**" />
+    <EmbeddedResource Remove="WebApi\NewsBulletin\**" />
+    <None Remove="App_Start\**" />
+    <None Remove="obj\**" />
+    <None Remove="WebApi\FunClass\**" />
+    <None Remove="WebApi\J2EEModule\**" />
+    <None Remove="WebApi\NewsBulletin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+    <Compile Remove="PubFun\DataNodeApi2Controller.cs" />
+    <Compile Remove="PubFun\SW_PressurePointApiController.cs" />
+  </ItemGroup>
+
+
+
+	<ItemGroup>
+		<PackageReference Include="Azure.Identity" Version="1.17.1" />
+		<PackageReference Include="JWT" Version="11.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.18" />
+		<PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.3.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="4.14.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.7" />
+		<PackageReference Include="Microsoft.Identity.Web" Version="3.12.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Serilog" Version="4.3.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+		<PackageReference Include="Serilog.Extensions.Logging" Version="9.0.2" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+		<PackageReference Include="Svg" Version="3.4.7" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="9.0.0" />
+		<PackageReference Include="System.Buffers" Version="4.6.1" />
+		<PackageReference Include="System.Collections.Immutable" Version="9.0.7" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+		<PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.7" />
+		<PackageReference Include="System.Formats.Asn1" Version="9.0.7" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.13.0" />
+		<PackageReference Include="System.Memory" Version="4.6.3" />
+		<PackageReference Include="System.Text.Json" Version="9.0.7" />
+		<PackageReference Include="System.Threading.Tasks.Extensions" Version="4.6.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <ProjectReference Include="..\GeneralPlatform_BusinessEx\GeneralPlatform_BusinessEx.csproj" />
+    <ProjectReference Include="..\GeneralPlatform_Business\GeneralPlatform_Business.csproj" />
+    <ProjectReference Include="..\GeneralPlatform_Entity\GeneralPlatform_Entity.csproj" />
+    <ProjectReference Include="..\GP4WApi\GP4WApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="WebApiEx\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PubDataBase">
+      <HintPath>..\..\..\..\PrjCode\PublicLib\PubDataBase.dll</HintPath>
+    </Reference>
+    <Reference Include="TzPubFunction">
+      <HintPath>..\..\..\..\PrjCode\PublicLib\TzPubFunction.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

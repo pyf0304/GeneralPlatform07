@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UserRoles_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserRoles_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserRoles_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_GetUserRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoles" type="tns:clsUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsUserRolesEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RoleId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsInUse" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserRoles_GetUserRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoles_GetUserRolesResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoles" type="tns:clsUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_GetUserRolesV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoles" type="tns:clsUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_GetUserRolesVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoles_GetUserRolesVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoles" type="tns:clsUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoles_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoles_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoles" type="tns:clsUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoles_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoles" type="tns:clsUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoles_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoles_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_DelUserRoless">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrStdId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoles_DelUserRolessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoles_DelUserRolessResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoles" type="tns:clsUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UserRoles_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoles_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoles_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoles_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoles_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_GetUserRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoles_GetUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_GetUserRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoles_GetUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_GetUserRolesVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoles_GetUserRolesV" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_GetUserRolesVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoles_GetUserRolesVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoles_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoles_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoles_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoles_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoles_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoles_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoles_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoles_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoles_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoles_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_DelUserRolessSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoles_DelUserRoless" />
+  </wsdl:message>
+  <wsdl:message name="UserRoles_DelUserRolessSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoles_DelUserRolessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserRolesServiceSoap">
+    <wsdl:operation name="UserRoles_GetDataSet">
+      <wsdl:input message="tns:UserRoles_GetDataSetSoapIn" />
+      <wsdl:output message="tns:UserRoles_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_GetDataSetV">
+      <wsdl:input message="tns:UserRoles_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:UserRoles_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_GetUserRoles">
+      <wsdl:input message="tns:UserRoles_GetUserRolesSoapIn" />
+      <wsdl:output message="tns:UserRoles_GetUserRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_GetUserRolesV">
+      <wsdl:input message="tns:UserRoles_GetUserRolesVSoapIn" />
+      <wsdl:output message="tns:UserRoles_GetUserRolesVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_IsExistRecordByCond">
+      <wsdl:input message="tns:UserRoles_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:UserRoles_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_IsExist">
+      <wsdl:input message="tns:UserRoles_IsExistSoapIn" />
+      <wsdl:output message="tns:UserRoles_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_AddNewRecordBySql2">
+      <wsdl:input message="tns:UserRoles_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:UserRoles_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_UpdateBySql2">
+      <wsdl:input message="tns:UserRoles_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:UserRoles_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_DelRecord">
+      <wsdl:input message="tns:UserRoles_DelRecordSoapIn" />
+      <wsdl:output message="tns:UserRoles_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_DelUserRoless">
+      <wsdl:input message="tns:UserRoles_DelUserRolessSoapIn" />
+      <wsdl:output message="tns:UserRoles_DelUserRolessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserRolesServiceSoap" type="tns:UserRolesServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserRoles_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/UserRoles_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/UserRoles_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_GetUserRoles">
+      <soap:operation soapAction="http://tempuri.org/UserRoles_GetUserRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_GetUserRolesV">
+      <soap:operation soapAction="http://tempuri.org/UserRoles_GetUserRolesV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/UserRoles_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_IsExist">
+      <soap:operation soapAction="http://tempuri.org/UserRoles_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserRoles_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserRoles_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/UserRoles_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_DelUserRoless">
+      <soap:operation soapAction="http://tempuri.org/UserRoles_DelUserRoless" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserRolesServiceSoap12" type="tns:UserRolesServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserRoles_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/UserRoles_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/UserRoles_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_GetUserRoles">
+      <soap12:operation soapAction="http://tempuri.org/UserRoles_GetUserRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_GetUserRolesV">
+      <soap12:operation soapAction="http://tempuri.org/UserRoles_GetUserRolesV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/UserRoles_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/UserRoles_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserRoles_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserRoles_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/UserRoles_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoles_DelUserRoless">
+      <soap12:operation soapAction="http://tempuri.org/UserRoles_DelUserRoless" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserRolesService">
+    <wsdl:port name="UserRolesServiceSoap" binding="tns:UserRolesServiceSoap">
+      <soap:address location="http://localhost:9259/UserRolesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserRolesServiceSoap12" binding="tns:UserRolesServiceSoap12">
+      <soap12:address location="http://localhost:9259/UserRolesService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="PrjSite4DownLoad_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjSite4DownLoad_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjSite4DownLoad_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_GetQxPrjSite4DownLoad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjSite4DownLoadEN" type="tns:clsQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxPrjSite4DownLoadEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PrjSiteId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjSiteName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name=clsQxProjectsEN.con_QxPrjId type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FtpServer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FtpUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FtpUserPassword" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PrjSite4DownLoad_GetQxPrjSite4DownLoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjSite4DownLoad_GetQxPrjSite4DownLoadResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjSite4DownLoadEN" type="tns:clsQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_GetQxPrjSite4DownLoadV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjSite4DownLoadEN" type="tns:clsQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_GetQxPrjSite4DownLoadVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjSite4DownLoad_GetQxPrjSite4DownLoadVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjSite4DownLoadEN" type="tns:clsQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjSite4DownLoad_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjSiteId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjSite4DownLoad_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_GetMaxStrId">
+        <s:complexType />
+      </s:element>
+      <s:element name="PrjSite4DownLoad_GetMaxStrIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjSite4DownLoad_GetMaxStrIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjSite4DownLoadEN" type="tns:clsQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjSite4DownLoad_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_AddNewRecordBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjSite4DownLoadENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_AddNewRecordBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjSite4DownLoad_AddNewRecordBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjSite4DownLoadEN" type="tns:clsQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjSite4DownLoad_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_UpdateBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjSite4DownLoadENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_UpdateBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjSite4DownLoad_UpdateBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjSiteId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjSite4DownLoad_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_DelPrjSite4DownLoads">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrPrjSiteId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_DelPrjSite4DownLoadsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjSite4DownLoad_DelPrjSite4DownLoadsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_DelPrjSite4DownLoadsByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_DelPrjSite4DownLoadsByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjSite4DownLoad_DelPrjSite4DownLoadsByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjSite4DownLoadEN" type="tns:clsQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjSiteId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjSite4DownLoad_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_SerializeObjListToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjSite4DownLoad_SerializeObjListToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjSite4DownLoad_SerializeObjListToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PrjSite4DownLoad_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_GetQxPrjSite4DownLoadSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_GetQxPrjSite4DownLoad" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_GetQxPrjSite4DownLoadSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_GetQxPrjSite4DownLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_GetQxPrjSite4DownLoadVSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_GetQxPrjSite4DownLoadV" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_GetQxPrjSite4DownLoadVSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_GetQxPrjSite4DownLoadVResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_GetMaxStrIdSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_GetMaxStrId" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_GetMaxStrIdSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_GetMaxStrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_AddNewRecordBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_AddNewRecordBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_AddNewRecordBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_AddNewRecordBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_UpdateBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_UpdateBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_UpdateBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_UpdateBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_DelPrjSite4DownLoadsSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_DelPrjSite4DownLoads" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_DelPrjSite4DownLoadsSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_DelPrjSite4DownLoadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_DelPrjSite4DownLoadsByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_DelPrjSite4DownLoadsByCond" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_DelPrjSite4DownLoadsByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_DelPrjSite4DownLoadsByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_SerializeObjListToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_SerializeObjListToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="PrjSite4DownLoad_SerializeObjListToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjSite4DownLoad_SerializeObjListToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PrjSite4DownLoadServiceSoap">
+    <wsdl:operation name="PrjSite4DownLoad_GetDataSet">
+      <wsdl:input message="tns:PrjSite4DownLoad_GetDataSetSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_GetDataSetV">
+      <wsdl:input message="tns:PrjSite4DownLoad_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_GetQxPrjSite4DownLoad">
+      <wsdl:input message="tns:PrjSite4DownLoad_GetQxPrjSite4DownLoadSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_GetQxPrjSite4DownLoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_GetQxPrjSite4DownLoadV">
+      <wsdl:input message="tns:PrjSite4DownLoad_GetQxPrjSite4DownLoadVSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_GetQxPrjSite4DownLoadVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_IsExistRecordByCond">
+      <wsdl:input message="tns:PrjSite4DownLoad_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_IsExist">
+      <wsdl:input message="tns:PrjSite4DownLoad_IsExistSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_GetMaxStrId">
+      <wsdl:input message="tns:PrjSite4DownLoad_GetMaxStrIdSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_GetMaxStrIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_AddNewRecordBySql2">
+      <wsdl:input message="tns:PrjSite4DownLoad_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_AddNewRecordBySql_XML">
+      <wsdl:input message="tns:PrjSite4DownLoad_AddNewRecordBySql_XMLSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_AddNewRecordBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_UpdateBySql2">
+      <wsdl:input message="tns:PrjSite4DownLoad_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_UpdateBySql_XML">
+      <wsdl:input message="tns:PrjSite4DownLoad_UpdateBySql_XMLSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_UpdateBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_DelRecord">
+      <wsdl:input message="tns:PrjSite4DownLoad_DelRecordSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_DelPrjSite4DownLoads">
+      <wsdl:input message="tns:PrjSite4DownLoad_DelPrjSite4DownLoadsSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_DelPrjSite4DownLoadsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_DelPrjSite4DownLoadsByCond">
+      <wsdl:input message="tns:PrjSite4DownLoad_DelPrjSite4DownLoadsByCondSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_DelPrjSite4DownLoadsByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_SerializeObjToXMLStr">
+      <wsdl:input message="tns:PrjSite4DownLoad_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_SerializeObjListToXMLStr">
+      <wsdl:input message="tns:PrjSite4DownLoad_SerializeObjListToXMLStrSoapIn" />
+      <wsdl:output message="tns:PrjSite4DownLoad_SerializeObjListToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PrjSite4DownLoadServiceSoap" type="tns:PrjSite4DownLoadServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrjSite4DownLoad_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_GetQxPrjSite4DownLoad">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_GetQxPrjSite4DownLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_GetQxPrjSite4DownLoadV">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_GetQxPrjSite4DownLoadV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_IsExist">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_GetMaxStrId">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_AddNewRecordBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_UpdateBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_DelPrjSite4DownLoads">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_DelPrjSite4DownLoads" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_DelPrjSite4DownLoadsByCond">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_DelPrjSite4DownLoadsByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_SerializeObjListToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/PrjSite4DownLoad_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PrjSite4DownLoadServiceSoap12" type="tns:PrjSite4DownLoadServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrjSite4DownLoad_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_GetQxPrjSite4DownLoad">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_GetQxPrjSite4DownLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_GetQxPrjSite4DownLoadV">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_GetQxPrjSite4DownLoadV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_GetMaxStrId">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_AddNewRecordBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_UpdateBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_DelPrjSite4DownLoads">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_DelPrjSite4DownLoads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_DelPrjSite4DownLoadsByCond">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_DelPrjSite4DownLoadsByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjSite4DownLoad_SerializeObjListToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/PrjSite4DownLoad_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PrjSite4DownLoadService">
+    <wsdl:port name="PrjSite4DownLoadServiceSoap" binding="tns:PrjSite4DownLoadServiceSoap">
+      <soap:address location="http://localhost:9259/PrjSite4DownLoadService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PrjSite4DownLoadServiceSoap12" binding="tns:PrjSite4DownLoadServiceSoap12">
+      <soap12:address location="http://localhost:9259/PrjSite4DownLoadService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="PrjMenus_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjMenus_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjMenus_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_GetQxPrjMenus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjMenus" type="tns:clsQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxPrjMenusEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MenuId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name=clsQxProjectsEN.con_QxPrjId type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpMenuId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LinkFile" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="qsParameters" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImgFile" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrderNum" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsLeafNode" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuSetId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuTitle" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PageDispModeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PrjMenus_GetQxPrjMenusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjMenus_GetQxPrjMenusResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjMenus" type="tns:clsQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_GetQxPrjMenusV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjMenus" type="tns:clsQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_GetQxPrjMenusVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjMenus_GetQxPrjMenusVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjMenus" type="tns:clsQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjMenus_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMenuId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjMenus_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_GetMaxStrId">
+        <s:complexType />
+      </s:element>
+      <s:element name="PrjMenus_GetMaxStrIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjMenus_GetMaxStrIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjMenus" type="tns:clsQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjMenus_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjMenus" type="tns:clsQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjMenus_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMenuId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjMenus_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_DelPrjMenuss">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrStdId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_DelPrjMenussResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjMenus_DelPrjMenussResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_DelPrjMenussByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjMenus_DelPrjMenussByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjMenus_DelPrjMenussByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjMenus" type="tns:clsQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PrjMenus_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjMenus_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjMenus_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjMenus_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjMenus_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_GetQxPrjMenusSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjMenus_GetQxPrjMenus" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_GetQxPrjMenusSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjMenus_GetQxPrjMenusResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_GetQxPrjMenusVSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjMenus_GetQxPrjMenusV" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_GetQxPrjMenusVSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjMenus_GetQxPrjMenusVResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjMenus_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjMenus_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjMenus_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjMenus_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_GetMaxStrIdSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjMenus_GetMaxStrId" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_GetMaxStrIdSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjMenus_GetMaxStrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:PrjMenus_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:PrjMenus_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:PrjMenus_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:PrjMenus_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjMenus_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjMenus_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_DelPrjMenussSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjMenus_DelPrjMenuss" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_DelPrjMenussSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjMenus_DelPrjMenussResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_DelPrjMenussByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjMenus_DelPrjMenussByCond" />
+  </wsdl:message>
+  <wsdl:message name="PrjMenus_DelPrjMenussByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjMenus_DelPrjMenussByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PrjMenusServiceSoap">
+    <wsdl:operation name="PrjMenus_GetDataSet">
+      <wsdl:input message="tns:PrjMenus_GetDataSetSoapIn" />
+      <wsdl:output message="tns:PrjMenus_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_GetDataSetV">
+      <wsdl:input message="tns:PrjMenus_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:PrjMenus_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_GetQxPrjMenus">
+      <wsdl:input message="tns:PrjMenus_GetQxPrjMenusSoapIn" />
+      <wsdl:output message="tns:PrjMenus_GetQxPrjMenusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_GetQxPrjMenusV">
+      <wsdl:input message="tns:PrjMenus_GetQxPrjMenusVSoapIn" />
+      <wsdl:output message="tns:PrjMenus_GetQxPrjMenusVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_IsExistRecordByCond">
+      <wsdl:input message="tns:PrjMenus_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:PrjMenus_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_IsExist">
+      <wsdl:input message="tns:PrjMenus_IsExistSoapIn" />
+      <wsdl:output message="tns:PrjMenus_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_GetMaxStrId">
+      <wsdl:input message="tns:PrjMenus_GetMaxStrIdSoapIn" />
+      <wsdl:output message="tns:PrjMenus_GetMaxStrIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_AddNewRecordBySql2">
+      <wsdl:input message="tns:PrjMenus_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:PrjMenus_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_UpdateBySql2">
+      <wsdl:input message="tns:PrjMenus_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:PrjMenus_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_DelRecord">
+      <wsdl:input message="tns:PrjMenus_DelRecordSoapIn" />
+      <wsdl:output message="tns:PrjMenus_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_DelPrjMenuss">
+      <wsdl:input message="tns:PrjMenus_DelPrjMenussSoapIn" />
+      <wsdl:output message="tns:PrjMenus_DelPrjMenussSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_DelPrjMenussByCond">
+      <wsdl:input message="tns:PrjMenus_DelPrjMenussByCondSoapIn" />
+      <wsdl:output message="tns:PrjMenus_DelPrjMenussByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PrjMenusServiceSoap" type="tns:PrjMenusServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrjMenus_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/PrjMenus_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/PrjMenus_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_GetQxPrjMenus">
+      <soap:operation soapAction="http://tempuri.org/PrjMenus_GetQxPrjMenus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_GetQxPrjMenusV">
+      <soap:operation soapAction="http://tempuri.org/PrjMenus_GetQxPrjMenusV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/PrjMenus_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_IsExist">
+      <soap:operation soapAction="http://tempuri.org/PrjMenus_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_GetMaxStrId">
+      <soap:operation soapAction="http://tempuri.org/PrjMenus_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/PrjMenus_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/PrjMenus_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/PrjMenus_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_DelPrjMenuss">
+      <soap:operation soapAction="http://tempuri.org/PrjMenus_DelPrjMenuss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_DelPrjMenussByCond">
+      <soap:operation soapAction="http://tempuri.org/PrjMenus_DelPrjMenussByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PrjMenusServiceSoap12" type="tns:PrjMenusServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrjMenus_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/PrjMenus_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/PrjMenus_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_GetQxPrjMenus">
+      <soap12:operation soapAction="http://tempuri.org/PrjMenus_GetQxPrjMenus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_GetQxPrjMenusV">
+      <soap12:operation soapAction="http://tempuri.org/PrjMenus_GetQxPrjMenusV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/PrjMenus_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/PrjMenus_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_GetMaxStrId">
+      <soap12:operation soapAction="http://tempuri.org/PrjMenus_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/PrjMenus_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/PrjMenus_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/PrjMenus_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_DelPrjMenuss">
+      <soap12:operation soapAction="http://tempuri.org/PrjMenus_DelPrjMenuss" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjMenus_DelPrjMenussByCond">
+      <soap12:operation soapAction="http://tempuri.org/PrjMenus_DelPrjMenussByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PrjMenusService">
+    <wsdl:port name="PrjMenusServiceSoap" binding="tns:PrjMenusServiceSoap">
+      <soap:address location="http://localhost:9259/PrjMenusService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PrjMenusServiceSoap12" binding="tns:PrjMenusServiceSoap12">
+      <soap12:address location="http://localhost:9259/PrjMenusService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

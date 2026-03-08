@@ -1,0 +1,57 @@
+﻿菜单管理
+
+MenuSet-Edit 菜单集维护
+MenuSet 菜单设置
+SetRoleMenu 设置角色菜单
+
+PotenceTypeMan 权限类型管理
+PotenceMan 权限管理
+PotenceSymbolMan 权限标志管理
+SetPotence4Role 为角色配权限 
+
+UserMan 用户管理
+UserMan_All 所有用户管理
+User-Disp 用户查看
+User-Disp_All 所有用户查看
+
+User_SchoolMan 用户(学校)管理
+User_School-Disp 用户(学校)查看
+UserRoleMan	用户角色管理
+SetRole4User 为用户设置角色
+
+SetUsers4Role 为角色配用户 
+DepartmentMan 部门管理
+QxPrjUserRelation-Edit 工程用户关系-维护
+
+1、在题库中建立一Web服务，用于建立一习题组
+   1.1 需要提供课程号，类型
+   1.2 习题组的类型可以是播放中习题，播放后习题
+   1.2 返回CourseExamPaperId，试卷习题Id
+2、在高地中建立关系表，案例和试卷习题Id的关系。
+3、在题库中建立一Web服务，可以根据试卷习题Id获取习题集合
+4、在高地项目中根据试卷习题Id获取习题集合
+5、在显示出来让用户做
+6、习题提交时，调用题库中的Web服务，保存在题库中
+7、
+
+
+题库中Web服务的功能：
+1、申请建立一习题组
+2、根据试卷习题Id获取习题集合
+3、提交习题，记录用户做题情况
+4、根据用户Id、试卷习题Id调用做题情况
+
+
+题库Web提供的功能：
+1、题库编辑（OK)
+2、课程维护（OK)
+3、课程教师关系维护（OK)
+4、课程章节维护（OK)
+5、试卷习题集维护（OK)
+6、试卷习题集与题目关系维护（OK)
+7、试卷习题集显示(OK)
+8、单题显示并完成题目(OK)
+9、试卷显示并完成试卷(OK)
+10、习题显示并权限类型管理(OK)
+11、课程习题的排序问题(OK)
+ 

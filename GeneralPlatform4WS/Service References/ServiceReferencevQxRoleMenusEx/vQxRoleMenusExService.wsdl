@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="vQxRoleMenus_GetDataSetEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMenuSetId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bolIsUpMenuId" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_GetDataSetExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxRoleMenus_GetDataSetExResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_GetDataSetByRoleIdsEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sstrRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMenuSetId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bolIsUpMenuId" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxRoleMenus_GetDataSetByRoleIdsExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxRoleMenus_GetDataSetByRoleIdsExResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxRoleMenusEN" type="tns:clsvQxRoleMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsvQxRoleMenusEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="QxPrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpMenuId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LinkFile" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="qsParameters" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImgFile" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrderNum" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsLeafNode" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuSetId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuSetName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuTitle" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PageDispModeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PageDispModeName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="InUse" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpMenuName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsvQxRoleMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="vQxRoleMenus_GetDataSetExSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_GetDataSetEx" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_GetDataSetExSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_GetDataSetExResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_GetDataSetByRoleIdsExSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_GetDataSetByRoleIdsEx" />
+  </wsdl:message>
+  <wsdl:message name="vQxRoleMenus_GetDataSetByRoleIdsExSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxRoleMenus_GetDataSetByRoleIdsExResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="vQxRoleMenusExServiceSoap">
+    <wsdl:operation name="vQxRoleMenus_GetDataSetEx">
+      <wsdl:input message="tns:vQxRoleMenus_GetDataSetExSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_GetDataSetExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_GetDataSetByRoleIdsEx">
+      <wsdl:input message="tns:vQxRoleMenus_GetDataSetByRoleIdsExSoapIn" />
+      <wsdl:output message="tns:vQxRoleMenus_GetDataSetByRoleIdsExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="vQxRoleMenusExServiceSoap" type="tns:vQxRoleMenusExServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxRoleMenus_GetDataSetEx">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_GetDataSetEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_GetDataSetByRoleIdsEx">
+      <soap:operation soapAction="http://tempuri.org/vQxRoleMenus_GetDataSetByRoleIdsEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vQxRoleMenusExServiceSoap12" type="tns:vQxRoleMenusExServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxRoleMenus_GetDataSetEx">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_GetDataSetEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxRoleMenus_GetDataSetByRoleIdsEx">
+      <soap12:operation soapAction="http://tempuri.org/vQxRoleMenus_GetDataSetByRoleIdsEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="vQxRoleMenusExService">
+    <wsdl:port name="vQxRoleMenusExServiceSoap" binding="tns:vQxRoleMenusExServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/vQxRoleMenusExService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vQxRoleMenusExServiceSoap12" binding="tns:vQxRoleMenusExServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/vQxRoleMenusExService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

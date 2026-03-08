@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>选择用户角色</title>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap.js" type="text/javascript"></script>
+    <link href="../../../css/tz_base11.css" rel="stylesheet" />
+    <style type="text/css">
+        .style1 {
+            FONT-SIZE: 12px;
+            COLOR: #000099;
+            FONT-FAMILY: Verdana;
+        }
+
+        .style2 {
+            FONT-SIZE: 12px;
+            COLOR: #0000ff;
+            FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        A:link {
+            COLOR: #003366;
+            TEXT-DECORATION: none;
+        }
+
+        A:visited {
+            COLOR: #003366;
+            TEXT-DECORATION: none;
+        }
+
+        A:hover {
+            BACKGROUND-COLOR: #ffff99;
+            TEXT-DECORATION: underline;
+        }
+
+        A:active {
+            COLOR: #669966;
+            TEXT-DECORATION: none;
+        }
+
+        BODY {
+            BACKGROUND-COLOR: #f6f6f6;
+        }
+    </style>
+
+    <script language="JavaScript" type="text/javascript">
+<!--
+        /*function showthis(Tid)
+        {
+            var c=document.getElementsByTagName("table");
+            var l=c.length;
+            var i;
+            for(i=0;i<l;i++)
+            {
+                str = c[i].id;
+                str = str.substr(0,4);
+                if(str=="menu")
+                {
+                    if(c[i].id==Tid)
+                        if(c[i].style.display=="")
+                            c[i].style.display="none";
+                        else
+                            c[i].style.display="";
+                    else c[i].style.display="none";
+                }
+            }
+        }
+        */
+        function showthis(Tid) {
+            var c = document.getElementsByTagName("table");
+            var l = c.length;
+            var i;
+            if (Tid.length == 8) {
+                alert("length == 8");
+                for (i = 0; i < l; i++) {
+                    str = c[i].id;
+                    if (str == Tid) {
+                        if (c[i].style.display == "")
+                            c[i].style.display = "none";
+                        else
+                            c[i].style.display = "";
+                        break;
+                    }
+                }
+            }
+            else {
+                for (i = 0; i < l; i++) {
+                    str = c[i].id;
+                    str = str.substr(0, 4);
+                    if (str == "menu") {
+                        c[i].style.display = "none";
+                    }
+                }
+                showFather(Tid);
+                showBrother(Tid);
+                showSon(Tid);
+            }
+
+        }
+        function showSon(Tid) {
+            var c = document.getElementsByTagName("table");
+            c[Tid].style.display = "";
+            var i;
+            for (i = 0; i < 9; i++) {
+                if (c[Tid + i] != null) {
+                    if (c[Tid + i].style.display = "none")
+                        c[Tid + i].style.display = "";
+                }
+            }
+        }
+        function showFather(Tid) {
+            var c = document.getElementsByTagName("table");
+            if (Tid != "menu") {
+                var father = Tid.substring(0, Tid.length - 1);
+                if (c[father] != null) {
+                    c[father].style.display = "";
+                    showFather(father);
+                }
+            }
+            else
+                return;
+        }
+        function showBrother(Tid) {
+            var c = document.getElementsByTagName("table");
+            if (Tid != "menu") {
+                var father = Tid.substring(0, Tid.length - 1);
+                if (c[father] != null)
+                    showSon(father);
+            }
+        }
+        -->
+    </script>
+
+</head>
+<body bgcolor="silver">
+    <div align="left" class="style1">
+        <table width='94%' border='0' cellpadding='0' cellspacing='0' bordercolor='#2953c0'
+            id='Table1' class="style1">
+            <tbody>
+                <tr>
+                    <td width='100%' align='left'>
+                        <a title='单击展开！' onclick='showthis("menu01");'>&nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                            width='12' height='12'>项目对象管理_顶1 </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <table width="100%" border="0" id="menu01" class="style2" style="display: none">
+        <tr>
+            <td align="left">
+                <a title='单击展开！' onclick='showthis("menu0101");'>&nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                    width='12' height='12'>项目对象管理1_顶2 </a>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <table width="100%" border="0" id="menu0101" class="style2" style="display: none">
+                    <tr>
+                        <td align="left">&nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                            <a href="webform/Field/wfmFieldTab_QUDI.aspx" target="main">项目字段维护_1</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">&nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                            <a href="webform/Field/wfmFieldTab_QUDI.aspx" target="main">项目字段维护_2</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <a title='单击展开！' onclick='showthis("menu0102");'>&nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                    width='12' height='12'>项目对象管理2_顶2 </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table width="100%" border="0" id="menu0102" class="style2" style="display: none">
+                    <tr>
+                        <td align="left">&nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                            <a href="webform/Field/wfmFieldTab_QUDI.aspx" target="main">项目字段维护_3</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">&nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                            <a href="webform/Field/wfmFieldTab_QUDI.aspx" target="main">项目字段维护_4</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div align="left" class="style1">
+        <table width='94%' border='0' cellpadding='0' cellspacing='0' bordercolor='#2953c0'
+            id='Table7' class="style1">
+            <tbody>
+                <tr>
+                    <td width='100%' align='left'>
+                        <a title='单击展开！' onclick='showthis("menu7");'>&nbsp;<img src='../pic/Left_Nav_Arrow.gif'
+                            width='12' height='12'>参数设定 </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <table width="100%" border="0" id="menu7" class="style2" style="display: none">
+        <tr>
+            <td align="left">&nbsp;&nbsp;<img src="../pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                <a href="Account/wfmUserState_QUDI.aspx" target="mainform">状态编号管理</a>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">&nbsp;&nbsp;<img src="../pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                <a href="SystemSet/wfmLoadDataFromExcel.aspx" target="mainform">系统数据导入</a>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <a title='单击展开！' onclick='showthis("menu73");'>&nbsp; &nbsp;&nbsp;<img src="" width="12"
+                    height="12" border="0">
+                    参数第二层1</a>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <table width="100%" border="0" id="menu0703)" class="style2" style="display: none">
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <a title='单击展开！' onclick='showthis("menu74");'>&nbsp; &nbsp;&nbsp;<img src="" width="12"
+                    height="12" border="0">
+                    参数第二层2</a>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <table width="100%" border="0" id="menu0704)" class="style2" style="display: none">
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <a title='单击展开！' onclick='showthis("menu75");'>&nbsp; &nbsp;&nbsp;<img src="" width="12"
+                    height="12" border="0">
+                    参数第二层3</a>
+            </td>
+        </tr>
+        <tr>
+            <td align="left">
+                <table width="100%" border="0" id="menu0705)" class="style2" style="display: none">
+                </table>
+            </td>
+        </tr>
+    </table>
+</html>

@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetRoleIdLstByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleIdLstByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleIdLstByUserIdResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRoleNameLstByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleNameLstByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleNameLstByUserIdResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPotenceIdLstByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPotenceIdLstByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPotenceIdLstByUserIdResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPotenceNameLstByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPotenceNameLstByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPotenceNameLstByUserIdResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSymbolIdLstByPotenceId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSymbolIdLstByPotenceIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSymbolIdLstByPotenceIdResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSymbolNameLstByPotenceId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSymbolNameLstByPotenceIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSymbolNameLstByPotenceIdResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSymbolIdLstByPotenceName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSymbolIdLstByPotenceNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSymbolIdLstByPotenceNameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSymbolNameLstByPotenceName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSymbolNameLstByPotenceNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSymbolNameLstByPotenceNameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSymbolNameLstByPotenceName4CurrRoleId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSymbolNameLstByPotenceName4CurrRoleIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSymbolNameLstByPotenceName4CurrRoleIdResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSymbolNameLstByPotenceName4CurrRoleId2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSymbolNameLstByPotenceName4CurrRoleId2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSymbolNameLstByPotenceName4CurrRoleId2Result" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsHavePotenceName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsHavePotenceNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsHavePotenceNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsHavePotenceId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsHavePotenceIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsHavePotenceIdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQxPrjPotenceObjByPotenceName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQxPrjPotenceObjByPotenceNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQxPrjPotenceObjByPotenceNameResult" type="tns:clsQxPrjPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxPrjPotenceEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="QxPrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FuncModuleId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetQxPrjPotenceObjByPotenceName4CurrRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQxPrjPotenceObjByPotenceName4CurrRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQxPrjPotenceObjByPotenceName4CurrRoleResult" type="tns:clsQxPrjPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsHavePotenceNameAndSymbol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSymbolName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsHavePotenceNameAndSymbolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsHavePotenceNameAndSymbolResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsHavePotenceNameAndSymbol4CurrRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSymbolName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsHavePotenceNameAndSymbol4CurrRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsHavePotenceNameAndSymbol4CurrRoleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Change_QxUserPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNewPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOldPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Change_QxUserPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Change_QxUserPasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Change_QxUserPassword2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Change_QxUserPassword2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Change_QxUserPassword2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Users_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Users_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Users_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnterSchoolDateByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnterSchoolDateByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnterSchoolDateByUserIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnterSchoolYearByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnterSchoolYearByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnterSchoolYearByUserIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserNameByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserNameByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserNameByUserIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserRoleRelation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserRoleRelationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateUserRoleRelationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManager2IdByDepartmentId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDepartmentId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManager2IdByDepartmentIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetManager2IdByDepartmentIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetRoleIdLstByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleIdLstByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleIdLstByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleIdLstByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleNameLstByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleNameLstByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleNameLstByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleNameLstByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPotenceIdLstByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPotenceIdLstByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetPotenceIdLstByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPotenceIdLstByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPotenceNameLstByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPotenceNameLstByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetPotenceNameLstByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPotenceNameLstByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSymbolIdLstByPotenceIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSymbolIdLstByPotenceId" />
+  </wsdl:message>
+  <wsdl:message name="GetSymbolIdLstByPotenceIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSymbolIdLstByPotenceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSymbolNameLstByPotenceIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSymbolNameLstByPotenceId" />
+  </wsdl:message>
+  <wsdl:message name="GetSymbolNameLstByPotenceIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSymbolNameLstByPotenceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSymbolIdLstByPotenceNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSymbolIdLstByPotenceName" />
+  </wsdl:message>
+  <wsdl:message name="GetSymbolIdLstByPotenceNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSymbolIdLstByPotenceNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSymbolNameLstByPotenceNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSymbolNameLstByPotenceName" />
+  </wsdl:message>
+  <wsdl:message name="GetSymbolNameLstByPotenceNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSymbolNameLstByPotenceNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSymbolNameLstByPotenceName4CurrRoleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSymbolNameLstByPotenceName4CurrRoleId" />
+  </wsdl:message>
+  <wsdl:message name="GetSymbolNameLstByPotenceName4CurrRoleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSymbolNameLstByPotenceName4CurrRoleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSymbolNameLstByPotenceName4CurrRoleId2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetSymbolNameLstByPotenceName4CurrRoleId2" />
+  </wsdl:message>
+  <wsdl:message name="GetSymbolNameLstByPotenceName4CurrRoleId2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetSymbolNameLstByPotenceName4CurrRoleId2Response" />
+  </wsdl:message>
+  <wsdl:message name="IsHavePotenceNameSoapIn">
+    <wsdl:part name="parameters" element="tns:IsHavePotenceName" />
+  </wsdl:message>
+  <wsdl:message name="IsHavePotenceNameSoapOut">
+    <wsdl:part name="parameters" element="tns:IsHavePotenceNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsHavePotenceIdSoapIn">
+    <wsdl:part name="parameters" element="tns:IsHavePotenceId" />
+  </wsdl:message>
+  <wsdl:message name="IsHavePotenceIdSoapOut">
+    <wsdl:part name="parameters" element="tns:IsHavePotenceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQxPrjPotenceObjByPotenceNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQxPrjPotenceObjByPotenceName" />
+  </wsdl:message>
+  <wsdl:message name="GetQxPrjPotenceObjByPotenceNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQxPrjPotenceObjByPotenceNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQxPrjPotenceObjByPotenceName4CurrRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQxPrjPotenceObjByPotenceName4CurrRole" />
+  </wsdl:message>
+  <wsdl:message name="GetQxPrjPotenceObjByPotenceName4CurrRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQxPrjPotenceObjByPotenceName4CurrRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsHavePotenceNameAndSymbolSoapIn">
+    <wsdl:part name="parameters" element="tns:IsHavePotenceNameAndSymbol" />
+  </wsdl:message>
+  <wsdl:message name="IsHavePotenceNameAndSymbolSoapOut">
+    <wsdl:part name="parameters" element="tns:IsHavePotenceNameAndSymbolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsHavePotenceNameAndSymbol4CurrRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:IsHavePotenceNameAndSymbol4CurrRole" />
+  </wsdl:message>
+  <wsdl:message name="IsHavePotenceNameAndSymbol4CurrRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:IsHavePotenceNameAndSymbol4CurrRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="Change_QxUserPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:Change_QxUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="Change_QxUserPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:Change_QxUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="Change_QxUserPassword2SoapIn">
+    <wsdl:part name="parameters" element="tns:Change_QxUserPassword2" />
+  </wsdl:message>
+  <wsdl:message name="Change_QxUserPassword2SoapOut">
+    <wsdl:part name="parameters" element="tns:Change_QxUserPassword2Response" />
+  </wsdl:message>
+  <wsdl:message name="Users_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:Users_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="Users_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:Users_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnterSchoolDateByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnterSchoolDateByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetEnterSchoolDateByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnterSchoolDateByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnterSchoolYearByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnterSchoolYearByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetEnterSchoolYearByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnterSchoolYearByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNameByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserNameByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNameByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserNameByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserRoleRelationSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateUserRoleRelation" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserRoleRelationSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateUserRoleRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetManager2IdByDepartmentIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetManager2IdByDepartmentId" />
+  </wsdl:message>
+  <wsdl:message name="GetManager2IdByDepartmentIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetManager2IdByDepartmentIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QxUsersExServiceSoap">
+    <wsdl:operation name="GetRoleIdLstByUserId">
+      <wsdl:input message="tns:GetRoleIdLstByUserIdSoapIn" />
+      <wsdl:output message="tns:GetRoleIdLstByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleNameLstByUserId">
+      <wsdl:input message="tns:GetRoleNameLstByUserIdSoapIn" />
+      <wsdl:output message="tns:GetRoleNameLstByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPotenceIdLstByUserId">
+      <wsdl:input message="tns:GetPotenceIdLstByUserIdSoapIn" />
+      <wsdl:output message="tns:GetPotenceIdLstByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPotenceNameLstByUserId">
+      <wsdl:input message="tns:GetPotenceNameLstByUserIdSoapIn" />
+      <wsdl:output message="tns:GetPotenceNameLstByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolIdLstByPotenceId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">作者:潘以锋 功能:获取用户的有关某权限的标志ID列表 参数:strUserId(用户ID),strPotenceId(权限ID), strPrjId(工程ID) 返回值:标志名称列表,用List&lt;string&gt;表示</wsdl:documentation>
+      <wsdl:input message="tns:GetSymbolIdLstByPotenceIdSoapIn" />
+      <wsdl:output message="tns:GetSymbolIdLstByPotenceIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolNameLstByPotenceId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">作者:潘以锋 功能:获取用户的有关某权限的标志名称列表 参数:strUserId(用户ID),strPotenceId(权限ID), strPrjId(工程ID) 返回值:标志名称列表,用List&lt;string&gt;表示</wsdl:documentation>
+      <wsdl:input message="tns:GetSymbolNameLstByPotenceIdSoapIn" />
+      <wsdl:output message="tns:GetSymbolNameLstByPotenceIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolIdLstByPotenceName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">作者:潘以锋 功能:获取用户的有关某权限的标志ID列表 参数:strUserId(用户ID),strPotenceId(权限ID), strPrjId(工程ID) 返回值:标志名称列表,用List&lt;string&gt;表示</wsdl:documentation>
+      <wsdl:input message="tns:GetSymbolIdLstByPotenceNameSoapIn" />
+      <wsdl:output message="tns:GetSymbolIdLstByPotenceNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolNameLstByPotenceName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">作者:潘以锋 功能:获取用户的有关某权限的标志名称列表 参数:strUserId(用户ID),strPotenceId(权限ID), strPrjId(工程ID) 返回值:标志名称列表,用List&lt;string&gt;表示</wsdl:documentation>
+      <wsdl:input message="tns:GetSymbolNameLstByPotenceNameSoapIn" />
+      <wsdl:output message="tns:GetSymbolNameLstByPotenceNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolNameLstByPotenceName4CurrRoleId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">作者:潘以锋 功能:获取用户的有关某权限的标志名称列表 参数:strUserId(用户ID),strPotenceId(权限ID), strPrjId(工程ID),strRoleId(所给角色ID) 返回值:标志名称列表,用List&lt;string&gt;表示</wsdl:documentation>
+      <wsdl:input message="tns:GetSymbolNameLstByPotenceName4CurrRoleIdSoapIn" />
+      <wsdl:output message="tns:GetSymbolNameLstByPotenceName4CurrRoleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolNameLstByPotenceName4CurrRoleId2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">作者:潘以锋 功能:获取某角色的有关某权限的标志名称列表 参数:strPotenceId(权限ID), strPrjId(工程ID),strRoleId(所给角色ID) 返回值:标志名称列表,用List&lt;string&gt;表示</wsdl:documentation>
+      <wsdl:input message="tns:GetSymbolNameLstByPotenceName4CurrRoleId2SoapIn" />
+      <wsdl:output message="tns:GetSymbolNameLstByPotenceName4CurrRoleId2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsHavePotenceName">
+      <wsdl:input message="tns:IsHavePotenceNameSoapIn" />
+      <wsdl:output message="tns:IsHavePotenceNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsHavePotenceId">
+      <wsdl:input message="tns:IsHavePotenceIdSoapIn" />
+      <wsdl:output message="tns:IsHavePotenceIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQxPrjPotenceObjByPotenceName">
+      <wsdl:input message="tns:GetQxPrjPotenceObjByPotenceNameSoapIn" />
+      <wsdl:output message="tns:GetQxPrjPotenceObjByPotenceNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQxPrjPotenceObjByPotenceName4CurrRole">
+      <wsdl:input message="tns:GetQxPrjPotenceObjByPotenceName4CurrRoleSoapIn" />
+      <wsdl:output message="tns:GetQxPrjPotenceObjByPotenceName4CurrRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsHavePotenceNameAndSymbol">
+      <wsdl:input message="tns:IsHavePotenceNameAndSymbolSoapIn" />
+      <wsdl:output message="tns:IsHavePotenceNameAndSymbolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsHavePotenceNameAndSymbol4CurrRole">
+      <wsdl:input message="tns:IsHavePotenceNameAndSymbol4CurrRoleSoapIn" />
+      <wsdl:output message="tns:IsHavePotenceNameAndSymbol4CurrRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Change_QxUserPassword">
+      <wsdl:input message="tns:Change_QxUserPasswordSoapIn" />
+      <wsdl:output message="tns:Change_QxUserPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Change_QxUserPassword2">
+      <wsdl:input message="tns:Change_QxUserPassword2SoapIn" />
+      <wsdl:output message="tns:Change_QxUserPassword2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Users_DelRecord">
+      <wsdl:input message="tns:Users_DelRecordSoapIn" />
+      <wsdl:output message="tns:Users_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnterSchoolDateByUserId">
+      <wsdl:input message="tns:GetEnterSchoolDateByUserIdSoapIn" />
+      <wsdl:output message="tns:GetEnterSchoolDateByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnterSchoolYearByUserId">
+      <wsdl:input message="tns:GetEnterSchoolYearByUserIdSoapIn" />
+      <wsdl:output message="tns:GetEnterSchoolYearByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameByUserId">
+      <wsdl:input message="tns:GetUserNameByUserIdSoapIn" />
+      <wsdl:output message="tns:GetUserNameByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserRoleRelation">
+      <wsdl:input message="tns:CreateUserRoleRelationSoapIn" />
+      <wsdl:output message="tns:CreateUserRoleRelationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManager2IdByDepartmentId">
+      <wsdl:input message="tns:GetManager2IdByDepartmentIdSoapIn" />
+      <wsdl:output message="tns:GetManager2IdByDepartmentIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QxUsersExServiceSoap" type="tns:QxUsersExServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRoleIdLstByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetRoleIdLstByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleNameLstByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetRoleNameLstByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPotenceIdLstByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetPotenceIdLstByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPotenceNameLstByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetPotenceNameLstByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolIdLstByPotenceId">
+      <soap:operation soapAction="http://tempuri.org/GetSymbolIdLstByPotenceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolNameLstByPotenceId">
+      <soap:operation soapAction="http://tempuri.org/GetSymbolNameLstByPotenceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolIdLstByPotenceName">
+      <soap:operation soapAction="http://tempuri.org/GetSymbolIdLstByPotenceName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolNameLstByPotenceName">
+      <soap:operation soapAction="http://tempuri.org/GetSymbolNameLstByPotenceName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolNameLstByPotenceName4CurrRoleId">
+      <soap:operation soapAction="http://tempuri.org/GetSymbolNameLstByPotenceName4CurrRoleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolNameLstByPotenceName4CurrRoleId2">
+      <soap:operation soapAction="http://tempuri.org/GetSymbolNameLstByPotenceName4CurrRoleId2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsHavePotenceName">
+      <soap:operation soapAction="http://tempuri.org/IsHavePotenceName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsHavePotenceId">
+      <soap:operation soapAction="http://tempuri.org/IsHavePotenceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQxPrjPotenceObjByPotenceName">
+      <soap:operation soapAction="http://tempuri.org/GetQxPrjPotenceObjByPotenceName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQxPrjPotenceObjByPotenceName4CurrRole">
+      <soap:operation soapAction="http://tempuri.org/GetQxPrjPotenceObjByPotenceName4CurrRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsHavePotenceNameAndSymbol">
+      <soap:operation soapAction="http://tempuri.org/IsHavePotenceNameAndSymbol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsHavePotenceNameAndSymbol4CurrRole">
+      <soap:operation soapAction="http://tempuri.org/IsHavePotenceNameAndSymbol4CurrRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Change_QxUserPassword">
+      <soap:operation soapAction="http://tempuri.org/Change_QxUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Change_QxUserPassword2">
+      <soap:operation soapAction="http://tempuri.org/Change_QxUserPassword2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Users_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/Users_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnterSchoolDateByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetEnterSchoolDateByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnterSchoolYearByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetEnterSchoolYearByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetUserNameByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserRoleRelation">
+      <soap:operation soapAction="http://tempuri.org/CreateUserRoleRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManager2IdByDepartmentId">
+      <soap:operation soapAction="http://tempuri.org/GetManager2IdByDepartmentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QxUsersExServiceSoap12" type="tns:QxUsersExServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRoleIdLstByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetRoleIdLstByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleNameLstByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetRoleNameLstByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPotenceIdLstByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetPotenceIdLstByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPotenceNameLstByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetPotenceNameLstByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolIdLstByPotenceId">
+      <soap12:operation soapAction="http://tempuri.org/GetSymbolIdLstByPotenceId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolNameLstByPotenceId">
+      <soap12:operation soapAction="http://tempuri.org/GetSymbolNameLstByPotenceId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolIdLstByPotenceName">
+      <soap12:operation soapAction="http://tempuri.org/GetSymbolIdLstByPotenceName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolNameLstByPotenceName">
+      <soap12:operation soapAction="http://tempuri.org/GetSymbolNameLstByPotenceName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolNameLstByPotenceName4CurrRoleId">
+      <soap12:operation soapAction="http://tempuri.org/GetSymbolNameLstByPotenceName4CurrRoleId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSymbolNameLstByPotenceName4CurrRoleId2">
+      <soap12:operation soapAction="http://tempuri.org/GetSymbolNameLstByPotenceName4CurrRoleId2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsHavePotenceName">
+      <soap12:operation soapAction="http://tempuri.org/IsHavePotenceName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsHavePotenceId">
+      <soap12:operation soapAction="http://tempuri.org/IsHavePotenceId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQxPrjPotenceObjByPotenceName">
+      <soap12:operation soapAction="http://tempuri.org/GetQxPrjPotenceObjByPotenceName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQxPrjPotenceObjByPotenceName4CurrRole">
+      <soap12:operation soapAction="http://tempuri.org/GetQxPrjPotenceObjByPotenceName4CurrRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsHavePotenceNameAndSymbol">
+      <soap12:operation soapAction="http://tempuri.org/IsHavePotenceNameAndSymbol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsHavePotenceNameAndSymbol4CurrRole">
+      <soap12:operation soapAction="http://tempuri.org/IsHavePotenceNameAndSymbol4CurrRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Change_QxUserPassword">
+      <soap12:operation soapAction="http://tempuri.org/Change_QxUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Change_QxUserPassword2">
+      <soap12:operation soapAction="http://tempuri.org/Change_QxUserPassword2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Users_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/Users_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnterSchoolDateByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetEnterSchoolDateByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnterSchoolYearByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetEnterSchoolYearByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNameByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetUserNameByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserRoleRelation">
+      <soap12:operation soapAction="http://tempuri.org/CreateUserRoleRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManager2IdByDepartmentId">
+      <soap12:operation soapAction="http://tempuri.org/GetManager2IdByDepartmentId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QxUsersExService">
+    <wsdl:port name="QxUsersExServiceSoap" binding="tns:QxUsersExServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/QxUsersExService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QxUsersExServiceSoap12" binding="tns:QxUsersExServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/QxUsersExService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

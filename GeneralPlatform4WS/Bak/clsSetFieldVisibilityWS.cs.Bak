@@ -1,0 +1,643 @@
+﻿
+//类名:clsSetFieldVisibilityWS
+ ///----------------------
+ ///生成代码版本:2017.01.19.1
+ ///生成日期:2017/01/27
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:系统设置
+ ///模块英文名:SystemSet
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferenceSetFieldVisibility;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// 设置字段可视性(SetFieldVisibility)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsSetFieldVisibilityWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsSetFieldVisibilityEN> arrSetFieldVisibilityObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static SetFieldVisibilityServiceSoapClient objSetFieldVisibilityServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static SetFieldVisibilityServiceSoapClient GetSetFieldVisibilityServiceSoapClient()
+{
+if (objSetFieldVisibilityServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "SetFieldVisibilityServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/SetFieldVisibilityService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/SetFieldVisibilityService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new SetFieldVisibilityServiceSoapClient(binding, address);
+}
+else
+{
+return objSetFieldVisibilityServiceSoapClient;
+}
+}
+
+ public clsSetFieldVisibilityWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GenBindListView)
+ /// </summary>
+public static int BindLv_SetFieldVisibility(System.Windows.Forms.ListView lvSetFieldVisibility, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lviSetFieldVisibility; 
+ArrayList arrSetFieldVisibilityObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrSetFieldVisibilityObjList = new clsSetFieldVisibilityBL.GetSetFieldVisibilityObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvSetFieldVisibility.Items.Clear();//清除原来所有Item
+lvSetFieldVisibility.Columns.Clear();//清除原来所有列头信息
+lvSetFieldVisibility.Columns.Add("流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvSetFieldVisibility.Columns.Add("学校流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvSetFieldVisibility.Columns.Add("界面名称", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvSetFieldVisibility.Columns.Add("字段名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvSetFieldVisibility.Columns.Add("控件类型", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvSetFieldVisibility.Columns.Add("IsVisible", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvSetFieldVisibility.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvSetFieldVisibility.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsSetFieldVisibilityEN objSetFieldVisibilityEN in arrSetFieldVisibilityObjList)
+{
+lviSetFieldVisibility = new System.Windows.Forms.ListViewItem();
+lviSetFieldVisibility.Tag = objSetFieldVisibilityEN.mId;
+lviSetFieldVisibility.Text = objSetFieldVisibilityEN.mId.ToString();
+lviSetFieldVisibility.SubItems.Add(objSetFieldVisibilityEN.ViewName);
+lviSetFieldVisibility.SubItems.Add(objSetFieldVisibilityEN.FieldName);
+lviSetFieldVisibility.SubItems.Add(objSetFieldVisibilityEN.CtrlType);
+lviSetFieldVisibility.SubItems.Add(objSetFieldVisibilityEN.IsVisible.ToString());
+lviSetFieldVisibility.SubItems.Add(objSetFieldVisibilityEN.Memo);
+lvSetFieldVisibility.Items.Add(lviSetFieldVisibility);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrSetFieldVisibilityObjList.Count;
+}
+
+ /// <summary>
+ /// 检查对象字段值是否合法,1)检查是否可空;2)检查字段值长度是否超长,如果出错就抛出错误.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4WS_CheckPropertyNew)
+ /// </summary>
+public void CheckPropertyNew(clsSetFieldVisibilityEN objSetFieldVisibilityEN)
+{
+if (!Object.Equals(null, objSetFieldVisibilityEN.id_School) && getStrLen(objSetFieldVisibilityEN.id_School) > 4)
+{
+ throw new Exception("字段[学校流水号]的长度不能超过4!");
+}
+if (!Object.Equals(null, objSetFieldVisibilityEN.ViewName) && getStrLen(objSetFieldVisibilityEN.ViewName) > 100)
+{
+ throw new Exception("字段[界面名称]的长度不能超过100!");
+}
+if (!Object.Equals(null, objSetFieldVisibilityEN.FieldName) && getStrLen(objSetFieldVisibilityEN.FieldName) > 50)
+{
+ throw new Exception("字段[字段名]的长度不能超过50!");
+}
+if (!Object.Equals(null, objSetFieldVisibilityEN.CtrlType) && getStrLen(objSetFieldVisibilityEN.CtrlType) > 50)
+{
+ throw new Exception("字段[控件类型]的长度不能超过50!");
+}
+if (!Object.Equals(null, objSetFieldVisibilityEN.Memo) && getStrLen(objSetFieldVisibilityEN.Memo) > 1000)
+{
+ throw new Exception("字段[备注]的长度不能超过1000!");
+}
+ objSetFieldVisibilityEN.IsCheckProperty = true;
+ }
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_SetFieldVisibilityWs(string strWhereCond)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objSetFieldVisibilityService.SetFieldVisibility_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_GetDataSet", "clsSetFieldVisibilityWS:GetDataTable_SetFieldVisibilityWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_SetFieldVisibilityByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objSetFieldVisibilityService.SetFieldVisibility_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_GetDataSetByRange", "clsSetFieldVisibilityWS:GetDataTable_SetFieldVisibilityByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetDataTable_SetFieldVisibilityVWs(string strWhereCond)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objSetFieldVisibilityService.SetFieldVisibility_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_GetDataSetV", "clsSetFieldVisibilityWS:GetDataTable_SetFieldVisibilityVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetSetFieldVisibilityVWs(string strWhereCond)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objSetFieldVisibilityService.SetFieldVisibility_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_GetDataSetV", "clsSetFieldVisibilityWS:GetDataTable_SetFieldVisibilityVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabV2ByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_SetFieldVisibilityVByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objSetFieldVisibilityService.SetFieldVisibility_GetDataSetVByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_GetDataSetVByRange", "clsSetFieldVisibilityWS:GetDataTable_SetFieldVisibilityVByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objSetFieldVisibilityEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetSetFieldVisibilityWs(ref clsSetFieldVisibilityEN objSetFieldVisibilityEN)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+bool bolResult = objSetFieldVisibilityService.SetFieldVisibility_GetSetFieldVisibility(ref objSetFieldVisibilityEN);
+return bolResult;
+}
+
+public static clsSetFieldVisibilityEN GetSetFieldVisibilityBymIdWs(long lngmId)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+clsSetFieldVisibilityEN objSetFieldVisibilityEN = objSetFieldVisibilityService.SetFieldVisibility_GetSetFieldVisibilityBymId(lngmId);
+return objSetFieldVisibilityEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static long GetFirstID_S(string strWhereCond)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+try
+{
+long lngmId = objSetFieldVisibilityService.SetFieldVisibility_GetFirstID_S(strWhereCond);
+return lngmId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_GetFirstID_S", "clsSetFieldVisibilityWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsSetFieldVisibilityEN GetFirstSetFieldVisibility_S(string strWhereCond)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+try
+{
+clsSetFieldVisibilityEN objSetFieldVisibilityEN = objSetFieldVisibilityService.SetFieldVisibility_GetFirstSetFieldVisibility_S(strWhereCond);
+return objSetFieldVisibilityEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_GetFirstSetFieldVisibility_S", "clsSetFieldVisibilityWS:GetFirstSetFieldVisibility_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "lngmId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsSetFieldVisibilityEN GetSetFieldVisibilityObjBymId_Cache(long lngmId)
+{
+string strWhereCond = string.Format("1 = 1 order by mId");
+if (arrSetFieldVisibilityObjLst_Cache == null)
+{
+arrSetFieldVisibilityObjLst_Cache = clsSetFieldVisibilityWS.GetSetFieldVisibilityObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrSetFieldVisibilityObjLst_Cache.Count - 1;
+int intMid = 0;
+clsSetFieldVisibilityEN objSetFieldVisibilityEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objSetFieldVisibilityEN = arrSetFieldVisibilityObjLst_Cache[intMid];
+if (objSetFieldVisibilityEN.mId == lngmId)
+{
+intFindFailCount = 0;
+return objSetFieldVisibilityEN;
+}
+else if (objSetFieldVisibilityEN.mId.CompareTo(lngmId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrSetFieldVisibilityObjLst_Cache = null;
+if (intFindFailCount == 1) return GetSetFieldVisibilityObjBymId_Cache(lngmId);
+string strErrMsgForGetObjById = string.Format("在SetFieldVisibility对象缓存列表中,找不到记录[mId = {0}][intFindFailCount = {1}](函数:GetSetFieldVisibilityObjBymId_Cache)", lngmId, intFindFailCount);
+if (objSetFieldVisibilityEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objSetFieldVisibilityEN.mId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsSetFieldVisibilityBL", "GetSetFieldVisibilityObjBymId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsSetFieldVisibilityEN> GetSetFieldVisibilityObjList(string strWhereCond)
+{
+ List<clsSetFieldVisibilityEN> arrObjList = new List<clsSetFieldVisibilityEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_SetFieldVisibilityWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsSetFieldVisibilityEN objSetFieldVisibilityEN = new clsSetFieldVisibilityEN();
+objSetFieldVisibilityEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objSetFieldVisibilityEN.id_School = objRow["id_School"].ToString().Trim(); //学校流水号
+objSetFieldVisibilityEN.ViewName = objRow["ViewName"].ToString().Trim(); //界面名称
+objSetFieldVisibilityEN.FieldName = objRow["FieldName"].ToString().Trim(); //字段名
+objSetFieldVisibilityEN.CtrlType = objRow["CtrlType"].ToString().Trim(); //控件类型
+objSetFieldVisibilityEN.IsVisible = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsVisible"].ToString().Trim()); //IsVisible
+objSetFieldVisibilityEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objSetFieldVisibilityEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsSetFieldVisibilityEN> GetSetFieldVisibilityObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsSetFieldVisibilityEN> arrObjList = new List<clsSetFieldVisibilityEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_SetFieldVisibilityByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsSetFieldVisibilityEN objSetFieldVisibilityEN = new clsSetFieldVisibilityEN();
+objSetFieldVisibilityEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objSetFieldVisibilityEN.id_School = objRow["id_School"].ToString().Trim(); //学校流水号
+objSetFieldVisibilityEN.ViewName = objRow["ViewName"].ToString().Trim(); //界面名称
+objSetFieldVisibilityEN.FieldName = objRow["FieldName"].ToString().Trim(); //字段名
+objSetFieldVisibilityEN.CtrlType = objRow["CtrlType"].ToString().Trim(); //控件类型
+objSetFieldVisibilityEN.IsVisible = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsVisible"].ToString().Trim()); //IsVisible
+objSetFieldVisibilityEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objSetFieldVisibilityEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool DelRecordWs(long lngmId)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+try
+{
+bool bolResult = objSetFieldVisibilityService.SetFieldVisibility_DelRecord(lngmId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_DelRecord", "clsSetFieldVisibilityWS:DelRecordWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool DelSetFieldVisibilitysWs(List<string> arrmId)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+try
+{
+string[] slngmId = (string[])(arrmId.ToArray());
+bool bolResult = objSetFieldVisibilityService.SetFieldVisibility_DelSetFieldVisibilitys(slngmId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_DelSetFieldVisibilitys", "clsSetFieldVisibilityWS:DelSetFieldVisibilitysWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static int DelSetFieldVisibilitysByCondWs(string strWhereCond)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+try
+{
+int intRecNum = objSetFieldVisibilityService.SetFieldVisibility_DelSetFieldVisibilitysByCond(strWhereCond);
+return intRecNum;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_DelSetFieldVisibilitysByCond", "clsSetFieldVisibilityWS:DelSetFieldVisibilitysByCondWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool AddNewRecordBySql2Ws(clsSetFieldVisibilityEN objSetFieldVisibilityEN)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+try
+{
+bool bolResult = objSetFieldVisibilityService.SetFieldVisibility_AddNewRecordBySql2(objSetFieldVisibilityEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_AddNewRecordBySql2", "clsSetFieldVisibilityWS:AddNewRecordBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 把表对象添加到数据库中,并且返回该记录的关键字
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_AddNewRecordBySql2WithReturnKey)
+ /// </summary>
+ /// <param name = "objSetFieldVisibilityEN">需要添加的表对象</param>
+ /// <returns>返回新添加记录的关键字</returns>
+public static string AddNewRecordBySql2WithReturnKey(clsSetFieldVisibilityEN objSetFieldVisibilityEN)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+try
+{
+string strKey = objSetFieldVisibilityService.SetFieldVisibility_AddNewRecordBySql2WithReturnKey(objSetFieldVisibilityEN);
+return strKey;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_AddNewRecordBySql2WithReturnKey", "clsSetFieldVisibilityWS:AddNewRecordBySql2WithReturnKey", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool UpdateBySql2Ws(clsSetFieldVisibilityEN objSetFieldVisibilityEN)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+try
+{
+bool bolResult = objSetFieldVisibilityService.SetFieldVisibility_UpdateBySql2(objSetFieldVisibilityEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_UpdateBySql2", "clsSetFieldVisibilityWS:UpdateBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_UpdateBySqlWithCondition)
+ /// </summary>
+ /// <param name = "objSetFieldVisibilityEN">需要修改的对象</param>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static bool UpdateBySqlWithCondition(clsSetFieldVisibilityEN objSetFieldVisibilityEN, string strWhereCond)
+{
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+try
+{
+bool bolResult = objSetFieldVisibilityService.SetFieldVisibility_UpdateBySqlWithCondition(objSetFieldVisibilityEN, strWhereCond);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "SetFieldVisibility_UpdateBySqlWithCondition", "clsSetFieldVisibilityWS:UpdateBySqlWithCondition", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+bool bolIsExist = objSetFieldVisibilityService.SetFieldVisibility_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(long lngmId)
+{
+//检测记录是否存在
+SetFieldVisibilityServiceSoapClient objSetFieldVisibilityService = GetSetFieldVisibilityServiceSoapClient();
+bool bolIsExist = objSetFieldVisibilityService.SetFieldVisibility_IsExist(lngmId);
+return bolIsExist;
+}
+
+
+
+ /// <summary>
+ /// 获取字符串长度,其中汉字为2个字节,英文为1个字节
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GengetStrLen)
+ /// </summary>
+ /// <param name = "strTemp">给定的原字符串</param>
+ /// <returns>返回字符串长度</returns>
+public static int getStrLen(string strTemp)
+{
+int len ;
+byte[] sarr = System.Text.Encoding.Default.GetBytes(strTemp);
+len = sarr.Length;//will output as 3+3*2 = 9
+return len;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/SetFieldVisibilityService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/SetFieldVisibilityService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

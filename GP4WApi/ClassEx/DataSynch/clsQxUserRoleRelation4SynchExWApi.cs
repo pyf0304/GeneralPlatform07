@@ -1,0 +1,99 @@
+﻿
+/*-- -- -- -- -- -- -- -- -- -- --
+类名:clsQxUserRoleRelation4SynchExWApi
+表名:QxUserRoleRelation4Synch(00140092)
+生成代码版本:2019.03.22.1
+生成日期:2019/03/23 06:56:29
+生成者:
+生成服务器IP:101.251.68.133
+工程名称:统一平台
+工程ID:0014
+相关数据库:101.251.68.133,9433EduHigh_Jsie
+PrjDataBaseId:0170
+模块中文名:数据同步
+模块英文名:DataSynch
+框架-层名:WebApi访问扩展层(WA_AccessEx)
+编程语言:CSharp
+注意:1、需要数据底层(PubDataBase.dll)的版本:2019.03.07.01
+       2、需要公共函数层(TzPubFunction.dll)的版本:2017.12.21.01
+== == == == == == == == == == == == 
+*/
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text;
+using System.Web;
+using System.Collections;
+using com.taishsoft.common;
+using System.ServiceModel;
+using GeneralPlatform.Entity;
+
+using System.Collections.Generic;
+using com.taishsoft.json;
+using Newtonsoft.Json.Linq;
+using GP4WApi;
+
+namespace GP4WApi
+{
+    /// <summary>
+    /// 用户角色关系4同步(QxUserRoleRelation4Synch)
+    /// (AutoGCLib.WA_AccessEx4CSharp:GeneCode)
+    /// </summary>
+    public class clsQxUserRoleRelation4SynchExWApi
+    {
+        private static string mstrApiControllerName = "QxUserRoleRelation4SynchExApi";
+        //private static string mstrDir = "0";
+        /// <summary>
+        /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+        /// (AutoGCLib.WA_AccessEx4CSharp:GeneCode)
+        /// </summary>
+        public static List<clsQxUserRoleRelation4SynchEN> arrQxUserRoleRelation4SynchObjLst_Cache = null;
+        /// <summary>
+        /// 从缓存中查找失败的次数
+        /// (AutoGCLib.WA_AccessEx4CSharp:GeneCode)
+        /// </summary>
+        protected static int intFindFailCount = 0;
+
+
+        /// <summary>
+        /// 添加记录
+        /// (AutoGCLib.WA_Access4CSharp:Gen_4WA_AddNewRecord)
+        /// </summary>
+        /// <returns>是否成功?</returns>
+        public static bool AddNewRecordEx(clsQxUserRoleRelation4SynchEN objQxUserRoleRelation4SynchEN)
+        {
+            string strAction = "AddNewRecordEx";
+            string strErrMsg = string.Empty;
+            string strResult = "";
+            Dictionary<string, string> dictParam = new Dictionary<string, string>();
+            try
+            {
+                string strJson = clsJSON.GetJsonFromObj<clsQxUserRoleRelation4SynchEN>(objQxUserRoleRelation4SynchEN);
+                if (clsPubFun4WApi.Post(mstrApiControllerName, strAction, dictParam, strJson, out strResult, out strErrMsg) == true)
+                {
+                    //bool bolResult = bool1.Parse(strResult);
+                    //return bolResult;
+                    JObject jobjReturn = JObject.Parse(strResult);
+                    if ((int)jobjReturn["errorId"] == 0)
+                    {
+                        var varResult = (bool)jobjReturn["returnBool"];
+                        return varResult;
+                    }
+                    else
+                    {
+                        string strMsg = string.Format("{0}", jobjReturn["errorMsg"]);
+                        throw new Exception(strMsg);
+                    }
+                }
+                else return false;
+            }
+            catch (Exception objException)
+            {
+                string strMsg = string.Format("执行WebApi功能出错, {0}.(from {1}). WebApi地址:{2}).",
+                     HttpUtility.UrlDecode(objException.Message), clsStackTrace.GetCurrClassFunction(),
+               clsPubFun4WApi.GetWebApiUrl(mstrApiControllerName, strAction));
+                throw new Exception(strMsg);
+            }
+        }
+    }
+}

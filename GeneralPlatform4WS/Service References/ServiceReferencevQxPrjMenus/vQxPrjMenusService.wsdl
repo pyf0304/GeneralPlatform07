@@ -1,0 +1,1127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="vQxPrjMenus_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjMenus_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetTopDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetTopDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjMenus_GetTopDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetDataSetByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetDataSetByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjMenus_GetDataSetByRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetvQxPrjMenus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjMenusEN" type="tns:clsvQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsvQxPrjMenusEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="MenuId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="QxPrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpMenuId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LinkFile" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="qsParameters" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImgFile" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrderNum" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsLeafNode" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuSetId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuSetName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuTitle" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PageDispModeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PageDispModeName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="InUse" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuControlName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ApplicationTypeId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="ApplicationTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpMenuName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SubMenusNum" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RoleNum" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sf_UpdFldSetStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checked" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="vQxPrjMenus_GetvQxPrjMenusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjMenus_GetvQxPrjMenusResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjMenusEN" type="tns:clsvQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetObjByMenuId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMenuId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetObjByMenuIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjMenus_GetObjByMenuIdResult" type="tns:clsvQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetvQxPrjMenusV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjMenusEN" type="tns:clsvQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetvQxPrjMenusVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjMenus_GetvQxPrjMenusVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjMenusEN" type="tns:clsvQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjMenus_GetObjLstResult" type="tns:ArrayOfClsvQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsvQxPrjMenusEN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsvQxPrjMenusEN" nillable="true" type="tns:clsvQxPrjMenusEN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjLstByRangeResult" type="tns:ArrayOfClsvQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetTopObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetTopObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjMenus_GetTopObjLstResult" type="tns:ArrayOfClsvQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetFirstID_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetFirstID_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjMenus_GetFirstID_SResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetFirstObj_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_GetFirstObj_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjMenus_GetFirstObj_SResult" type="tns:clsvQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByMenuId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMenuId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByMenuIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjByMenuIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstJSONObjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intPageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByPagerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_funGetRecCountByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_funGetRecCountByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjMenus_funGetRecCountByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjMenus_IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMenuId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjMenus_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjMenusEN" type="tns:clsvQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsvQxPrjMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMenuId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjMenus_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_SerializeObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_SerializeObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjMenus_SerializeObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_SerializeTopObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjMenus_SerializeTopObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjMenus_SerializeTopObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="vQxPrjMenus_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetTopDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetTopDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetTopDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetTopDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetDataSetByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetDataSetByRange" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetDataSetByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetDataSetByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetvQxPrjMenusSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetvQxPrjMenus" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetvQxPrjMenusSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetvQxPrjMenusResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetObjByMenuIdSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetObjByMenuId" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetObjByMenuIdSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetObjByMenuIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetvQxPrjMenusVSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetvQxPrjMenusV" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetvQxPrjMenusVSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetvQxPrjMenusVResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetObjLst" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetTopObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetTopObjLst" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetTopObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetTopObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetFirstID_SSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetFirstID_S" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetFirstID_SSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetFirstID_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetFirstObj_SSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetFirstObj_S" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_GetFirstObj_SSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_GetFirstObj_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByMenuIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByMenuId" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByMenuIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByMenuIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObj" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPager" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_funGetRecCountByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_funGetRecCountByCond" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_funGetRecCountByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_funGetRecCountByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_SerializeObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_SerializeObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_SerializeObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_SerializeObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_SerializeTopObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_SerializeTopObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjMenus_SerializeTopObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjMenus_SerializeTopObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="vQxPrjMenusServiceSoap">
+    <wsdl:operation name="vQxPrjMenus_GetDataSet">
+      <wsdl:input message="tns:vQxPrjMenus_GetDataSetSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetTopDataSet">
+      <wsdl:input message="tns:vQxPrjMenus_GetTopDataSetSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_GetTopDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetDataSetByRange">
+      <wsdl:input message="tns:vQxPrjMenus_GetDataSetByRangeSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_GetDataSetByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetvQxPrjMenus">
+      <wsdl:input message="tns:vQxPrjMenus_GetvQxPrjMenusSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_GetvQxPrjMenusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetObjByMenuId">
+      <wsdl:input message="tns:vQxPrjMenus_GetObjByMenuIdSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_GetObjByMenuIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetvQxPrjMenusV">
+      <wsdl:input message="tns:vQxPrjMenus_GetvQxPrjMenusVSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_GetvQxPrjMenusVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetObjLst">
+      <wsdl:input message="tns:vQxPrjMenus_GetObjLstSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_GetObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <wsdl:input message="tns:GetObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetTopObjLst">
+      <wsdl:input message="tns:vQxPrjMenus_GetTopObjLstSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_GetTopObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetFirstID_S">
+      <wsdl:input message="tns:vQxPrjMenus_GetFirstID_SSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_GetFirstID_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetFirstObj_S">
+      <wsdl:input message="tns:vQxPrjMenus_GetFirstObj_SSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_GetFirstObj_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByMenuId">
+      <wsdl:input message="tns:GetJSONObjByMenuIdSoapIn" />
+      <wsdl:output message="tns:GetJSONObjByMenuIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <wsdl:input message="tns:GetFirstJSONObjSoapIn" />
+      <wsdl:output message="tns:GetFirstJSONObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <wsdl:input message="tns:GetJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <wsdl:input message="tns:GetTopJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetTopJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <wsdl:input message="tns:GetJSONObjLstByPagerSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByPagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <wsdl:input message="tns:GetJSONObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_funGetRecCountByCond">
+      <wsdl:input message="tns:vQxPrjMenus_funGetRecCountByCondSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_funGetRecCountByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_IsExistRecord">
+      <wsdl:input message="tns:vQxPrjMenus_IsExistRecordSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_IsExistRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_IsExist">
+      <wsdl:input message="tns:vQxPrjMenus_IsExistSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_SerializeObjToXMLStr">
+      <wsdl:input message="tns:vQxPrjMenus_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_SerializeObjLstToXMLStr">
+      <wsdl:input message="tns:vQxPrjMenus_SerializeObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_SerializeObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_SerializeTopObjLstToXMLStr">
+      <wsdl:input message="tns:vQxPrjMenus_SerializeTopObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxPrjMenus_SerializeTopObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="vQxPrjMenusServiceSoap" type="tns:vQxPrjMenusServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxPrjMenus_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetTopDataSet">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetDataSetByRange">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetvQxPrjMenus">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_GetvQxPrjMenus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetObjByMenuId">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_GetObjByMenuId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetvQxPrjMenusV">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_GetvQxPrjMenusV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetObjLst">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetTopObjLst">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetFirstID_S">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetFirstObj_S">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByMenuId">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjByMenuId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_funGetRecCountByCond">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_IsExist">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_SerializeObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_SerializeTopObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjMenus_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vQxPrjMenusServiceSoap12" type="tns:vQxPrjMenusServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxPrjMenus_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetTopDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetDataSetByRange">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetvQxPrjMenus">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_GetvQxPrjMenus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetObjByMenuId">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_GetObjByMenuId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetvQxPrjMenusV">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_GetvQxPrjMenusV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetObjLst">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetTopObjLst">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetFirstID_S">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_GetFirstObj_S">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByMenuId">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjByMenuId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_funGetRecCountByCond">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_SerializeObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjMenus_SerializeTopObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjMenus_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="vQxPrjMenusService">
+    <wsdl:port name="vQxPrjMenusServiceSoap" binding="tns:vQxPrjMenusServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/MenuManage/vQxPrjMenusService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vQxPrjMenusServiceSoap12" binding="tns:vQxPrjMenusServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/MenuManage/vQxPrjMenusService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

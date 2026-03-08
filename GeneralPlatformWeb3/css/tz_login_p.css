@@ -1,0 +1,65 @@
+﻿body
+{
+}
+
+
+.Login
+{
+	background-image: url(../images/Login.gif);
+	width: 60px;
+	height: 23px;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	background-color: transparent;
+	cursor: pointer;
+	border-bottom-style: none;
+}
+
+.Login4Visitor
+{
+	background-image: url(../images/Login4Visitor.gif);
+	width: 70px;
+	height: 23px;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	background-color: transparent;
+	cursor: pointer;
+	border-bottom-style: none;
+}
+
+
+
+.teachplanItem
+{
+	color: #b66d39;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.currentIndex
+{
+	color: #e77427;
+	font-size: 12px;
+}
+
+.Welcome
+{
+	margin: 8px;
+	color: #3d80b3;
+	font-size: 13px;
+}
+
+.mapHref
+{
+	color: #976a4c;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.login-in-ul li
+{
+	margin: 3px;
+	z-index: 10;
+}

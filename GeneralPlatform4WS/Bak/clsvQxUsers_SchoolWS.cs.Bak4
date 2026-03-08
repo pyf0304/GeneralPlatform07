@@ -1,0 +1,476 @@
+﻿
+//类名:clsvQxUsers_SchoolWS
+ ///----------------------
+ ///生成代码版本:2017.01.19.1
+ ///生成日期:2017/02/05
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:用户管理
+ ///模块英文名:UserManage
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferencevQxUsers_School;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// vUsers_School(vQxUsers_School)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsvQxUsers_SchoolWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsvQxUsers_SchoolEN> arrvQxUsers_SchoolObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static vQxUsers_SchoolServiceSoapClient objvQxUsers_SchoolServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static vQxUsers_SchoolServiceSoapClient GetvQxUsers_SchoolServiceSoapClient()
+{
+if (objvQxUsers_SchoolServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "vQxUsers_SchoolServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/vQxUsers_SchoolService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/vQxUsers_SchoolService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new vQxUsers_SchoolServiceSoapClient(binding, address);
+}
+else
+{
+return objvQxUsers_SchoolServiceSoapClient;
+}
+}
+
+ public clsvQxUsers_SchoolWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_BindListView)
+ /// </summary>
+public static int BindLv_vQxUsers_School(System.Windows.Forms.ListView lvvQxUsers_School, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lvivQxUsers_School; 
+List<clsvQxUsers_SchoolEN> arrvQxUsers_SchoolObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrvQxUsers_SchoolObjList = GetvQxUsers_SchoolObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvvQxUsers_School.Items.Clear();//清除原来所有Item
+lvvQxUsers_School.Columns.Clear();//清除原来所有列头信息
+lvvQxUsers_School.Columns.Add("用户ID", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("用户名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("部门Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("部门名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("所属部门号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("名称缩写", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("上级部门", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("部门类型ID", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("部门类型名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("用户状态Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("用户状态名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("有效日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("身份编号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("身份描述", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("CardNo", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("StuIdTeacherId", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("年级流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("年级代号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("年级名称", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("进校日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("是否毕业", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("开始年月", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("结束年月", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("Card_State", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("IsLeaved", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("修改日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("修改用户", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUsers_School.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsvQxUsers_SchoolEN objvQxUsers_SchoolEN in arrvQxUsers_SchoolObjList)
+{
+lvivQxUsers_School = new System.Windows.Forms.ListViewItem();
+lvivQxUsers_School.Tag = objvQxUsers_SchoolEN.UserId;
+lvivQxUsers_School.Text = objvQxUsers_SchoolEN.UserId.ToString();
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.UserName);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.DepartmentId);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.DepartmentName);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.UpDepartmentId);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.DepartmentAbbrName);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.UpDepartmentName);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.DepartmentTypeId);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.DepartmentTypeName);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.UserStateId);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.UserStateName);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.EffectiveDate);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.IdentityID);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.IdentityDesc);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.CardNo);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.StuIdTeacherId);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.id_GradeBase);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.GradeBaseID);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.GradeBaseName);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.EnterSchoolDate);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.IsOffed.ToString());
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.BeginYearMonth);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.EndYearMonth);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.Card_State);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.IsLeaved.ToString());
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.UpdDate);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.UpdUser);
+lvivQxUsers_School.SubItems.Add(objvQxUsers_SchoolEN.Memo);
+lvvQxUsers_School.Items.Add(lvivQxUsers_School);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrvQxUsers_SchoolObjList.Count;
+}
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_vQxUsers_SchoolWs(string strWhereCond)
+{
+vQxUsers_SchoolServiceSoapClient objvQxUsers_SchoolService = GetvQxUsers_SchoolServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objvQxUsers_SchoolService.vQxUsers_School_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxUsers_School_GetDataSet", "clsvQxUsers_SchoolWS:GetDataTable_vQxUsers_SchoolWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_vQxUsers_SchoolByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+vQxUsers_SchoolServiceSoapClient objvQxUsers_SchoolService = GetvQxUsers_SchoolServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objvQxUsers_SchoolService.vQxUsers_School_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxUsers_School_GetDataSetByRange", "clsvQxUsers_SchoolWS:GetDataTable_vQxUsers_SchoolByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objvQxUsers_SchoolEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetvQxUsers_SchoolWs(ref clsvQxUsers_SchoolEN objvQxUsers_SchoolEN)
+{
+vQxUsers_SchoolServiceSoapClient objvQxUsers_SchoolService = GetvQxUsers_SchoolServiceSoapClient();
+bool bolResult = objvQxUsers_SchoolService.vQxUsers_School_GetvQxUsers_School(ref objvQxUsers_SchoolEN);
+return bolResult;
+}
+
+public static clsvQxUsers_SchoolEN GetvQxUsers_SchoolByUserIdWs(string strUserId)
+{
+vQxUsers_SchoolServiceSoapClient objvQxUsers_SchoolService = GetvQxUsers_SchoolServiceSoapClient();
+clsvQxUsers_SchoolEN objvQxUsers_SchoolEN = objvQxUsers_SchoolService.vQxUsers_School_GetvQxUsers_SchoolByUserId(strUserId);
+return objvQxUsers_SchoolEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static string GetFirstID_S(string strWhereCond)
+{
+vQxUsers_SchoolServiceSoapClient objvQxUsers_SchoolService = GetvQxUsers_SchoolServiceSoapClient();
+try
+{
+string strUserId = objvQxUsers_SchoolService.vQxUsers_School_GetFirstID_S(strWhereCond);
+return strUserId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxUsers_School_GetFirstID_S", "clsvQxUsers_SchoolWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsvQxUsers_SchoolEN GetFirstvQxUsers_School_S(string strWhereCond)
+{
+vQxUsers_SchoolServiceSoapClient objvQxUsers_SchoolService = GetvQxUsers_SchoolServiceSoapClient();
+try
+{
+clsvQxUsers_SchoolEN objvQxUsers_SchoolEN = objvQxUsers_SchoolService.vQxUsers_School_GetFirstvQxUsers_School_S(strWhereCond);
+return objvQxUsers_SchoolEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxUsers_School_GetFirstvQxUsers_School_S", "clsvQxUsers_SchoolWS:GetFirstvQxUsers_School_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "strUserId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsvQxUsers_SchoolEN GetvQxUsers_SchoolObjByUserId_Cache(string strUserId)
+{
+if (string.IsNullOrEmpty(strUserId) == true) return null;
+string strWhereCond = string.Format("1 = 1 order by UserId");
+if (arrvQxUsers_SchoolObjLst_Cache == null)
+{
+arrvQxUsers_SchoolObjLst_Cache = clsvQxUsers_SchoolWS.GetvQxUsers_SchoolObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrvQxUsers_SchoolObjLst_Cache.Count - 1;
+int intMid = 0;
+clsvQxUsers_SchoolEN objvQxUsers_SchoolEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objvQxUsers_SchoolEN = arrvQxUsers_SchoolObjLst_Cache[intMid];
+if (objvQxUsers_SchoolEN.UserId == strUserId)
+{
+intFindFailCount = 0;
+return objvQxUsers_SchoolEN;
+}
+else if (objvQxUsers_SchoolEN.UserId.CompareTo(strUserId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrvQxUsers_SchoolObjLst_Cache = null;
+if (intFindFailCount == 1) return GetvQxUsers_SchoolObjByUserId_Cache(strUserId);
+string strErrMsgForGetObjById = string.Format("在vQxUsers_School对象缓存列表中,找不到记录[UserId = {0}][intFindFailCount = {1}](函数:GetvQxUsers_SchoolObjByUserId_Cache)", strUserId, intFindFailCount);
+if (objvQxUsers_SchoolEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objvQxUsers_SchoolEN.UserId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsvQxUsers_SchoolBL", "GetvQxUsers_SchoolObjByUserId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsvQxUsers_SchoolEN> GetvQxUsers_SchoolObjList(string strWhereCond)
+{
+ List<clsvQxUsers_SchoolEN> arrObjList = new List<clsvQxUsers_SchoolEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_vQxUsers_SchoolWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsvQxUsers_SchoolEN objvQxUsers_SchoolEN = new clsvQxUsers_SchoolEN();
+objvQxUsers_SchoolEN.UserId = objRow["UserId"].ToString().Trim(); //用户ID
+objvQxUsers_SchoolEN.UserName = objRow["UserName"].ToString().Trim(); //用户名
+objvQxUsers_SchoolEN.DepartmentId = objRow["DepartmentId"].ToString().Trim(); //部门Id
+objvQxUsers_SchoolEN.DepartmentName = objRow["DepartmentName"].ToString().Trim(); //部门名
+objvQxUsers_SchoolEN.UpDepartmentId = objRow["UpDepartmentId"].ToString().Trim(); //所属部门号
+objvQxUsers_SchoolEN.DepartmentAbbrName = objRow["DepartmentAbbrName"].ToString().Trim(); //名称缩写
+objvQxUsers_SchoolEN.UpDepartmentName = objRow["UpDepartmentName"].ToString().Trim(); //上级部门
+objvQxUsers_SchoolEN.DepartmentTypeId = objRow["DepartmentTypeId"].ToString().Trim(); //部门类型ID
+objvQxUsers_SchoolEN.DepartmentTypeName = objRow["DepartmentTypeName"].ToString().Trim(); //部门类型名
+objvQxUsers_SchoolEN.UserStateId = objRow["UserStateId"].ToString().Trim(); //用户状态Id
+objvQxUsers_SchoolEN.UserStateName = objRow["UserStateName"].ToString().Trim(); //用户状态名
+objvQxUsers_SchoolEN.EffectiveDate = objRow["EffectiveDate"].ToString().Trim(); //有效日期
+objvQxUsers_SchoolEN.IdentityID = objRow["IdentityID"].ToString().Trim(); //身份编号
+objvQxUsers_SchoolEN.IdentityDesc = objRow["IdentityDesc"].ToString().Trim(); //身份描述
+objvQxUsers_SchoolEN.CardNo = objRow["CardNo"].ToString().Trim(); //CardNo
+objvQxUsers_SchoolEN.StuIdTeacherId = objRow["StuIdTeacherId"].ToString().Trim(); //StuIdTeacherId
+objvQxUsers_SchoolEN.id_GradeBase = objRow["id_GradeBase"].ToString().Trim(); //年级流水号
+objvQxUsers_SchoolEN.GradeBaseID = objRow["GradeBaseID"].ToString().Trim(); //年级代号
+objvQxUsers_SchoolEN.GradeBaseName = objRow["GradeBaseName"].ToString().Trim(); //年级名称
+objvQxUsers_SchoolEN.EnterSchoolDate = objRow["EnterSchoolDate"].ToString().Trim(); //进校日期
+objvQxUsers_SchoolEN.IsOffed = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsOffed"].ToString().Trim()); //是否毕业
+objvQxUsers_SchoolEN.BeginYearMonth = objRow["BeginYearMonth"].ToString().Trim(); //开始年月
+objvQxUsers_SchoolEN.EndYearMonth = objRow["EndYearMonth"].ToString().Trim(); //结束年月
+objvQxUsers_SchoolEN.Card_State = objRow["Card_State"].ToString().Trim(); //Card_State
+objvQxUsers_SchoolEN.IsLeaved = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsLeaved"].ToString().Trim()); //IsLeaved
+objvQxUsers_SchoolEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objvQxUsers_SchoolEN.UpdUser = objRow["UpdUser"].ToString().Trim(); //修改用户
+objvQxUsers_SchoolEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objvQxUsers_SchoolEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsvQxUsers_SchoolEN> GetvQxUsers_SchoolObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsvQxUsers_SchoolEN> arrObjList = new List<clsvQxUsers_SchoolEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_vQxUsers_SchoolByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsvQxUsers_SchoolEN objvQxUsers_SchoolEN = new clsvQxUsers_SchoolEN();
+objvQxUsers_SchoolEN.UserId = objRow["UserId"].ToString().Trim(); //用户ID
+objvQxUsers_SchoolEN.UserName = objRow["UserName"].ToString().Trim(); //用户名
+objvQxUsers_SchoolEN.DepartmentId = objRow["DepartmentId"].ToString().Trim(); //部门Id
+objvQxUsers_SchoolEN.DepartmentName = objRow["DepartmentName"].ToString().Trim(); //部门名
+objvQxUsers_SchoolEN.UpDepartmentId = objRow["UpDepartmentId"].ToString().Trim(); //所属部门号
+objvQxUsers_SchoolEN.DepartmentAbbrName = objRow["DepartmentAbbrName"].ToString().Trim(); //名称缩写
+objvQxUsers_SchoolEN.UpDepartmentName = objRow["UpDepartmentName"].ToString().Trim(); //上级部门
+objvQxUsers_SchoolEN.DepartmentTypeId = objRow["DepartmentTypeId"].ToString().Trim(); //部门类型ID
+objvQxUsers_SchoolEN.DepartmentTypeName = objRow["DepartmentTypeName"].ToString().Trim(); //部门类型名
+objvQxUsers_SchoolEN.UserStateId = objRow["UserStateId"].ToString().Trim(); //用户状态Id
+objvQxUsers_SchoolEN.UserStateName = objRow["UserStateName"].ToString().Trim(); //用户状态名
+objvQxUsers_SchoolEN.EffectiveDate = objRow["EffectiveDate"].ToString().Trim(); //有效日期
+objvQxUsers_SchoolEN.IdentityID = objRow["IdentityID"].ToString().Trim(); //身份编号
+objvQxUsers_SchoolEN.IdentityDesc = objRow["IdentityDesc"].ToString().Trim(); //身份描述
+objvQxUsers_SchoolEN.CardNo = objRow["CardNo"].ToString().Trim(); //CardNo
+objvQxUsers_SchoolEN.StuIdTeacherId = objRow["StuIdTeacherId"].ToString().Trim(); //StuIdTeacherId
+objvQxUsers_SchoolEN.id_GradeBase = objRow["id_GradeBase"].ToString().Trim(); //年级流水号
+objvQxUsers_SchoolEN.GradeBaseID = objRow["GradeBaseID"].ToString().Trim(); //年级代号
+objvQxUsers_SchoolEN.GradeBaseName = objRow["GradeBaseName"].ToString().Trim(); //年级名称
+objvQxUsers_SchoolEN.EnterSchoolDate = objRow["EnterSchoolDate"].ToString().Trim(); //进校日期
+objvQxUsers_SchoolEN.IsOffed = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsOffed"].ToString().Trim()); //是否毕业
+objvQxUsers_SchoolEN.BeginYearMonth = objRow["BeginYearMonth"].ToString().Trim(); //开始年月
+objvQxUsers_SchoolEN.EndYearMonth = objRow["EndYearMonth"].ToString().Trim(); //结束年月
+objvQxUsers_SchoolEN.Card_State = objRow["Card_State"].ToString().Trim(); //Card_State
+objvQxUsers_SchoolEN.IsLeaved = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsLeaved"].ToString().Trim()); //IsLeaved
+objvQxUsers_SchoolEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objvQxUsers_SchoolEN.UpdUser = objRow["UpdUser"].ToString().Trim(); //修改用户
+objvQxUsers_SchoolEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objvQxUsers_SchoolEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+vQxUsers_SchoolServiceSoapClient objvQxUsers_SchoolService = GetvQxUsers_SchoolServiceSoapClient();
+bool bolIsExist = objvQxUsers_SchoolService.vQxUsers_School_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(string strUserId)
+{
+//检测记录是否存在
+vQxUsers_SchoolServiceSoapClient objvQxUsers_SchoolService = GetvQxUsers_SchoolServiceSoapClient();
+bool bolIsExist = objvQxUsers_SchoolService.vQxUsers_School_IsExist(strUserId);
+return bolIsExist;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/vQxUsers_SchoolService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/vQxUsers_SchoolService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

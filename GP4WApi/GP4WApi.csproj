@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6E6FD75-E4EE-4D5F-A938-5216CF9F71DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GP4WApi</RootNamespace>
+    <AssemblyName>GP4WApi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>E:\TzAppData\GeneralPlatform07\GP4WApi\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>E:\TzAppData\GeneralPlatform07\GP4WApi\bin\Debug\GP4WApi.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\..\TzAppData\GeneralPlatform07\GP4WApi\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.3.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TzPubFunction">
+      <HintPath>E:\PublicLib\TzPubFunction.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassEx\DataSynch\clsQxPrjUserRelation4SynchExWApi.cs" />
+    <Compile Include="ClassEx\DataSynch\clsQxServer4SynchExWApi.cs" />
+    <Compile Include="ClassEx\DataSynch\clsQxUserRoleRelation4SynchExWApi.cs" />
+    <Compile Include="ClassEx\DataSynch\clsQxUsers4SynchExWApi.cs" />
+    <Compile Include="ClassEx\DataSynch\clsvQxPrjUserRelation4SynchExWApi.cs" />
+    <Compile Include="ClassEx\DataSynch\clsvQxUserRoleRelation4SynchExWApi.cs" />
+    <Compile Include="ClassEx\DataSynch\clsvQxUsers4SynchExWApi.cs" />
+    <Compile Include="ClassEx\InterfaceMan\clsQxViewInfoExWApi.cs" />
+    <Compile Include="ClassEx\InterfaceMan\clsQxViewPotenceExWApi.cs" />
+    <Compile Include="ClassEx\InterfaceMan\clsvQxViewInfoExWApi.cs" />
+    <Compile Include="ClassEx\InterfaceMan\clsvQxViewPotenceExWApi.cs" />
+    <Compile Include="ClassEx\LogManage\clsErrorInformationExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsQxPageDispModeExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsQxPrjMenuSetExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsQxPrjMenusExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsQxRoleMenusExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsQxUserMenuDetailExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsQxUserMenusExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsvQxPrjMenuSetExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsvQxPrjMenusExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsvQxPrjMenus_LeafExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsvQxPrjMenus_SubExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsvQxPrjMenus_UpExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsvQxRoleMenusExWApi.cs" />
+    <Compile Include="ClassEx\MenuManage\clsvQxRoleMenus_SimExWApi.cs" />
+    <Compile Include="ClassEx\PotenceMan\clsQxPotenceTypeExWApi.cs" />
+    <Compile Include="ClassEx\PotenceMan\clsQxPrjPotenceExWApi.cs" />
+    <Compile Include="ClassEx\PotenceMan\clsQxRelaOfPotenceAndSymbolExWApi.cs" />
+    <Compile Include="ClassEx\PotenceMan\clsvQxPotenceSymbolForRoleExWApi.cs" />
+    <Compile Include="ClassEx\PotenceMan\clsvQxPotenceTypeExWApi.cs" />
+    <Compile Include="ClassEx\PotenceMan\clsvQxPrjPotenceExWApi.cs" />
+    <Compile Include="ClassEx\PotenceMan\clsvQxRelaOfPotenceAndSymbolExWApi.cs" />
+    <Compile Include="ClassEx\PrjFileDownLoad\clsQxCodeTypeExWApi.cs" />
+    <Compile Include="ClassEx\PrjFileDownLoad\clsQxPrjFileRelaExWApi.cs" />
+    <Compile Include="ClassEx\PrjFileDownLoad\clsQxPrjSite4DownLoadExWApi.cs" />
+    <Compile Include="ClassEx\PrjFileDownLoad\clsQxUserDownLoadDetailLogExWApi.cs" />
+    <Compile Include="ClassEx\PrjFileDownLoad\clsQxUserDownLoadLogExWApi.cs" />
+    <Compile Include="ClassEx\PrjFileDownLoad\clsvQxPrjFileRelaExWApi.cs" />
+    <Compile Include="ClassEx\PrjFileDownLoad\clsvQxPrjSite4DownLoadExWApi.cs" />
+    <Compile Include="ClassEx\PrjFileDownLoad\clsvQxUserDownLoadDetailLogExWApi.cs" />
+    <Compile Include="ClassEx\PrjFileDownLoad\clsvQxUserDownLoadLogExWApi.cs" />
+    <Compile Include="ClassEx\PrjManage\clsDataBaseTypeExWApi.cs" />
+    <Compile Include="ClassEx\PrjManage\clsQxFuncModuleExWApi.cs" />
+    <Compile Include="ClassEx\PrjManage\clsQxFuncModule_AgcExWApi.cs" />
+    <Compile Include="ClassEx\PrjManage\clsQxPrjDataBaseExWApi.cs" />
+    <Compile Include="ClassEx\PrjManage\clsQxPrjModuleExWApi.cs" />
+    <Compile Include="ClassEx\PrjManage\clsQxProjectsExWApi.cs" />
+    <Compile Include="ClassEx\PrjManage\clsvQxFuncModuleExWApi.cs" />
+    <Compile Include="ClassEx\PrjManage\clsvQxFuncModule_AgcExWApi.cs" />
+    <Compile Include="ClassEx\PrjManage\clsvQxPrjDataBaseExWApi.cs" />
+    <Compile Include="ClassEx\PrjManage\clsvQxPrjModuleExWApi.cs" />
+    <Compile Include="ClassEx\SysManage\clsFuncModuleExWApi.cs" />
+    <Compile Include="ClassEx\SysManage\clsvFuncModuleExWApi.cs" />
+    <Compile Include="ClassEx\SysPara\clsQxApplicationTypeExWApi.cs" />
+    <Compile Include="ClassEx\SysPara\clsQxDepartmentTypeExWApi.cs" />
+    <Compile Include="ClassEx\SysPara\clsSubjectTypeExWApi.cs" />
+    <Compile Include="ClassEx\SysPara\clsTSysParaExWApi.cs" />
+    <Compile Include="ClassEx\SystemSet\clsExportExcel4UsersExWApi.cs" />
+    <Compile Include="ClassEx\SystemSet\clsExportExcelSetExWApi.cs" />
+    <Compile Include="ClassEx\SystemSet\clsQxUserCodePathExWApi.cs" />
+    <Compile Include="ClassEx\SystemSet\clsSetFieldVisibilityExWApi.cs" />
+    <Compile Include="ClassEx\SystemSet\clsvExportExcel4UsersExWApi.cs" />
+    <Compile Include="ClassEx\SystemSet\clsvExportExcelSetExWApi.cs" />
+    <Compile Include="ClassEx\SystemSet\clsvQxUserCodePathExWApi.cs" />
+    <Compile Include="ClassEx\SystemSet\clsvSetFieldVisibilityExWApi.cs" />
+    <Compile Include="ClassEx\SystemSet\clsXzSchoolExWApi.cs" />
+    <Compile Include="ClassEx\Table_Field\clsQxPrjTabExWApi.cs" />
+    <Compile Include="ClassEx\Table_Field\clsSQLDSTypeExWApi.cs" />
+    <Compile Include="ClassEx\Table_Field\clsTabStateExWApi.cs" />
+    <Compile Include="ClassEx\Table_Field\clsTabTypeExWApi.cs" />
+    <Compile Include="ClassEx\Table_Field\clsvQxPrjTabExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsQxDepartmentInfoExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsQxPrjUserRelationExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsQxUserGroupRelationExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsQxUserGroupsExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsQxUserIdentityExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsQxUserLoginNameExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsQxUserRoleRelationExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsQxUserRolesExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsQxUsersExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsQxUserStateExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsQxUsers_SchoolExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsSubjectRelationExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsUserDefaValueExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvQxDepartmentInfoByUserNumExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvQxDepartmentInfoExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvQxPrjUserRelationByRoleExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvQxPrjUserRelationExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvQxUserLoginNameExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvQxUserRoleRelationExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvQxUserRolesByMenuNumExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvQxUserRolesByPotenceNumExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvQxUserRolesByUserNumExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvQxUserRolesExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvQxUsersExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvQxUsers_SchoolExWApi.cs" />
+    <Compile Include="ClassEx\UserManage\clsvSubjectRelationExWApi.cs" />
+    <Compile Include="ClassEx\UserPotenceMan\clsQxUserGroupPotenceExWApi.cs" />
+    <Compile Include="ClassEx\UserPotenceMan\clsvQxUserGroupPotenceExWApi.cs" />
+    <Compile Include="Class\DataSynch\clsQxPrjUserRelation4SynchWApi.cs" />
+    <Compile Include="Class\DataSynch\clsQxServer4SynchWApi.cs" />
+    <Compile Include="Class\DataSynch\clsQxUserRoleRelation4SynchWApi.cs" />
+    <Compile Include="Class\DataSynch\clsQxUsers4SynchWApi.cs" />
+    <Compile Include="Class\DataSynch\clsvQxPrjUserRelation4SynchWApi.cs" />
+    <Compile Include="Class\DataSynch\clsvQxUserRoleRelation4SynchWApi.cs" />
+    <Compile Include="Class\DataSynch\clsvQxUsers4SynchWApi.cs" />
+    <Compile Include="Class\InterfaceMan\clsQxViewInfoWApi.cs" />
+    <Compile Include="Class\InterfaceMan\clsQxViewPotenceWApi.cs" />
+    <Compile Include="Class\InterfaceMan\clsvQxViewInfoWApi.cs" />
+    <Compile Include="Class\InterfaceMan\clsvQxViewPotenceWApi.cs" />
+    <Compile Include="Class\LogManage\clsErrorInformationWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsPageDispModeWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxPageDispModeWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxPrjMenuSetWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxPrjMenusWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxRoleMenusWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxUserMenuDetailWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxUserMenusWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxPrjMenuSetWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxPrjMenusWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxPrjMenus_LeafWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxPrjMenus_SubWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxPrjMenus_UpWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxRoleMenusWApi.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxRoleMenus_SimWApi.cs" />
+    <Compile Include="Class\PotenceMan\clsQxPotenceTypeWApi.cs" />
+    <Compile Include="Class\PotenceMan\clsQxPrjPotenceWApi.cs" />
+    <Compile Include="Class\PotenceMan\clsQxRelaOfPotenceAndSymbolWApi.cs" />
+    <Compile Include="Class\PotenceMan\clsvQxPotenceSymbolForRoleWApi.cs" />
+    <Compile Include="Class\PotenceMan\clsvQxPotenceTypeWApi.cs" />
+    <Compile Include="Class\PotenceMan\clsvQxPrjPotenceWApi.cs" />
+    <Compile Include="Class\PotenceMan\clsvQxRelaOfPotenceAndSymbolWApi.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsQxCodeTypeWApi.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsQxPrjFileRelaWApi.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsQxPrjSite4DownLoadWApi.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsQxUserDownLoadDetailLogWApi.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsQxUserDownLoadLogWApi.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsvQxPrjFileRelaWApi.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsvQxPrjSite4DownLoadWApi.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsvQxUserDownLoadDetailLogWApi.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsvQxUserDownLoadLogWApi.cs" />
+    <Compile Include="Class\PrjManage_GP\clsDataBaseTypeWApi.cs" />
+    <Compile Include="Class\PrjManage_GP\clsQxFuncModuleWApi.cs" />
+    <Compile Include="Class\PrjManage_GP\clsQxFuncModule_AgcWApi.cs" />
+    <Compile Include="Class\PrjManage_GP\clsQxPrjDataBaseWApi.cs" />
+    <Compile Include="Class\PrjManage_GP\clsQxPrjModuleWApi.cs" />
+    <Compile Include="Class\PrjManage_GP\clsQxProjectsWApi.cs" />
+    <Compile Include="Class\PrjManage_GP\clsvQxFuncModuleWApi.cs" />
+    <Compile Include="Class\PrjManage_GP\clsvQxFuncModule_AgcWApi.cs" />
+    <Compile Include="Class\PrjManage_GP\clsvQxPrjDataBaseWApi.cs" />
+    <Compile Include="Class\PrjManage_GP\clsvQxPrjModuleWApi.cs" />
+    <Compile Include="Class\SysManage\clsFuncModuleWApi.cs" />
+    <Compile Include="Class\SysManage\clsvFuncModuleWApi.cs" />
+    <Compile Include="Class\SysPara\clsQxApplicationTypeWApi.cs" />
+    <Compile Include="Class\SysPara\clsQxDepartmentTypeWApi.cs" />
+    <Compile Include="Class\SysPara\clsSubjectTypeWApi.cs" />
+    <Compile Include="Class\SysPara\clsTSysParaWApi.cs" />
+    <Compile Include="Class\SystemSet\clsExportExcel4UsersWApi.cs" />
+    <Compile Include="Class\SystemSet\clsExportExcelSetWApi.cs" />
+    <Compile Include="Class\SystemSet\clsQxUserCodePathWApi.cs" />
+    <Compile Include="Class\SystemSet\clsSetFieldVisibilityWApi.cs" />
+    <Compile Include="Class\SystemSet\clsvExportExcel4UsersWApi.cs" />
+    <Compile Include="Class\SystemSet\clsvExportExcelSetWApi.cs" />
+    <Compile Include="Class\SystemSet\clsvQxUserCodePathWApi.cs" />
+    <Compile Include="Class\SystemSet\clsvSetFieldVisibilityWApi.cs" />
+    <Compile Include="Class\SystemSet\clsXzSchoolWApi.cs" />
+    <Compile Include="Class\Table_Field\clsQxPrjTabWApi.cs" />
+    <Compile Include="Class\Table_Field\clsSQLDSTypeWApi.cs" />
+    <Compile Include="Class\Table_Field\clsTabStateWApi.cs" />
+    <Compile Include="Class\Table_Field\clsTabTypeWApi.cs" />
+    <Compile Include="Class\Table_Field\clsvQxPrjTabWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxDepartmentInfoWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxPrjUserRelationWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxRolesWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserGroupRelationWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserGroupsWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserIdentityWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserLoginNameWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserRoleRelationWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserStateWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUsersV2WApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUsersWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUsers_SchoolWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsSubjectRelationWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsUserDefaValueWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxDepartmentInfoByUserNumWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxDepartmentInfoWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxPrjUserRelationByRoleWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxPrjUserRelationWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUserLoginNameWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUserRoleRelationWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUserRolesByMenuNumWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUserRolesByPotenceNumWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUserRolesByUserNumWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUserRolesWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUsersSimWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUsersWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUsers_SchoolWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsvSubjectRelationWApi.cs" />
+    <Compile Include="Class\UserManage_GP\clsXzGradeBaseWApi.cs" />
+    <Compile Include="Class\UserPotenceMan\clsQxUserGroupPotenceWApi.cs" />
+    <Compile Include="Class\UserPotenceMan\clsvQxUserGroupPotenceWApi.cs" />
+    <Compile Include="clsLoginWApi.cs" />
+    <Compile Include="FunClass\clsDict_PageName_Dic.cs" />
+    <Compile Include="FunClass\clsPubFun4WApi.cs" />
+    <Compile Include="FunClass\clsSysPara.cs" />
+    <Compile Include="FunClass\clsSysPara4WebApi_GP.cs" />
+    <Compile Include="MenuAndPotence.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Scripts\jquery-3.7.1.min.map" />
+    <None Include="Scripts\jquery-3.7.1.slim.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeneralPlatform_Entity\GeneralPlatform_Entity.csproj">
+      <Project>{cae7b0d5-0d60-4905-90c8-d0c76d8ab4e7}</Project>
+      <Name>GeneralPlatform_Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

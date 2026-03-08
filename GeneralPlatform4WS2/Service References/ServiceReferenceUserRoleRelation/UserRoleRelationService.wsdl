@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UserRoleRelation_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserRoleRelation_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserRoleRelation_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_GetUserRoleRelation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoleRelation" type="tns:clsUserRoleRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsUserRoleRelationEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserRoleRelation_GetUserRoleRelationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoleRelation_GetUserRoleRelationResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoleRelation" type="tns:clsUserRoleRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_GetUserRoleRelationV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoleRelation" type="tns:clsUserRoleRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_GetUserRoleRelationVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoleRelation_GetUserRoleRelationVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoleRelation" type="tns:clsUserRoleRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoleRelation_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoleRelation_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoleRelation" type="tns:clsUserRoleRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoleRelation_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoleRelation" type="tns:clsUserRoleRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoleRelation_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoleRelation_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_DelUserRoleRelations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrStdId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_DelUserRoleRelationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoleRelation_DelUserRoleRelationsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_DelUserRoleRelationsByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserRoleRelation_DelUserRoleRelationsByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserRoleRelation_DelUserRoleRelationsByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserRoleRelation" type="tns:clsUserRoleRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsUserRoleRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UserRoleRelation_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_GetUserRoleRelationSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_GetUserRoleRelation" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_GetUserRoleRelationSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_GetUserRoleRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_GetUserRoleRelationVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_GetUserRoleRelationV" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_GetUserRoleRelationVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_GetUserRoleRelationVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_DelUserRoleRelationsSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_DelUserRoleRelations" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_DelUserRoleRelationsSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_DelUserRoleRelationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_DelUserRoleRelationsByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_DelUserRoleRelationsByCond" />
+  </wsdl:message>
+  <wsdl:message name="UserRoleRelation_DelUserRoleRelationsByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:UserRoleRelation_DelUserRoleRelationsByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserRoleRelationServiceSoap">
+    <wsdl:operation name="UserRoleRelation_GetDataSet">
+      <wsdl:input message="tns:UserRoleRelation_GetDataSetSoapIn" />
+      <wsdl:output message="tns:UserRoleRelation_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_GetDataSetV">
+      <wsdl:input message="tns:UserRoleRelation_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:UserRoleRelation_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_GetUserRoleRelation">
+      <wsdl:input message="tns:UserRoleRelation_GetUserRoleRelationSoapIn" />
+      <wsdl:output message="tns:UserRoleRelation_GetUserRoleRelationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_GetUserRoleRelationV">
+      <wsdl:input message="tns:UserRoleRelation_GetUserRoleRelationVSoapIn" />
+      <wsdl:output message="tns:UserRoleRelation_GetUserRoleRelationVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_IsExistRecordByCond">
+      <wsdl:input message="tns:UserRoleRelation_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:UserRoleRelation_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_IsExist">
+      <wsdl:input message="tns:UserRoleRelation_IsExistSoapIn" />
+      <wsdl:output message="tns:UserRoleRelation_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_AddNewRecordBySql2">
+      <wsdl:input message="tns:UserRoleRelation_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:UserRoleRelation_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_UpdateBySql2">
+      <wsdl:input message="tns:UserRoleRelation_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:UserRoleRelation_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_DelRecord">
+      <wsdl:input message="tns:UserRoleRelation_DelRecordSoapIn" />
+      <wsdl:output message="tns:UserRoleRelation_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_DelUserRoleRelations">
+      <wsdl:input message="tns:UserRoleRelation_DelUserRoleRelationsSoapIn" />
+      <wsdl:output message="tns:UserRoleRelation_DelUserRoleRelationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_DelUserRoleRelationsByCond">
+      <wsdl:input message="tns:UserRoleRelation_DelUserRoleRelationsByCondSoapIn" />
+      <wsdl:output message="tns:UserRoleRelation_DelUserRoleRelationsByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserRoleRelationServiceSoap" type="tns:UserRoleRelationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserRoleRelation_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/UserRoleRelation_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/UserRoleRelation_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_GetUserRoleRelation">
+      <soap:operation soapAction="http://tempuri.org/UserRoleRelation_GetUserRoleRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_GetUserRoleRelationV">
+      <soap:operation soapAction="http://tempuri.org/UserRoleRelation_GetUserRoleRelationV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/UserRoleRelation_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_IsExist">
+      <soap:operation soapAction="http://tempuri.org/UserRoleRelation_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserRoleRelation_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserRoleRelation_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/UserRoleRelation_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_DelUserRoleRelations">
+      <soap:operation soapAction="http://tempuri.org/UserRoleRelation_DelUserRoleRelations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_DelUserRoleRelationsByCond">
+      <soap:operation soapAction="http://tempuri.org/UserRoleRelation_DelUserRoleRelationsByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserRoleRelationServiceSoap12" type="tns:UserRoleRelationServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserRoleRelation_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/UserRoleRelation_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/UserRoleRelation_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_GetUserRoleRelation">
+      <soap12:operation soapAction="http://tempuri.org/UserRoleRelation_GetUserRoleRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_GetUserRoleRelationV">
+      <soap12:operation soapAction="http://tempuri.org/UserRoleRelation_GetUserRoleRelationV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/UserRoleRelation_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/UserRoleRelation_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserRoleRelation_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserRoleRelation_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/UserRoleRelation_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_DelUserRoleRelations">
+      <soap12:operation soapAction="http://tempuri.org/UserRoleRelation_DelUserRoleRelations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRoleRelation_DelUserRoleRelationsByCond">
+      <soap12:operation soapAction="http://tempuri.org/UserRoleRelation_DelUserRoleRelationsByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserRoleRelationService">
+    <wsdl:port name="UserRoleRelationServiceSoap" binding="tns:UserRoleRelationServiceSoap">
+      <soap:address location="http://localhost:9259/UserRoleRelationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserRoleRelationServiceSoap12" binding="tns:UserRoleRelationServiceSoap12">
+      <soap12:address location="http://localhost:9259/UserRoleRelationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,267 @@
+﻿///----------------------
+///生成代码版本：09.08.22.1
+///生成日期：2009/08/28
+///生成者：潘以锋
+///注意：需要数据底层（PubDataBase.dll）的版本：09.08.22.1
+///========================
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text;
+using System.Collections;
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferenceSubjectRelation;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+    /// <summary>
+    /// 隶属关系(SubjectRelation)
+    /// </summary>
+    public class clsSubjectRelationWS
+    {
+
+        private static SubjectRelationServiceSoapClient objSubjectRelationServiceSoapClient = null;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static SubjectRelationServiceSoapClient GetSubjectRelationServiceSoapClient()
+        {
+            if (objSubjectRelationServiceSoapClient == null)
+            {
+                BasicHttpBinding binding = new BasicHttpBinding();
+                binding.Name = "SubjectRelationServiceSoap";
+                binding.CloseTimeout = new System.TimeSpan(6000);
+
+                //EndpointAddress address = new EndpointAddress("http://202.121.63.10/CalcEngineWS/SubjectRelationService.asmx");
+
+                String strServiceUrl = String.Empty;
+                if (clsSysPara.bolIsLocalHost == false)
+                {
+                    strServiceUrl = String.Format("http://{0}/{1}/SubjectRelationService.asmx", clsSysPara.CurrIPAddressAndPort, clsSysPara.CurrPrx);
+                }
+                else
+                {
+                    strServiceUrl = String.Format("http://{0}/SubjectRelationService.asmx", clsSysPara.strCurrIPAddressAndPort_Local);
+                }
+
+
+                //String strServiceUrl = String.Format("http://{0}/CalcEngineWS/SubjectRelationService.asmx", clsSysPara.strCurrIPAddress);
+                EndpointAddress address = new EndpointAddress(strServiceUrl);
+
+                return new SubjectRelationServiceSoapClient(binding, address);
+            }
+            else
+            {
+                return objSubjectRelationServiceSoapClient;
+            }
+        }
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        public clsSubjectRelationWS()
+        {
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strWhereCond"></param>
+        /// <returns></returns>
+        public static DataTable GetDataTable_SubjectRelationWs(string strWhereCond)
+        {
+            SubjectRelationServiceSoapClient objSubjectRelationService = GetSubjectRelationServiceSoapClient();
+            DataSet objDS = null;
+            try
+            {
+                objDS = objSubjectRelationService.SubjectRelation_GetDataSet(strWhereCond);
+                DataTable objDT = objDS.Tables[0];
+                return objDT;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("获取表:SubjectRelation 数据出错！\r\n" + objException.Message);
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strWhereCond"></param>
+        /// <returns></returns>
+        public static DataTable GetDataTable_SubjectRelationVWs(string strWhereCond)
+        {
+            SubjectRelationServiceSoapClient objSubjectRelationService = GetSubjectRelationServiceSoapClient();
+            DataSet objDS = null;
+            try
+            {
+                objDS = objSubjectRelationService.SubjectRelation_GetDataSetV(strWhereCond);
+                DataTable objDT = objDS.Tables[0];
+                return objDT;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("获取表:SubjectRelation View 数据出错！\r\n" + objException.Message);
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strWhereCond"></param>
+        /// <returns></returns>
+        public static DataTable GetSubjectRelationVWs(string strWhereCond)
+        {
+            SubjectRelationServiceSoapClient objSubjectRelationService = GetSubjectRelationServiceSoapClient();
+            DataSet objDS = null;
+            try
+            {
+                objDS = objSubjectRelationService.SubjectRelation_GetDataSetV(strWhereCond);
+                DataTable objDT = objDS.Tables[0];
+                return objDT;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("获取表View数据出错！\r\n" + objException.Message);
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="objSubjectRelation"></param>
+        /// <returns></returns>
+        public static bool GetSubjectRelationWs(ref clsSubjectRelationEN objSubjectRelation)
+        {
+            SubjectRelationServiceSoapClient objSubjectRelationService = GetSubjectRelationServiceSoapClient();
+            bool bolResult = objSubjectRelationService.SubjectRelation_GetSubjectRelation(ref objSubjectRelation);
+            return bolResult;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strCondition"></param>
+        /// <returns></returns>
+        public static List<clsSubjectRelationEN> GetSubjectRelationObjList(string strCondition)
+        {
+            List<clsSubjectRelationEN> arrObjList = new List<clsSubjectRelationEN>();
+            System.Data.DataTable objDT = null;
+            objDT = GetDataTable_SubjectRelationWs(strCondition);
+            if (objDT.Rows.Count == 0)
+            {
+                objDT = null;
+                return arrObjList;
+            }
+            foreach (DataRow objRow in objDT.Rows)
+            {
+                clsSubjectRelationEN objSubjectRelation = new clsSubjectRelationEN();
+                objSubjectRelation.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+                objSubjectRelation.UserId = objRow["UserId"].ToString().Trim(); //用户ID
+                objSubjectRelation.LeaderId = objRow["LeaderId"].ToString().Trim(); //领导Id
+                objSubjectRelation.IsDirectLeader = com.taishsoft.commdb.clsGeneralTab.TransNullToBool_S(objRow["IsDirectLeader"].ToString().Trim()); //是否直接领导
+                objSubjectRelation.Memo = objRow["Memo"].ToString().Trim(); //备注
+
+                arrObjList.Add(objSubjectRelation);
+            }
+            objDT = null;
+            return arrObjList;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lngmId"></param>
+        /// <returns></returns>
+        public static bool DelRecordWs(long lngmId)
+        {
+            SubjectRelationServiceSoapClient objSubjectRelationService = GetSubjectRelationServiceSoapClient();
+            try
+            {
+                bool bolResult = objSubjectRelationService.SubjectRelation_DelRecord(lngmId);
+                return bolResult;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("删除记录出错！\r\n" + objException.Message);
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="arrStdId"></param>
+        /// <returns></returns>
+        public static bool DelSubjectRelationsWs(List<string>  arrStdId)
+        {
+            SubjectRelationServiceSoapClient objSubjectRelationService = GetSubjectRelationServiceSoapClient();
+            try
+            {
+                string[] slngmId = (string[])(arrStdId.ToArray());
+                bool bolResult = objSubjectRelationService.SubjectRelation_DelSubjectRelations(slngmId);
+                return bolResult;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("删除记录出错！\r\n" + objException.Message);
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="objSubjectRelation"></param>
+        /// <returns></returns>
+        public static bool AddNewRecordBySql2Ws(clsSubjectRelationEN objSubjectRelation)
+        {
+            SubjectRelationServiceSoapClient objSubjectRelationService = GetSubjectRelationServiceSoapClient();
+            try
+            {
+                bool bolResult = objSubjectRelationService.SubjectRelation_AddNewRecordBySql2(objSubjectRelation);
+                return bolResult;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("添加记录出错！\r\n" + objException.Message);
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="objSubjectRelation"></param>
+        /// <returns></returns>
+        public static bool UpdateBySql2Ws(clsSubjectRelationEN objSubjectRelation)
+        {
+            SubjectRelationServiceSoapClient objSubjectRelationService = GetSubjectRelationServiceSoapClient();
+            try
+            {
+                bool bolResult = objSubjectRelationService.SubjectRelation_UpdateBySql2(objSubjectRelation);
+                return bolResult;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("添加记录出错！\r\n" + objException.Message);
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strCondition"></param>
+        /// <returns></returns>
+        public static bool IsExistRecordWs(string strCondition)
+        {
+            //检测记录是否存在
+            SubjectRelationServiceSoapClient objSubjectRelationService = GetSubjectRelationServiceSoapClient();
+            bool bolIsExist = objSubjectRelationService.SubjectRelation_IsExistRecord(strCondition);
+            return bolIsExist;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lngmId"></param>
+        /// <returns></returns>
+        public static bool IsExistWs(long lngmId)
+        {
+            //检测记录是否存在
+            SubjectRelationServiceSoapClient objSubjectRelationService = GetSubjectRelationServiceSoapClient();
+            bool bolIsExist = objSubjectRelationService.SubjectRelation_IsExist(lngmId);
+            return bolIsExist;
+        }
+    }
+}

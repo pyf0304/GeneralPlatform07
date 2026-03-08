@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UserCodePath_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserCodePath_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserCodePath_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_GetQxUserCodePath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserCodePathEN" type="tns:clsQxUserCodePathEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxUserCodePathEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name=clsQxProjectsEN.con_QxPrjId type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="QxCodeTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodePath" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodePathBackup" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsTemplate" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserCodePath_GetQxUserCodePathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserCodePath_GetQxUserCodePathResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserCodePathEN" type="tns:clsQxUserCodePathEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_GetQxUserCodePathV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserCodePathEN" type="tns:clsQxUserCodePathEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_GetQxUserCodePathVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserCodePath_GetQxUserCodePathVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserCodePathEN" type="tns:clsQxUserCodePathEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserCodePath_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserCodePath_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserCodePathEN" type="tns:clsQxUserCodePathEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserCodePath_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_AddNewRecordBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserCodePathENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_AddNewRecordBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserCodePath_AddNewRecordBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserCodePathEN" type="tns:clsQxUserCodePathEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserCodePath_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_UpdateBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserCodePathENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_UpdateBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserCodePath_UpdateBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserCodePath_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_DelQxUserCodePaths">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrmId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_DelQxUserCodePathsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserCodePath_DelQxUserCodePathsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_DelQxUserCodePathsByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_DelQxUserCodePathsByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserCodePath_DelQxUserCodePathsByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserCodePathEN" type="tns:clsQxUserCodePathEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsQxUserCodePathEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserCodePath_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_SerializeObjListToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserCodePath_SerializeObjListToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserCodePath_SerializeObjListToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UserCodePath_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_GetQxUserCodePathSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_GetQxUserCodePath" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_GetQxUserCodePathSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_GetQxUserCodePathResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_GetQxUserCodePathVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_GetQxUserCodePathV" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_GetQxUserCodePathVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_GetQxUserCodePathVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_AddNewRecordBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_AddNewRecordBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_AddNewRecordBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_AddNewRecordBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_UpdateBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_UpdateBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_UpdateBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_UpdateBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_DelQxUserCodePathsSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_DelQxUserCodePaths" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_DelQxUserCodePathsSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_DelQxUserCodePathsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_DelQxUserCodePathsByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_DelQxUserCodePathsByCond" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_DelQxUserCodePathsByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_DelQxUserCodePathsByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_SerializeObjListToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCodePath_SerializeObjListToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="UserCodePath_SerializeObjListToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:UserCodePath_SerializeObjListToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserCodePathServiceSoap">
+    <wsdl:operation name="UserCodePath_GetDataSet">
+      <wsdl:input message="tns:UserCodePath_GetDataSetSoapIn" />
+      <wsdl:output message="tns:UserCodePath_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_GetDataSetV">
+      <wsdl:input message="tns:UserCodePath_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:UserCodePath_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_GetQxUserCodePath">
+      <wsdl:input message="tns:UserCodePath_GetQxUserCodePathSoapIn" />
+      <wsdl:output message="tns:UserCodePath_GetQxUserCodePathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_GetQxUserCodePathV">
+      <wsdl:input message="tns:UserCodePath_GetQxUserCodePathVSoapIn" />
+      <wsdl:output message="tns:UserCodePath_GetQxUserCodePathVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_IsExistRecordByCond">
+      <wsdl:input message="tns:UserCodePath_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:UserCodePath_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_IsExist">
+      <wsdl:input message="tns:UserCodePath_IsExistSoapIn" />
+      <wsdl:output message="tns:UserCodePath_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_AddNewRecordBySql2">
+      <wsdl:input message="tns:UserCodePath_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:UserCodePath_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_AddNewRecordBySql_XML">
+      <wsdl:input message="tns:UserCodePath_AddNewRecordBySql_XMLSoapIn" />
+      <wsdl:output message="tns:UserCodePath_AddNewRecordBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_UpdateBySql2">
+      <wsdl:input message="tns:UserCodePath_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:UserCodePath_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_UpdateBySql_XML">
+      <wsdl:input message="tns:UserCodePath_UpdateBySql_XMLSoapIn" />
+      <wsdl:output message="tns:UserCodePath_UpdateBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_DelRecord">
+      <wsdl:input message="tns:UserCodePath_DelRecordSoapIn" />
+      <wsdl:output message="tns:UserCodePath_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_DelQxUserCodePaths">
+      <wsdl:input message="tns:UserCodePath_DelQxUserCodePathsSoapIn" />
+      <wsdl:output message="tns:UserCodePath_DelQxUserCodePathsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_DelQxUserCodePathsByCond">
+      <wsdl:input message="tns:UserCodePath_DelQxUserCodePathsByCondSoapIn" />
+      <wsdl:output message="tns:UserCodePath_DelQxUserCodePathsByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_SerializeObjToXMLStr">
+      <wsdl:input message="tns:UserCodePath_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:UserCodePath_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_SerializeObjListToXMLStr">
+      <wsdl:input message="tns:UserCodePath_SerializeObjListToXMLStrSoapIn" />
+      <wsdl:output message="tns:UserCodePath_SerializeObjListToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserCodePathServiceSoap" type="tns:UserCodePathServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserCodePath_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_GetQxUserCodePath">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_GetQxUserCodePath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_GetQxUserCodePathV">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_GetQxUserCodePathV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_IsExist">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_AddNewRecordBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_UpdateBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_DelQxUserCodePaths">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_DelQxUserCodePaths" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_DelQxUserCodePathsByCond">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_DelQxUserCodePathsByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_SerializeObjListToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/UserCodePath_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserCodePathServiceSoap12" type="tns:UserCodePathServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserCodePath_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_GetQxUserCodePath">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_GetQxUserCodePath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_GetQxUserCodePathV">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_GetQxUserCodePathV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_AddNewRecordBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_UpdateBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_DelQxUserCodePaths">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_DelQxUserCodePaths" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_DelQxUserCodePathsByCond">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_DelQxUserCodePathsByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserCodePath_SerializeObjListToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/UserCodePath_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserCodePathService">
+    <wsdl:port name="UserCodePathServiceSoap" binding="tns:UserCodePathServiceSoap">
+      <soap:address location="http://localhost:9259/UserCodePathService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserCodePathServiceSoap12" binding="tns:UserCodePathServiceSoap12">
+      <soap12:address location="http://localhost:9259/UserCodePathService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

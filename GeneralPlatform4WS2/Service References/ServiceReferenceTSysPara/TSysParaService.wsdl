@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="TSysPara_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TSysPara_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TSysPara_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_GetTSysPara">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objTSysPara" type="tns:clsTSysParaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsTSysParaEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="SysParaName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SysParaValue" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TSysPara_GetTSysParaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TSysPara_GetTSysParaResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objTSysPara" type="tns:clsTSysParaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_GetTSysParaV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objTSysPara" type="tns:clsTSysParaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_GetTSysParaVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TSysPara_GetTSysParaVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objTSysPara" type="tns:clsTSysParaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TSysPara_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TSysPara_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objTSysPara" type="tns:clsTSysParaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TSysPara_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objTSysPara" type="tns:clsTSysParaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TSysPara_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TSysPara_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_DelTSysParas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrStdId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TSysPara_DelTSysParasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TSysPara_DelTSysParasResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objTSysPara" type="tns:clsTSysParaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsTSysParaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TSysPara_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:TSysPara_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:TSysPara_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:TSysPara_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:TSysPara_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_GetTSysParaSoapIn">
+    <wsdl:part name="parameters" element="tns:TSysPara_GetTSysPara" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_GetTSysParaSoapOut">
+    <wsdl:part name="parameters" element="tns:TSysPara_GetTSysParaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_GetTSysParaVSoapIn">
+    <wsdl:part name="parameters" element="tns:TSysPara_GetTSysParaV" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_GetTSysParaVSoapOut">
+    <wsdl:part name="parameters" element="tns:TSysPara_GetTSysParaVResponse" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:TSysPara_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:TSysPara_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:TSysPara_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:TSysPara_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:TSysPara_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:TSysPara_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:TSysPara_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:TSysPara_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:TSysPara_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:TSysPara_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_DelTSysParasSoapIn">
+    <wsdl:part name="parameters" element="tns:TSysPara_DelTSysParas" />
+  </wsdl:message>
+  <wsdl:message name="TSysPara_DelTSysParasSoapOut">
+    <wsdl:part name="parameters" element="tns:TSysPara_DelTSysParasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TSysParaServiceSoap">
+    <wsdl:operation name="TSysPara_GetDataSet">
+      <wsdl:input message="tns:TSysPara_GetDataSetSoapIn" />
+      <wsdl:output message="tns:TSysPara_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_GetDataSetV">
+      <wsdl:input message="tns:TSysPara_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:TSysPara_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_GetTSysPara">
+      <wsdl:input message="tns:TSysPara_GetTSysParaSoapIn" />
+      <wsdl:output message="tns:TSysPara_GetTSysParaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_GetTSysParaV">
+      <wsdl:input message="tns:TSysPara_GetTSysParaVSoapIn" />
+      <wsdl:output message="tns:TSysPara_GetTSysParaVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_IsExistRecordByCond">
+      <wsdl:input message="tns:TSysPara_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:TSysPara_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_IsExist">
+      <wsdl:input message="tns:TSysPara_IsExistSoapIn" />
+      <wsdl:output message="tns:TSysPara_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_AddNewRecordBySql2">
+      <wsdl:input message="tns:TSysPara_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:TSysPara_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_UpdateBySql2">
+      <wsdl:input message="tns:TSysPara_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:TSysPara_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_DelRecord">
+      <wsdl:input message="tns:TSysPara_DelRecordSoapIn" />
+      <wsdl:output message="tns:TSysPara_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_DelTSysParas">
+      <wsdl:input message="tns:TSysPara_DelTSysParasSoapIn" />
+      <wsdl:output message="tns:TSysPara_DelTSysParasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TSysParaServiceSoap" type="tns:TSysParaServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TSysPara_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/TSysPara_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/TSysPara_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_GetTSysPara">
+      <soap:operation soapAction="http://tempuri.org/TSysPara_GetTSysPara" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_GetTSysParaV">
+      <soap:operation soapAction="http://tempuri.org/TSysPara_GetTSysParaV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/TSysPara_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_IsExist">
+      <soap:operation soapAction="http://tempuri.org/TSysPara_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/TSysPara_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/TSysPara_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/TSysPara_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_DelTSysParas">
+      <soap:operation soapAction="http://tempuri.org/TSysPara_DelTSysParas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TSysParaServiceSoap12" type="tns:TSysParaServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TSysPara_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/TSysPara_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/TSysPara_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_GetTSysPara">
+      <soap12:operation soapAction="http://tempuri.org/TSysPara_GetTSysPara" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_GetTSysParaV">
+      <soap12:operation soapAction="http://tempuri.org/TSysPara_GetTSysParaV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/TSysPara_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/TSysPara_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/TSysPara_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/TSysPara_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/TSysPara_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TSysPara_DelTSysParas">
+      <soap12:operation soapAction="http://tempuri.org/TSysPara_DelTSysParas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TSysParaService">
+    <wsdl:port name="TSysParaServiceSoap" binding="tns:TSysParaServiceSoap">
+      <soap:address location="http://localhost:9259/TSysParaService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TSysParaServiceSoap12" binding="tns:TSysParaServiceSoap12">
+      <soap12:address location="http://localhost:9259/TSysParaService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

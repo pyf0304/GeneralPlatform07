@@ -1,0 +1,1695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="QxCodeType_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetTopDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetTopDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_GetTopDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetDataSetByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetDataSetByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_GetDataSetByRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetQxCodeType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxCodeTypeEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="QxCodeTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodeTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sf_UpdFldSetStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checked" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QxCodeType_GetQxCodeTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_GetQxCodeTypeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objQxCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetObjByQxCodeTypeId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxCodeTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetObjByQxCodeTypeIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_GetObjByQxCodeTypeIdResult" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetQxCodeTypeV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetQxCodeTypeVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_GetQxCodeTypeVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objQxCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_GetObjLstResult" type="tns:ArrayOfClsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsQxCodeTypeEN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsQxCodeTypeEN" nillable="true" type="tns:clsQxCodeTypeEN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjLstByRangeResult" type="tns:ArrayOfClsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetTopObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetTopObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_GetTopObjLstResult" type="tns:ArrayOfClsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetFirstID_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetFirstID_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_GetFirstID_SResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetFirstObj_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetFirstObj_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_GetFirstObj_SResult" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByQxCodeTypeId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxCodeTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByQxCodeTypeIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjByQxCodeTypeIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstJSONObjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intPageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByPagerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_funGetRecCountByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_funGetRecCountByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_funGetRecCountByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxCodeTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetMaxStrId">
+        <s:complexType />
+      </s:element>
+      <s:element name="QxCodeType_GetMaxStrIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_GetMaxStrIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetMaxStrIdByPrefix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrefix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_GetMaxStrIdByPrefixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_GetMaxStrIdByPrefixResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_AddNewRecordBySql2ByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxCodeTypeJSONObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_AddNewRecordBySql2ByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_AddNewRecordBySql2ByJSONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_AddNewRecordBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxCodeTypeObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_AddNewRecordBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_AddNewRecordBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_UpdateBySql2ByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxCodeTypeJSONObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_UpdateBySql2ByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_UpdateBySql2ByJSONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_UpdateBySqlWithCondition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_UpdateBySqlWithConditionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_UpdateBySqlWithConditionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_UpdateBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxCodeTypeObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_UpdateBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_UpdateBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxCodeTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_DelRecordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_DelQxCodeTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strJSON4Keys" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_DelQxCodeTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_DelQxCodeTypesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelRecordsByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strKeyIdLst" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelRecordsByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelRecordsByJSONResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_DelQxCodeTypesByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_DelQxCodeTypesByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxCodeType_DelQxCodeTypesByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxCodeTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_SerializeObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_SerializeObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_SerializeObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_SerializeTopObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxCodeType_SerializeTopObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxCodeType_SerializeTopObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="QxCodeType_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetTopDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetTopDataSet" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetTopDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetTopDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetDataSetByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetDataSetByRange" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetDataSetByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetDataSetByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetQxCodeTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetQxCodeType" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetQxCodeTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetQxCodeTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetObjByQxCodeTypeIdSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetObjByQxCodeTypeId" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetObjByQxCodeTypeIdSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetObjByQxCodeTypeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetQxCodeTypeVSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetQxCodeTypeV" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetQxCodeTypeVSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetQxCodeTypeVResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetObjLst" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetTopObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetTopObjLst" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetTopObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetTopObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetFirstID_SSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetFirstID_S" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetFirstID_SSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetFirstID_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetFirstObj_SSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetFirstObj_S" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetFirstObj_SSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetFirstObj_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByQxCodeTypeIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByQxCodeTypeId" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByQxCodeTypeIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByQxCodeTypeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObj" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPager" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_funGetRecCountByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_funGetRecCountByCond" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_funGetRecCountByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_funGetRecCountByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetMaxStrIdSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetMaxStrId" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetMaxStrIdSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetMaxStrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetMaxStrIdByPrefixSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetMaxStrIdByPrefix" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_GetMaxStrIdByPrefixSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_GetMaxStrIdByPrefixResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_AddNewRecordBySql2ByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_AddNewRecordBySql2ByJSON" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_AddNewRecordBySql2ByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_AddNewRecordBySql2ByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_AddNewRecordBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_AddNewRecordBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_AddNewRecordBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_AddNewRecordBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_UpdateBySql2ByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_UpdateBySql2ByJSON" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_UpdateBySql2ByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_UpdateBySql2ByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_UpdateBySqlWithConditionSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_UpdateBySqlWithCondition" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_UpdateBySqlWithConditionSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_UpdateBySqlWithConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_UpdateBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_UpdateBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_UpdateBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_UpdateBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_DelQxCodeTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_DelQxCodeTypes" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_DelQxCodeTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_DelQxCodeTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelRecordsByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:DelRecordsByJSON" />
+  </wsdl:message>
+  <wsdl:message name="DelRecordsByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:DelRecordsByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_DelQxCodeTypesByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_DelQxCodeTypesByCond" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_DelQxCodeTypesByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_DelQxCodeTypesByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_SerializeObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_SerializeObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_SerializeObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_SerializeObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_SerializeTopObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QxCodeType_SerializeTopObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QxCodeType_SerializeTopObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QxCodeType_SerializeTopObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QxCodeTypeServiceSoap">
+    <wsdl:operation name="QxCodeType_GetDataSet">
+      <wsdl:input message="tns:QxCodeType_GetDataSetSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetTopDataSet">
+      <wsdl:input message="tns:QxCodeType_GetTopDataSetSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetTopDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetDataSetByRange">
+      <wsdl:input message="tns:QxCodeType_GetDataSetByRangeSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetDataSetByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetDataSetV">
+      <wsdl:input message="tns:QxCodeType_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetQxCodeType">
+      <wsdl:input message="tns:QxCodeType_GetQxCodeTypeSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetQxCodeTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetObjByQxCodeTypeId">
+      <wsdl:input message="tns:QxCodeType_GetObjByQxCodeTypeIdSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetObjByQxCodeTypeIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetQxCodeTypeV">
+      <wsdl:input message="tns:QxCodeType_GetQxCodeTypeVSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetQxCodeTypeVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetObjLst">
+      <wsdl:input message="tns:QxCodeType_GetObjLstSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <wsdl:input message="tns:GetObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetTopObjLst">
+      <wsdl:input message="tns:QxCodeType_GetTopObjLstSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetTopObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetFirstID_S">
+      <wsdl:input message="tns:QxCodeType_GetFirstID_SSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetFirstID_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetFirstObj_S">
+      <wsdl:input message="tns:QxCodeType_GetFirstObj_SSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetFirstObj_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByQxCodeTypeId">
+      <wsdl:input message="tns:GetJSONObjByQxCodeTypeIdSoapIn" />
+      <wsdl:output message="tns:GetJSONObjByQxCodeTypeIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <wsdl:input message="tns:GetFirstJSONObjSoapIn" />
+      <wsdl:output message="tns:GetFirstJSONObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <wsdl:input message="tns:GetJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <wsdl:input message="tns:GetTopJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetTopJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <wsdl:input message="tns:GetJSONObjLstByPagerSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByPagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <wsdl:input message="tns:GetJSONObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_funGetRecCountByCond">
+      <wsdl:input message="tns:QxCodeType_funGetRecCountByCondSoapIn" />
+      <wsdl:output message="tns:QxCodeType_funGetRecCountByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_IsExistRecord">
+      <wsdl:input message="tns:QxCodeType_IsExistRecordSoapIn" />
+      <wsdl:output message="tns:QxCodeType_IsExistRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_IsExist">
+      <wsdl:input message="tns:QxCodeType_IsExistSoapIn" />
+      <wsdl:output message="tns:QxCodeType_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetMaxStrId">
+      <wsdl:input message="tns:QxCodeType_GetMaxStrIdSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetMaxStrIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetMaxStrIdByPrefix">
+      <wsdl:input message="tns:QxCodeType_GetMaxStrIdByPrefixSoapIn" />
+      <wsdl:output message="tns:QxCodeType_GetMaxStrIdByPrefixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_AddNewRecordBySql2">
+      <wsdl:input message="tns:QxCodeType_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:QxCodeType_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_AddNewRecordBySql2ByJSON">
+      <wsdl:input message="tns:QxCodeType_AddNewRecordBySql2ByJSONSoapIn" />
+      <wsdl:output message="tns:QxCodeType_AddNewRecordBySql2ByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_AddNewRecordBySql_XML">
+      <wsdl:input message="tns:QxCodeType_AddNewRecordBySql_XMLSoapIn" />
+      <wsdl:output message="tns:QxCodeType_AddNewRecordBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_UpdateBySql2">
+      <wsdl:input message="tns:QxCodeType_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:QxCodeType_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_UpdateBySql2ByJSON">
+      <wsdl:input message="tns:QxCodeType_UpdateBySql2ByJSONSoapIn" />
+      <wsdl:output message="tns:QxCodeType_UpdateBySql2ByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_UpdateBySqlWithCondition">
+      <wsdl:input message="tns:QxCodeType_UpdateBySqlWithConditionSoapIn" />
+      <wsdl:output message="tns:QxCodeType_UpdateBySqlWithConditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_UpdateBySql_XML">
+      <wsdl:input message="tns:QxCodeType_UpdateBySql_XMLSoapIn" />
+      <wsdl:output message="tns:QxCodeType_UpdateBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_DelRecord">
+      <wsdl:input message="tns:QxCodeType_DelRecordSoapIn" />
+      <wsdl:output message="tns:QxCodeType_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_DelQxCodeTypes">
+      <wsdl:input message="tns:QxCodeType_DelQxCodeTypesSoapIn" />
+      <wsdl:output message="tns:QxCodeType_DelQxCodeTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <wsdl:input message="tns:DelRecordsByJSONSoapIn" />
+      <wsdl:output message="tns:DelRecordsByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_DelQxCodeTypesByCond">
+      <wsdl:input message="tns:QxCodeType_DelQxCodeTypesByCondSoapIn" />
+      <wsdl:output message="tns:QxCodeType_DelQxCodeTypesByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_SerializeObjToXMLStr">
+      <wsdl:input message="tns:QxCodeType_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:QxCodeType_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_SerializeObjLstToXMLStr">
+      <wsdl:input message="tns:QxCodeType_SerializeObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:QxCodeType_SerializeObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_SerializeTopObjLstToXMLStr">
+      <wsdl:input message="tns:QxCodeType_SerializeTopObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:QxCodeType_SerializeTopObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QxCodeTypeServiceSoap" type="tns:QxCodeTypeServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QxCodeType_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetTopDataSet">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetDataSetByRange">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetQxCodeType">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetQxCodeType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetObjByQxCodeTypeId">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetObjByQxCodeTypeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetQxCodeTypeV">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetQxCodeTypeV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetObjLst">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetTopObjLst">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetFirstID_S">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetFirstObj_S">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByQxCodeTypeId">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjByQxCodeTypeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_funGetRecCountByCond">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_IsExist">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetMaxStrId">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetMaxStrIdByPrefix">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_GetMaxStrIdByPrefix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_AddNewRecordBySql2ByJSON">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_AddNewRecordBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_AddNewRecordBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_UpdateBySql2ByJSON">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_UpdateBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_UpdateBySqlWithCondition">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_UpdateBySqlWithCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_UpdateBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_DelQxCodeTypes">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_DelQxCodeTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <soap:operation soapAction="http://tempuri.org/DelRecordsByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_DelQxCodeTypesByCond">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_DelQxCodeTypesByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_SerializeObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_SerializeTopObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/QxCodeType_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QxCodeTypeServiceSoap12" type="tns:QxCodeTypeServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QxCodeType_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetTopDataSet">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetDataSetByRange">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetQxCodeType">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetQxCodeType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetObjByQxCodeTypeId">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetObjByQxCodeTypeId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetQxCodeTypeV">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetQxCodeTypeV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetObjLst">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetTopObjLst">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetFirstID_S">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetFirstObj_S">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByQxCodeTypeId">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjByQxCodeTypeId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_funGetRecCountByCond">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetMaxStrId">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_GetMaxStrIdByPrefix">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_GetMaxStrIdByPrefix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_AddNewRecordBySql2ByJSON">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_AddNewRecordBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_AddNewRecordBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_UpdateBySql2ByJSON">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_UpdateBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_UpdateBySqlWithCondition">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_UpdateBySqlWithCondition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_UpdateBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_DelQxCodeTypes">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_DelQxCodeTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <soap12:operation soapAction="http://tempuri.org/DelRecordsByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_DelQxCodeTypesByCond">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_DelQxCodeTypesByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_SerializeObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxCodeType_SerializeTopObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/QxCodeType_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QxCodeTypeService">
+    <wsdl:port name="QxCodeTypeServiceSoap" binding="tns:QxCodeTypeServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/PrjFileDownLoad/QxCodeTypeService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QxCodeTypeServiceSoap12" binding="tns:QxCodeTypeServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/PrjFileDownLoad/QxCodeTypeService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,223 @@
+﻿/*body
+{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}*/
+/*td
+{
+	font-family: Courier New Greek;
+	font-size: 9pt;
+	color: #000000;
+	line-height: 150%;
+}*/
+play
+{
+	font-size: 13px;
+	color: #3399ff;
+}
+/*a:visited
+{
+	color: #3c73ce;
+	text-decoration: none;
+}
+a:link
+{
+	color: #666666;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #3c73ce;
+	text-decoration: blink;
+}*/
+
+
+.InputCss
+{
+	font-size: 9pt;
+	color: #003399;
+	font-family: "宋体";
+	font-style: normal;
+	background-color: #b4d2ff;
+	border-left-color: #93bee2;
+	border-bottom-color: #93bee2;
+	border-top-style: none;
+	border-top-color: #93bee2;
+	padding-top: 3px;
+	border-right-color: #93bee2;
+}
+.txt
+{
+	border: 1px solid #b4d2ff;
+    font-size: 9pt;
+	color: #003399;
+	font-family: "宋体";
+	font-style: normal;
+	}
+textarea
+{
+	font-weight: normal;
+	font-size: 9pt;
+	color: #454952;
+	font-family: Verdana,Sans-Serif;
+}
+
+select
+{
+	font-weight: normal;
+	font-size: 9pt;
+	color: #454952;
+	font-family: Verdana,Sans-Serif;
+}
+.OutTD
+{
+	background-color: #c0d9f7;
+}
+.mapHref
+{
+	color: #976a4c;
+	font-size: 12px;
+	font-weight: bold;
+}
+.mapHref2 {
+    color: #976a4c;
+    font-size: 13px;
+    font-weight: bold;
+}
+.currentIndex
+{
+	color: #e77427;
+	font-size: 12px;
+}
+.topTitle
+{
+	color: #bf6627;
+	font-size: 12px;
+	font-weight: bold;
+}
+.topTitle2
+{
+	color: #bf6627;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.topContent
+{
+	color: #bc7323;
+	font-size: 12px;
+}
+.topContent2
+{
+	color: #bc7323;
+	font-size: 13px;
+}
+.teachplanTitle
+{
+	color: #b66d39;
+	font-size: 13px;
+	font-weight: bold;
+}
+.teachplanTitle2
+{
+	color: #b66d39;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.teachplanItem
+{
+	color: #b66d39;
+	font-size: 12px;
+	font-weight: bold;
+}
+.teachplanItem2
+{
+	color: #b66d39;
+	font-size: 13px;
+	font-weight: bold;
+}
+.teachplanContent
+{
+	color: #696a7d;
+	font-size: 12px;
+}
+.teachplanContent2
+{
+	color: #696a7d;
+	font-size: 13px;
+}
+.simpleBox
+{
+	border-left: #777777 1px solid;
+	border-bottom: #777777 1px solid;
+	border-top: #777777 1px solid;
+	border-right: #777777 1px solid;
+	color: #555555;
+	font-size: 12px;
+}
+.RedFont
+{
+	color: Red;
+	font-size: 12px;
+}
+.vote
+{
+	color: #155db9;
+	font-size: 12px;
+}
+
+.NameControl
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+
+.ValueControl
+{
+	font-size: 14px;
+	color: #000000;
+	font-family: Verdana;
+	text-decoration: none;
+	background-color: #f0f8ff;
+	}
+
+.NameTD
+{
+	font-size: 14px;
+	color: #3366FF;
+	font-family: 宋体;
+	background-color: #E7E7FF;
+	text-decoration: none;
+}
+.ValueTD
+{
+	font-size: 14px;
+	color: #000000;
+	font-family: Verdana;
+	background-color: #f0f8ff;
+	text-decoration: none;
+}
+.Radio_Defa
+{
+	font-weight: normal;
+	font-size: 13px;
+	color: #000000;
+	font-family: Verdana;
+	text-decoration: none;
+	height: 22px;
+    line-height:22px;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.Region_Title1 {
+    color: #0000FF;
+    font-size: 14px;
+    font-weight: bold;
+}

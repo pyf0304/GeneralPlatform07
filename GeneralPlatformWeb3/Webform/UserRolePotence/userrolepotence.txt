@@ -1,0 +1,15 @@
+wfmUserGroups_QUDI.aspx
+wfmUserRoles_QUDI.aspx
+wfmUsers_QUDI.aspx
+wfmUserState_QUDI.aspx
+wfmGroupManage.aspx
+wfmDepartments_QUDI.aspx
+wfmManPotences.aspx
+wfmManPotencesForMultiUserGroup.aspx
+wfmManPotencesForSingleUserGroup.aspx
+wfmMultiUserGroupRelation.aspx
+wfmPotenceType_QUDI.aspx
+wfmPrjPotence_QUDI.aspx
+wfmSetRoles4Users.aspx
+wfmSingleUserGroupRelation.aspx
+wfmProjects_QUDI.aspx

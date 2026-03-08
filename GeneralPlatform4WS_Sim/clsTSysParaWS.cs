@@ -1,0 +1,224 @@
+///----------------------
+///生成代码版本：7.0.0.0
+///生成日期：2008/11/12
+///生成者：潘以锋
+///注意：需要数据底层（PubDataBase.dll）的版本：8.0.0.5
+///========================
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text;
+using System.Collections;
+using com.taishsoft.commdb;
+using GeneralPlatform4WS.ServiceReferenceTSysPara;
+using System.ServiceModel;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+    public class clsTSysParaWS
+    {
+        
+        private static TSysParaServiceSoapClient objTSysParaServiceSoapClient = null;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static TSysParaServiceSoapClient GetTSysParaServiceSoapClient()
+        {
+            if (objTSysParaServiceSoapClient == null)
+            {
+                BasicHttpBinding binding = new BasicHttpBinding();
+                binding.Name = "TSysParaServiceSoap";
+                binding.CloseTimeout = new System.TimeSpan(6000);
+
+                //EndpointAddress address = new EndpointAddress("http://202.121.63.10/CalcEngineWS/TSysParaService.asmx");
+
+                String strServiceUrl = String.Empty;
+                if (clsSysPara.bolIsLocalHost == false)
+                {
+                    strServiceUrl = String.Format("http://{0}/{1}/TSysParaService.asmx", clsSysPara.CurrIPAddressAndPort, clsSysPara.CurrPrx);
+                }
+                else
+                {
+                    strServiceUrl = String.Format("http://{0}/TSysParaService.asmx", clsSysPara.strCurrIPAddressAndPort_Local);
+                }
+
+
+                //String strServiceUrl = String.Format("http://{0}/CalcEngineWS/TSysParaService.asmx", clsSysPara.strCurrIPAddress);
+                EndpointAddress address = new EndpointAddress(strServiceUrl);
+
+                return new TSysParaServiceSoapClient(binding, address);
+            }
+            else
+            {
+                return objTSysParaServiceSoapClient;
+            }
+        }
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        public clsTSysParaWS()
+        {
+        }
+
+
+        public static DataTable GetDataTable_TSysParaWs(string strWhereCond)
+        {
+            TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+            DataSet objDS = null;
+            try
+            {
+                objDS = objTSysParaService.TSysPara_GetDataSet(strWhereCond);
+                DataTable objDT = objDS.Tables[0];
+                return objDT;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("获取表:TSysPara 数据出错！\r\n" + objException.Message);
+            }
+        }
+
+        public static DataTable GetDataTable_TSysParaVWs(string strWhereCond)
+        {
+            TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+            DataSet objDS = null;
+            try
+            {
+                objDS = objTSysParaService.TSysPara_GetDataSetV(strWhereCond);
+                DataTable objDT = objDS.Tables[0];
+                return objDT;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("获取表:TSysPara View 数据出错！\r\n" + objException.Message);
+            }
+        }
+
+        public static DataTable GetTSysParaVWs(string strWhereCond)
+        {
+            TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+            DataSet objDS = null;
+            try
+            {
+                objDS = objTSysParaService.TSysPara_GetDataSetV(strWhereCond);
+                DataTable objDT = objDS.Tables[0];
+                return objDT;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("获取表View数据出错！\r\n" + objException.Message);
+            }
+        }
+
+        //public static bool GetTSysParaWs(ref clsTSysParaEN objTSysPara)
+        //{
+        //    TSysParaService objTSysParaService = new TSysParaService(clsPubVar.GeneralPlatform4WS_WebRef_TSysPara_TSysParaService);
+        //    bool bolResult = objTSysParaService.TSysPara_GetTSysPara(ref objTSysPara);
+        //    return bolResult;
+        //}
+
+        public static List<clsTSysParaEN> GetTSysParaObjList(string strCondition)
+        {
+            List<clsTSysParaEN> arrObjList = new List<clsTSysParaEN>();
+            System.Data.DataTable objDT = null;
+            objDT = GetDataTable_TSysParaWs(strCondition);
+            if (objDT.Rows.Count == 0)
+            {
+                objDT = null;
+                return arrObjList;
+            }
+            foreach (DataRow objRow in objDT.Rows)
+            {
+                clsTSysParaEN objTSysPara = new clsTSysParaEN();
+                objTSysPara.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+                objTSysPara.SysParaName = objRow["SysParaName"].ToString().Trim(); //系统参数名
+                objTSysPara.SysParaValue = objRow["SysParaValue"].ToString().Trim(); //系统参数值
+                objTSysPara.Memo = objRow["Memo"].ToString().Trim(); //备注
+                arrObjList.Add(objTSysPara);
+            }
+            objDT = null;
+            return arrObjList;
+        }
+
+        public static bool DelRecordWs(long lngmId)
+        {
+            TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+            try
+            {
+                bool bolResult = objTSysParaService.TSysPara_DelRecord(lngmId);
+                return bolResult;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("删除记录出错！\r\n" + objException.Message);
+            }
+        }
+
+        public static bool DelTSysParasWs(List<string>  arrStdId)
+        {
+            TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+            try
+            {
+                string[] slngmId = (string[])(arrStdId.ToArray());
+                bool bolResult = objTSysParaService.TSysPara_DelTSysParas(slngmId);
+                return bolResult;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("删除记录出错！\r\n" + objException.Message);
+            }
+        }
+
+        //public static bool AddNewRecordBySql2Ws(clsTSysParaEN objTSysPara)
+        //{
+        //    TSysParaService objTSysParaService = new TSysParaService(clsPubVar.GeneralPlatform4WS_WebRef_TSysPara_TSysParaService);
+        //    try
+        //    {
+        //        bool bolResult = objTSysParaService.TSysPara_AddNewRecordBySql2(objTSysPara);
+        //        return bolResult;
+        //    }
+        //    catch (Exception objException)
+        //    {
+        //        throw new Exception("添加记录出错！\r\n" + objException.Message);
+        //    }
+        //}
+
+        //public static bool UpdateBySql2Ws(clsTSysParaEN objTSysPara)
+        //{
+        //    TSysParaService objTSysParaService = new TSysParaService(clsPubVar.GeneralPlatform4WS_WebRef_TSysPara_TSysParaService);
+        //    try
+        //    {
+        //        bool bolResult = objTSysParaService.TSysPara_UpdateBySql2(objTSysPara);
+        //        return bolResult;
+        //    }
+        //    catch (Exception objException)
+        //    {
+        //        throw new Exception("添加记录出错！\r\n" + objException.Message);
+        //    }
+        //}
+
+        public static bool IsExistRecordWs(string strCondition)
+        {
+            //检测记录是否存在
+            TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+            bool bolIsExist = objTSysParaService.TSysPara_IsExistRecordByCond(strCondition);
+            return bolIsExist;
+        }
+
+        public static bool IsExistWs(long lngmId)
+        {
+            //检测记录是否存在
+            TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+            bool bolIsExist = objTSysParaService.TSysPara_IsExist(lngmId);
+            return bolIsExist;
+        }
+        public static string getCompanyName()
+        {
+            List<clsTSysParaEN> arrTSysParaObjLst = GetTSysParaObjList("SysParaName='CompanyName' and mid=1");
+            if (arrTSysParaObjLst.Count == 0) return "";
+            clsTSysParaEN objTSysPara = arrTSysParaObjLst[0] as clsTSysParaEN;
+            return objTSysPara.SysParaValue;
+        }
+    }
+}

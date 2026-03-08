@@ -1,0 +1,1705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="QxPrjDataBase_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetTopDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetTopDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_GetTopDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetDataSetByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetDataSetByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_GetDataSetByRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetQxPrjDataBase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxPrjDataBaseEN" type="tns:clsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxPrjDataBaseEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBaseId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjDataBaseName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataBaseName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DatabaseOwner" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataBasePwd" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataBaseTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataBaseUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IpAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TableSpace" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sf_UpdFldSetStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checked" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QxPrjDataBase_GetQxPrjDataBaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_GetQxPrjDataBaseResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objQxPrjDataBaseEN" type="tns:clsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetObjByQxPrjDataBaseId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxPrjDataBaseId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetObjByQxPrjDataBaseIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_GetObjByQxPrjDataBaseIdResult" type="tns:clsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetQxPrjDataBaseV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxPrjDataBaseEN" type="tns:clsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetQxPrjDataBaseVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_GetQxPrjDataBaseVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objQxPrjDataBaseEN" type="tns:clsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_GetObjLstResult" type="tns:ArrayOfClsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsQxPrjDataBaseEN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsQxPrjDataBaseEN" nillable="true" type="tns:clsQxPrjDataBaseEN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjLstByRangeResult" type="tns:ArrayOfClsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetTopObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetTopObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_GetTopObjLstResult" type="tns:ArrayOfClsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetFirstID_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetFirstID_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_GetFirstID_SResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetFirstObj_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetFirstObj_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_GetFirstObj_SResult" type="tns:clsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByQxPrjDataBaseId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxPrjDataBaseId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByQxPrjDataBaseIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjByQxPrjDataBaseIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstJSONObjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intPageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByPagerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_funGetRecCountByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_funGetRecCountByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_funGetRecCountByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxPrjDataBaseId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetMaxStrId">
+        <s:complexType />
+      </s:element>
+      <s:element name="QxPrjDataBase_GetMaxStrIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_GetMaxStrIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetMaxStrIdByPrefix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrefix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_GetMaxStrIdByPrefixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_GetMaxStrIdByPrefixResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxPrjDataBaseEN" type="tns:clsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_AddNewRecordBySql2ByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxPrjDataBaseJSONObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_AddNewRecordBySql2ByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_AddNewRecordBySql2ByJSONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_AddNewRecordBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxPrjDataBaseObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_AddNewRecordBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_AddNewRecordBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxPrjDataBaseEN" type="tns:clsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_UpdateBySql2ByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxPrjDataBaseJSONObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_UpdateBySql2ByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_UpdateBySql2ByJSONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_UpdateBySqlWithCondition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxPrjDataBaseEN" type="tns:clsQxPrjDataBaseEN" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_UpdateBySqlWithConditionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_UpdateBySqlWithConditionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_UpdateBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxPrjDataBaseObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_UpdateBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_UpdateBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxPrjDataBaseId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_DelRecordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_DelQxPrjDataBases">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strJSON4Keys" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_DelQxPrjDataBasesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_DelQxPrjDataBasesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelRecordsByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strKeyIdLst" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelRecordsByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelRecordsByJSONResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_DelQxPrjDataBasesByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_DelQxPrjDataBasesByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxPrjDataBase_DelQxPrjDataBasesByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxPrjDataBaseEN" type="tns:clsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsQxPrjDataBaseEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxPrjDataBaseId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_SerializeObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_SerializeObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_SerializeObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_SerializeTopObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxPrjDataBase_SerializeTopObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxPrjDataBase_SerializeTopObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="QxPrjDataBase_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetTopDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetTopDataSet" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetTopDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetTopDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetDataSetByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetDataSetByRange" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetDataSetByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetDataSetByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetQxPrjDataBaseSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetQxPrjDataBase" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetQxPrjDataBaseSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetQxPrjDataBaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetObjByQxPrjDataBaseIdSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetObjByQxPrjDataBaseId" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetObjByQxPrjDataBaseIdSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetObjByQxPrjDataBaseIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetQxPrjDataBaseVSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetQxPrjDataBaseV" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetQxPrjDataBaseVSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetQxPrjDataBaseVResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetObjLst" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetTopObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetTopObjLst" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetTopObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetTopObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetFirstID_SSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetFirstID_S" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetFirstID_SSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetFirstID_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetFirstObj_SSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetFirstObj_S" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetFirstObj_SSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetFirstObj_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByQxPrjDataBaseIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByQxPrjDataBaseId" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByQxPrjDataBaseIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByQxPrjDataBaseIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObj" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPager" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_funGetRecCountByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_funGetRecCountByCond" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_funGetRecCountByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_funGetRecCountByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetMaxStrIdSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetMaxStrId" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetMaxStrIdSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetMaxStrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetMaxStrIdByPrefixSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetMaxStrIdByPrefix" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_GetMaxStrIdByPrefixSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_GetMaxStrIdByPrefixResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_AddNewRecordBySql2ByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_AddNewRecordBySql2ByJSON" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_AddNewRecordBySql2ByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_AddNewRecordBySql2ByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_AddNewRecordBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_AddNewRecordBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_AddNewRecordBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_AddNewRecordBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_UpdateBySql2ByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_UpdateBySql2ByJSON" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_UpdateBySql2ByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_UpdateBySql2ByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_UpdateBySqlWithConditionSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_UpdateBySqlWithCondition" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_UpdateBySqlWithConditionSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_UpdateBySqlWithConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_UpdateBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_UpdateBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_UpdateBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_UpdateBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_DelQxPrjDataBasesSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_DelQxPrjDataBases" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_DelQxPrjDataBasesSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_DelQxPrjDataBasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelRecordsByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:DelRecordsByJSON" />
+  </wsdl:message>
+  <wsdl:message name="DelRecordsByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:DelRecordsByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_DelQxPrjDataBasesByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_DelQxPrjDataBasesByCond" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_DelQxPrjDataBasesByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_DelQxPrjDataBasesByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_SerializeObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_SerializeObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_SerializeObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_SerializeObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_SerializeTopObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_SerializeTopObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QxPrjDataBase_SerializeTopObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QxPrjDataBase_SerializeTopObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QxPrjDataBaseServiceSoap">
+    <wsdl:operation name="QxPrjDataBase_GetDataSet">
+      <wsdl:input message="tns:QxPrjDataBase_GetDataSetSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetTopDataSet">
+      <wsdl:input message="tns:QxPrjDataBase_GetTopDataSetSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetTopDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetDataSetByRange">
+      <wsdl:input message="tns:QxPrjDataBase_GetDataSetByRangeSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetDataSetByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetDataSetV">
+      <wsdl:input message="tns:QxPrjDataBase_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetQxPrjDataBase">
+      <wsdl:input message="tns:QxPrjDataBase_GetQxPrjDataBaseSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetQxPrjDataBaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetObjByQxPrjDataBaseId">
+      <wsdl:input message="tns:QxPrjDataBase_GetObjByQxPrjDataBaseIdSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetObjByQxPrjDataBaseIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetQxPrjDataBaseV">
+      <wsdl:input message="tns:QxPrjDataBase_GetQxPrjDataBaseVSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetQxPrjDataBaseVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetObjLst">
+      <wsdl:input message="tns:QxPrjDataBase_GetObjLstSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <wsdl:input message="tns:GetObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetTopObjLst">
+      <wsdl:input message="tns:QxPrjDataBase_GetTopObjLstSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetTopObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetFirstID_S">
+      <wsdl:input message="tns:QxPrjDataBase_GetFirstID_SSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetFirstID_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetFirstObj_S">
+      <wsdl:input message="tns:QxPrjDataBase_GetFirstObj_SSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetFirstObj_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByQxPrjDataBaseId">
+      <wsdl:input message="tns:GetJSONObjByQxPrjDataBaseIdSoapIn" />
+      <wsdl:output message="tns:GetJSONObjByQxPrjDataBaseIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <wsdl:input message="tns:GetFirstJSONObjSoapIn" />
+      <wsdl:output message="tns:GetFirstJSONObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <wsdl:input message="tns:GetJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <wsdl:input message="tns:GetTopJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetTopJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <wsdl:input message="tns:GetJSONObjLstByPagerSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByPagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <wsdl:input message="tns:GetJSONObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_funGetRecCountByCond">
+      <wsdl:input message="tns:QxPrjDataBase_funGetRecCountByCondSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_funGetRecCountByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_IsExistRecord">
+      <wsdl:input message="tns:QxPrjDataBase_IsExistRecordSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_IsExistRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_IsExist">
+      <wsdl:input message="tns:QxPrjDataBase_IsExistSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetMaxStrId">
+      <wsdl:input message="tns:QxPrjDataBase_GetMaxStrIdSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetMaxStrIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetMaxStrIdByPrefix">
+      <wsdl:input message="tns:QxPrjDataBase_GetMaxStrIdByPrefixSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_GetMaxStrIdByPrefixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_AddNewRecordBySql2">
+      <wsdl:input message="tns:QxPrjDataBase_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_AddNewRecordBySql2ByJSON">
+      <wsdl:input message="tns:QxPrjDataBase_AddNewRecordBySql2ByJSONSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_AddNewRecordBySql2ByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_AddNewRecordBySql_XML">
+      <wsdl:input message="tns:QxPrjDataBase_AddNewRecordBySql_XMLSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_AddNewRecordBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_UpdateBySql2">
+      <wsdl:input message="tns:QxPrjDataBase_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_UpdateBySql2ByJSON">
+      <wsdl:input message="tns:QxPrjDataBase_UpdateBySql2ByJSONSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_UpdateBySql2ByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_UpdateBySqlWithCondition">
+      <wsdl:input message="tns:QxPrjDataBase_UpdateBySqlWithConditionSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_UpdateBySqlWithConditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_UpdateBySql_XML">
+      <wsdl:input message="tns:QxPrjDataBase_UpdateBySql_XMLSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_UpdateBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_DelRecord">
+      <wsdl:input message="tns:QxPrjDataBase_DelRecordSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_DelQxPrjDataBases">
+      <wsdl:input message="tns:QxPrjDataBase_DelQxPrjDataBasesSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_DelQxPrjDataBasesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <wsdl:input message="tns:DelRecordsByJSONSoapIn" />
+      <wsdl:output message="tns:DelRecordsByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_DelQxPrjDataBasesByCond">
+      <wsdl:input message="tns:QxPrjDataBase_DelQxPrjDataBasesByCondSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_DelQxPrjDataBasesByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_SerializeObjToXMLStr">
+      <wsdl:input message="tns:QxPrjDataBase_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_SerializeObjLstToXMLStr">
+      <wsdl:input message="tns:QxPrjDataBase_SerializeObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_SerializeObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_SerializeTopObjLstToXMLStr">
+      <wsdl:input message="tns:QxPrjDataBase_SerializeTopObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:QxPrjDataBase_SerializeTopObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QxPrjDataBaseServiceSoap" type="tns:QxPrjDataBaseServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QxPrjDataBase_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetTopDataSet">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetDataSetByRange">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetQxPrjDataBase">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetQxPrjDataBase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetObjByQxPrjDataBaseId">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetObjByQxPrjDataBaseId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetQxPrjDataBaseV">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetQxPrjDataBaseV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetObjLst">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetTopObjLst">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetFirstID_S">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetFirstObj_S">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByQxPrjDataBaseId">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjByQxPrjDataBaseId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_funGetRecCountByCond">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_IsExist">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetMaxStrId">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetMaxStrIdByPrefix">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_GetMaxStrIdByPrefix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_AddNewRecordBySql2ByJSON">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_AddNewRecordBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_AddNewRecordBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_UpdateBySql2ByJSON">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_UpdateBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_UpdateBySqlWithCondition">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_UpdateBySqlWithCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_UpdateBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_DelQxPrjDataBases">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_DelQxPrjDataBases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <soap:operation soapAction="http://tempuri.org/DelRecordsByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_DelQxPrjDataBasesByCond">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_DelQxPrjDataBasesByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_SerializeObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_SerializeTopObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/QxPrjDataBase_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QxPrjDataBaseServiceSoap12" type="tns:QxPrjDataBaseServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QxPrjDataBase_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetTopDataSet">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetDataSetByRange">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetQxPrjDataBase">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetQxPrjDataBase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetObjByQxPrjDataBaseId">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetObjByQxPrjDataBaseId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetQxPrjDataBaseV">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetQxPrjDataBaseV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetObjLst">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetTopObjLst">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetFirstID_S">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetFirstObj_S">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByQxPrjDataBaseId">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjByQxPrjDataBaseId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_funGetRecCountByCond">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetMaxStrId">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_GetMaxStrIdByPrefix">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_GetMaxStrIdByPrefix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_AddNewRecordBySql2ByJSON">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_AddNewRecordBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_AddNewRecordBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_UpdateBySql2ByJSON">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_UpdateBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_UpdateBySqlWithCondition">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_UpdateBySqlWithCondition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_UpdateBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_DelQxPrjDataBases">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_DelQxPrjDataBases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <soap12:operation soapAction="http://tempuri.org/DelRecordsByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_DelQxPrjDataBasesByCond">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_DelQxPrjDataBasesByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_SerializeObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxPrjDataBase_SerializeTopObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/QxPrjDataBase_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QxPrjDataBaseService">
+    <wsdl:port name="QxPrjDataBaseServiceSoap" binding="tns:QxPrjDataBaseServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/PrjManage/QxPrjDataBaseService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QxPrjDataBaseServiceSoap12" binding="tns:QxPrjDataBaseServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/PrjManage/QxPrjDataBaseService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

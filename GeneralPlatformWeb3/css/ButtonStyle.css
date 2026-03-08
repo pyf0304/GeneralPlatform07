@@ -1,0 +1,361 @@
+﻿.reset
+{
+background-image: url(../images/reset.gif); 
+width: 67px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+position: relative;
+background-color: transparent; 
+border-bottom-style: none;}
+.submit
+{
+border-style: none;
+background-image: url('../images/submit.gif'); 
+	width: 67px;
+	background-color: transparent; 
+}
+.displayall
+{
+background-image: url(../images/displayall.gif); 
+width: 92px;
+height:20px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.viewresult
+{
+background-image: url(../images/viewresult_1.gif); 
+width: 92px;
+height:20px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.viewresult
+{
+background-image: url(../images/viewresult.gif); 
+width: 92px;
+height:20px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.close
+{
+background-image: url(../images/close.gif); 
+width: 65px;
+height:28px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.teachplantotal
+{
+background-image: url(../images/teacherPlanTotal.gif); 
+width: 91px;
+height:31px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.comment
+{
+background-image: url(../images/comment.gif); 
+width: 60px;
+height:17px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.selectall
+{
+background-image: url(../images/selectall.gif); 
+width: 60px;
+height:17px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.score
+{
+background-image: url(../images/score.gif); 
+width:60px;
+height:17px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+
+.addRecord
+{
+background-image: url(../images/addRecord.gif); 
+width:91px;
+height:31px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.EditTeachPlan
+{
+background-image: url(../images/EditTeachPlan.gif); 
+width:91px;
+height:28px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.printpreview
+{
+background-image: url(../images/printpreview.gif); 
+width:91px;
+height:31px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+
+.addFreeSenate
+{
+background-image: url(../images/addFreeSenate.gif); 
+width:105px;
+height:24px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.closeSenate
+{
+background-image: url(../images/closeSenate.gif); 
+width:67px;
+height:20px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.find
+{
+background-image: url(../images/btn_1.gif); 
+width:71px;
+height:31px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.leftarrow
+{
+background-image: url(../images/leftarrow1.gif); 
+width:50px;
+height:22px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.rightArrow
+{
+background-image: url(../images/RightArrow.gif); 
+width:50px;
+height:22px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+border-bottom-style: none;}
+.Login
+{
+background-image: url(../images/Login.gif); 
+width:60px;
+height:23px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+cursor:pointer;
+border-bottom-style: none;}
+.Login4Visitor
+{
+background-image: url(../images/Login4Visitor.gif); 
+width:70px;
+height:23px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+cursor:pointer;
+border-bottom-style: none;}
+.viewVote
+{
+background-image: url(../images/viewVote.gif); 
+width:60px;
+height:23px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+cursor:pointer;
+border-bottom-style: none;}
+.addVote
+{
+background-image: url(../images/addVote.gif); 
+width:60px;
+height:23px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+cursor:pointer;
+border-bottom-style: none;}
+.microEdit
+{
+background-image: url(../images/microEdit.gif); 
+background-repeat:no-repeat;
+width:86px;
+height:23px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+cursor:pointer;
+border-bottom-style: none;}
+.EditTeacherSenate
+{
+background-image: url(../images/EditMicroSenate.jpg); 
+width:60px;
+height:23px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+cursor:pointer;
+border-bottom-style: none;}
+
+.Button4Senate
+{
+background-image: url(../images/button_bg.png); 
+width:60px;
+height:25px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+cursor:pointer;
+border-bottom-style: none;}
+
+.Button4Senate2
+{
+background-image: url(../images/button_bg2.png); 
+width:140px;
+height:25px;
+border-top-style: none; 
+border-right-style: none; 
+border-left-style: none; 
+background-color: transparent; 
+cursor:pointer;
+border-bottom-style: none;}
+
+.EditExpertSenate
+{
+border-style: none;
+background-image: url('../images/EditExpertSenate.jpg'); 
+    width:120px;
+height:29px;
+    background-color: transparent; 
+    cursor:pointer;
+}
+.EditSelfSenate
+{
+border-style: none;
+background-image: url('../images/EditSelfSenate.jpg'); 
+    width:120px;
+height:29px;
+    background-color: transparent; 
+    cursor:pointer;
+}
+
+/*固定长度，不换行，超长用省略号*/
+.ellipsis
+{
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+.btn btn-outline-info btn-sm
+{
+	background: url(images/btn.gif) repeat-x #e3f1fa;
+	border: 1px solid #aed0ea;
+	padding: 0px 10px;
+	line-height: 19px;
+	color: #3d80b3;
+	cursor: pointer;
+}
+.NameLabel
+{
+	margin: 0px;
+	color: #666;
+	background-color: #FFF;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+}
+
+.LinkButton_InPager
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: #0033CC;
+	font-family: Verdana;
+	text-decoration: none;
+	height: 22px;
+	vertical-align: middle;
+	text-align: center;
+}
+a.LinkButton_InPager:link
+{
+	font-size: 14px;
+	color: #0a246a;
+	text-decoration: none;
+}
+a.LinkButton_InPager:visited
+{
+	font-size: 14px;
+	color: #0a246a;
+	text-decoration: none;
+}
+a.LinkButton_InPager:hover
+{
+	font-size: 14px;
+	color: #cc0000;
+	text-decoration: none;
+}
+a.LinkButton_InPager:active
+{
+	font-size: 14px;
+	color: #FFFFFF;
+	text-decoration: underline;
+	background-color: #3333CC;
+}
+
+.Label_InPager
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}

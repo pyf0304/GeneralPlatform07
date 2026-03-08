@@ -1,0 +1,660 @@
+﻿
+//类名:clsQxPrjFileRelaWS
+ ///----------------------
+ ///生成代码版本:2017.01.19.1
+ ///生成日期:2017/01/31
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:工程文件下载
+ ///模块英文名:PrjFileDownLoad
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferenceQxPrjFileRela;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// 项目相关文件(QxPrjFileRela)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsQxPrjFileRelaWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsQxPrjFileRelaEN> arrQxPrjFileRelaObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static QxPrjFileRelaServiceSoapClient objQxPrjFileRelaServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static QxPrjFileRelaServiceSoapClient GetQxPrjFileRelaServiceSoapClient()
+{
+if (objQxPrjFileRelaServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "QxPrjFileRelaServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxPrjFileRelaService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxPrjFileRelaService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new QxPrjFileRelaServiceSoapClient(binding, address);
+}
+else
+{
+return objQxPrjFileRelaServiceSoapClient;
+}
+}
+
+ public clsQxPrjFileRelaWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GenBindListView)
+ /// </summary>
+public static int BindLv_QxPrjFileRela(System.Windows.Forms.ListView lvQxPrjFileRela, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lviQxPrjFileRela; 
+ArrayList arrQxPrjFileRelaObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrQxPrjFileRelaObjList = new clsQxPrjFileRelaBL.GetQxPrjFileRelaObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvQxPrjFileRela.Items.Clear();//清除原来所有Item
+lvQxPrjFileRela.Columns.Clear();//清除原来所有列头信息
+lvQxPrjFileRela.Columns.Add("流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxPrjFileRela.Columns.Add("项目Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxPrjFileRela.Columns.Add("文件名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxPrjFileRela.Columns.Add("文件路径", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxPrjFileRela.Columns.Add("是否需要下载", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxPrjFileRela.Columns.Add("版本", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxPrjFileRela.Columns.Add("修改日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxPrjFileRela.Columns.Add("修改用户Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxPrjFileRela.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxPrjFileRela.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsQxPrjFileRelaEN objQxPrjFileRelaEN in arrQxPrjFileRelaObjList)
+{
+lviQxPrjFileRela = new System.Windows.Forms.ListViewItem();
+lviQxPrjFileRela.Tag = objQxPrjFileRelaEN.mId;
+lviQxPrjFileRela.Text = objQxPrjFileRelaEN.mId.ToString();
+lviQxPrjFileRela.SubItems.Add(objQxPrjFileRelaEN.QxPrjId);
+lviQxPrjFileRela.SubItems.Add(objQxPrjFileRelaEN.FileName);
+lviQxPrjFileRela.SubItems.Add(objQxPrjFileRelaEN.FilePath);
+lviQxPrjFileRela.SubItems.Add(objQxPrjFileRelaEN.IsNeedDownLoad.ToString());
+lviQxPrjFileRela.SubItems.Add(objQxPrjFileRelaEN.Version);
+lviQxPrjFileRela.SubItems.Add(objQxPrjFileRelaEN.UpdDate);
+lviQxPrjFileRela.SubItems.Add(objQxPrjFileRelaEN.UpdUserId);
+lviQxPrjFileRela.SubItems.Add(objQxPrjFileRelaEN.Memo);
+lvQxPrjFileRela.Items.Add(lviQxPrjFileRela);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrQxPrjFileRelaObjList.Count;
+}
+
+ /// <summary>
+ /// 检查对象字段值是否合法,1)检查是否可空;2)检查字段值长度是否超长,如果出错就抛出错误.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4WS_CheckPropertyNew)
+ /// </summary>
+public void CheckPropertyNew(clsQxPrjFileRelaEN objQxPrjFileRelaEN)
+{
+if (!Object.Equals(null, objQxPrjFileRelaEN.QxPrjId) && getStrLen(objQxPrjFileRelaEN.QxPrjId) > 4)
+{
+ throw new Exception("字段[项目Id]的长度不能超过4!");
+}
+if (!Object.Equals(null, objQxPrjFileRelaEN.FileName) && getStrLen(objQxPrjFileRelaEN.FileName) > 50)
+{
+ throw new Exception("字段[文件名]的长度不能超过50!");
+}
+if (!Object.Equals(null, objQxPrjFileRelaEN.FilePath) && getStrLen(objQxPrjFileRelaEN.FilePath) > 50)
+{
+ throw new Exception("字段[文件路径]的长度不能超过50!");
+}
+if (!Object.Equals(null, objQxPrjFileRelaEN.Version) && getStrLen(objQxPrjFileRelaEN.Version) > 30)
+{
+ throw new Exception("字段[版本]的长度不能超过30!");
+}
+if (!Object.Equals(null, objQxPrjFileRelaEN.UpdDate) && getStrLen(objQxPrjFileRelaEN.UpdDate) > 14)
+{
+ throw new Exception("字段[修改日期]的长度不能超过14!");
+}
+if (!Object.Equals(null, objQxPrjFileRelaEN.UpdUserId) && getStrLen(objQxPrjFileRelaEN.UpdUserId) > 20)
+{
+ throw new Exception("字段[修改用户Id]的长度不能超过20!");
+}
+if (!Object.Equals(null, objQxPrjFileRelaEN.Memo) && getStrLen(objQxPrjFileRelaEN.Memo) > 1000)
+{
+ throw new Exception("字段[备注]的长度不能超过1000!");
+}
+ objQxPrjFileRelaEN.IsCheckProperty = true;
+ }
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxPrjFileRelaWs(string strWhereCond)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxPrjFileRelaService.QxPrjFileRela_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_GetDataSet", "clsQxPrjFileRelaWS:GetDataTable_QxPrjFileRelaWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxPrjFileRelaByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxPrjFileRelaService.QxPrjFileRela_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_GetDataSetByRange", "clsQxPrjFileRelaWS:GetDataTable_QxPrjFileRelaByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetDataTable_QxPrjFileRelaVWs(string strWhereCond)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxPrjFileRelaService.QxPrjFileRela_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_GetDataSetV", "clsQxPrjFileRelaWS:GetDataTable_QxPrjFileRelaVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetQxPrjFileRelaVWs(string strWhereCond)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxPrjFileRelaService.QxPrjFileRela_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_GetDataSetV", "clsQxPrjFileRelaWS:GetDataTable_QxPrjFileRelaVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabV2ByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxPrjFileRelaVByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxPrjFileRelaService.QxPrjFileRela_GetDataSetVByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_GetDataSetVByRange", "clsQxPrjFileRelaWS:GetDataTable_QxPrjFileRelaVByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objQxPrjFileRelaEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetQxPrjFileRelaWs(ref clsQxPrjFileRelaEN objQxPrjFileRelaEN)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+bool bolResult = objQxPrjFileRelaService.QxPrjFileRela_GetQxPrjFileRela(ref objQxPrjFileRelaEN);
+return bolResult;
+}
+
+public static clsQxPrjFileRelaEN GetQxPrjFileRelaBymIdWs(long lngmId)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+clsQxPrjFileRelaEN objQxPrjFileRelaEN = objQxPrjFileRelaService.QxPrjFileRela_GetQxPrjFileRelaBymId(lngmId);
+return objQxPrjFileRelaEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static long GetFirstID_S(string strWhereCond)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+try
+{
+long lngmId = objQxPrjFileRelaService.QxPrjFileRela_GetFirstID_S(strWhereCond);
+return lngmId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_GetFirstID_S", "clsQxPrjFileRelaWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsQxPrjFileRelaEN GetFirstQxPrjFileRela_S(string strWhereCond)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+try
+{
+clsQxPrjFileRelaEN objQxPrjFileRelaEN = objQxPrjFileRelaService.QxPrjFileRela_GetFirstQxPrjFileRela_S(strWhereCond);
+return objQxPrjFileRelaEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_GetFirstQxPrjFileRela_S", "clsQxPrjFileRelaWS:GetFirstQxPrjFileRela_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "lngmId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsQxPrjFileRelaEN GetQxPrjFileRelaObjBymId_Cache(long lngmId)
+{
+string strWhereCond = string.Format("1 = 1 order by mId");
+if (arrQxPrjFileRelaObjLst_Cache == null)
+{
+arrQxPrjFileRelaObjLst_Cache = clsQxPrjFileRelaWS.GetQxPrjFileRelaObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrQxPrjFileRelaObjLst_Cache.Count - 1;
+int intMid = 0;
+clsQxPrjFileRelaEN objQxPrjFileRelaEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objQxPrjFileRelaEN = arrQxPrjFileRelaObjLst_Cache[intMid];
+if (objQxPrjFileRelaEN.mId == lngmId)
+{
+intFindFailCount = 0;
+return objQxPrjFileRelaEN;
+}
+else if (objQxPrjFileRelaEN.mId.CompareTo(lngmId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrQxPrjFileRelaObjLst_Cache = null;
+if (intFindFailCount == 1) return GetQxPrjFileRelaObjBymId_Cache(lngmId);
+string strErrMsgForGetObjById = string.Format("在QxPrjFileRela对象缓存列表中,找不到记录[mId = {0}][intFindFailCount = {1}](函数:GetQxPrjFileRelaObjBymId_Cache)", lngmId, intFindFailCount);
+if (objQxPrjFileRelaEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objQxPrjFileRelaEN.mId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsQxPrjFileRelaBL", "GetQxPrjFileRelaObjBymId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsQxPrjFileRelaEN> GetQxPrjFileRelaObjList(string strWhereCond)
+{
+ List<clsQxPrjFileRelaEN> arrObjList = new List<clsQxPrjFileRelaEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxPrjFileRelaWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxPrjFileRelaEN objQxPrjFileRelaEN = new clsQxPrjFileRelaEN();
+objQxPrjFileRelaEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objQxPrjFileRelaEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objQxPrjFileRelaEN.FileName = objRow["FileName"].ToString().Trim(); //文件名
+objQxPrjFileRelaEN.FilePath = objRow["FilePath"].ToString().Trim(); //文件路径
+objQxPrjFileRelaEN.IsNeedDownLoad = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsNeedDownLoad"].ToString().Trim()); //是否需要下载
+objQxPrjFileRelaEN.Version = objRow["Version"].ToString().Trim(); //版本
+objQxPrjFileRelaEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objQxPrjFileRelaEN.UpdUserId = objRow["UpdUserId"].ToString().Trim(); //修改用户Id
+objQxPrjFileRelaEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxPrjFileRelaEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsQxPrjFileRelaEN> GetQxPrjFileRelaObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsQxPrjFileRelaEN> arrObjList = new List<clsQxPrjFileRelaEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxPrjFileRelaByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxPrjFileRelaEN objQxPrjFileRelaEN = new clsQxPrjFileRelaEN();
+objQxPrjFileRelaEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objQxPrjFileRelaEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objQxPrjFileRelaEN.FileName = objRow["FileName"].ToString().Trim(); //文件名
+objQxPrjFileRelaEN.FilePath = objRow["FilePath"].ToString().Trim(); //文件路径
+objQxPrjFileRelaEN.IsNeedDownLoad = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsNeedDownLoad"].ToString().Trim()); //是否需要下载
+objQxPrjFileRelaEN.Version = objRow["Version"].ToString().Trim(); //版本
+objQxPrjFileRelaEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objQxPrjFileRelaEN.UpdUserId = objRow["UpdUserId"].ToString().Trim(); //修改用户Id
+objQxPrjFileRelaEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxPrjFileRelaEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool DelRecordWs(long lngmId)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+try
+{
+bool bolResult = objQxPrjFileRelaService.QxPrjFileRela_DelRecord(lngmId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_DelRecord", "clsQxPrjFileRelaWS:DelRecordWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool DelQxPrjFileRelasWs(List<string> arrmId)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+try
+{
+string[] slngmId = (string[])(arrmId.ToArray());
+bool bolResult = objQxPrjFileRelaService.QxPrjFileRela_DelQxPrjFileRelas(slngmId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_DelQxPrjFileRelas", "clsQxPrjFileRelaWS:DelQxPrjFileRelasWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static int DelQxPrjFileRelasByCondWs(string strWhereCond)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+try
+{
+int intRecNum = objQxPrjFileRelaService.QxPrjFileRela_DelQxPrjFileRelasByCond(strWhereCond);
+return intRecNum;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_DelQxPrjFileRelasByCond", "clsQxPrjFileRelaWS:DelQxPrjFileRelasByCondWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool AddNewRecordBySql2Ws(clsQxPrjFileRelaEN objQxPrjFileRelaEN)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+try
+{
+bool bolResult = objQxPrjFileRelaService.QxPrjFileRela_AddNewRecordBySql2(objQxPrjFileRelaEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_AddNewRecordBySql2", "clsQxPrjFileRelaWS:AddNewRecordBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 把表对象添加到数据库中,并且返回该记录的关键字
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_AddNewRecordBySql2WithReturnKey)
+ /// </summary>
+ /// <param name = "objQxPrjFileRelaEN">需要添加的表对象</param>
+ /// <returns>返回新添加记录的关键字</returns>
+public static string AddNewRecordBySql2WithReturnKey(clsQxPrjFileRelaEN objQxPrjFileRelaEN)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+try
+{
+string strKey = objQxPrjFileRelaService.QxPrjFileRela_AddNewRecordBySql2WithReturnKey(objQxPrjFileRelaEN);
+return strKey;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_AddNewRecordBySql2WithReturnKey", "clsQxPrjFileRelaWS:AddNewRecordBySql2WithReturnKey", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool UpdateBySql2Ws(clsQxPrjFileRelaEN objQxPrjFileRelaEN)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+try
+{
+bool bolResult = objQxPrjFileRelaService.QxPrjFileRela_UpdateBySql2(objQxPrjFileRelaEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_UpdateBySql2", "clsQxPrjFileRelaWS:UpdateBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_UpdateBySqlWithCondition)
+ /// </summary>
+ /// <param name = "objQxPrjFileRelaEN">需要修改的对象</param>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static bool UpdateBySqlWithCondition(clsQxPrjFileRelaEN objQxPrjFileRelaEN, string strWhereCond)
+{
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+try
+{
+bool bolResult = objQxPrjFileRelaService.QxPrjFileRela_UpdateBySqlWithCondition(objQxPrjFileRelaEN, strWhereCond);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxPrjFileRela_UpdateBySqlWithCondition", "clsQxPrjFileRelaWS:UpdateBySqlWithCondition", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+bool bolIsExist = objQxPrjFileRelaService.QxPrjFileRela_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(long lngmId)
+{
+//检测记录是否存在
+QxPrjFileRelaServiceSoapClient objQxPrjFileRelaService = GetQxPrjFileRelaServiceSoapClient();
+bool bolIsExist = objQxPrjFileRelaService.QxPrjFileRela_IsExist(lngmId);
+return bolIsExist;
+}
+
+
+
+ /// <summary>
+ /// 获取字符串长度,其中汉字为2个字节,英文为1个字节
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GengetStrLen)
+ /// </summary>
+ /// <param name = "strTemp">给定的原字符串</param>
+ /// <returns>返回字符串长度</returns>
+public static int getStrLen(string strTemp)
+{
+int len ;
+byte[] sarr = System.Text.Encoding.Default.GetBytes(strTemp);
+len = sarr.Length;//will output as 3+3*2 = 9
+return len;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxPrjFileRelaService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxPrjFileRelaService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

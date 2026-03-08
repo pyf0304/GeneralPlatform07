@@ -1,0 +1,405 @@
+﻿
+table
+{
+	border: 0;
+	margin: 0;
+	border-collapse: collapse;
+}
+
+	table td
+	{
+		padding: 0;
+	}
+
+/***********************************top页*************************************/
+/***********************************top页*************************************/
+/***********************************top页*************************************/
+
+.top_body
+{
+	BACKGROUND-IMAGE: url(admin/bg.gif);
+	margin: 0px;
+	BACKGROUND-REPEAT: repeat-x;
+	height: 90px;
+}
+
+.top_logo
+{
+	BACKGROUND-IMAGE: url(admin/logo.png);
+	BACKGROUND-REPEAT: no-repeat;
+	height: 60px;
+}
+
+.top_banner_menu
+{
+	PADDING-RIGHT: 50px;
+	BACKGROUND-POSITION: right 50%;
+	DISPLAY: block;
+	PADDING-LEFT: 0px;
+	BACKGROUND-IMAGE: url(admin/bg_banner_menu.gif);
+	PADDING-BOTTOM: 0px;
+	PADDING-TOP: 3px;
+	BACKGROUND-REPEAT: no-repeat;
+	HEIGHT: 30px;
+	TEXT-ALIGN: right;
+}
+
+.top_banner_div
+{
+	DISPLAY: block;
+	HEIGHT: 21px;
+}
+
+	.top_banner_div .title1
+	{
+		line-height: 21px;
+		text-align: left;
+		margin-left: 300px;
+		font-weight: normal;
+		font-size: 15px;
+		font-weight: bold;
+		color: white;
+		font-family: 黑体;
+		vertical-align: middle;
+		float: left;
+	}
+
+	.top_banner_div .title2
+	{
+		line-height: 21px;
+		/*HEIGHT: 21px;*/
+		text-align: right;
+		margin-right: 150px;
+		font-weight: normal;
+		/*background: url(img/play.png) 5px center no-repeat #F8F7FF;*/
+		font-size: 14px;
+		font-weight: bold;
+		color: white;
+		font-family: 黑体;
+		vertical-align: middle;
+		float: right;
+	}
+
+	.top_banner_div .title1 .font
+	{
+		color: red;
+	}
+
+	.top_banner_div .title2 .font
+	{
+		color: red;
+		font-size: 13px;
+		font-family: 宋体;
+	}
+
+
+.top_nav
+{
+	BACKGROUND-IMAGE: url(admin/bg_nav.gif);
+	BACKGROUND-REPEAT: repeat-x;
+	HEIGHT: 30px;
+}
+
+.top_userName
+{
+	color: white;
+	font-size: 13px;
+	font-family: 宋体;
+}
+
+	.top_userName.font
+	{
+		color: red;
+		font-size: 13px;
+		font-family: 宋体;
+	}
+
+
+
+/***********************************内容页*************************************/
+/***********************************内容页*************************************/
+/***********************************内容页*************************************/
+
+/*********适用于left、EmployeeMgr页面********/
+.main_body
+{
+	BACKGROUND-POSITION-Y: -130px;
+	BACKGROUND-IMAGE: url(admin/bg.gif);
+	BACKGROUND-REPEAT: repeat-x;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+/*********************************头部***********************************/
+
+.main_table
+{
+	width: 100%;
+	height: 100%;
+}
+
+.bg_header
+{
+	/*BACKGROUND-IMAGE: url(admin/bg_header.gif);*/
+	/*BACKGROUND-REPEAT: repeat-x;*/
+	height: 47px;
+}
+
+
+
+
+
+.main_hl
+{
+	FLOAT: left;
+	BACKGROUND-IMAGE: url(admin/main_hl.gif);
+	WIDTH: 10px;
+	/*BACKGROUND-REPEAT: no-repeat;*/
+	HEIGHT: 47px;
+}
+
+.main_title
+{
+	BACKGROUND-IMAGE: url(admin/bg_header.gif);
+	BACKGROUND-REPEAT: repeat-x;
+	height: 47px;
+}
+
+.main_hl2
+{
+	FLOAT: left;
+	BACKGROUND-IMAGE: url(admin/main_hl2.gif);
+	WIDTH: 15px;
+	BACKGROUND-REPEAT: no-repeat;
+	HEIGHT: 47px;
+}
+
+.main_hb
+{
+	/*PADDING-RIGHT: 10px;
+	PADDING-LEFT: 10px;
+	PADDING-BOTTOM: 10px;
+	PADDING-TOP: 10px;*/
+	FLOAT: left;
+	BACKGROUND-IMAGE: url(admin/main_hb.gif);
+	COLOR: white;
+	BACKGROUND-REPEAT: repeat-x;
+	line-height: 36px;
+	/*HEIGHT: 47px;*/
+	TEXT-ALIGN: center;
+}
+
+.main_hr
+{
+	FLOAT: left;
+	BACKGROUND-IMAGE: url(admin/main_hr.gif);
+	WIDTH: 60px;
+	BACKGROUND-REPEAT: no-repeat;
+	HEIGHT: 47px;
+}
+
+.main_rc
+{
+	BACKGROUND-POSITION: 50% bottom;
+	BACKGROUND-IMAGE: url(admin/main_rc.gif);
+	width: 10px;
+	BACKGROUND-REPEAT: no-repeat;
+}
+
+
+/*****************************中部*******************************/
+.bg_center
+{
+}
+
+	.bg_center div
+	{
+		float: left;
+	}
+
+.main_ls
+{
+	BACKGROUND-IMAGE: url(admin/main_ls.gif);
+	BACKGROUND-REPEAT: repeat-x;
+	BACKGROUND-REPEAT: repeat-y;
+	width: 10px;
+	height: 100%;
+}
+
+.main_center
+{
+	/*PADDING-RIGHT: 10px;
+	PADDING-LEFT: 10px;
+	PADDING-BOTTOM: 10px;
+	PADDING-TOP: 10px;*/
+	COLOR: #566984;
+	BACKGROUND-COLOR: white;
+}
+
+.main_center_div
+{
+	height: 100%;
+	overflow-y: auto;
+	/*overflow: hidden;*/
+	scrollbar-face-color: #FFFFFF;
+	scrollbar-shadow-color: #D2E5F4;
+	scrollbar-highlight-color: #D2E5F4;
+	scrollbar-3dlight-color: #FFFFFF;
+	scrollbar-darkshadow-color: #FFFFFF;
+	scrollbar-track-color: #FFFFFF;
+	scrollbar-arrow-color: #D2E5F4;
+}
+
+
+.main_rs
+{
+	BACKGROUND-IMAGE: url(admin/main_rs.gif);
+	BACKGROUND-REPEAT: repeat-x;
+	BACKGROUND-REPEAT: repeat-y;
+	width: 10px;
+	height: 100%;
+}
+
+/***************************尾部**************************/
+
+
+.bg_bottom
+{
+	BACKGROUND-IMAGE: url(admin/main_fs.gif);
+	BACKGROUND-REPEAT: repeat-x;
+	height: 10px;
+}
+
+	.bg_bottom div
+	{
+		float: left;
+	}
+
+.main_fsx
+{
+	/*BACKGROUND-IMAGE: url(admin/main_fs.gif);
+	BACKGROUND-REPEAT: repeat-x;*/
+	height: 10px;
+}
+
+
+.main_lf
+{
+	BACKGROUND-IMAGE: url(admin/main_lf.gif);
+	BACKGROUND-REPEAT: repeat-x;
+	BACKGROUND-REPEAT: repeat-y;
+	width: 10px;
+	height: 10px;
+}
+
+.main_fs
+{
+	BACKGROUND-IMAGE: url(admin/main_fs.gif);
+	BACKGROUND-REPEAT: repeat-x;
+	height: 10px;
+}
+
+.main_rf
+{
+	BACKGROUND-IMAGE: url(admin/main_rf.gif);
+	BACKGROUND-REPEAT: repeat-x;
+	width: 10px;
+	height: 10px;
+}
+
+
+
+
+
+
+
+
+
+/***********************************菜单页*************************************/
+/***********************************菜单页*************************************/
+/***********************************菜单页*************************************/
+#menuTree A
+{
+	COLOR: #566984;
+	/*COLOR:black;*/
+	TEXT-DECORATION: none;
+}
+
+.menu_1_1
+{
+	background-image: url(admin/bg_left_tl.gif);
+	width: 10px;
+	height: 30px;
+}
+
+.menu_1_2
+{
+	FONT-SIZE: 15px;
+	BACKGROUND-IMAGE: url(admin/bg_left_tc.gif);
+	background-repeat: repeat-x;
+	color: white;
+	FONT-FAMILY: system;
+	font-weight: 600;
+}
+
+.menu_1_3
+{
+	background-image: url(admin/bg_left_tr.gif);
+	width: 10px;
+	height: 30px;
+}
+
+
+.menu_2_1
+{
+	background-image: url(admin/bg_left_ls.gif);
+	width: 10px;
+	height: 100%;
+}
+
+.menu_2_2
+{
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 10px;
+	PADDING-TOP: 10px;
+	BACKGROUND-COLOR: white;
+	height: 100%;
+	overflow-y: auto;
+	scrollbar-face-color: #FFFFFF;
+	scrollbar-shadow-color: #D2E5F4;
+	scrollbar-highlight-color: #D2E5F4;
+	scrollbar-3dlight-color: #FFFFFF;
+	scrollbar-darkshadow-color: #FFFFFF;
+	scrollbar-track-color: #FFFFFF;
+	scrollbar-arrow-color: #D2E5F4;
+}
+
+.menu_2_3
+{
+	background-image: url(admin/bg_left_rs.gif);
+	width: 10px;
+	height: 100%;
+}
+
+.menu_3_1
+{
+	background-image: url(admin/bg_left_bl.gif);
+	width: 10px;
+	height: 10px;
+}
+
+.menu_3_2
+{
+	background-image: url(admin/bg_left_bc.gif);
+	height: 10px;
+}
+
+.menu_3_3
+{
+	background-image: url(admin/bg_left_br.gif);
+	width: 10px;
+	height: 10px;
+}

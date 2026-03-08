@@ -1,0 +1,407 @@
+﻿
+//类名:clsvQxViewPotenceWS
+ ///----------------------
+ ///生成代码版本:2017.01.19.1
+ ///生成日期:2017/01/31
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:界面管理
+ ///模块英文名:InterfaceMan
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferencevQxViewPotence;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// v界面权限(vQxViewPotence)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsvQxViewPotenceWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsvQxViewPotenceEN> arrvQxViewPotenceObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static vQxViewPotenceServiceSoapClient objvQxViewPotenceServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static vQxViewPotenceServiceSoapClient GetvQxViewPotenceServiceSoapClient()
+{
+if (objvQxViewPotenceServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "vQxViewPotenceServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/vQxViewPotenceService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/vQxViewPotenceService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new vQxViewPotenceServiceSoapClient(binding, address);
+}
+else
+{
+return objvQxViewPotenceServiceSoapClient;
+}
+}
+
+ public clsvQxViewPotenceWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GenBindListView)
+ /// </summary>
+public static int BindLv_vQxViewPotence(System.Windows.Forms.ListView lvvQxViewPotence, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lvivQxViewPotence; 
+ArrayList arrvQxViewPotenceObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrvQxViewPotenceObjList = new clsvQxViewPotenceBL.GetvQxViewPotenceObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvvQxViewPotence.Items.Clear();//清除原来所有Item
+lvvQxViewPotence.Columns.Clear();//清除原来所有列头信息
+lvvQxViewPotence.Columns.Add("流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxViewPotence.Columns.Add("项目Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxViewPotence.Columns.Add("权限ID", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxViewPotence.Columns.Add("权限名称", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxViewPotence.Columns.Add("工程名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxViewPotence.Columns.Add("界面编号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxViewPotence.Columns.Add("界面名称", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxViewPotence.Columns.Add("等级", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxViewPotence.Columns.Add("模块号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxViewPotence.Columns.Add("模块名称", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxViewPotence.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxViewPotence.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsvQxViewPotenceEN objvQxViewPotenceEN in arrvQxViewPotenceObjList)
+{
+lvivQxViewPotence = new System.Windows.Forms.ListViewItem();
+lvivQxViewPotence.Tag = objvQxViewPotenceEN.mId;
+lvivQxViewPotence.Text = objvQxViewPotenceEN.mId.ToString();
+lvivQxViewPotence.SubItems.Add(objvQxViewPotenceEN.QxPrjId);
+lvivQxViewPotence.SubItems.Add(objvQxViewPotenceEN.PotenceId);
+lvivQxViewPotence.SubItems.Add(objvQxViewPotenceEN.PotenceName);
+lvivQxViewPotence.SubItems.Add(objvQxViewPotenceEN.PrjName);
+lvivQxViewPotence.SubItems.Add(objvQxViewPotenceEN.ViewId);
+lvivQxViewPotence.SubItems.Add(objvQxViewPotenceEN.ViewName);
+lvivQxViewPotence.SubItems.Add(objvQxViewPotenceEN.Level.ToString());
+lvivQxViewPotence.SubItems.Add(objvQxViewPotenceEN.ModuleId);
+lvivQxViewPotence.SubItems.Add(objvQxViewPotenceEN.ModuleName);
+lvivQxViewPotence.SubItems.Add(objvQxViewPotenceEN.Memo);
+lvvQxViewPotence.Items.Add(lvivQxViewPotence);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrvQxViewPotenceObjList.Count;
+}
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_vQxViewPotenceWs(string strWhereCond)
+{
+vQxViewPotenceServiceSoapClient objvQxViewPotenceService = GetvQxViewPotenceServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objvQxViewPotenceService.vQxViewPotence_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxViewPotence_GetDataSet", "clsvQxViewPotenceWS:GetDataTable_vQxViewPotenceWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_vQxViewPotenceByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+vQxViewPotenceServiceSoapClient objvQxViewPotenceService = GetvQxViewPotenceServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objvQxViewPotenceService.vQxViewPotence_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxViewPotence_GetDataSetByRange", "clsvQxViewPotenceWS:GetDataTable_vQxViewPotenceByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objvQxViewPotenceEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetvQxViewPotenceWs(ref clsvQxViewPotenceEN objvQxViewPotenceEN)
+{
+vQxViewPotenceServiceSoapClient objvQxViewPotenceService = GetvQxViewPotenceServiceSoapClient();
+bool bolResult = objvQxViewPotenceService.vQxViewPotence_GetvQxViewPotence(ref objvQxViewPotenceEN);
+return bolResult;
+}
+
+public static clsvQxViewPotenceEN GetvQxViewPotenceBymIdWs(long lngmId)
+{
+vQxViewPotenceServiceSoapClient objvQxViewPotenceService = GetvQxViewPotenceServiceSoapClient();
+clsvQxViewPotenceEN objvQxViewPotenceEN = objvQxViewPotenceService.vQxViewPotence_GetvQxViewPotenceBymId(lngmId);
+return objvQxViewPotenceEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static long GetFirstID_S(string strWhereCond)
+{
+vQxViewPotenceServiceSoapClient objvQxViewPotenceService = GetvQxViewPotenceServiceSoapClient();
+try
+{
+long lngmId = objvQxViewPotenceService.vQxViewPotence_GetFirstID_S(strWhereCond);
+return lngmId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxViewPotence_GetFirstID_S", "clsvQxViewPotenceWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsvQxViewPotenceEN GetFirstvQxViewPotence_S(string strWhereCond)
+{
+vQxViewPotenceServiceSoapClient objvQxViewPotenceService = GetvQxViewPotenceServiceSoapClient();
+try
+{
+clsvQxViewPotenceEN objvQxViewPotenceEN = objvQxViewPotenceService.vQxViewPotence_GetFirstvQxViewPotence_S(strWhereCond);
+return objvQxViewPotenceEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxViewPotence_GetFirstvQxViewPotence_S", "clsvQxViewPotenceWS:GetFirstvQxViewPotence_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "lngmId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsvQxViewPotenceEN GetvQxViewPotenceObjBymId_Cache(long lngmId)
+{
+string strWhereCond = string.Format("1 = 1 order by mId");
+if (arrvQxViewPotenceObjLst_Cache == null)
+{
+arrvQxViewPotenceObjLst_Cache = clsvQxViewPotenceWS.GetvQxViewPotenceObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrvQxViewPotenceObjLst_Cache.Count - 1;
+int intMid = 0;
+clsvQxViewPotenceEN objvQxViewPotenceEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objvQxViewPotenceEN = arrvQxViewPotenceObjLst_Cache[intMid];
+if (objvQxViewPotenceEN.mId == lngmId)
+{
+intFindFailCount = 0;
+return objvQxViewPotenceEN;
+}
+else if (objvQxViewPotenceEN.mId.CompareTo(lngmId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrvQxViewPotenceObjLst_Cache = null;
+if (intFindFailCount == 1) return GetvQxViewPotenceObjBymId_Cache(lngmId);
+string strErrMsgForGetObjById = string.Format("在vQxViewPotence对象缓存列表中,找不到记录[mId = {0}][intFindFailCount = {1}](函数:GetvQxViewPotenceObjBymId_Cache)", lngmId, intFindFailCount);
+if (objvQxViewPotenceEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objvQxViewPotenceEN.mId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsvQxViewPotenceBL", "GetvQxViewPotenceObjBymId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsvQxViewPotenceEN> GetvQxViewPotenceObjList(string strWhereCond)
+{
+ List<clsvQxViewPotenceEN> arrObjList = new List<clsvQxViewPotenceEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_vQxViewPotenceWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsvQxViewPotenceEN objvQxViewPotenceEN = new clsvQxViewPotenceEN();
+objvQxViewPotenceEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objvQxViewPotenceEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objvQxViewPotenceEN.PotenceId = objRow["PotenceId"].ToString().Trim(); //权限ID
+objvQxViewPotenceEN.PotenceName = objRow["PotenceName"].ToString().Trim(); //权限名称
+objvQxViewPotenceEN.PrjName = objRow["PrjName"].ToString().Trim(); //工程名
+objvQxViewPotenceEN.ViewId = objRow["ViewId"].ToString().Trim(); //界面编号
+objvQxViewPotenceEN.ViewName = objRow["ViewName"].ToString().Trim(); //界面名称
+objvQxViewPotenceEN.Level = Int32.Parse(objRow["Level"].ToString().Trim()); //等级
+objvQxViewPotenceEN.ModuleId = objRow["ModuleId"].ToString().Trim(); //模块号
+objvQxViewPotenceEN.ModuleName = objRow["ModuleName"].ToString().Trim(); //模块名称
+objvQxViewPotenceEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objvQxViewPotenceEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsvQxViewPotenceEN> GetvQxViewPotenceObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsvQxViewPotenceEN> arrObjList = new List<clsvQxViewPotenceEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_vQxViewPotenceByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsvQxViewPotenceEN objvQxViewPotenceEN = new clsvQxViewPotenceEN();
+objvQxViewPotenceEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objvQxViewPotenceEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objvQxViewPotenceEN.PotenceId = objRow["PotenceId"].ToString().Trim(); //权限ID
+objvQxViewPotenceEN.PotenceName = objRow["PotenceName"].ToString().Trim(); //权限名称
+objvQxViewPotenceEN.PrjName = objRow["PrjName"].ToString().Trim(); //工程名
+objvQxViewPotenceEN.ViewId = objRow["ViewId"].ToString().Trim(); //界面编号
+objvQxViewPotenceEN.ViewName = objRow["ViewName"].ToString().Trim(); //界面名称
+objvQxViewPotenceEN.Level = Int32.Parse(objRow["Level"].ToString().Trim()); //等级
+objvQxViewPotenceEN.ModuleId = objRow["ModuleId"].ToString().Trim(); //模块号
+objvQxViewPotenceEN.ModuleName = objRow["ModuleName"].ToString().Trim(); //模块名称
+objvQxViewPotenceEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objvQxViewPotenceEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+vQxViewPotenceServiceSoapClient objvQxViewPotenceService = GetvQxViewPotenceServiceSoapClient();
+bool bolIsExist = objvQxViewPotenceService.vQxViewPotence_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(long lngmId)
+{
+//检测记录是否存在
+vQxViewPotenceServiceSoapClient objvQxViewPotenceService = GetvQxViewPotenceServiceSoapClient();
+bool bolIsExist = objvQxViewPotenceService.vQxViewPotence_IsExist(lngmId);
+return bolIsExist;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/vQxViewPotenceService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/vQxViewPotenceService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

@@ -1,0 +1,204 @@
+﻿
+
+/*右侧div样式框架*/
+.pright
+{
+	float: right;
+	width: 732px;
+}
+
+
+/*导航样式*/
+.prplace
+{
+	line-height: 24px;
+	padding-bottom: 3px;
+	text-indent: 17px;
+	border-bottom: 1px solid #EEE;
+	background: url(Image/ico_5.gif) 5px 9px no-repeat;
+	text-decoration: none;
+}
+
+/*右侧主内容样式*/
+.p2
+{
+	padding: 12px;
+	text-align: left;
+}
+
+	.p2 dt
+	{
+		height: 33px;
+		line-height: 33px;
+		text-indent: 24px;
+		font-size: 14px;
+		color: #666;
+		background: url(Image/ico_6.gif) 3px 8px no-repeat;
+	}
+
+		.p2 dt a
+		{
+			color: #333333;
+			text-decoration: none;
+		}
+
+	.p2 dd
+	{
+		padding: 2px 10px 5px 20px;
+	}
+
+		.p2 dd small
+		{
+			line-height: 25px;
+			margin-left: 10px;
+		}
+
+
+
+/*右侧内容主标题样式*/
+.fc_f60
+{
+	color: #F60;
+}
+/*条件检索框框架样式*/
+.msgtable
+{
+	border: 1px solid #EDECFF;
+}
+
+	.msgtable th
+	{
+		padding: 0.5em;
+		font-weight: 700; /*border:1px solid #EDECFF;*/
+	}
+
+	.msgtable td
+	{
+		padding: 0.4em;
+		border-bottom: 1px solid #F3F3F3;
+	}
+
+	.msgtable th
+	{
+		/*background:#F8F7FF;*/
+		background: url(Image/table_th_bg.gif) repeat-x bottom;
+	}
+
+
+/*主内容列表样式*/
+.b3 li
+{
+	line-height: 31px;
+	font-size: 14px;
+}
+
+	.b3 li small
+	{
+		font-size: 12px;
+		color: #999;
+		margin-right: 5px;
+	}
+
+		.b3 li small a
+		{
+			color: #333;
+		}
+
+
+/*每条列表内容链接样式*/
+a.nav2:link
+{
+	color: #295394;
+	text-decoration: none;
+}
+
+a.nav2:visited
+{
+	color: #295394;
+	text-decoration: none;
+}
+
+a.nav2:hover
+{
+	color: #000;
+	text-decoration: none;
+}
+
+a.nav2:active
+{
+}
+/*分页样式*/
+.pagebox
+{
+	font-size: 12px;
+	line-height: 200%;
+	font-weight: normal;
+}
+
+
+
+/*左*/
+.left
+{
+	text-align: left;
+}
+/*中*/
+/*.center
+{
+	text-align: center;
+}*/
+/*右*/
+.right
+{
+	float: right;
+}
+
+
+
+/*信息详细显示框的主样式*/
+.pageInfo
+{
+	margin-top: 10px;
+	padding: 0 10px;
+	font-size: 12px;
+	line-height: 1.8em;
+	color: #444;
+	width: 100%;
+}
+
+	.pageInfo p
+	{
+		margin: 10px 0;
+	}
+
+		.pageInfo p.downfile
+		{
+			margin-top: 10px;
+			padding-left: 30px;
+			background: url(Images/download.gif) no-repeat 5px center #EAFED3;
+			border: #E3E3E3 solid 1px;
+			line-height: 28px;
+		}
+
+	.pageInfo b, .pageInfo strong
+	{
+		font-size: 14px;
+		color: #0286cd;
+		font-family: "微软雅黑";
+	}
+
+	.pageInfo h1
+	{
+		font-size: 16px;
+		text-align: center;
+		line-height: 1.8em;
+	}
+	/*信息详细显示框内的标题下面的显示样式，比如：编辑、发布时间......*/
+	.pageInfo .note
+	{
+		color: #999;
+		font-size: 12px;
+		line-height: 30px;
+		text-align: center;
+		width: 100%;
+	}

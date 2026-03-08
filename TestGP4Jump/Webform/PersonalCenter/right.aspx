@@ -1,0 +1,33 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="right.aspx.cs" Inherits="EduHigh.Webform.PersonalCenter.right" %>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>数字化教学平台</title>
+    <link href="style/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table width="100%"  cellpadding="0" cellspacing="0" class="table">
+                    <tr>
+                        <td valign="top">
+                            <table width="100%" class="top" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>当前位置:&nbsp;<a href="#">分类一</a>&nbsp;>>&nbsp;<a href="#">分类二</a></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

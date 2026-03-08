@@ -1,0 +1,74 @@
+﻿.accordionHeader
+{
+	color:  #FFFFFF;
+	font-family: Arial, Sans-Serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 3px;
+	margin-top: 2px;
+	padding-left: 13px;
+	cursor: pointer;
+	text-align: left;
+	width: 185px;
+	text-decoration: none;
+	background-image: url('../img/bg-menu-item-green1.gif');
+}
+
+#master_content .accordionHeader a
+{
+	color: white;
+	background: none;
+	text-decoration: none;
+}
+
+#master_content .accordionHeader a:hover
+{
+	background: none;
+	text-decoration: none;
+	text-align:left;
+}
+
+.accordionHeaderSelected
+{
+	color: #FFFFFF;
+	background-image: url('../img/bg-menu-item-green1.gif');
+	font-family: Courier New;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 2px;
+	margin-top: 2px;
+	cursor: pointer;
+	padding-left: 18px;
+	text-align: left;
+	width: 185px;
+}
+#master_content .accordionHeaderSelected a
+{
+	color:white;
+	background: none;
+	text-decoration: none;
+	
+}
+#master_content .accordionHeaderSelected a:hover
+{
+	background: none;
+	text-decoration: none;
+}
+
+.accordionContent
+{
+    background-color: #E4E5E5;
+    border-top: none;
+    padding: 2px;
+    padding-top: 4px;
+    padding-left: 15px;
+    font-size:14px;
+    text-decoration:none;
+    text-align:left;
+    width:185px;
+}  
+.Title1
+{
+    font-size:14px;
+    font-weight:bold;
+}  

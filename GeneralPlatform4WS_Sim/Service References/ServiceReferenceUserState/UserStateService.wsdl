@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UserState_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserState_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserState_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_GetQxUserState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserState" type="tns:clsQxUserStateEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxUserStateEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UserStateId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserStateName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserState_GetQxUserStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserState_GetQxUserStateResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserState" type="tns:clsQxUserStateEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_GetQxUserStateV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserState" type="tns:clsQxUserStateEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_GetQxUserStateVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserState_GetQxUserStateVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserState" type="tns:clsQxUserStateEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserState_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserStateId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserState_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserState" type="tns:clsQxUserStateEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserState_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserState" type="tns:clsQxUserStateEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserState_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserStateId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserState_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_DelQxUserStates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrStdId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserState_DelQxUserStatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserState_DelQxUserStatesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserState" type="tns:clsQxUserStateEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsQxUserStateEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UserState_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:UserState_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserState_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:UserState_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserState_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserState_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="UserState_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserState_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserState_GetQxUserStateSoapIn">
+    <wsdl:part name="parameters" element="tns:UserState_GetQxUserState" />
+  </wsdl:message>
+  <wsdl:message name="UserState_GetQxUserStateSoapOut">
+    <wsdl:part name="parameters" element="tns:UserState_GetQxUserStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserState_GetQxUserStateVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserState_GetQxUserStateV" />
+  </wsdl:message>
+  <wsdl:message name="UserState_GetQxUserStateVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserState_GetQxUserStateVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserState_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:UserState_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="UserState_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:UserState_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserState_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:UserState_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="UserState_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:UserState_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserState_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserState_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserState_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserState_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserState_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserState_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserState_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserState_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserState_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:UserState_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="UserState_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:UserState_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserState_DelQxUserStatesSoapIn">
+    <wsdl:part name="parameters" element="tns:UserState_DelQxUserStates" />
+  </wsdl:message>
+  <wsdl:message name="UserState_DelQxUserStatesSoapOut">
+    <wsdl:part name="parameters" element="tns:UserState_DelQxUserStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserStateServiceSoap">
+    <wsdl:operation name="UserState_GetDataSet">
+      <wsdl:input message="tns:UserState_GetDataSetSoapIn" />
+      <wsdl:output message="tns:UserState_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserState_GetDataSetV">
+      <wsdl:input message="tns:UserState_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:UserState_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserState_GetQxUserState">
+      <wsdl:input message="tns:UserState_GetQxUserStateSoapIn" />
+      <wsdl:output message="tns:UserState_GetQxUserStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserState_GetQxUserStateV">
+      <wsdl:input message="tns:UserState_GetQxUserStateVSoapIn" />
+      <wsdl:output message="tns:UserState_GetQxUserStateVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserState_IsExistRecordByCond">
+      <wsdl:input message="tns:UserState_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:UserState_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserState_IsExist">
+      <wsdl:input message="tns:UserState_IsExistSoapIn" />
+      <wsdl:output message="tns:UserState_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserState_AddNewRecordBySql2">
+      <wsdl:input message="tns:UserState_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:UserState_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserState_UpdateBySql2">
+      <wsdl:input message="tns:UserState_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:UserState_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserState_DelRecord">
+      <wsdl:input message="tns:UserState_DelRecordSoapIn" />
+      <wsdl:output message="tns:UserState_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserState_DelQxUserStates">
+      <wsdl:input message="tns:UserState_DelQxUserStatesSoapIn" />
+      <wsdl:output message="tns:UserState_DelQxUserStatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserStateServiceSoap" type="tns:UserStateServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserState_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/UserState_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/UserState_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_GetQxUserState">
+      <soap:operation soapAction="http://tempuri.org/UserState_GetQxUserState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_GetQxUserStateV">
+      <soap:operation soapAction="http://tempuri.org/UserState_GetQxUserStateV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/UserState_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_IsExist">
+      <soap:operation soapAction="http://tempuri.org/UserState_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserState_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserState_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/UserState_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_DelQxUserStates">
+      <soap:operation soapAction="http://tempuri.org/UserState_DelQxUserStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserStateServiceSoap12" type="tns:UserStateServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserState_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/UserState_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/UserState_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_GetQxUserState">
+      <soap12:operation soapAction="http://tempuri.org/UserState_GetQxUserState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_GetQxUserStateV">
+      <soap12:operation soapAction="http://tempuri.org/UserState_GetQxUserStateV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/UserState_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/UserState_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserState_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserState_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/UserState_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserState_DelQxUserStates">
+      <soap12:operation soapAction="http://tempuri.org/UserState_DelQxUserStates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserStateService">
+    <wsdl:port name="UserStateServiceSoap" binding="tns:UserStateServiceSoap">
+      <soap:address location="http://localhost:9259/UserStateService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserStateServiceSoap12" binding="tns:UserStateServiceSoap12">
+      <soap12:address location="http://localhost:9259/UserStateService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

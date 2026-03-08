@@ -1,0 +1,1701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="QxUserRoles_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetTopDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetTopDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_GetTopDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetDataSetByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetDataSetByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_GetDataSetByRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetQxUserRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxUserRolesEN" type="tns:clsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxUserRolesEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RoleId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleENName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="RoleIndex" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="QxPrjId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsInUse" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sf_UpdFldSetStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checked" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QxUserRoles_GetQxUserRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_GetQxUserRolesResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objQxUserRolesEN" type="tns:clsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetObjByRoleId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetObjByRoleIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_GetObjByRoleIdResult" type="tns:clsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetQxUserRolesV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxUserRolesEN" type="tns:clsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetQxUserRolesVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_GetQxUserRolesVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objQxUserRolesEN" type="tns:clsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_GetObjLstResult" type="tns:ArrayOfClsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsQxUserRolesEN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsQxUserRolesEN" nillable="true" type="tns:clsQxUserRolesEN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjLstByRangeResult" type="tns:ArrayOfClsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetTopObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetTopObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_GetTopObjLstResult" type="tns:ArrayOfClsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetFirstID_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetFirstID_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_GetFirstID_SResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetFirstObj_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetFirstObj_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_GetFirstObj_SResult" type="tns:clsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByRoleId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByRoleIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjByRoleIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstJSONObjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intPageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByPagerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_funGetRecCountByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_funGetRecCountByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_funGetRecCountByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetMaxStrId">
+        <s:complexType />
+      </s:element>
+      <s:element name="QxUserRoles_GetMaxStrIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_GetMaxStrIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetMaxStrIdByPrefix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrefix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_GetMaxStrIdByPrefixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_GetMaxStrIdByPrefixResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxUserRolesEN" type="tns:clsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_AddNewRecordBySql2ByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxUserRolesJSONObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_AddNewRecordBySql2ByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_AddNewRecordBySql2ByJSONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_AddNewRecordBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxUserRolesObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_AddNewRecordBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_AddNewRecordBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxUserRolesEN" type="tns:clsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_UpdateBySql2ByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxUserRolesJSONObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_UpdateBySql2ByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_UpdateBySql2ByJSONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_UpdateBySqlWithCondition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxUserRolesEN" type="tns:clsQxUserRolesEN" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_UpdateBySqlWithConditionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_UpdateBySqlWithConditionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_UpdateBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxUserRolesObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_UpdateBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_UpdateBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_DelRecordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_DelQxUserRoless">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strJSON4Keys" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_DelQxUserRolessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_DelQxUserRolessResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelRecordsByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strKeyIdLst" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelRecordsByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelRecordsByJSONResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_DelQxUserRolessByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_DelQxUserRolessByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxUserRoles_DelQxUserRolessByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxUserRolesEN" type="tns:clsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsQxUserRolesEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strRoleId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_SerializeObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_SerializeObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_SerializeObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_SerializeTopObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxUserRoles_SerializeTopObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxUserRoles_SerializeTopObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="QxUserRoles_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetTopDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetTopDataSet" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetTopDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetTopDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetDataSetByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetDataSetByRange" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetDataSetByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetDataSetByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetQxUserRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetQxUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetQxUserRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetQxUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetObjByRoleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetObjByRoleId" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetObjByRoleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetObjByRoleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetQxUserRolesVSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetQxUserRolesV" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetQxUserRolesVSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetQxUserRolesVResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetObjLst" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetTopObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetTopObjLst" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetTopObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetTopObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetFirstID_SSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetFirstID_S" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetFirstID_SSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetFirstID_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetFirstObj_SSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetFirstObj_S" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetFirstObj_SSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetFirstObj_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByRoleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByRoleId" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByRoleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByRoleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObj" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPager" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_funGetRecCountByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_funGetRecCountByCond" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_funGetRecCountByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_funGetRecCountByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetMaxStrIdSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetMaxStrId" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetMaxStrIdSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetMaxStrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetMaxStrIdByPrefixSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetMaxStrIdByPrefix" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_GetMaxStrIdByPrefixSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_GetMaxStrIdByPrefixResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_AddNewRecordBySql2ByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_AddNewRecordBySql2ByJSON" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_AddNewRecordBySql2ByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_AddNewRecordBySql2ByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_AddNewRecordBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_AddNewRecordBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_AddNewRecordBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_AddNewRecordBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_UpdateBySql2ByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_UpdateBySql2ByJSON" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_UpdateBySql2ByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_UpdateBySql2ByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_UpdateBySqlWithConditionSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_UpdateBySqlWithCondition" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_UpdateBySqlWithConditionSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_UpdateBySqlWithConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_UpdateBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_UpdateBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_UpdateBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_UpdateBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_DelQxUserRolessSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_DelQxUserRoless" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_DelQxUserRolessSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_DelQxUserRolessResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelRecordsByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:DelRecordsByJSON" />
+  </wsdl:message>
+  <wsdl:message name="DelRecordsByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:DelRecordsByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_DelQxUserRolessByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_DelQxUserRolessByCond" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_DelQxUserRolessByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_DelQxUserRolessByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_SerializeObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_SerializeObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_SerializeObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_SerializeObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_SerializeTopObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_SerializeTopObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QxUserRoles_SerializeTopObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QxUserRoles_SerializeTopObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QxUserRolesServiceSoap">
+    <wsdl:operation name="QxUserRoles_GetDataSet">
+      <wsdl:input message="tns:QxUserRoles_GetDataSetSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetTopDataSet">
+      <wsdl:input message="tns:QxUserRoles_GetTopDataSetSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetTopDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetDataSetByRange">
+      <wsdl:input message="tns:QxUserRoles_GetDataSetByRangeSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetDataSetByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetDataSetV">
+      <wsdl:input message="tns:QxUserRoles_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetQxUserRoles">
+      <wsdl:input message="tns:QxUserRoles_GetQxUserRolesSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetQxUserRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetObjByRoleId">
+      <wsdl:input message="tns:QxUserRoles_GetObjByRoleIdSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetObjByRoleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetQxUserRolesV">
+      <wsdl:input message="tns:QxUserRoles_GetQxUserRolesVSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetQxUserRolesVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetObjLst">
+      <wsdl:input message="tns:QxUserRoles_GetObjLstSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <wsdl:input message="tns:GetObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetTopObjLst">
+      <wsdl:input message="tns:QxUserRoles_GetTopObjLstSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetTopObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetFirstID_S">
+      <wsdl:input message="tns:QxUserRoles_GetFirstID_SSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetFirstID_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetFirstObj_S">
+      <wsdl:input message="tns:QxUserRoles_GetFirstObj_SSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetFirstObj_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByRoleId">
+      <wsdl:input message="tns:GetJSONObjByRoleIdSoapIn" />
+      <wsdl:output message="tns:GetJSONObjByRoleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <wsdl:input message="tns:GetFirstJSONObjSoapIn" />
+      <wsdl:output message="tns:GetFirstJSONObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <wsdl:input message="tns:GetJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <wsdl:input message="tns:GetTopJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetTopJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <wsdl:input message="tns:GetJSONObjLstByPagerSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByPagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <wsdl:input message="tns:GetJSONObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_funGetRecCountByCond">
+      <wsdl:input message="tns:QxUserRoles_funGetRecCountByCondSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_funGetRecCountByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_IsExistRecord">
+      <wsdl:input message="tns:QxUserRoles_IsExistRecordSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_IsExistRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_IsExist">
+      <wsdl:input message="tns:QxUserRoles_IsExistSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetMaxStrId">
+      <wsdl:input message="tns:QxUserRoles_GetMaxStrIdSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetMaxStrIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetMaxStrIdByPrefix">
+      <wsdl:input message="tns:QxUserRoles_GetMaxStrIdByPrefixSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_GetMaxStrIdByPrefixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_AddNewRecordBySql2">
+      <wsdl:input message="tns:QxUserRoles_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:QxUserRoles_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_AddNewRecordBySql2ByJSON">
+      <wsdl:input message="tns:QxUserRoles_AddNewRecordBySql2ByJSONSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_AddNewRecordBySql2ByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_AddNewRecordBySql_XML">
+      <wsdl:input message="tns:QxUserRoles_AddNewRecordBySql_XMLSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_AddNewRecordBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_UpdateBySql2">
+      <wsdl:input message="tns:QxUserRoles_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:QxUserRoles_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_UpdateBySql2ByJSON">
+      <wsdl:input message="tns:QxUserRoles_UpdateBySql2ByJSONSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_UpdateBySql2ByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_UpdateBySqlWithCondition">
+      <wsdl:input message="tns:QxUserRoles_UpdateBySqlWithConditionSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_UpdateBySqlWithConditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_UpdateBySql_XML">
+      <wsdl:input message="tns:QxUserRoles_UpdateBySql_XMLSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_UpdateBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_DelRecord">
+      <wsdl:input message="tns:QxUserRoles_DelRecordSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_DelQxUserRoless">
+      <wsdl:input message="tns:QxUserRoles_DelQxUserRolessSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_DelQxUserRolessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <wsdl:input message="tns:DelRecordsByJSONSoapIn" />
+      <wsdl:output message="tns:DelRecordsByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_DelQxUserRolessByCond">
+      <wsdl:input message="tns:QxUserRoles_DelQxUserRolessByCondSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_DelQxUserRolessByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_SerializeObjToXMLStr">
+      <wsdl:input message="tns:QxUserRoles_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_SerializeObjLstToXMLStr">
+      <wsdl:input message="tns:QxUserRoles_SerializeObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_SerializeObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_SerializeTopObjLstToXMLStr">
+      <wsdl:input message="tns:QxUserRoles_SerializeTopObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:QxUserRoles_SerializeTopObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QxUserRolesServiceSoap" type="tns:QxUserRolesServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QxUserRoles_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetTopDataSet">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetDataSetByRange">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetQxUserRoles">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetQxUserRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetObjByRoleId">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetObjByRoleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetQxUserRolesV">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetQxUserRolesV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetObjLst">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetTopObjLst">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetFirstID_S">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetFirstObj_S">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByRoleId">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjByRoleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_funGetRecCountByCond">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_IsExist">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetMaxStrId">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetMaxStrIdByPrefix">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_GetMaxStrIdByPrefix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_AddNewRecordBySql2ByJSON">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_AddNewRecordBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_AddNewRecordBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_UpdateBySql2ByJSON">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_UpdateBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_UpdateBySqlWithCondition">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_UpdateBySqlWithCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_UpdateBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_DelQxUserRoless">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_DelQxUserRoless" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <soap:operation soapAction="http://tempuri.org/DelRecordsByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_DelQxUserRolessByCond">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_DelQxUserRolessByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_SerializeObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_SerializeTopObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/QxUserRoles_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QxUserRolesServiceSoap12" type="tns:QxUserRolesServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QxUserRoles_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetTopDataSet">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetDataSetByRange">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetQxUserRoles">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetQxUserRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetObjByRoleId">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetObjByRoleId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetQxUserRolesV">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetQxUserRolesV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetObjLst">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetTopObjLst">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetFirstID_S">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetFirstObj_S">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByRoleId">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjByRoleId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_funGetRecCountByCond">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetMaxStrId">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_GetMaxStrIdByPrefix">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_GetMaxStrIdByPrefix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_AddNewRecordBySql2ByJSON">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_AddNewRecordBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_AddNewRecordBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_UpdateBySql2ByJSON">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_UpdateBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_UpdateBySqlWithCondition">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_UpdateBySqlWithCondition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_UpdateBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_DelQxUserRoless">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_DelQxUserRoless" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <soap12:operation soapAction="http://tempuri.org/DelRecordsByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_DelQxUserRolessByCond">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_DelQxUserRolessByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_SerializeObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxUserRoles_SerializeTopObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/QxUserRoles_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QxUserRolesService">
+    <wsdl:port name="QxUserRolesServiceSoap" binding="tns:QxUserRolesServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/UserManage/QxUserRolesService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QxUserRolesServiceSoap12" binding="tns:QxUserRolesServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/UserManage/QxUserRolesService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

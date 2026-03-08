@@ -1,0 +1,6 @@
+﻿1、获取用户状态
+	
+	函数名：GetUserStateId
+	参数：strUserid
+	返加值：UserStateId
+	

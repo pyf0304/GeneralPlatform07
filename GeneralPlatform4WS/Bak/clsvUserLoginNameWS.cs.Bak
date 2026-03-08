@@ -1,0 +1,424 @@
+﻿
+//类名:clsvUserLoginNameWS
+ ///----------------------
+ ///生成代码版本:2017.01.19.1
+ ///生成日期:2017/01/23
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:用户管理
+ ///模块英文名:UserManage
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferencevUserLoginName;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// vUserLoginName(vUserLoginName)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsvUserLoginNameWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsvUserLoginNameEN> arrvUserLoginNameObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static vUserLoginNameServiceSoapClient objvUserLoginNameServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static vUserLoginNameServiceSoapClient GetvUserLoginNameServiceSoapClient()
+{
+if (objvUserLoginNameServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "vUserLoginNameServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/vUserLoginNameService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/vUserLoginNameService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new vUserLoginNameServiceSoapClient(binding, address);
+}
+else
+{
+return objvUserLoginNameServiceSoapClient;
+}
+}
+
+ public clsvUserLoginNameWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GenBindListView)
+ /// </summary>
+public static int BindLv_vUserLoginName(System.Windows.Forms.ListView lvvUserLoginName, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lvivUserLoginName; 
+ArrayList arrvUserLoginNameObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrvUserLoginNameObjList = new clsvUserLoginNameBL.GetvUserLoginNameObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvvUserLoginName.Items.Clear();//清除原来所有Item
+lvvUserLoginName.Columns.Clear();//清除原来所有列头信息
+lvvUserLoginName.Columns.Add("用户登录名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("用户ID", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("用户名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("部门Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("部门名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("名称缩写", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("用户状态Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("用户状态名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("口令", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("有效开始日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("有效结束日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("学工号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("身份编号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("身份描述", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvUserLoginName.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsvUserLoginNameEN objvUserLoginNameEN in arrvUserLoginNameObjList)
+{
+lvivUserLoginName = new System.Windows.Forms.ListViewItem();
+lvivUserLoginName.Tag = objvUserLoginNameEN.UserLoginName;
+lvivUserLoginName.Text = objvUserLoginNameEN.UserLoginName.ToString();
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.UserId);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.UserName);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.DepartmentId);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.DepartmentName);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.DepartmentAbbrName);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.UserStateId);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.UserStateName);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.Password);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.EffitiveBeginDate);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.EffitiveEndDate);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.StuTeacherId);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.IdentityID);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.IdentityDesc);
+lvivUserLoginName.SubItems.Add(objvUserLoginNameEN.Memo);
+lvvUserLoginName.Items.Add(lvivUserLoginName);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrvUserLoginNameObjList.Count;
+}
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_vUserLoginNameWs(string strWhereCond)
+{
+vUserLoginNameServiceSoapClient objvUserLoginNameService = GetvUserLoginNameServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objvUserLoginNameService.vUserLoginName_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vUserLoginName_GetDataSet", "clsvUserLoginNameWS:GetDataTable_vUserLoginNameWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_vUserLoginNameByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+vUserLoginNameServiceSoapClient objvUserLoginNameService = GetvUserLoginNameServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objvUserLoginNameService.vUserLoginName_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vUserLoginName_GetDataSetByRange", "clsvUserLoginNameWS:GetDataTable_vUserLoginNameByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objvUserLoginNameEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetvUserLoginNameWs(ref clsvUserLoginNameEN objvUserLoginNameEN)
+{
+vUserLoginNameServiceSoapClient objvUserLoginNameService = GetvUserLoginNameServiceSoapClient();
+bool bolResult = objvUserLoginNameService.vUserLoginName_GetvUserLoginName(ref objvUserLoginNameEN);
+return bolResult;
+}
+
+public static clsvUserLoginNameEN GetvUserLoginNameByUserLoginNameWs(string strUserLoginName)
+{
+vUserLoginNameServiceSoapClient objvUserLoginNameService = GetvUserLoginNameServiceSoapClient();
+clsvUserLoginNameEN objvUserLoginNameEN = objvUserLoginNameService.vUserLoginName_GetvUserLoginNameByUserLoginName(strUserLoginName);
+return objvUserLoginNameEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static string GetFirstID_S(string strWhereCond)
+{
+vUserLoginNameServiceSoapClient objvUserLoginNameService = GetvUserLoginNameServiceSoapClient();
+try
+{
+string strUserLoginName = objvUserLoginNameService.vUserLoginName_GetFirstID_S(strWhereCond);
+return strUserLoginName;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vUserLoginName_GetFirstID_S", "clsvUserLoginNameWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsvUserLoginNameEN GetFirstvUserLoginName_S(string strWhereCond)
+{
+vUserLoginNameServiceSoapClient objvUserLoginNameService = GetvUserLoginNameServiceSoapClient();
+try
+{
+clsvUserLoginNameEN objvUserLoginNameEN = objvUserLoginNameService.vUserLoginName_GetFirstvUserLoginName_S(strWhereCond);
+return objvUserLoginNameEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vUserLoginName_GetFirstvUserLoginName_S", "clsvUserLoginNameWS:GetFirstvUserLoginName_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "strUserLoginName">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsvUserLoginNameEN GetvUserLoginNameObjByUserLoginName_Cache(string strUserLoginName)
+{
+if (string.IsNullOrEmpty(strUserLoginName) == true) return null;
+string strWhereCond = string.Format("1 = 1 order by UserLoginName");
+if (arrvUserLoginNameObjLst_Cache == null)
+{
+arrvUserLoginNameObjLst_Cache = clsvUserLoginNameWS.GetvUserLoginNameObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrvUserLoginNameObjLst_Cache.Count - 1;
+int intMid = 0;
+clsvUserLoginNameEN objvUserLoginNameEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objvUserLoginNameEN = arrvUserLoginNameObjLst_Cache[intMid];
+if (objvUserLoginNameEN.UserLoginName == strUserLoginName)
+{
+intFindFailCount = 0;
+return objvUserLoginNameEN;
+}
+else if (objvUserLoginNameEN.UserLoginName.CompareTo(strUserLoginName) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrvUserLoginNameObjLst_Cache = null;
+if (intFindFailCount == 1) return GetvUserLoginNameObjByUserLoginName_Cache(strUserLoginName);
+string strErrMsgForGetObjById = string.Format("在vUserLoginName对象缓存列表中,找不到记录[UserLoginName = {0}][intFindFailCount = {1}](函数:GetvUserLoginNameObjByUserLoginName_Cache)", strUserLoginName, intFindFailCount);
+if (objvUserLoginNameEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objvUserLoginNameEN.UserLoginName, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsvUserLoginNameBL", "GetvUserLoginNameObjByUserLoginName_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsvUserLoginNameEN> GetvUserLoginNameObjList(string strWhereCond)
+{
+ List<clsvUserLoginNameEN> arrObjList = new List<clsvUserLoginNameEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_vUserLoginNameWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsvUserLoginNameEN objvUserLoginNameEN = new clsvUserLoginNameEN();
+objvUserLoginNameEN.UserLoginName = objRow["UserLoginName"].ToString().Trim(); //用户登录名
+objvUserLoginNameEN.UserId = objRow["UserId"].ToString().Trim(); //用户ID
+objvUserLoginNameEN.UserName = objRow["UserName"].ToString().Trim(); //用户名
+objvUserLoginNameEN.DepartmentId = objRow["DepartmentId"].ToString().Trim(); //部门Id
+objvUserLoginNameEN.DepartmentName = objRow["DepartmentName"].ToString().Trim(); //部门名
+objvUserLoginNameEN.DepartmentAbbrName = objRow["DepartmentAbbrName"].ToString().Trim(); //名称缩写
+objvUserLoginNameEN.UserStateId = objRow["UserStateId"].ToString().Trim(); //用户状态Id
+objvUserLoginNameEN.UserStateName = objRow["UserStateName"].ToString().Trim(); //用户状态名
+objvUserLoginNameEN.Password = objRow["Password"].ToString().Trim(); //口令
+objvUserLoginNameEN.EffitiveBeginDate = objRow["EffitiveBeginDate"].ToString().Trim(); //有效开始日期
+objvUserLoginNameEN.EffitiveEndDate = objRow["EffitiveEndDate"].ToString().Trim(); //有效结束日期
+objvUserLoginNameEN.StuTeacherId = objRow["StuTeacherId"].ToString().Trim(); //学工号
+objvUserLoginNameEN.IdentityID = objRow["IdentityID"].ToString().Trim(); //身份编号
+objvUserLoginNameEN.IdentityDesc = objRow["IdentityDesc"].ToString().Trim(); //身份描述
+objvUserLoginNameEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objvUserLoginNameEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsvUserLoginNameEN> GetvUserLoginNameObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsvUserLoginNameEN> arrObjList = new List<clsvUserLoginNameEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_vUserLoginNameByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsvUserLoginNameEN objvUserLoginNameEN = new clsvUserLoginNameEN();
+objvUserLoginNameEN.UserLoginName = objRow["UserLoginName"].ToString().Trim(); //用户登录名
+objvUserLoginNameEN.UserId = objRow["UserId"].ToString().Trim(); //用户ID
+objvUserLoginNameEN.UserName = objRow["UserName"].ToString().Trim(); //用户名
+objvUserLoginNameEN.DepartmentId = objRow["DepartmentId"].ToString().Trim(); //部门Id
+objvUserLoginNameEN.DepartmentName = objRow["DepartmentName"].ToString().Trim(); //部门名
+objvUserLoginNameEN.DepartmentAbbrName = objRow["DepartmentAbbrName"].ToString().Trim(); //名称缩写
+objvUserLoginNameEN.UserStateId = objRow["UserStateId"].ToString().Trim(); //用户状态Id
+objvUserLoginNameEN.UserStateName = objRow["UserStateName"].ToString().Trim(); //用户状态名
+objvUserLoginNameEN.Password = objRow["Password"].ToString().Trim(); //口令
+objvUserLoginNameEN.EffitiveBeginDate = objRow["EffitiveBeginDate"].ToString().Trim(); //有效开始日期
+objvUserLoginNameEN.EffitiveEndDate = objRow["EffitiveEndDate"].ToString().Trim(); //有效结束日期
+objvUserLoginNameEN.StuTeacherId = objRow["StuTeacherId"].ToString().Trim(); //学工号
+objvUserLoginNameEN.IdentityID = objRow["IdentityID"].ToString().Trim(); //身份编号
+objvUserLoginNameEN.IdentityDesc = objRow["IdentityDesc"].ToString().Trim(); //身份描述
+objvUserLoginNameEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objvUserLoginNameEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+vUserLoginNameServiceSoapClient objvUserLoginNameService = GetvUserLoginNameServiceSoapClient();
+bool bolIsExist = objvUserLoginNameService.vUserLoginName_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(string strUserLoginName)
+{
+//检测记录是否存在
+vUserLoginNameServiceSoapClient objvUserLoginNameService = GetvUserLoginNameServiceSoapClient();
+bool bolIsExist = objvUserLoginNameService.vUserLoginName_IsExist(strUserLoginName);
+return bolIsExist;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/vUserLoginNameService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/vUserLoginNameService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

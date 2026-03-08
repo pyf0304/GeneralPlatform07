@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="vRelaOfPotenceAndSymbol_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRelaOfPotenceAndSymbol_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vRelaOfPotenceAndSymbol_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRelaOfPotenceAndSymbol_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRelaOfPotenceAndSymbol_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vRelaOfPotenceAndSymbol_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvRelaOfPotenceAndSymbol" type="tns:clsvRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsvRelaOfPotenceAndSymbolEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="RelaMid" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SymbolForProgramme" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SymbolName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceTypeId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvRelaOfPotenceAndSymbol" type="tns:clsvRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvRelaOfPotenceAndSymbol" type="tns:clsvRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvRelaOfPotenceAndSymbol" type="tns:clsvRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRelaOfPotenceAndSymbol_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRelaOfPotenceAndSymbol_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vRelaOfPotenceAndSymbol_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRelaOfPotenceAndSymbol_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngRelaMid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRelaOfPotenceAndSymbol_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vRelaOfPotenceAndSymbol_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvRelaOfPotenceAndSymbol" type="tns:clsvRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsvRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="vRelaOfPotenceAndSymbol_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vRelaOfPotenceAndSymbol_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vRelaOfPotenceAndSymbol_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vRelaOfPotenceAndSymbol_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vRelaOfPotenceAndSymbol_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:vRelaOfPotenceAndSymbol_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="vRelaOfPotenceAndSymbol_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:vRelaOfPotenceAndSymbol_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolSoapIn">
+    <wsdl:part name="parameters" element="tns:vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbol" />
+  </wsdl:message>
+  <wsdl:message name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolSoapOut">
+    <wsdl:part name="parameters" element="tns:vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolResponse" />
+  </wsdl:message>
+  <wsdl:message name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolVSoapIn">
+    <wsdl:part name="parameters" element="tns:vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolV" />
+  </wsdl:message>
+  <wsdl:message name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolVSoapOut">
+    <wsdl:part name="parameters" element="tns:vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolVResponse" />
+  </wsdl:message>
+  <wsdl:message name="vRelaOfPotenceAndSymbol_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:vRelaOfPotenceAndSymbol_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="vRelaOfPotenceAndSymbol_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:vRelaOfPotenceAndSymbol_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="vRelaOfPotenceAndSymbol_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:vRelaOfPotenceAndSymbol_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="vRelaOfPotenceAndSymbol_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:vRelaOfPotenceAndSymbol_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="vRelaOfPotenceAndSymbolServiceSoap">
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_GetDataSet">
+      <wsdl:input message="tns:vRelaOfPotenceAndSymbol_GetDataSetSoapIn" />
+      <wsdl:output message="tns:vRelaOfPotenceAndSymbol_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_GetDataSetV">
+      <wsdl:input message="tns:vRelaOfPotenceAndSymbol_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:vRelaOfPotenceAndSymbol_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbol">
+      <wsdl:input message="tns:vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolSoapIn" />
+      <wsdl:output message="tns:vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolV">
+      <wsdl:input message="tns:vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolVSoapIn" />
+      <wsdl:output message="tns:vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_IsExistRecordByCond">
+      <wsdl:input message="tns:vRelaOfPotenceAndSymbol_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:vRelaOfPotenceAndSymbol_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_IsExist">
+      <wsdl:input message="tns:vRelaOfPotenceAndSymbol_IsExistSoapIn" />
+      <wsdl:output message="tns:vRelaOfPotenceAndSymbol_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="vRelaOfPotenceAndSymbolServiceSoap" type="tns:vRelaOfPotenceAndSymbolServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/vRelaOfPotenceAndSymbol_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/vRelaOfPotenceAndSymbol_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbol">
+      <soap:operation soapAction="http://tempuri.org/vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolV">
+      <soap:operation soapAction="http://tempuri.org/vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/vRelaOfPotenceAndSymbol_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_IsExist">
+      <soap:operation soapAction="http://tempuri.org/vRelaOfPotenceAndSymbol_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vRelaOfPotenceAndSymbolServiceSoap12" type="tns:vRelaOfPotenceAndSymbolServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vRelaOfPotenceAndSymbol_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/vRelaOfPotenceAndSymbol_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbol">
+      <soap12:operation soapAction="http://tempuri.org/vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolV">
+      <soap12:operation soapAction="http://tempuri.org/vRelaOfPotenceAndSymbol_GetvRelaOfPotenceAndSymbolV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/vRelaOfPotenceAndSymbol_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRelaOfPotenceAndSymbol_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/vRelaOfPotenceAndSymbol_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="vRelaOfPotenceAndSymbolService">
+    <wsdl:port name="vRelaOfPotenceAndSymbolServiceSoap" binding="tns:vRelaOfPotenceAndSymbolServiceSoap">
+      <soap:address location="http://localhost:9259/vRelaOfPotenceAndSymbolService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vRelaOfPotenceAndSymbolServiceSoap12" binding="tns:vRelaOfPotenceAndSymbolServiceSoap12">
+      <soap12:address location="http://localhost:9259/vRelaOfPotenceAndSymbolService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,199 @@
+A {
+	COLOR: #000000; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+a:link
+{
+	font-size: 13px;
+	color: #3300cc;
+	text-decoration: none;
+}
+a:visited
+{
+	font-size: 13px;
+	color: #0a246a;
+	text-decoration: none;
+}
+a:hover
+{
+	font-size: 13px;
+	color: #cc0000;
+	text-decoration: none;
+}
+a:active
+{
+	font-size: 13px;
+	color: #000000;
+	text-decoration: none;
+}
+
+a.DgSelAll:link
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+a.DgSelAll:visited
+{
+	color: white;
+	text-decoration: none;
+}
+a.DgSelAll:hover
+{
+	color: #cc0066;
+	text-decoration: none;
+}
+a.DgSelAll:active { color: #000000; text-decoration: none }
+
+.A1 {
+	 FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.A1:hover {
+	 FONT-STYLE: normal; FONT-FAMILY: "宋体"; TEXT-DECORATION: underline
+}
+.content {
+	FONT-SIZE: 13px; COLOR: #2d2d2d; LINE-HEIGHT: 23px; FONT-FAMILY: "verdana"; TEXT-DECORATION: none
+}
+.contentL {
+	FONT-SIZE: 14px; COLOR: #2d2d2d;  FONT-FAMILY: Lucida Sans Unicode,Verdana,宋体; TEXT-DECORATION: none; line-height:2;margin-left:20px
+}
+.dl {
+	FONT-SIZE: 13px; COLOR: #2d2d2d;  FONT-FAMILY: Lucida Sans Unicode,Verdana,宋体; TEXT-DECORATION: none; line-height:2;margin-left:20px
+}
+.title
+{
+	font-size:15px; 
+	color:Black; 
+	font-family:Lucida Sans Unicode,Verdana,宋体; 
+	font-weight:bolder;
+	text-decoration:none 
+}
+.NameControl
+{
+	font-weight: normal;
+	font-size: 13px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.ValueControl
+{
+	font-size: 13px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+	background-color: #CCFFFF;
+}
+.NameTD
+{
+	font-weight: normal;
+	font-size: 13px;
+	color: black;
+	font-family: Verdana;
+	background-color: #E7E7FF;
+	text-decoration: none;
+}
+.ValueTD
+{
+	font-size: 13px;
+	color: black;
+	font-family: Verdana;
+	background-color: #CCFFFF;
+	text-decoration: none;
+}
+.PageTitleH1
+{
+	font-weight: normal;
+	font-size: 16px;
+	color: black;
+	text-decoration: none;
+}
+.RegionTitleH1
+{
+	font-weight: normal;
+	font-size: 15px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.RegionTitleH2
+{
+	font-weight: bold;
+	font-size: 14px;
+	color: silver;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.RegionTitleH3
+{
+	font-weight: normal;
+	font-size: 14px;
+	vertical-align: baseline;
+	color: black;
+	padding-top: 3px;
+	font-family: 宋体;
+	height: 21px;
+	background-color: gainsboro;
+	text-decoration: none;
+}
+.MemoStyle1
+{
+	font-weight: normal;
+	font-size: x-small;
+	color: darkgray;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.ErrMsg
+{
+	font-weight: normal;
+	font-size: x-small;
+	color: red;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.NameLabel
+{
+	font-weight: normal;
+	font-size: 15px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.TableDefa
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.ValueLabelH1
+{
+	font-weight: normal;
+	font-size: 14px;
+	color: dimgray;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.NormalContral
+{
+	font-size: 13px;
+	color: black;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.NotCanUse
+{
+	font-weight: normal;
+	font-size: 13px;
+	color: gray;
+	font-family: Verdana;
+	background-color: gainsboro;
+	text-decoration: none;
+}
+/*固定长度，不换行，超长用省略号*/
+.ellipsis
+{
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}

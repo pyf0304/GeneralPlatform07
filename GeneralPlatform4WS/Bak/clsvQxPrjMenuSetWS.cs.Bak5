@@ -1,0 +1,488 @@
+﻿
+//类名:clsvQxPrjMenuSetWS
+ ///----------------------
+ ///生成代码版本:2017.01.19.1
+ ///生成日期:2017/02/05
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:菜单管理
+ ///模块英文名:MenuManage
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferencevQxPrjMenuSet;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// v菜单集(vQxPrjMenuSet)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsvQxPrjMenuSetWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsvQxPrjMenuSetEN> arrvQxPrjMenuSetObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static vQxPrjMenuSetServiceSoapClient objvQxPrjMenuSetServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static vQxPrjMenuSetServiceSoapClient GetvQxPrjMenuSetServiceSoapClient()
+{
+if (objvQxPrjMenuSetServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "vQxPrjMenuSetServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/vQxPrjMenuSetService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/vQxPrjMenuSetService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new vQxPrjMenuSetServiceSoapClient(binding, address);
+}
+else
+{
+return objvQxPrjMenuSetServiceSoapClient;
+}
+}
+
+ public clsvQxPrjMenuSetWS()
+ {
+ }
+
+ /// <summary>
+ /// 绑定基于Win的下拉框
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_ComboBoxBindFunction)
+ /// </summary>
+ /// <param name="objComboBox">需要绑定当前表的下拉框</param>
+public static void BindCbo_MenuSetId(System.Windows.Forms.ComboBox objComboBox)
+{
+//为数据源为表的下拉框设置内容
+System.Data.DataTable objDT = GetDataTable_vQxPrjMenuSetWs("1=1");
+clsvQxPrjMenuSetEN objvQxPrjMenuSetEN;
+//初始化一个对象列表
+ArrayList vQxPrjMenuSetList = new ArrayList();
+//插入第0项。在第0项中插入“请选择...”,为了方便用户,与WEB方式类似。
+objvQxPrjMenuSetEN = new clsvQxPrjMenuSetEN();
+objvQxPrjMenuSetEN.MenuSetId = "0";
+objvQxPrjMenuSetEN.MenuSetName = "请选择...";
+vQxPrjMenuSetList.Add(objvQxPrjMenuSetEN);
+//把DataTable中的所有项均加到对象列表中
+foreach(DataRow objRow in objDT.Rows)
+{
+objvQxPrjMenuSetEN = new clsvQxPrjMenuSetEN();
+objvQxPrjMenuSetEN.MenuSetId = objRow["MenuSetId"].ToString();
+objvQxPrjMenuSetEN.MenuSetName = objRow["MenuSetName"].ToString();
+vQxPrjMenuSetList.Add(objvQxPrjMenuSetEN);
+}
+//设置下拉框的数据源、以及设置值项、显示项
+objComboBox.DataSource = vQxPrjMenuSetList;
+objComboBox.ValueMember="MenuSetId";
+objComboBox.DisplayMember="MenuSetName";
+objComboBox.SelectedIndex = 0;
+}
+
+ /// <summary>
+ /// 绑定基于Web的下拉框
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_DdlBindFunction)
+ /// </summary>
+ /// <param name="objDDL">需要绑定当前表的下拉框</param>
+public static void BindDdl_MenuSetId(System.Web.UI.WebControls.DropDownList objDDL)
+{
+//为数据源于表的下拉框设置内容
+System.Web.UI.WebControls.ListItem li=new System.Web.UI.WebControls.ListItem("请选择...","0");
+System.Data.DataTable objDT = GetDataTable_vQxPrjMenuSetWs("1=1");
+objDDL.DataValueField="MenuSetId";
+objDDL.DataTextField="MenuSetName";
+objDDL.DataSource = objDT;
+objDDL.DataBind();
+objDDL.Items.Insert(0, li);
+objDDL.SelectedIndex = 0;
+}
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_BindListView)
+ /// </summary>
+public static int BindLv_vQxPrjMenuSet(System.Windows.Forms.ListView lvvQxPrjMenuSet, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lvivQxPrjMenuSet; 
+List<clsvQxPrjMenuSetEN> arrvQxPrjMenuSetObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrvQxPrjMenuSetObjList = GetvQxPrjMenuSetObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvvQxPrjMenuSet.Items.Clear();//清除原来所有Item
+lvvQxPrjMenuSet.Columns.Clear();//清除原来所有列头信息
+lvvQxPrjMenuSet.Columns.Add("菜单集Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxPrjMenuSet.Columns.Add("菜单集名称", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxPrjMenuSet.Columns.Add("项目Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxPrjMenuSet.Columns.Add("工程名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxPrjMenuSet.Columns.Add("是否默认", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxPrjMenuSet.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxPrjMenuSet.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsvQxPrjMenuSetEN objvQxPrjMenuSetEN in arrvQxPrjMenuSetObjList)
+{
+lvivQxPrjMenuSet = new System.Windows.Forms.ListViewItem();
+lvivQxPrjMenuSet.Tag = objvQxPrjMenuSetEN.MenuSetId;
+lvivQxPrjMenuSet.Text = objvQxPrjMenuSetEN.MenuSetId.ToString();
+lvivQxPrjMenuSet.SubItems.Add(objvQxPrjMenuSetEN.MenuSetName);
+lvivQxPrjMenuSet.SubItems.Add(objvQxPrjMenuSetEN.QxPrjId);
+lvivQxPrjMenuSet.SubItems.Add(objvQxPrjMenuSetEN.PrjName);
+lvivQxPrjMenuSet.SubItems.Add(objvQxPrjMenuSetEN.IsDefault.ToString());
+lvivQxPrjMenuSet.SubItems.Add(objvQxPrjMenuSetEN.Memo);
+lvvQxPrjMenuSet.Items.Add(lvivQxPrjMenuSet);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrvQxPrjMenuSetObjList.Count;
+}
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_vQxPrjMenuSetWs(string strWhereCond)
+{
+vQxPrjMenuSetServiceSoapClient objvQxPrjMenuSetService = GetvQxPrjMenuSetServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objvQxPrjMenuSetService.vQxPrjMenuSet_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxPrjMenuSet_GetDataSet", "clsvQxPrjMenuSetWS:GetDataTable_vQxPrjMenuSetWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_vQxPrjMenuSetByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+vQxPrjMenuSetServiceSoapClient objvQxPrjMenuSetService = GetvQxPrjMenuSetServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objvQxPrjMenuSetService.vQxPrjMenuSet_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxPrjMenuSet_GetDataSetByRange", "clsvQxPrjMenuSetWS:GetDataTable_vQxPrjMenuSetByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objvQxPrjMenuSetEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetvQxPrjMenuSetWs(ref clsvQxPrjMenuSetEN objvQxPrjMenuSetEN)
+{
+vQxPrjMenuSetServiceSoapClient objvQxPrjMenuSetService = GetvQxPrjMenuSetServiceSoapClient();
+bool bolResult = objvQxPrjMenuSetService.vQxPrjMenuSet_GetvQxPrjMenuSet(ref objvQxPrjMenuSetEN);
+return bolResult;
+}
+
+public static clsvQxPrjMenuSetEN GetvQxPrjMenuSetByMenuSetIdWs(string strMenuSetId)
+{
+vQxPrjMenuSetServiceSoapClient objvQxPrjMenuSetService = GetvQxPrjMenuSetServiceSoapClient();
+clsvQxPrjMenuSetEN objvQxPrjMenuSetEN = objvQxPrjMenuSetService.vQxPrjMenuSet_GetvQxPrjMenuSetByMenuSetId(strMenuSetId);
+return objvQxPrjMenuSetEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static string GetFirstID_S(string strWhereCond)
+{
+vQxPrjMenuSetServiceSoapClient objvQxPrjMenuSetService = GetvQxPrjMenuSetServiceSoapClient();
+try
+{
+string strMenuSetId = objvQxPrjMenuSetService.vQxPrjMenuSet_GetFirstID_S(strWhereCond);
+return strMenuSetId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxPrjMenuSet_GetFirstID_S", "clsvQxPrjMenuSetWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsvQxPrjMenuSetEN GetFirstvQxPrjMenuSet_S(string strWhereCond)
+{
+vQxPrjMenuSetServiceSoapClient objvQxPrjMenuSetService = GetvQxPrjMenuSetServiceSoapClient();
+try
+{
+clsvQxPrjMenuSetEN objvQxPrjMenuSetEN = objvQxPrjMenuSetService.vQxPrjMenuSet_GetFirstvQxPrjMenuSet_S(strWhereCond);
+return objvQxPrjMenuSetEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxPrjMenuSet_GetFirstvQxPrjMenuSet_S", "clsvQxPrjMenuSetWS:GetFirstvQxPrjMenuSet_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据关键字获取相关名称, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecNameByKey_Cache)
+ /// </summary>
+ /// <param name = "strMenuSetId">所给的关键字</param>
+ /// <returns>根据关键字获取的名称</returns>
+public static string GetMenuSetNameByMenuSetId_Cache(string strMenuSetId)
+{
+if (string.IsNullOrEmpty(strMenuSetId) == true) return "";
+string strWhereCond = string.Format("1 = 1 order by MenuSetId");
+if (arrvQxPrjMenuSetObjLst_Cache == null)
+{
+arrvQxPrjMenuSetObjLst_Cache = clsvQxPrjMenuSetWS.GetvQxPrjMenuSetObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrvQxPrjMenuSetObjLst_Cache.Count - 1;
+int intMid = 0;
+clsvQxPrjMenuSetEN objvQxPrjMenuSetEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objvQxPrjMenuSetEN = arrvQxPrjMenuSetObjLst_Cache[intMid];
+if (objvQxPrjMenuSetEN.MenuSetId == strMenuSetId)
+{
+intFindFailCount = 0;
+return objvQxPrjMenuSetEN.MenuSetName;
+}
+else if (objvQxPrjMenuSetEN.MenuSetId.CompareTo(strMenuSetId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrvQxPrjMenuSetObjLst_Cache = null;
+if (intFindFailCount == 1) return GetMenuSetNameByMenuSetId_Cache(strMenuSetId);
+string strErrMsgForGetObjById = string.Format("在vQxPrjMenuSet对象缓存列表中,找不到记录[MenuSetId = {0}][intFindFailCount = {1}](函数:GetMenuSetNameByMenuSetId_Cache)", strMenuSetId, intFindFailCount);
+if (objvQxPrjMenuSetEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objvQxPrjMenuSetEN.MenuSetId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsvQxPrjMenuSetBL", "GetMenuSetNameByMenuSetId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "strMenuSetId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsvQxPrjMenuSetEN GetvQxPrjMenuSetObjByMenuSetId_Cache(string strMenuSetId)
+{
+if (string.IsNullOrEmpty(strMenuSetId) == true) return null;
+string strWhereCond = string.Format("1 = 1 order by MenuSetId");
+if (arrvQxPrjMenuSetObjLst_Cache == null)
+{
+arrvQxPrjMenuSetObjLst_Cache = clsvQxPrjMenuSetWS.GetvQxPrjMenuSetObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrvQxPrjMenuSetObjLst_Cache.Count - 1;
+int intMid = 0;
+clsvQxPrjMenuSetEN objvQxPrjMenuSetEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objvQxPrjMenuSetEN = arrvQxPrjMenuSetObjLst_Cache[intMid];
+if (objvQxPrjMenuSetEN.MenuSetId == strMenuSetId)
+{
+intFindFailCount = 0;
+return objvQxPrjMenuSetEN;
+}
+else if (objvQxPrjMenuSetEN.MenuSetId.CompareTo(strMenuSetId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrvQxPrjMenuSetObjLst_Cache = null;
+if (intFindFailCount == 1) return GetvQxPrjMenuSetObjByMenuSetId_Cache(strMenuSetId);
+string strErrMsgForGetObjById = string.Format("在vQxPrjMenuSet对象缓存列表中,找不到记录[MenuSetId = {0}][intFindFailCount = {1}](函数:GetvQxPrjMenuSetObjByMenuSetId_Cache)", strMenuSetId, intFindFailCount);
+if (objvQxPrjMenuSetEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objvQxPrjMenuSetEN.MenuSetId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsvQxPrjMenuSetBL", "GetvQxPrjMenuSetObjByMenuSetId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsvQxPrjMenuSetEN> GetvQxPrjMenuSetObjList(string strWhereCond)
+{
+ List<clsvQxPrjMenuSetEN> arrObjList = new List<clsvQxPrjMenuSetEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_vQxPrjMenuSetWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsvQxPrjMenuSetEN objvQxPrjMenuSetEN = new clsvQxPrjMenuSetEN();
+objvQxPrjMenuSetEN.MenuSetId = objRow["MenuSetId"].ToString().Trim(); //菜单集Id
+objvQxPrjMenuSetEN.MenuSetName = objRow["MenuSetName"].ToString().Trim(); //菜单集名称
+objvQxPrjMenuSetEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objvQxPrjMenuSetEN.PrjName = objRow["PrjName"].ToString().Trim(); //工程名
+objvQxPrjMenuSetEN.IsDefault = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsDefault"].ToString().Trim()); //是否默认
+objvQxPrjMenuSetEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objvQxPrjMenuSetEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsvQxPrjMenuSetEN> GetvQxPrjMenuSetObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsvQxPrjMenuSetEN> arrObjList = new List<clsvQxPrjMenuSetEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_vQxPrjMenuSetByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsvQxPrjMenuSetEN objvQxPrjMenuSetEN = new clsvQxPrjMenuSetEN();
+objvQxPrjMenuSetEN.MenuSetId = objRow["MenuSetId"].ToString().Trim(); //菜单集Id
+objvQxPrjMenuSetEN.MenuSetName = objRow["MenuSetName"].ToString().Trim(); //菜单集名称
+objvQxPrjMenuSetEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objvQxPrjMenuSetEN.PrjName = objRow["PrjName"].ToString().Trim(); //工程名
+objvQxPrjMenuSetEN.IsDefault = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsDefault"].ToString().Trim()); //是否默认
+objvQxPrjMenuSetEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objvQxPrjMenuSetEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+vQxPrjMenuSetServiceSoapClient objvQxPrjMenuSetService = GetvQxPrjMenuSetServiceSoapClient();
+bool bolIsExist = objvQxPrjMenuSetService.vQxPrjMenuSet_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(string strMenuSetId)
+{
+//检测记录是否存在
+vQxPrjMenuSetServiceSoapClient objvQxPrjMenuSetService = GetvQxPrjMenuSetServiceSoapClient();
+bool bolIsExist = objvQxPrjMenuSetService.vQxPrjMenuSet_IsExist(strMenuSetId);
+return bolIsExist;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/vQxPrjMenuSetService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/vQxPrjMenuSetService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

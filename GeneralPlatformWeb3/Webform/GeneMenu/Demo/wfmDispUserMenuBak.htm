@@ -1,0 +1,726 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>选择用户角色</title>
+
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/bootstrap.js" type="text/javascript"></script>
+    <link href="../../../css/tz_base11.css" rel="stylesheet" />
+    <style type="text/css">
+        .style1 {
+            FONT-SIZE: 12px;
+            COLOR: #000099;
+            FONT-FAMILY: Verdana
+        }
+
+        .style2 {
+            FONT-SIZE: 12px;
+            COLOR: #0000ff;
+            FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+        }
+
+        A:link {
+            COLOR: #003366;
+            TEXT-DECORATION: none
+        }
+
+        A:visited {
+            COLOR: #003366;
+            TEXT-DECORATION: none
+        }
+
+        A:hover {
+            BACKGROUND-COLOR: #ffff99;
+            TEXT-DECORATION: underline
+        }
+
+        A:active {
+            COLOR: #669966;
+            TEXT-DECORATION: none
+        }
+
+        BODY {
+            BACKGROUND-COLOR: #f6f6f6
+        }
+    </style>
+
+    <script language="JavaScript" type="text/javascript">
+<!--
+        /*function showthis(Tid)
+        {
+            var c=document.getElementsByTagName("table");
+            var l=c.length;
+            var i;
+            for(i=0;i<l;i++)
+            {
+                str = c[i].id;
+                str = str.substr(0,4);
+                if(str=="menu")
+                {
+                    if(c[i].id==Tid)
+                        if(c[i].style.display=="")
+                            c[i].style.display="none";
+                        else
+                            c[i].style.display="";
+                    else c[i].style.display="none";
+                }
+            }
+        }
+        */
+        function showthis(Tid) {
+            var c = document.getElementsByTagName("table");
+            var l = c.length;
+            var i;
+            if (Tid.length == 8) {
+                alert("length == 8");
+                for (i = 0; i < l; i++) {
+                    str = c[i].id;
+                    if (str == Tid) {
+                        if (c[i].style.display == "")
+                            c[i].style.display = "none";
+                        else
+                            c[i].style.display = "";
+                        break;
+                    }
+                }
+            }
+            else {
+                for (i = 0; i < l; i++) {
+                    str = c[i].id;
+                    str = str.substr(0, 4);
+                    if (str == "menu") {
+                        c[i].style.display = "none";
+                    }
+                }
+                showFather(Tid);
+                showBrother(Tid);
+                showSon(Tid);
+            }
+
+        }
+        function showSon(Tid) {
+            var c = document.getElementsByTagName("table");
+            c[Tid].style.display = "";
+            var i;
+            for (i = 0; i < 9; i++) {
+                if (c[Tid + i] != null) {
+                    if (c[Tid + i].style.display = "none")
+                        c[Tid + i].style.display = "";
+                }
+            }
+        }
+        function showFather(Tid) {
+            var c = document.getElementsByTagName("table");
+            if (Tid != "menu") {
+                var father = Tid.substring(0, Tid.length - 1);
+                if (c[father] != null) {
+                    c[father].style.display = "";
+                    showFather(father);
+                }
+            }
+            else
+                return;
+        }
+        function showBrother(Tid) {
+            var c = document.getElementsByTagName("table");
+            if (Tid != "menu") {
+                var father = Tid.substring(0, Tid.length - 1);
+                if (c[father] != null)
+                    showSon(father);
+            }
+        }
+        -->
+    </script>
+
+</head>
+<body bgcolor="silver">
+    <form name="Form1" method="post" action="wfmDispUserMenu.aspx" id="Form1">
+        <table id="Table1" style="z-index: 101; left: 0px; width: 144px; position: absolute;
+            top: 8px; height: 184px" cellspacing="3" cellpadding="0" width="144" border="0">
+            <tr valign="top">
+                <td>
+                    <span id="span1">
+                        <div align="left" class="style1">
+                            <table width='94%' border='0' cellpadding='0' cellspacing='0' bordercolor='#2953c0'
+                                   id='Table1' class="style1">
+                                <tbody>
+                                    <tr>
+                                        <td width='100%' align='left'>
+                                            <a title='单击展开！' onclick='showthis("menu01");'>
+                                                &nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                                                           width='12' height='12'>项目对象管理_顶1
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table width="100%" border="0" id="menu01" class="style2" style="display: none">
+                            <tr>
+                                <td align="left">
+                                    <a title='单击展开！' onclick='showthis("menu0101");'>
+                                        &nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                                                   width='12' height='12'>项目对象管理1_顶2
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <table width="100%" border="0" id="menu0101" class="style2" style="display: none">
+                                        <tr>
+                                            <td align="left">
+                                                &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                                <a href="webform/Field/wfmFieldTab_QUDI.aspx" target="main">项目字段维护_1</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">
+                                                &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                                <a href="webform/Field/wfmFieldTab_QUDI.aspx" target="main">项目字段维护_2</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    <a title='单击展开！' onclick='showthis("menu0102");'>
+                                        &nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                                                   width='12' height='12'>项目对象管理2_顶2
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table width="100%" border="0" id="menu0102" class="style2" style="display: none">
+                                        <tr>
+                                            <td align="left">
+                                                &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                                <a href="webform/Field/wfmFieldTab_QUDI.aspx" target="main">项目字段维护_3</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">
+                                                &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                                <a href="webform/Field/wfmFieldTab_QUDI.aspx" target="main">项目字段维护_4</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <div align="left" class="style1">
+                            <table width='94%' border='0' cellpadding='0' cellspacing='0' bordercolor='#2953c0'
+                                   id='Table2' class="style1">
+                                <tbody>
+                                    <tr>
+                                        <td width='100%' align='left'>
+                                            <a title='单击展开！' onclick='showthis("menu2");'>
+                                                &nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                                                           width='12' height='12'>表字段管理
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table width="100%" border="0" id="menu2" class="style2" style="display: none">
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="webform/Field/wfmFieldTab_QUDI.aspx" target="main">项目字段维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Field/wfmFieldTab_BackUp_QUDI.aspx" target="main">字段备份</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Field/wfmFieldTab_Check.aspx" target="main">字段核实</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Field/wfmFieldTab_Archive.aspx" target="main">字段归档</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="webform/Field/wfmFieldTab_Disp.aspx" target="main">项目字段查看</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="webform/Table/wfmPrjTab_QUDI.aspx" target="main">项目表维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform\Table\wfmPrjTab_QUDI3.aspx" target="main">项目表维护New</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Table/wfmPrjTab_Backup_QUDI.aspx" target="main">项目表名备份</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Table/wfmPrjTab_Check.aspx" target="main">项目表核实</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Table/wfmPrjTab_Archive.aspx" target="main">项目表归档</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Table/wfmPrjTab_Disp.aspx" target="main">项目表查看</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/wfmDataTypeAbbr_QUDI.aspx" target="main">数据类型维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Table/wfmFieldType_QUDI.aspx" target="main">字段类型维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Table/wfmPrjTabFld_Q.aspx" target="main">表字段信息查询</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Table/wfmPrjTab_Copy.aspx" target="main">工程表复制</a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div align="left" class="style1">
+                            <table width='94%' border='0' cellpadding='0' cellspacing='0' bordercolor='#2953c0'
+                                   id='Table3' class="style1">
+                                <tbody>
+                                    <tr>
+                                        <td width='100%' align='left'>
+                                            <a title='单击展开！' onclick='showthis("menu3");'>
+                                                &nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                                                           width='12' height='12'>项目界面管理
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table width="100%" border="0" id="menu3" class="style2" style="display: none">
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="webform/View/wfmViewInfo_QUDI.aspx" target="main">界面信息维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/View/wfmSetViewStyle.aspx" target="main">设置界面模式</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/View/wfmViewSetOptStepAndFunc.aspx" target="main">流程及函数</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="" target="main">界面审核</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="" target="main">界面归档</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/View/wfmINOUTType_QUDI.aspx" target="main">输入输出类型维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/View/wfmViewGroup_QUDI.aspx" target="main">界面组维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="webform/wfmViewBtnOptSteps_QUDI.aspx" target="main">按钮操作步骤</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="webform/View/wfmViewOptSteps_QUDI.aspx" target="main">界面操作流程</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="webform/View/wfmViewRelaTab_QUDI.aspx" target="main">界面相关表</a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div align="left" class="style1">
+                            <table width='94%' border='0' cellpadding='0' cellspacing='0' bordercolor='#2953c0'
+                                   id='Table4' class="style1">
+                                <tbody>
+                                    <tr>
+                                        <td width='100%' align='left'>
+                                            <a title='单击展开！' onclick='showthis("menu4");'>
+                                                &nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                                                           width='12' height='12'>生成C#代码V5
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table width="100%" border="0" id="menu4" class="style2" style="display: none">
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/GenCode/wfmGenCode4Tab.aspx" target="main">表相关代码</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/GenCode/wfmGenViewCode_WebV5.aspx" target="main">WEB界面代码</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/GenCode/wfmGenViewCode4WinV5.aspx" target="main">Win界面代码</a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div align="left" class="style1">
+                            <table width='94%' border='0' cellpadding='0' cellspacing='0' bordercolor='#2953c0'
+                                   id='Table5' class="style1">
+                                <tbody>
+                                    <tr>
+                                        <td width='100%' align='left'>
+                                            <a title='单击展开！' onclick='showthis("menu5");'>
+                                                &nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                                                           width='12' height='12'>生成Java代码
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table width="100%" border="0" id="menu5" class="style2" style="display: none">
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/GenCode/wfmGenViewCode4Java.aspx" target="main">界面代码</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform\GenCode\wfmGenViewCode4JavaV6.aspx" target="main">生成JAVA代码V6</a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div align="left" class="style1">
+                            <table width='94%' border='0' cellpadding='0' cellspacing='0' bordercolor='#2953c0'
+                                   id='Table6' class="style1">
+                                <tbody>
+                                    <tr>
+                                        <td width='100%' align='left'>
+                                            <a title='单击展开！' onclick='showthis("menu6");'>
+                                                &nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                                                           width='12' height='12'>任务管理
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table width="100%" border="0" id="menu6" class="style2" style="display: none">
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/TaskMan/wfmPrjTask_QUDI.aspx" target="main">工程任务管理</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/TaskMan/wfmTaskStatus_QUDI.aspx" target="main">任务状态维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/TaskMan/wfmTaskType_QUDI.aspx" target="main">任务类别维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/TaskMan/wfmViewTaskAssign.aspx" target="main">界面任务分配</a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div align="left" class="style1">
+                            <table width='94%' border='0' cellpadding='0' cellspacing='0' bordercolor='#2953c0'
+                                   id='Table7' class="style1">
+                                <tbody>
+                                    <tr>
+                                        <td width='100%' align='left'>
+                                            <a title='单击展开！' onclick='showthis("menu7");'>
+                                                &nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                                                           width='12' height='12'>工程管理
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table width="100%" border="0" id="menu7" class="style2" style="display: none">
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/PrjMan/wfmProjects_QUDI.aspx" target="main">工程维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/TaskMan/wfmPrjTask_QUDI.aspx" target="main">工程任务管理</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="webform/wfmPrjUserRole_QUDI.aspx" target="main">工程角色维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/PrjMan/wfmFuncModule_QUDI.aspx" target="main">工程模块管理</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/PrjMan/wfmElecDict_QUDI.aspx" target="main">电子字典</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/wfmPrjProcess_QUDI.aspx" target="main">项目过程步骤维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/PrjMan/wfmProjects_Backup.aspx" target="main">工程备份</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/PrjMan/wfmApplicationType_QUDI.aspx" target="main">应用程序类型维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/PrjMan/wfmFuncModule_Copy.aspx" target="main">模块名称复制</a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div align="left" class="style1">
+                            <table width='94%' border='0' cellpadding='0' cellspacing='0' bordercolor='#2953c0'
+                                   id='Table8' class="style1">
+                                <tbody>
+                                    <tr>
+                                        <td width='100%' align='left'>
+                                            <a title='单击展开！' onclick='showthis("menu8");'>
+                                                &nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                                                           width='12' height='12'>通用用户管理
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table width="100%" border="0" id="menu8" class="style2" style="display: none">
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Usermanage/wfmUsers_QUDI.aspx" target="main">用户维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Usermanage/wfmChangePwd.aspx" target="main">修改密码</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Usermanage/wfmUserRole_QUDI.aspx" target="main">角色维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Usermanage/wfmUserGroups_QUDI.aspx" target="main">用户组维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Usermanage/wfmUserState_QUDI.aspx" target="main">用户状态维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Usermanage/wfmDepartments_QUDI.aspx" target="main">部门维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Usermanage/wfmSingleUserGroupRelation.aspx" target="main">单用户->组</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Usermanage/wfmMultiUserGroupRelation.aspx" target="main">多用户->组</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/Usermanage/wfmGroupManage.aspx" target="main">组的用户维护</a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div align="left" class="style1">
+                            <table width='94%' border='0' cellpadding='0' cellspacing='0' bordercolor='#2953c0'
+                                   id='Table9' class="style1">
+                                <tbody>
+                                    <tr>
+                                        <td width='100%' align='left'>
+                                            <a title='单击展开！' onclick='showthis("menu9");'>
+                                                &nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                                                           width='12' height='12'>日志维护
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table width="100%" border="0" id="menu9" class="style2" style="display: none">
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/LogManage/wfmSysLog_QUDI.aspx" target="main">日志查看</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="Webform/LogManage/wfmSysLog_QD_AllUser.aspx" target="main">用户日志查看</a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div align="left" class="style1">
+                            <table width='94%' border='0' cellpadding='0' cellspacing='0' bordercolor='#2953c0'
+                                   id='Table10' class="style1">
+                                <tbody>
+                                    <tr>
+                                        <td width='100%' align='left'>
+                                            <a title='单击展开！' onclick='showthis("menu10");'>
+                                                &nbsp;<img src='pic/Left_Nav_Arrow.gif'
+                                                           width='12' height='12'>通用权限管理
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table width="100%" border="0" id="menu10" class="style2" style="display: none">
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="webForm/UserManage/wfmManPotencesForSingleUserGroup.aspx" target="main">单用户权限</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="webForm/UserManage/wfmManPotencesForMultiUserGroup.aspx" target="main">多用户权限</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="webForm/UserManage/wfmPrjPotence_QUDI.aspx" target="main">工程权限维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="webForm/UserManage/wfmPotenceFL_QUDI.aspx" target="main">权限分类维护</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left">
+                                    &nbsp;&nbsp;<img src="pic/Left_Nav_Dot.gif" width="12" height="12" border="0">
+                                    <a href="" target="main">组的权限维护</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

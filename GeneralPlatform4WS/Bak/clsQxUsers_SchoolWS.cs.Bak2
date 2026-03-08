@@ -1,0 +1,696 @@
+﻿
+//类名:clsQxUsers_SchoolWS
+ ///----------------------
+ ///生成代码版本:2017.01.19.1
+ ///生成日期:2017/01/31
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:用户管理
+ ///模块英文名:UserManage
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferenceQxUsers_School;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// 用户_学校(QxUsers_School)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsQxUsers_SchoolWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsQxUsers_SchoolEN> arrQxUsers_SchoolObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static QxUsers_SchoolServiceSoapClient objQxUsers_SchoolServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static QxUsers_SchoolServiceSoapClient GetQxUsers_SchoolServiceSoapClient()
+{
+if (objQxUsers_SchoolServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "QxUsers_SchoolServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxUsers_SchoolService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxUsers_SchoolService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new QxUsers_SchoolServiceSoapClient(binding, address);
+}
+else
+{
+return objQxUsers_SchoolServiceSoapClient;
+}
+}
+
+ public clsQxUsers_SchoolWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GenBindListView)
+ /// </summary>
+public static int BindLv_QxUsers_School(System.Windows.Forms.ListView lvQxUsers_School, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lviQxUsers_School; 
+ArrayList arrQxUsers_SchoolObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrQxUsers_SchoolObjList = new clsQxUsers_SchoolBL.GetQxUsers_SchoolObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvQxUsers_School.Items.Clear();//清除原来所有Item
+lvQxUsers_School.Columns.Clear();//清除原来所有列头信息
+lvQxUsers_School.Columns.Add("用户ID", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers_School.Columns.Add("身份编号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers_School.Columns.Add("CardNo", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers_School.Columns.Add("StuIdTeacherId", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers_School.Columns.Add("年级流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers_School.Columns.Add("Card_State", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers_School.Columns.Add("IsLeaved", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers_School.Columns.Add("修改日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers_School.Columns.Add("修改用户", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers_School.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers_School.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsQxUsers_SchoolEN objQxUsers_SchoolEN in arrQxUsers_SchoolObjList)
+{
+lviQxUsers_School = new System.Windows.Forms.ListViewItem();
+lviQxUsers_School.Tag = objQxUsers_SchoolEN.UserId;
+lviQxUsers_School.Text = objQxUsers_SchoolEN.UserId.ToString();
+lviQxUsers_School.SubItems.Add(objQxUsers_SchoolEN.CardNo);
+lviQxUsers_School.SubItems.Add(objQxUsers_SchoolEN.StuIdTeacherId);
+lviQxUsers_School.SubItems.Add(objQxUsers_SchoolEN.id_GradeBase);
+lviQxUsers_School.SubItems.Add(objQxUsers_SchoolEN.Card_State);
+lviQxUsers_School.SubItems.Add(objQxUsers_SchoolEN.IsLeaved.ToString());
+lviQxUsers_School.SubItems.Add(objQxUsers_SchoolEN.UpdDate);
+lviQxUsers_School.SubItems.Add(objQxUsers_SchoolEN.UpdUser);
+lviQxUsers_School.SubItems.Add(objQxUsers_SchoolEN.Memo);
+lvQxUsers_School.Items.Add(lviQxUsers_School);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrQxUsers_SchoolObjList.Count;
+}
+
+ /// <summary>
+ /// 检查对象字段值是否合法,1)检查是否可空;2)检查字段值长度是否超长,如果出错就抛出错误.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4WS_CheckPropertyNew)
+ /// </summary>
+public void CheckPropertyNew(clsQxUsers_SchoolEN objQxUsers_SchoolEN)
+{
+if (!Object.Equals(null, objQxUsers_SchoolEN.UserId) && getStrLen(objQxUsers_SchoolEN.UserId) > 18)
+{
+ throw new Exception("字段[用户ID]的长度不能超过18!");
+}
+if (!Object.Equals(null, objQxUsers_SchoolEN.IdentityID) && getStrLen(objQxUsers_SchoolEN.IdentityID) > 2)
+{
+ throw new Exception("字段[身份编号]的长度不能超过2!");
+}
+if (!Object.Equals(null, objQxUsers_SchoolEN.CardNo) && getStrLen(objQxUsers_SchoolEN.CardNo) > 10)
+{
+ throw new Exception("字段[CardNo]的长度不能超过10!");
+}
+if (!Object.Equals(null, objQxUsers_SchoolEN.StuIdTeacherId) && getStrLen(objQxUsers_SchoolEN.StuIdTeacherId) > 20)
+{
+ throw new Exception("字段[StuIdTeacherId]的长度不能超过20!");
+}
+if (!Object.Equals(null, objQxUsers_SchoolEN.id_GradeBase) && getStrLen(objQxUsers_SchoolEN.id_GradeBase) > 4)
+{
+ throw new Exception("字段[年级流水号]的长度不能超过4!");
+}
+if (!Object.Equals(null, objQxUsers_SchoolEN.Card_State) && getStrLen(objQxUsers_SchoolEN.Card_State) > 10)
+{
+ throw new Exception("字段[Card_State]的长度不能超过10!");
+}
+if (!Object.Equals(null, objQxUsers_SchoolEN.UpdDate) && getStrLen(objQxUsers_SchoolEN.UpdDate) > 14)
+{
+ throw new Exception("字段[修改日期]的长度不能超过14!");
+}
+if (!Object.Equals(null, objQxUsers_SchoolEN.UpdUser) && getStrLen(objQxUsers_SchoolEN.UpdUser) > 18)
+{
+ throw new Exception("字段[修改用户]的长度不能超过18!");
+}
+if (!Object.Equals(null, objQxUsers_SchoolEN.Memo) && getStrLen(objQxUsers_SchoolEN.Memo) > 1000)
+{
+ throw new Exception("字段[备注]的长度不能超过1000!");
+}
+ objQxUsers_SchoolEN.IsCheckProperty = true;
+ }
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxUsers_SchoolWs(string strWhereCond)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUsers_SchoolService.QxUsers_School_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_GetDataSet", "clsQxUsers_SchoolWS:GetDataTable_QxUsers_SchoolWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxUsers_SchoolByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUsers_SchoolService.QxUsers_School_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_GetDataSetByRange", "clsQxUsers_SchoolWS:GetDataTable_QxUsers_SchoolByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetDataTable_QxUsers_SchoolVWs(string strWhereCond)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUsers_SchoolService.QxUsers_School_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_GetDataSetV", "clsQxUsers_SchoolWS:GetDataTable_QxUsers_SchoolVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetQxUsers_SchoolVWs(string strWhereCond)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUsers_SchoolService.QxUsers_School_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_GetDataSetV", "clsQxUsers_SchoolWS:GetDataTable_QxUsers_SchoolVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabV2ByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxUsers_SchoolVByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUsers_SchoolService.QxUsers_School_GetDataSetVByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_GetDataSetVByRange", "clsQxUsers_SchoolWS:GetDataTable_QxUsers_SchoolVByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objQxUsers_SchoolEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetQxUsers_SchoolWs(ref clsQxUsers_SchoolEN objQxUsers_SchoolEN)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+bool bolResult = objQxUsers_SchoolService.QxUsers_School_GetQxUsers_School(ref objQxUsers_SchoolEN);
+return bolResult;
+}
+
+public static clsQxUsers_SchoolEN GetQxUsers_SchoolByUserIdWs(string strUserId)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+clsQxUsers_SchoolEN objQxUsers_SchoolEN = objQxUsers_SchoolService.QxUsers_School_GetQxUsers_SchoolByUserId(strUserId);
+return objQxUsers_SchoolEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static string GetFirstID_S(string strWhereCond)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+try
+{
+string strUserId = objQxUsers_SchoolService.QxUsers_School_GetFirstID_S(strWhereCond);
+return strUserId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_GetFirstID_S", "clsQxUsers_SchoolWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsQxUsers_SchoolEN GetFirstQxUsers_School_S(string strWhereCond)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+try
+{
+clsQxUsers_SchoolEN objQxUsers_SchoolEN = objQxUsers_SchoolService.QxUsers_School_GetFirstQxUsers_School_S(strWhereCond);
+return objQxUsers_SchoolEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_GetFirstQxUsers_School_S", "clsQxUsers_SchoolWS:GetFirstQxUsers_School_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "strUserId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsQxUsers_SchoolEN GetQxUsers_SchoolObjByUserId_Cache(string strUserId)
+{
+if (string.IsNullOrEmpty(strUserId) == true) return null;
+string strWhereCond = string.Format("1 = 1 order by UserId");
+if (arrQxUsers_SchoolObjLst_Cache == null)
+{
+arrQxUsers_SchoolObjLst_Cache = clsQxUsers_SchoolWS.GetQxUsers_SchoolObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrQxUsers_SchoolObjLst_Cache.Count - 1;
+int intMid = 0;
+clsQxUsers_SchoolEN objQxUsers_SchoolEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objQxUsers_SchoolEN = arrQxUsers_SchoolObjLst_Cache[intMid];
+if (objQxUsers_SchoolEN.UserId == strUserId)
+{
+intFindFailCount = 0;
+return objQxUsers_SchoolEN;
+}
+else if (objQxUsers_SchoolEN.UserId.CompareTo(strUserId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrQxUsers_SchoolObjLst_Cache = null;
+if (intFindFailCount == 1) return GetQxUsers_SchoolObjByUserId_Cache(strUserId);
+string strErrMsgForGetObjById = string.Format("在QxUsers_School对象缓存列表中,找不到记录[UserId = {0}][intFindFailCount = {1}](函数:GetQxUsers_SchoolObjByUserId_Cache)", strUserId, intFindFailCount);
+if (objQxUsers_SchoolEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objQxUsers_SchoolEN.UserId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsQxUsers_SchoolBL", "GetQxUsers_SchoolObjByUserId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsQxUsers_SchoolEN> GetQxUsers_SchoolObjList(string strWhereCond)
+{
+ List<clsQxUsers_SchoolEN> arrObjList = new List<clsQxUsers_SchoolEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxUsers_SchoolWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxUsers_SchoolEN objQxUsers_SchoolEN = new clsQxUsers_SchoolEN();
+objQxUsers_SchoolEN.UserId = objRow["UserId"].ToString().Trim(); //用户ID
+objQxUsers_SchoolEN.IdentityID = objRow["IdentityID"].ToString().Trim(); //身份编号
+objQxUsers_SchoolEN.CardNo = objRow["CardNo"].ToString().Trim(); //CardNo
+objQxUsers_SchoolEN.StuIdTeacherId = objRow["StuIdTeacherId"].ToString().Trim(); //StuIdTeacherId
+objQxUsers_SchoolEN.id_GradeBase = objRow["id_GradeBase"].ToString().Trim(); //年级流水号
+objQxUsers_SchoolEN.Card_State = objRow["Card_State"].ToString().Trim(); //Card_State
+objQxUsers_SchoolEN.IsLeaved = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsLeaved"].ToString().Trim()); //IsLeaved
+objQxUsers_SchoolEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objQxUsers_SchoolEN.UpdUser = objRow["UpdUser"].ToString().Trim(); //修改用户
+objQxUsers_SchoolEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxUsers_SchoolEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsQxUsers_SchoolEN> GetQxUsers_SchoolObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsQxUsers_SchoolEN> arrObjList = new List<clsQxUsers_SchoolEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxUsers_SchoolByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxUsers_SchoolEN objQxUsers_SchoolEN = new clsQxUsers_SchoolEN();
+objQxUsers_SchoolEN.UserId = objRow["UserId"].ToString().Trim(); //用户ID
+objQxUsers_SchoolEN.IdentityID = objRow["IdentityID"].ToString().Trim(); //身份编号
+objQxUsers_SchoolEN.CardNo = objRow["CardNo"].ToString().Trim(); //CardNo
+objQxUsers_SchoolEN.StuIdTeacherId = objRow["StuIdTeacherId"].ToString().Trim(); //StuIdTeacherId
+objQxUsers_SchoolEN.id_GradeBase = objRow["id_GradeBase"].ToString().Trim(); //年级流水号
+objQxUsers_SchoolEN.Card_State = objRow["Card_State"].ToString().Trim(); //Card_State
+objQxUsers_SchoolEN.IsLeaved = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsLeaved"].ToString().Trim()); //IsLeaved
+objQxUsers_SchoolEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objQxUsers_SchoolEN.UpdUser = objRow["UpdUser"].ToString().Trim(); //修改用户
+objQxUsers_SchoolEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxUsers_SchoolEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool DelRecordWs(string strUserId)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+try
+{
+bool bolResult = objQxUsers_SchoolService.QxUsers_School_DelRecord(strUserId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_DelRecord", "clsQxUsers_SchoolWS:DelRecordWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool DelQxUsers_SchoolsWs(List<string> arrUserId)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+try
+{
+string[] sstrUserId = (string[])(arrUserId.ToArray());
+bool bolResult = objQxUsers_SchoolService.QxUsers_School_DelQxUsers_Schools(sstrUserId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_DelQxUsers_Schools", "clsQxUsers_SchoolWS:DelQxUsers_SchoolsWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static int DelQxUsers_SchoolsByCondWs(string strWhereCond)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+try
+{
+int intRecNum = objQxUsers_SchoolService.QxUsers_School_DelQxUsers_SchoolsByCond(strWhereCond);
+return intRecNum;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_DelQxUsers_SchoolsByCond", "clsQxUsers_SchoolWS:DelQxUsers_SchoolsByCondWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool AddNewRecordBySql2Ws(clsQxUsers_SchoolEN objQxUsers_SchoolEN)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+try
+{
+bool bolResult = objQxUsers_SchoolService.QxUsers_School_AddNewRecordBySql2(objQxUsers_SchoolEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_AddNewRecordBySql2", "clsQxUsers_SchoolWS:AddNewRecordBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 把表对象添加到数据库中,并且返回该记录的关键字
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_AddNewRecordBySql2WithReturnKey)
+ /// </summary>
+ /// <param name = "objQxUsers_SchoolEN">需要添加的表对象</param>
+ /// <returns>返回新添加记录的关键字</returns>
+public static string AddNewRecordBySql2WithReturnKey(clsQxUsers_SchoolEN objQxUsers_SchoolEN)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+try
+{
+string strKey = objQxUsers_SchoolService.QxUsers_School_AddNewRecordBySql2WithReturnKey(objQxUsers_SchoolEN);
+return strKey;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_AddNewRecordBySql2WithReturnKey", "clsQxUsers_SchoolWS:AddNewRecordBySql2WithReturnKey", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool UpdateBySql2Ws(clsQxUsers_SchoolEN objQxUsers_SchoolEN)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+try
+{
+bool bolResult = objQxUsers_SchoolService.QxUsers_School_UpdateBySql2(objQxUsers_SchoolEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_UpdateBySql2", "clsQxUsers_SchoolWS:UpdateBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_UpdateBySqlWithCondition)
+ /// </summary>
+ /// <param name = "objQxUsers_SchoolEN">需要修改的对象</param>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static bool UpdateBySqlWithCondition(clsQxUsers_SchoolEN objQxUsers_SchoolEN, string strWhereCond)
+{
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+try
+{
+bool bolResult = objQxUsers_SchoolService.QxUsers_School_UpdateBySqlWithCondition(objQxUsers_SchoolEN, strWhereCond);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_School_UpdateBySqlWithCondition", "clsQxUsers_SchoolWS:UpdateBySqlWithCondition", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+bool bolIsExist = objQxUsers_SchoolService.QxUsers_School_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(string strUserId)
+{
+//检测记录是否存在
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+bool bolIsExist = objQxUsers_SchoolService.QxUsers_School_IsExist(strUserId);
+return bolIsExist;
+}
+
+ /// <summary>
+ /// 获取当前表关键字值的最大值,再加1,避免重复
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetMaxStrId)
+ /// </summary>
+ /// <returns>当前表关键字值的最大值,再加1</returns>
+public static string GetMaxStrIdWs()
+{
+//检测记录是否存在
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+string strMaxUserId = objQxUsers_SchoolService.QxUsers_School_GetMaxStrId();
+return strMaxUserId;
+}
+
+ /// <summary>
+ /// 根据前缀获取当前表关键字值的最大值,再加1,避免重复
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetMaxStrIdByPrefix)
+ /// </summary>
+ /// <returns>当前表关键字值的最大值,再加1</returns>
+public static string GetMaxStrIdByPrefixWs(string strPrefix)
+{
+//检测记录是否存在
+QxUsers_SchoolServiceSoapClient objQxUsers_SchoolService = GetQxUsers_SchoolServiceSoapClient();
+string strMaxUserId = objQxUsers_SchoolService.QxUsers_School_GetMaxStrIdByPrefix(strPrefix);
+return strMaxUserId;
+}
+
+ /// <summary>
+ /// 获取字符串长度,其中汉字为2个字节,英文为1个字节
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GengetStrLen)
+ /// </summary>
+ /// <param name = "strTemp">给定的原字符串</param>
+ /// <returns>返回字符串长度</returns>
+public static int getStrLen(string strTemp)
+{
+int len ;
+byte[] sarr = System.Text.Encoding.Default.GetBytes(strTemp);
+len = sarr.Length;//will output as 3+3*2 = 9
+return len;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxUsers_SchoolService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxUsers_SchoolService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

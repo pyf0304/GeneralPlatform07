@@ -1,0 +1,288 @@
+﻿
+//----------------------
+//生成代码版本：2014.10.27.1
+//生成日期：2014/11/03
+//生成者：潘以锋
+//工程名称：统一平台
+//工程ID：0014
+//模块中文名：用户管理
+//模块英文名：UserManage
+//注意：1、需要数据底层（PubDataBase.dll）的版本：2014.10.28.1
+//       2、需要公共函数层（TzPubFunction.dll）的版本：2014.10.28.1
+//========================
+using System;
+using System.Data;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+using System.Web.Services;
+using System.Web.Services.Protocols;
+using System.ComponentModel;
+using GeneralPlatform.Entity;
+using GeneralPlatform.BusinessLogic;
+using com.taishsoft.commdb;
+using com.taishsoft.common;
+using com.taishsoft.datetime;
+
+namespace GeneralPlatform_WS
+{
+    /// <summary>
+    /// UsersService 的摘要说明
+    /// </summary>
+    [WebService(Namespace = "http://tempuri.org/")]
+    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    [ToolboxItem(false)]
+    public class UsersService : System.Web.Services.WebService
+    {
+
+        [WebMethod]
+        public DataSet Users_GetDataSet(string strWhereCond)
+        {
+            DataSet objDS = clsUsersBL.GetDataSet_Users(strWhereCond);
+            return objDS;
+        }
+
+        [WebMethod]
+        public DataSet Users_GetDataSetByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+        {
+            DataSet objDS = clsUsersBL.GetDataSet_UsersByRange(strWhereCond, lngMinNum, lngMaxNum);
+            return objDS;
+        }
+
+        [WebMethod]
+        public DataSet Users_GetDataSetV(string strWhereCond)
+        {
+            DataSet objDS = clsUsersBL.GetDataSet_UsersV(strWhereCond);
+            return objDS;
+        }
+
+        [WebMethod]
+        public DataSet Users_GetDataSetVByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+        {
+            DataSet objDS = clsUsersBL.GetDataSet_UsersVByRange(strWhereCond, lngMinNum, lngMaxNum);
+            return objDS;
+        }
+
+        [WebMethod]
+        public bool Users_GetUsers(ref clsUsersEN objUsersEN)
+        {
+            bool bolResult = clsUsersBL.GetUsers(ref objUsersEN);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public clsUsersEN Users_GetUsersByUserId(string strUserId)
+        {
+            clsUsersEN objUsersEN = clsUsersBL.GetUsersByUserId(strUserId);
+            return objUsersEN;
+        }
+
+        [WebMethod]
+        public bool Users_GetUsersV(ref clsUsersEN objUsersEN)
+        {
+            bool bolResult = clsUsersBL.GetUsers(ref objUsersEN);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public List<clsUsersEN> Users_GetUsersObjList(string strWhereCond)
+        {
+            List<clsUsersEN> arrUsersObjLst = clsUsersBL.GetUsersObjList(strWhereCond);
+            return arrUsersObjLst;
+        }
+
+        /// <summary>
+        /// 获取当前表满足条件的第一条记录的关键字值
+        /// </summary>
+        /// <param name="strCondition">条件串</param>
+        /// <returns>返回的第一条记录的关键字值</returns>
+        [WebMethod]
+        public string Users_GetFirstID_S(string strCondition)
+        {
+            string strUserId;
+            try
+            {
+                strUserId = clsUsersBL.GetFirstID_S(strCondition);
+                return strUserId;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("获取First关键字出错！\r\n" + objException.Message);
+            }
+        }
+
+        /// <summary>
+        /// 获取当前表满足条件的第一条记录的对象
+        /// </summary>
+        /// <param name="strCondition">条件串</param>
+        /// <returns>返回的第一条记录的对象</returns>
+        [WebMethod]
+        public clsUsersEN Users_GetFirstUsers_S(string strCondition)
+        {
+            try
+            {
+                clsUsersEN objUsersEN = clsUsersBL.GetFirstUsers_S(strCondition);
+                return objUsersEN;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("获取First记录对象出错！\r\n" + objException.Message);
+            }
+        }
+
+        [WebMethod]
+        public bool Users_IsExistRecord(string strWhereCond)
+        {
+            bool bolIsExist = clsUsersBL.IsExistRecord(strWhereCond);
+            return bolIsExist;
+        }
+
+        [WebMethod]
+        public bool Users_IsExist(string strUserId)
+        {
+            bool bolIsExist = clsUsersBL.IsExist(strUserId);
+            return bolIsExist;
+        }
+
+        [WebMethod]
+        public string Users_GetMaxStrId()
+        {
+            string strMaxstrUserId = clsUsersBL.GetMaxStrId_S();
+            return strMaxstrUserId;
+        }
+
+        [WebMethod]
+        public bool Users_AddNewRecordBySql2(clsUsersEN objUsersEN)
+        {
+            bool bolResult = clsUsersBL.AddNewRecordBySql2(objUsersEN);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public string Users_AddNewRecordBySql2WithReturnKey(clsUsersEN objUsersEN)
+        {
+            try
+            {
+                string strKey = clsUsersBL.AddNewRecordBySql2WithReturnKey(objUsersEN);
+                return strKey;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("添加记录出错！\r\n" + objException.Message);
+            }
+        }
+
+        [WebMethod]
+        public bool Users_AddNewRecordBySql_XML(string strUsersENObjXml)
+        {
+            bool bolResult = clsUsersBL.AddNewRecordBySql_XML(strUsersENObjXml);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public bool Users_UpdateBySql2(clsUsersEN objUsersEN)
+        {
+            bool bolResult = clsUsersBL.UpdateBySql2(objUsersEN);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public bool Users_UpdateBySqlWithCondition(clsUsersEN objUsersEN, string strCondition)
+        {
+            try
+            {
+                bool bolResult = clsUsersBL.UpdateBySqlWithCondition(objUsersEN, strCondition);
+                return bolResult;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("修改记录出错！\r\n" + objException.Message);
+            }
+        }
+
+        [WebMethod]
+        public bool Users_UpdateBySql_XML(string strUsersENObjXml)
+        {
+            bool bolResult = clsUsersBL.UpdateBySql_XML(strUsersENObjXml);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public bool Users_DelRecord(string strUserId)
+        {
+            bool bolResult = clsUsersBL.DelRecord(strUserId);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public bool Users_DelUserss(List<string> arrUserId)
+        {
+            bool bolResult = clsUsersBL.DelUserss(arrUserId);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public int Users_DelUserssByCond(string strWhereCond)
+        {
+            int intRecNum = clsUsersBL.DelUserssByCond(strWhereCond);
+            return intRecNum;
+        }
+
+        [WebMethod]
+        public clsUsersEN ExposeLogicClass(clsUsersEN objUsersEN)
+        {
+            return objUsersEN;
+        }
+
+        /// <summary>
+        /// 序列化一个对象到Xml串
+        /// 作者：潘以锋
+        /// 日期：2014/11/03
+        /// </summary>
+        /// <param name="strUserId">需要序列化的对象关键字</param>
+        /// <returns>返回一个<clsUsersEN>对象XML串</returns>
+        [WebMethod]
+        public string Users_SerializeObjToXMLStr(string strUserId)
+        {
+            string strXmlString = "";
+            clsUsersEN objUsersEN = new clsUsersEN(strUserId);
+            try
+            {
+                clsPubVar.objLog.WriteDebugLog("XML输出文件：" + clsSysParaEN.strTempXMLFileName + clsDateTime.getTodayDateTimeStr(0));
+                clsUsersBL.GetUsers(ref objUsersEN);
+                strXmlString = clsUsersBL.SerializeObjToXMLStr(objUsersEN);
+            }
+            catch (Exception objException)
+            {
+                clsPubVar.objLog.WriteDebugLog(objException.Message);
+                clsLog.LogErrorS(objException, "UsersService");
+            }
+            return strXmlString;
+        }
+
+        /// <summary>
+        /// 序列化一个对象列表到Xml串
+        /// 作者：潘以锋
+        /// 日期：2014/11/03
+        /// </summary>
+        /// <param name="strWhereCond">需要序列化的对象列表的条件串</param>
+        /// <returns>返回一个<clsUsersEN>对象列表XML串</returns>
+        [WebMethod]
+        public string Users_SerializeObjListToXMLStr(string strWhereCond)
+        {
+            string strXmlString = "";
+            List<clsUsersEN> lstUsersENObjList = clsUsersBL.GetUsersObjList(strWhereCond);
+            try
+            {
+                clsPubVar.objLog.WriteDebugLog("XML输出文件：" + clsSysParaEN.strTempXMLFileName + clsDateTime.getTodayDateTimeStr(0));
+                strXmlString = clsUsersBL.SerializeObjListToXMLStr(lstUsersENObjList);
+            }
+            catch (Exception objException)
+            {
+                clsPubVar.objLog.WriteDebugLog(objException.Message);
+                clsLog.LogErrorS(objException, "UsersService");
+            }
+            return strXmlString;
+        }
+    }
+}

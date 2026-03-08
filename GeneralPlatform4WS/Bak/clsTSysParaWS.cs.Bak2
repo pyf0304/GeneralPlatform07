@@ -1,0 +1,624 @@
+﻿
+//类名:clsTSysParaWS
+ ///----------------------
+ ///生成代码版本:2017.01.19.1
+ ///生成日期:2017/01/28
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:系统参数
+ ///模块英文名:SysPara
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferenceTSysPara;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// 系统参数(TSysPara)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsTSysParaWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsTSysParaEN> arrTSysParaObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static TSysParaServiceSoapClient objTSysParaServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static TSysParaServiceSoapClient GetTSysParaServiceSoapClient()
+{
+if (objTSysParaServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "TSysParaServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/TSysParaService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/TSysParaService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new TSysParaServiceSoapClient(binding, address);
+}
+else
+{
+return objTSysParaServiceSoapClient;
+}
+}
+
+ public clsTSysParaWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GenBindListView)
+ /// </summary>
+public static int BindLv_TSysPara(System.Windows.Forms.ListView lvTSysPara, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lviTSysPara; 
+ArrayList arrTSysParaObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrTSysParaObjList = new clsTSysParaBL.GetTSysParaObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvTSysPara.Items.Clear();//清除原来所有Item
+lvTSysPara.Columns.Clear();//清除原来所有列头信息
+lvTSysPara.Columns.Add("流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvTSysPara.Columns.Add("系统参数名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvTSysPara.Columns.Add("系统参数值", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvTSysPara.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvTSysPara.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsTSysParaEN objTSysParaEN in arrTSysParaObjList)
+{
+lviTSysPara = new System.Windows.Forms.ListViewItem();
+lviTSysPara.Tag = objTSysParaEN.mId;
+lviTSysPara.Text = objTSysParaEN.mId.ToString();
+lviTSysPara.SubItems.Add(objTSysParaEN.SysParaName);
+lviTSysPara.SubItems.Add(objTSysParaEN.SysParaValue);
+lviTSysPara.SubItems.Add(objTSysParaEN.Memo);
+lvTSysPara.Items.Add(lviTSysPara);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrTSysParaObjList.Count;
+}
+
+ /// <summary>
+ /// 检查对象字段值是否合法,1)检查是否可空;2)检查字段值长度是否超长,如果出错就抛出错误.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4WS_CheckPropertyNew)
+ /// </summary>
+public void CheckPropertyNew(clsTSysParaEN objTSysParaEN)
+{
+if (!Object.Equals(null, objTSysParaEN.SysParaName) && getStrLen(objTSysParaEN.SysParaName) > 30)
+{
+ throw new Exception("字段[系统参数名]的长度不能超过30!");
+}
+if (!Object.Equals(null, objTSysParaEN.SysParaValue) && getStrLen(objTSysParaEN.SysParaValue) > 200)
+{
+ throw new Exception("字段[系统参数值]的长度不能超过200!");
+}
+if (!Object.Equals(null, objTSysParaEN.Memo) && getStrLen(objTSysParaEN.Memo) > 1000)
+{
+ throw new Exception("字段[备注]的长度不能超过1000!");
+}
+ objTSysParaEN.IsCheckProperty = true;
+ }
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_TSysParaWs(string strWhereCond)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objTSysParaService.TSysPara_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_GetDataSet", "clsTSysParaWS:GetDataTable_TSysParaWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_TSysParaByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objTSysParaService.TSysPara_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_GetDataSetByRange", "clsTSysParaWS:GetDataTable_TSysParaByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetDataTable_TSysParaVWs(string strWhereCond)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objTSysParaService.TSysPara_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_GetDataSetV", "clsTSysParaWS:GetDataTable_TSysParaVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetTSysParaVWs(string strWhereCond)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objTSysParaService.TSysPara_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_GetDataSetV", "clsTSysParaWS:GetDataTable_TSysParaVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabV2ByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_TSysParaVByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objTSysParaService.TSysPara_GetDataSetVByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_GetDataSetVByRange", "clsTSysParaWS:GetDataTable_TSysParaVByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objTSysParaEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetTSysParaWs(ref clsTSysParaEN objTSysParaEN)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+bool bolResult = objTSysParaService.TSysPara_GetTSysPara(ref objTSysParaEN);
+return bolResult;
+}
+
+public static clsTSysParaEN GetTSysParaBymIdWs(long lngmId)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+clsTSysParaEN objTSysParaEN = objTSysParaService.TSysPara_GetTSysParaBymId(lngmId);
+return objTSysParaEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static long GetFirstID_S(string strWhereCond)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+try
+{
+long lngmId = objTSysParaService.TSysPara_GetFirstID_S(strWhereCond);
+return lngmId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_GetFirstID_S", "clsTSysParaWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsTSysParaEN GetFirstTSysPara_S(string strWhereCond)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+try
+{
+clsTSysParaEN objTSysParaEN = objTSysParaService.TSysPara_GetFirstTSysPara_S(strWhereCond);
+return objTSysParaEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_GetFirstTSysPara_S", "clsTSysParaWS:GetFirstTSysPara_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "lngmId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsTSysParaEN GetTSysParaObjBymId_Cache(long lngmId)
+{
+string strWhereCond = string.Format("1 = 1 order by mId");
+if (arrTSysParaObjLst_Cache == null)
+{
+arrTSysParaObjLst_Cache = clsTSysParaWS.GetTSysParaObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrTSysParaObjLst_Cache.Count - 1;
+int intMid = 0;
+clsTSysParaEN objTSysParaEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objTSysParaEN = arrTSysParaObjLst_Cache[intMid];
+if (objTSysParaEN.mId == lngmId)
+{
+intFindFailCount = 0;
+return objTSysParaEN;
+}
+else if (objTSysParaEN.mId.CompareTo(lngmId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrTSysParaObjLst_Cache = null;
+if (intFindFailCount == 1) return GetTSysParaObjBymId_Cache(lngmId);
+string strErrMsgForGetObjById = string.Format("在TSysPara对象缓存列表中,找不到记录[mId = {0}][intFindFailCount = {1}](函数:GetTSysParaObjBymId_Cache)", lngmId, intFindFailCount);
+if (objTSysParaEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objTSysParaEN.mId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsTSysParaBL", "GetTSysParaObjBymId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsTSysParaEN> GetTSysParaObjList(string strWhereCond)
+{
+ List<clsTSysParaEN> arrObjList = new List<clsTSysParaEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_TSysParaWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsTSysParaEN objTSysParaEN = new clsTSysParaEN();
+objTSysParaEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objTSysParaEN.SysParaName = objRow["SysParaName"].ToString().Trim(); //系统参数名
+objTSysParaEN.SysParaValue = objRow["SysParaValue"].ToString().Trim(); //系统参数值
+objTSysParaEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objTSysParaEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsTSysParaEN> GetTSysParaObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsTSysParaEN> arrObjList = new List<clsTSysParaEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_TSysParaByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsTSysParaEN objTSysParaEN = new clsTSysParaEN();
+objTSysParaEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objTSysParaEN.SysParaName = objRow["SysParaName"].ToString().Trim(); //系统参数名
+objTSysParaEN.SysParaValue = objRow["SysParaValue"].ToString().Trim(); //系统参数值
+objTSysParaEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objTSysParaEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool DelRecordWs(long lngmId)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+try
+{
+bool bolResult = objTSysParaService.TSysPara_DelRecord(lngmId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_DelRecord", "clsTSysParaWS:DelRecordWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool DelTSysParasWs(List<string> arrmId)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+try
+{
+string[] slngmId = (string[])(arrmId.ToArray());
+bool bolResult = objTSysParaService.TSysPara_DelTSysParas(slngmId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_DelTSysParas", "clsTSysParaWS:DelTSysParasWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static int DelTSysParasByCondWs(string strWhereCond)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+try
+{
+int intRecNum = objTSysParaService.TSysPara_DelTSysParasByCond(strWhereCond);
+return intRecNum;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_DelTSysParasByCond", "clsTSysParaWS:DelTSysParasByCondWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool AddNewRecordBySql2Ws(clsTSysParaEN objTSysParaEN)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+try
+{
+bool bolResult = objTSysParaService.TSysPara_AddNewRecordBySql2(objTSysParaEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_AddNewRecordBySql2", "clsTSysParaWS:AddNewRecordBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 把表对象添加到数据库中,并且返回该记录的关键字
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_AddNewRecordBySql2WithReturnKey)
+ /// </summary>
+ /// <param name = "objTSysParaEN">需要添加的表对象</param>
+ /// <returns>返回新添加记录的关键字</returns>
+public static string AddNewRecordBySql2WithReturnKey(clsTSysParaEN objTSysParaEN)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+try
+{
+string strKey = objTSysParaService.TSysPara_AddNewRecordBySql2WithReturnKey(objTSysParaEN);
+return strKey;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_AddNewRecordBySql2WithReturnKey", "clsTSysParaWS:AddNewRecordBySql2WithReturnKey", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool UpdateBySql2Ws(clsTSysParaEN objTSysParaEN)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+try
+{
+bool bolResult = objTSysParaService.TSysPara_UpdateBySql2(objTSysParaEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_UpdateBySql2", "clsTSysParaWS:UpdateBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_UpdateBySqlWithCondition)
+ /// </summary>
+ /// <param name = "objTSysParaEN">需要修改的对象</param>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static bool UpdateBySqlWithCondition(clsTSysParaEN objTSysParaEN, string strWhereCond)
+{
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+try
+{
+bool bolResult = objTSysParaService.TSysPara_UpdateBySqlWithCondition(objTSysParaEN, strWhereCond);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "TSysPara_UpdateBySqlWithCondition", "clsTSysParaWS:UpdateBySqlWithCondition", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+bool bolIsExist = objTSysParaService.TSysPara_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(long lngmId)
+{
+//检测记录是否存在
+TSysParaServiceSoapClient objTSysParaService = GetTSysParaServiceSoapClient();
+bool bolIsExist = objTSysParaService.TSysPara_IsExist(lngmId);
+return bolIsExist;
+}
+
+
+
+ /// <summary>
+ /// 获取字符串长度,其中汉字为2个字节,英文为1个字节
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GengetStrLen)
+ /// </summary>
+ /// <param name = "strTemp">给定的原字符串</param>
+ /// <returns>返回字符串长度</returns>
+public static int getStrLen(string strTemp)
+{
+int len ;
+byte[] sarr = System.Text.Encoding.Default.GetBytes(strTemp);
+len = sarr.Length;//will output as 3+3*2 = 9
+return len;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/TSysParaService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/TSysParaService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

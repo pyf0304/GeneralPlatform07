@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UserGroupPotence_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserGroupPotence_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserGroupPotence_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_GetUserGroupPotence">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserGroupPotence" type="tns:clsUserGroupPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsUserGroupPotenceEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GroupId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="RelaMid" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserGroupPotence_GetUserGroupPotenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupPotence_GetUserGroupPotenceResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserGroupPotence" type="tns:clsUserGroupPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_GetUserGroupPotenceV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserGroupPotence" type="tns:clsUserGroupPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_GetUserGroupPotenceVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupPotence_GetUserGroupPotenceVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserGroupPotence" type="tns:clsUserGroupPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupPotence_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupPotence_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_GetMaxStrId">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserGroupPotence_GetMaxStrIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserGroupPotence_GetMaxStrIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserGroupPotence" type="tns:clsUserGroupPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupPotence_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserGroupPotence" type="tns:clsUserGroupPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupPotence_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupPotence_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_DelUserGroupPotences">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrStdId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_DelUserGroupPotencesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupPotence_DelUserGroupPotencesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_DelUserGroupPotencesByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserGroupPotence_DelUserGroupPotencesByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserGroupPotence_DelUserGroupPotencesByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserGroupPotence" type="tns:clsUserGroupPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsUserGroupPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UserGroupPotence_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_GetUserGroupPotenceSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_GetUserGroupPotence" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_GetUserGroupPotenceSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_GetUserGroupPotenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_GetUserGroupPotenceVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_GetUserGroupPotenceV" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_GetUserGroupPotenceVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_GetUserGroupPotenceVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_GetMaxStrIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_GetMaxStrId" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_GetMaxStrIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_GetMaxStrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_DelUserGroupPotencesSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_DelUserGroupPotences" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_DelUserGroupPotencesSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_DelUserGroupPotencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_DelUserGroupPotencesByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_DelUserGroupPotencesByCond" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupPotence_DelUserGroupPotencesByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:UserGroupPotence_DelUserGroupPotencesByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserGroupPotenceServiceSoap">
+    <wsdl:operation name="UserGroupPotence_GetDataSet">
+      <wsdl:input message="tns:UserGroupPotence_GetDataSetSoapIn" />
+      <wsdl:output message="tns:UserGroupPotence_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_GetDataSetV">
+      <wsdl:input message="tns:UserGroupPotence_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:UserGroupPotence_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_GetUserGroupPotence">
+      <wsdl:input message="tns:UserGroupPotence_GetUserGroupPotenceSoapIn" />
+      <wsdl:output message="tns:UserGroupPotence_GetUserGroupPotenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_GetUserGroupPotenceV">
+      <wsdl:input message="tns:UserGroupPotence_GetUserGroupPotenceVSoapIn" />
+      <wsdl:output message="tns:UserGroupPotence_GetUserGroupPotenceVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_IsExistRecordByCond">
+      <wsdl:input message="tns:UserGroupPotence_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:UserGroupPotence_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_IsExist">
+      <wsdl:input message="tns:UserGroupPotence_IsExistSoapIn" />
+      <wsdl:output message="tns:UserGroupPotence_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_GetMaxStrId">
+      <wsdl:input message="tns:UserGroupPotence_GetMaxStrIdSoapIn" />
+      <wsdl:output message="tns:UserGroupPotence_GetMaxStrIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_AddNewRecordBySql2">
+      <wsdl:input message="tns:UserGroupPotence_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:UserGroupPotence_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_UpdateBySql2">
+      <wsdl:input message="tns:UserGroupPotence_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:UserGroupPotence_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_DelRecord">
+      <wsdl:input message="tns:UserGroupPotence_DelRecordSoapIn" />
+      <wsdl:output message="tns:UserGroupPotence_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_DelUserGroupPotences">
+      <wsdl:input message="tns:UserGroupPotence_DelUserGroupPotencesSoapIn" />
+      <wsdl:output message="tns:UserGroupPotence_DelUserGroupPotencesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_DelUserGroupPotencesByCond">
+      <wsdl:input message="tns:UserGroupPotence_DelUserGroupPotencesByCondSoapIn" />
+      <wsdl:output message="tns:UserGroupPotence_DelUserGroupPotencesByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserGroupPotenceServiceSoap" type="tns:UserGroupPotenceServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserGroupPotence_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/UserGroupPotence_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/UserGroupPotence_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_GetUserGroupPotence">
+      <soap:operation soapAction="http://tempuri.org/UserGroupPotence_GetUserGroupPotence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_GetUserGroupPotenceV">
+      <soap:operation soapAction="http://tempuri.org/UserGroupPotence_GetUserGroupPotenceV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/UserGroupPotence_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_IsExist">
+      <soap:operation soapAction="http://tempuri.org/UserGroupPotence_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_GetMaxStrId">
+      <soap:operation soapAction="http://tempuri.org/UserGroupPotence_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserGroupPotence_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserGroupPotence_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/UserGroupPotence_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_DelUserGroupPotences">
+      <soap:operation soapAction="http://tempuri.org/UserGroupPotence_DelUserGroupPotences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_DelUserGroupPotencesByCond">
+      <soap:operation soapAction="http://tempuri.org/UserGroupPotence_DelUserGroupPotencesByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserGroupPotenceServiceSoap12" type="tns:UserGroupPotenceServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserGroupPotence_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/UserGroupPotence_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/UserGroupPotence_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_GetUserGroupPotence">
+      <soap12:operation soapAction="http://tempuri.org/UserGroupPotence_GetUserGroupPotence" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_GetUserGroupPotenceV">
+      <soap12:operation soapAction="http://tempuri.org/UserGroupPotence_GetUserGroupPotenceV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/UserGroupPotence_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/UserGroupPotence_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_GetMaxStrId">
+      <soap12:operation soapAction="http://tempuri.org/UserGroupPotence_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserGroupPotence_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserGroupPotence_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/UserGroupPotence_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_DelUserGroupPotences">
+      <soap12:operation soapAction="http://tempuri.org/UserGroupPotence_DelUserGroupPotences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserGroupPotence_DelUserGroupPotencesByCond">
+      <soap12:operation soapAction="http://tempuri.org/UserGroupPotence_DelUserGroupPotencesByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserGroupPotenceService">
+    <wsdl:port name="UserGroupPotenceServiceSoap" binding="tns:UserGroupPotenceServiceSoap">
+      <soap:address location="http://localhost:9259/UserGroupPotenceService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserGroupPotenceServiceSoap12" binding="tns:UserGroupPotenceServiceSoap12">
+      <soap12:address location="http://localhost:9259/UserGroupPotenceService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,801 @@
+﻿
+//类名:clsQxUsersWS
+ ///----------------------
+ ///生成代码版本:2017.01.19.1
+ ///生成日期:2017/01/31
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:用户管理
+ ///模块英文名:UserManage
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferenceQxUsers;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// 用户(QxUsers)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsQxUsersWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsQxUsersEN> arrQxUsersObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static QxUsersServiceSoapClient objQxUsersServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static QxUsersServiceSoapClient GetQxUsersServiceSoapClient()
+{
+if (objQxUsersServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "QxUsersServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxUsersService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxUsersService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new QxUsersServiceSoapClient(binding, address);
+}
+else
+{
+return objQxUsersServiceSoapClient;
+}
+}
+
+ public clsQxUsersWS()
+ {
+ }
+
+
+ /// <summary>
+ /// 绑定基于Web的下拉框
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GenDdlBindFunction)
+ /// </summary>
+ /// <param name = "objDDL">需要绑定当前表的下拉框</param>
+public static void BindDdl_UserId(System.Web.UI.WebControls.DropDownList objDDL)
+{
+//为数据源于表的下拉框设置内容
+System.Web.UI.WebControls.ListItem li = new System.Web.UI.WebControls.ListItem("请选择...","0");
+System.Data.DataTable objDT = GetUserId();
+objDDL.DataValueField = clsQxUsersEN.con_UserId;
+objDDL.DataTextField = clsQxUsersEN.con_UserName;
+objDDL.DataSource = objDT;
+objDDL.DataBind();
+objDDL.Items.Insert(0, li);
+objDDL.SelectedIndex = 0;
+}
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GenBindListView)
+ /// </summary>
+public static int BindLv_QxUsers(System.Windows.Forms.ListView lvQxUsers, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lviQxUsers; 
+ArrayList arrQxUsersObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrQxUsersObjList = new clsQxUsersBL.GetQxUsersObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvQxUsers.Items.Clear();//清除原来所有Item
+lvQxUsers.Columns.Clear();//清除原来所有列头信息
+lvQxUsers.Columns.Add("用户ID", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("用户名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("部门Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("用户状态Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("有效日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("口令", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("学院流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("有效开始日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("有效结束日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("学工号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("身份编号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("修改日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("修改用户", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUsers.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsQxUsersEN objQxUsersEN in arrQxUsersObjList)
+{
+lviQxUsers = new System.Windows.Forms.ListViewItem();
+lviQxUsers.Tag = objQxUsersEN.UserId;
+lviQxUsers.Text = objQxUsersEN.UserId.ToString();
+lviQxUsers.SubItems.Add(objQxUsersEN.UserName);
+lviQxUsers.SubItems.Add(objQxUsersEN.DepartmentId);
+lviQxUsers.SubItems.Add(objQxUsersEN.EffectiveDate);
+lviQxUsers.SubItems.Add(objQxUsersEN.Password);
+lviQxUsers.SubItems.Add(objQxUsersEN.id_College);
+lviQxUsers.SubItems.Add(objQxUsersEN.EffitiveBeginDate);
+lviQxUsers.SubItems.Add(objQxUsersEN.EffitiveEndDate);
+lviQxUsers.SubItems.Add(objQxUsersEN.StuTeacherId);
+lviQxUsers.SubItems.Add(objQxUsersEN.IdentityID);
+lviQxUsers.SubItems.Add(objQxUsersEN.UpdDate);
+lviQxUsers.SubItems.Add(objQxUsersEN.UpdUser);
+lviQxUsers.SubItems.Add(objQxUsersEN.Memo);
+lvQxUsers.Items.Add(lviQxUsers);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrQxUsersObjList.Count;
+}
+
+ /// <summary>
+ /// 检查对象字段值是否合法,1)检查是否可空;2)检查字段值长度是否超长,如果出错就抛出错误.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4WS_CheckPropertyNew)
+ /// </summary>
+public void CheckPropertyNew(clsQxUsersEN objQxUsersEN)
+{
+if (!Object.Equals(null, objQxUsersEN.UserId) && getStrLen(objQxUsersEN.UserId) > 18)
+{
+ throw new Exception("字段[用户ID]的长度不能超过18!");
+}
+if (!Object.Equals(null, objQxUsersEN.UserName) && getStrLen(objQxUsersEN.UserName) > 30)
+{
+ throw new Exception("字段[用户名]的长度不能超过30!");
+}
+if (!Object.Equals(null, objQxUsersEN.DepartmentId) && getStrLen(objQxUsersEN.DepartmentId) > 8)
+{
+ throw new Exception("字段[部门Id]的长度不能超过8!");
+}
+if (!Object.Equals(null, objQxUsersEN.UserStateId) && getStrLen(objQxUsersEN.UserStateId) > 2)
+{
+ throw new Exception("字段[用户状态Id]的长度不能超过2!");
+}
+if (!Object.Equals(null, objQxUsersEN.EffectiveDate) && getStrLen(objQxUsersEN.EffectiveDate) > 8)
+{
+ throw new Exception("字段[有效日期]的长度不能超过8!");
+}
+if (!Object.Equals(null, objQxUsersEN.Password) && getStrLen(objQxUsersEN.Password) > 20)
+{
+ throw new Exception("字段[口令]的长度不能超过20!");
+}
+if (!Object.Equals(null, objQxUsersEN.id_College) && getStrLen(objQxUsersEN.id_College) > 4)
+{
+ throw new Exception("字段[学院流水号]的长度不能超过4!");
+}
+if (!Object.Equals(null, objQxUsersEN.EffitiveBeginDate) && getStrLen(objQxUsersEN.EffitiveBeginDate) > 14)
+{
+ throw new Exception("字段[有效开始日期]的长度不能超过14!");
+}
+if (!Object.Equals(null, objQxUsersEN.EffitiveEndDate) && getStrLen(objQxUsersEN.EffitiveEndDate) > 14)
+{
+ throw new Exception("字段[有效结束日期]的长度不能超过14!");
+}
+if (!Object.Equals(null, objQxUsersEN.StuTeacherId) && getStrLen(objQxUsersEN.StuTeacherId) > 20)
+{
+ throw new Exception("字段[学工号]的长度不能超过20!");
+}
+if (!Object.Equals(null, objQxUsersEN.IdentityID) && getStrLen(objQxUsersEN.IdentityID) > 2)
+{
+ throw new Exception("字段[身份编号]的长度不能超过2!");
+}
+if (!Object.Equals(null, objQxUsersEN.UpdDate) && getStrLen(objQxUsersEN.UpdDate) > 14)
+{
+ throw new Exception("字段[修改日期]的长度不能超过14!");
+}
+if (!Object.Equals(null, objQxUsersEN.UpdUser) && getStrLen(objQxUsersEN.UpdUser) > 18)
+{
+ throw new Exception("字段[修改用户]的长度不能超过18!");
+}
+if (!Object.Equals(null, objQxUsersEN.Memo) && getStrLen(objQxUsersEN.Memo) > 1000)
+{
+ throw new Exception("字段[备注]的长度不能超过1000!");
+}
+ objQxUsersEN.IsCheckProperty = true;
+ }
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxUsersWs(string strWhereCond)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUsersService.QxUsers_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_GetDataSet", "clsQxUsersWS:GetDataTable_QxUsersWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxUsersByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUsersService.QxUsers_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_GetDataSetByRange", "clsQxUsersWS:GetDataTable_QxUsersByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetDataTable_QxUsersVWs(string strWhereCond)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUsersService.QxUsers_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_GetDataSetV", "clsQxUsersWS:GetDataTable_QxUsersVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetQxUsersVWs(string strWhereCond)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUsersService.QxUsers_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_GetDataSetV", "clsQxUsersWS:GetDataTable_QxUsersVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabV2ByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxUsersVByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUsersService.QxUsers_GetDataSetVByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_GetDataSetVByRange", "clsQxUsersWS:GetDataTable_QxUsersVByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objQxUsersEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetQxUsersWs(ref clsQxUsersEN objQxUsersEN)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+bool bolResult = objQxUsersService.QxUsers_GetQxUsers(ref objQxUsersEN);
+return bolResult;
+}
+
+public static clsQxUsersEN GetQxUsersByUserIdWs(string strUserId)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+clsQxUsersEN objQxUsersEN = objQxUsersService.QxUsers_GetQxUsersByUserId(strUserId);
+return objQxUsersEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static string GetFirstID_S(string strWhereCond)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+try
+{
+string strUserId = objQxUsersService.QxUsers_GetFirstID_S(strWhereCond);
+return strUserId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_GetFirstID_S", "clsQxUsersWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsQxUsersEN GetFirstQxUsers_S(string strWhereCond)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+try
+{
+clsQxUsersEN objQxUsersEN = objQxUsersService.QxUsers_GetFirstQxUsers_S(strWhereCond);
+return objQxUsersEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_GetFirstQxUsers_S", "clsQxUsersWS:GetFirstQxUsers_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据关键字获取相关名称, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecNameByKey_Cache)
+ /// </summary>
+ /// <param name = "strUserId">所给的关键字</param>
+ /// <returns>根据关键字获取的名称</returns>
+public static string GetUserNameByUserId_Cache(string strUserId)
+{
+if (string.IsNullOrEmpty(strUserId) == true) return "";
+string strWhereCond = string.Format("1 = 1 order by UserId");
+if (arrQxUsersObjLst_Cache == null)
+{
+arrQxUsersObjLst_Cache = clsQxUsersWS.GetQxUsersObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrQxUsersObjLst_Cache.Count - 1;
+int intMid = 0;
+clsQxUsersEN objQxUsersEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objQxUsersEN = arrQxUsersObjLst_Cache[intMid];
+if (objQxUsersEN.UserId == strUserId)
+{
+intFindFailCount = 0;
+return objQxUsersEN.UserName;
+}
+else if (objQxUsersEN.UserId.CompareTo(strUserId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrQxUsersObjLst_Cache = null;
+if (intFindFailCount == 1) return GetUserNameByUserId_Cache(strUserId);
+string strErrMsgForGetObjById = string.Format("在QxUsers对象缓存列表中,找不到记录[UserId = {0}][intFindFailCount = {1}](函数:GetUserNameByUserId_Cache)", strUserId, intFindFailCount);
+if (objQxUsersEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objQxUsersEN.UserId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsQxUsersBL", "GetUserNameByUserId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "strUserId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsQxUsersEN GetQxUsersObjByUserId_Cache(string strUserId)
+{
+if (string.IsNullOrEmpty(strUserId) == true) return null;
+string strWhereCond = string.Format("1 = 1 order by UserId");
+if (arrQxUsersObjLst_Cache == null)
+{
+arrQxUsersObjLst_Cache = clsQxUsersWS.GetQxUsersObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrQxUsersObjLst_Cache.Count - 1;
+int intMid = 0;
+clsQxUsersEN objQxUsersEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objQxUsersEN = arrQxUsersObjLst_Cache[intMid];
+if (objQxUsersEN.UserId == strUserId)
+{
+intFindFailCount = 0;
+return objQxUsersEN;
+}
+else if (objQxUsersEN.UserId.CompareTo(strUserId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrQxUsersObjLst_Cache = null;
+if (intFindFailCount == 1) return GetQxUsersObjByUserId_Cache(strUserId);
+string strErrMsgForGetObjById = string.Format("在QxUsers对象缓存列表中,找不到记录[UserId = {0}][intFindFailCount = {1}](函数:GetQxUsersObjByUserId_Cache)", strUserId, intFindFailCount);
+if (objQxUsersEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objQxUsersEN.UserId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsQxUsersBL", "GetQxUsersObjByUserId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsQxUsersEN> GetQxUsersObjList(string strWhereCond)
+{
+ List<clsQxUsersEN> arrObjList = new List<clsQxUsersEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxUsersWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxUsersEN objQxUsersEN = new clsQxUsersEN();
+objQxUsersEN.UserId = objRow["UserId"].ToString().Trim(); //用户ID
+objQxUsersEN.UserName = objRow["UserName"].ToString().Trim(); //用户名
+objQxUsersEN.DepartmentId = objRow["DepartmentId"].ToString().Trim(); //部门Id
+objQxUsersEN.UserStateId = objRow["UserStateId"].ToString().Trim(); //用户状态Id
+objQxUsersEN.EffectiveDate = objRow["EffectiveDate"].ToString().Trim(); //有效日期
+objQxUsersEN.Password = objRow["Password"].ToString().Trim(); //口令
+objQxUsersEN.id_College = objRow["id_College"].ToString().Trim(); //学院流水号
+objQxUsersEN.EffitiveBeginDate = objRow["EffitiveBeginDate"].ToString().Trim(); //有效开始日期
+objQxUsersEN.EffitiveEndDate = objRow["EffitiveEndDate"].ToString().Trim(); //有效结束日期
+objQxUsersEN.StuTeacherId = objRow["StuTeacherId"].ToString().Trim(); //学工号
+objQxUsersEN.IdentityID = objRow["IdentityID"].ToString().Trim(); //身份编号
+objQxUsersEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objQxUsersEN.UpdUser = objRow["UpdUser"].ToString().Trim(); //修改用户
+objQxUsersEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxUsersEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsQxUsersEN> GetQxUsersObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsQxUsersEN> arrObjList = new List<clsQxUsersEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxUsersByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxUsersEN objQxUsersEN = new clsQxUsersEN();
+objQxUsersEN.UserId = objRow["UserId"].ToString().Trim(); //用户ID
+objQxUsersEN.UserName = objRow["UserName"].ToString().Trim(); //用户名
+objQxUsersEN.DepartmentId = objRow["DepartmentId"].ToString().Trim(); //部门Id
+objQxUsersEN.UserStateId = objRow["UserStateId"].ToString().Trim(); //用户状态Id
+objQxUsersEN.EffectiveDate = objRow["EffectiveDate"].ToString().Trim(); //有效日期
+objQxUsersEN.Password = objRow["Password"].ToString().Trim(); //口令
+objQxUsersEN.id_College = objRow["id_College"].ToString().Trim(); //学院流水号
+objQxUsersEN.EffitiveBeginDate = objRow["EffitiveBeginDate"].ToString().Trim(); //有效开始日期
+objQxUsersEN.EffitiveEndDate = objRow["EffitiveEndDate"].ToString().Trim(); //有效结束日期
+objQxUsersEN.StuTeacherId = objRow["StuTeacherId"].ToString().Trim(); //学工号
+objQxUsersEN.IdentityID = objRow["IdentityID"].ToString().Trim(); //身份编号
+objQxUsersEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objQxUsersEN.UpdUser = objRow["UpdUser"].ToString().Trim(); //修改用户
+objQxUsersEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxUsersEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool DelRecordWs(string strUserId)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+try
+{
+bool bolResult = objQxUsersService.QxUsers_DelRecord(strUserId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_DelRecord", "clsQxUsersWS:DelRecordWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool DelQxUserssWs(List<string> arrUserId)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+try
+{
+string[] sstrUserId = (string[])(arrUserId.ToArray());
+bool bolResult = objQxUsersService.QxUsers_DelQxUserss(sstrUserId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_DelQxUserss", "clsQxUsersWS:DelQxUserssWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static int DelQxUserssByCondWs(string strWhereCond)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+try
+{
+int intRecNum = objQxUsersService.QxUsers_DelQxUserssByCond(strWhereCond);
+return intRecNum;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_DelQxUserssByCond", "clsQxUsersWS:DelQxUserssByCondWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool AddNewRecordBySql2Ws(clsQxUsersEN objQxUsersEN)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+try
+{
+bool bolResult = objQxUsersService.QxUsers_AddNewRecordBySql2(objQxUsersEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_AddNewRecordBySql2", "clsQxUsersWS:AddNewRecordBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 把表对象添加到数据库中,并且返回该记录的关键字
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_AddNewRecordBySql2WithReturnKey)
+ /// </summary>
+ /// <param name = "objQxUsersEN">需要添加的表对象</param>
+ /// <returns>返回新添加记录的关键字</returns>
+public static string AddNewRecordBySql2WithReturnKey(clsQxUsersEN objQxUsersEN)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+try
+{
+string strKey = objQxUsersService.QxUsers_AddNewRecordBySql2WithReturnKey(objQxUsersEN);
+return strKey;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_AddNewRecordBySql2WithReturnKey", "clsQxUsersWS:AddNewRecordBySql2WithReturnKey", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool UpdateBySql2Ws(clsQxUsersEN objQxUsersEN)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+try
+{
+bool bolResult = objQxUsersService.QxUsers_UpdateBySql2(objQxUsersEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_UpdateBySql2", "clsQxUsersWS:UpdateBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_UpdateBySqlWithCondition)
+ /// </summary>
+ /// <param name = "objQxUsersEN">需要修改的对象</param>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static bool UpdateBySqlWithCondition(clsQxUsersEN objQxUsersEN, string strWhereCond)
+{
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+try
+{
+bool bolResult = objQxUsersService.QxUsers_UpdateBySqlWithCondition(objQxUsersEN, strWhereCond);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUsers_UpdateBySqlWithCondition", "clsQxUsersWS:UpdateBySqlWithCondition", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+bool bolIsExist = objQxUsersService.QxUsers_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(string strUserId)
+{
+//检测记录是否存在
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+bool bolIsExist = objQxUsersService.QxUsers_IsExist(strUserId);
+return bolIsExist;
+}
+
+ /// <summary>
+ /// 获取当前表关键字值的最大值,再加1,避免重复
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetMaxStrId)
+ /// </summary>
+ /// <returns>当前表关键字值的最大值,再加1</returns>
+public static string GetMaxStrIdWs()
+{
+//检测记录是否存在
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+string strMaxUserId = objQxUsersService.QxUsers_GetMaxStrId();
+return strMaxUserId;
+}
+
+ /// <summary>
+ /// 根据前缀获取当前表关键字值的最大值,再加1,避免重复
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetMaxStrIdByPrefix)
+ /// </summary>
+ /// <returns>当前表关键字值的最大值,再加1</returns>
+public static string GetMaxStrIdByPrefixWs(string strPrefix)
+{
+//检测记录是否存在
+QxUsersServiceSoapClient objQxUsersService = GetQxUsersServiceSoapClient();
+string strMaxUserId = objQxUsersService.QxUsers_GetMaxStrIdByPrefix(strPrefix);
+return strMaxUserId;
+}
+
+ /// <summary>
+ /// 获取字符串长度,其中汉字为2个字节,英文为1个字节
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GengetStrLen)
+ /// </summary>
+ /// <param name = "strTemp">给定的原字符串</param>
+ /// <returns>返回字符串长度</returns>
+public static int getStrLen(string strTemp)
+{
+int len ;
+byte[] sarr = System.Text.Encoding.Default.GetBytes(strTemp);
+len = sarr.Length;//will output as 3+3*2 = 9
+return len;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxUsersService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxUsersService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

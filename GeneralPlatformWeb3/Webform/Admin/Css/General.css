@@ -1,0 +1,2868 @@
+BODY {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #ffffff; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; COLOR: #646464; FONT-SIZE: 14px; PADDING-TOP: 0px
+}
+UL {
+	LIST-STYLE-TYPE: none; WHITE-SPACE: nowrap; COLOR: #ffffff; MARGIN-LEFT: 10px; VERTICAL-ALIGN: middle
+}
+LI {
+	TEXT-OVERFLOW: ellipsis; DISPLAY: inline; VERTICAL-ALIGN: middle; OVERFLOW: hidden
+}
+A
+{
+	color: #0066FF;
+	text-decoration: none;
+}
+A:hover
+{
+	color: #FF0000;
+}
+A IMG {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+TABLE {
+	FONT-FAMILY: 宋体; FONT-SIZE: 14px
+}
+TR TD {
+	TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden
+}
+INPUT {
+	FONT-SIZE: 14px
+}
+H5 {
+	MARGIN-BOTTOM: 0px
+}
+.ContentDiv {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #3c465a; MARGIN-LEFT: auto; MARGIN-RIGHT: auto; PADDING-TOP: 0px
+}
+.Margin0 {
+	MARGIN: 0px
+}
+.Padding0 {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.GridHeader {
+	BORDER-BOTTOM: black 1px solid; LINE-HEIGHT: 25px; BACKGROUND: #ecefef; OVERFLOW: hidden; BORDER-TOP: black 1px solid
+}
+.GridRowHover {
+	BORDER-BOTTOM: black 1px dashed; LINE-HEIGHT: 30px; BACKGROUND: #ffffc8; OVERFLOW: hidden
+}
+.GridRowI {
+	BORDER-BOTTOM: black 1px dashed; LINE-HEIGHT: 30px; OVERFLOW: hidden
+}
+.GridRowA {
+	BORDER-BOTTOM: black 1px dashed; LINE-HEIGHT: 30px; BACKGROUND: #f0f0f0; OVERFLOW: hidden
+}
+.GridRowA IMG {
+	VERTICAL-ALIGN: middle
+}
+.GridRowI IMG {
+	VERTICAL-ALIGN: middle
+}
+.GridRowHover IMG {
+	VERTICAL-ALIGN: middle
+}
+.OverDiv {
+	OVERFLOW-X: hidden; OVERFLOW: auto
+}
+.HideOverflow {
+	TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden
+}
+.FrameTitle {
+	BACKGROUND-IMAGE: url(../img/indexFrameTitle.gif); BORDER-BOTTOM: #587d91 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 22px; PADDING-LEFT: 7px; PADDING-RIGHT: 7px; BACKGROUND-REPEAT: repeat; HEIGHT: 22px; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+.FrameContent {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+.FooterList {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+.ClearLeft {
+	CLEAR: left
+}
+.ClearBoth {
+	CLEAR: both
+}
+.HorizDiv {
+	DISPLAY: none
+}
+.FixedTable {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 100%; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+.Normal {
+	PADDING-BOTTOM: 16px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; HEIGHT: 179px; VERTICAL-ALIGN: top; PADDING-TOP: 0px
+}
+.Small {
+	PADDING-BOTTOM: 16px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; HEIGHT: 78px; VERTICAL-ALIGN: top; PADDING-TOP: 0px
+}
+.Big {
+	PADDING-BOTTOM: 16px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; HEIGHT: 356px; VERTICAL-ALIGN: top; PADDING-TOP: 0px
+}
+.Full {
+	PADDING-BOTTOM: 16px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; HEIGHT: auto; VERTICAL-ALIGN: top; PADDING-TOP: 0px
+}
+.BackFrame {
+	BORDER-BOTTOM: #ecefef 1px solid; BORDER-LEFT: #ecefef 1px solid; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; WIDTH: 96%; PADDING-RIGHT: 1px; BACKGROUND: #d9dfdf; HEIGHT: 100%; BORDER-TOP: #ecefef 1px solid; BORDER-RIGHT: #ecefef 1px solid; PADDING-TOP: 1px
+}
+.InnerFrame {
+	BORDER-BOTTOM: #8ca0a0 1px solid; BORDER-LEFT: #8ca0a0 1px solid; WIDTH: 98%; BACKGROUND: #ffffff; HEIGHT: 100%; BORDER-TOP: #8ca0a0 1px solid; BORDER-RIGHT: #8ca0a0 1px solid
+}
+.frmSmall {
+	HEIGHT: 80px
+}
+.frmNormal {
+	HEIGHT: 190px
+}
+.frmBig {
+	HEIGHT: 328px
+}
+.tempFullTD {
+	BORDER-BOTTOM: #ff0000 1px dashed; BORDER-LEFT: #ff0000 1px dashed; MARGIN: 0px 26px 16px 0px; WIDTH: 100%; HEIGHT: 30px; BORDER-TOP: #ff0000 1px dashed; BORDER-RIGHT: #ff0000 1px dashed
+}
+.tempHalfTD {
+	BORDER-BOTTOM: #ff0000 1px dashed; BORDER-LEFT: #ff0000 1px dashed; MARGIN: 0px 26px 16px 0px; WIDTH: 49%; HEIGHT: 30px; BORDER-TOP: #ff0000 1px dashed; BORDER-RIGHT: #ff0000 1px dashed
+}
+.drag_div {
+	
+}
+.col_halfwidth {
+	WIDTH: 49%; FLOAT: left; COLOR: #fff
+}
+.col_fullwidth {
+	WIDTH: 98%; FLOAT: left
+}
+.cartItemsClass {
+	MIN-HEIGHT: 500px; WIDTH: 100%; FONT-SIZE: 14px
+}
+#cart {
+	
+}
+#cart A:link {
+	
+}
+#cart A:visited {
+	
+}
+#cart A:hover {
+	
+}
+.cartNormal {
+	
+}
+#container {
+	
+}
+#saveButton {
+	TEXT-ALIGN: right; BACKGROUND-COLOR: #f7f58f; WIDTH: 100%
+}
+#idxTtl {
+	
+}
+#idxTtl A {
+	FONT-STYLE: normal; COLOR: white; FONT-SIZE: 14px
+}
+.ColorOut {
+	BORDER-BOTTOM: #969696 1px solid; BORDER-LEFT: #969696 1px solid; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; WIDTH: 15px; PADDING-RIGHT: 1px; HEIGHT: 15px; BORDER-TOP: #969696 1px solid; BORDER-RIGHT: #969696 1px solid; PADDING-TOP: 1px
+}
+.ColorIn {
+	BACKGROUND-COLOR: #000000; WIDTH: 15px; HEIGHT: 15px
+}
+.IMOF {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; HEIGHT: 129px; PADDING-TOP: 10px
+}
+.IDXModuleOut {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; HEIGHT: 120px; PADDING-TOP: 10px
+}
+.IDXModuleTitle {
+	TEXT-ALIGN: center; LINE-HEIGHT: 18px; BACKGROUND-COLOR: #dcdcdc; WIDTH: 80px; HEIGHT: 18px; COLOR: #646464; VERTICAL-ALIGN: middle
+}
+.IDXModuleTabTitle {
+	BORDER-BOTTOM: #dcdcdc 0px solid; TEXT-ALIGN: center; BORDER-LEFT: #dcdcdc 1px solid; LINE-HEIGHT: 23px; WIDTH: 100px; FLOAT: left; HEIGHT: 23px; VERTICAL-ALIGN: middle; BORDER-TOP: #dcdcdc 1px solid; MARGIN-RIGHT: 5px; BORDER-RIGHT: #dcdcdc 1px solid
+}
+.IDXModuleTabTitleChosen {
+	BORDER-BOTTOM: #dcdcdc 0px solid; TEXT-ALIGN: center; BORDER-LEFT: #dcdcdc 1px solid; LINE-HEIGHT: 23px; BACKGROUND-COLOR: #dcdcdc; WIDTH: 100px; FLOAT: left; HEIGHT: 23px; VERTICAL-ALIGN: middle; BORDER-TOP: #dcdcdc 1px solid; MARGIN-RIGHT: 5px; BORDER-RIGHT: #dcdcdc 1px solid
+}
+.IDXModuleContent {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid; PADDING-BOTTOM: 10px; OVERFLOW-Y: auto; PADDING-LEFT: 10px; WIDTH: auto; PADDING-RIGHT: 10px; HEIGHT: 90px; COLOR: #3c465a; WORD-BREAK: break-all; BORDER-TOP: #dcdcdc 1px solid; BORDER-RIGHT: #dcdcdc 1px solid; PADDING-TOP: 10px
+}
+.IDXModuleTabContent {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid; PADDING-BOTTOM: 10px; OVERFLOW-Y: auto; MARGIN-TOP: 0px; PADDING-LEFT: 10px; WIDTH: auto; PADDING-RIGHT: 10px; HEIGHT: 65px; COLOR: #3c465a; CLEAR: left; BORDER-TOP: #dcdcdc 1px solid; BORDER-RIGHT: #dcdcdc 1px solid; PADDING-TOP: 10px
+}
+.IDXModuleList {
+	LINE-HEIGHT: 20px; WIDTH: 94%; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; HEIGHT: 20px; COLOR: #3c465a; VERTICAL-ALIGN: middle; OVERFLOW: hidden
+}
+.CourseModule {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 3px
+}
+.CourseDiv {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 19px; PADDING-LEFT: 2px; WIDTH: auto; PADDING-RIGHT: 15px; HEIGHT: 19px; VERTICAL-ALIGN: middle; PADDING-TOP: 4px
+}
+.MsgDiv {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 19px; PADDING-LEFT: 2px; WIDTH: 95%; TEXT-OVERFLOW: ellipsis; PADDING-RIGHT: 15px; WHITE-SPACE: nowrap; HEIGHT: 19px; VERTICAL-ALIGN: middle; OVERFLOW: hidden; PADDING-TOP: 4px
+}
+.MessageContent {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 6px; PADDING-RIGHT: 6px; HEIGHT: 120px; PADDING-TOP: 2px
+}
+.OnlineContent {
+	PADDING-TOP: 11px
+}
+.OnlineContentGM {
+	TEXT-ALIGN: center; MARGIN-TOP: 22px; HEIGHT: 334px
+}
+.OnlineContent TABLE {
+	WIDTH: 100%
+}
+.OnlineContent IMG {
+	WIDTH: 100px; HEIGHT: 100%; MAX-HEIGHT: 100%
+}
+.OnlineContent .TD1 {
+	TEXT-ALIGN: center; WIDTH: 21%; HEIGHT: 30px
+}
+.OnlineContent .TD2 INPUT {
+	WIDTH: 100%
+}
+.OnlineContent .TD3 {
+	WIDTH: 12%
+}
+.OnlinePic {
+	MARGIN-TOP: 3px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px
+}
+.mailheight {
+	WIDTH: 98%; HEIGHT: 56px; COLOR: #3c465a; VERTICAL-ALIGN: middle
+}
+.mailheight TD {
+	TEXT-ALIGN: center; PADDING-RIGHT: 10px
+}
+.mailheightimg {
+	WIDTH: 100%; MAX-WIDTH: 100%
+}
+.mailheight INPUT {
+	WIDTH: 100%; HEIGHT: 12px
+}
+.rsscontent {
+	MARGIN-TOP: 10px; WIDTH: 98%; MARGIN-LEFT: 5px
+}
+.AligntoLeft {
+	DISPLAY: inline; FLOAT: left
+}
+.AligntoRight {
+	DISPLAY: inline; FLOAT: right
+}
+.ClearRight {
+	CLEAR: right
+}
+.HorizUl {
+	DISPLAY: block
+}
+.HorizUl LI {
+	DISPLAY: block
+}
+.WelcomeSetting {
+	BACKGROUND-IMAGE: url(../img/topHeaderBG.gif); MARGIN: 0px; BACKGROUND-REPEAT: repeat; HEIGHT: 23px; PADDING-TOP: 2px
+}
+.WelcomeImg
+{
+	vertical-align: -3px;
+	
+}
+.WelcomeBanner {
+	MARGIN: 0px; PADDING-LEFT: 2px; COLOR: #ffffff; VERTICAL-ALIGN: middle
+}
+.WelcomeBanner LI {
+	TEXT-ALIGN: left; VERTICAL-ALIGN: middle
+}
+.WelcomeLink {
+	COLOR: #ffffff
+}
+.SettingBanner {
+	TEXT-ALIGN: right; MARGIN: 2px 3px 2px 5px; FLOAT: right; COLOR: #ffffff; PADDING-TOP: 1px;PADDING-right:5%
+}
+.SettingBanner LI {
+	TEXT-ALIGN: right; COLOR: #ffffff; MARGIN-LEFT: 4px
+}
+.HeaderBanner {
+	MARGIN-TOP: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+.HeaderTitle {
+	FONT-STYLE: italic; PADDING-LEFT: 30px; WIDTH: 70%; FONT-FAMILY: Verdana,Tahoma,Arial; HEIGHT: 58px; COLOR: #92d2ff; FONT-SIZE: 16px; FONT-WEIGHT: bold; PADDING-TOP: 20px
+}
+.HeaderNavigation {
+	POSITION: absolute; WIDTH: 70%; BOTTOM: -1px; HEIGHT: 21px; MARGIN-LEFT: 10px
+}
+.HeaderNavigation_Super {
+	WIDTH: 70%; HEIGHT: 23px; MARGIN-LEFT: 20px
+}
+.HeaderNavigation_BG {
+	BACKGROUND-IMAGE: url(../images_header/headerLogo.jpg)
+}
+.BasicNavigation {
+	TEXT-ALIGN: center; LINE-HEIGHT: 23px; WIDTH: 90px; BACKGROUND-REPEAT: no-repeat; FLOAT: left; HEIGHT: 23px; MARGIN-LEFT: 5px; VERTICAL-ALIGN: middle
+}
+.focusNav {
+	BACKGROUND-IMAGE: url(../img/navFocusBG.gif); COLOR: #ffffff
+}
+.focusNav A {
+	COLOR: #ffffff
+}
+.focusNav A:hover {
+	COLOR: #3c465a
+}
+.commonNav {
+	BACKGROUND-IMAGE: url(../img/navBG.gif); COLOR: #000000
+}
+.commonNav A {
+	COLOR: #3c465a
+}
+.commonNav A:hover {
+	COLOR: #ffffff
+}
+.SubNav {
+	BACKGROUND-IMAGE: url(../img/subNav.gif); WIDTH: auto; BACKGROUND-REPEAT: repeat; HEIGHT: 27px
+}
+.SubContent {
+	MARGIN: 0px 0px 0px 120px; PADDING-TOP: 8px
+}
+.SubContent LI {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 9px; PADDING-RIGHT: 4px; PADDING-TOP: 0px
+}
+.SubContent A {
+	COLOR: #3c465a
+}
+.SubContent A:hover {
+	COLOR: #ffffff
+}
+.CommonSubContent {
+	BORDER-RIGHT: #3c465a 1px solid
+}
+.LastSubContent {
+	BORDER-RIGHT-STYLE: none
+}
+.HideBanner {
+	WIDTH: auto; BACKGROUND: url(../img/hideNav.gif) repeat-x -1px -1px; HEIGHT: 34px; BORDER-TOP: #fff 1px solid
+}
+.HideNav {
+	TEXT-ALIGN: center; LINE-HEIGHT: 19px; BACKGROUND-COLOR: #8ca0a0; MARGIN-TOP: 15px; WIDTH: 63px; FONT-FAMILY: 宋体; HEIGHT: 19px; FONT-SIZE: 14px
+}
+.HideNav A {
+	COLOR: #ffffff
+}
+.HideNav A:hover {
+	COLOR: #f5f5f5
+}
+.HideArrow {
+	FONT-FAMILY: 宋体; COLOR: #ffffff; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.MainFrame {
+	WIDTH: 99%; HEIGHT: 100%
+}
+.LeftNav {
+	/*BACKGROUND-IMAGE: url(../img/leftNavBG.gif) ;*/
+     background : url("../../img/leftNavBG.gif") left;
+     PADDING-BOTTOM: 10px; WIDTH: 200px; FLOAT: left; HEIGHT: 500px; border-bottom: #8ca0a0 1px solid;border-top:1px;
+}
+.LeftNavTitle {
+	BACKGROUND-COLOR: #ccd9e0; MARGIN-TOP: 20px; BORDER-RIGHT: #8ca0a0 1px solid
+}
+.LeftNavTitleTop {
+	background-image: url('../img/bg-menu-item-green1.gif');
+	 MARGIN-TOP: 10px; BORDER-RIGHT: #8ca0a0 1px solid
+}
+.LeftNavBottom {
+	BORDER-BOTTOM: #8ca0a0 1px solid; PADDING-BOTTOM: 50px
+}
+.FirstLevel {
+	BACKGROUND-IMAGE: url(../img/listStyleBG_0.gif); PADDING-BOTTOM: 0px; LINE-HEIGHT: 34px; PADDING-LEFT: 50px; WIDTH: auto; PADDING-RIGHT: 0px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 34px; PADDING-TOP: 0px
+}
+.SecondLevel {
+	BACKGROUND-IMAGE: url(../img/listStyleBG.gif); PADDING-BOTTOM: 10px; PADDING-LEFT: 63px; WIDTH: auto; PADDING-RIGHT: 0px; BACKGROUND-REPEAT: no-repeat; PADDING-TOP: 12px
+}
+.FirstLevel A {
+	COLOR: #444444
+}
+.SecondLevel A {
+	COLOR: #444444
+}
+.FirstLevel A:hover {
+	COLOR: #868686; TEXT-DECORATION: underline
+}
+.SecondLevel A:hover {
+	COLOR: #868686; TEXT-DECORATION: underline
+}
+.FocusLevel {
+	BACKGROUND-IMAGE: url(../img/focusLevel.gif); BORDER-BOTTOM: #8ca0a0 0px solid; BORDER-LEFT: #8ca0a0 0px solid; BACKGROUND-REPEAT: no-repeat; COLOR: #c80000; BORDER-TOP: #8ca0a0 0px solid; BORDER-RIGHT: #8ca0a0 0px solid
+}
+.FocusLevel A {
+	COLOR: #c80000
+}
+.FocusLevelFirst {
+	BACKGROUND-IMAGE: url(../img/focusLevelfirst.gif); BORDER-BOTTOM: #8ca0a0 0px solid; BORDER-LEFT: #8ca0a0 0px solid; BACKGROUND-REPEAT: no-repeat; COLOR: #c80000; BORDER-TOP: #8ca0a0 0px solid; BORDER-RIGHT: #8ca0a0 0px solid
+}
+.FocusLevelFirst A {
+	COLOR: #c80000
+}
+.CBPassed {
+	TEXT-ALIGN: center; MARGIN-TOP: 10px; COLOR: #646464
+}
+.CBOperate {
+	TEXT-ALIGN: center; MARGIN-TOP: 10px; COLOR: #c80000
+}
+.CBOperate A {
+	COLOR: #c80000
+}
+.CBNotPassed {
+	TEXT-ALIGN: center; MARGIN-TOP: 10px; COLOR: #c8c8c8
+}
+.CBArrow {
+	TEXT-ALIGN: center
+}
+.CBArrow IMG {
+	TEXT-ALIGN: center; MARGIN-TOP: 8px
+}
+.RightContent {
+	WIDTH: auto; PADDING-RIGHT: 20px; HEIGHT: auto !important; MARGIN-LEFT: 220px
+}
+.RightContentIndex {
+	WIDTH: auto; FLOAT: left; HEIGHT: auto !important; MARGIN-LEFT: 20px; WORD-BREAK: break-all
+}
+.Copyright {
+	MARGIN: 0px; FONT-FAMILY: Tahoma; FLOAT: right
+}
+.Copyright A {
+	COLOR: #ccd9e0
+}
+.Copyright A:hover {
+	TEXT-DECORATION: underline
+}
+.Copyright LI {
+	PADDING-LEFT: 10px; PADDING-RIGHT: 5px; COLOR: #ccd9e0; BORDER-RIGHT: #ccd9e0 1px solid
+}
+.FootImg {
+	WIDTH: auto; FLOAT: left
+}
+.FootBanner {
+	FLOAT: left
+}
+.FootContent {
+	LINE-HEIGHT: 37px; BACKGROUND-COLOR: #7f9099; MARGIN-TOP: 30px; HEIGHT: 37px; VERTICAL-ALIGN: middle
+}
+.InputBox {
+	HEIGHT: 20px
+}
+.ReminderLevel {
+	BACKGROUND-IMAGE: url(../img/listStyleBG_1.gif); PADDING-BOTTOM: 0px; PADDING-LEFT: 24px; PADDING-RIGHT: 0px; BACKGROUND-REPEAT: no-repeat; PADDING-TOP: 14px
+}
+.ReminderLevel A {
+	COLOR: #646464
+}
+.ReminderLevel A:hover {
+	COLOR: #868686; TEXT-DECORATION: underline
+}
+.FloatHideNav {
+	FLOAT: left
+}
+.ShowLeftNavBanner {
+	BORDER-BOTTOM: #dcdcdc 1px solid; BORDER-LEFT: #dcdcdc 1px solid; WIDTH: 10px; DISPLAY: none; FLOAT: left; HEIGHT: 700px; BORDER-TOP: #dcdcdc 1px solid; CURSOR: hand; BORDER-RIGHT: #dcdcdc 1px solid
+}
+.AddModule {
+	PADDING-BOTTOM: 1px; PADDING-LEFT: 205px; PADDING-RIGHT: 0px; PADDING-TOP: 10px
+}
+.Addmodule A {
+	COLOR: #646464
+}
+.HiddenGhost {
+	POSITION: absolute; FILTER: alpha(opacity=0)
+}
+.SearchButton_Short {
+	BACKGROUND-IMAGE: url(../img/searchButtonBG1a.gif); TEXT-ALIGN: center; BORDER-RIGHT-WIDTH: 0px; WIDTH: 78px; BACKGROUND-REPEAT: no-repeat; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 24px; COLOR: #646464; BORDER-LEFT-WIDTH: 0px
+}
+.SearchButton_Short A {
+	PADDING-LEFT: 25px; PADDING-RIGHT: 25px
+}
+.SearchButton_Long {
+	BACKGROUND-IMAGE: url(../img/searchButtonBG2a.gif); TEXT-ALIGN: center; BORDER-RIGHT-WIDTH: 0px; WIDTH: 125px; BACKGROUND-REPEAT: no-repeat; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 24px; COLOR: #646464; BORDER-LEFT-WIDTH: 0px
+}
+.SearchButton_Long A {
+	PADDING-LEFT: 35px; PADDING-RIGHT: 35px
+}
+.SearchButton_Long .superLong {
+	PADDING-LEFT: 10px; PADDING-RIGHT: 10px
+}
+.SearchButton_Cute {
+	BACKGROUND-IMAGE: url(../img/buttonCu.gif); BORDER-BOTTOM: #787878 1px solid; BORDER-LEFT: #787878 1px solid; WIDTH: 21px; HEIGHT: 21px; BORDER-TOP: #787878 1px solid; BORDER-RIGHT: #787878 1px solid
+}
+.BottomButtons {
+	HEIGHT: 30px; PADDING-TOP: 10px
+}
+.OKButton {
+	WIDTH: 220px
+}
+.PreviewButton {
+	WIDTH: 520px; MARGIN-LEFT: 5px
+}
+.BackButton {
+	TEXT-ALIGN: right; LINE-HEIGHT: 24px; PADDING-RIGHT: 10px; HEIGHT: 24px; VERTICAL-ALIGN: middle
+}
+.AttachFile {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 2px; MARGIN-TOP: 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 0px; COLOR: #3c465a; PADDING-TOP: 2px
+}
+.AttachFile LI {
+	VERTICAL-ALIGN: middle
+}
+.AttachText {
+	FONT-WEIGHT: bold
+}
+.SelectStyle {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 240px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 20px; BORDER-LEFT-WIDTH: 0px
+}
+.AttachAdd {
+	COLOR: #646464
+}
+.AttachDel {
+	COLOR: #c80000
+}
+.TopDashed {
+	HEIGHT: 20px; BORDER-TOP: #3c465a 1px dashed; MARGIN-RIGHT: 10px
+}
+.TopDashedHeight {
+	BORDER-TOP: #3c465a 1px dashed; MARGIN-RIGHT: 10px
+}
+.TopDashed_NoMargin {
+	HEIGHT: 20px; BORDER-TOP: #3c465a 1px dashed
+}
+.AnswerList {
+	LINE-HEIGHT: 25px; PADDING-LEFT: 10px; VERTICAL-ALIGN: middle
+}
+.RightAnswer {
+	BACKGROUND-IMAGE: url(../img/right3.gif); BACKGROUND-REPEAT: no-repeat
+}
+.AnswerList INPUT {
+	VERTICAL-ALIGN: -2px
+}
+.RightAlign {
+	TEXT-ALIGN: right
+}
+.LeftAlign {
+	TEXT-ALIGN: left
+}
+.CenterAlign {
+	TEXT-ALIGN: center
+}
+.Black {
+	COLOR: #000000
+}
+.BoldBlack {
+	FONT-FAMILY: 宋体, Times New Roman; COLOR: #000000; FONT-WEIGHT: bold
+}
+.White {
+	COLOR: #ffffff
+}
+.Red {
+	COLOR: red
+}
+.DarkRed {
+	COLOR: #c80000
+}
+.DarkRedLink A {
+	COLOR: #c80000
+}
+.DarkBlue {
+	COLOR: #3c465a
+}
+.LightBlue {
+	COLOR: #8ca0a0
+}
+.LightGreen {
+	COLOR: #78b149
+}
+.Gray {
+	COLOR: #969696
+}
+.DarkGray {
+	COLOR: #dcdcdc
+}
+.WidthAuto {
+	WIDTH: auto
+}
+.Width1 {
+	WIDTH: 1px
+}
+.Width5 {
+	WIDTH: 5px
+}
+.Width10 {
+	WIDTH: 10px
+}
+.Width15 {
+	WIDTH: 15px
+}
+.Width20 {
+	WIDTH: 20px
+}
+.Width25 {
+	WIDTH: 25px
+}
+.Width30 {
+	WIDTH: 30px
+}
+.Width40 {
+	WIDTH: 40px
+}
+.Width50 {
+	WIDTH: 50px
+}
+.Width55 {
+	WIDTH: 55px
+}
+.Width60 {
+	WIDTH: 60px
+}
+.Width66 {
+	WIDTH: 66px
+}
+.Width70 {
+	WIDTH: 70px
+}
+.Width78 {
+	WIDTH: 78px
+}
+.Width80 {
+	WIDTH: 80px
+}
+.Width85 {
+	WIDTH: 85px
+}
+.Width90 {
+	WIDTH: 90px
+}
+.Width100 {
+	WIDTH: 100px
+}
+.Width105 {
+	WIDTH: 105px
+}
+.Width110 {
+	WIDTH: 110px
+}
+.Width113 {
+	WIDTH: 113px
+}
+.Width115 {
+	WIDTH: 115px
+}
+.Width120 {
+	WIDTH: 120px
+}
+.Width124 {
+	WIDTH: 124px
+}
+.Width125 {
+	WIDTH: 125px
+}
+.Width130 {
+	WIDTH: 130px
+}
+.Width135 {
+	WIDTH: 135px
+}
+.Width140 {
+	WIDTH: 140px
+}
+.Width145 {
+	WIDTH: 145px
+}
+.Width150 {
+	WIDTH: 150px
+}
+.Width155 {
+	WIDTH: 155px
+}
+.Width160 {
+	WIDTH: 160px
+}
+.Width162 {
+	WIDTH: 162px
+}
+.Width164 {
+	WIDTH: 164px
+}
+.Width165 {
+	WIDTH: 165px
+}
+.Width166 {
+	WIDTH: 166px
+}
+.Width165 {
+	WIDTH: 165px
+}
+.Width167 {
+	WIDTH: 167px
+}
+.Width168 {
+	WIDTH: 168px
+}
+.Width170 {
+	WIDTH: 170px
+}
+.Width175 {
+	WIDTH: 175px
+}
+.Width180 {
+	WIDTH: 180px
+}
+.Width185 {
+	WIDTH: 185px
+}
+.Width195 {
+	WIDTH: 195px
+}
+.Width200 {
+	WIDTH: 200px
+}
+.Width206 {
+	WIDTH: 206px
+}
+.Width212 {
+	WIDTH: 212px
+}
+.Width250 {
+	WIDTH: 250px
+}
+.Width300 {
+	WIDTH: 300px
+}
+.Width310 {
+	WIDTH: 310px
+}
+.Width320 {
+	WIDTH: 320px
+}
+.Width340 {
+	WIDTH: 340px
+}
+.Width342 {
+	WIDTH: 342px
+}
+.Width350 {
+	WIDTH: 350px
+}
+.Width360 {
+	WIDTH: 360px
+}
+.Width390 {
+	WIDTH: 390px
+}
+.Width400 {
+	WIDTH: 400px
+}
+.Width450 {
+	WIDTH: 450px
+}
+.Width460 {
+	WIDTH: 460px
+}
+.Width480 {
+	WIDTH: 480px
+}
+.Width500 {
+	WIDTH: 500px
+}
+.Width550 {
+	WIDTH: 550px
+}
+.Width580 {
+	WIDTH: 580px
+}
+.Width620 {
+	WIDTH: 620px
+}
+.Width650 {
+	WIDTH: 650px
+}
+.Width740 {
+	WIDTH: 740px
+}
+.Width764 {
+	WIDTH: 764px
+}
+.Width45 {
+	WIDTH: 45px
+}
+.Width47 {
+	WIDTH: 47px
+}
+.Width35 {
+	WIDTH: 35px
+}
+.Width130 {
+	WIDTH: 130px
+}
+.Width250 {
+	WIDTH: 250px
+}
+.Width700 {
+	WIDTH: 700px
+}
+.Height10 {
+	LINE-HEIGHT: 10px; HEIGHT: 10px
+}
+.Height12 {
+	LINE-HEIGHT: 12px; HEIGHT: 12px
+}
+.Height15 {
+	LINE-HEIGHT: 15px; HEIGHT: 15px
+}
+.Height18 {
+	HEIGHT: 18px
+}
+.Height19 {
+	HEIGHT: 19px
+}
+.Height20 {
+	LINE-HEIGHT: 20px; HEIGHT: 20px
+}
+.Height22 {
+	LINE-HEIGHT: 22px; HEIGHT: 22px
+}
+.Height23 {
+	HEIGHT: 23px
+}
+.Height25 {
+	LINE-HEIGHT: 25px; HEIGHT: 25px
+}
+.Height30 {
+	LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+.Height35 {
+	LINE-HEIGHT: 35px; HEIGHT: 35px
+}
+.Height40 {
+	HEIGHT: 40px
+}
+.Height50 {
+	HEIGHT: 50px
+}
+.Height60 {
+	LINE-HEIGHT: 60px; HEIGHT: 60px
+}
+.Height80 {
+	HEIGHT: 80px
+}
+.Height90 {
+	HEIGHT: 90px
+}
+.Height100 {
+	HEIGHT: 100px
+}
+.Height110 {
+	HEIGHT: 110px
+}
+.Height130 {
+	HEIGHT: 130px
+}
+.Height145 {
+	HEIGHT: 145px
+}
+.Height160 {
+	HEIGHT: 160px
+}
+.Height180 {
+	HEIGHT: 180px
+}
+.Height200 {
+	HEIGHT: 200px
+}
+.Height208 {
+	HEIGHT: 208px
+}
+.Height250 {
+	HEIGHT: 250px
+}
+.Height280 {
+	HEIGHT: 280px
+}
+.Height290 {
+	HEIGHT: 290px
+}
+.Height300 {
+	HEIGHT: 300px
+}
+.Height450 {
+	HEIGHT: 450px
+}
+.Height630 {
+	HEIGHT: 630px
+}
+.Height700 {
+	HEIGHT: 700px
+}
+.PT2 {
+	PADDING-TOP: 2px
+}
+.PT3 {
+	PADDING-TOP: 3px
+}
+.PT4 {
+	PADDING-TOP: 4px
+}
+.PT5 {
+	PADDING-TOP: 0px !important
+}
+.PT6 {
+	PADDING-TOP: 6px
+}
+.PT7 {
+	PADDING-TOP: 7px
+}
+.PT8 {
+	PADDING-TOP: 8px
+}
+.PT9 {
+	PADDING-TOP: 9px
+}
+.PT10 {
+	PADDING-TOP: 10px
+}
+.PT20 {
+	PADDING-TOP: 20px
+}
+.PT30 {
+	PADDING-TOP: 30px
+}
+.PT9 {
+	PADDING-TOP: 9px
+}
+.PL2 {
+	PADDING-LEFT: 2px
+}
+.PL5 {
+	PADDING-LEFT: 5px
+}
+.PL7 {
+	PADDING-LEFT: 7px
+}
+.PL8 {
+	PADDING-LEFT: 8px
+}
+.PL10 {
+	PADDING-LEFT: 10px
+}
+.PL15 {
+	PADDING-LEFT: 15px
+}
+.PL20 {
+	PADDING-LEFT: 20px
+}
+.PL40 {
+	PADDING-LEFT: 40px
+}
+.PL50 {
+	PADDING-LEFT: 50px
+}
+.PL70 {
+	PADDING-LEFT: 70px
+}
+.PL100 {
+	PADDING-LEFT: 100px
+}
+.PL130 {
+	PADDING-LEFT: 130px
+}
+.PL150 {
+	PADDING-LEFT: 150px
+}
+.PL400 {
+	PADDING-LEFT: 400px
+}
+.PR10 {
+	PADDING-RIGHT: 10px
+}
+.PR15 {
+	PADDING-RIGHT: 15px
+}
+.PR20 {
+	PADDING-RIGHT: 20px
+}
+.PR30 {
+	PADDING-RIGHT: 30px
+}
+.PR40 {
+	PADDING-RIGHT: 40px
+}
+.PR60 {
+	PADDING-RIGHT: 60px
+}
+.PB5 {
+	PADDING-BOTTOM: 5px
+}
+.PB20 {
+	PADDING-BOTTOM: 20px
+}
+.ML0 {
+	MARGIN-LEFT: 0px
+}
+.ML1 {
+	MARGIN-LEFT: 1px
+}
+.ML2 {
+	MARGIN-LEFT: 2px
+}
+.ML3 {
+	MARGIN-LEFT: 3px
+}
+.ML4 {
+	MARGIN-LEFT: 4px
+}
+.ML5 {
+	MARGIN-LEFT: 5px
+}
+.ML8 {
+	MARGIN-LEFT: 8px
+}
+.ML10 {
+	MARGIN-LEFT: 10px
+}
+.ML13 {
+	MARGIN-LEFT: 13px
+}
+.ML15 {
+	MARGIN-LEFT: 15px
+}
+.ML17 {
+	MARGIN-LEFT: 17px
+}
+.ML20 {
+	MARGIN-LEFT: 20px
+}
+.ML25 {
+	MARGIN-LEFT: 25px
+}
+.ML27 {
+	MARGIN-LEFT: 27px
+}
+.ML30 {
+	MARGIN-LEFT: 30px
+}
+.ML32 {
+	MARGIN-LEFT: 32px
+}
+.ML35 {
+	MARGIN-LEFT: 35px
+}
+.ML40 {
+	MARGIN-LEFT: 40px
+}
+.ML42 {
+	MARGIN-LEFT: 42px
+}
+.ML45 {
+	MARGIN-LEFT: 45px
+}
+.ML50 {
+	MARGIN-LEFT: 50px
+}
+.ML55 {
+	MARGIN-LEFT: 55px
+}
+.ML60 {
+	MARGIN-LEFT: 60px
+}
+.ML67 {
+	MARGIN-LEFT: 67px
+}
+.ML80 {
+	MARGIN-LEFT: 80px
+}
+.ML90 {
+	MARGIN-LEFT: 90px
+}
+.ML100 {
+	MARGIN-LEFT: 100px
+}
+.ML103 {
+	MARGIN-LEFT: 103px
+}
+.ML110 {
+	MARGIN-LEFT: 110px
+}
+.ML130 {
+	MARGIN-LEFT: 130px
+}
+.ML170 {
+	MARGIN-LEFT: 170px
+}
+.ML260 {
+	MARGIN-LEFT: 260px
+}
+.ML400 {
+	MARGIN-LEFT: 260px
+}
+.MarginLeft {
+	MARGIN-LEFT: auto
+}
+.ML8 {
+	MARGIN-LEFT: 8px
+}
+.M20 {
+	MARGIN: 20px
+}
+.MR6 {
+	MARGIN-RIGHT: 6px
+}
+.MR10 {
+	MARGIN-RIGHT: 10px
+}
+.MR15 {
+	MARGIN-RIGHT: 15px
+}
+.MR20 {
+	MARGIN-RIGHT: 20px
+}
+.MR22 {
+	MARGIN-RIGHT: 22px
+}
+.MR30 {
+	MARGIN-RIGHT: 30px
+}
+.MR40 {
+	MARGIN-RIGHT: 40px
+}
+.MR100 {
+	MARGIN-RIGHT: 100px
+}
+.MarginRight {
+	MARGIN-RIGHT: auto
+}
+.MR0 {
+	MARGIN-RIGHT: 0px
+}
+.MT0 {
+	MARGIN-TOP: 0px
+}
+.MT1 {
+	MARGIN-TOP: 1px
+}
+.MT2 {
+	MARGIN-TOP: 2px
+}
+.MT3 {
+	MARGIN-TOP: 3px
+}
+.MT4 {
+	MARGIN-TOP: 4px
+}
+.MT5 {
+	MARGIN-TOP: 5px
+}
+.MT6 {
+	MARGIN-TOP: 6px
+}
+.MT8 {
+	MARGIN-TOP: 8px
+}
+.MT10 {
+	MARGIN-TOP: 10px
+}
+.MT12 {
+	MARGIN-TOP: 12px
+}
+.MT15 {
+	MARGIN-TOP: 15px
+}
+.MT20 {
+	MARGIN-TOP: 20px
+}
+.MT30 {
+	MARGIN-TOP: 30px
+}
+.MT40 {
+	MARGIN-TOP: 40px
+}
+.MT50 {
+	MARGIN-TOP: 50px
+}
+.MT60 {
+	MARGIN-TOP: 60px
+}
+.MT80 {
+	MARGIN-TOP: 80px
+}
+.MT100 {
+	MARGIN-TOP: 100px
+}
+.MB01 {
+	MARGIN-BOTTOM: -1px
+}
+.MB0 {
+	MARGIN-BOTTOM: 0px
+}
+.MB10 {
+	MARGIN-BOTTOM: 10px
+}
+.MB20 {
+	MARGIN-BOTTOM: 20px
+}
+.MB30 {
+	MARGIN-BOTTOM: 30px
+}
+.MB3 {
+	MARGIN-BOTTOM: 3px
+}
+.MB5 {
+	MARGIN-BOTTOM: 5px
+}
+.MB13 {
+	MARGIN-BOTTOM: 13px
+}
+.MB15 {
+	MARGIN-BOTTOM: 15px
+}
+.MB50 {
+	MARGIN-BOTTOM: 50px
+}
+.LH20 {
+	LINE-HEIGHT: 20px !important
+}
+.LH25 {
+	LINE-HEIGHT: 25px !important
+}
+.dgHeadHeight {
+	LINE-HEIGHT: 24px; HEIGHT: 24px
+}
+.dgBodyHeight {
+	LINE-HEIGHT: 26px; HEIGHT: 26px
+}
+.dgFontColor1 {
+	COLOR: #3c465a
+}
+.dgFontColor2 {
+	COLOR: #c80000
+}
+.dgFontColor3 {
+	COLOR: #5a8c00
+}
+.dgFontColor4 {
+	COLOR: #646464
+}
+.dgFontColor5 {
+	COLOR: #4760a7
+}
+.dgFontColor6 {
+	COLOR: #000000
+}
+.dgFontColor7 {
+	COLOR: #78b149
+}
+.dgFontColor8 {
+	COLOR: #8ca0a0
+}
+.dgFontColor9 {
+	COLOR: #3c465a; FONT-WEIGHT: bold
+}
+.dgTopBackColor {
+	BACKGROUND-COLOR: #ecefef
+}
+.dgBodyBackColor {
+	BACKGROUND-COLOR: #ffffc8
+}
+.dgBorderLeft {
+	BORDER-LEFT: #3c465a 1px solid
+}
+.dgBorderBottom {
+	BORDER-BOTTOM: #3c465a 1px solid
+}
+.dgBorderRight {
+	BORDER-RIGHT: #3c465a 1px solid
+}
+.dgBorderTop {
+	BORDER-TOP: #3c465a 1px solid
+}
+.dgBorderBottomDash {
+	BORDER-BOTTOM: #3c465a 1px dashed
+}
+.dgMiddle {
+	VERTICAL-ALIGN: middle
+}
+.dgBottom {
+	VERTICAL-ALIGN: bottom
+}
+.dgMiddle IMG {
+	VERTICAL-ALIGN: middle
+}
+.dgFontBolder {
+	FONT-WEIGHT: bolder
+}
+.dgFontBold {
+	FONT-WEIGHT: bold
+}
+.fontv {
+	FONT-FAMILY: Verdana
+}
+.fontT {
+	FONT-FAMILY: Tahoma
+}
+.Pct4 {
+	WIDTH: 4%
+}
+.Pct5 {
+	WIDTH: 5%
+}
+.Pct6 {
+	WIDTH: 6%
+}
+.Pct7 {
+	WIDTH: 7%
+}
+.Pct8 {
+	WIDTH: 8%
+}
+.Pct9 {
+	WIDTH: 9%
+}
+.Pct10 {
+	WIDTH: 10%
+}
+.Pct11 {
+	WIDTH: 11%
+}
+.Pct12 {
+	WIDTH: 12%
+}
+.Pct13 {
+	WIDTH: 13%
+}
+.Pct14 {
+	WIDTH: 14%
+}
+.Pct15 {
+	WIDTH: 15%
+}
+.Pct16 {
+	WIDTH: 16%
+}
+.Pct17 {
+	WIDTH: 17%
+}
+.Pct18 {
+	WIDTH: 18%
+}
+.Pct19 {
+	WIDTH: 19%
+}
+.Pct20 {
+	WIDTH: 20%
+}
+.Pct21 {
+	WIDTH: 21%
+}
+.Pct22 {
+	WIDTH: 22%
+}
+.Pct23 {
+	WIDTH: 23%
+}
+.Pct24 {
+	WIDTH: 24%
+}
+.Pct25 {
+	WIDTH: 25%
+}
+.Pct26 {
+	WIDTH: 26%
+}
+.Pct27 {
+	WIDTH: 27%
+}
+.Pct28 {
+	WIDTH: 28%
+}
+.Pct29 {
+	WIDTH: 29%
+}
+.Pct30 {
+	WIDTH: 30%
+}
+.Pct32 {
+	WIDTH: 32%
+}
+.Pct33 {
+	WIDTH: 33%
+}
+.Pct34 {
+	WIDTH: 34%
+}
+.Pct35 {
+	WIDTH: 35%
+}
+.Pct37 {
+	WIDTH: 37%
+}
+.Pct38 {
+	WIDTH: 38%
+}
+.Pct39 {
+	WIDTH: 39%
+}
+.Pct40 {
+	WIDTH: 40%
+}
+.Pct41 {
+	WIDTH: 41%
+}
+.Pct45 {
+	WIDTH: 45%
+}
+.Pct46 {
+	WIDTH: 46%
+}
+.Pct48 {
+	WIDTH: 48%
+}
+.Pct49 {
+	WIDTH: 49%
+}
+.Pct50 {
+	WIDTH: 50%
+}
+.Pct54 {
+	WIDTH: 54%
+}
+.Pct55 {
+	WIDTH: 55%
+}
+.Pct60 {
+	WIDTH: 60%
+}
+.Pct61 {
+	WIDTH: 62%
+}
+.Pct62 {
+	WIDTH: 62%
+}
+.Pct63 {
+	WIDTH: 62%
+}
+.Pct64 {
+	WIDTH: 64%
+}
+.Pct65 {
+	WIDTH: 65%
+}
+.Pct66 {
+	WIDTH: 66%
+}
+.Pct67 {
+	WIDTH: 67%
+}
+.Pct68 {
+	WIDTH: 68%
+}
+.Pct69 {
+	WIDTH: 69%
+}
+.Pct70 {
+	WIDTH: 70%
+}
+.Pct80 {
+	WIDTH: 80%
+}
+.Pct81 {
+	WIDTH: 81%
+}
+.Pct85 {
+	WIDTH: 85%
+}
+.Pct88 {
+	WIDTH: 88%
+}
+.Pct90 {
+	WIDTH: 90%
+}
+.Pct90 {
+	WIDTH: 90%
+}
+.Pct91 {
+	WIDTH: 91%
+}
+.Pct92 {
+	WIDTH: 92%
+}
+.Pct93 {
+	WIDTH: 93%
+}
+.Pct94 {
+	WIDTH: 94%
+}
+.Pct95 {
+	WIDTH: 95%
+}
+.Pct96 {
+	WIDTH: 96%
+}
+.Pct97 {
+	WIDTH: 97%
+}
+.Pct98 {
+	WIDTH: 98%
+}
+.Pct99 {
+	WIDTH: 99%
+}
+.Pct100 {
+	WIDTH: 100%
+}
+.TXTAlignLeft {
+	TEXT-ALIGN: left
+}
+.TXTAlignCenter {
+	TEXT-ALIGN: center
+}
+.TXTAlignRight {
+	TEXT-ALIGN: right
+}
+.dgHeadS {
+	BORDER-BOTTOM: #3c465a 1px solid; LINE-HEIGHT: 24px; BACKGROUND-COLOR: #ecefef; HEIGHT: 24px; COLOR: #3c465a; VERTICAL-ALIGN: middle; BORDER-TOP: #3c465a 1px solid
+}
+.dgHeadS A {
+	COLOR: #3c465a
+}
+.dgHeadC {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: auto; PADDING-RIGHT: 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px
+}
+.dgHeadC LI {
+	FLOAT: left; COLOR: #3c465a; FONT-SIZE: 13px; VERTICAL-ALIGN: middle
+}
+TABLE.DataGridHeadS {
+	BORDER-BOTTOM: #3c465a 1px dashed; BORDER-TOP: #3c465a 1px solid
+}
+.DataGridHeadS TH {
+	BORDER-BOTTOM: #3c465a 1px solid; BACKGROUND-COLOR: #ecefef; FLOAT: left; COLOR: #3c465a; FONT-SIZE: 13px; VERTICAL-ALIGN: middle
+}
+TR.DataGridContent {
+	LINE-HEIGHT: 26px; WIDTH: auto; HEIGHT: 26px; COLOR: #3c465a; VERTICAL-ALIGN: middle
+}
+.DataGridContent TD {
+	BORDER-BOTTOM: #3c465a 1px dashed; FLOAT: left; COLOR: #3c465a; VERTICAL-ALIGN: middle
+}
+.dgContentS {
+	BORDER-BOTTOM: #3c465a 1px dashed; LINE-HEIGHT: 30px !important; MARGIN-TOP: 1px; WIDTH: auto; HEIGHT: 30px !important; COLOR: #3c465a; VERTICAL-ALIGN: middle
+}
+.dgContentC {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 26px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: auto; PADDING-RIGHT: 0px; HEIGHT: 26px; COLOR: #3c465a; VERTICAL-ALIGN: middle; PADDING-TOP: 0px
+}
+.dgContentC LI {
+	FLOAT: left; COLOR: #3c465a; VERTICAL-ALIGN: middle
+}
+.dgContentC A {
+	COLOR: #3c465a
+}
+.dgContentC A:hover {
+	COLOR: #3c465a; TEXT-DECORATION: underline
+}
+.dgContentC IMG {
+	BORDER-RIGHT-WIDTH: 0px; MARGIN-TOP: 5px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+.Line {
+	BORDER-TOP: #3c465a 3px solid
+}
+.Checked {
+	TEXT-ALIGN: center; BACKGROUND-COLOR: #3c465a; WIDTH: 120px; FLOAT: left; HEIGHT: 22px; PADDING-TOP: 3px
+}
+.Checked A {
+	COLOR: white
+}
+.NoChecked {
+	TEXT-ALIGN: center; BACKGROUND-COLOR: #ecefef; WIDTH: 120px; FLOAT: left; HEIGHT: 22px; PADDING-TOP: 3px
+}
+.NoChecked A {
+	COLOR: #646464
+}
+.Title {
+	TEXT-ALIGN: center; LINE-HEIGHT: 20px; BACKGROUND-COLOR: #3c465a; WIDTH: 80px; FLOAT: left; HEIGHT: 20px; COLOR: #ffffff; VERTICAL-ALIGN: middle
+}
+.TopRightDashed {
+	WIDTH: auto; HEIGHT: 20px; BORDER-TOP: #3c465a 1px dashed
+}
+.BottomDashed {
+	BORDER-BOTTOM: #3c465a 1px dashed
+}
+.BottomSolid {
+	BORDER-BOTTOM: #3c465a 3px solid; HEIGHT: 10px
+}
+.BasicFloatStyle {
+	TEXT-ALIGN: left; FLOAT: left
+}
+.SimpleFloat {
+	FLOAT: left
+}
+.FloatRight {
+	FLOAT: right
+}
+.OutterDiv {
+	LINE-HEIGHT: 24px; PADDING-LEFT: 15px; WIDTH: auto; PADDING-RIGHT: 15px; HEIGHT: 24px; COLOR: #3c465a; VERTICAL-ALIGN: middle
+}
+.OutterDiv A {
+	COLOR: #3c465a
+}
+.OutterDiv A:hover {
+	TEXT-DECORATION: underline
+}
+.InnerDivLeft {
+	FLOAT: left
+}
+.InnerDivLeftClear {
+	WIDTH: 300px; TEXT-OVERFLOW: ellipsis; FLOAT: left; HEIGHT: 100%; CLEAR: left; OVERFLOW: hidden
+}
+.InnerDivLeftClear UL LI A {
+	COLOR: #3c465a
+}
+.InnerDivRight {
+	TEXT-ALIGN: right; FLOAT: right
+}
+.InnerDivRightClear {
+	FLOAT: right; HEIGHT: 100%; CLEAR: right
+}
+.InnerDivRightClear UL LI {
+	COLOR: #8ca0a0
+}
+.InnerDivRight IMG {
+	VERTICAL-ALIGN: middle
+}
+.DivSetting {
+	LINE-HEIGHT: 24px; HEIGHT: 24px; COLOR: #333333; VERTICAL-ALIGN: middle
+}
+.DivSetting A {
+	COLOR: #666666
+}
+.DivSetting A:hover {
+	COLOR: #000000
+}
+.UlBanner {
+	MARGIN: 0px; PADDING-LEFT: 2px; VERTICAL-ALIGN: middle
+}
+.UlBanner A {
+	COLOR: #666666; VERTICAL-ALIGN: middle
+}
+.UlBanner A:hover {
+	COLOR: #000000; VERTICAL-ALIGN: middle
+}
+.UlBanner LI {
+	TEXT-ALIGN: left; COLOR: #3c465a; VERTICAL-ALIGN: middle
+}
+.UlBanner IMG {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT-WIDTH: 0px
+}
+.UlBannerFloat {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px
+}
+.UlBannerFloat A {
+	COLOR: #666666; VERTICAL-ALIGN: middle
+}
+.UlBannerFloat A:hover {
+	COLOR: #000000; VERTICAL-ALIGN: middle
+}
+.UlBannerFloat LI {
+	TEXT-ALIGN: left; FLOAT: left; COLOR: #3c465a; VERTICAL-ALIGN: middle
+}
+.UlBannerFloat IMG {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT-WIDTH: 0px
+}
+.DivSettingVar {
+	COLOR: #333333; VERTICAL-ALIGN: middle
+}
+.UlBannerVar {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px
+}
+.UlBannerVar LI {
+	TEXT-ALIGN: left; COLOR: #3c465a; VERTICAL-ALIGN: middle
+}
+.frmBackground {
+	POSITION: absolute; BORDER-BOTTOM-STYLE: none; FILTER: progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0); BORDER-RIGHT-STYLE: none; DISPLAY: none; BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none
+}
+.UlBannerHalve {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FLOAT: left; VERTICAL-ALIGN: middle; PADDING-TOP: 0px
+}
+.UlBannerHalve LI {
+	TEXT-ALIGN: left; VERTICAL-ALIGN: middle
+}
+.dgFrameH29 {
+	BORDER-BOTTOM: #8ca0a0 1px solid; BORDER-LEFT: #8ca0a0 1px solid; LINE-HEIGHT: 29px; BACKGROUND-COLOR: #e6eff8; MARGIN: 0px; WIDTH: 100%; BACKGROUND-REPEAT: repeat; HEIGHT: 29px; VERTICAL-ALIGN: middle; BORDER-TOP: #8ca0a0 1px solid; BORDER-RIGHT: #8ca0a0 1px solid
+}
+.dgFrameH29Top {
+	BORDER-BOTTOM: #8ca0a0 1px solid; BORDER-LEFT: #8ca0a0 1px solid; LINE-HEIGHT: 29px; BACKGROUND-COLOR: #e6eff8; MARGIN: 0px; BACKGROUND-REPEAT: repeat; HEIGHT: 29px; VERTICAL-ALIGN: middle; BORDER-TOP: #8ca0a0 1px solid; BORDER-RIGHT: #8ca0a0 1px solid
+}
+.dgFrameH26 {
+	BORDER-BOTTOM: #3c465a 1px solid; BORDER-LEFT: #3c465a 1px solid; LINE-HEIGHT: 26px; BACKGROUND-COLOR: #ecefef; WIDTH: auto; BACKGROUND-REPEAT: repeat; HEIGHT: 26px; MARGIN-LEFT: 10px; VERTICAL-ALIGN: middle; BORDER-TOP: #3c465a 1px solid; MARGIN-RIGHT: 10px; BORDER-RIGHT: #3c465a 1px solid
+}
+.dgFrameH26C {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: auto; PADDING-RIGHT: 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px
+}
+.dgFrameH26C LI {
+	FLOAT: left; COLOR: #3c465a; FONT-SIZE: 13px; VERTICAL-ALIGN: middle
+}
+UNKNOWN {
+	FONT-SIZE: 13px
+}
+.Largest {
+	FONT-SIZE: 14px
+}
+.guideFont {
+	FONT-SIZE: 20px; FONT-WEIGHT: bold
+}
+.ChooseClass {
+	PADDING-LEFT: 5px; FLOAT: left; PADDING-TOP: 0px !important
+}
+.ChooseOrg {
+	PADDING-LEFT: 5px; FLOAT: right; PADDING-TOP: 0px !important
+}
+.ContentTitle {
+	BACKGROUND-IMAGE: url(../img/contentTitleBG.gif); BORDER-LEFT: #8ca0a0 1px solid; LINE-HEIGHT: 29px; PADDING-LEFT: 12px; BACKGROUND-REPEAT: repeat; HEIGHT: 29px; VERTICAL-ALIGN: middle; OVERFLOW: hidden; FONT-WEIGHT: bold; BORDER-RIGHT: #8ca0a0 1px solid
+}
+.TitleText {
+	WIDTH: auto; FLOAT: left; COLOR: #3c465a; FONT-WEIGHT: bold; MARGIN-RIGHT: 20px
+}
+.SubTitleText {
+	WIDTH: 60px; FLOAT: left; FONT-WEIGHT: normal
+}
+.SubTitleText150 {
+	WIDTH: 150px; FLOAT: left; FONT-WEIGHT: normal
+}
+.ImageDiv1 {
+	BACKGROUND-IMAGE: url(../img/model1.jpg); WIDTH: 250px; HEIGHT: 60px
+}
+.ImageDiv2 {
+	BACKGROUND-IMAGE: url(../img/model2.jpg); WIDTH: 250px; HEIGHT: 60px
+}
+.ImageContent {
+	MARGIN-TOP: 10px; WIDTH: 140px; WHITE-SPACE: normal; MARGIN-LEFT: 100px
+}
+.previewExercise {
+	BORDER-BOTTOM: #646464 1px solid; BORDER-LEFT: #646464 1px solid; OVERFLOW-Y: scroll; MARGIN: 20px 20px auto; WIDTH: 95%; HEIGHT: 190px; BORDER-TOP: #646464 1px solid; BORDER-RIGHT: #646464 1px solid
+}
+.previewTiGan {
+	MARGIN: 20px 20px auto
+}
+.GuideCover {
+	BACKGROUND-IMAGE: url(../img/guide_01.gif); LINE-HEIGHT: 30px; MARGIN: 30px 20px auto; PADDING-LEFT: 150px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 200px; PADDING-TOP: 20px
+}
+.CourseModel {
+	PADDING-LEFT: 20px
+}
+.CourseTemplate {
+	LINE-HEIGHT: 20px; MARGIN: 20px; HEIGHT: auto; VERTICAL-ALIGN: middle
+}
+.CBFTitle {
+	LINE-HEIGHT: 25px; HEIGHT: 25px; VERTICAL-ALIGN: middle
+}
+.CBFTitle A {
+	COLOR: #0066cc; TEXT-DECORATION: underline
+}
+.CBFTitle A:hover {
+	COLOR: #cfcfcf
+}
+.CBFComment {
+	COLOR: #646464
+}
+.TotalLine {
+	MARGIN: 20px 10px auto; WIDTH: 97%
+}
+.H5Text {
+	FONT-WEIGHT: bold
+}
+.TitleList {
+	TEXT-ALIGN: right; LINE-HEIGHT: 19px; MARGIN: 0px
+}
+.TitleList A {
+	COLOR: #3c465a
+}
+.BasicList {
+	TEXT-ALIGN: center; MARGIN-TOP: 10px; WIDTH: 100px; BACKGROUND-REPEAT: no-repeat; FLOAT: right; HEIGHT: 19px; MARGIN-RIGHT: 10px
+}
+.ListFocus {
+	BACKGROUND-IMAGE: url(../img/TitleListBG_0.gif); TEXT-ALIGN: center; LINE-HEIGHT: 19px; MARGIN-TOP: 10px; WIDTH: 40px; BACKGROUND-REPEAT: no-repeat; MARGIN-RIGHT: 10px
+}
+.ListDark {
+	BACKGROUND-IMAGE: url(../img/TitleListBG_1.gif); TEXT-ALIGN: center; LINE-HEIGHT: 19px; MARGIN-TOP: 10px; WIDTH: 40px; BACKGROUND-REPEAT: no-repeat; MARGIN-RIGHT: 10px
+}
+.SelectWidth50 {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 50px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 20px; FONT-SIZE: 14px; BORDER-LEFT-WIDTH: 0px
+}
+.SelectWidth150 {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 150px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 20px; FONT-SIZE: 14px; BORDER-LEFT-WIDTH: 0px
+}
+.SelectWidth200 {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 200px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 20px; FONT-SIZE: 14px; BORDER-LEFT-WIDTH: 0px
+}
+.SelectWidth300 {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 300px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 20px; FONT-SIZE: 14px; BORDER-LEFT-WIDTH: 0px
+}
+.Selected {
+	BORDER-BOTTOM: #3c465a 1px solid; BORDER-LEFT: #3c465a 1px solid; PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #ecefef; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; HEIGHT: 70px; BORDER-TOP: #3c465a 1px solid; BORDER-RIGHT: #3c465a 1px solid; PADDING-TOP: 10px
+}
+.NoSelected {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; HEIGHT: 72px; PADDING-TOP: 10px
+}
+.EditSelected {
+	BORDER-BOTTOM: #3c465a 1px solid; BORDER-LEFT: #3c465a 1px solid; BACKGROUND-COLOR: #ecefef; PADDING-LEFT: 10px; HEIGHT: 26px; BORDER-TOP: #3c465a 1px solid; BORDER-RIGHT: #3c465a 1px solid; PADDING-TOP: 8px
+}
+.EditSelected2 {
+	BACKGROUND-COLOR: #ffffc8; PADDING-LEFT: 10px; HEIGHT: 26px; PADDING-TOP: 8px
+}
+.EditSelectedFix {
+	BORDER-BOTTOM: #3c465a 1px solid; BORDER-LEFT: #3c465a 1px solid; BACKGROUND-COLOR: #abcdef; PADDING-LEFT: 10px; HEIGHT: 26px; BORDER-TOP: #3c465a 1px solid; BORDER-RIGHT: #3c465a 1px solid; PADDING-TOP: 8px
+}
+.EditNoSelected {
+	BORDER-BOTTOM: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; PADDING-LEFT: 10px; HEIGHT: 26px; BORDER-TOP: #ffffff 1px solid; BORDER-RIGHT: #ffffff 1px solid; PADDING-TOP: 8px
+}
+.Guide_Selector {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 100px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 20px; FONT-SIZE: 14px; BORDER-LEFT-WIDTH: 0px
+}
+.Guide_Selector2 {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 20px; FONT-SIZE: 14px; BORDER-LEFT-WIDTH: 0px
+}
+.Guide_txt {
+	WIDTH: 100px; FONT-FAMILY: 宋体; FONT-SIZE: 14px
+}
+.x {
+	OVERFLOW-X: scroll
+}
+.selectoptionul {
+	LIST-STYLE-TYPE: none; WHITE-SPACE: nowrap; COLOR: #ffffff; MARGIN-LEFT: 10px
+}
+.selectoptionul LI {
+	LINE-HEIGHT: 15px; BACKGROUND-COLOR: white; TEXT-INDENT: 4px; WIDTH: 100%; DISPLAY: block; HEIGHT: 15px; COLOR: black
+}
+.ModelOneOut {
+	BACKGROUND-IMAGE: url(../img/model1.gif); TEXT-ALIGN: right; LINE-HEIGHT: 60px; WIDTH: 252px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 60px
+}
+.ModelOneInner {
+	TEXT-ALIGN: left; LINE-HEIGHT: 20px; MARGIN-TOP: 10px; WIDTH: 110px; PADDING-RIGHT: 10px; WHITE-SPACE: normal; HEIGHT: 50px; FONT-SIZE: 14px; VERTICAL-ALIGN: middle; MARGIN-RIGHT: 5px
+}
+.ModelTwoOut {
+	BACKGROUND-IMAGE: url(../img/model2.gif); TEXT-ALIGN: right; LINE-HEIGHT: 60px; WIDTH: 252px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 62px
+}
+.ModelTwoInner {
+	TEXT-ALIGN: left; LINE-HEIGHT: 40px; MARGIN-TOP: 10px; WIDTH: 110px; PADDING-RIGHT: 10px; WHITE-SPACE: normal; HEIGHT: 50px; FONT-SIZE: 14px; VERTICAL-ALIGN: middle; MARGIN-RIGHT: 5px
+}
+.tabLine {
+	WIDTH: 97%; COLOR: #3c465a
+}
+.tabLine INPUT {
+	VERTICAL-ALIGN: middle
+}
+.tabDiv {
+	BORDER-BOTTOM: #8ca0a0 0px solid; BORDER-LEFT: #8ca0a0 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; FLOAT: left; BORDER-TOP: #8ca0a0 1px solid; MARGIN-RIGHT: 5px; BORDER-RIGHT: #8ca0a0 1px solid; PADDING-TOP: 0px
+}
+.tabFocusDiv {
+	BACKGROUND-COLOR: #8ca0a0; COLOR: #ffffff
+}
+.titleLine {
+	BORDER-BOTTOM: #8ca0a0 1px solid; BORDER-LEFT: #8ca0a0 1px solid; PADDING-BOTTOM: 3px; BACKGROUND-COLOR: #e6eff8; PADDING-LEFT: 25px; WIDTH: 94%; PADDING-RIGHT: 15px; COLOR: #3c465a; BORDER-TOP: #8ca0a0 1px solid; BORDER-RIGHT: #8ca0a0 1px solid; PADDING-TOP: 3px
+}
+.titleLine INPUT {
+	VERTICAL-ALIGN: middle
+}
+.titleDivLeft {
+	TEXT-ALIGN: left; WIDTH: 96%; FLOAT: left
+}
+.titleDivRight {
+	TEXT-ALIGN: right; FLOAT: left; PADDING-TOP: 3px
+}
+.contentLine {
+	BORDER-LEFT: #8ca0a0 1px solid; PADDING-BOTTOM: 3px; BACKGROUND-COLOR: #ffffff; PADDING-LEFT: 40px; WIDTH: 94%; PADDING-RIGHT: 0px; COLOR: #3c465a; BORDER-RIGHT: #8ca0a0 1px solid; PADDING-TOP: 3px
+}
+.contentLine INPUT {
+	VERTICAL-ALIGN: middle
+}
+.subDocTitleTxt {
+	WIDTH: 140px !important; FLOAT: left; FONT-WEIGHT: normal
+}
+.idiographDiv {
+	BACKGROUND-IMAGE: url(../img/idiographBG.gif); BORDER-BOTTOM: #969696 1px solid; BORDER-LEFT: #969696 1px solid; WIDTH: 99%; BACKGROUND-REPEAT: repeat; HEIGHT: 100px; BORDER-TOP: #969696 1px solid; BORDER-RIGHT: #969696 1px solid
+}
+.progressBar {
+	BORDER-BOTTOM: #969696 1px solid; BORDER-LEFT: #969696 1px solid; PADDING-BOTTOM: 1px; LINE-HEIGHT: normal; BACKGROUND-COLOR: white; MARGIN-TOP: 5px; PADDING-LEFT: 1px; WIDTH: 150px; PADDING-RIGHT: 1px; FLOAT: left; HEIGHT: 13px; MARGIN-LEFT: 5px; BORDER-TOP: #969696 1px solid; BORDER-RIGHT: #969696 1px solid; PADDING-TOP: 1px
+}
+.progress {
+	BACKGROUND-IMAGE: url(../img/progressBarBG.gif); HEIGHT: 13px
+}
+.fileOrDocDiv {
+	BORDER-BOTTOM: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BACKGROUND-COLOR: #ffffff; PADDING-LEFT: 16px; WIDTH: 220px; FLOAT: left; HEIGHT: 85px; MARGIN-LEFT: 5px; BORDER-TOP: #ffffff 1px solid; BORDER-RIGHT: #ffffff 1px solid; PADDING-TOP: 9px
+}
+.fileOrDocDivBySelect {
+	BORDER-BOTTOM: #3c465a 1px solid; BORDER-LEFT: #3c465a 1px solid; BACKGROUND-COLOR: #ecefef; PADDING-LEFT: 16px; WIDTH: 220px; FLOAT: left; HEIGHT: 85px; MARGIN-LEFT: 5px; BORDER-TOP: #3c465a 1px solid; BORDER-RIGHT: #3c465a 1px solid; PADDING-TOP: 9px
+}
+.recycleDiv {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 16px; WIDTH: 220px; MARGIN-BOTTOM: 10px; FLOAT: right; HEIGHT: 85px; MARGIN-RIGHT: 30px; PADDING-TOP: 9px
+}
+.listLeftImg {
+	WIDTH: 40px; FLOAT: left
+}
+.listRight {
+	PADDING-LEFT: 0px; WIDTH: 163px; FLOAT: left; MARGIN-LEFT: 5px; PADDING-TOP: 8px
+}
+.listUL {
+	FONT-FAMILY: 宋体; MARGIN-BOTTOM: 0px; COLOR: #42495a; MARGIN-LEFT: 0px; FONT-SIZE: 14px
+}
+.listIL {
+	MARGIN-TOP: 5px; DISPLAY: block
+}
+.color1 {
+	COLOR: #3c465a
+}
+.color2 {
+	COLOR: #646464
+}
+.color3 {
+	COLOR: #000000
+}
+.dialogBox {
+	BACKGROUND-IMAGE: url(../img/dialog.gif); TEXT-ALIGN: center; LINE-HEIGHT: 63px; WIDTH: 92px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 63px; VERTICAL-ALIGN: middle; PADDING-TOP: 10px
+}
+.defaultUL {
+	LINE-HEIGHT: 20px; MARGIN: 0px; FONT-FAMILY: 宋体; COLOR: #646464; FONT-SIZE: 14px
+}
+.defaultUL LI {
+	DISPLAY: block
+}
+.fileInfo2 {
+	COLOR: #0066cc
+}
+.MsgTitle {
+	MARGIN: 20px 0px 10px 10px; TEXT-OVERFLOW: ellipsis; COLOR: #3c465a; FONT-SIZE: 16px; OVERFLOW: hidden
+}
+.MsgSenderAndTime {
+	MARGIN: 10px 0px 10px 10px; TEXT-OVERFLOW: ellipsis; COLOR: #8ca0a0; OVERFLOW: hidden
+}
+.MsgContent {
+	MARGIN: 30px 0px 10px 10px; TEXT-OVERFLOW: ellipsis; COLOR: #646464; OVERFLOW: hidden
+}
+.Answer {
+	BORDER-BOTTOM: #969696 1px solid; BORDER-LEFT: #969696 1px solid; PADDING-BOTTOM: 5px; MARGIN: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; BORDER-TOP: #969696 1px solid; BORDER-RIGHT: #969696 1px solid; PADDING-TOP: 5px
+}
+.Answer IMG {
+	WIDTH: 100%; MAX-WIDTH: 100%
+}
+.kgAnswerY {
+	MARGIN-TOP: 10px; COLOR: black; MARGIN-LEFT: 20px
+}
+.kgAnswerN {
+	MARGIN-TOP: 10px; PADDING-LEFT: 3px; COLOR: black
+}
+.guideNumberFont {
+	COLOR: #cc0000; FONT-SIZE: 30px; FONT-WEIGHT: bold
+}
+.guideRedFont {
+	COLOR: #cc0000; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.guideVarColor {
+	COLOR: #646464
+}
+.fc7 {
+	MARGIN: 20px; COLOR: #000000
+}
+.PollItem {
+	TEXT-ALIGN: center; BACKGROUND-COLOR: #3c465a; COLOR: #ffffff; VERTICAL-ALIGN: middle
+}
+.YellowBody {
+	BORDER-LEFT: #dadad3 1px solid; BACKGROUND-COLOR: #ffffe3; WIDTH: 80px; BORDER-TOP: #dadad3 1px solid; BORDER-RIGHT: #dadad3 1px solid; PADDING-TOP: 5px
+}
+.YellowBottom {
+	BACKGROUND-IMAGE: url(../img/YBBG.gif); WIDTH: 82px; BACKGROUND-REPEAT: no-repeat
+}
+.YellowUL {
+	LIST-STYLE-TYPE: none; WHITE-SPACE: nowrap; COLOR: black; MARGIN-LEFT: 10px
+}
+.YellowUL LI {
+	DISPLAY: block
+}
+.SignatureCanvas {
+	BACKGROUND-IMAGE: url(../img/idiographBG.gif); BORDER-BOTTOM: #969696 1px solid; BORDER-LEFT: #969696 1px solid; MARGIN-TOP: 15px; WIDTH: 99%; HEIGHT: 100px; BORDER-TOP: #969696 1px solid; BORDER-RIGHT: #969696 1px solid
+}
+v\:* {
+	BEHAVIOR: url(#default#VML)
+}
+o\:* {
+	BEHAVIOR: url(#default#VML)
+}
+.shape {
+	BEHAVIOR: url(#default#VML)
+}
+.TopicTitle {
+	BORDER-BOTTOM: #3c465a 1px solid; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #ecefef; PADDING-LEFT: 10px; HEIGHT: 22px; COLOR: #3c465a; MARGIN-LEFT: 10px; CLEAR: left; VERTICAL-ALIGN: middle; BORDER-TOP: #3c465a 1px solid; MARGIN-RIGHT: 10px
+}
+.TopicContent {
+	MARGIN: 10px 20px 0px; WORD-BREAK: break-all
+}
+.TopicTitleUpdate {
+	BORDER-BOTTOM: #3c465a 1px solid; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #ffffc8; PADDING-LEFT: 10px; HEIGHT: 22px; COLOR: #3c465a; MARGIN-LEFT: 0px; CLEAR: left; VERTICAL-ALIGN: middle; BORDER-TOP: #3c465a 0px solid; MARGIN-RIGHT: 0px
+}
+.TopicTitleUpdate1 {
+	BORDER-BOTTOM: #3c465a 1px solid; LINE-HEIGHT: 22px; BACKGROUND-COLOR: #e6eff8; PADDING-LEFT: 10px; HEIGHT: 22px; COLOR: #3c465a; MARGIN-LEFT: 0px; CLEAR: left; VERTICAL-ALIGN: middle; BORDER-TOP: #3c465a 1px solid; MARGIN-RIGHT: 0px
+}
+.TopicContentUpdate {
+	MARGIN: 0px
+}
+.TopicContentUpdateNew {
+	PADDING-BOTTOM: 20px; MARGIN: 0px; PADDING-TOP: 20px
+}
+#cppanel {
+	Z-INDEX: 99999; BORDER-BOTTOM: #000000 1px solid; POSITION: absolute; BORDER-LEFT: #000000 1px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #ffffff; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; DISPLAY: none; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; PADDING-TOP: 2px
+}
+.AssignStatus {
+	BORDER-BOTTOM: #8ca0a0 1px solid; BORDER-LEFT: #8ca0a0 1px solid; BACKGROUND-COLOR: #e8e8e8; BORDER-TOP: #8ca0a0 1px solid; BORDER-RIGHT: #8ca0a0 1px solid
+}
+.AssignScore {
+	BORDER-BOTTOM: #8ca0a0 1px solid; BORDER-LEFT: #8ca0a0 1px solid; BACKGROUND-COLOR: #ffffc8; BORDER-TOP: #8ca0a0 1px solid; BORDER-RIGHT: #8ca0a0 1px solid
+}
+.StatusBar {
+	TEXT-ALIGN: left; WIDTH: 500px; BACKGROUND: url(../img/statusBar.gif) no-repeat; FLOAT: right; HEIGHT: 16px; VERTICAL-ALIGN: middle; PADDING-TOP: 4px
+}
+.PassedBar {
+	BACKGROUND-COLOR: #3c465a; WIDTH: 0px; HEIGHT: 7px
+}
+.TaskSummary {
+	WIDTH: 320px
+}
+.TaskYear {
+	WIDTH: 50px
+}
+.ClassReviewTable {
+	WIDTH: 100%
+}
+.CRColumn1 {
+	
+}
+.Nowarp {
+	WHITE-SPACE: nowrap
+}
+.Width100Ellipsis {
+	WIDTH: 100px; TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden; WORD-BREAK: break-all
+}
+.Width140Ellipsis {
+	WIDTH: 140px; TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden; WORD-BREAK: break-all
+}
+.Width200Ellipsis {
+	WIDTH: 200px; TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden; WORD-BREAK: break-all
+}
+.Width380Ellipsis {
+	WIDTH: 380px; TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden; WORD-BREAK: break-all
+}
+.PaddinLR5PX {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 0px
+}
+.ContentLborder1 {
+	MIN-HEIGHT: 90px; WIDTH: 12px; BACKGROUND: url(../img/ContentLborder.gif) no-repeat left top; FLOAT: left; FONT-SIZE: 0px
+}
+.ContentMborder1 {
+	MIN-HEIGHT: 90px; WIDTH: auto; BACKGROUND: url(../img/ContentMborder.gif) repeat-x; MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+.ContentRborder1 {
+	MIN-HEIGHT: 90px; WIDTH: 12px; BACKGROUND: url(../img/ContentRborder.gif) no-repeat right top; FLOAT: right; FONT-SIZE: 0px
+}
+.ContentOutDiv1 {
+	LINE-HEIGHT: 200%; PADDING-LEFT: 15px; WIDTH: auto; PADDING-RIGHT: 15px; MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+.MinHeight501 {
+	MIN-HEIGHT: 50px; HEIGHT: 50px
+}
+.newPreview {
+	FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)
+}
+.BottomSolid {
+	BORDER-BOTTOM: black 1px solid
+}
+.TopSolid {
+	BORDER-TOP: black 1px solid
+}
+.TopSolid3 {
+	BORDER-TOP: black 3px solid
+}
+.divCardHeader {
+	BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: white; WIDTH: 600px; BORDER-TOP: black 1px solid
+}
+.tabCardHeader {
+	WIDTH: 580px
+}
+tabCardbItems {
+	WIDTH: 580px
+}
+TABLE {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-COLLAPSE: collapse; BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none
+}
+.SelTd {
+	TEXT-ALIGN: center; MARGIN: 0px; WIDTH: 100px; FLOAT: left; HEIGHT: 100%; FONT-SIZE: 14px; VERTICAL-ALIGN: middle
+}
+.NonSelTd {
+	TEXT-ALIGN: center; MARGIN: 0px; WIDTH: 100px; FLOAT: left; HEIGHT: 100%; FONT-SIZE: 14px; VERTICAL-ALIGN: middle
+}
+.lblText {
+	MARGIN-TOP: 10px; PADDING-TOP: 10px
+}
+.BorderB {
+	BORDER-BOTTOM: black 1px solid
+}
+.BorderL {
+	BORDER-LEFT: black 1px solid
+}
+.BorderR {
+	BORDER-RIGHT: black 1px solid
+}
+.BorderT {
+	BORDER-TOP: #8db2e3 1px solid
+}
+.DashedT {
+	BORDER-TOP: black 1px dashed
+}
+.BorderA {
+	BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid
+}
+.SelTd {
+	BORDER-LEFT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid
+}
+.TdSpace {
+	BORDER-BOTTOM: black 1px solid; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 100%; PADDING-TOP: 0px
+}
+.NonSelTd {
+	BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #8992a1
+}
+.btnTab {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; BACKGROUND-COLOR: transparent; WIDTH: 100px; BORDER-TOP-STYLE: none; HEIGHT: 100%; BORDER-LEFT-STYLE: none
+}
+.divtab {
+	WIDTH: 100%; HEIGHT: 100%
+}
+.DisplayNone {
+	DISPLAY: none
+}
+.DisplayBlock {
+	DISPLAY: block
+}
+#tdProperties {
+	BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid
+}
+#chkProperties {
+	MARGIN: 10px 0px 0px 2px
+}
+#tdProperties TABLE {
+	LINE-HEIGHT: 25px; MARGIN: 10px; WIDTH: 100%
+}
+.divFileLeft {
+	TEXT-ALIGN: right; MARGIN-TOP: 5px; WIDTH: 20%; FLOAT: left
+}
+.divFileRight {
+	MARGIN-TOP: 5px; WIDTH: 80%; FLOAT: left
+}
+.txtNumber {
+	BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 30px; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid
+}
+#tabCardItems TD {
+	BORDER-BOTTOM: black 1px dashed; LINE-HEIGHT: 30px
+}
+.btnSubject {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; BACKGROUND-COLOR: transparent; BORDER-TOP-STYLE: none; COLOR: red; BORDER-LEFT-STYLE: none
+}
+.moduleWindow {
+	BORDER-BOTTOM: #4f586a 1px solid; BORDER-LEFT: #4f586a 1px solid; PADDING-BOTTOM: 30px; BACKGROUND-COLOR: #e6eff8; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; MARGIN-LEFT: auto; BORDER-TOP: #4f586a 1px solid; MARGIN-RIGHT: auto; BORDER-RIGHT: #4f586a 1px solid; PADDING-TOP: 10px
+}
+.moduleWindow600 {
+	WIDTH: 600px
+}
+.moduleWindow800 {
+	WIDTH: 800px
+}
+.dgContentUsingInCourse {
+	LINE-HEIGHT: 30px !important; WIDTH: auto; HEIGHT: 30px !important; COLOR: #3c465a; FONT-SIZE: 14px; VERTICAL-ALIGN: middle
+}
+.lblButton {
+	BORDER-BOTTOM-STYLE: none; TEXT-ALIGN: left; BORDER-RIGHT-STYLE: none; BACKGROUND-COLOR: transparent; BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none
+}
+.div0 {
+	BACKGROUND-IMAGE: url(../img/upB.gif); WIDTH: 10px; PADDING-RIGHT: 10px; HEIGHT: 20px
+}
+.div1 {
+	BACKGROUND-IMAGE: url(../img/bu_expand.gif); WIDTH: 10px; PADDING-RIGHT: 10px; HEIGHT: 20px
+}
+.divMark0 {
+	BACKGROUND-IMAGE: url(../img/msg1.gif); WIDTH: 10px; PADDING-RIGHT: 10px; HEIGHT: 20px; CURSOR: hand
+}
+.divMark1 {
+	BACKGROUND-IMAGE: url(../img/msg2.gif); WIDTH: 10px; PADDING-RIGHT: 10px; HEIGHT: 20px; CURSOR: hand
+}
+.WidthNO {
+	WIDTH: 80px
+}
+.WidthThemeType {
+	WIDTH: 80px
+}
+.WidthSelectType {
+	WIDTH: 80px
+}
+.WidthOptionCount {
+	WIDTH: 80px
+}
+.WidthFenzhi {
+	WIDTH: 50px
+}
+.MinWidth1 {
+	MIN-WIDTH: 1px
+}
+.MinWidth2 {
+	MIN-WIDTH: 2px
+}
+.MinWidth3 {
+	MIN-WIDTH: 3px
+}
+.MinWidth5 {
+	MIN-WIDTH: 5px
+}
+.MinWidth10 {
+	MIN-WIDTH: 10px
+}
+.MinWidth20 {
+	MIN-WIDTH: 20px
+}
+.MinWidth30 {
+	MIN-WIDTH: 30px
+}
+.MinWidth50 {
+	MIN-WIDTH: 50px
+}
+.MinWidth60 {
+	MIN-WIDTH: 60px
+}
+.MinWidth70 {
+	MIN-WIDTH: 70px
+}
+.MinWidth80 {
+	MIN-WIDTH: 80px
+}
+.MinWidth100 {
+	MIN-WIDTH: 100px
+}
+.TXTOverClip {
+	TEXT-OVERFLOW: clip
+}
+.TXTOverEllipsis {
+	TEXT-OVERFLOW: ellipsis; DISPLAY: block; WHITE-SPACE: nowrap; OVERFLOW: hidden; WORD-BREAK: keep-all
+}
+.InnerDivLeftClear_MyWebSite {
+	WIDTH: 460px; TEXT-OVERFLOW: ellipsis; FLOAT: left; HEIGHT: 100%; CLEAR: left; OVERFLOW: hidden
+}
+.InnerDivLeftClear_MyWebSite UL LI A {
+	COLOR: #3c465a
+}
+.ClassExerciseName {
+	TEXT-ALIGN: left; WIDTH: 150px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; OVERFLOW: hidden
+}
+.ClassExerciseType {
+	TEXT-ALIGN: left; WIDTH: 60px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; OVERFLOW: hidden
+}
+.ClassExerciseCourse {
+	TEXT-ALIGN: left; WIDTH: 200px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; OVERFLOW: hidden
+}
+.ClassExerciseKen {
+	TEXT-ALIGN: left; WIDTH: 180px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; OVERFLOW: hidden
+}
+.ClassExerciseChapter {
+	TEXT-ALIGN: left; WIDTH: 100px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; OVERFLOW: hidden
+}
+.ClassExercisePeriod {
+	TEXT-ALIGN: left; WIDTH: 100px; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; OVERFLOW: hidden
+}
+.ClassExerciseUpdateTime {
+	TEXT-ALIGN: left; WIDTH: 10%; TEXT-OVERFLOW: ellipsis; WHITE-SPACE: nowrap; OVERFLOW: hidden
+}
+.ClassPaper {
+	BACKGROUND-COLOR: #e8e8e8; COLOR: #3c465a
+}
+.PaperTitle {
+	TEXT-ALIGN: center; BACKGROUND-COLOR: #3c465a; WIDTH: auto; FLOAT: left; HEIGHT: 22px; COLOR: white; FONT-SIZE: 14px; PADDING-TOP: 3px
+}
+.StrategyCss {
+	OVERFLOW-Y: scroll; BACKGROUND-COLOR: white; MARGIN: 10px 25px; WIDTH: 95%; HEIGHT: 130px
+}
+.StrategyTitle {
+	BACKGROUND-COLOR: #feffc9; WIDTH: 100%; HEIGHT: 150px
+}
+.StrategyTitle1 {
+	BACKGROUND-COLOR: #feffc9; WIDTH: 100%; HEIGHT: auto
+}
+.UlStrategyTitle {
+	MARGIN: 20px 0px 10px 6px; WIDTH: auto; HEIGHT: 21px
+}
+.UlStrategyTitle2 {
+	MARGIN: 20px 0px 10px; WIDTH: auto; HEIGHT: 21px
+}
+.UlStrategyTitle LI {
+	LINE-HEIGHT: 21px; FLOAT: left; HEIGHT: 21px; COLOR: white; FONT-WEIGHT: bold
+}
+.StrategyLborder {
+	WIDTH: 6px; HEIGHT: 21px
+}
+.Strategybody {
+	PADDING-BOTTOM: 0px; MARGIN: 0px 0px 20px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; BACKGROUND: #375a93; COLOR: #646464; FONT-SIZE: 14px; PADDING-TOP: 0px
+}
+.HomeWorkClass {
+	BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; WIDTH: 22%; FLOAT: left; HEIGHT: 100px; MARGIN-LEFT: 5px; OVERFLOW: scroll; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid
+}
+.HomeWorkPanel {
+	WIDTH: 50px; FLOAT: left; COLOR: black
+}
+.Cked {
+	WIDTH: 100px; TEXT-OVERFLOW: ellipsis
+}
+.Cked A {
+	WIDTH: 100px; TEXT-OVERFLOW: ellipsis; COLOR: white
+}
+.Cked UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 4px; PADDING-RIGHT: 0px; BACKGROUND: url(../img/tableftF.gif) no-repeat 0% -42px; FLOAT: left; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+.Cked LI {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 6px; PADDING-RIGHT: 15px; DISPLAY: block; BACKGROUND: url(../img/tabrightF.gif) no-repeat 100% -42px; FLOAT: left; COLOR: #666; PADDING-TOP: 5px
+}
+.NoCked {
+	WIDTH: 100px; TEXT-OVERFLOW: ellipsis
+}
+.NoCked A {
+	COLOR: #646464
+}
+.NoCked UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 4px; PADDING-RIGHT: 0px; BACKGROUND: url(../img/tableftF.gif) no-repeat left top; FLOAT: left; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+.NoCked LI {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 6px; PADDING-RIGHT: 15px; DISPLAY: block; BACKGROUND: url(../img/tabrightF.gif) no-repeat right top; FLOAT: left; COLOR: #666; PADDING-TOP: 5px
+}
+.ForumListLeft {
+	MARGIN-LEFT: -5px
+}
+.HideCalendar {
+	DISPLAY: none
+}
+.FileItem {
+	LINE-HEIGHT: 25px; MARGIN-TOP: 10px; WIDTH: 100%; HEIGHT: 80px; CLEAR: both; OVERFLOW: hidden
+}
+.IndexPopupWindow {
+	Z-INDEX: 200; BORDER-BOTTOM: #4f586a 1px solid; POSITION: absolute; FILTER: alpha(opacity=90); BORDER-LEFT: #4f586a 1px solid; PADDING-BOTTOM: 30px; BACKGROUND-COLOR: #e6eff8; PADDING-LEFT: 10px; WIDTH: 200px; PADDING-RIGHT: 10px; HEIGHT: auto; VISIBILITY: hidden; BORDER-TOP: #4f586a 1px solid; TOP: 0px; BORDER-RIGHT: #4f586a 1px solid; PADDING-TOP: 5px; LEFT: 0px; opacity: 0.9
+}
+.AddModuleTitle {
+	HEIGHT: 31px
+}
+.AddModuleTitleClose {
+	TEXT-ALIGN: right; MARGIN-BOTTOM: 15px
+}
+.AddModuleTitleClose A {
+	COLOR: #c80000
+}
+.AddModuleTitleClose A:hover {
+	TEXT-DECORATION: underline
+}
+.AddModuleSubTitle {
+	MARGIN: 0px 0px 6px; PADDING-LEFT: 2px; COLOR: #000000; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold
+}
+.AddModuleSubTitle LI {
+	TEXT-ALIGN: left; COLOR: #3c465a; VERTICAL-ALIGN: middle
+}
+.AddModuleSubTitle IMG {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT-WIDTH: 0px
+}
+.AddModuleContent {
+	LINE-HEIGHT: 18px; PADDING-LEFT: 10px; MARGIN-BOTTOM: 7px; HEIGHT: 18px; VERTICAL-ALIGN: middle; CURSOR: hand
+}
+.AddModuleContent LI {
+	COLOR: #646464
+}
+.MovingDiv {
+	BORDER-BOTTOM: #8ca0a0 1px solid; POSITION: absolute; TEXT-ALIGN: center; BORDER-LEFT: #8ca0a0 1px solid; LINE-HEIGHT: 24px; BACKGROUND-COLOR: #e6eff8; WIDTH: 200px; HEIGHT: 24px; VERTICAL-ALIGN: middle; BORDER-TOP: #8ca0a0 1px solid; BORDER-RIGHT: #8ca0a0 1px solid
+}
+.MarkRead {
+	Z-INDEX: 2833; BORDER-BOTTOM: #000000 1px solid; POSITION: relative; FILTER: alpha(opacity=80); BORDER-LEFT: #000000 1px solid; PADDING-BOTTOM: 10px; BACKGROUND-COLOR: white; PADDING-LEFT: 10px; WIDTH: 600px; PADDING-RIGHT: 10px; DISPLAY: none; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; PADDING-TOP: 10px; opacity: 0.8
+}
+.popupBack {
+	Z-INDEX: 50; POSITION: absolute; FILTER: alpha(opacity=70); BACKGROUND-COLOR: #3c465a; WIDTH: auto; VISIBILITY: hidden; TOP: 0px; LEFT: 0px; opacity: 0.7
+}
+.popupWindow {
+	Z-INDEX: 200; BORDER-BOTTOM: #4f586a 1px solid; POSITION: absolute; FILTER: alpha(opacity=80); BORDER-LEFT: #4f586a 1px solid; PADDING-BOTTOM: 30px; BACKGROUND-COLOR: #e6eff8; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; VISIBILITY: hidden; BORDER-TOP: #4f586a 1px solid; TOP: 0px; BORDER-RIGHT: #4f586a 1px solid; PADDING-TOP: 10px; opacity: 0.8
+}
+.popupWindow600 {
+	WIDTH: 600px; LEFT: -200px
+}
+.popupWindow800 {
+	WIDTH: 800px; LEFT: -400px
+}
+.popupTitle {
+	HEIGHT: 31px
+}
+.popupTitleLabel {
+	WIDTH: 400px; FLOAT: left; COLOR: #646464; CLEAR: left
+}
+.redTitle {
+	COLOR: red
+}
+.popupTitleClose {
+	TEXT-ALIGN: right; WIDTH: 100px; FLOAT: right; CLEAR: right
+}
+.popupTitleClose A {
+	COLOR: #c80000
+}
+.popupTitleClose A:hover {
+	TEXT-DECORATION: underline
+}
+.popupButtonRight {
+	TEXT-ALIGN: right; LINE-HEIGHT: 23px; HEIGHT: 23px; CLEAR: both; VERTICAL-ALIGN: middle; MARGIN-RIGHT: 20px
+}
+.popupContent {
+	COLOR: #3c465a
+}
+.popupSubContentTitle {
+	MARGIN-LEFT: 20px; FONT-WEIGHT: bold
+}
+.popupSubContent {
+	MARGIN-LEFT: 30px
+}
+.ColorPick {
+	BORDER-BOTTOM: #969696 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #969696 1px solid; PADDING-BOTTOM: 1px; BACKGROUND-COLOR: #ffffff; PADDING-LEFT: 1px; WIDTH: 18px; PADDING-RIGHT: 1px; HEIGHT: 18px; BORDER-TOP: #969696 1px solid; BORDER-RIGHT: #969696 1px solid; PADDING-TOP: 1px
+}
+.ColorPickInner {
+	BACKGROUND-COLOR: #007cc2; WIDTH: 100%; HEIGHT: 100%
+}
+.ColorPickText {
+	FLOAT: left; MARGIN-RIGHT: 40px
+}
+.UserList {
+	OVERFLOW-Y: scroll; HEIGHT: 260px
+}
+.popupContent .titleBold {
+	FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.popupContent TABLE .auto {
+	WIDTH: auto
+}
+.popupContent TD.top {
+	VERTICAL-ALIGN: top
+}
+.popupContent INPUT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px 2px 0px 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.popupContent INPUT.whiteBg {
+	BACKGROUND-COLOR: #fff
+}
+TABLE.checkboxList {
+	MARGIN: 20px 0px
+}
+.checkboxListWindow {
+	BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; OVERFLOW-Y: scroll; MARGIN-TOP: 2px; WIDTH: 170px; HEIGHT: 114px; BORDER-TOP: #999999 1px solid; BORDER-RIGHT: #999999 1px solid
+}
+.checkboxListWindow INPUT {
+	MARGIN-LEFT: 2px
+}
+.buttonsRight INPUT {
+	MARGIN-LEFT: 20px
+}
+INPUT.short {
+	WIDTH: 60px
+}
+INPUT.medium {
+	WIDTH: 100px
+}
+INPUT.long {
+	WIDTH: 140px
+}
+TEXTAREA.index_calendar_month_setting {
+	WIDTH: 450px; HEIGHT: 90px; FONT-SIZE: 12px
+}
+SELECT.short {
+	WIDTH: 64px
+}
+SELECT.medium {
+	WIDTH: 104px
+}
+SELECT.long {
+	WIDTH: 144px
+}
+.PopupDataList {
+	OVERFLOW-Y: scroll; HEIGHT: 265px
+}
+.PetitionTextBox {
+	WIDTH: 365px
+}
+.PetitionSearch {
+	WIDTH: 150px
+}
+.AddFile {
+	WIDTH: 180px
+}
+TEXTAREA.index_student_homework_more_view_comment {
+	OVERFLOW-Y: scroll; WIDTH: 550px; HEIGHT: 250px
+}
+.buttonsRight {
+	TEXT-ALIGN: right; MARGIN: 10px; WIDTH: auto; CLEAR: both
+}
+TEXTAREA.index_message_addto_calendar {
+	WIDTH: 400px; HEIGHT: 90px
+}
+SELECT.short {
+	WIDTH: 64px
+}
+SELECT.medium {
+	WIDTH: 104px
+}
+SELECT.long {
+	WIDTH: 144px
+}
+SELECT.verylong {
+	WIDTH: 184px
+}
+TABLE.index_teacher_mydocu_trash_recover {
+	MARGIN: 20px 0px; WIDTH: auto
+}
+TABLE.index_teacher_mydocu_trash_recover IMG {
+	MARGIN: 0px 30px; DISPLAY: block
+}
+TEXTAREA.index_student_homework_more_view_comment {
+	OVERFLOW-Y: scroll; WIDTH: 550px; HEIGHT: 250px
+}
+TABLE.index_teacher_forum_1_search {
+	MARGIN: 20px auto 20px 30px
+}
+.buttonsRight .index_teacher_forum_1_operation {
+	WIDTH: auto; FLOAT: left
+}
+.buttonsRight .index_teacher_forum_1_operation P {
+	LINE-HEIGHT: 24px; MARGIN: 0px
+}
+.index_message_reply_list_ListTitle {
+	padding: 3px 0px;
+	border-bottom: 1px solid #333;
+	BACKGROUND-COLOR: #fff; 	MARGIN-TOP: 10px; 	HEIGHT: 14px; 	CLEAR: both; 	BORDER-TOP: #333 1px solid;
+}
+.index_message_reply_list {
+	FLOAT: left; HEIGHT: 12px; MARGIN-LEFT: 5px
+}
+.col1 {
+	WIDTH: 20px
+}
+.col2 {
+	WIDTH: 70px
+}
+.col3 {
+	WIDTH: 50px
+}
+.col4 {
+	WIDTH: 140px
+}
+.col5 {
+	WIDTH: 110px
+}
+.col6 {
+	WIDTH: 70px
+}
+.col7 {
+	WIDTH: 24px
+}
+.index_message_reply_list_OuterList {
+	OVERFLOW-Y: scroll; HEIGHT: 200px
+}
+.index_message_reply_list_InnerList {
+	BORDER-BOTTOM: #333 1px dashed; PADDING-BOTTOM: 5px; PADDING-LEFT: 0px; WIDTH: auto; PADDING-RIGHT: 0px; HEIGHT: 14px; CLEAR: both; PADDING-TOP: 5px
+}
+.index_message_reply_list_Delete {
+	MARGIN-TOP: 10px
+}
+.index_student_homework_more_view_order {
+	FLOAT: left; HEIGHT: 12px; MARGIN-LEFT: 6px
+}
+.index_student_homework_more_view_order_col1 {
+	TEXT-ALIGN: center; WIDTH: 30px
+}
+.index_student_homework_more_view_order_col2 {
+	WIDTH: 70px
+}
+.index_student_homework_more_view_order_col3 {
+	WIDTH: 60px
+}
+.index_student_homework_more_view_order_col4 {
+	WIDTH: 130px
+}
+.index_student_homework_more_view_order_col5 {
+	WIDTH: 150px
+}
+.index_student_homework_more_view_order_col6 {
+	TEXT-ALIGN: center; WIDTH: 30px
+}
+.index_teacher_faq_1_search_Line {
+	MARGIN-BOTTOM: 10px; HEIGHT: 20px; CLEAR: both
+}
+.index_teacher_faq_1_search_Line .col {
+	MARGIN-LEFT: 10px
+}
+.index_teacher_faq_1_search_Line .col1 {
+	TEXT-ALIGN: right; MARGIN-TOP: 4px; WIDTH: 50px; FLOAT: left
+}
+.index_teacher_faq_1_search_Line .col2 {
+	WIDTH: 200px; FLOAT: left
+}
+.index_teacher_faq_1_search_Line .col3 {
+	WIDTH: 200px; FLOAT: left
+}
+.index_teacher_faq_1_search_Line .col0 {
+	WIDTH: 100px; FLOAT: left
+}
+INPUT.index_teacher_faq_more_collection {
+	WIDTH: 450px
+}
+.scrollTxt {
+	BORDER-BOTTOM: #969696 1px solid; BORDER-LEFT: #969696 1px solid; PADDING-BOTTOM: 10px; OVERFLOW-Y: scroll; BACKGROUND-COLOR: white; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; HEIGHT: 230px; BORDER-TOP: #969696 1px solid; BORDER-RIGHT: #969696 1px solid; PADDING-TOP: 10px
+}
+.txtBox {
+	BORDER-BOTTOM: #969696 1px solid; BORDER-LEFT: #969696 1px solid; LINE-HEIGHT: 20px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BORDER-TOP: #969696 1px solid; BORDER-RIGHT: #969696 1px solid
+}
+.scrollDiv {
+	OVERFLOW-Y: scroll; HEIGHT: 99%
+}
+.DivTabContentSmall1 {
+	BORDER-BOTTOM: #7797b8 1px solid; FILTER: progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=85); BORDER-LEFT: #7797b8 0px solid; PADDING-BOTTOM: 10px; LINE-HEIGHT: 24px; PADDING-LEFT: 10px; WIDTH: 600px; PADDING-RIGHT: 10px; BACKGROUND: #dbe3e8; COLOR: #3c465a; VERTICAL-ALIGN: middle; BORDER-TOP: #7797b8 1px solid; TOP: 5px; BORDER-RIGHT: #7797b8 1px solid; PADDING-TOP: 10px; LEFT: 5px
+}
+.PopupUl {
+	PADDING-BOTTOM: 10px; BACKGROUND-COLOR: white; MARGIN: 0px 0px 0px 15px; PADDING-LEFT: 10px; WIDTH: 550px; PADDING-RIGHT: 10px; HEIGHT: 200px; PADDING-TOP: 10px
+}
+
+
+
+INPUT {
+	FONT-SIZE: 14px
+}
+.ContentDiv {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #3c465a; MARGIN-LEFT: auto; MARGIN-RIGHT: auto; PADDING-TOP: 0px
+}
+.Margin0 {
+	MARGIN: 0px
+}
+.Padding0 {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.OverDiv {
+	OVERFLOW-X: hidden; OVERFLOW: auto
+}
+.UlTextInput {
+	WIDTH: auto; COLOR: #3c465a
+}
+.UlTextInput LI {
+	TEXT-ALIGN: left; FLOAT: left
+}
+.divTextInput {
+	LINE-HEIGHT: 18px; COLOR: #3c465a
+}
+.SSinput {
+	BORDER-BOTTOM: #535353 1px solid; BORDER-LEFT: #535353 1px solid; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 1px; PADDING-RIGHT: 0px; FONT-FAMILY: Verdana; BACKGROUND: url(../img/inputbg.gif) repeat-x; HEIGHT: 16px; FONT-SIZE: 14px; BORDER-TOP: #535353 1px solid; BORDER-RIGHT: #535353 1px solid; PADDING-TOP: 1px
+}
+.SFinput {
+	BORDER-BOTTOM: #535353 1px solid; BORDER-LEFT: #535353 1px solid; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 1px; PADDING-RIGHT: 0px; FONT-FAMILY: Verdana; BACKGROUND: url(../img/inputbg.gif) repeat-x; HEIGHT: 18px; FONT-SIZE: 14px; BORDER-TOP: #535353 1px solid; BORDER-RIGHT: #535353 1px solid; PADDING-TOP: 1px
+}
+.SMinput {
+	BORDER-BOTTOM: #969696 1px solid; BORDER-LEFT: #969696 1px solid; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: Verdana; FONT-SIZE: 14px; BORDER-TOP: #969696 1px solid; BORDER-RIGHT: #969696 1px solid; PADDING-TOP: 0px
+}
+.SSselect {
+	BORDER-BOTTOM: #535353 1px solid; BORDER-LEFT: #535353 1px solid; BACKGROUND: #fafafa; HEIGHT: 20px; FONT-SIZE: 14px; BORDER-TOP: #535353 1px solid; BORDER-RIGHT: #535353 1px solid
+}
+.TitButton_On {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 100px; BACKGROUND: url(../img/TitleListBG_0.gif) #fff no-repeat; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 19px; COLOR: #3c465a; VERTICAL-ALIGN: super; BORDER-LEFT-WIDTH: 0px
+}
+.TitButton_Off {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 100px; BACKGROUND: url(../img/TitleListBG_1.gif) #ccd9e0 no-repeat; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 19px; COLOR: #3c465a; VERTICAL-ALIGN: super; BORDER-LEFT-WIDTH: 0px
+}
+.imgborder {
+	BORDER-BOTTOM: #969696 1px solid; BORDER-LEFT: #969696 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BORDER-TOP: #969696 1px solid; BORDER-RIGHT: #969696 1px solid; PADDING-TOP: 2px
+}
+.ImgMiddle A {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 6px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; DISPLAY: block; VERTICAL-ALIGN: middle; PADDING-TOP: 6px
+}
+.ImgMiddle LI {
+	TEXT-ALIGN: center
+}
+.fontv {
+	FONT-FAMILY: Verdana
+}
+.fontT {
+	FONT-FAMILY: Tahoma
+}
+.fontRp {
+	LINE-HEIGHT: 40px
+}
+.fontSize {
+	FONT-SIZE: 14px
+}
+.gridview_tl {
+	MARGIN: 0px; WIDTH: 100%; BORDER-COLLAPSE: separate !important
+}
+.gridview_th TH {
+	BORDER-BOTTOM: #3c465a 1px solid; LINE-HEIGHT: 22px; BACKGROUND: #ecefef; HEIGHT: 22px; COLOR: #3c465a; FONT-SIZE: 13px; BORDER-TOP: #3c465a 1px solid; FONT-WEIGHT: normal
+}
+.gridview_thul {
+	BORDER-BOTTOM: #3c465a 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 22px; MARGIN: 25px auto 0px; PADDING-LEFT: 0px; WIDTH: 550px; PADDING-RIGHT: 0px; BACKGROUND: #ecefef; HEIGHT: 22px; FONT-SIZE: 13px; BORDER-TOP: #3c465a 1px solid; FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+.gridview_thul LI {
+	TEXT-ALIGN: left; FLOAT: left; COLOR: #3c465a; OVERFLOW: hidden
+}
+.gridview_tl TD {
+	BORDER-BOTTOM: #d2d2d2 1px dashed; LINE-HEIGHT: 24px; EMPTY-CELLS: show; HEIGHT: 24px; COLOR: #3c465a; OVERFLOW: hidden
+}
+.gridview_tl TD IMG {
+	VERTICAL-ALIGN: middle
+}
+.gridview_tls {
+	WIDTH: 100%; BORDER-COLLAPSE: separate !important; MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+.gridview_tls TD {
+	BORDER-BOTTOM: #3c465a 1px dashed; LINE-HEIGHT: 25px; EMPTY-CELLS: show !important; HEIGHT: 25px; COLOR: #3c465a
+}
+.gridview_tlc {
+	BORDER-BOTTOM: #c1d1da 1px solid; MARGIN: 0px; WIDTH: 100% !important; BORDER-COLLAPSE: separate !important
+}
+.gridview_tlc TD {
+	LINE-HEIGHT: 18px; EMPTY-CELLS: show; COLOR: #3c465a; VERTICAL-ALIGN: top
+}
+.gridview_tlc TD IMG {
+	VERTICAL-ALIGN: middle
+}
+.gridview_tlctd1 {
+	BORDER-BOTTOM: #c1d1da 0px solid; BORDER-LEFT: #c1d1da 1px solid; BACKGROUND: #d9e7ef; BORDER-TOP: #c1d1da 1px solid; BORDER-RIGHT: #c1d1da 1px solid
+}
+.gridview_tlctd2 {
+	BORDER-BOTTOM: #e6e6e6 0px solid; BORDER-LEFT: #e6e6e6 1px solid; BACKGROUND: #f5f5f5; BORDER-TOP: #e6e6e6 1px solid; BORDER-RIGHT: #e6e6e6 1px solid
+}
+.PctbgDiv {
+	BACKGROUND: url(../img/Bar.gif) repeat-x center 50%; HEIGHT: 20px; FONT-SIZE: 1px
+}
+.border {
+	BORDER-BOTTOM: #3c465a 1px solid; BORDER-LEFT: #3c465a 1px solid; BORDER-TOP: #3c465a 1px solid; BORDER-RIGHT: #3c465a 1px solid
+}
+.ClearLeft {
+	CLEAR: left
+}
+.ClearBoth {
+	CLEAR: both
+}
+.HorizDiv {
+	DISPLAY: none
+}
+.Width45 {
+	WIDTH: 45px
+}
+.Width47 {
+	WIDTH: 47px
+}
+.Width35 {
+	WIDTH: 35px
+}
+.Width130 {
+	WIDTH: 130px
+}
+.Width250 {
+	WIDTH: 250px
+}
+.Width700 {
+	WIDTH: 700px
+}
+.Height18 {
+	HEIGHT: 18px
+}
+.Height19 {
+	HEIGHT: 19px
+}
+.Height22 {
+	LINE-HEIGHT: 22px; HEIGHT: 22px
+}
+.Height23 {
+	HEIGHT: 23px
+}
+.Height40 {
+	HEIGHT: 40px
+}
+.Height110 {
+	HEIGHT: 110px
+}
+.Height208 {
+	HEIGHT: 208px
+}
+.Height630 {
+	HEIGHT: 630px
+}
+.PT9 {
+	PADDING-TOP: 9px
+}
+.MarginLeft {
+	MARGIN-LEFT: auto
+}
+.ML8 {
+	MARGIN-LEFT: 8px
+}
+.ML10 {
+	MARGIN-LEFT: 10px
+}
+.ML20 {
+	MARGIN-LEFT: 20px
+}
+.MarginRight {
+	MARGIN-RIGHT: auto
+}
+.MR0 {
+	MARGIN-RIGHT: 0px
+}
+.MB3 {
+	MARGIN-BOTTOM: 3px
+}
+.MB5 {
+	MARGIN-BOTTOM: 5px
+}
+.MB13 {
+	MARGIN-BOTTOM: 13px
+}
+.MB15 {
+	MARGIN-BOTTOM: 15px
+}
+.MB50 {
+	MARGIN-BOTTOM: 50px
+}
+.dgBottom {
+	VERTICAL-ALIGN: bottom
+}
+.dgMiddle IMG {
+	VERTICAL-ALIGN: middle
+}
+.OverText3 {
+	TEXT-OVERFLOW: ellipsis !important; WHITE-SPACE: nowrap !important; OVERFLOW: hidden !important
+}
+.tableFixed {
+	TABLE-LAYOUT: fixed !important
+}
+.div_LevelList {
+	BORDER-BOTTOM: #c0c0c0 1px solid; BORDER-LEFT: #c0c0c0 1px solid; BACKGROUND: #fff; HEIGHT: 74px; OVERFLOW: auto; BORDER-TOP: #c0c0c0 1px solid; BORDER-RIGHT: #c0c0c0 1px solid
+}
+.OverText {
+	TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden
+}
+.wordbreak {
+	WORD-BREAK: break-all
+}
+.TXTOverEllipsis {
+	TEXT-OVERFLOW: ellipsis; DISPLAY: block; WHITE-SPACE: nowrap; OVERFLOW: hidden; WORD-BREAK: keep-all
+}
+
+.btn btn-outline-info btn-sm, .TopicButton
+{
+	border: 1px solid #919699;
+	background: url(/img/buttonbg.gif) repeat-x left bottom;
+	text-align: center;
+	text-decoration: none;
+	padding: 2px 3px;
+	cursor: pointer;
+	line-height: 22px;
+	margin-right: 2px;
+}
+
+/************************** wfmcc_CourseResourceT.aspx 部分css ********************************/
+.titleBold12px {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 1.5;
+	font-weight: bold;
+}

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="PrjUserRelation_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjUserRelation_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjUserRelation_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_GetPrjUserRelation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjUserRelation" type="tns:clsPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsPrjUserRelationEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PrjUserRelation_GetPrjUserRelationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjUserRelation_GetPrjUserRelationResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjUserRelation" type="tns:clsPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_GetPrjUserRelationV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjUserRelation" type="tns:clsPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_GetPrjUserRelationVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjUserRelation_GetPrjUserRelationVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjUserRelation" type="tns:clsPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjUserRelation_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjUserRelation_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjUserRelation" type="tns:clsPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjUserRelation_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjUserRelation" type="tns:clsPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjUserRelation_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjUserRelation_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_DelPrjUserRelations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrStdId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjUserRelation_DelPrjUserRelationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjUserRelation_DelPrjUserRelationsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjUserRelation" type="tns:clsPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PrjUserRelation_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_GetPrjUserRelationSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_GetPrjUserRelation" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_GetPrjUserRelationSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_GetPrjUserRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_GetPrjUserRelationVSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_GetPrjUserRelationV" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_GetPrjUserRelationVSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_GetPrjUserRelationVResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_DelPrjUserRelationsSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_DelPrjUserRelations" />
+  </wsdl:message>
+  <wsdl:message name="PrjUserRelation_DelPrjUserRelationsSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjUserRelation_DelPrjUserRelationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PrjUserRelationServiceSoap">
+    <wsdl:operation name="PrjUserRelation_GetDataSet">
+      <wsdl:input message="tns:PrjUserRelation_GetDataSetSoapIn" />
+      <wsdl:output message="tns:PrjUserRelation_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_GetDataSetV">
+      <wsdl:input message="tns:PrjUserRelation_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:PrjUserRelation_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_GetPrjUserRelation">
+      <wsdl:input message="tns:PrjUserRelation_GetPrjUserRelationSoapIn" />
+      <wsdl:output message="tns:PrjUserRelation_GetPrjUserRelationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_GetPrjUserRelationV">
+      <wsdl:input message="tns:PrjUserRelation_GetPrjUserRelationVSoapIn" />
+      <wsdl:output message="tns:PrjUserRelation_GetPrjUserRelationVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_IsExistRecordByCond">
+      <wsdl:input message="tns:PrjUserRelation_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:PrjUserRelation_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_IsExist">
+      <wsdl:input message="tns:PrjUserRelation_IsExistSoapIn" />
+      <wsdl:output message="tns:PrjUserRelation_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_AddNewRecordBySql2">
+      <wsdl:input message="tns:PrjUserRelation_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:PrjUserRelation_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_UpdateBySql2">
+      <wsdl:input message="tns:PrjUserRelation_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:PrjUserRelation_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_DelRecord">
+      <wsdl:input message="tns:PrjUserRelation_DelRecordSoapIn" />
+      <wsdl:output message="tns:PrjUserRelation_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_DelPrjUserRelations">
+      <wsdl:input message="tns:PrjUserRelation_DelPrjUserRelationsSoapIn" />
+      <wsdl:output message="tns:PrjUserRelation_DelPrjUserRelationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PrjUserRelationServiceSoap" type="tns:PrjUserRelationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrjUserRelation_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/PrjUserRelation_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/PrjUserRelation_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_GetPrjUserRelation">
+      <soap:operation soapAction="http://tempuri.org/PrjUserRelation_GetPrjUserRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_GetPrjUserRelationV">
+      <soap:operation soapAction="http://tempuri.org/PrjUserRelation_GetPrjUserRelationV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/PrjUserRelation_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_IsExist">
+      <soap:operation soapAction="http://tempuri.org/PrjUserRelation_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/PrjUserRelation_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/PrjUserRelation_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/PrjUserRelation_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_DelPrjUserRelations">
+      <soap:operation soapAction="http://tempuri.org/PrjUserRelation_DelPrjUserRelations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PrjUserRelationServiceSoap12" type="tns:PrjUserRelationServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrjUserRelation_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/PrjUserRelation_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/PrjUserRelation_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_GetPrjUserRelation">
+      <soap12:operation soapAction="http://tempuri.org/PrjUserRelation_GetPrjUserRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_GetPrjUserRelationV">
+      <soap12:operation soapAction="http://tempuri.org/PrjUserRelation_GetPrjUserRelationV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/PrjUserRelation_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/PrjUserRelation_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/PrjUserRelation_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/PrjUserRelation_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/PrjUserRelation_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjUserRelation_DelPrjUserRelations">
+      <soap12:operation soapAction="http://tempuri.org/PrjUserRelation_DelPrjUserRelations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PrjUserRelationService">
+    <wsdl:port name="PrjUserRelationServiceSoap" binding="tns:PrjUserRelationServiceSoap">
+      <soap:address location="http://localhost:9259/PrjUserRelationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PrjUserRelationServiceSoap12" binding="tns:PrjUserRelationServiceSoap12">
+      <soap12:address location="http://localhost:9259/PrjUserRelationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

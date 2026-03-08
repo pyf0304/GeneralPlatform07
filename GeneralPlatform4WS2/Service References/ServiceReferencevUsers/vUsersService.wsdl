@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="vUsers_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vUsers_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vUsers_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vUsers_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vUsers_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vUsers_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vUsers_GetvUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvUsers" type="tns:clsvUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsvUsersEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserStateId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserStateName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentAbbrName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IdentityDesc" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IdentityID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SubjectTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpDepartmentId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpDepartmentName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="BeginYearMonth" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EndYearMonth" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GradeBaseID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GradeBaseName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="id_GradeBase" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsOffed" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="CardNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StuIdTeacherId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Card_State" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EnterSchoolDate" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="vUsers_GetvUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vUsers_GetvUsersResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvUsers" type="tns:clsvUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vUsers_GetvUsersV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvUsers" type="tns:clsvUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vUsers_GetvUsersVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vUsers_GetvUsersVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvUsers" type="tns:clsvUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vUsers_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vUsers_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vUsers_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vUsers_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vUsers_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vUsers_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvUsers" type="tns:clsvUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsvUsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="vUsers_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vUsers_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vUsers_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vUsers_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vUsers_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:vUsers_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="vUsers_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:vUsers_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="vUsers_GetvUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:vUsers_GetvUsers" />
+  </wsdl:message>
+  <wsdl:message name="vUsers_GetvUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:vUsers_GetvUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="vUsers_GetvUsersVSoapIn">
+    <wsdl:part name="parameters" element="tns:vUsers_GetvUsersV" />
+  </wsdl:message>
+  <wsdl:message name="vUsers_GetvUsersVSoapOut">
+    <wsdl:part name="parameters" element="tns:vUsers_GetvUsersVResponse" />
+  </wsdl:message>
+  <wsdl:message name="vUsers_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:vUsers_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="vUsers_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:vUsers_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="vUsers_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:vUsers_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="vUsers_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:vUsers_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="vUsersServiceSoap">
+    <wsdl:operation name="vUsers_GetDataSet">
+      <wsdl:input message="tns:vUsers_GetDataSetSoapIn" />
+      <wsdl:output message="tns:vUsers_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_GetDataSetV">
+      <wsdl:input message="tns:vUsers_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:vUsers_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_GetvUsers">
+      <wsdl:input message="tns:vUsers_GetvUsersSoapIn" />
+      <wsdl:output message="tns:vUsers_GetvUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_GetvUsersV">
+      <wsdl:input message="tns:vUsers_GetvUsersVSoapIn" />
+      <wsdl:output message="tns:vUsers_GetvUsersVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_IsExistRecordByCond">
+      <wsdl:input message="tns:vUsers_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:vUsers_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_IsExist">
+      <wsdl:input message="tns:vUsers_IsExistSoapIn" />
+      <wsdl:output message="tns:vUsers_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="vUsersServiceSoap" type="tns:vUsersServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vUsers_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/vUsers_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/vUsers_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_GetvUsers">
+      <soap:operation soapAction="http://tempuri.org/vUsers_GetvUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_GetvUsersV">
+      <soap:operation soapAction="http://tempuri.org/vUsers_GetvUsersV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/vUsers_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_IsExist">
+      <soap:operation soapAction="http://tempuri.org/vUsers_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vUsersServiceSoap12" type="tns:vUsersServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vUsers_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vUsers_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/vUsers_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_GetvUsers">
+      <soap12:operation soapAction="http://tempuri.org/vUsers_GetvUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_GetvUsersV">
+      <soap12:operation soapAction="http://tempuri.org/vUsers_GetvUsersV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/vUsers_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vUsers_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/vUsers_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="vUsersService">
+    <wsdl:port name="vUsersServiceSoap" binding="tns:vUsersServiceSoap">
+      <soap:address location="http://localhost:9259/vUsersService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vUsersServiceSoap12" binding="tns:vUsersServiceSoap12">
+      <soap12:address location="http://localhost:9259/vUsersService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

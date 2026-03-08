@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="vQxPrjSite4DownLoad_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjSite4DownLoad_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetTopDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetTopDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjSite4DownLoad_GetTopDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetDataSetByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetDataSetByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjSite4DownLoad_GetDataSetByRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjSite4DownLoadEN" type="tns:clsvQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsvQxPrjSite4DownLoadEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PrjSiteId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjSiteName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="QxPrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FtpServer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FtpUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FtpUserPassword" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sf_UpdFldSetStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checked" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjSite4DownLoadEN" type="tns:clsvQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetObjByPrjSiteId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjSiteId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetObjByPrjSiteIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjSite4DownLoad_GetObjByPrjSiteIdResult" type="tns:clsvQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjSite4DownLoadEN" type="tns:clsvQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjSite4DownLoadEN" type="tns:clsvQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjSite4DownLoad_GetObjLstResult" type="tns:ArrayOfClsvQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsvQxPrjSite4DownLoadEN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsvQxPrjSite4DownLoadEN" nillable="true" type="tns:clsvQxPrjSite4DownLoadEN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjLstByRangeResult" type="tns:ArrayOfClsvQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetTopObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetTopObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjSite4DownLoad_GetTopObjLstResult" type="tns:ArrayOfClsvQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetFirstID_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetFirstID_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjSite4DownLoad_GetFirstID_SResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetFirstObj_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_GetFirstObj_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjSite4DownLoad_GetFirstObj_SResult" type="tns:clsvQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByPrjSiteId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjSiteId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByPrjSiteIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjByPrjSiteIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstJSONObjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intPageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByPagerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_funGetRecCountByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_funGetRecCountByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjSite4DownLoad_funGetRecCountByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjSite4DownLoad_IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjSiteId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjSite4DownLoad_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjSite4DownLoadEN" type="tns:clsvQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsvQxPrjSite4DownLoadEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjSiteId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjSite4DownLoad_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_SerializeObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_SerializeObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjSite4DownLoad_SerializeObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetTopDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetTopDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetTopDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetTopDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetDataSetByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetDataSetByRange" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetDataSetByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetDataSetByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoad" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetObjByPrjSiteIdSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetObjByPrjSiteId" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetObjByPrjSiteIdSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetObjByPrjSiteIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadVSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadV" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadVSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadVResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetObjLst" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetTopObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetTopObjLst" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetTopObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetTopObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetFirstID_SSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetFirstID_S" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetFirstID_SSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetFirstID_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetFirstObj_SSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetFirstObj_S" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_GetFirstObj_SSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_GetFirstObj_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByPrjSiteIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByPrjSiteId" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByPrjSiteIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByPrjSiteIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObj" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPager" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_funGetRecCountByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_funGetRecCountByCond" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_funGetRecCountByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_funGetRecCountByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_SerializeObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_SerializeObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_SerializeObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_SerializeObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="vQxPrjSite4DownLoadServiceSoap">
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetDataSet">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_GetDataSetSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetTopDataSet">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_GetTopDataSetSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_GetTopDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetDataSetByRange">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_GetDataSetByRangeSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_GetDataSetByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoad">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetObjByPrjSiteId">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_GetObjByPrjSiteIdSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_GetObjByPrjSiteIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadV">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadVSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetObjLst">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_GetObjLstSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_GetObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <wsdl:input message="tns:GetObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetTopObjLst">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_GetTopObjLstSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_GetTopObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetFirstID_S">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_GetFirstID_SSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_GetFirstID_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetFirstObj_S">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_GetFirstObj_SSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_GetFirstObj_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByPrjSiteId">
+      <wsdl:input message="tns:GetJSONObjByPrjSiteIdSoapIn" />
+      <wsdl:output message="tns:GetJSONObjByPrjSiteIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <wsdl:input message="tns:GetFirstJSONObjSoapIn" />
+      <wsdl:output message="tns:GetFirstJSONObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <wsdl:input message="tns:GetJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <wsdl:input message="tns:GetTopJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetTopJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <wsdl:input message="tns:GetJSONObjLstByPagerSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByPagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <wsdl:input message="tns:GetJSONObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_funGetRecCountByCond">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_funGetRecCountByCondSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_funGetRecCountByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_IsExistRecord">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_IsExistRecordSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_IsExistRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_IsExist">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_IsExistSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_SerializeObjToXMLStr">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_SerializeObjLstToXMLStr">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_SerializeObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_SerializeObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStr">
+      <wsdl:input message="tns:vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="vQxPrjSite4DownLoadServiceSoap" type="tns:vQxPrjSite4DownLoadServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetTopDataSet">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetDataSetByRange">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoad">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetObjByPrjSiteId">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetObjByPrjSiteId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadV">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetObjLst">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetTopObjLst">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetFirstID_S">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetFirstObj_S">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByPrjSiteId">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjByPrjSiteId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_funGetRecCountByCond">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_IsExist">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_SerializeObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vQxPrjSite4DownLoadServiceSoap12" type="tns:vQxPrjSite4DownLoadServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetTopDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetDataSetByRange">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoad">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetObjByPrjSiteId">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetObjByPrjSiteId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadV">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetvQxPrjSite4DownLoadV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetObjLst">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetTopObjLst">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetFirstID_S">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_GetFirstObj_S">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByPrjSiteId">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjByPrjSiteId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_funGetRecCountByCond">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_SerializeObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjSite4DownLoad_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="vQxPrjSite4DownLoadService">
+    <wsdl:port name="vQxPrjSite4DownLoadServiceSoap" binding="tns:vQxPrjSite4DownLoadServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/PrjFileDownLoad/vQxPrjSite4DownLoadService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vQxPrjSite4DownLoadServiceSoap12" binding="tns:vQxPrjSite4DownLoadServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/PrjFileDownLoad/vQxPrjSite4DownLoadService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

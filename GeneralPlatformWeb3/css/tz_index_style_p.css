@@ -1,0 +1,19 @@
+﻿body {
+}
+.top_menu_left_logo_p
+{
+	/*background: url(images/logo.png) bottom;*/
+	width: 250px;
+	height: 66px;
+	margin-top: 20px;
+}
+
+.bottom_logo_p
+{
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	top: 13px;
+	left: 360px;
+	/*background: url(images/bottom_logo.png);*/
+}

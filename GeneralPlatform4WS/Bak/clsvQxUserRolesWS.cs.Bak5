@@ -1,0 +1,388 @@
+﻿
+//类名:clsvQxUserRolesWS
+ ///----------------------
+ ///生成代码版本:2017.02.05.1
+ ///生成日期:2017/02/05
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:用户管理
+ ///模块英文名:UserManage
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferencevQxUserRoles;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// v角色(vQxUserRoles)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsvQxUserRolesWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsvQxUserRolesEN> arrvQxUserRolesObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static vQxUserRolesServiceSoapClient objvQxUserRolesServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static vQxUserRolesServiceSoapClient GetvQxUserRolesServiceSoapClient()
+{
+if (objvQxUserRolesServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "vQxUserRolesServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/vQxUserRolesService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/vQxUserRolesService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new vQxUserRolesServiceSoapClient(binding, address);
+}
+else
+{
+return objvQxUserRolesServiceSoapClient;
+}
+}
+
+ public clsvQxUserRolesWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_BindListView)
+ /// </summary>
+public static int BindLv_vQxUserRoles(System.Windows.Forms.ListView lvvQxUserRoles, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lvivQxUserRoles; 
+List<clsvQxUserRolesEN> arrvQxUserRolesObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrvQxUserRolesObjList = GetvQxUserRolesObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvvQxUserRoles.Items.Clear();//清除原来所有Item
+lvvQxUserRoles.Columns.Clear();//清除原来所有列头信息
+lvvQxUserRoles.Columns.Add("角色Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUserRoles.Columns.Add("角色名称", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUserRoles.Columns.Add("项目Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUserRoles.Columns.Add("工程名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUserRoles.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUserRoles.Columns.Add("是否在使用", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvvQxUserRoles.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsvQxUserRolesEN objvQxUserRolesEN in arrvQxUserRolesObjList)
+{
+lvivQxUserRoles = new System.Windows.Forms.ListViewItem();
+lvivQxUserRoles.Tag = objvQxUserRolesEN.RoleId;
+lvivQxUserRoles.Text = objvQxUserRolesEN.RoleId.ToString();
+lvivQxUserRoles.SubItems.Add(objvQxUserRolesEN.RoleName);
+lvivQxUserRoles.SubItems.Add(objvQxUserRolesEN.QxPrjId);
+lvivQxUserRoles.SubItems.Add(objvQxUserRolesEN.PrjName);
+lvivQxUserRoles.SubItems.Add(objvQxUserRolesEN.Memo);
+lvivQxUserRoles.SubItems.Add(objvQxUserRolesEN.IsInUse.ToString());
+lvvQxUserRoles.Items.Add(lvivQxUserRoles);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrvQxUserRolesObjList.Count;
+}
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_vQxUserRolesWs(string strWhereCond)
+{
+vQxUserRolesServiceSoapClient objvQxUserRolesService = GetvQxUserRolesServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objvQxUserRolesService.vQxUserRoles_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxUserRoles_GetDataSet", "clsvQxUserRolesWS:GetDataTable_vQxUserRolesWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_vQxUserRolesByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+vQxUserRolesServiceSoapClient objvQxUserRolesService = GetvQxUserRolesServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objvQxUserRolesService.vQxUserRoles_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxUserRoles_GetDataSetByRange", "clsvQxUserRolesWS:GetDataTable_vQxUserRolesByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objvQxUserRolesEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetvQxUserRolesWs(ref clsvQxUserRolesEN objvQxUserRolesEN)
+{
+vQxUserRolesServiceSoapClient objvQxUserRolesService = GetvQxUserRolesServiceSoapClient();
+bool bolResult = objvQxUserRolesService.vQxUserRoles_GetvQxUserRoles(ref objvQxUserRolesEN);
+return bolResult;
+}
+
+public static clsvQxUserRolesEN GetvQxUserRolesByRoleIdWs(string strRoleId)
+{
+vQxUserRolesServiceSoapClient objvQxUserRolesService = GetvQxUserRolesServiceSoapClient();
+clsvQxUserRolesEN objvQxUserRolesEN = objvQxUserRolesService.vQxUserRoles_GetvQxUserRolesByRoleId(strRoleId);
+return objvQxUserRolesEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static string GetFirstID_S(string strWhereCond)
+{
+vQxUserRolesServiceSoapClient objvQxUserRolesService = GetvQxUserRolesServiceSoapClient();
+try
+{
+string strRoleId = objvQxUserRolesService.vQxUserRoles_GetFirstID_S(strWhereCond);
+return strRoleId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxUserRoles_GetFirstID_S", "clsvQxUserRolesWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsvQxUserRolesEN GetFirstvQxUserRoles_S(string strWhereCond)
+{
+vQxUserRolesServiceSoapClient objvQxUserRolesService = GetvQxUserRolesServiceSoapClient();
+try
+{
+clsvQxUserRolesEN objvQxUserRolesEN = objvQxUserRolesService.vQxUserRoles_GetFirstvQxUserRoles_S(strWhereCond);
+return objvQxUserRolesEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "vQxUserRoles_GetFirstvQxUserRoles_S", "clsvQxUserRolesWS:GetFirstvQxUserRoles_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "strRoleId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsvQxUserRolesEN GetvQxUserRolesObjByRoleId_Cache(string strRoleId)
+{
+if (string.IsNullOrEmpty(strRoleId) == true) return null;
+string strWhereCond = string.Format("1 = 1 order by RoleId");
+if (arrvQxUserRolesObjLst_Cache == null)
+{
+arrvQxUserRolesObjLst_Cache = clsvQxUserRolesWS.GetvQxUserRolesObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrvQxUserRolesObjLst_Cache.Count - 1;
+int intMid = 0;
+clsvQxUserRolesEN objvQxUserRolesEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objvQxUserRolesEN = arrvQxUserRolesObjLst_Cache[intMid];
+if (objvQxUserRolesEN.RoleId == strRoleId)
+{
+intFindFailCount = 0;
+return objvQxUserRolesEN;
+}
+else if (objvQxUserRolesEN.RoleId.CompareTo(strRoleId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrvQxUserRolesObjLst_Cache = null;
+if (intFindFailCount == 1) return GetvQxUserRolesObjByRoleId_Cache(strRoleId);
+string strErrMsgForGetObjById = string.Format("在vQxUserRoles对象缓存列表中,找不到记录[RoleId = {0}][intFindFailCount = {1}](函数:GetvQxUserRolesObjByRoleId_Cache)", strRoleId, intFindFailCount);
+if (objvQxUserRolesEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objvQxUserRolesEN.RoleId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsvQxUserRolesBL", "GetvQxUserRolesObjByRoleId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsvQxUserRolesEN> GetvQxUserRolesObjList(string strWhereCond)
+{
+ List<clsvQxUserRolesEN> arrObjList = new List<clsvQxUserRolesEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_vQxUserRolesWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsvQxUserRolesEN objvQxUserRolesEN = new clsvQxUserRolesEN();
+objvQxUserRolesEN.RoleId = objRow["RoleId"].ToString().Trim(); //角色Id
+objvQxUserRolesEN.RoleName = objRow["RoleName"].ToString().Trim(); //角色名称
+objvQxUserRolesEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objvQxUserRolesEN.PrjName = objRow["PrjName"].ToString().Trim(); //工程名
+objvQxUserRolesEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+objvQxUserRolesEN.IsInUse = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsInUse"].ToString().Trim()); //是否在使用
+	arrObjList.Add(objvQxUserRolesEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsvQxUserRolesEN> GetvQxUserRolesObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsvQxUserRolesEN> arrObjList = new List<clsvQxUserRolesEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_vQxUserRolesByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsvQxUserRolesEN objvQxUserRolesEN = new clsvQxUserRolesEN();
+objvQxUserRolesEN.RoleId = objRow["RoleId"].ToString().Trim(); //角色Id
+objvQxUserRolesEN.RoleName = objRow["RoleName"].ToString().Trim(); //角色名称
+objvQxUserRolesEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objvQxUserRolesEN.PrjName = objRow["PrjName"].ToString().Trim(); //工程名
+objvQxUserRolesEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+objvQxUserRolesEN.IsInUse = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsInUse"].ToString().Trim()); //是否在使用
+	arrObjList.Add(objvQxUserRolesEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+vQxUserRolesServiceSoapClient objvQxUserRolesService = GetvQxUserRolesServiceSoapClient();
+bool bolIsExist = objvQxUserRolesService.vQxUserRoles_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(string strRoleId)
+{
+//检测记录是否存在
+vQxUserRolesServiceSoapClient objvQxUserRolesService = GetvQxUserRolesServiceSoapClient();
+bool bolIsExist = objvQxUserRolesService.vQxUserRoles_IsExist(strRoleId);
+return bolIsExist;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/vQxUserRolesService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/vQxUserRolesService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

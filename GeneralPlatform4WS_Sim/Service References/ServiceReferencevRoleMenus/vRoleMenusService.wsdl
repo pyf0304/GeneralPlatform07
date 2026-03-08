@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="vRoleMenus_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRoleMenus_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vRoleMenus_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRoleMenus_GetvQxRoleMenus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvRoleMenus" type="tns:clsvQxRoleMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsvQxRoleMenusEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpMenuId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpMenuName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LinkFile" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="qsParameters" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ImgFile" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrderNum" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsDisp" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsLeafNode" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuSetId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuTitle" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PageDispModeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MenuSetName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PageDispModeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name=clsQxProjectsEN.con_QxPrjId type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="vRoleMenus_GetvQxRoleMenusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vRoleMenus_GetvQxRoleMenusResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvRoleMenus" type="tns:clsvQxRoleMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRoleMenus_GetvQxRoleMenusV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvRoleMenus" type="tns:clsvQxRoleMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRoleMenus_GetvQxRoleMenusVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vRoleMenus_GetvQxRoleMenusVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvRoleMenus" type="tns:clsvQxRoleMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRoleMenus_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRoleMenus_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vRoleMenus_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRoleMenus_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vRoleMenus_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vRoleMenus_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvRoleMenus" type="tns:clsvQxRoleMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsvQxRoleMenusEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="vRoleMenus_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vRoleMenus_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vRoleMenus_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vRoleMenus_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vRoleMenus_GetvQxRoleMenusSoapIn">
+    <wsdl:part name="parameters" element="tns:vRoleMenus_GetvQxRoleMenus" />
+  </wsdl:message>
+  <wsdl:message name="vRoleMenus_GetvQxRoleMenusSoapOut">
+    <wsdl:part name="parameters" element="tns:vRoleMenus_GetvQxRoleMenusResponse" />
+  </wsdl:message>
+  <wsdl:message name="vRoleMenus_GetvQxRoleMenusVSoapIn">
+    <wsdl:part name="parameters" element="tns:vRoleMenus_GetvQxRoleMenusV" />
+  </wsdl:message>
+  <wsdl:message name="vRoleMenus_GetvQxRoleMenusVSoapOut">
+    <wsdl:part name="parameters" element="tns:vRoleMenus_GetvQxRoleMenusVResponse" />
+  </wsdl:message>
+  <wsdl:message name="vRoleMenus_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:vRoleMenus_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="vRoleMenus_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:vRoleMenus_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="vRoleMenus_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:vRoleMenus_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="vRoleMenus_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:vRoleMenus_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="vRoleMenusServiceSoap">
+    <wsdl:operation name="vRoleMenus_GetDataSet">
+      <wsdl:input message="tns:vRoleMenus_GetDataSetSoapIn" />
+      <wsdl:output message="tns:vRoleMenus_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vRoleMenus_GetvQxRoleMenus">
+      <wsdl:input message="tns:vRoleMenus_GetvQxRoleMenusSoapIn" />
+      <wsdl:output message="tns:vRoleMenus_GetvQxRoleMenusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vRoleMenus_GetvQxRoleMenusV">
+      <wsdl:input message="tns:vRoleMenus_GetvQxRoleMenusVSoapIn" />
+      <wsdl:output message="tns:vRoleMenus_GetvQxRoleMenusVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vRoleMenus_IsExistRecordByCond">
+      <wsdl:input message="tns:vRoleMenus_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:vRoleMenus_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vRoleMenus_IsExist">
+      <wsdl:input message="tns:vRoleMenus_IsExistSoapIn" />
+      <wsdl:output message="tns:vRoleMenus_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="vRoleMenusServiceSoap" type="tns:vRoleMenusServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vRoleMenus_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/vRoleMenus_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRoleMenus_GetvQxRoleMenus">
+      <soap:operation soapAction="http://tempuri.org/vRoleMenus_GetvQxRoleMenus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRoleMenus_GetvQxRoleMenusV">
+      <soap:operation soapAction="http://tempuri.org/vRoleMenus_GetvQxRoleMenusV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRoleMenus_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/vRoleMenus_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRoleMenus_IsExist">
+      <soap:operation soapAction="http://tempuri.org/vRoleMenus_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vRoleMenusServiceSoap12" type="tns:vRoleMenusServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vRoleMenus_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vRoleMenus_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRoleMenus_GetvQxRoleMenus">
+      <soap12:operation soapAction="http://tempuri.org/vRoleMenus_GetvQxRoleMenus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRoleMenus_GetvQxRoleMenusV">
+      <soap12:operation soapAction="http://tempuri.org/vRoleMenus_GetvQxRoleMenusV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRoleMenus_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/vRoleMenus_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vRoleMenus_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/vRoleMenus_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="vRoleMenusService">
+    <wsdl:port name="vRoleMenusServiceSoap" binding="tns:vRoleMenusServiceSoap">
+      <soap:address location="http://localhost:9259/vRoleMenusService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vRoleMenusServiceSoap12" binding="tns:vRoleMenusServiceSoap12">
+      <soap12:address location="http://localhost:9259/vRoleMenusService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="funGetRecCountByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTabName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondtion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="funGetRecCountByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="funGetRecCountByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="funGetFldValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFieldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WhereConditionString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="funGetFldValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="funGetFldValueResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="funSetFldValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTabName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="funSetFldValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="funSetFldValueResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="funGetRecCountByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:funGetRecCountByCond" />
+  </wsdl:message>
+  <wsdl:message name="funGetRecCountByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:funGetRecCountByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="funGetFldValueSoapIn">
+    <wsdl:part name="parameters" element="tns:funGetFldValue" />
+  </wsdl:message>
+  <wsdl:message name="funGetFldValueSoapOut">
+    <wsdl:part name="parameters" element="tns:funGetFldValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="funSetFldValueSoapIn">
+    <wsdl:part name="parameters" element="tns:funSetFldValue" />
+  </wsdl:message>
+  <wsdl:message name="funSetFldValueSoapOut">
+    <wsdl:part name="parameters" element="tns:funSetFldValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CommDBFunctionSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="funGetRecCountByCond">
+      <wsdl:input message="tns:funGetRecCountByCondSoapIn" />
+      <wsdl:output message="tns:funGetRecCountByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="funGetFldValue">
+      <wsdl:input message="tns:funGetFldValueSoapIn" />
+      <wsdl:output message="tns:funGetFldValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="funSetFldValue">
+      <wsdl:input message="tns:funSetFldValueSoapIn" />
+      <wsdl:output message="tns:funSetFldValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistRecord">
+      <wsdl:input message="tns:IsExistRecordSoapIn" />
+      <wsdl:output message="tns:IsExistRecordSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CommDBFunctionSoap" type="tns:CommDBFunctionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="funGetRecCountByCond">
+      <soap:operation soapAction="http://tempuri.org/funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="funGetFldValue">
+      <soap:operation soapAction="http://tempuri.org/funGetFldValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="funSetFldValue">
+      <soap:operation soapAction="http://tempuri.org/funSetFldValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CommDBFunctionSoap12" type="tns:CommDBFunctionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="funGetRecCountByCond">
+      <soap12:operation soapAction="http://tempuri.org/funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="funGetFldValue">
+      <soap12:operation soapAction="http://tempuri.org/funGetFldValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="funSetFldValue">
+      <soap12:operation soapAction="http://tempuri.org/funSetFldValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CommDBFunction">
+    <wsdl:port name="CommDBFunctionSoap" binding="tns:CommDBFunctionSoap">
+      <soap:address location="http://localhost/GP/WebSrv/CommDBFunction.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CommDBFunctionSoap12" binding="tns:CommDBFunctionSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/CommDBFunction.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

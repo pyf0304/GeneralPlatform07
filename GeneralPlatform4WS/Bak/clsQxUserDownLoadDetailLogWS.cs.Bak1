@@ -1,0 +1,644 @@
+﻿
+//类名:clsQxUserDownLoadDetailLogWS
+ ///----------------------
+ ///生成代码版本:2017.01.19.1
+ ///生成日期:2017/01/28
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:工程文件下载
+ ///模块英文名:PrjFileDownLoad
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferenceQxUserDownLoadDetailLog;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// 用户下载日志细节(QxUserDownLoadDetailLog)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsQxUserDownLoadDetailLogWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsQxUserDownLoadDetailLogEN> arrQxUserDownLoadDetailLogObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static QxUserDownLoadDetailLogServiceSoapClient GetQxUserDownLoadDetailLogServiceSoapClient()
+{
+if (objQxUserDownLoadDetailLogServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "QxUserDownLoadDetailLogServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxUserDownLoadDetailLogService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxUserDownLoadDetailLogService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new QxUserDownLoadDetailLogServiceSoapClient(binding, address);
+}
+else
+{
+return objQxUserDownLoadDetailLogServiceSoapClient;
+}
+}
+
+ public clsQxUserDownLoadDetailLogWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GenBindListView)
+ /// </summary>
+public static int BindLv_QxUserDownLoadDetailLog(System.Windows.Forms.ListView lvQxUserDownLoadDetailLog, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lviQxUserDownLoadDetailLog; 
+ArrayList arrQxUserDownLoadDetailLogObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrQxUserDownLoadDetailLogObjList = new clsQxUserDownLoadDetailLogBL.GetQxUserDownLoadDetailLogObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvQxUserDownLoadDetailLog.Items.Clear();//清除原来所有Item
+lvQxUserDownLoadDetailLog.Columns.Clear();//清除原来所有列头信息
+lvQxUserDownLoadDetailLog.Columns.Add("流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUserDownLoadDetailLog.Columns.Add("用户下载日志Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUserDownLoadDetailLog.Columns.Add("文件名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUserDownLoadDetailLog.Columns.Add("版本", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUserDownLoadDetailLog.Columns.Add("是否成功", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUserDownLoadDetailLog.Columns.Add("日志信息", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUserDownLoadDetailLog.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUserDownLoadDetailLog.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsQxUserDownLoadDetailLogEN objQxUserDownLoadDetailLogEN in arrQxUserDownLoadDetailLogObjList)
+{
+lviQxUserDownLoadDetailLog = new System.Windows.Forms.ListViewItem();
+lviQxUserDownLoadDetailLog.Tag = objQxUserDownLoadDetailLogEN.mId;
+lviQxUserDownLoadDetailLog.Text = objQxUserDownLoadDetailLogEN.mId.ToString();
+lviQxUserDownLoadDetailLog.SubItems.Add(objQxUserDownLoadDetailLogEN.UserDownLoadLogId);
+lviQxUserDownLoadDetailLog.SubItems.Add(objQxUserDownLoadDetailLogEN.FileName);
+lviQxUserDownLoadDetailLog.SubItems.Add(objQxUserDownLoadDetailLogEN.Version);
+lviQxUserDownLoadDetailLog.SubItems.Add(objQxUserDownLoadDetailLogEN.IsSuccess.ToString());
+lviQxUserDownLoadDetailLog.SubItems.Add(objQxUserDownLoadDetailLogEN.LogInfo);
+lviQxUserDownLoadDetailLog.SubItems.Add(objQxUserDownLoadDetailLogEN.Memo);
+lvQxUserDownLoadDetailLog.Items.Add(lviQxUserDownLoadDetailLog);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrQxUserDownLoadDetailLogObjList.Count;
+}
+
+ /// <summary>
+ /// 检查对象字段值是否合法,1)检查是否可空;2)检查字段值长度是否超长,如果出错就抛出错误.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4WS_CheckPropertyNew)
+ /// </summary>
+public void CheckPropertyNew(clsQxUserDownLoadDetailLogEN objQxUserDownLoadDetailLogEN)
+{
+if (!Object.Equals(null, objQxUserDownLoadDetailLogEN.UserDownLoadLogId) && getStrLen(objQxUserDownLoadDetailLogEN.UserDownLoadLogId) > 8)
+{
+ throw new Exception("字段[用户下载日志Id]的长度不能超过8!");
+}
+if (!Object.Equals(null, objQxUserDownLoadDetailLogEN.FileName) && getStrLen(objQxUserDownLoadDetailLogEN.FileName) > 50)
+{
+ throw new Exception("字段[文件名]的长度不能超过50!");
+}
+if (!Object.Equals(null, objQxUserDownLoadDetailLogEN.Version) && getStrLen(objQxUserDownLoadDetailLogEN.Version) > 30)
+{
+ throw new Exception("字段[版本]的长度不能超过30!");
+}
+if (!Object.Equals(null, objQxUserDownLoadDetailLogEN.LogInfo) && getStrLen(objQxUserDownLoadDetailLogEN.LogInfo) > 500)
+{
+ throw new Exception("字段[日志信息]的长度不能超过500!");
+}
+if (!Object.Equals(null, objQxUserDownLoadDetailLogEN.Memo) && getStrLen(objQxUserDownLoadDetailLogEN.Memo) > 1000)
+{
+ throw new Exception("字段[备注]的长度不能超过1000!");
+}
+ objQxUserDownLoadDetailLogEN.IsCheckProperty = true;
+ }
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxUserDownLoadDetailLogWs(string strWhereCond)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_GetDataSet", "clsQxUserDownLoadDetailLogWS:GetDataTable_QxUserDownLoadDetailLogWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxUserDownLoadDetailLogByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_GetDataSetByRange", "clsQxUserDownLoadDetailLogWS:GetDataTable_QxUserDownLoadDetailLogByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetDataTable_QxUserDownLoadDetailLogVWs(string strWhereCond)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_GetDataSetV", "clsQxUserDownLoadDetailLogWS:GetDataTable_QxUserDownLoadDetailLogVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetQxUserDownLoadDetailLogVWs(string strWhereCond)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_GetDataSetV", "clsQxUserDownLoadDetailLogWS:GetDataTable_QxUserDownLoadDetailLogVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabV2ByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxUserDownLoadDetailLogVByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_GetDataSetVByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_GetDataSetVByRange", "clsQxUserDownLoadDetailLogWS:GetDataTable_QxUserDownLoadDetailLogVByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objQxUserDownLoadDetailLogEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetQxUserDownLoadDetailLogWs(ref clsQxUserDownLoadDetailLogEN objQxUserDownLoadDetailLogEN)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+bool bolResult = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_GetQxUserDownLoadDetailLog(ref objQxUserDownLoadDetailLogEN);
+return bolResult;
+}
+
+public static clsQxUserDownLoadDetailLogEN GetQxUserDownLoadDetailLogBymIdWs(long lngmId)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+clsQxUserDownLoadDetailLogEN objQxUserDownLoadDetailLogEN = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_GetQxUserDownLoadDetailLogBymId(lngmId);
+return objQxUserDownLoadDetailLogEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static long GetFirstID_S(string strWhereCond)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+try
+{
+long lngmId = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_GetFirstID_S(strWhereCond);
+return lngmId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_GetFirstID_S", "clsQxUserDownLoadDetailLogWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsQxUserDownLoadDetailLogEN GetFirstQxUserDownLoadDetailLog_S(string strWhereCond)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+try
+{
+clsQxUserDownLoadDetailLogEN objQxUserDownLoadDetailLogEN = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_GetFirstQxUserDownLoadDetailLog_S(strWhereCond);
+return objQxUserDownLoadDetailLogEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_GetFirstQxUserDownLoadDetailLog_S", "clsQxUserDownLoadDetailLogWS:GetFirstQxUserDownLoadDetailLog_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "lngmId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsQxUserDownLoadDetailLogEN GetQxUserDownLoadDetailLogObjBymId_Cache(long lngmId)
+{
+string strWhereCond = string.Format("1 = 1 order by mId");
+if (arrQxUserDownLoadDetailLogObjLst_Cache == null)
+{
+arrQxUserDownLoadDetailLogObjLst_Cache = clsQxUserDownLoadDetailLogWS.GetQxUserDownLoadDetailLogObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrQxUserDownLoadDetailLogObjLst_Cache.Count - 1;
+int intMid = 0;
+clsQxUserDownLoadDetailLogEN objQxUserDownLoadDetailLogEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objQxUserDownLoadDetailLogEN = arrQxUserDownLoadDetailLogObjLst_Cache[intMid];
+if (objQxUserDownLoadDetailLogEN.mId == lngmId)
+{
+intFindFailCount = 0;
+return objQxUserDownLoadDetailLogEN;
+}
+else if (objQxUserDownLoadDetailLogEN.mId.CompareTo(lngmId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrQxUserDownLoadDetailLogObjLst_Cache = null;
+if (intFindFailCount == 1) return GetQxUserDownLoadDetailLogObjBymId_Cache(lngmId);
+string strErrMsgForGetObjById = string.Format("在QxUserDownLoadDetailLog对象缓存列表中,找不到记录[mId = {0}][intFindFailCount = {1}](函数:GetQxUserDownLoadDetailLogObjBymId_Cache)", lngmId, intFindFailCount);
+if (objQxUserDownLoadDetailLogEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objQxUserDownLoadDetailLogEN.mId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsQxUserDownLoadDetailLogBL", "GetQxUserDownLoadDetailLogObjBymId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsQxUserDownLoadDetailLogEN> GetQxUserDownLoadDetailLogObjList(string strWhereCond)
+{
+ List<clsQxUserDownLoadDetailLogEN> arrObjList = new List<clsQxUserDownLoadDetailLogEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxUserDownLoadDetailLogWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxUserDownLoadDetailLogEN objQxUserDownLoadDetailLogEN = new clsQxUserDownLoadDetailLogEN();
+objQxUserDownLoadDetailLogEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objQxUserDownLoadDetailLogEN.UserDownLoadLogId = objRow["UserDownLoadLogId"].ToString().Trim(); //用户下载日志Id
+objQxUserDownLoadDetailLogEN.FileName = objRow["FileName"].ToString().Trim(); //文件名
+objQxUserDownLoadDetailLogEN.Version = objRow["Version"].ToString().Trim(); //版本
+objQxUserDownLoadDetailLogEN.IsSuccess = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsSuccess"].ToString().Trim()); //是否成功
+objQxUserDownLoadDetailLogEN.LogInfo = objRow["LogInfo"].ToString().Trim(); //日志信息
+objQxUserDownLoadDetailLogEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxUserDownLoadDetailLogEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsQxUserDownLoadDetailLogEN> GetQxUserDownLoadDetailLogObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsQxUserDownLoadDetailLogEN> arrObjList = new List<clsQxUserDownLoadDetailLogEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxUserDownLoadDetailLogByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxUserDownLoadDetailLogEN objQxUserDownLoadDetailLogEN = new clsQxUserDownLoadDetailLogEN();
+objQxUserDownLoadDetailLogEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objQxUserDownLoadDetailLogEN.UserDownLoadLogId = objRow["UserDownLoadLogId"].ToString().Trim(); //用户下载日志Id
+objQxUserDownLoadDetailLogEN.FileName = objRow["FileName"].ToString().Trim(); //文件名
+objQxUserDownLoadDetailLogEN.Version = objRow["Version"].ToString().Trim(); //版本
+objQxUserDownLoadDetailLogEN.IsSuccess = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsSuccess"].ToString().Trim()); //是否成功
+objQxUserDownLoadDetailLogEN.LogInfo = objRow["LogInfo"].ToString().Trim(); //日志信息
+objQxUserDownLoadDetailLogEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxUserDownLoadDetailLogEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool DelRecordWs(long lngmId)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+try
+{
+bool bolResult = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_DelRecord(lngmId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_DelRecord", "clsQxUserDownLoadDetailLogWS:DelRecordWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool DelQxUserDownLoadDetailLogsWs(List<string> arrmId)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+try
+{
+string[] slngmId = (string[])(arrmId.ToArray());
+bool bolResult = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_DelQxUserDownLoadDetailLogs(slngmId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_DelQxUserDownLoadDetailLogs", "clsQxUserDownLoadDetailLogWS:DelQxUserDownLoadDetailLogsWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static int DelQxUserDownLoadDetailLogsByCondWs(string strWhereCond)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+try
+{
+int intRecNum = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_DelQxUserDownLoadDetailLogsByCond(strWhereCond);
+return intRecNum;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_DelQxUserDownLoadDetailLogsByCond", "clsQxUserDownLoadDetailLogWS:DelQxUserDownLoadDetailLogsByCondWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool AddNewRecordBySql2Ws(clsQxUserDownLoadDetailLogEN objQxUserDownLoadDetailLogEN)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+try
+{
+bool bolResult = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_AddNewRecordBySql2(objQxUserDownLoadDetailLogEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_AddNewRecordBySql2", "clsQxUserDownLoadDetailLogWS:AddNewRecordBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 把表对象添加到数据库中,并且返回该记录的关键字
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_AddNewRecordBySql2WithReturnKey)
+ /// </summary>
+ /// <param name = "objQxUserDownLoadDetailLogEN">需要添加的表对象</param>
+ /// <returns>返回新添加记录的关键字</returns>
+public static string AddNewRecordBySql2WithReturnKey(clsQxUserDownLoadDetailLogEN objQxUserDownLoadDetailLogEN)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+try
+{
+string strKey = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_AddNewRecordBySql2WithReturnKey(objQxUserDownLoadDetailLogEN);
+return strKey;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_AddNewRecordBySql2WithReturnKey", "clsQxUserDownLoadDetailLogWS:AddNewRecordBySql2WithReturnKey", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool UpdateBySql2Ws(clsQxUserDownLoadDetailLogEN objQxUserDownLoadDetailLogEN)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+try
+{
+bool bolResult = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_UpdateBySql2(objQxUserDownLoadDetailLogEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_UpdateBySql2", "clsQxUserDownLoadDetailLogWS:UpdateBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_UpdateBySqlWithCondition)
+ /// </summary>
+ /// <param name = "objQxUserDownLoadDetailLogEN">需要修改的对象</param>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static bool UpdateBySqlWithCondition(clsQxUserDownLoadDetailLogEN objQxUserDownLoadDetailLogEN, string strWhereCond)
+{
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+try
+{
+bool bolResult = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_UpdateBySqlWithCondition(objQxUserDownLoadDetailLogEN, strWhereCond);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserDownLoadDetailLog_UpdateBySqlWithCondition", "clsQxUserDownLoadDetailLogWS:UpdateBySqlWithCondition", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+bool bolIsExist = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(long lngmId)
+{
+//检测记录是否存在
+QxUserDownLoadDetailLogServiceSoapClient objQxUserDownLoadDetailLogService = GetQxUserDownLoadDetailLogServiceSoapClient();
+bool bolIsExist = objQxUserDownLoadDetailLogService.QxUserDownLoadDetailLog_IsExist(lngmId);
+return bolIsExist;
+}
+
+
+
+ /// <summary>
+ /// 获取字符串长度,其中汉字为2个字节,英文为1个字节
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GengetStrLen)
+ /// </summary>
+ /// <param name = "strTemp">给定的原字符串</param>
+ /// <returns>返回字符串长度</returns>
+public static int getStrLen(string strTemp)
+{
+int len ;
+byte[] sarr = System.Text.Encoding.Default.GetBytes(strTemp);
+len = sarr.Length;//will output as 3+3*2 = 9
+return len;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxUserDownLoadDetailLogService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxUserDownLoadDetailLogService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

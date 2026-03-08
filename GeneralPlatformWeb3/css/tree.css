@@ -1,0 +1,102 @@
+/*a
+{
+	text-decoration:none;
+}
+a,a:visited
+{
+	color:#000;
+	background:inherit;
+}
+body
+{
+	margin:0;
+	padding:20px;
+	font:14pt tahoma,宋体,sans-serif;
+}*/
+dt
+{
+	font-size:22px;
+	font-weight:bold;
+	margin:0 0 0 0px;
+}
+dd
+{
+	margin:0 0 0 0px;
+}
+h4
+{
+	margin:0;
+	padding:0;
+	font-size:18px;
+	text-align:left;
+}
+/*p
+{
+	margin:0;
+	padding:0 0 0 0px;
+}
+p a,p a:visited
+{
+	color:#00f;
+	background:inherit;
+}*/
+
+.TreeMenu img.s
+{
+	cursor:pointer;
+	vertical-align:text-top;
+}
+.TreeMenu ul
+{
+	padding:0;
+}
+.TreeMenu li
+{
+	list-style:none;
+	padding:0;
+}
+.Closed ul
+{
+	display:none;
+}
+.Child img.s
+{
+	background:none;
+	cursor:default;
+	font-size:16px;
+}
+
+#CategoryTree ul
+{
+	margin:0 0 0 17px;
+}
+#CategoryTree img.s
+{
+	width:34px;
+	height:17px;
+}
+#CategoryTree .Opened img.s
+{
+	background:url(skin5/opened.gif) no-repeat 0 1px;
+}
+#CategoryTree .Closed img.s
+{
+	background:url(skin5/closed.gif) no-repeat 0 1px;
+}
+#CategoryTree .Child img.s
+{
+	background:url(skin5/child.gif) no-repeat 13px 2px;
+}
+#CategoryTree .noChild img.s
+{
+	background:url(skin5/nochild.gif) no-repeat 0 1px;
+}
+#CategoryTree
+{
+	float:left;
+	width:150px;
+	color:inherit;
+	margin:0px;
+	padding:0px;
+	font-size:10pt;
+}

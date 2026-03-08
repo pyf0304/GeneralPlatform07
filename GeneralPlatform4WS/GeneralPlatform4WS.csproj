@@ -1,0 +1,1807 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{75292CD4-81C1-4363-8530-7659FB5534EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeneralPlatform4WS</RootNamespace>
+    <AssemblyName>GeneralPlatform4WS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\GeneralPlatform4WS.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommFunc4Web">
+      <HintPath>..\..\..\PublicLib\CommFunc4Web.dll</HintPath>
+    </Reference>
+    <Reference Include="PubDataBase, Version=2010.10.22.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\PublicLib\PubDataBase.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TzPubFunction, Version=2010.5.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\PublicLib\TzPubFunction.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsCommDBFunction.cs" />
+    <Compile Include="clsLoginWS.cs" />
+    <Compile Include="clsSubjectRelationExWS.cs" />
+    <Compile Include="clsSysPara.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clsSysPara4WS.cs" />
+    <Compile Include="clsUsersExWS.cs" />
+    <Compile Include="clsvRoleMenusWSEx.cs" />
+    <Compile Include="FunClass\clsDict_PageName_Dic.cs" />
+    <Compile Include="FunClass\clsPubClass4WS.cs" />
+    <Compile Include="InterfaceMan\clsQxViewInfoWS.cs" />
+    <Compile Include="InterfaceMan\clsQxViewPotenceWS.cs" />
+    <Compile Include="InterfaceMan\clsvQxViewInfoWS.cs" />
+    <Compile Include="InterfaceMan\clsvQxViewPotenceWS.cs" />
+    <Compile Include="LogManage\clsErrorInformationWS.cs" />
+    <Compile Include="MenuAndPotence.cs" />
+    <Compile Include="MenuManage\clsQxPrjMenuSetWSEx.cs" />
+    <Compile Include="MenuManage\clsQxPrjMenuSetWS.cs" />
+    <Compile Include="MenuManage\clsQxPrjMenusWS.cs" />
+    <Compile Include="MenuManage\clsQxPrjMenusWSEx.cs" />
+    <Compile Include="MenuManage\clsQxRoleMenusWS.cs" />
+    <Compile Include="MenuManage\clsQxUserMenuDetailWS.cs" />
+    <Compile Include="MenuManage\clsQxUserMenusWS.cs" />
+    <Compile Include="MenuManage\clsvQxPrjMenuSetWS.cs" />
+    <Compile Include="MenuManage\clsvQxPrjMenusWS.cs" />
+    <Compile Include="MenuManage\clsvQxRoleMenusWS.cs" />
+    <Compile Include="MenuManage\clsvQxRoleMenus_SimWS.cs" />
+    <Compile Include="PotenceMan\clsQxPotenceTypeWS.cs" />
+    <Compile Include="PotenceMan\clsQxPrjPotenceWS.cs" />
+    <Compile Include="PotenceMan\clsQxRelaOfPotenceAndSymbolWS.cs" />
+    <Compile Include="PotenceMan\clsvQxPotenceSymbolForRoleWS.cs" />
+    <Compile Include="PotenceMan\clsvQxPrjPotenceWS.cs" />
+    <Compile Include="PotenceMan\clsvQxRelaOfPotenceAndSymbolWS.cs" />
+    <Compile Include="PrjFileDownLoad\clsQxCodeTypeWS.cs" />
+    <Compile Include="PrjFileDownLoad\clsQxPrjFileRelaWS.cs" />
+    <Compile Include="PrjFileDownLoad\clsQxPrjSite4DownLoadWS.cs" />
+    <Compile Include="PrjFileDownLoad\clsQxUserDownLoadDetailLogWS.cs" />
+    <Compile Include="PrjFileDownLoad\clsQxUserDownLoadLogWS.cs" />
+    <Compile Include="PrjFileDownLoad\clsvQxPrjFileRelaWS.cs" />
+    <Compile Include="PrjFileDownLoad\clsvQxPrjSite4DownLoadWS.cs" />
+    <Compile Include="PrjFileDownLoad\clsvQxUserDownLoadDetailLogWS.cs" />
+    <Compile Include="PrjFileDownLoad\clsvQxUserDownLoadLogWS.cs" />
+    <Compile Include="PrjManage\clsDataBaseTypeWS.cs" />
+    <Compile Include="PrjManage\clsQxPrjDataBaseWS.cs" />
+    <Compile Include="PrjManage\clsQxPrjModuleWS.cs" />
+    <Compile Include="PrjManage\clsQxProjectsWS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceReferenceCommDBFunction\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceDataBaseType\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceErrorInformation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceExportExcel4Users\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceLogin\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxCodeType\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxDepartmentInfo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxDepartmentTypeEx\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxDepartmentType\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxPotenceType\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxPrjDataBase\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxPrjFileRela\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxPrjMenuSet\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxPrjMenus\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxPrjModule\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxPrjPotence\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxPrjSite4DownLoad\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxPrjUserRelation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxProjects\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxRelaOfPotenceAndSymbol\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxRoleMenus\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserCodePath\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserDownLoadDetailLog\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserDownLoadLog\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserGroupPotence\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserGroupRelation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserGroups\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserIdentity\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserLoginName\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserMenuDetail\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserMenus\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserRoleRelation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserRoles\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUsersEx\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUserState\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxUsers\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxViewInfo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceQxViewPotence\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceSubjectRelationEx\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceSubjectRelation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceTest\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxDepartmentInfo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxPotenceSymbolForRole\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxPrjFileRela\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxPrjMenuSet\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxPrjMenus\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxPrjPotence\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxPrjSite4DownLoad\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxPrjUserRelationByRole\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxPrjUserRelation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxRelaOfPotenceAndSymbol\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxRoleMenusEx\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxRoleMenus\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxRoleMenus_Sim\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxUserCodePath\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxUserDownLoadDetailLog\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxUserDownLoadLog\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxUserGroupPotence\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxUserLoginName\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxUserRoleRelation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxUserRoles\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxUsers\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxViewInfo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferencevQxViewPotence\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SysPara\clsQxDepartmentTypeWS.cs" />
+    <Compile Include="SysPara\QxDepartmentTypeExServiceWS.cs" />
+    <Compile Include="SysPara\TestWS.cs" />
+    <Compile Include="SystemSet\clsExportExcel4UsersWS.cs" />
+    <Compile Include="SystemSet\clsQxUserCodePathWS.cs" />
+    <Compile Include="SystemSet\clsvQxUserCodePathWS.cs" />
+    <Compile Include="UserManage\clsQxDepartmentInfoWS.cs" />
+    <Compile Include="UserManage\clsQxPrjUserRelationWS.cs" />
+    <Compile Include="UserManage\clsQxUserGroupRelationWS.cs" />
+    <Compile Include="UserManage\clsQxUserGroupsWS.cs" />
+    <Compile Include="UserManage\clsQxUserIdentityWS.cs" />
+    <Compile Include="UserManage\clsQxUserLoginNameWS.cs" />
+    <Compile Include="UserManage\clsQxUserRoleRelationWS.cs" />
+    <Compile Include="UserManage\clsQxUserRolesWS.cs" />
+    <Compile Include="UserManage\clsQxUserStateWS.cs" />
+    <Compile Include="UserManage\clsQxUsersWS.cs" />
+    <Compile Include="UserManage\clsvQxDepartmentInfoWS.cs" />
+    <Compile Include="UserManage\clsvQxPrjUserRelationByRoleWS.cs" />
+    <Compile Include="UserManage\clsvQxPrjUserRelationWS.cs" />
+    <Compile Include="UserManage\clsvQxUserLoginNameWS.cs" />
+    <Compile Include="UserManage\clsvQxUserRoleRelationWS.cs" />
+    <Compile Include="UserManage\clsvQxUserRolesWS.cs" />
+    <Compile Include="UserManage\clsvQxUsersWS.cs" />
+    <Compile Include="UserPotenceMan\clsQxUserGroupPotenceWS.cs" />
+    <Compile Include="UserPotenceMan\clsvQxUserGroupPotenceWS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceCommDBFunction\CommDBFunction.wsdl" />
+    <None Include="Service References\ServiceReferenceCommDBFunction\GeneralPlatform4WS.ServiceReferenceCommDBFunction.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceDataBaseType\DataBaseTypeService.wsdl" />
+    <None Include="Service References\ServiceReferenceDataBaseType\GeneralPlatform4WS.ServiceReferenceDataBaseType.clsDataBaseTypeEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceErrorInformation\ErrorInformationService.wsdl" />
+    <None Include="Service References\ServiceReferenceErrorInformation\GeneralPlatform4WS.ServiceReferenceErrorInformation.clsErrorInformationEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceExportExcel4Users\ExportExcel4UsersService.wsdl" />
+    <None Include="Service References\ServiceReferenceExportExcel4Users\GeneralPlatform4WS.ServiceReferenceExportExcel4Users.clsExportExcel4UsersEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceLogin\GeneralPlatform4WS.ServiceReferenceLogin.ArrayOfClsvQxUserRoleRelationEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceLogin\LoginService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxCodeType\GeneralPlatform4WS.ServiceReferenceQxCodeType.clsQxCodeTypeEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxCodeType\QxCodeTypeService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxDepartmentInfo\GeneralPlatform4WS.ServiceReferenceQxDepartmentInfo.clsQxDepartmentInfoEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxDepartmentInfo\QxDepartmentInfoService.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceQxDepartmentTypeEx\GeneralPlatform4WS.ServiceReferenceQxDepartmentTypeEx.clsQxDepartmentTypeEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxDepartmentTypeEx\QxDepartmentTypeExService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxDepartmentType\GeneralPlatform4WS.ServiceReferenceQxDepartmentType.clsQxDepartmentTypeEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxDepartmentType\QxDepartmentTypeService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxPotenceType\GeneralPlatform4WS.ServiceReferenceQxPotenceType.clsQxPotenceTypeEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxPotenceType\QxPotenceTypeService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxPrjDataBase\GeneralPlatform4WS.ServiceReferenceQxPrjDataBase.clsQxPrjDataBaseEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxPrjDataBase\QxPrjDataBaseService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxPrjFileRela\GeneralPlatform4WS.ServiceReferenceQxPrjFileRela.clsQxPrjFileRelaEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxPrjFileRela\QxPrjFileRelaService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxPrjMenuSet\GeneralPlatform4WS.ServiceReferenceQxPrjMenuSet.clsQxPrjMenuSetEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxPrjMenuSet\QxPrjMenuSetService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxPrjMenus\GeneralPlatform4WS.ServiceReferenceQxPrjMenus.clsQxPrjMenusEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxPrjMenus\QxPrjMenusService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxPrjModule\GeneralPlatform4WS.ServiceReferenceQxPrjModule.clsQxPrjModuleEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxPrjModule\QxPrjModuleService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxPrjPotence\GeneralPlatform4WS.ServiceReferenceQxPrjPotence.clsQxPrjPotenceEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxPrjPotence\QxPrjPotenceService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxPrjSite4DownLoad\GeneralPlatform4WS.ServiceReferenceQxPrjSite4DownLoad.clsQxPrjSite4DownLoadEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxPrjSite4DownLoad\QxPrjSite4DownLoadService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxPrjUserRelation\GeneralPlatform4WS.ServiceReferenceQxPrjUserRelation.clsQxPrjUserRelationEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxPrjUserRelation\QxPrjUserRelationService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxProjects\GeneralPlatform4WS.ServiceReferenceQxProjects.clsQxProjectsEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxProjects\QxProjectsService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxRelaOfPotenceAndSymbol\GeneralPlatform4WS.ServiceReferenceQxRelaOfPotenceAndSymbol.clsQxRelaOfPotenceAndSymbolEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxRelaOfPotenceAndSymbol\QxRelaOfPotenceAndSymbolService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxRoleMenus\GeneralPlatform4WS.ServiceReferenceQxRoleMenus.clsQxRoleMenusEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxRoleMenus\QxRoleMenusService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserCodePath\GeneralPlatform4WS.ServiceReferenceQxUserCodePath.clsQxUserCodePathEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserCodePath\QxUserCodePathService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserDownLoadDetailLog\GeneralPlatform4WS.ServiceReferenceQxUserDownLoadDetailLog.clsQxUserDownLoadDetailLogEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserDownLoadDetailLog\QxUserDownLoadDetailLogService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserDownLoadLog\GeneralPlatform4WS.ServiceReferenceQxUserDownLoadLog.clsQxUserDownLoadLogEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserDownLoadLog\QxUserDownLoadLogService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserGroupPotence\GeneralPlatform4WS.ServiceReferenceQxUserGroupPotence.clsQxUserGroupPotenceEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserGroupPotence\QxUserGroupPotenceService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserGroupRelation\GeneralPlatform4WS.ServiceReferenceQxUserGroupRelation.clsQxUserGroupRelationEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserGroupRelation\QxUserGroupRelationService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserGroups\GeneralPlatform4WS.ServiceReferenceQxUserGroups.clsQxUserGroupsEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserGroups\QxUserGroupsService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserIdentity\GeneralPlatform4WS.ServiceReferenceQxUserIdentity.clsQxUserIdentityEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserIdentity\QxUserIdentityService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserLoginName\GeneralPlatform4WS.ServiceReferenceQxUserLoginName.clsQxUserLoginNameEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserLoginName\QxUserLoginNameService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserMenuDetail\GeneralPlatform4WS.ServiceReferenceQxUserMenuDetail.clsQxUserMenuDetailEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserMenuDetail\QxUserMenuDetailService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserMenus\GeneralPlatform4WS.ServiceReferenceQxUserMenus.clsQxUserMenusEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserMenus\QxUserMenusService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserRoleRelation\GeneralPlatform4WS.ServiceReferenceQxUserRoleRelation.clsQxUserRoleRelationEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserRoleRelation\QxUserRoleRelationService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserRoles\GeneralPlatform4WS.ServiceReferenceQxUserRoles.clsQxUserRolesEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserRoles\QxUserRolesService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUsersEx\GeneralPlatform4WS.ServiceReferenceQxUsersEx.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUsersEx\GeneralPlatform4WS.ServiceReferenceQxUsersEx.clsQxPrjPotenceEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUsersEx\QxUsersExService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUserState\GeneralPlatform4WS.ServiceReferenceQxUserState.clsQxUserStateEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUserState\QxUserStateService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxUsers\GeneralPlatform4WS.ServiceReferenceQxUsers.clsQxUsersEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxUsers\QxUsersService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxViewInfo\GeneralPlatform4WS.ServiceReferenceQxViewInfo.clsQxViewInfoEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxViewInfo\QxViewInfoService.wsdl" />
+    <None Include="Service References\ServiceReferenceQxViewPotence\GeneralPlatform4WS.ServiceReferenceQxViewPotence.clsQxViewPotenceEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceQxViewPotence\QxViewPotenceService.wsdl" />
+    <None Include="Service References\ServiceReferenceSubjectRelation\GeneralPlatform4WS.ServiceReferenceSubjectRelation.clsSubjectRelationEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceSubjectRelation\SubjectRelationService.wsdl" />
+    <None Include="Service References\ServiceReferenceTest\Test.wsdl" />
+    <None Include="Service References\ServiceReferencevQxDepartmentInfo\GeneralPlatform4WS.ServiceReferencevQxDepartmentInfo.clsvQxDepartmentInfoEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxDepartmentInfo\vQxDepartmentInfoService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxPotenceSymbolForRole\GeneralPlatform4WS.ServiceReferencevQxPotenceSymbolForRole.clsvQxPotenceSymbolForRoleEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxPotenceSymbolForRole\vQxPotenceSymbolForRoleService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxPrjFileRela\GeneralPlatform4WS.ServiceReferencevQxPrjFileRela.clsvQxPrjFileRelaEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxPrjFileRela\vQxPrjFileRelaService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxPrjMenuSet\GeneralPlatform4WS.ServiceReferencevQxPrjMenuSet.clsvQxPrjMenuSetEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxPrjMenuSet\vQxPrjMenuSetService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxPrjMenus\GeneralPlatform4WS.ServiceReferencevQxPrjMenus.clsvQxPrjMenusEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxPrjMenus\vQxPrjMenusService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxPrjPotence\GeneralPlatform4WS.ServiceReferencevQxPrjPotence.clsvQxPrjPotenceEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxPrjPotence\vQxPrjPotenceService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxPrjSite4DownLoad\GeneralPlatform4WS.ServiceReferencevQxPrjSite4DownLoad.clsvQxPrjSite4DownLoadEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxPrjSite4DownLoad\vQxPrjSite4DownLoadService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxPrjUserRelationByRole\GeneralPlatform4WS.ServiceReferencevQxPrjUserRelationByRole.clsvQxPrjUserRelationByRoleEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxPrjUserRelationByRole\vQxPrjUserRelationByRoleService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxPrjUserRelation\GeneralPlatform4WS.ServiceReferencevQxPrjUserRelation.clsvQxPrjUserRelationEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxPrjUserRelation\vQxPrjUserRelationService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxRelaOfPotenceAndSymbol\GeneralPlatform4WS.ServiceReferencevQxRelaOfPotenceAndSymbol.clsvQxRelaOfPotenceAndSymbolEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxRelaOfPotenceAndSymbol\vQxRelaOfPotenceAndSymbolService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxRoleMenusEx\GeneralPlatform4WS.ServiceReferencevQxRoleMenusEx.clsvQxRoleMenusEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxRoleMenusEx\vQxRoleMenusExService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxRoleMenus\GeneralPlatform4WS.ServiceReferencevQxRoleMenus.clsvQxRoleMenusEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxRoleMenus\vQxRoleMenusService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxRoleMenus_Sim\GeneralPlatform4WS.ServiceReferencevQxRoleMenus_Sim.clsvQxRoleMenus_SimEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxRoleMenus_Sim\vQxRoleMenus_SimService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxUserCodePath\GeneralPlatform4WS.ServiceReferencevQxUserCodePath.clsvQxUserCodePathEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxUserCodePath\vQxUserCodePathService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxUserDownLoadDetailLog\GeneralPlatform4WS.ServiceReferencevQxUserDownLoadDetailLog.clsvQxUserDownLoadDetailLogEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxUserDownLoadDetailLog\vQxUserDownLoadDetailLogService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxUserDownLoadLog\GeneralPlatform4WS.ServiceReferencevQxUserDownLoadLog.clsvQxUserDownLoadLogEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxUserDownLoadLog\vQxUserDownLoadLogService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxUserGroupPotence\GeneralPlatform4WS.ServiceReferencevQxUserGroupPotence.clsvQxUserGroupPotenceEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxUserGroupPotence\vQxUserGroupPotenceService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxUserLoginName\GeneralPlatform4WS.ServiceReferencevQxUserLoginName.clsvQxUserLoginNameEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxUserLoginName\vQxUserLoginNameService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxUserRoleRelation\GeneralPlatform4WS.ServiceReferencevQxUserRoleRelation.clsvQxUserRoleRelationEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxUserRoleRelation\vQxUserRoleRelationService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxUserRoles\GeneralPlatform4WS.ServiceReferencevQxUserRoles.clsvQxUserRolesEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxUserRoles\vQxUserRolesService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxUsers\GeneralPlatform4WS.ServiceReferencevQxUsers.clsvQxUsersEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxUsers\vQxUsersService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxViewInfo\GeneralPlatform4WS.ServiceReferencevQxViewInfo.clsvQxViewInfoEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxViewInfo\vQxViewInfoService.wsdl" />
+    <None Include="Service References\ServiceReferencevQxViewPotence\GeneralPlatform4WS.ServiceReferencevQxViewPotence.clsvQxViewPotenceEN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferencevQxViewPotence\vQxViewPotenceService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReferenceCommDBFunction\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceDataBaseType\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceErrorInformation\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceExportExcel4Users\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceLogin\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxCodeType\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxDepartmentInfo\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxDepartmentTypeEx\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxDepartmentType\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxPotenceType\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxPrjDataBase\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxPrjFileRela\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxPrjMenuSet\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxPrjMenus\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxPrjModule\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxPrjPotence\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxPrjSite4DownLoad\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxPrjUserRelation\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxProjects\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxRelaOfPotenceAndSymbol\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxRoleMenus\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserCodePath\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserDownLoadDetailLog\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserDownLoadLog\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserGroupPotence\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserGroupRelation\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserGroups\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserIdentity\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserLoginName\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserMenuDetail\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserMenus\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserRoleRelation\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserRoles\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUsersEx\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUserState\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxUsers\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxViewInfo\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceQxViewPotence\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceSubjectRelationEx\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceSubjectRelation\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceTest\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxDepartmentInfo\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxPotenceSymbolForRole\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxPrjFileRela\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxPrjMenuSet\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxPrjMenus\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxPrjPotence\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxPrjSite4DownLoad\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxPrjUserRelationByRole\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxPrjUserRelation\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxRelaOfPotenceAndSymbol\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxRoleMenusEx\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxRoleMenus\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxRoleMenus_Sim\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxUserCodePath\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxUserDownLoadDetailLog\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxUserDownLoadLog\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxUserGroupPotence\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxUserLoginName\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxUserRoleRelation\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxUserRoles\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxUsers\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxViewInfo\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferencevQxViewPotence\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceSubjectRelationEx\SubjectRelationServiceEx.disco" />
+    <None Include="Service References\ServiceReferenceSubjectRelationEx\SubjectRelationServiceEx.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceSubjectRelationEx\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceSubjectRelationEx\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceSubjectRelationEx\GeneralPlatform4WS.ServiceReferenceSubjectRelationEx.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceSubjectRelationEx\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceSubjectRelation\SubjectRelationService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceSubjectRelation\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceSubjectRelation\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceSubjectRelation\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRoleMenus\vQxRoleMenusService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRoleMenus\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRoleMenus\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRoleMenus\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxCodeType\QxCodeTypeService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxCodeType\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxCodeType\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxCodeType\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxDepartmentInfo\QxDepartmentInfoService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxDepartmentInfo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxDepartmentInfo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxDepartmentInfo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjDataBase\QxPrjDataBaseService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjDataBase\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjDataBase\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjDataBase\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjFileRela\QxPrjFileRelaService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjFileRela\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjFileRela\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjFileRela\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjMenus\QxPrjMenusService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjMenus\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjMenus\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjMenus\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjPotence\QxPrjPotenceService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjPotence\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjPotence\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjPotence\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjSite4DownLoad\QxPrjSite4DownLoadService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjSite4DownLoad\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjSite4DownLoad\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjSite4DownLoad\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjUserRelation\QxPrjUserRelationService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjUserRelation\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjUserRelation\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjUserRelation\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxRoleMenus\QxRoleMenusService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxRoleMenus\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxRoleMenus\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxRoleMenus\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserCodePath\QxUserCodePathService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserCodePath\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserCodePath\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserCodePath\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserDownLoadLog\QxUserDownLoadLogService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserDownLoadLog\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserDownLoadLog\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserDownLoadLog\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserGroupPotence\QxUserGroupPotenceService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserGroupPotence\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserGroupPotence\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserGroupPotence\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserMenus\QxUserMenusService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserMenus\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserMenus\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserMenus\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserRoleRelation\QxUserRoleRelationService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserRoleRelation\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserRoleRelation\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserRoleRelation\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserRoles\QxUserRolesService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserRoles\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserRoles\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserRoles\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUsers\QxUsersService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUsers\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUsers\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUsers\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserState\QxUserStateService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserState\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserState\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserState\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxViewPotence\QxViewPotenceService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxViewPotence\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxViewPotence\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxViewPotence\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjFileRela\vQxPrjFileRelaService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjFileRela\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjFileRela\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjFileRela\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjSite4DownLoad\vQxPrjSite4DownLoadService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjSite4DownLoad\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjSite4DownLoad\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjSite4DownLoad\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRelaOfPotenceAndSymbol\vQxRelaOfPotenceAndSymbolService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRelaOfPotenceAndSymbol\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRelaOfPotenceAndSymbol\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRelaOfPotenceAndSymbol\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRoleMenus_Sim\vQxRoleMenus_SimService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRoleMenus_Sim\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRoleMenus_Sim\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRoleMenus_Sim\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserDownLoadDetailLog\vQxUserDownLoadDetailLogService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserDownLoadDetailLog\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserDownLoadDetailLog\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserDownLoadDetailLog\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserDownLoadLog\vQxUserDownLoadLogService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserDownLoadLog\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserDownLoadLog\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserDownLoadLog\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUsers\vQxUsersService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUsers\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUsers\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUsers\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserRoleRelation\vQxUserRoleRelationService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserRoleRelation\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserRoleRelation\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserRoleRelation\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxViewInfo\vQxViewInfoService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxViewInfo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxViewInfo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxViewInfo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxViewPotence\vQxViewPotenceService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxViewPotence\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxViewPotence\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxViewPotence\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceErrorInformation\ErrorInformationService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceErrorInformation\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceErrorInformation\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceErrorInformation\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPotenceType\QxPotenceTypeService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPotenceType\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPotenceType\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPotenceType\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxRelaOfPotenceAndSymbol\QxRelaOfPotenceAndSymbolService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxRelaOfPotenceAndSymbol\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxRelaOfPotenceAndSymbol\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxRelaOfPotenceAndSymbol\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjPotence\vQxPrjPotenceService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjPotence\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjPotence\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjPotence\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceDataBaseType\DataBaseTypeService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceDataBaseType\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceDataBaseType\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceDataBaseType\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxDepartmentType\QxDepartmentTypeService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxDepartmentType\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxDepartmentType\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxDepartmentType\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceExportExcel4Users\ExportExcel4UsersService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceExportExcel4Users\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceExportExcel4Users\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceExportExcel4Users\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjModule\QxPrjModuleService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjModule\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjModule\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjModule\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxProjects\QxProjectsService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxProjects\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxProjects\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxProjects\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxViewInfo\QxViewInfoService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxViewInfo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxViewInfo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxViewInfo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPotenceSymbolForRole\vQxPotenceSymbolForRoleService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPotenceSymbolForRole\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPotenceSymbolForRole\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPotenceSymbolForRole\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserCodePath\vQxUserCodePathService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserCodePath\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserCodePath\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserCodePath\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserGroupPotence\vQxUserGroupPotenceService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserGroupPotence\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserGroupPotence\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserGroupPotence\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjMenuSet\QxPrjMenuSetService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjMenuSet\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjMenuSet\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxPrjMenuSet\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserGroupRelation\QxUserGroupRelationService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserGroupRelation\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserGroupRelation\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserGroupRelation\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserGroups\QxUserGroupsService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserGroups\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserGroups\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserGroups\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserIdentity\QxUserIdentityService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserIdentity\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserIdentity\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserIdentity\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserLoginName\QxUserLoginNameService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserLoginName\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserLoginName\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserLoginName\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserMenuDetail\QxUserMenuDetailService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserMenuDetail\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserMenuDetail\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserMenuDetail\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxDepartmentInfo\vQxDepartmentInfoService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxDepartmentInfo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxDepartmentInfo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxDepartmentInfo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjMenus\vQxPrjMenusService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjMenus\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjMenus\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjMenus\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjMenuSet\vQxPrjMenuSetService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjMenuSet\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjMenuSet\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjMenuSet\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjUserRelationByRole\vQxPrjUserRelationByRoleService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjUserRelationByRole\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjUserRelationByRole\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjUserRelationByRole\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjUserRelation\vQxPrjUserRelationService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjUserRelation\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjUserRelation\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxPrjUserRelation\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserLoginName\vQxUserLoginNameService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserLoginName\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserLoginName\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserLoginName\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserRoles\vQxUserRolesService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserRoles\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserRoles\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxUserRoles\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserDownLoadDetailLog\QxUserDownLoadDetailLogService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserDownLoadDetailLog\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserDownLoadDetailLog\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUserDownLoadDetailLog\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUsersEx\QxUsersExService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUsersEx\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUsersEx\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxUsersEx\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRoleMenusEx\vQxRoleMenusExService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRoleMenusEx\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRoleMenusEx\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferencevQxRoleMenusEx\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceLogin\LoginService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceLogin\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceLogin\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceLogin\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceCommDBFunction\CommDBFunction.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceCommDBFunction\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceCommDBFunction\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceCommDBFunction\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceTest\Test.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceTest\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceTest\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceTest\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxDepartmentTypeEx\QxDepartmentTypeExService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxDepartmentTypeEx\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxDepartmentTypeEx\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceQxDepartmentTypeEx\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeneralPlatform_Entity\GeneralPlatform_Entity.csproj">
+      <Project>{cae7b0d5-0d60-4905-90c8-d0c76d8ab4e7}</Project>
+      <Name>GeneralPlatform_Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

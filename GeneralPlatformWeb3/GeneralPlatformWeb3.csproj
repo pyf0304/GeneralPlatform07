@@ -1,0 +1,2340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2FC2CB85-AEFD-4409-8F50-C8638F73B799}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeneralPlatformWeb</RootNamespace>
+    <AssemblyName>GeneralPlatformWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AGC4WebApi">
+      <HintPath>E:\PublicLib\AGC4WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="AgcBase">
+      <HintPath>E:\PublicLib\AgcBase.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>E:\PublicLib\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="clsGetExcelFromDataTableO2007">
+      <HintPath>E:\PublicLib\clsGetExcelFromDataTableO2007.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\PublicLib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="PubDataBase, Version=2022.1.8.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\PublicLib\PubDataBase.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.6.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.3\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.3.0\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.3.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.3.0\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.3.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.3.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.3.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TzPubFunction">
+      <HintPath>E:\PublicLib\TzPubFunction.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="css\admin\addNote.gif" />
+    <Content Include="css\admin\bg.gif" />
+    <Content Include="css\admin\bg_banner_menu.gif" />
+    <Content Include="css\admin\bg_button_blue.gif" />
+    <Content Include="css\admin\bg_button_del.gif" />
+    <Content Include="css\admin\bg_button_update.gif" />
+    <Content Include="css\admin\bg_header.gif" />
+    <Content Include="css\admin\bg_left_bc.gif" />
+    <Content Include="css\admin\bg_left_bl.gif" />
+    <Content Include="css\admin\bg_left_br.gif" />
+    <Content Include="css\admin\bg_left_ls.gif" />
+    <Content Include="css\admin\bg_left_rs.gif" />
+    <Content Include="css\admin\bg_left_tc.gif" />
+    <Content Include="css\admin\bg_left_tl.gif" />
+    <Content Include="css\admin\bg_left_tr.gif" />
+    <Content Include="css\admin\bg_login.png" />
+    <Content Include="css\admin\bg_login_panel.gif" />
+    <Content Include="css\admin\bg_login_panel.png" />
+    <Content Include="css\admin\bg_nav.gif" />
+    <Content Include="css\admin\bg_rectbtn.png" />
+    <Content Include="css\admin\bg_schedule.gif" />
+    <Content Include="css\admin\bg_tabedbtn.gif" />
+    <Content Include="css\admin\bg_table_item.gif" />
+    <Content Include="css\admin\bg_table_item2.gif" />
+    <Content Include="css\admin\bg_th.gif" />
+    <Content Include="css\admin\bg_title.gif" />
+    <Content Include="css\admin\bg_tr.gif" />
+    <Content Include="css\admin\bg_users.gif" />
+    <Content Include="css\admin\delete.gif" />
+    <Content Include="css\admin\edit.gif" />
+    <Content Include="css\admin\logo2.png" />
+    <Content Include="css\admin\logo_hysf.png" />
+    <Content Include="css\admin\logo_jsie.png" />
+    <Content Include="css\admin\logo_shnu.png" />
+    <Content Include="css\admin\mail.gif" />
+    <Content Include="css\admin\main_fs.gif" />
+    <Content Include="css\admin\main_hb.gif" />
+    <Content Include="css\admin\main_hl.gif" />
+    <Content Include="css\admin\main_hl2.gif" />
+    <Content Include="css\admin\main_hr.gif" />
+    <Content Include="css\admin\main_lf.gif" />
+    <Content Include="css\admin\main_ls.gif" />
+    <Content Include="css\admin\main_rc.gif" />
+    <Content Include="css\admin\main_rf.gif" />
+    <Content Include="css\admin\main_rs.gif" />
+    <Content Include="css\admin\menu_seprator.gif" />
+    <Content Include="css\admin\nav_back.gif" />
+    <Content Include="css\admin\nav_changePassword.gif" />
+    <Content Include="css\admin\nav_forward.gif" />
+    <Content Include="css\admin\nav_help.gif" />
+    <Content Include="css\admin\nav_pre.gif" />
+    <Content Include="css\admin\nav_print.gif" />
+    <Content Include="css\admin\nav_resetPassword.gif" />
+    <Content Include="css\admin\nav_search.gif" />
+    <Content Include="css\admin\note.gif" />
+    <Content Include="css\ButtonStyle.css" />
+    <Content Include="css\DownLoad\Silverlight.exe" />
+    <Content Include="css\General.css" />
+    <Content Include="css\hysf\images\1_1.jpg" />
+    <Content Include="css\hysf\images\1_2.jpg" />
+    <Content Include="css\hysf\images\1_3.jpg" />
+    <Content Include="css\hysf\images\2_1.jpg" />
+    <Content Include="css\hysf\images\2_2.jpg" />
+    <Content Include="css\hysf\images\2_3.jpg" />
+    <Content Include="css\hysf\images\3_1.jpg" />
+    <Content Include="css\hysf\images\3_3.jpg" />
+    <Content Include="css\hysf\images\4_1.jpg" />
+    <Content Include="css\hysf\images\4_2.jpg" />
+    <Content Include="css\hysf\images\4_3.jpg" />
+    <Content Include="css\hysf\images\banner.jpg" />
+    <Content Include="css\hysf\images\bottom.jpg" />
+    <Content Include="css\hysf\images\btn.gif" />
+    <Content Include="css\hysf\images\button.gif" />
+    <Content Include="css\hysf\images\content_bg.jpg" />
+    <Content Include="css\hysf\images\content_bg2.jpg" />
+    <Content Include="css\hysf\images\ico1.jpg" />
+    <Content Include="css\hysf\images\ico2.jpg" />
+    <Content Include="css\hysf\images\ico3.jpg" />
+    <Content Include="css\hysf\images\ico4.jpg" />
+    <Content Include="css\hysf\images\ico5.jpg" />
+    <Content Include="css\hysf\images\ico6.jpg" />
+    <Content Include="css\hysf\images\ico_1.jpg" />
+    <Content Include="css\hysf\images\ico_2.jpg" />
+    <Content Include="css\hysf\images\input_bg.jpg" />
+    <Content Include="css\hysf\images\jianjie.png" />
+    <Content Include="css\hysf\images\login_title.gif" />
+    <Content Include="css\hysf\images\logo.png" />
+    <Content Include="css\hysf\images\other.png" />
+    <Content Include="css\hysf\images\ss.gif" />
+    <Content Include="css\hysf\images\tongzhi.png" />
+    <Content Include="css\hysf\images\tupian.png" />
+    <Content Include="css\hysf\index_style.css" />
+    <Content Include="css\Images\add.gif" />
+    <Content Include="css\Images\back.gif" />
+    <Content Include="css\Images\btn_bg.gif" />
+    <Content Include="css\Images\butClose.gif" />
+    <Content Include="css\Images\butOpen.gif" />
+    <Content Include="css\Images\button_submit.gif" />
+    <Content Include="css\Images\close.gif" />
+    <Content Include="css\Images\col.gif" />
+    <Content Include="css\Images\correct.gif" />
+    <Content Include="css\Images\Delete.gif" />
+    <Content Include="css\Images\disable.gif" />
+    <Content Include="css\Images\Edit.gif" />
+    <Content Include="css\Images\error.gif" />
+    <Content Include="css\Images\exp.gif" />
+    <Content Include="css\Images\Export.gif" />
+    <Content Include="css\Images\focus_bg.jpg" />
+    <Content Include="css\Images\folder.gif" />
+    <Content Include="css\Images\folder_open.gif" />
+    <Content Include="css\Images\foot_bg.gif" />
+    <Content Include="css\Images\head_bg.gif" />
+    <Content Include="css\Images\head_bg2.gif" />
+    <Content Include="css\Images\head_logo.gif" />
+    <Content Include="css\Images\head_logo.png" />
+    <Content Include="css\Images\head_logo1.png" />
+    <Content Include="css\Images\hint.gif" />
+    <Content Include="css\Images\hintbg1.gif" />
+    <Content Include="css\Images\hintbg2.gif" />
+    <Content Include="css\Images\home.gif" />
+    <Content Include="css\Images\ico-0.png" />
+    <Content Include="css\Images\ico-0_.png" />
+    <Content Include="css\Images\ico-1.png" />
+    <Content Include="css\Images\ico-1_.png" />
+    <Content Include="css\Images\ico-2.png" />
+    <Content Include="css\Images\ico-2_.png" />
+    <Content Include="css\Images\ico-3.png" />
+    <Content Include="css\Images\ico-3_.png" />
+    <Content Include="css\Images\ico-4.png" />
+    <Content Include="css\Images\ico-4_.png" />
+    <Content Include="css\Images\ico-5.png" />
+    <Content Include="css\Images\ico-5_.png" />
+    <Content Include="css\Images\ico-6.png" />
+    <Content Include="css\Images\icon-01.gif" />
+    <Content Include="css\Images\icon-02.gif" />
+    <Content Include="css\Images\icon-03.gif" />
+    <Content Include="css\Images\ico_01.gif" />
+    <Content Include="css\Images\img_Show.gif" />
+    <Content Include="css\Images\input_bg.jpg" />
+    <Content Include="css\Images\left_menu_bg.gif" />
+    <Content Include="css\Images\loading.gif" />
+    <Content Include="css\Images\login_bg.jpg" />
+    <Content Include="css\Images\login_btn.gif" />
+    <Content Include="css\Images\main_cen_bg.gif" />
+    <Content Include="css\Images\menu_bg.gif" />
+    <Content Include="css\Images\menu_dot.gif" />
+    <Content Include="css\Images\MouseOut.jpg" />
+    <Content Include="css\Images\MouseOver.gif" />
+    <Content Include="css\Images\navsub_bg.gif" />
+    <Content Include="css\Images\nav_bg.gif" />
+    <Content Include="css\Images\pro_bg.gif" />
+    <Content Include="css\Images\Related_.gif" />
+    <Content Include="css\Images\siteico.gif" />
+    <Content Include="css\Images\success.gif" />
+    <Content Include="css\Images\t.gif" />
+    <Content Include="css\Images\table_th_bg.gif" />
+    <Content Include="css\Images\tabsleft.gif" />
+    <Content Include="css\Images\tabsright.gif" />
+    <Content Include="css\Images\taize_1.css" />
+    <Content Include="css\Images\tool.gif" />
+    <Content Include="css\Images\tool2.gif" />
+    <Content Include="css\Images\top_ico1.gif" />
+    <Content Include="css\Images\top_ico2.gif" />
+    <Content Include="css\Images\txt_Show.gif" />
+    <Content Include="css\Images\upfilebg.gif" />
+    <Content Include="css\Images\warning.gif" />
+    <Content Include="css\Images\wsh01.gif" />
+    <Content Include="css\KnowledgeBG.css" />
+    <Content Include="css\menu.css" />
+    <Content Include="css\new.css" />
+    <Content Include="css\news.css" />
+    <Content Include="css\s.gif" />
+    <Content Include="css\skin5\child.gif" />
+    <Content Include="css\skin5\closed.gif" />
+    <Content Include="css\skin5\nochild.gif" />
+    <Content Include="css\skin5\opened.gif" />
+    <Content Include="css\taishweb1.css" />
+    <Content Include="css\taishweb2.css" />
+    <Content Include="css\tree.css" />
+    <Content Include="css\tz_adminMgr.css" />
+    <Content Include="css\tz_adminMgr2.css" />
+    <Content Include="css\tz_base11.css" />
+    <Content Include="css\tz_Common_p.css" />
+    <Content Include="css\tz_index_style_p.css" />
+    <Content Include="css\tz_login_p.css" />
+    <Content Include="css\tz_ndex_styleBak.css" />
+    <Content Include="css\tz_ToolTip.css" />
+    <Content Include="Global.asax" />
+    <Content Include="index.htm" />
+    <Content Include="Index4Invoke\TestIndex4GP.aspx" />
+    <Content Include="Index4Invoke\WebForm1.aspx" />
+    <Content Include="Index4Invoke\案例申请维护播放过程中习题的步骤.txt" />
+    <Content Include="Index_quick.aspx" />
+    <Content Include="pic\1.bmp" />
+    <Content Include="pic\10.gif" />
+    <Content Include="pic\17-2.gif" />
+    <Content Include="pic\17-3.gif" />
+    <Content Include="pic\17-4.gif" />
+    <Content Include="pic\17-5.gif" />
+    <Content Include="pic\17-6.gif" />
+    <Content Include="pic\17.gif" />
+    <Content Include="pic\2.bmp" />
+    <Content Include="pic\2.gif" />
+    <Content Include="pic\20040528222600.jpg" />
+    <Content Include="pic\20040925154019.gif" />
+    <Content Include="pic\4.gif" />
+    <Content Include="pic\addani.gif" />
+    <Content Include="pic\arrow_left.gif" />
+    <Content Include="pic\arrow_right.gif" />
+    <Content Include="pic\bar1.JPG" />
+    <Content Include="pic\bar2.JPG" />
+    <Content Include="pic\bar3.JPG" />
+    <Content Include="pic\bar4.JPG" />
+    <Content Include="pic\bar5.JPG" />
+    <Content Include="pic\bar6.JPG" />
+    <Content Include="pic\bar7.JPG" />
+    <Content Include="pic\building.jpg" />
+    <Content Include="pic\button1.gif" />
+    <Content Include="pic\button2.gif" />
+    <Content Include="pic\button_add.GIF" />
+    <Content Include="pic\button_search.GIF" />
+    <Content Include="pic\buynow.gif" />
+    <Content Include="pic\Down.JPG" />
+    <Content Include="pic\ehome.JPG" />
+    <Content Include="pic\email.GIF" />
+    <Content Include="pic\email2.GIF" />
+    <Content Include="pic\email3.gif" />
+    <Content Include="pic\fav.gif" />
+    <Content Include="pic\folder.gif" />
+    <Content Include="pic\GetJob.GIF" />
+    <Content Include="pic\graybar.gif" />
+    <Content Include="pic\haha.gif" />
+    <Content Include="pic\help.GIF" />
+    <Content Include="pic\help2.GIF" />
+    <Content Include="pic\hotfolder.gif" />
+    <Content Include="pic\i.bmp" />
+    <Content Include="pic\icon_name.gif" />
+    <Content Include="pic\icon_password.gif" />
+    <Content Include="pic\icon_re.gif" />
+    <Content Include="pic\infosend.GIF" />
+    <Content Include="pic\isbest.gif" />
+    <Content Include="pic\istop.gif" />
+    <Content Include="pic\jobfind.GIF" />
+    <Content Include="pic\jobfind2.GIF" />
+    <Content Include="pic\jobinfologo.JPG" />
+    <Content Include="pic\k.bmp" />
+    <Content Include="pic\kk.bmp" />
+    <Content Include="pic\Left_Nav_Arrow.gif" />
+    <Content Include="pic\Left_Nav_Dot.gif" />
+    <Content Include="pic\library.JPG" />
+    <Content Include="pic\lij06.gif" />
+    <Content Include="pic\lockfolder.gif" />
+    <Content Include="pic\logo.gif" />
+    <Content Include="pic\logoinphoto.gif" />
+    <Content Include="pic\logo_shnu.gif" />
+    <Content Include="pic\mail.JPG" />
+    <Content Include="pic\main.GIF" />
+    <Content Include="pic\main2.GIF" />
+    <Content Include="pic\msg_inbox.gif" />
+    <Content Include="pic\msg_savebox.gif" />
+    <Content Include="pic\msg_sentbox.gif" />
+    <Content Include="pic\m_bg04.jpg" />
+    <Content Include="pic\m_bg05.jpg" />
+    <Content Include="pic\m_left_title1.jpg" />
+    <Content Include="pic\m_left_title2.JPG" />
+    <Content Include="pic\Nbu_Index1.png" />
+    <Content Include="pic\new01.gif" />
+    <Content Include="pic\newbtm8.jpg" />
+    <Content Include="pic\oragnebar.gif" />
+    <Content Include="pic\pchome_Bar1.JPG" />
+    <Content Include="pic\pchome_Bar2.JPG" />
+    <Content Include="pic\pen.gif" />
+    <Content Include="pic\postnew.jpg" />
+    <Content Include="pic\posttype2.gif" />
+    <Content Include="pic\PutoutJob.GIF" />
+    <Content Include="pic\rainbow.JPG" />
+    <Content Include="pic\sdh_1.jpg" />
+    <Content Include="pic\sendbutton.GIF" />
+    <Content Include="pic\sendjobinfo.GIF" />
+    <Content Include="pic\shtu.gif" />
+    <Content Include="pic\shtutitle.jpg" />
+    <Content Include="pic\taoxingzhi.jpg" />
+    <Content Include="pic\Up.JPG" />
+    <Content Include="pic\WebSystem.JPG" />
+    <Content Include="pic\zoomin.gif" />
+    <Content Include="pic\ztop.gif" />
+    <Content Include="pic\ztop1.gif" />
+    <Content Include="pic\农行色彩.JPG" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="TestIndex_Quick.aspx" />
+    <Content Include="tzMenuWuc\cssMenu1.css" />
+    <Content Include="tzMenuWuc\TestWucMenu.aspx" />
+    <Content Include="tzMenuWuc\wucMenu.ascx" />
+    <Content Include="tzTreeViewWuc\cssTreeView.css" />
+    <Content Include="tzTreeViewWuc\cssTreeView1.css" />
+    <Content Include="tzTreeViewWuc\cssTreeView2.css" />
+    <Content Include="tzTreeViewWuc\TestWucTreeView.aspx" />
+    <Content Include="tzTreeViewWuc\wucTreeView.ascx" />
+    <Content Include="Webform1\DataSynch\wfmQxUsers4Synch_QUDI.aspx" />
+    <Content Include="Webform1\DataSynch\wucQxUsers4Synch.ascx" />
+    <Content Include="Webform1\DataSynch\wucvQxUsers4Synch4Gv.ascx" />
+    <Content Include="Webform1\UserManage\QxUserRoleRelation.ascx" />
+    <Content Include="Webform1\UserManage\QxUserRoleRelation4Gv.ascx" />
+    <Content Include="Webform1\UserManage\QxUserRoleRelation_QUDI.aspx" />
+    <Content Include="Webform1\UserManage\wfmQxUserRoleRelationB_QUDI.aspx" />
+    <Content Include="Webform1\UserManage\wucQxUserRoleRelationB.ascx" />
+    <Content Include="Webform1\UserManage\wucvQxUserRoleRelation4Gv.ascx" />
+    <Content Include="Webform\Account\account.txt" />
+    <Content Include="Webform\Account\wfmAddUsers.aspx" />
+    <Content Include="Webform\Account\wfmChangePwd.aspx" />
+    <Content Include="Webform\Account\wfmDepartmentInfo_QUDI.aspx" />
+    <Content Include="Webform\Account\wfmDepartmentInfo_QUDIBak.aspx" />
+    <Content Include="Webform\Account\wfmEditUsersForRole.aspx" />
+    <Content Include="Webform\Account\wfmGroupManage.aspx" />
+    <Content Include="Webform\Account\wfmMultiUserGroupRelation.aspx" />
+    <Content Include="Webform\Account\wfmPrjUserRelation_QUDI.aspx" />
+    <Content Include="Webform\Account\wfmSearchUsers.aspx" />
+    <Content Include="Webform\Account\wfmSetRoles4Users.aspx" />
+    <Content Include="Webform\Account\wfmSetRoles4Users2Bak.aspx" />
+    <Content Include="Webform\Account\wfmSetRoles4Users2.aspx" />
+    <Content Include="Webform\Account\wfmSetUsers4RolesBak.aspx" />
+    <Content Include="Webform\Account\wfmSetUsers4Roles.aspx" />
+    <Content Include="Webform\Account\wfmSingleUserGroupRelation.aspx" />
+    <Content Include="Webform\Account\wfmSubjectRelation_QUDI.aspx" />
+    <Content Include="Webform\Account\wfmUserGroups_QUDI.aspx" />
+    <Content Include="Webform\Account\wfmUserLoginName_QUDI.aspx" />
+    <Content Include="Webform\Account\wfmUserRoleRelation_Q.aspx" />
+    <Content Include="Webform\Account\wfmUserRoles_QUDI.aspx" />
+    <Content Include="Webform\Account\wfmUserState_QUDI.aspx" />
+    <Content Include="Webform\Account\wfmUsers_QUDI.aspx" />
+    <Content Include="Webform\Account\wfmUsers_QUDI2Bak.aspx" />
+    <Content Include="Webform\DataSynch\wfmPrjUserRelation4Synch_QUDI.aspx" />
+    <Content Include="Webform\Account\wfmUsers_School_QUDI.aspx" />
+    <Content Include="Webform\Account\wfmUsers_QUDI2.aspx" />
+    <Content Include="Webform\Account\wucDepartmentInfo.ascx" />
+    <Content Include="Webform\Account\wucDepartmentInfoBak.ascx" />
+    <Content Include="Webform\Account\wucQxPrjUserRelation.ascx" />
+    <Content Include="Webform\Account\wucSubjectRelation.ascx" />
+    <Content Include="Webform\Account\wucUserGroups.ascx" />
+    <Content Include="Webform\Account\wucUserLoginName.ascx" />
+    <Content Include="Webform\Account\wucUserRoles.ascx" />
+    <Content Include="Webform\Account\wucUsers_School.ascx" />
+    <Content Include="Webform\Account\wucUsers.ascx" />
+    <Content Include="Webform\Account\wucUserState.ascx" />
+    <Content Include="Webform\Admin\common\css\fonts\icomoon.svg" />
+    <Content Include="Webform\Admin\common\css\icons.css" />
+    <Content Include="Webform\Admin\common\css\login.css" />
+    <Content Include="Webform\Admin\common\css\register.css" />
+    <Content Include="Webform\Admin\common\css\sccl.css" />
+    <Content Include="Webform\Admin\common\css\stylesheet.css" />
+    <Content Include="Webform\Admin\common\css\stylesheets.css" />
+    <Content Include="Webform\Admin\common\css\styling.css" />
+    <Content Include="Webform\Admin\common\iconfont\1.0.1\demo.css" />
+    <Content Include="Webform\Admin\common\iconfont\1.0.1\demo.html" />
+    <Content Include="Webform\Admin\common\iconfont\1.0.1\iconfont.css" />
+    <Content Include="Webform\Admin\common\iconfont\1.0.1\iconfont.svg" />
+    <Content Include="Webform\Admin\common\image\icon-arrow.png" />
+    <Content Include="Webform\Admin\common\image\icon_arrow.png" />
+    <Content Include="Webform\Admin\common\image\loading-b.gif" />
+    <Content Include="Webform\Admin\common\image\loading-s.gif" />
+    <Content Include="Webform\Admin\common\image\loading.gif" />
+    <Content Include="Webform\Admin\common\image\login-bg-1.jpg" />
+    <Content Include="Webform\Admin\common\image\login-bg-10.jpg" />
+    <Content Include="Webform\Admin\common\image\login-bg-2.jpg" />
+    <Content Include="Webform\Admin\common\image\login-bg-3.jpg" />
+    <Content Include="Webform\Admin\common\image\login-bg-4.jpg" />
+    <Content Include="Webform\Admin\common\image\login-bg-5.jpg" />
+    <Content Include="Webform\Admin\common\image\login-bg-6.png" />
+    <Content Include="Webform\Admin\common\image\login-bg-7.jpg" />
+    <Content Include="Webform\Admin\common\image\login-bg-8.jpg" />
+    <Content Include="Webform\Admin\common\image\login-bg-9.jpg" />
+    <Content Include="Webform\Admin\common\image\login_bg.png" />
+    <Content Include="Webform\Admin\common\image\login_bg3.png" />
+    <Content Include="Webform\Admin\common\image\login_title.png" />
+    <Content Include="Webform\Admin\common\js\sccl-util.js" />
+    <Content Include="Webform\Admin\common\js\sccl.js" />
+    <Content Include="Webform\Admin\common\layui\css\layui.css" />
+    <Content Include="Webform\Admin\common\layui\css\mobile.css" />
+    <Content Include="Webform\Admin\common\layui\css\modules\code.css" />
+    <Content Include="Webform\Admin\common\layui\css\modules\laydate\icon.png" />
+    <Content Include="Webform\Admin\common\layui\css\modules\laydate\laydate.css" />
+    <Content Include="Webform\Admin\common\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="Webform\Admin\common\layui\css\modules\layer\default\icon.png" />
+    <Content Include="Webform\Admin\common\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="Webform\Admin\common\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="Webform\Admin\common\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="Webform\Admin\common\layui\css\modules\layer\layer.css" />
+    <Content Include="Webform\Admin\common\layui\font\iconfont.svg" />
+    <Content Include="Webform\Admin\common\layui\images\face\0.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\1.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\10.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\11.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\12.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\13.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\14.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\15.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\16.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\17.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\18.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\19.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\2.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\20.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\21.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\22.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\23.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\24.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\25.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\26.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\27.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\28.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\29.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\3.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\30.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\31.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\32.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\33.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\34.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\35.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\36.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\37.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\38.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\39.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\4.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\40.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\41.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\42.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\43.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\44.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\45.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\46.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\47.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\48.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\49.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\5.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\50.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\51.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\52.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\53.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\54.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\55.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\56.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\57.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\58.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\59.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\6.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\60.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\61.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\62.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\63.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\64.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\65.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\66.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\67.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\68.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\69.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\7.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\70.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\71.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\8.gif" />
+    <Content Include="Webform\Admin\common\layui\images\face\9.gif" />
+    <Content Include="Webform\Admin\common\layui\layui.js" />
+    <Content Include="Webform\Admin\common\layui\lay\all.js" />
+    <Content Include="Webform\Admin\common\layui\lay\lib\jquery.js" />
+    <Content Include="Webform\Admin\common\layui\lay\modules\code.js" />
+    <Content Include="Webform\Admin\common\layui\lay\modules\element.js" />
+    <Content Include="Webform\Admin\common\layui\lay\modules\flow.js" />
+    <Content Include="Webform\Admin\common\layui\lay\modules\form.js" />
+    <Content Include="Webform\Admin\common\layui\lay\modules\laydate.js" />
+    <Content Include="Webform\Admin\common\layui\lay\modules\layedit.js" />
+    <Content Include="Webform\Admin\common\layui\lay\modules\layer.js" />
+    <Content Include="Webform\Admin\common\layui\lay\modules\laypage.js" />
+    <Content Include="Webform\Admin\common\layui\lay\modules\laytpl.js" />
+    <Content Include="Webform\Admin\common\layui\lay\modules\tree.js" />
+    <Content Include="Webform\Admin\common\layui\lay\modules\upload.js" />
+    <Content Include="Webform\Admin\common\layui\lay\modules\util.js" />
+    <Content Include="Webform\Admin\common\lib\html5.js" />
+    <Content Include="Webform\Admin\common\lib\jquery-1.9.0.min.js" />
+    <Content Include="Webform\Admin\common\lib\pace.min.js" />
+    <Content Include="Webform\Admin\common\lib\respond.min.js" />
+    <Content Include="Webform\Admin\common\skin\blue\skin.css" />
+    <Content Include="Webform\Admin\common\skin\molv\skin.css" />
+    <Content Include="Webform\Admin\common\skin\qingxin\skin.css" />
+    <Content Include="Webform\Admin\Css\Calendar.css" />
+    <Content Include="Webform\Admin\Css\General.css" />
+    <Content Include="Webform\Admin\Css\Images\add.gif" />
+    <Content Include="Webform\Admin\Css\Images\back.gif" />
+    <Content Include="Webform\Admin\Css\Images\btn_bg.gif" />
+    <Content Include="Webform\Admin\Css\Images\butClose.gif" />
+    <Content Include="Webform\Admin\Css\Images\butOpen.gif" />
+    <Content Include="Webform\Admin\Css\Images\button_submit.gif" />
+    <Content Include="Webform\Admin\Css\Images\button_submit1.jpg" />
+    <Content Include="Webform\Admin\Css\Images\button_submit2.jpg" />
+    <Content Include="Webform\Admin\Css\Images\close.gif" />
+    <Content Include="Webform\Admin\Css\Images\col.gif" />
+    <Content Include="Webform\Admin\Css\Images\correct.gif" />
+    <Content Include="Webform\Admin\Css\Images\Delete.gif" />
+    <Content Include="Webform\Admin\Css\Images\disable.gif" />
+    <Content Include="Webform\Admin\Css\Images\Edit.gif" />
+    <Content Include="Webform\Admin\Css\Images\error.gif" />
+    <Content Include="Webform\Admin\Css\Images\exp.gif" />
+    <Content Include="Webform\Admin\Css\Images\Export.gif" />
+    <Content Include="Webform\Admin\Css\Images\focus_bg.jpg" />
+    <Content Include="Webform\Admin\Css\Images\folder.gif" />
+    <Content Include="Webform\Admin\Css\Images\folder_open.gif" />
+    <Content Include="Webform\Admin\Css\Images\foot_bg.gif" />
+    <Content Include="Webform\Admin\Css\Images\head_bg.gif" />
+    <Content Include="Webform\Admin\Css\Images\head_bg2.gif" />
+    <Content Include="Webform\Admin\Css\Images\head_logo.gif" />
+    <Content Include="Webform\Admin\Css\Images\head_logo.png" />
+    <Content Include="Webform\Admin\Css\Images\head_logo1.png" />
+    <Content Include="Webform\Admin\Css\Images\hint.gif" />
+    <Content Include="Webform\Admin\Css\Images\hintbg1.gif" />
+    <Content Include="Webform\Admin\Css\Images\hintbg2.gif" />
+    <Content Include="Webform\Admin\Css\Images\home.gif" />
+    <Content Include="Webform\Admin\Css\Images\ico-0.png" />
+    <Content Include="Webform\Admin\Css\Images\ico-0_.png" />
+    <Content Include="Webform\Admin\Css\Images\ico-1.png" />
+    <Content Include="Webform\Admin\Css\Images\ico-1_.png" />
+    <Content Include="Webform\Admin\Css\Images\ico-2.png" />
+    <Content Include="Webform\Admin\Css\Images\ico-2_.png" />
+    <Content Include="Webform\Admin\Css\Images\ico-3.png" />
+    <Content Include="Webform\Admin\Css\Images\ico-3_.png" />
+    <Content Include="Webform\Admin\Css\Images\ico-4.png" />
+    <Content Include="Webform\Admin\Css\Images\ico-4_.png" />
+    <Content Include="Webform\Admin\Css\Images\ico-5.png" />
+    <Content Include="Webform\Admin\Css\Images\ico-5_.png" />
+    <Content Include="Webform\Admin\Css\Images\ico-6.png" />
+    <Content Include="Webform\Admin\Css\Images\icon-01.gif" />
+    <Content Include="Webform\Admin\Css\Images\icon-02.gif" />
+    <Content Include="Webform\Admin\Css\Images\icon-03.gif" />
+    <Content Include="Webform\Admin\Css\Images\ico_01.gif" />
+    <Content Include="Webform\Admin\Css\Images\img_Show.gif" />
+    <Content Include="Webform\Admin\Css\Images\input_bg.jpg" />
+    <Content Include="Webform\Admin\Css\Images\left_menu_bg.gif" />
+    <Content Include="Webform\Admin\Css\Images\loading.gif" />
+    <Content Include="Webform\Admin\Css\Images\login_bg.jpg" />
+    <Content Include="Webform\Admin\Css\Images\login_btn.gif" />
+    <Content Include="Webform\Admin\Css\Images\main_cen_bg.gif" />
+    <Content Include="Webform\Admin\Css\Images\menu_bg.gif" />
+    <Content Include="Webform\Admin\Css\Images\menu_dot.gif" />
+    <Content Include="Webform\Admin\Css\Images\MouseOut.jpg" />
+    <Content Include="Webform\Admin\Css\Images\MouseOver.gif" />
+    <Content Include="Webform\Admin\Css\Images\navsub_bg.gif" />
+    <Content Include="Webform\Admin\Css\Images\nav_bg.gif" />
+    <Content Include="Webform\Admin\Css\Images\pro_bg.gif" />
+    <Content Include="Webform\Admin\Css\Images\Related_.gif" />
+    <Content Include="Webform\Admin\Css\Images\siteico.gif" />
+    <Content Include="Webform\Admin\Css\Images\success.gif" />
+    <Content Include="Webform\Admin\Css\Images\t.gif" />
+    <Content Include="Webform\Admin\Css\Images\table_th_bg.gif" />
+    <Content Include="Webform\Admin\Css\Images\tabsleft.gif" />
+    <Content Include="Webform\Admin\Css\Images\tabsright.gif" />
+    <Content Include="Webform\Admin\Css\Images\taize_1.css" />
+    <Content Include="Webform\Admin\Css\Images\tool.gif" />
+    <Content Include="Webform\Admin\Css\Images\tool2.gif" />
+    <Content Include="Webform\Admin\Css\Images\top_ico1.gif" />
+    <Content Include="Webform\Admin\Css\Images\top_ico2.gif" />
+    <Content Include="Webform\Admin\Css\Images\txt_Show.gif" />
+    <Content Include="Webform\Admin\Css\Images\upfilebg.gif" />
+    <Content Include="Webform\Admin\Css\Images\warning.gif" />
+    <Content Include="Webform\Admin\Css\Images\wsh01.gif" />
+    <Content Include="Webform\Admin\Css\KnowledgeBG.css" />
+    <Content Include="Webform\Admin\Css\TreeView.css" />
+    <Content Include="Webform\Admin\home.aspx" />
+    <Content Include="Webform\Admin\images\2.jpg" />
+    <Content Include="Webform\Admin\images\addNote.gif" />
+    <Content Include="Webform\Admin\images\bg.gif" />
+    <Content Include="Webform\Admin\images\bg_banner_menu.gif" />
+    <Content Include="Webform\Admin\images\bg_button_blue.gif" />
+    <Content Include="Webform\Admin\images\bg_button_del.gif" />
+    <Content Include="Webform\Admin\images\bg_button_update.gif" />
+    <Content Include="Webform\Admin\images\bg_header.gif" />
+    <Content Include="Webform\Admin\images\bg_left_bc.gif" />
+    <Content Include="Webform\Admin\images\bg_left_bl.gif" />
+    <Content Include="Webform\Admin\images\bg_left_br.gif" />
+    <Content Include="Webform\Admin\images\bg_left_ls.gif" />
+    <Content Include="Webform\Admin\images\bg_left_rs.gif" />
+    <Content Include="Webform\Admin\images\bg_left_tc.gif" />
+    <Content Include="Webform\Admin\images\bg_left_tl.gif" />
+    <Content Include="Webform\Admin\images\bg_left_tr.gif" />
+    <Content Include="Webform\Admin\images\bg_login.png" />
+    <Content Include="Webform\Admin\images\bg_login_panel.gif" />
+    <Content Include="Webform\Admin\images\bg_login_panel.png" />
+    <Content Include="Webform\Admin\images\bg_nav.gif" />
+    <Content Include="Webform\Admin\images\bg_rectbtn.png" />
+    <Content Include="Webform\Admin\images\bg_schedule.gif" />
+    <Content Include="Webform\Admin\images\bg_tabedbtn.gif" />
+    <Content Include="Webform\Admin\images\bg_table_item.gif" />
+    <Content Include="Webform\Admin\images\bg_table_item2.gif" />
+    <Content Include="Webform\Admin\images\bg_th.gif" />
+    <Content Include="Webform\Admin\images\bg_title.gif" />
+    <Content Include="Webform\Admin\images\bg_tr.gif" />
+    <Content Include="Webform\Admin\images\bg_users.gif" />
+    <Content Include="Webform\Admin\images\delete.gif" />
+    <Content Include="Webform\Admin\images\edit.gif" />
+    <Content Include="Webform\Admin\images\index.css" />
+    <Content Include="Webform\Admin\images\login.css" />
+    <Content Include="Webform\Admin\images\login_main.png" />
+    <Content Include="Webform\Admin\images\login_root.png" />
+    <Content Include="Webform\Admin\images\login_root1.png" />
+    <Content Include="Webform\Admin\images\logo.png" />
+    <Content Include="Webform\Admin\images\logo1.png" />
+    <Content Include="Webform\Admin\images\logo2.png" />
+    <Content Include="Webform\Admin\images\mail.gif" />
+    <Content Include="Webform\Admin\images\main_fs.gif" />
+    <Content Include="Webform\Admin\images\main_hb.gif" />
+    <Content Include="Webform\Admin\images\main_hl.gif" />
+    <Content Include="Webform\Admin\images\main_hl2.gif" />
+    <Content Include="Webform\Admin\images\main_hr.gif" />
+    <Content Include="Webform\Admin\images\main_lf.gif" />
+    <Content Include="Webform\Admin\images\main_ls.gif" />
+    <Content Include="Webform\Admin\images\main_rc.gif" />
+    <Content Include="Webform\Admin\images\main_rf.gif" />
+    <Content Include="Webform\Admin\images\main_rs.gif" />
+    <Content Include="Webform\Admin\images\menu_seprator.gif" />
+    <Content Include="Webform\Admin\images\minicalendar\minical_btnClose.gif" />
+    <Content Include="Webform\Admin\images\minicalendar\minical_btnForward.gif" />
+    <Content Include="Webform\Admin\images\minicalendar\minical_btnPrevious.gif" />
+    <Content Include="Webform\Admin\images\minicalendar\minical_title.gif" />
+    <Content Include="Webform\Admin\images\nav_back.gif" />
+    <Content Include="Webform\Admin\images\nav_changePassword.gif" />
+    <Content Include="Webform\Admin\images\nav_forward.gif" />
+    <Content Include="Webform\Admin\images\nav_help.gif" />
+    <Content Include="Webform\Admin\images\nav_pre.gif" />
+    <Content Include="Webform\Admin\images\nav_print.gif" />
+    <Content Include="Webform\Admin\images\nav_resetPassword.gif" />
+    <Content Include="Webform\Admin\images\nav_search.gif" />
+    <Content Include="Webform\Admin\images\note.gif" />
+    <Content Include="Webform\Admin\images\public.css" />
+    <Content Include="Webform\Admin\images\state1.gif" />
+    <Content Include="Webform\Admin\images\submit.gif" />
+    <Content Include="Webform\Admin\images\tree\arrow_collapsed.gif" />
+    <Content Include="Webform\Admin\images\tree\arrow_collapsed_hover.gif" />
+    <Content Include="Webform\Admin\images\tree\arrow_expanded.gif" />
+    <Content Include="Webform\Admin\images\tree\arrow_expanded_hover.gif" />
+    <Content Include="Webform\Admin\images\tree\branch_node.gif" />
+    <Content Include="Webform\Admin\images\tree\btn_close.gif" />
+    <Content Include="Webform\Admin\images\tree\btn_close.png" />
+    <Content Include="Webform\Admin\images\tree\empty.gif" />
+    <Content Include="Webform\Admin\images\tree\folder_closed.gif" />
+    <Content Include="Webform\Admin\images\tree\folder_open.gif" />
+    <Content Include="Webform\Admin\images\tree\root_node.gif" />
+    <Content Include="Webform\Admin\images\tree\tree_node.gif" />
+    <Content Include="Webform\Admin\images\tree\user_node.gif" />
+    <Content Include="Webform\Admin\IndexMenu.aspx" />
+    <Content Include="Webform\Admin\Js\jquery-1.3.2.min.js" />
+    <Content Include="Webform\Admin\Js\jquery.form.js" />
+    <Content Include="Webform\Admin\Js\jquery.validate.min.js" />
+    <Content Include="Webform\Admin\Js\messages_cn.js" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\calendar.js" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\config.js" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\lang\en.js" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\My97DatePicker.htm" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\WdatePicker.js" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\开发包\lang\en.js" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\开发包\readme.txt" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="Webform\Admin\Js\My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="Webform\Admin\Js\pub.js" />
+    <Content Include="Webform\Admin\login.aspx" />
+    <Content Include="Webform\center.htm" />
+    <Content Include="Webform\DataExcelImport\PrjMenuSetExcelImport.aspx" />
+    <Content Include="Webform\DataExcelImport\QxPrjMenusExcelImport.aspx" />
+    <Content Include="Webform\DataExcelImport\QxRoleMenusExcelImport.aspx" />
+    <Content Include="Webform\error.aspx" />
+    <Content Include="Webform\ErrorMsg.aspx" />
+    <Content Include="Webform\Frameset.htm" />
+    <Content Include="Webform\GeneMenu\Demo\wfmDispUserMenu.htm" />
+    <Content Include="Webform\GeneMenu\Demo\wfmDispUserMenuBak.htm" />
+    <Content Include="Webform\GeneMenu\genemenu.txt" />
+    <Content Include="Webform\GeneMenu\WebUserControl.ascx" />
+    <Content Include="Webform\GeneMenu\wfmPageDispModeB_QUDI.aspx" />
+    <Content Include="Webform\GeneMenu\wfmPrjMenuSet_QUDI.aspx" />
+    <Content Include="Webform\GeneMenu\wfmPrjMenus_EDITMenu.aspx" />
+    <Content Include="Webform\GeneMenu\wfmPrjMenus_EDITMenu2.aspx" />
+    <Content Include="Webform\GeneMenu\wfmQxPrjMenus_QUDI.aspx" />
+    <Content Include="Webform\GeneMenu\wfmRoleMenusB_QUDI.aspx" />
+    <Content Include="Webform\GeneMenu\wfmSetMenu4Roles.aspx" />
+    <Content Include="Webform\GeneMenu\wfmSetRole4Menu.aspx" />
+    <Content Include="Webform\GeneMenu\wfmSetMenu4Roles2.aspx" />
+    <Content Include="Webform\GeneMenu\wfmSetMenu4Users.aspx" />
+    <Content Include="Webform\GeneMenu\wucQxPageDispModeB.ascx" />
+    <Content Include="Webform\GeneMenu\wucQxPrjMenus.ascx" />
+    <Content Include="Webform\GeneMenu\wucQxPrjMenuSet.ascx" />
+    <Content Include="Webform\GeneMenu\wucQxRoleMenusB.ascx" />
+    <Content Include="Webform\Index.aspx" />
+    <Content Include="Webform\JumpPage.aspx" />
+    <Content Include="Webform\Login_WebApplications.aspx" />
+    <Content Include="Webform\PotenceMan\wfmPotenceType_QUDI.aspx" />
+    <Content Include="Webform\PotenceMan\wfmPrjPotence_QUDI.aspx" />
+    <Content Include="Webform\PotenceMan\wfmRelaOfPotenceAndSymbolB_QUDI.aspx" />
+    <Content Include="Webform\PotenceMan\wfmSetRelaOfPotenceAndSymbol.aspx" />
+    <Content Include="Webform\PotenceMan\wucPotenceType.ascx" />
+    <Content Include="Webform\PotenceMan\wucPrjPotence.ascx" />
+    <Content Include="Webform\PotenceMan\wucRelaOfPotenceAndSymbolB.ascx" />
+    <Content Include="Webform\PrjFileDownLoad\wfmCodeTypeB_QUDI.aspx" />
+    <Content Include="Webform\PrjFileDownLoad\wfmPrjFileRelaB_QUDI.aspx" />
+    <Content Include="Webform\PrjFileDownLoad\wfmPrjSite4DownLoadB_QUDI.aspx" />
+    <Content Include="Webform\PrjFileDownLoad\wfmUserCodePathB_QUDI.aspx" />
+    <Content Include="Webform\PrjFileDownLoad\wfmUserDownLoadDetailLogB_QUDI.aspx" />
+    <Content Include="Webform\PrjFileDownLoad\wfmUserDownLoadLogB_QUDI.aspx" />
+    <Content Include="Webform\PrjFileDownLoad\wucCodeTypeB.ascx" />
+    <Content Include="Webform\PrjFileDownLoad\wucPrjFileRelaB.ascx" />
+    <Content Include="Webform\PrjFileDownLoad\wucPrjSite4DownLoadB.ascx" />
+    <Content Include="Webform\PrjFileDownLoad\wucUserCodePathB.ascx" />
+    <Content Include="Webform\PrjFileDownLoad\wucUserDownLoadDetailLogB.ascx" />
+    <Content Include="Webform\PrjFileDownLoad\wucUserDownLoadLogB.ascx" />
+    <Content Include="Webform\PrjManage\wfmDataBaseType_QUDI.aspx" />
+    <Content Include="Webform\PrjManage\wfmPrjDataBase_QUDI.aspx" />
+    <Content Include="Webform\PrjManage\wfmPrjModule_QUDI.aspx" />
+    <Content Include="Webform\PrjManage\wfmQxFuncModule_Agc_QUDI.aspx" />
+    <Content Include="Webform\PrjManage\wfmQxPrjTab_QUDI3.aspx" />
+    <Content Include="Webform\PrjManage\wfmProjects_QUDI.aspx" />
+    <Content Include="Webform\PrjManage\wfmQxFuncModuleB_QUDI.aspx" />
+    <Content Include="Webform\PrjManage\wfmQxFuncModuleB_QUDIBak.aspx" />
+    <Content Include="Webform\PrjManage\wucDataBaseType.ascx" />
+    <Content Include="Webform\PrjManage\wucPrjDataBase.ascx" />
+    <Content Include="Webform\PrjManage\wucPrjModule.ascx" />
+    <Content Include="Webform\PrjManage\wucProjects.ascx" />
+    <Content Include="Webform\PrjManage\wucQxFuncModuleB.ascx" />
+    <Content Include="Webform\PrjManage\wucvQxFuncModule_Agc4Gv.ascx" />
+    <Content Include="Webform\PrjManage\wucvQxPrjTab4Gv.ascx" />
+    <Content Include="Webform\PrjManage\wucvQxFuncModule4Gv.ascx" />
+    <Content Include="Webform\success.aspx" />
+    <Content Include="Webform\SystemSet\systemset.txt" />
+    <Content Include="Webform\SystemSet\wfmExportExcel4UsersB_QUDI.aspx" />
+    <Content Include="Webform\SystemSet\wfmExportExcelSetB_QUDI.aspx" />
+    <Content Include="Webform\SystemSet\wfmImportProjectInfo.aspx" />
+    <Content Include="Webform\DataSynch\wfmQxServer4SynchB_QUDI.aspx" />
+    <Content Include="Webform\SystemSet\wfmSetFieldVisibilityB_QUDI.aspx" />
+    <Content Include="Webform\SystemSet\wucDataBaseConnect.ascx" />
+    <Content Include="Webform\SystemSet\wucExportExcel4UsersB.ascx" />
+    <Content Include="Webform\SystemSet\wucExportExcelSetB.ascx" />
+    <Content Include="Webform\SystemSet\wucExportExcelSetB_Sim.ascx" />
+    <Content Include="Webform\DataSynch\wucQxServer4Synch4Gv.ascx" />
+    <Content Include="Webform\DataSynch\wucQxServer4SynchB.ascx" />
+    <Content Include="Webform\SystemSet\wucSetFieldVisibilityB.ascx" />
+    <Content Include="Webform\Test\HtmlPage1.html" />
+    <Content Include="Webform\Test\wfmUserMenuDetailB_QUDI.aspx" />
+    <Content Include="Webform\Test\wucUserMenuDetailB.ascx" />
+    <Content Include="Webform\top.aspx" />
+    <Content Include="Webform\UserManage\wfmQxUsersB_QUDI.aspx" />
+    <Content Include="Webform\UserManage\wucQxUsersB.ascx" />
+    <Content Include="Webform\UserManage\wucvQxUsers4Gv.ascx" />
+    <Content Include="Webform\UserRolePotence\userrolepotence.txt" />
+    <Content Include="Webform\UserRolePotence\wfmManPotencesForSingleUserGroup.aspx" />
+    <Content Include="Webform\UserRolePotence\wfmSetPotenceForRoles.aspx" />
+    <Content Include="Webform\UserRolePotence\wfmSetPotenceSymbol4Roles2.aspx" />
+    <Content Include="Webform\UserRolePotence\wfmSetPotenceSymbolForRoles.aspx" />
+    <Content Include="Webform\UserRolePotence\wfmUserGroupPotence_Q.aspx" />
+    <Content Include="Webform\UserRolePotence\wucRelaOfPotenceAndSymbol.ascx" />
+    <Content Include="Webform\ViewMan\wfmSetRelaOfViewAndPotence.aspx" />
+    <Content Include="Webform\ViewMan\wfmSetViewPotenceLevel.aspx" />
+    <Content Include="Webform\ViewMan\wfmViewInfo_QUDI.aspx" />
+    <Content Include="Webform\ViewMan\wfmViewPotence_Q.aspx" />
+    <Content Include="Webform\ViewMan\wucViewInfo.ascx" />
+    <Content Include="Webform\ViewMan\wucQxViewPotence.ascx" />
+    <Content Include="Webform\webform.txt" />
+    <Content Include="Webform\wel.aspx" />
+    <Content Include="Webform\wfmCheck_UserInfo.aspx" />
+    <Content Include="Webform\wfmDispUserMenu.aspx" />
+    <Content Include="Webform\wfmProjects_List.aspx" />
+    <Content Include="Webform\wfmSelectRoles_WebApplications.aspx" />
+    <Content Include="Webform\wfmSelectUserPrjAndRole_GeneralPlatform.aspx" />
+    <Content Include="xml\temp.xml" />
+    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\error\bg.gif" />
+    <Content Include="Styles\error\emessage.gif" />
+    <Content Include="Styles\error\error.gif" />
+    <Content Include="Styles\error\left.gif" />
+    <Content Include="Styles\error\right.gif" />
+    <Content Include="Styles\Images\add.gif" />
+    <Content Include="Styles\Images\back.gif" />
+    <Content Include="Styles\Images\btn_bg.gif" />
+    <Content Include="Styles\Images\butClose.gif" />
+    <Content Include="Styles\Images\butOpen.gif" />
+    <Content Include="Styles\Images\button_submit.gif" />
+    <Content Include="Styles\Images\close.gif" />
+    <Content Include="Styles\Images\col.gif" />
+    <Content Include="Styles\Images\correct.gif" />
+    <Content Include="Styles\Images\Delete.gif" />
+    <Content Include="Styles\Images\disable.gif" />
+    <Content Include="Styles\Images\Download.jpg" />
+    <Content Include="Styles\Images\Edit.gif" />
+    <Content Include="Styles\Images\error.gif" />
+    <Content Include="Styles\Images\exp.gif" />
+    <Content Include="Styles\Images\Export.gif" />
+    <Content Include="Styles\Images\focus_bg.jpg" />
+    <Content Include="Styles\Images\folder.gif" />
+    <Content Include="Styles\Images\folder_open.gif" />
+    <Content Include="Styles\Images\foot_bg.gif" />
+    <Content Include="Styles\Images\head_bg.gif" />
+    <Content Include="Styles\Images\head_bg2.gif" />
+    <Content Include="Styles\Images\head_logo.gif" />
+    <Content Include="Styles\Images\head_logo.png" />
+    <Content Include="Styles\Images\head_logo1.png" />
+    <Content Include="Styles\Images\hint.gif" />
+    <Content Include="Styles\Images\hintbg1.gif" />
+    <Content Include="Styles\Images\hintbg2.gif" />
+    <Content Include="Styles\Images\home.gif" />
+    <Content Include="Styles\Images\ico-0.png" />
+    <Content Include="Styles\Images\ico-0_.png" />
+    <Content Include="Styles\Images\ico-1.png" />
+    <Content Include="Styles\Images\ico-1_.png" />
+    <Content Include="Styles\Images\ico-2.png" />
+    <Content Include="Styles\Images\ico-2_.png" />
+    <Content Include="Styles\Images\ico-3.png" />
+    <Content Include="Styles\Images\ico-3_.png" />
+    <Content Include="Styles\Images\ico-4.png" />
+    <Content Include="Styles\Images\ico-4_.png" />
+    <Content Include="Styles\Images\ico-5.png" />
+    <Content Include="Styles\Images\ico-5_.png" />
+    <Content Include="Styles\Images\ico-6.png" />
+    <Content Include="Styles\Images\icon-01.gif" />
+    <Content Include="Styles\Images\icon-02.gif" />
+    <Content Include="Styles\Images\icon-03.gif" />
+    <Content Include="Styles\Images\ico_01.gif" />
+    <Content Include="Styles\Images\img_Show.gif" />
+    <Content Include="Styles\Images\input_bg.jpg" />
+    <Content Include="Styles\Images\left_menu_bg.gif" />
+    <Content Include="Styles\Images\loading.gif" />
+    <Content Include="Styles\Images\login_bg.jpg" />
+    <Content Include="Styles\Images\login_btn.gif" />
+    <Content Include="Styles\Images\main_cen_bg.gif" />
+    <Content Include="Styles\Images\menu_bg.gif" />
+    <Content Include="Styles\Images\menu_dot.gif" />
+    <Content Include="Styles\Images\MouseOut.jpg" />
+    <Content Include="Styles\Images\MouseOver.gif" />
+    <Content Include="Styles\Images\navsub_bg.gif" />
+    <Content Include="Styles\Images\nav_bg.gif" />
+    <Content Include="Styles\Images\pro_bg.gif" />
+    <Content Include="Styles\Images\Related_.gif" />
+    <Content Include="Styles\Images\siteico.gif" />
+    <Content Include="Styles\Images\style.css" />
+    <Content Include="Styles\Images\success.gif" />
+    <Content Include="Styles\Images\t.gif" />
+    <Content Include="Styles\Images\table_th_bg.gif" />
+    <Content Include="Styles\Images\tabsleft.gif" />
+    <Content Include="Styles\Images\tabsright.gif" />
+    <Content Include="Styles\Images\top_ico1.gif" />
+    <Content Include="Styles\Images\top_ico2.gif" />
+    <Content Include="Styles\Images\txt_Show.gif" />
+    <Content Include="Styles\Images\upfilebg.gif" />
+    <Content Include="Styles\Images\warning.gif" />
+    <Content Include="Styles\Images\wsh01.gif" />
+    <Content Include="Styles\jquery-ui-1.7.2.custom.css" />
+    <Content Include="Styles\news.css" />
+    <Content Include="Styles\pagination.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Webform\Admin\common\css\fonts\Descr.WD3" />
+    <Content Include="Webform\Admin\common\css\fonts\icomoon.eot" />
+    <Content Include="Webform\Admin\common\css\fonts\icomoon.eot%40" />
+    <Content Include="Webform\Admin\common\css\fonts\icomoon.ttf" />
+    <Content Include="Webform\Admin\common\css\fonts\icomoon.woff" />
+    <Content Include="Webform\Admin\common\iconfont\1.0.1\iconfont.eot" />
+    <Content Include="Webform\Admin\common\iconfont\1.0.1\iconfont.ttf" />
+    <Content Include="Webform\Admin\common\iconfont\1.0.1\iconfont.woff" />
+    <Content Include="Webform\Admin\common\layui\font\iconfont.eot" />
+    <Content Include="Webform\Admin\common\layui\font\iconfont.ttf" />
+    <Content Include="Webform\Admin\common\layui\font\iconfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\WebApiExceptionFilterAttribute.cs" />
+    <Compile Include="FuncClass\clsCommonSession.cs" />
+    <Compile Include="FuncClass\clsDropDownList.cs" />
+    <Compile Include="FuncClass\clsMyConfig.cs" />
+    <Compile Include="FuncClass\clsPubFun_WebApi.cs" />
+    <Compile Include="FuncClass\clsPubFun_WS.cs" />
+    <Compile Include="FuncClass\clsPubFun.cs" />
+    <Compile Include="FuncClass\clsPubVar_WebApi.cs" />
+    <Compile Include="FuncClass\clsPubVar_WS.cs" />
+    <Compile Include="FuncClass\clsPubVar.cs" />
+    <Compile Include="FuncClass\CommWebBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index4Invoke\TestIndex4GP.aspx.cs">
+      <DependentUpon>TestIndex4GP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index4Invoke\TestIndex4GP.aspx.designer.cs">
+      <DependentUpon>TestIndex4GP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index4Invoke\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index4Invoke\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index_quick.aspx.cs">
+      <DependentUpon>Index_quick.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index_quick.aspx.designer.cs">
+      <DependentUpon>Index_quick.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestIndex_Quick.aspx.cs">
+      <DependentUpon>TestIndex_Quick.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestIndex_Quick.aspx.designer.cs">
+      <DependentUpon>TestIndex_Quick.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tzMenuWuc\clsMenuBind.cs" />
+    <Compile Include="tzMenuWuc\clsMenuItemTypeMenu.cs" />
+    <Compile Include="tzMenuWuc\clsMenuModelMenu.cs" />
+    <Compile Include="tzMenuWuc\clsSysPara4Menu.cs" />
+    <Compile Include="tzMenuWuc\TestWucMenu.aspx.cs">
+      <DependentUpon>TestWucMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tzMenuWuc\TestWucMenu.aspx.designer.cs">
+      <DependentUpon>TestWucMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tzMenuWuc\wucMenu.ascx.cs">
+      <DependentUpon>wucMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tzMenuWuc\wucMenu.ascx.designer.cs">
+      <DependentUpon>wucMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="tzTreeViewWuc\clsSysPara4TreeView.cs" />
+    <Compile Include="tzTreeViewWuc\clsTreeModelMenu.cs" />
+    <Compile Include="tzTreeViewWuc\clsTreeNodeTypeMenu.cs" />
+    <Compile Include="tzTreeViewWuc\clsTreeViewBindDoubleTable.cs" />
+    <Compile Include="tzTreeViewWuc\TestWucTreeView.aspx.cs">
+      <DependentUpon>TestWucTreeView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tzTreeViewWuc\TestWucTreeView.aspx.designer.cs">
+      <DependentUpon>TestWucTreeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tzTreeViewWuc\wucTreeView.ascx.cs">
+      <DependentUpon>wucTreeView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="tzTreeViewWuc\wucTreeView.ascx.designer.cs">
+      <DependentUpon>wucTreeView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform1\DataSynch\wfmQxUsers4Synch_QUDI.aspx.cs">
+      <DependentUpon>wfmQxUsers4Synch_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform1\DataSynch\wfmQxUsers4Synch_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmQxUsers4Synch_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform1\DataSynch\wucQxUsers4Synch.ascx.cs">
+      <DependentUpon>wucQxUsers4Synch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform1\DataSynch\wucQxUsers4Synch.ascx.designer.cs">
+      <DependentUpon>wucQxUsers4Synch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform1\DataSynch\wucvQxUsers4Synch4Gv.ascx.cs">
+      <DependentUpon>wucvQxUsers4Synch4Gv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform1\DataSynch\wucvQxUsers4Synch4Gv.ascx.designer.cs">
+      <DependentUpon>wucvQxUsers4Synch4Gv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform1\UserManage\QxUserRoleRelation.ascx.cs">
+      <DependentUpon>QxUserRoleRelation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform1\UserManage\QxUserRoleRelation.ascx.designer.cs">
+      <DependentUpon>QxUserRoleRelation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform1\UserManage\QxUserRoleRelation4Gv.ascx.cs">
+      <DependentUpon>QxUserRoleRelation4Gv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform1\UserManage\QxUserRoleRelation4Gv.ascx.designer.cs">
+      <DependentUpon>QxUserRoleRelation4Gv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform1\UserManage\QxUserRoleRelation_QUDI.aspx.cs">
+      <DependentUpon>QxUserRoleRelation_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform1\UserManage\QxUserRoleRelation_QUDI.aspx.designer.cs">
+      <DependentUpon>QxUserRoleRelation_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform1\UserManage\wfmQxUserRoleRelationB_QUDI.aspx.cs">
+      <DependentUpon>wfmQxUserRoleRelationB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform1\UserManage\wfmQxUserRoleRelationB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmQxUserRoleRelationB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform1\UserManage\wucQxUserRoleRelationB.ascx.cs">
+      <DependentUpon>wucQxUserRoleRelationB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform1\UserManage\wucQxUserRoleRelationB.ascx.designer.cs">
+      <DependentUpon>wucQxUserRoleRelationB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform1\UserManage\wucvQxUserRoleRelation4Gv.ascx.cs">
+      <DependentUpon>wucvQxUserRoleRelation4Gv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform1\UserManage\wucvQxUserRoleRelation4Gv.ascx.designer.cs">
+      <DependentUpon>wucvQxUserRoleRelation4Gv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmAddUsers.aspx.cs">
+      <DependentUpon>wfmAddUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmAddUsers.aspx.designer.cs">
+      <DependentUpon>wfmAddUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmChangePwd.aspx.cs">
+      <DependentUpon>wfmChangePwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmChangePwd.aspx.designer.cs">
+      <DependentUpon>wfmChangePwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmDepartmentInfo_QUDI.aspx.cs">
+      <DependentUpon>wfmDepartmentInfo_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmDepartmentInfo_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmDepartmentInfo_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmDepartmentInfo_QUDIBak.aspx.cs">
+      <DependentUpon>wfmDepartmentInfo_QUDIBak.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmDepartmentInfo_QUDIBak.aspx.designer.cs">
+      <DependentUpon>wfmDepartmentInfo_QUDIBak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmEditUsersForRole.aspx.cs">
+      <DependentUpon>wfmEditUsersForRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmEditUsersForRole.aspx.designer.cs">
+      <DependentUpon>wfmEditUsersForRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmGroupManage.aspx.cs">
+      <DependentUpon>wfmGroupManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmGroupManage.aspx.designer.cs">
+      <DependentUpon>wfmGroupManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmMultiUserGroupRelation.aspx.cs">
+      <DependentUpon>wfmMultiUserGroupRelation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmMultiUserGroupRelation.aspx.designer.cs">
+      <DependentUpon>wfmMultiUserGroupRelation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmPrjUserRelation_QUDI.aspx.cs">
+      <DependentUpon>wfmPrjUserRelation_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmPrjUserRelation_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmPrjUserRelation_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSearchUsers.aspx.cs">
+      <DependentUpon>wfmSearchUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSearchUsers.aspx.designer.cs">
+      <DependentUpon>wfmSearchUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSetRoles4Users.aspx.cs">
+      <DependentUpon>wfmSetRoles4Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSetRoles4Users.aspx.designer.cs">
+      <DependentUpon>wfmSetRoles4Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSetRoles4Users2Bak.aspx.cs">
+      <DependentUpon>wfmSetRoles4Users2Bak.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSetRoles4Users2Bak.aspx.designer.cs">
+      <DependentUpon>wfmSetRoles4Users2Bak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSetRoles4Users2.aspx.cs">
+      <DependentUpon>wfmSetRoles4Users2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSetRoles4Users2.aspx.designer.cs">
+      <DependentUpon>wfmSetRoles4Users2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSetUsers4RolesBak.aspx.cs">
+      <DependentUpon>wfmSetUsers4RolesBak.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSetUsers4RolesBak.aspx.designer.cs">
+      <DependentUpon>wfmSetUsers4RolesBak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSetUsers4Roles.aspx.cs">
+      <DependentUpon>wfmSetUsers4Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSetUsers4Roles.aspx.designer.cs">
+      <DependentUpon>wfmSetUsers4Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSingleUserGroupRelation.aspx.cs">
+      <DependentUpon>wfmSingleUserGroupRelation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSingleUserGroupRelation.aspx.designer.cs">
+      <DependentUpon>wfmSingleUserGroupRelation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSubjectRelation_QUDI.aspx.cs">
+      <DependentUpon>wfmSubjectRelation_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmSubjectRelation_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmSubjectRelation_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUserGroups_QUDI.aspx.cs">
+      <DependentUpon>wfmUserGroups_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUserGroups_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmUserGroups_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUserLoginName_QUDI.aspx.cs">
+      <DependentUpon>wfmUserLoginName_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUserLoginName_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmUserLoginName_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUserRoleRelation_Q.aspx.cs">
+      <DependentUpon>wfmUserRoleRelation_Q.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUserRoleRelation_Q.aspx.designer.cs">
+      <DependentUpon>wfmUserRoleRelation_Q.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUserRoles_QUDI.aspx.cs">
+      <DependentUpon>wfmUserRoles_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUserRoles_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmUserRoles_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUserState_QUDI.aspx.cs">
+      <DependentUpon>wfmUserState_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUserState_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmUserState_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUsers_QUDI.aspx.cs">
+      <DependentUpon>wfmUsers_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUsers_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmUsers_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUsers_QUDI2Bak.aspx.cs">
+      <DependentUpon>wfmUsers_QUDI2Bak.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUsers_QUDI2Bak.aspx.designer.cs">
+      <DependentUpon>wfmUsers_QUDI2Bak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\DataSynch\wfmPrjUserRelation4Synch_QUDI.aspx.cs">
+      <DependentUpon>wfmPrjUserRelation4Synch_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\DataSynch\wfmPrjUserRelation4Synch_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmPrjUserRelation4Synch_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\DataSynch\wfmQxServer4SynchB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmQxServer4SynchB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUsers_School_QUDI.aspx.cs">
+      <DependentUpon>wfmUsers_School_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUsers_School_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmUsers_School_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUsers_QUDI2.aspx.cs">
+      <DependentUpon>wfmUsers_QUDI2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wfmUsers_QUDI2.aspx.designer.cs">
+      <DependentUpon>wfmUsers_QUDI2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wucDepartmentInfo.ascx.cs">
+      <DependentUpon>wucDepartmentInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wucDepartmentInfo.ascx.designer.cs">
+      <DependentUpon>wucDepartmentInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wucDepartmentInfoBak.ascx.cs">
+      <DependentUpon>wucDepartmentInfoBak.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wucDepartmentInfoBak.ascx.designer.cs">
+      <DependentUpon>wucDepartmentInfoBak.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wucQxPrjUserRelation.ascx.cs">
+      <DependentUpon>wucQxPrjUserRelation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wucQxPrjUserRelation.ascx.designer.cs">
+      <DependentUpon>wucQxPrjUserRelation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wucSubjectRelation.ascx.cs">
+      <DependentUpon>wucSubjectRelation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wucSubjectRelation.ascx.designer.cs">
+      <DependentUpon>wucSubjectRelation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wucUserGroups.ascx.cs">
+      <DependentUpon>wucUserGroups.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wucUserGroups.ascx.designer.cs">
+      <DependentUpon>wucUserGroups.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wucUserLoginName.ascx.cs">
+      <DependentUpon>wucUserLoginName.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wucUserLoginName.ascx.designer.cs">
+      <DependentUpon>wucUserLoginName.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wucUserRoles.ascx.cs">
+      <DependentUpon>wucUserRoles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wucUserRoles.ascx.designer.cs">
+      <DependentUpon>wucUserRoles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wucUsers_School.ascx.cs">
+      <DependentUpon>wucUsers_School.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wucUsers_School.ascx.designer.cs">
+      <DependentUpon>wucUsers_School.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wucUsers.ascx.cs">
+      <DependentUpon>wucUsers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wucUsers.ascx.designer.cs">
+      <DependentUpon>wucUsers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Account\wucUserState.ascx.cs">
+      <DependentUpon>wucUserState.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Account\wucUserState.ascx.designer.cs">
+      <DependentUpon>wucUserState.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Admin\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Admin\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Admin\IndexMenu.aspx.cs">
+      <DependentUpon>IndexMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Admin\IndexMenu.aspx.designer.cs">
+      <DependentUpon>IndexMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Admin\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Admin\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\DataExcelImport\PrjMenuSetExcelImport.aspx.cs">
+      <DependentUpon>PrjMenuSetExcelImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\DataExcelImport\PrjMenuSetExcelImport.aspx.designer.cs">
+      <DependentUpon>PrjMenuSetExcelImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\DataExcelImport\QxPrjMenusExcelImport.aspx.cs">
+      <DependentUpon>QxPrjMenusExcelImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\DataExcelImport\QxPrjMenusExcelImport.aspx.designer.cs">
+      <DependentUpon>QxPrjMenusExcelImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\DataExcelImport\QxRoleMenusExcelImport.aspx.cs">
+      <DependentUpon>QxRoleMenusExcelImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\DataExcelImport\QxRoleMenusExcelImport.aspx.designer.cs">
+      <DependentUpon>QxRoleMenusExcelImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\ErrorMsg.aspx.cs">
+      <DependentUpon>ErrorMsg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\ErrorMsg.aspx.designer.cs">
+      <DependentUpon>ErrorMsg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\WebUserControl.ascx.cs">
+      <DependentUpon>WebUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\WebUserControl.ascx.designer.cs">
+      <DependentUpon>WebUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmPageDispModeB_QUDI.aspx.cs">
+      <DependentUpon>wfmPageDispModeB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmPageDispModeB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmPageDispModeB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmPrjMenuSet_QUDI.aspx.cs">
+      <DependentUpon>wfmPrjMenuSet_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmPrjMenuSet_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmPrjMenuSet_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmPrjMenus_EDITMenu.aspx.cs">
+      <DependentUpon>wfmPrjMenus_EDITMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmPrjMenus_EDITMenu.aspx.designer.cs">
+      <DependentUpon>wfmPrjMenus_EDITMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmPrjMenus_EDITMenu2.aspx.cs">
+      <DependentUpon>wfmPrjMenus_EDITMenu2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmPrjMenus_EDITMenu2.aspx.designer.cs">
+      <DependentUpon>wfmPrjMenus_EDITMenu2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmQxPrjMenus_QUDI.aspx.cs">
+      <DependentUpon>wfmQxPrjMenus_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmQxPrjMenus_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmQxPrjMenus_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmRoleMenusB_QUDI.aspx.cs">
+      <DependentUpon>wfmRoleMenusB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmRoleMenusB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmRoleMenusB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmSetMenu4Roles.aspx.cs">
+      <DependentUpon>wfmSetMenu4Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmSetMenu4Roles.aspx.designer.cs">
+      <DependentUpon>wfmSetMenu4Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmSetRole4Menu.aspx.cs">
+      <DependentUpon>wfmSetRole4Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmSetRole4Menu.aspx.designer.cs">
+      <DependentUpon>wfmSetRole4Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmSetMenu4Roles2.aspx.cs">
+      <DependentUpon>wfmSetMenu4Roles2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmSetMenu4Roles2.aspx.designer.cs">
+      <DependentUpon>wfmSetMenu4Roles2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmSetMenu4Users.aspx.cs">
+      <DependentUpon>wfmSetMenu4Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wfmSetMenu4Users.aspx.designer.cs">
+      <DependentUpon>wfmSetMenu4Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wucQxPageDispModeB.ascx.cs">
+      <DependentUpon>wucQxPageDispModeB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wucQxPageDispModeB.ascx.designer.cs">
+      <DependentUpon>wucQxPageDispModeB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wucQxPrjMenus.ascx.cs">
+      <DependentUpon>wucQxPrjMenus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wucQxPrjMenus.ascx.designer.cs">
+      <DependentUpon>wucQxPrjMenus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wucQxPrjMenuSet.ascx.cs">
+      <DependentUpon>wucQxPrjMenuSet.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wucQxPrjMenuSet.ascx.designer.cs">
+      <DependentUpon>wucQxPrjMenuSet.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wucQxRoleMenusB.ascx.cs">
+      <DependentUpon>wucQxRoleMenusB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\GeneMenu\wucQxRoleMenusB.ascx.designer.cs">
+      <DependentUpon>wucQxRoleMenusB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\JumpPage.aspx.cs">
+      <DependentUpon>JumpPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\JumpPage.aspx.designer.cs">
+      <DependentUpon>JumpPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Login_WebApplications.aspx.cs">
+      <DependentUpon>Login_WebApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Login_WebApplications.aspx.designer.cs">
+      <DependentUpon>Login_WebApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wfmPotenceType_QUDI.aspx.cs">
+      <DependentUpon>wfmPotenceType_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wfmPotenceType_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmPotenceType_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wfmPrjPotence_QUDI.aspx.cs">
+      <DependentUpon>wfmPrjPotence_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wfmPrjPotence_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmPrjPotence_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wfmRelaOfPotenceAndSymbolB_QUDI.aspx.cs">
+      <DependentUpon>wfmRelaOfPotenceAndSymbolB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wfmRelaOfPotenceAndSymbolB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmRelaOfPotenceAndSymbolB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wfmSetRelaOfPotenceAndSymbol.aspx.cs">
+      <DependentUpon>wfmSetRelaOfPotenceAndSymbol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wfmSetRelaOfPotenceAndSymbol.aspx.designer.cs">
+      <DependentUpon>wfmSetRelaOfPotenceAndSymbol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wucPotenceType.ascx.cs">
+      <DependentUpon>wucPotenceType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wucPotenceType.ascx.designer.cs">
+      <DependentUpon>wucPotenceType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wucPrjPotence.ascx.cs">
+      <DependentUpon>wucPrjPotence.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wucPrjPotence.ascx.designer.cs">
+      <DependentUpon>wucPrjPotence.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wucRelaOfPotenceAndSymbolB.ascx.cs">
+      <DependentUpon>wucRelaOfPotenceAndSymbolB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PotenceMan\wucRelaOfPotenceAndSymbolB.ascx.designer.cs">
+      <DependentUpon>wucRelaOfPotenceAndSymbolB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wfmCodeTypeB_QUDI.aspx.cs">
+      <DependentUpon>wfmCodeTypeB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wfmCodeTypeB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmCodeTypeB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wfmPrjFileRelaB_QUDI.aspx.cs">
+      <DependentUpon>wfmPrjFileRelaB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wfmPrjFileRelaB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmPrjFileRelaB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wfmPrjSite4DownLoadB_QUDI.aspx.cs">
+      <DependentUpon>wfmPrjSite4DownLoadB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wfmPrjSite4DownLoadB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmPrjSite4DownLoadB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wfmUserCodePathB_QUDI.aspx.cs">
+      <DependentUpon>wfmUserCodePathB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wfmUserCodePathB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmUserCodePathB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wfmUserDownLoadDetailLogB_QUDI.aspx.cs">
+      <DependentUpon>wfmUserDownLoadDetailLogB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wfmUserDownLoadDetailLogB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmUserDownLoadDetailLogB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wfmUserDownLoadLogB_QUDI.aspx.cs">
+      <DependentUpon>wfmUserDownLoadLogB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wfmUserDownLoadLogB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmUserDownLoadLogB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wucCodeTypeB.ascx.cs">
+      <DependentUpon>wucCodeTypeB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wucCodeTypeB.ascx.designer.cs">
+      <DependentUpon>wucCodeTypeB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wucPrjFileRelaB.ascx.cs">
+      <DependentUpon>wucPrjFileRelaB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wucPrjFileRelaB.ascx.designer.cs">
+      <DependentUpon>wucPrjFileRelaB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wucPrjSite4DownLoadB.ascx.cs">
+      <DependentUpon>wucPrjSite4DownLoadB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wucPrjSite4DownLoadB.ascx.designer.cs">
+      <DependentUpon>wucPrjSite4DownLoadB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wucUserCodePathB.ascx.cs">
+      <DependentUpon>wucUserCodePathB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wucUserCodePathB.ascx.designer.cs">
+      <DependentUpon>wucUserCodePathB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wucUserDownLoadDetailLogB.ascx.cs">
+      <DependentUpon>wucUserDownLoadDetailLogB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wucUserDownLoadDetailLogB.ascx.designer.cs">
+      <DependentUpon>wucUserDownLoadDetailLogB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wucUserDownLoadLogB.ascx.cs">
+      <DependentUpon>wucUserDownLoadLogB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjFileDownLoad\wucUserDownLoadLogB.ascx.designer.cs">
+      <DependentUpon>wucUserDownLoadLogB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmDataBaseType_QUDI.aspx.cs">
+      <DependentUpon>wfmDataBaseType_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmDataBaseType_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmDataBaseType_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmPrjDataBase_QUDI.aspx.cs">
+      <DependentUpon>wfmPrjDataBase_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmPrjDataBase_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmPrjDataBase_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmPrjModule_QUDI.aspx.cs">
+      <DependentUpon>wfmPrjModule_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmPrjModule_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmPrjModule_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmQxFuncModule_Agc_QUDI.aspx.cs">
+      <DependentUpon>wfmQxFuncModule_Agc_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmQxFuncModule_Agc_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmQxFuncModule_Agc_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmQxPrjTab_QUDI3.aspx.cs">
+      <DependentUpon>wfmQxPrjTab_QUDI3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmQxPrjTab_QUDI3.aspx.designer.cs">
+      <DependentUpon>wfmQxPrjTab_QUDI3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmProjects_QUDI.aspx.cs">
+      <DependentUpon>wfmProjects_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmProjects_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmProjects_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmQxFuncModuleB_QUDI.aspx.cs">
+      <DependentUpon>wfmQxFuncModuleB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmQxFuncModuleB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmQxFuncModuleB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmQxFuncModuleB_QUDIBak.aspx.cs">
+      <DependentUpon>wfmQxFuncModuleB_QUDIBak.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wfmQxFuncModuleB_QUDIBak.aspx.designer.cs">
+      <DependentUpon>wfmQxFuncModuleB_QUDIBak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucDataBaseType.ascx.cs">
+      <DependentUpon>wucDataBaseType.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucDataBaseType.ascx.designer.cs">
+      <DependentUpon>wucDataBaseType.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucPrjDataBase.ascx.cs">
+      <DependentUpon>wucPrjDataBase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucPrjDataBase.ascx.designer.cs">
+      <DependentUpon>wucPrjDataBase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucPrjModule.ascx.cs">
+      <DependentUpon>wucPrjModule.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucPrjModule.ascx.designer.cs">
+      <DependentUpon>wucPrjModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucProjects.ascx.cs">
+      <DependentUpon>wucProjects.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucProjects.ascx.designer.cs">
+      <DependentUpon>wucProjects.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucQxFuncModuleB.ascx.cs">
+      <DependentUpon>wucQxFuncModuleB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucQxFuncModuleB.ascx.designer.cs">
+      <DependentUpon>wucQxFuncModuleB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucvQxFuncModule_Agc4Gv.ascx.cs">
+      <DependentUpon>wucvQxFuncModule_Agc4Gv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucvQxFuncModule_Agc4Gv.ascx.designer.cs">
+      <DependentUpon>wucvQxFuncModule_Agc4Gv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucvQxPrjTab4Gv.ascx.cs">
+      <DependentUpon>wucvQxPrjTab4Gv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucvQxPrjTab4Gv.ascx.designer.cs">
+      <DependentUpon>wucvQxPrjTab4Gv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucvQxFuncModule4Gv.ascx.cs">
+      <DependentUpon>wucvQxFuncModule4Gv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\PrjManage\wucvQxFuncModule4Gv.ascx.designer.cs">
+      <DependentUpon>wucvQxFuncModule4Gv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\success.aspx.cs">
+      <DependentUpon>success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\success.aspx.designer.cs">
+      <DependentUpon>success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wfmExportExcel4UsersB_QUDI.aspx.cs">
+      <DependentUpon>wfmExportExcel4UsersB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wfmExportExcel4UsersB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmExportExcel4UsersB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wfmExportExcelSetB_QUDI.aspx.cs">
+      <DependentUpon>wfmExportExcelSetB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wfmExportExcelSetB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmExportExcelSetB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wfmImportProjectInfo.aspx.cs">
+      <DependentUpon>wfmImportProjectInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wfmImportProjectInfo.aspx.designer.cs">
+      <DependentUpon>wfmImportProjectInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\DataSynch\wfmQxServer4SynchB_QUDI.aspx.cs">
+      <DependentUpon>wfmQxServer4SynchB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wfmSetFieldVisibilityB_QUDI.aspx.cs">
+      <DependentUpon>wfmSetFieldVisibilityB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wfmSetFieldVisibilityB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmSetFieldVisibilityB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wucDataBaseConnect.ascx.cs">
+      <DependentUpon>wucDataBaseConnect.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wucDataBaseConnect.ascx.designer.cs">
+      <DependentUpon>wucDataBaseConnect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wucExportExcel4UsersB.ascx.cs">
+      <DependentUpon>wucExportExcel4UsersB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wucExportExcel4UsersB.ascx.designer.cs">
+      <DependentUpon>wucExportExcel4UsersB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wucExportExcelSetB.ascx.cs">
+      <DependentUpon>wucExportExcelSetB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wucExportExcelSetB.ascx.designer.cs">
+      <DependentUpon>wucExportExcelSetB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wucExportExcelSetB_Sim.ascx.cs">
+      <DependentUpon>wucExportExcelSetB_Sim.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wucExportExcelSetB_Sim.ascx.designer.cs">
+      <DependentUpon>wucExportExcelSetB_Sim.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\DataSynch\wucQxServer4Synch4Gv.ascx.cs">
+      <DependentUpon>wucQxServer4Synch4Gv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\DataSynch\wucQxServer4Synch4Gv.ascx.designer.cs">
+      <DependentUpon>wucQxServer4Synch4Gv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\DataSynch\wucQxServer4SynchB.ascx.cs">
+      <DependentUpon>wucQxServer4SynchB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\DataSynch\wucQxServer4SynchB.ascx.designer.cs">
+      <DependentUpon>wucQxServer4SynchB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wucSetFieldVisibilityB.ascx.cs">
+      <DependentUpon>wucSetFieldVisibilityB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\SystemSet\wucSetFieldVisibilityB.ascx.designer.cs">
+      <DependentUpon>wucSetFieldVisibilityB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Test\wfmUserMenuDetailB_QUDI.aspx.cs">
+      <DependentUpon>wfmUserMenuDetailB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Test\wfmUserMenuDetailB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmUserMenuDetailB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\Test\wucUserMenuDetailB.ascx.cs">
+      <DependentUpon>wucUserMenuDetailB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\Test\wucUserMenuDetailB.ascx.designer.cs">
+      <DependentUpon>wucUserMenuDetailB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\top.aspx.cs">
+      <DependentUpon>top.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\top.aspx.designer.cs">
+      <DependentUpon>top.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\UserManage\wfmQxUsersB_QUDI.aspx.cs">
+      <DependentUpon>wfmQxUsersB_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\UserManage\wfmQxUsersB_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmQxUsersB_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\UserManage\wucQxUsersB.ascx.cs">
+      <DependentUpon>wucQxUsersB.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\UserManage\wucQxUsersB.ascx.designer.cs">
+      <DependentUpon>wucQxUsersB.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\UserManage\wucvQxUsers4Gv.ascx.cs">
+      <DependentUpon>wucvQxUsers4Gv.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\UserManage\wucvQxUsers4Gv.ascx.designer.cs">
+      <DependentUpon>wucvQxUsers4Gv.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\UserRolePotence\wfmManPotencesForSingleUserGroup.aspx.cs">
+      <DependentUpon>wfmManPotencesForSingleUserGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\UserRolePotence\wfmManPotencesForSingleUserGroup.aspx.designer.cs">
+      <DependentUpon>wfmManPotencesForSingleUserGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\UserRolePotence\wfmSetPotenceForRoles.aspx.cs">
+      <DependentUpon>wfmSetPotenceForRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\UserRolePotence\wfmSetPotenceForRoles.aspx.designer.cs">
+      <DependentUpon>wfmSetPotenceForRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\UserRolePotence\wfmSetPotenceSymbol4Roles2.aspx.cs">
+      <DependentUpon>wfmSetPotenceSymbol4Roles2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\UserRolePotence\wfmSetPotenceSymbol4Roles2.aspx.designer.cs">
+      <DependentUpon>wfmSetPotenceSymbol4Roles2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\UserRolePotence\wfmSetPotenceSymbolForRoles.aspx.cs">
+      <DependentUpon>wfmSetPotenceSymbolForRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\UserRolePotence\wfmSetPotenceSymbolForRoles.aspx.designer.cs">
+      <DependentUpon>wfmSetPotenceSymbolForRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\UserRolePotence\wfmUserGroupPotence_Q.aspx.cs">
+      <DependentUpon>wfmUserGroupPotence_Q.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\UserRolePotence\wfmUserGroupPotence_Q.aspx.designer.cs">
+      <DependentUpon>wfmUserGroupPotence_Q.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\UserRolePotence\wucRelaOfPotenceAndSymbol.ascx.cs">
+      <DependentUpon>wucRelaOfPotenceAndSymbol.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\UserRolePotence\wucRelaOfPotenceAndSymbol.ascx.designer.cs">
+      <DependentUpon>wucRelaOfPotenceAndSymbol.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\ViewMan\wfmSetRelaOfViewAndPotence.aspx.cs">
+      <DependentUpon>wfmSetRelaOfViewAndPotence.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\ViewMan\wfmSetRelaOfViewAndPotence.aspx.designer.cs">
+      <DependentUpon>wfmSetRelaOfViewAndPotence.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\ViewMan\wfmSetViewPotenceLevel.aspx.cs">
+      <DependentUpon>wfmSetViewPotenceLevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\ViewMan\wfmSetViewPotenceLevel.aspx.designer.cs">
+      <DependentUpon>wfmSetViewPotenceLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\ViewMan\wfmViewInfo_QUDI.aspx.cs">
+      <DependentUpon>wfmViewInfo_QUDI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\ViewMan\wfmViewInfo_QUDI.aspx.designer.cs">
+      <DependentUpon>wfmViewInfo_QUDI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\ViewMan\wfmViewPotence_Q.aspx.cs">
+      <DependentUpon>wfmViewPotence_Q.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\ViewMan\wfmViewPotence_Q.aspx.designer.cs">
+      <DependentUpon>wfmViewPotence_Q.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\ViewMan\wucViewInfo.ascx.cs">
+      <DependentUpon>wucViewInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\ViewMan\wucViewInfo.ascx.designer.cs">
+      <DependentUpon>wucViewInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\ViewMan\wucQxViewPotence.ascx.cs">
+      <DependentUpon>wucQxViewPotence.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\ViewMan\wucQxViewPotence.ascx.designer.cs">
+      <DependentUpon>wucQxViewPotence.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\wel.aspx.cs">
+      <DependentUpon>wel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\wel.aspx.designer.cs">
+      <DependentUpon>wel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\wfmCheck_UserInfo.aspx.cs">
+      <DependentUpon>wfmCheck_UserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\wfmCheck_UserInfo.aspx.designer.cs">
+      <DependentUpon>wfmCheck_UserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\wfmDispUserMenu.aspx.cs">
+      <DependentUpon>wfmDispUserMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\wfmDispUserMenu.aspx.designer.cs">
+      <DependentUpon>wfmDispUserMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\wfmDispUserMenu_WebApplications.aspx.designer.cs" />
+    <Compile Include="Webform\wfmProjects_List.aspx.cs">
+      <DependentUpon>wfmProjects_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\wfmProjects_List.aspx.designer.cs">
+      <DependentUpon>wfmProjects_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\wfmSelectRoles_WebApplications.aspx.cs">
+      <DependentUpon>wfmSelectRoles_WebApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\wfmSelectRoles_WebApplications.aspx.designer.cs">
+      <DependentUpon>wfmSelectRoles_WebApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Webform\wfmSelectUserPrjAndRole_GeneralPlatform.aspx.cs">
+      <DependentUpon>wfmSelectUserPrjAndRole_GeneralPlatform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Webform\wfmSelectUserPrjAndRole_GeneralPlatform.aspx.designer.cs">
+      <DependentUpon>wfmSelectUserPrjAndRole_GeneralPlatform.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConnStr\Web.Config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Themes\TaiZeTheme\SkinFile.skin" />
+    <Content Include="css\admin\ScriptResource%281%29.axd" />
+    <Content Include="css\admin\ScriptResource.axd" />
+    <Content Include="css\admin\WebResource.axd" />
+    <Content Include="css\DownLoad\Xvid.exe.exclude" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BaseClass2024\CommFunc4Web\CommFunc4Web.csproj">
+      <Project>{2c289e54-22dc-4365-b110-28debdbe0840}</Project>
+      <Name>CommFunc4Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneralPlatform_BusinessEx\GeneralPlatform_BusinessEx.csproj">
+      <Project>{56bac1c8-f972-4999-9a52-c6ae9fc250e0}</Project>
+      <Name>GeneralPlatform_BusinessEx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneralPlatform_Business\GeneralPlatform_Business.csproj">
+      <Project>{acbc0c3e-5194-4444-9172-01a6bfd18c4b}</Project>
+      <Name>GeneralPlatform_Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneralPlatform_Entity\GeneralPlatform_Entity.csproj">
+      <Project>{cae7b0d5-0d60-4905-90c8-d0c76d8ab4e7}</Project>
+      <Name>GeneralPlatform_Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GP4WApi\GP4WApi.csproj">
+      <Project>{c6e6fd75-e4ee-4d5f-a938-5216cf9f71df}</Project>
+      <Name>GP4WApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Webform\MasterPage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51147</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51147/GPTz</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

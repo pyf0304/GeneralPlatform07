@@ -1,0 +1,145 @@
+﻿
+*
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.c_subNav
+{
+	width: 150px;
+}
+
+	.c_subNav table
+	{
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	.c_subNav a
+	{
+		text-decoration: none;
+		color: #333;
+	}
+
+		.c_subNav a:hover
+		{
+			color: #f60;
+		}
+
+	.c_subNav ul ul
+	{
+		position: absolute;
+		visibility: hidden;
+		top: 25px;
+	}
+
+	.c_subNav li
+	{
+		/*border-bottom: 1px solid #ccc;*/
+		position: relative;
+		_position: static;
+		float: left;
+		width: 100%;
+	}
+
+	.c_subNav a.li
+	{
+		position: relative;
+	}
+
+	.c_subNav li .option
+	{
+		display: block;
+		line-height: 15px;
+		padding: 1px 1px 1px 1px;
+		background: no-repeat 5px 4px;
+		cursor: pointer;
+		font: 13px Verdana;
+		zoom: 1;
+		background: url() no-repeat;
+	}
+
+		.c_subNav li .option:hover
+		{
+			color: #f60;
+			/*background-color: #ffa;*/
+		}
+
+		.c_subNav li .option span
+		{
+			display: block;
+			padding-right: 15px;
+			background: url() no-repeat right 0;
+		}
+
+		.c_subNav li .option:hover span
+		{
+			background-position: right -15px;
+		}
+
+	.c_subNav .li:hover
+	{
+		z-index: 2;
+		background: transparent;
+	}
+
+		.c_subNav .li:hover ul
+		{
+			visibility: visible;
+		}
+
+			.c_subNav .li:hover ul ul
+			{
+				visibility: hidden;
+			}
+
+		.c_subNav .li:hover ul
+		{
+			border: 1px solid #ccc;
+			border-width: 1px 2px 2px 1px;
+			width: 150px;
+			background: #fff;
+			padding: 1px;
+			visibility: visible;
+			left: 100px;
+			top: 5px;
+		}
+
+
+	/*---图标差异---*/
+	.c_subNav .charges .option
+	{
+		background-position: 4px -45px;
+	}
+
+	.c_subNav .biz .option
+	{
+		background-position: 4px -70px;
+	}
+
+	.c_subNav .change .option
+	{
+		background-position: 4px -95px;
+	}
+
+	.c_subNav .score .option
+	{
+		background-position: 4px -120px;
+	}
+
+	.c_subNav .server .option
+	{
+		background-position: 4px -145px;
+	}
+
+	.c_subNav .edit .option
+	{
+		background-position: 4px -170px;
+	}
+
+	.c_subNav .sms .option
+	{
+		background-position: 4px -195px;
+	}

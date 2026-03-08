@@ -1,0 +1,649 @@
+﻿
+//类名:clsQxRoleMenusWS
+ ///----------------------
+ ///生成代码版本:2017.01.19.1
+ ///生成日期:2017/02/05
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:菜单管理
+ ///模块英文名:MenuManage
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferenceQxRoleMenus;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// 角色菜单(QxRoleMenus)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsQxRoleMenusWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsQxRoleMenusEN> arrQxRoleMenusObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static QxRoleMenusServiceSoapClient objQxRoleMenusServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static QxRoleMenusServiceSoapClient GetQxRoleMenusServiceSoapClient()
+{
+if (objQxRoleMenusServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "QxRoleMenusServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxRoleMenusService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxRoleMenusService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new QxRoleMenusServiceSoapClient(binding, address);
+}
+else
+{
+return objQxRoleMenusServiceSoapClient;
+}
+}
+
+ public clsQxRoleMenusWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_BindListView)
+ /// </summary>
+public static int BindLv_QxRoleMenus(System.Windows.Forms.ListView lvQxRoleMenus, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lviQxRoleMenus; 
+List<clsQxRoleMenusEN> arrQxRoleMenusObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrQxRoleMenusObjList = GetQxRoleMenusObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvQxRoleMenus.Items.Clear();//清除原来所有Item
+lvQxRoleMenus.Columns.Clear();//清除原来所有列头信息
+lvQxRoleMenus.Columns.Add("流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRoleMenus.Columns.Add("角色Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRoleMenus.Columns.Add("项目Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRoleMenus.Columns.Add("菜单Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRoleMenus.Columns.Add("是否显示", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRoleMenus.Columns.Add("修改日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRoleMenus.Columns.Add("修改用户Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRoleMenus.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRoleMenus.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsQxRoleMenusEN objQxRoleMenusEN in arrQxRoleMenusObjList)
+{
+lviQxRoleMenus = new System.Windows.Forms.ListViewItem();
+lviQxRoleMenus.Tag = objQxRoleMenusEN.mId;
+lviQxRoleMenus.Text = objQxRoleMenusEN.mId.ToString();
+lviQxRoleMenus.SubItems.Add(objQxRoleMenusEN.IsDisp.ToString());
+lviQxRoleMenus.SubItems.Add(objQxRoleMenusEN.UpdDate);
+lviQxRoleMenus.SubItems.Add(objQxRoleMenusEN.UpdUserId);
+lviQxRoleMenus.SubItems.Add(objQxRoleMenusEN.Memo);
+lvQxRoleMenus.Items.Add(lviQxRoleMenus);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrQxRoleMenusObjList.Count;
+}
+
+ /// <summary>
+ /// 检查对象字段值是否合法,1)检查是否可空;2)检查字段值长度是否超长,如果出错就抛出错误.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4WS_CheckPropertyNew)
+ /// </summary>
+public void CheckPropertyNew(clsQxRoleMenusEN objQxRoleMenusEN)
+{
+if (!Object.Equals(null, objQxRoleMenusEN.RoleId) && getStrLen(objQxRoleMenusEN.RoleId) > 8)
+{
+ throw new Exception("字段[角色Id]的长度不能超过8!");
+}
+if (!Object.Equals(null, objQxRoleMenusEN.QxPrjId) && getStrLen(objQxRoleMenusEN.QxPrjId) > 4)
+{
+ throw new Exception("字段[项目Id]的长度不能超过4!");
+}
+if (!Object.Equals(null, objQxRoleMenusEN.MenuId) && getStrLen(objQxRoleMenusEN.MenuId) > 8)
+{
+ throw new Exception("字段[菜单Id]的长度不能超过8!");
+}
+if (!Object.Equals(null, objQxRoleMenusEN.UpdDate) && getStrLen(objQxRoleMenusEN.UpdDate) > 14)
+{
+ throw new Exception("字段[修改日期]的长度不能超过14!");
+}
+if (!Object.Equals(null, objQxRoleMenusEN.UpdUserId) && getStrLen(objQxRoleMenusEN.UpdUserId) > 20)
+{
+ throw new Exception("字段[修改用户Id]的长度不能超过20!");
+}
+if (!Object.Equals(null, objQxRoleMenusEN.Memo) && getStrLen(objQxRoleMenusEN.Memo) > 1000)
+{
+ throw new Exception("字段[备注]的长度不能超过1000!");
+}
+ objQxRoleMenusEN.IsCheckProperty = true;
+ }
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxRoleMenusWs(string strWhereCond)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxRoleMenusService.QxRoleMenus_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_GetDataSet", "clsQxRoleMenusWS:GetDataTable_QxRoleMenusWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxRoleMenusByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxRoleMenusService.QxRoleMenus_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_GetDataSetByRange", "clsQxRoleMenusWS:GetDataTable_QxRoleMenusByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetDataTable_QxRoleMenusVWs(string strWhereCond)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxRoleMenusService.QxRoleMenus_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_GetDataSetV", "clsQxRoleMenusWS:GetDataTable_QxRoleMenusVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetQxRoleMenusVWs(string strWhereCond)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxRoleMenusService.QxRoleMenus_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_GetDataSetV", "clsQxRoleMenusWS:GetDataTable_QxRoleMenusVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabV2ByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxRoleMenusVByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxRoleMenusService.QxRoleMenus_GetDataSetVByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_GetDataSetVByRange", "clsQxRoleMenusWS:GetDataTable_QxRoleMenusVByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objQxRoleMenusEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetQxRoleMenusWs(ref clsQxRoleMenusEN objQxRoleMenusEN)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+bool bolResult = objQxRoleMenusService.QxRoleMenus_GetQxRoleMenus(ref objQxRoleMenusEN);
+return bolResult;
+}
+
+public static clsQxRoleMenusEN GetQxRoleMenusBymIdWs(long lngmId)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+clsQxRoleMenusEN objQxRoleMenusEN = objQxRoleMenusService.QxRoleMenus_GetQxRoleMenusBymId(lngmId);
+return objQxRoleMenusEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static long GetFirstID_S(string strWhereCond)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+try
+{
+long lngmId = objQxRoleMenusService.QxRoleMenus_GetFirstID_S(strWhereCond);
+return lngmId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_GetFirstID_S", "clsQxRoleMenusWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsQxRoleMenusEN GetFirstQxRoleMenus_S(string strWhereCond)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+try
+{
+clsQxRoleMenusEN objQxRoleMenusEN = objQxRoleMenusService.QxRoleMenus_GetFirstQxRoleMenus_S(strWhereCond);
+return objQxRoleMenusEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_GetFirstQxRoleMenus_S", "clsQxRoleMenusWS:GetFirstQxRoleMenus_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "lngmId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsQxRoleMenusEN GetQxRoleMenusObjBymId_Cache(long lngmId)
+{
+string strWhereCond = string.Format("1 = 1 order by mId");
+if (arrQxRoleMenusObjLst_Cache == null)
+{
+arrQxRoleMenusObjLst_Cache = clsQxRoleMenusWS.GetQxRoleMenusObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrQxRoleMenusObjLst_Cache.Count - 1;
+int intMid = 0;
+clsQxRoleMenusEN objQxRoleMenusEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objQxRoleMenusEN = arrQxRoleMenusObjLst_Cache[intMid];
+if (objQxRoleMenusEN.mId == lngmId)
+{
+intFindFailCount = 0;
+return objQxRoleMenusEN;
+}
+else if (objQxRoleMenusEN.mId.CompareTo(lngmId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrQxRoleMenusObjLst_Cache = null;
+if (intFindFailCount == 1) return GetQxRoleMenusObjBymId_Cache(lngmId);
+string strErrMsgForGetObjById = string.Format("在QxRoleMenus对象缓存列表中,找不到记录[mId = {0}][intFindFailCount = {1}](函数:GetQxRoleMenusObjBymId_Cache)", lngmId, intFindFailCount);
+if (objQxRoleMenusEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objQxRoleMenusEN.mId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsQxRoleMenusBL", "GetQxRoleMenusObjBymId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsQxRoleMenusEN> GetQxRoleMenusObjList(string strWhereCond)
+{
+ List<clsQxRoleMenusEN> arrObjList = new List<clsQxRoleMenusEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxRoleMenusWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxRoleMenusEN objQxRoleMenusEN = new clsQxRoleMenusEN();
+objQxRoleMenusEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objQxRoleMenusEN.RoleId = objRow["RoleId"].ToString().Trim(); //角色Id
+objQxRoleMenusEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objQxRoleMenusEN.MenuId = objRow["MenuId"].ToString().Trim(); //菜单Id
+objQxRoleMenusEN.IsDisp = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsDisp"].ToString().Trim()); //是否显示
+objQxRoleMenusEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objQxRoleMenusEN.UpdUserId = objRow["UpdUserId"].ToString().Trim(); //修改用户Id
+objQxRoleMenusEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxRoleMenusEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsQxRoleMenusEN> GetQxRoleMenusObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsQxRoleMenusEN> arrObjList = new List<clsQxRoleMenusEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxRoleMenusByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxRoleMenusEN objQxRoleMenusEN = new clsQxRoleMenusEN();
+objQxRoleMenusEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objQxRoleMenusEN.RoleId = objRow["RoleId"].ToString().Trim(); //角色Id
+objQxRoleMenusEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objQxRoleMenusEN.MenuId = objRow["MenuId"].ToString().Trim(); //菜单Id
+objQxRoleMenusEN.IsDisp = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsDisp"].ToString().Trim()); //是否显示
+objQxRoleMenusEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objQxRoleMenusEN.UpdUserId = objRow["UpdUserId"].ToString().Trim(); //修改用户Id
+objQxRoleMenusEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxRoleMenusEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool DelRecordWs(long lngmId)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+try
+{
+bool bolResult = objQxRoleMenusService.QxRoleMenus_DelRecord(lngmId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_DelRecord", "clsQxRoleMenusWS:DelRecordWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool DelQxRoleMenussWs(List<string> arrmId)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+try
+{
+string[] slngmId = (string[])(arrmId.ToArray());
+bool bolResult = objQxRoleMenusService.QxRoleMenus_DelQxRoleMenuss(slngmId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_DelQxRoleMenuss", "clsQxRoleMenusWS:DelQxRoleMenussWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static int DelQxRoleMenussByCondWs(string strWhereCond)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+try
+{
+int intRecNum = objQxRoleMenusService.QxRoleMenus_DelQxRoleMenussByCond(strWhereCond);
+return intRecNum;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_DelQxRoleMenussByCond", "clsQxRoleMenusWS:DelQxRoleMenussByCondWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool AddNewRecordBySql2Ws(clsQxRoleMenusEN objQxRoleMenusEN)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+try
+{
+bool bolResult = objQxRoleMenusService.QxRoleMenus_AddNewRecordBySql2(objQxRoleMenusEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_AddNewRecordBySql2", "clsQxRoleMenusWS:AddNewRecordBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 把表对象添加到数据库中,并且返回该记录的关键字
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_AddNewRecordBySql2WithReturnKey)
+ /// </summary>
+ /// <param name = "objQxRoleMenusEN">需要添加的表对象</param>
+ /// <returns>返回新添加记录的关键字</returns>
+public static string AddNewRecordBySql2WithReturnKey(clsQxRoleMenusEN objQxRoleMenusEN)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+try
+{
+string strKey = objQxRoleMenusService.QxRoleMenus_AddNewRecordBySql2WithReturnKey(objQxRoleMenusEN);
+return strKey;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_AddNewRecordBySql2WithReturnKey", "clsQxRoleMenusWS:AddNewRecordBySql2WithReturnKey", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool UpdateBySql2Ws(clsQxRoleMenusEN objQxRoleMenusEN)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+try
+{
+bool bolResult = objQxRoleMenusService.QxRoleMenus_UpdateBySql2(objQxRoleMenusEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_UpdateBySql2", "clsQxRoleMenusWS:UpdateBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_UpdateBySqlWithCondition)
+ /// </summary>
+ /// <param name = "objQxRoleMenusEN">需要修改的对象</param>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static bool UpdateBySqlWithCondition(clsQxRoleMenusEN objQxRoleMenusEN, string strWhereCond)
+{
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+try
+{
+bool bolResult = objQxRoleMenusService.QxRoleMenus_UpdateBySqlWithCondition(objQxRoleMenusEN, strWhereCond);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxRoleMenus_UpdateBySqlWithCondition", "clsQxRoleMenusWS:UpdateBySqlWithCondition", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+bool bolIsExist = objQxRoleMenusService.QxRoleMenus_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(long lngmId)
+{
+//检测记录是否存在
+QxRoleMenusServiceSoapClient objQxRoleMenusService = GetQxRoleMenusServiceSoapClient();
+bool bolIsExist = objQxRoleMenusService.QxRoleMenus_IsExist(lngmId);
+return bolIsExist;
+}
+
+
+
+ /// <summary>
+ /// 获取字符串长度,其中汉字为2个字节,英文为1个字节
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GengetStrLen)
+ /// </summary>
+ /// <param name = "strTemp">给定的原字符串</param>
+ /// <returns>返回字符串长度</returns>
+public static int getStrLen(string strTemp)
+{
+int len ;
+byte[] sarr = System.Text.Encoding.Default.GetBytes(strTemp);
+len = sarr.Length;//will output as 3+3*2 = 9
+return len;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxRoleMenusService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxRoleMenusService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

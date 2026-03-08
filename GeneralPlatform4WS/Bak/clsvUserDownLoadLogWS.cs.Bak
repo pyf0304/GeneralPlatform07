@@ -1,0 +1,197 @@
+
+///----------------------
+///生成代码版本：2012.11.9.1
+///生成日期：2013/01/19
+///生成者：潘以锋
+///工程名称：统一平台
+///工程ID：0014
+///模块中文名：工程文件下载
+///模块英文名：PrjFileDownLoad
+///注意：1、需要数据底层（PubDataBase.dll）的版本：2012.10.20.1
+///       2、需要公共函数层（TzPubFunction.dll）的版本：2012.10.23.1
+///========================
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text;
+using System.Collections;
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferencevUserDownLoadLog;
+
+namespace GeneralPlatform4WS
+{
+    /// <summary>
+    /// vUserDownLoadLog(vUserDownLoadLog)
+    /// </summary>
+    public class clsvUserDownLoadLogWS
+    {
+        private static vUserDownLoadLogServiceSoapClient objvUserDownLoadLogServiceSoapClient = null;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public static vUserDownLoadLogServiceSoapClient GetvUserDownLoadLogServiceSoapClient()
+        {
+            if (objvUserDownLoadLogServiceSoapClient == null)
+            {
+                BasicHttpBinding binding = new BasicHttpBinding();
+                binding.Name = "vUserDownLoadLogServiceSoap";
+                binding.CloseTimeout = new System.TimeSpan(6000);
+                String strServiceUrl = String.Empty;
+                if (clsSysPara.bolIsLocalHost == false)
+                {
+                    strServiceUrl = String.Format("http://{0}/{1}/vUserDownLoadLogService.asmx", clsSysPara.CurrIPAddressAndPort, clsSysPara.CurrPrx);
+                }
+                else
+                {
+                    strServiceUrl = String.Format("http://{0}/vUserDownLoadLogService.asmx", clsSysPara.strCurrIPAddressAndPort_Local);
+                }
+                EndpointAddress address = new EndpointAddress(strServiceUrl);
+                return new vUserDownLoadLogServiceSoapClient(binding, address);
+            }
+            else
+            {
+                return objvUserDownLoadLogServiceSoapClient;
+            }
+        }
+
+        public clsvUserDownLoadLogWS()
+        {
+        }
+
+
+        ///绑定下拉框的函数代码
+
+        ///生成绑定ListView的代码
+        /// <summary>
+        /// 函数功能：根据界面上查询控件中所设置内容查询表记录，
+        ///			 并显示在ListView中。
+        /// </summary>
+        public static int BindLv_vUserDownLoadLog(System.Windows.Forms.ListView lvvUserDownLoadLog, string strWhereCond)
+        {
+            //操作步骤：(共4步)
+            //	1、组合界面条件串；
+            //	2、根据条件串获取该表满足条件的DataTable；
+            //	3、设置ListView的列头信息
+            //	4、设置ListView的Item信息。即把所有记录显示在ListView中
+            //		在本界面中是把状态显示在控件lblRecCount中。
+
+            System.Windows.Forms.ListViewItem lvivUserDownLoadLog;
+            ArrayList arrvUserDownLoadLogObjList;
+            //	2、根据条件串获取该表满足条件的DataTable；
+            arrvUserDownLoadLogObjList = GetvUserDownLoadLogObjList(strWhereCond);
+            //	3、设置ListView的列头信息
+            lvvUserDownLoadLog.Items.Clear();//清除原来所有Item
+            lvvUserDownLoadLog.Columns.Clear();//清除原来所有列头信息
+            lvvUserDownLoadLog.Columns.Add("用户下载日志Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.Columns.Add("工程站点Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.Columns.Add("工程站点名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.Columns.Add("项目Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.Columns.Add("工程名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.Columns.Add("用户ID", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.Columns.Add("下载日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.Columns.Add("日志信息", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.Columns.Add("是否成功", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.Columns.Add("Ftp服务器", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.Columns.Add("Ftp用户Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.Columns.Add("Ftp用户口令", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+            lvvUserDownLoadLog.View = System.Windows.Forms.View.Details;
+            //	4、设置ListView的Item信息。即把所有记录显示在ListView中
+            foreach (clsvUserDownLoadLogEN objvUserDownLoadLogEN in arrvUserDownLoadLogObjList)
+            {
+                lvivUserDownLoadLog = new System.Windows.Forms.ListViewItem();
+                lvivUserDownLoadLog.Tag = objvUserDownLoadLogEN.UserDownLoadLogId;
+                lvivUserDownLoadLog.Text = objvUserDownLoadLogEN.UserDownLoadLogId.ToString();
+                lvivUserDownLoadLog.SubItems.Add(objvUserDownLoadLogEN.PrjSiteId);
+                lvivUserDownLoadLog.SubItems.Add(objvUserDownLoadLogEN.PrjSiteName);
+                lvivUserDownLoadLog.SubItems.Add(objvUserDownLoadLogEN.PrjId);
+                lvivUserDownLoadLog.SubItems.Add(objvUserDownLoadLogEN.PrjName);
+                lvivUserDownLoadLog.SubItems.Add(objvUserDownLoadLogEN.UserId);
+                lvivUserDownLoadLog.SubItems.Add(objvUserDownLoadLogEN.DownLownDate);
+                lvivUserDownLoadLog.SubItems.Add(objvUserDownLoadLogEN.LogInfo);
+                lvivUserDownLoadLog.SubItems.Add(objvUserDownLoadLogEN.IsSuccess.ToString());
+                lvivUserDownLoadLog.SubItems.Add(objvUserDownLoadLogEN.FtpServer);
+                lvivUserDownLoadLog.SubItems.Add(objvUserDownLoadLogEN.FtpUserId);
+                lvivUserDownLoadLog.SubItems.Add(objvUserDownLoadLogEN.FtpUserPassword);
+                lvivUserDownLoadLog.SubItems.Add(objvUserDownLoadLogEN.Memo);
+                lvvUserDownLoadLog.Items.Add(lvivUserDownLoadLog);
+            }
+            //	4、设置记录数的状态，
+            //		在本界面中是把状态显示在控件txtRecCount中。
+            return arrvUserDownLoadLogObjList.Count;
+        }
+
+        public static DataTable GetDataTable_vUserDownLoadLogWs(string strWhereCond)
+        {
+            vUserDownLoadLogServiceSoapClient objvUserDownLoadLogService = GetvUserDownLoadLogServiceSoapClient();
+            DataSet objDS = null;
+            try
+            {
+                objDS = objvUserDownLoadLogService.vUserDownLoadLog_GetDataSet(strWhereCond);
+                DataTable objDT = objDS.Tables[0];
+                return objDT;
+            }
+            catch (Exception objException)
+            {
+                throw new Exception("获取表:vUserDownLoadLog 数据出错！\r\n" + objException.Message);
+            }
+        }
+
+        public static bool GetvUserDownLoadLogWs(ref clsvUserDownLoadLogEN objvUserDownLoadLogEN)
+        {
+            vUserDownLoadLogServiceSoapClient objvUserDownLoadLogService = GetvUserDownLoadLogServiceSoapClient();
+            bool bolResult = objvUserDownLoadLogService.vUserDownLoadLog_GetvUserDownLoadLog(ref objvUserDownLoadLogEN);
+            return bolResult;
+        }
+
+        public static ArrayList GetvUserDownLoadLogObjList(string strCondition)
+        {
+            ArrayList arrObjList = new ArrayList();
+            System.Data.DataTable objDT = null;
+            objDT = GetDataTable_vUserDownLoadLogWs(strCondition);
+            if (objDT.Rows.Count == 0)
+            {
+                objDT = null;
+                return arrObjList;
+            }
+            foreach (DataRow objRow in objDT.Rows)
+            {
+                clsvUserDownLoadLogEN objvUserDownLoadLogEN = new clsvUserDownLoadLogEN();
+                objvUserDownLoadLogEN.UserDownLoadLogId = objRow["UserDownLoadLogId"].ToString().Trim(); //用户下载日志Id
+                objvUserDownLoadLogEN.PrjSiteId = objRow["PrjSiteId"].ToString().Trim(); //工程站点Id
+                objvUserDownLoadLogEN.PrjSiteName = objRow["PrjSiteName"].ToString().Trim(); //工程站点名
+                objvUserDownLoadLogEN.PrjId = objRow["PrjId"].ToString().Trim(); //项目Id
+                objvUserDownLoadLogEN.PrjName = objRow["PrjName"].ToString().Trim(); //工程名
+                objvUserDownLoadLogEN.UserId = objRow["UserId"].ToString().Trim(); //用户ID
+                objvUserDownLoadLogEN.DownLownDate = objRow["DownLownDate"].ToString().Trim(); //下载日期
+                objvUserDownLoadLogEN.LogInfo = objRow["LogInfo"].ToString().Trim(); //日志信息
+                objvUserDownLoadLogEN.IsSuccess = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsSuccess"].ToString().Trim()); //是否成功
+                objvUserDownLoadLogEN.FtpServer = objRow["FtpServer"].ToString().Trim(); //Ftp服务器
+                objvUserDownLoadLogEN.FtpUserId = objRow["FtpUserId"].ToString().Trim(); //Ftp用户Id
+                objvUserDownLoadLogEN.FtpUserPassword = objRow["FtpUserPassword"].ToString().Trim(); //Ftp用户口令
+                objvUserDownLoadLogEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+                arrObjList.Add(objvUserDownLoadLogEN);
+            }
+            objDT = null;
+            return arrObjList;
+        }
+
+        public static bool IsExistRecordWs(string strCondition)
+        {
+            //检测记录是否存在
+            vUserDownLoadLogServiceSoapClient objvUserDownLoadLogService = GetvUserDownLoadLogServiceSoapClient();
+            bool bolIsExist = objvUserDownLoadLogService.vUserDownLoadLog_IsExistRecord(strCondition);
+            return bolIsExist;
+        }
+
+        public static bool IsExistWs(string strUserDownLoadLogId)
+        {
+            //检测记录是否存在
+            vUserDownLoadLogServiceSoapClient objvUserDownLoadLogService = GetvUserDownLoadLogServiceSoapClient();
+            bool bolIsExist = objvUserDownLoadLogService.vUserDownLoadLog_IsExist(strUserDownLoadLogId);
+            return bolIsExist;
+        }
+    }
+}

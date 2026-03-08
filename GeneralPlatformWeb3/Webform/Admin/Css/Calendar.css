@@ -1,0 +1,93 @@
+.cldFront {
+	BORDER-BOTTOM: #c8c8c8 1px solid; POSITION: absolute; BORDER-LEFT: #c8c8c8 1px solid; PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #ffffd2; PADDING-LEFT: 10px; WIDTH: 300px; PADDING-RIGHT: 10px; HEIGHT: 180px; BORDER-TOP: #c8c8c8 1px solid; BORDER-RIGHT: #c8c8c8 1px solid; PADDING-TOP: 10px
+}
+.cldFront1 {
+	BORDER-BOTTOM: #c8c8c8 1px solid; POSITION: absolute; BORDER-LEFT: #c8c8c8 1px solid; PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #ffffd2; PADDING-LEFT: 10px; WIDTH: 300px; PADDING-RIGHT: 10px; BORDER-TOP: #c8c8c8 1px solid; BORDER-RIGHT: #c8c8c8 1px solid; PADDING-TOP: 10px
+}
+#CalendarFrame {
+	WIDTH: 99%
+}
+.FirstColumn_Year {
+	BORDER-BOTTOM: #c1d1da 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #c1d1da 1px solid; BACKGROUND-COLOR: #d9e7ef; WIDTH: 7%; HEIGHT: 53px; COLOR: #3c465a; VERTICAL-ALIGN: top; BORDER-TOP: #c1d1da 1px solid; BORDER-RIGHT: #c1d1da 1px solid; PADDING-TOP: 5px
+}
+.FirstRow_Year {
+	BACKGROUND-IMAGE: url(../images/firstRow.gif); BORDER-BOTTOM: #4e4e4e 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #4e4e4e 1px solid; BACKGROUND-REPEAT: repeat; HEIGHT: 32px; COLOR: #ffffff; BORDER-TOP: #4e4e4e 1px solid; BORDER-RIGHT: #4e4e4e 1px solid
+}
+.FirstCell_Year {
+	BACKGROUND-IMAGE: url(../images/firstRow.gif); BORDER-BOTTOM: #4e4e4e 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #4e4e4e 1px solid; WIDTH: 7%; BACKGROUND-REPEAT: repeat; HEIGHT: 32px; COLOR: #ffffff; BORDER-TOP: #4e4e4e 1px solid; BORDER-RIGHT: #4e4e4e 1px solid
+}
+.MainCell_Year {
+	BORDER-BOTTOM: #e6e6e6 1px solid; BORDER-LEFT: #e6e6e6 1px solid; BACKGROUND-COLOR: #f5f5f5; PADDING-LEFT: 5px; TEXT-OVERFLOW: ellipsis; WORD-WRAP: break-word; HEIGHT: 53px; VERTICAL-ALIGN: top; OVERFLOW: hidden; BORDER-TOP: #e6e6e6 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #e6e6e6 1px solid; PADDING-TOP: 5px
+}
+.MainCell_Year_Odd {
+	BORDER-BOTTOM: #e6e6e6 1px solid; BORDER-LEFT: #e6e6e6 1px solid; BACKGROUND-COLOR: #ffffff; PADDING-LEFT: 5px; TEXT-OVERFLOW: ellipsis; HEIGHT: 53px; VERTICAL-ALIGN: top; OVERFLOW: hidden; BORDER-TOP: #e6e6e6 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #e6e6e6 1px solid; PADDING-TOP: 5px
+}
+.FirstCell_Week {
+	TEXT-ALIGN: center; BORDER-RIGHT-WIDTH: 0px; WIDTH: 7%; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 32px; BORDER-LEFT-WIDTH: 0px
+}
+.FirstRow_Week {
+	BACKGROUND-IMAGE: url(../images/firstRow.gif); BORDER-BOTTOM: #4e4e4e 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #4e4e4e 1px solid; WIDTH: 13%; BACKGROUND-REPEAT: repeat; HEIGHT: 32px; COLOR: #ffffff; BORDER-TOP: #4e4e4e 1px solid; BORDER-RIGHT: #4e4e4e 1px solid
+}
+.DateOrTask_Week {
+	MARGIN-BOTTOM: 5px; COLOR: #ffffff
+}
+.FirstColumn_Week {
+	BORDER-BOTTOM: #c1d1da 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #c1d1da 1px solid; BACKGROUND-COLOR: #d9e7ef; WIDTH: 7%; HEIGHT: 40px; COLOR: #3c465a; VERTICAL-ALIGN: top; BORDER-TOP: #c1d1da 1px solid; BORDER-RIGHT: #c1d1da 1px solid; PADDING-TOP: 5px
+}
+.MainCell_Week {
+	BORDER-BOTTOM: #e6e6e6 1px solid; BORDER-LEFT: #e6e6e6 1px solid; PADDING-LEFT: 4px; WIDTH: 13%; TEXT-OVERFLOW: ellipsis; WORD-WRAP: break-word; HEIGHT: 40px; VERTICAL-ALIGN: top; OVERFLOW: hidden; BORDER-TOP: #e6e6e6 1px solid; BORDER-RIGHT: #e6e6e6 1px solid; PADDING-TOP: 5px
+}
+.WeekEnd_Week {
+	BACKGROUND-COLOR: #f5f5f5; TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden
+}
+.CurrDay_Week {
+	BACKGROUND-COLOR: #ffc864; TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden
+}
+.TeachTask_Week {
+	BACKGROUND-COLOR: #ffffd2; TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden
+}
+.EventDetailList_Week {
+	OVERFLOW-Y: scroll; WIDTH: 280px; HEIGHT: 120px; OVERFLOW: hidden
+}
+.FirstCell_Month {
+	TEXT-ALIGN: center; BORDER-RIGHT-WIDTH: 0px; WIDTH: 7%; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 32px; BORDER-LEFT-WIDTH: 0px
+}
+.FirstRow_Month {
+	BACKGROUND-IMAGE: url(../images/firstRow.gif); BORDER-BOTTOM: #4e4e4e 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #4e4e4e 1px solid; WIDTH: 13%; BACKGROUND-REPEAT: repeat; HEIGHT: 32px; COLOR: #ffffff; BORDER-TOP: #4e4e4e 1px solid; BORDER-RIGHT: #4e4e4e 1px solid
+}
+.FirstColumn_Month {
+	BORDER-BOTTOM: #c1d1da 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #c1d1da 1px solid; BACKGROUND-COLOR: #d9e7ef; WIDTH: 7%; HEIGHT: 100px; COLOR: #3c465a; VERTICAL-ALIGN: top; BORDER-TOP: #c1d1da 1px solid; BORDER-RIGHT: #c1d1da 1px solid; PADDING-TOP: 5px
+}
+.MainCell_Month {
+	BORDER-BOTTOM: #e6e6e6 1px solid; BORDER-LEFT: #e6e6e6 1px solid; PADDING-LEFT: 5px; TEXT-OVERFLOW: ellipsis; WORD-WRAP: break-word; HEIGHT: 100px; VERTICAL-ALIGN: top; OVERFLOW: hidden; BORDER-TOP: #e6e6e6 1px solid; BORDER-RIGHT: #e6e6e6 1px solid; PADDING-TOP: 5px
+}
+.InnerDivCell {
+	WIDTH: 100%; TEXT-OVERFLOW: ellipsis; HEIGHT: 100%; OVERFLOW: hidden; WORD-BREAK: break-all
+}
+.WeekEnd_Month {
+	BACKGROUND-COLOR: #f5f5f5; TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden
+}
+.CurrDay_Month {
+	BACKGROUND-COLOR: #ffc864; TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden
+}
+.TeachTask_Month {
+	BACKGROUND-COLOR: #ffffd2; TEXT-OVERFLOW: ellipsis; OVERFLOW: hidden
+}
+.EventDetailList_Month {
+	WIDTH: 280px
+}
+.EventDetailOutDiv_Month {
+	OVERFLOW-Y: scroll; WIDTH: 280px; HEIGHT: 120px; OVERFLOW: hidden
+}
+.TaskDetailList_Month {
+	WORD-BREAK: break-all
+}
+.TaskDetailList_Week {
+	WORD-BREAK: break-all
+}
+.TaskDetailListF_Month {
+	MARGIN-LEFT: 20px; WORD-BREAK: break-all
+}
+.TaskDetailListO_Month {
+	MARGIN-LEFT: 40px; WORD-BREAK: break-all
+}

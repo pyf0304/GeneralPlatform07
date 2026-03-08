@@ -1,0 +1,1443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ExportExcel4Users_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcel4Users_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetTopDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetTopDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcel4Users_GetTopDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetDataSetByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lngMinNum" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="lngMaxNum" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetDataSetByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcel4Users_GetDataSetByRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcel4Users_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetExportExcel4Users">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExportExcel4UsersEN" type="tns:clsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsExportExcel4UsersEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="id_ExportExcel4Users" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FieldCnName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ViewName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsExport" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrderNum" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExportExcel4Users_GetExportExcel4UsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_GetExportExcel4UsersResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objExportExcel4UsersEN" type="tns:clsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetExportExcel4UsersBymId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetExportExcel4UsersBymIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcel4Users_GetExportExcel4UsersBymIdResult" type="tns:clsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetExportExcel4UsersV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExportExcel4UsersEN" type="tns:clsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetExportExcel4UsersVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_GetExportExcel4UsersVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objExportExcel4UsersEN" type="tns:clsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetExportExcel4UsersObjList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetExportExcel4UsersObjListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcel4Users_GetExportExcel4UsersObjListResult" type="tns:ArrayOfClsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsExportExcel4UsersEN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsExportExcel4UsersEN" nillable="true" type="tns:clsExportExcel4UsersEN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExportExcel4Users_GetTopExportExcel4UsersObjList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetTopExportExcel4UsersObjListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcel4Users_GetTopExportExcel4UsersObjListResult" type="tns:ArrayOfClsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetFirstID_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetFirstID_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_GetFirstID_SResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetFirstExportExcel4Users_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_GetFirstExportExcel4Users_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcel4Users_GetFirstExportExcel4Users_SResult" type="tns:clsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExportExcel4UsersJSONObjBymId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExportExcel4UsersJSONObjBymIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExportExcel4UsersJSONObjBymIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstExportExcel4UsersJSONObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstExportExcel4UsersJSONObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstExportExcel4UsersJSONObjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExportExcel4UsersJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExportExcel4UsersJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExportExcel4UsersJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopExportExcel4UsersJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopExportExcel4UsersJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopExportExcel4UsersJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExportExcel4UsersEN" type="tns:clsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_AddNewRecordBySql2ByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strExportExcel4UsersJSONObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_AddNewRecordBySql2ByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_AddNewRecordBySql2ByJSONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_AddNewRecordBySql2WithReturnKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExportExcel4UsersEN" type="tns:clsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_AddNewRecordBySql2WithReturnKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcel4Users_AddNewRecordBySql2WithReturnKeyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_AddNewRecordBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strExportExcel4UsersENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_AddNewRecordBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_AddNewRecordBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExportExcel4UsersEN" type="tns:clsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_UpdateBySql2ByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strExportExcel4UsersJSONObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_UpdateBySql2ByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_UpdateBySql2ByJSONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_UpdateBySqlWithCondition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExportExcel4UsersEN" type="tns:clsExportExcel4UsersEN" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_UpdateBySqlWithConditionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_UpdateBySqlWithConditionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_UpdateBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strExportExcel4UsersENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_UpdateBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_UpdateBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_DelExportExcel4Userss">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrmId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_DelExportExcel4UserssResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_DelExportExcel4UserssResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_DelExportExcel4UserssByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_DelExportExcel4UserssByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExportExcel4Users_DelExportExcel4UserssByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objExportExcel4UsersEN" type="tns:clsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsExportExcel4UsersEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcel4Users_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_SerializeObjListToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_SerializeObjListToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcel4Users_SerializeObjListToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_SerializeTopObjListToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportExcel4Users_SerializeTopObjListToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportExcel4Users_SerializeTopObjListToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ExportExcel4Users_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetTopDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetTopDataSet" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetTopDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetTopDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetDataSetByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetDataSetByRange" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetDataSetByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetDataSetByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetExportExcel4UsersSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetExportExcel4Users" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetExportExcel4UsersSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetExportExcel4UsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetExportExcel4UsersBymIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetExportExcel4UsersBymId" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetExportExcel4UsersBymIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetExportExcel4UsersBymIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetExportExcel4UsersVSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetExportExcel4UsersV" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetExportExcel4UsersVSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetExportExcel4UsersVResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetExportExcel4UsersObjListSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetExportExcel4UsersObjList" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetExportExcel4UsersObjListSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetExportExcel4UsersObjListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetTopExportExcel4UsersObjListSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetTopExportExcel4UsersObjList" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetTopExportExcel4UsersObjListSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetTopExportExcel4UsersObjListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetFirstID_SSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetFirstID_S" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetFirstID_SSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetFirstID_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetFirstExportExcel4Users_SSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetFirstExportExcel4Users_S" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_GetFirstExportExcel4Users_SSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_GetFirstExportExcel4Users_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExportExcel4UsersJSONObjBymIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExportExcel4UsersJSONObjBymId" />
+  </wsdl:message>
+  <wsdl:message name="GetExportExcel4UsersJSONObjBymIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExportExcel4UsersJSONObjBymIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstExportExcel4UsersJSONObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstExportExcel4UsersJSONObj" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstExportExcel4UsersJSONObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstExportExcel4UsersJSONObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExportExcel4UsersJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExportExcel4UsersJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetExportExcel4UsersJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExportExcel4UsersJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopExportExcel4UsersJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopExportExcel4UsersJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTopExportExcel4UsersJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopExportExcel4UsersJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_AddNewRecordBySql2ByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_AddNewRecordBySql2ByJSON" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_AddNewRecordBySql2ByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_AddNewRecordBySql2ByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_AddNewRecordBySql2WithReturnKeySoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_AddNewRecordBySql2WithReturnKey" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_AddNewRecordBySql2WithReturnKeySoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_AddNewRecordBySql2WithReturnKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_AddNewRecordBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_AddNewRecordBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_AddNewRecordBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_AddNewRecordBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_UpdateBySql2ByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_UpdateBySql2ByJSON" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_UpdateBySql2ByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_UpdateBySql2ByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_UpdateBySqlWithConditionSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_UpdateBySqlWithCondition" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_UpdateBySqlWithConditionSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_UpdateBySqlWithConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_UpdateBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_UpdateBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_UpdateBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_UpdateBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_DelExportExcel4UserssSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_DelExportExcel4Userss" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_DelExportExcel4UserssSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_DelExportExcel4UserssResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_DelExportExcel4UserssByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_DelExportExcel4UserssByCond" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_DelExportExcel4UserssByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_DelExportExcel4UserssByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_SerializeObjListToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_SerializeObjListToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_SerializeObjListToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_SerializeObjListToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_SerializeTopObjListToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_SerializeTopObjListToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="ExportExcel4Users_SerializeTopObjListToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:ExportExcel4Users_SerializeTopObjListToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ExportExcel4UsersServiceSoap">
+    <wsdl:operation name="ExportExcel4Users_GetDataSet">
+      <wsdl:input message="tns:ExportExcel4Users_GetDataSetSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetTopDataSet">
+      <wsdl:input message="tns:ExportExcel4Users_GetTopDataSetSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_GetTopDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetDataSetByRange">
+      <wsdl:input message="tns:ExportExcel4Users_GetDataSetByRangeSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_GetDataSetByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetDataSetV">
+      <wsdl:input message="tns:ExportExcel4Users_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetExportExcel4Users">
+      <wsdl:input message="tns:ExportExcel4Users_GetExportExcel4UsersSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_GetExportExcel4UsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetExportExcel4UsersBymId">
+      <wsdl:input message="tns:ExportExcel4Users_GetExportExcel4UsersBymIdSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_GetExportExcel4UsersBymIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetExportExcel4UsersV">
+      <wsdl:input message="tns:ExportExcel4Users_GetExportExcel4UsersVSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_GetExportExcel4UsersVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetExportExcel4UsersObjList">
+      <wsdl:input message="tns:ExportExcel4Users_GetExportExcel4UsersObjListSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_GetExportExcel4UsersObjListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetTopExportExcel4UsersObjList">
+      <wsdl:input message="tns:ExportExcel4Users_GetTopExportExcel4UsersObjListSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_GetTopExportExcel4UsersObjListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetFirstID_S">
+      <wsdl:input message="tns:ExportExcel4Users_GetFirstID_SSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_GetFirstID_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetFirstExportExcel4Users_S">
+      <wsdl:input message="tns:ExportExcel4Users_GetFirstExportExcel4Users_SSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_GetFirstExportExcel4Users_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExportExcel4UsersJSONObjBymId">
+      <wsdl:input message="tns:GetExportExcel4UsersJSONObjBymIdSoapIn" />
+      <wsdl:output message="tns:GetExportExcel4UsersJSONObjBymIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstExportExcel4UsersJSONObj">
+      <wsdl:input message="tns:GetFirstExportExcel4UsersJSONObjSoapIn" />
+      <wsdl:output message="tns:GetFirstExportExcel4UsersJSONObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExportExcel4UsersJSONObjLst">
+      <wsdl:input message="tns:GetExportExcel4UsersJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetExportExcel4UsersJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopExportExcel4UsersJSONObjLst">
+      <wsdl:input message="tns:GetTopExportExcel4UsersJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetTopExportExcel4UsersJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_IsExistRecord">
+      <wsdl:input message="tns:ExportExcel4Users_IsExistRecordSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_IsExistRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_IsExist">
+      <wsdl:input message="tns:ExportExcel4Users_IsExistSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_AddNewRecordBySql2">
+      <wsdl:input message="tns:ExportExcel4Users_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_AddNewRecordBySql2ByJSON">
+      <wsdl:input message="tns:ExportExcel4Users_AddNewRecordBySql2ByJSONSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_AddNewRecordBySql2ByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_AddNewRecordBySql2WithReturnKey">
+      <wsdl:input message="tns:ExportExcel4Users_AddNewRecordBySql2WithReturnKeySoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_AddNewRecordBySql2WithReturnKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_AddNewRecordBySql_XML">
+      <wsdl:input message="tns:ExportExcel4Users_AddNewRecordBySql_XMLSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_AddNewRecordBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_UpdateBySql2">
+      <wsdl:input message="tns:ExportExcel4Users_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_UpdateBySql2ByJSON">
+      <wsdl:input message="tns:ExportExcel4Users_UpdateBySql2ByJSONSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_UpdateBySql2ByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_UpdateBySqlWithCondition">
+      <wsdl:input message="tns:ExportExcel4Users_UpdateBySqlWithConditionSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_UpdateBySqlWithConditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_UpdateBySql_XML">
+      <wsdl:input message="tns:ExportExcel4Users_UpdateBySql_XMLSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_UpdateBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_DelRecord">
+      <wsdl:input message="tns:ExportExcel4Users_DelRecordSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_DelExportExcel4Userss">
+      <wsdl:input message="tns:ExportExcel4Users_DelExportExcel4UserssSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_DelExportExcel4UserssSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_DelExportExcel4UserssByCond">
+      <wsdl:input message="tns:ExportExcel4Users_DelExportExcel4UserssByCondSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_DelExportExcel4UserssByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_SerializeObjToXMLStr">
+      <wsdl:input message="tns:ExportExcel4Users_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_SerializeObjListToXMLStr">
+      <wsdl:input message="tns:ExportExcel4Users_SerializeObjListToXMLStrSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_SerializeObjListToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_SerializeTopObjListToXMLStr">
+      <wsdl:input message="tns:ExportExcel4Users_SerializeTopObjListToXMLStrSoapIn" />
+      <wsdl:output message="tns:ExportExcel4Users_SerializeTopObjListToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExportExcel4UsersServiceSoap" type="tns:ExportExcel4UsersServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExportExcel4Users_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetTopDataSet">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetDataSetByRange">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetExportExcel4Users">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_GetExportExcel4Users" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetExportExcel4UsersBymId">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_GetExportExcel4UsersBymId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetExportExcel4UsersV">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_GetExportExcel4UsersV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetExportExcel4UsersObjList">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_GetExportExcel4UsersObjList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetTopExportExcel4UsersObjList">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_GetTopExportExcel4UsersObjList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetFirstID_S">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetFirstExportExcel4Users_S">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_GetFirstExportExcel4Users_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExportExcel4UsersJSONObjBymId">
+      <soap:operation soapAction="http://tempuri.org/GetExportExcel4UsersJSONObjBymId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstExportExcel4UsersJSONObj">
+      <soap:operation soapAction="http://tempuri.org/GetFirstExportExcel4UsersJSONObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExportExcel4UsersJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetExportExcel4UsersJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopExportExcel4UsersJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetTopExportExcel4UsersJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_IsExist">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_AddNewRecordBySql2ByJSON">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_AddNewRecordBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_AddNewRecordBySql2WithReturnKey">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_AddNewRecordBySql2WithReturnKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_AddNewRecordBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_UpdateBySql2ByJSON">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_UpdateBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_UpdateBySqlWithCondition">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_UpdateBySqlWithCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_UpdateBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_DelExportExcel4Userss">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_DelExportExcel4Userss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_DelExportExcel4UserssByCond">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_DelExportExcel4UserssByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_SerializeObjListToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_SerializeTopObjListToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/ExportExcel4Users_SerializeTopObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExportExcel4UsersServiceSoap12" type="tns:ExportExcel4UsersServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExportExcel4Users_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetTopDataSet">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetDataSetByRange">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetExportExcel4Users">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_GetExportExcel4Users" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetExportExcel4UsersBymId">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_GetExportExcel4UsersBymId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetExportExcel4UsersV">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_GetExportExcel4UsersV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetExportExcel4UsersObjList">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_GetExportExcel4UsersObjList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetTopExportExcel4UsersObjList">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_GetTopExportExcel4UsersObjList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetFirstID_S">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_GetFirstExportExcel4Users_S">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_GetFirstExportExcel4Users_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExportExcel4UsersJSONObjBymId">
+      <soap12:operation soapAction="http://tempuri.org/GetExportExcel4UsersJSONObjBymId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstExportExcel4UsersJSONObj">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstExportExcel4UsersJSONObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExportExcel4UsersJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetExportExcel4UsersJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopExportExcel4UsersJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetTopExportExcel4UsersJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_AddNewRecordBySql2ByJSON">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_AddNewRecordBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_AddNewRecordBySql2WithReturnKey">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_AddNewRecordBySql2WithReturnKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_AddNewRecordBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_UpdateBySql2ByJSON">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_UpdateBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_UpdateBySqlWithCondition">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_UpdateBySqlWithCondition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_UpdateBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_DelExportExcel4Userss">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_DelExportExcel4Userss" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_DelExportExcel4UserssByCond">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_DelExportExcel4UserssByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_SerializeObjListToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportExcel4Users_SerializeTopObjListToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/ExportExcel4Users_SerializeTopObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExportExcel4UsersService">
+    <wsdl:port name="ExportExcel4UsersServiceSoap" binding="tns:ExportExcel4UsersServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/SystemSet/ExportExcel4UsersService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExportExcel4UsersServiceSoap12" binding="tns:ExportExcel4UsersServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/SystemSet/ExportExcel4UsersService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

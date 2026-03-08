@@ -1,0 +1,656 @@
+﻿
+//类名:clsExportExcel4UsersWS
+ ///----------------------
+ ///生成代码版本:2017.02.05.1
+ ///生成日期:2017/02/05
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:系统设置
+ ///模块英文名:SystemSet
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferenceExportExcel4Users;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// 导出Excel用户字段表(ExportExcel4Users)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsExportExcel4UsersWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsExportExcel4UsersEN> arrExportExcel4UsersObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static ExportExcel4UsersServiceSoapClient objExportExcel4UsersServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static ExportExcel4UsersServiceSoapClient GetExportExcel4UsersServiceSoapClient()
+{
+if (objExportExcel4UsersServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "ExportExcel4UsersServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/ExportExcel4UsersService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/ExportExcel4UsersService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new ExportExcel4UsersServiceSoapClient(binding, address);
+}
+else
+{
+return objExportExcel4UsersServiceSoapClient;
+}
+}
+
+ public clsExportExcel4UsersWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_BindListView)
+ /// </summary>
+public static int BindLv_ExportExcel4Users(System.Windows.Forms.ListView lvExportExcel4Users, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lviExportExcel4Users; 
+List<clsExportExcel4UsersEN> arrExportExcel4UsersObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrExportExcel4UsersObjList = GetExportExcel4UsersObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvExportExcel4Users.Items.Clear();//清除原来所有Item
+lvExportExcel4Users.Columns.Clear();//清除原来所有列头信息
+lvExportExcel4Users.Columns.Add("流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvExportExcel4Users.Columns.Add("导出Excel用户字段流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvExportExcel4Users.Columns.Add("字段名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvExportExcel4Users.Columns.Add("字段中文名称", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvExportExcel4Users.Columns.Add("是否导出", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvExportExcel4Users.Columns.Add("排序号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvExportExcel4Users.Columns.Add("修改日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvExportExcel4Users.Columns.Add("修改用户Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvExportExcel4Users.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvExportExcel4Users.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsExportExcel4UsersEN objExportExcel4UsersEN in arrExportExcel4UsersObjList)
+{
+lviExportExcel4Users = new System.Windows.Forms.ListViewItem();
+lviExportExcel4Users.Tag = objExportExcel4UsersEN.mId;
+lviExportExcel4Users.Text = objExportExcel4UsersEN.mId.ToString();
+lviExportExcel4Users.SubItems.Add(objExportExcel4UsersEN.id_ExportExcel4Users);
+lviExportExcel4Users.SubItems.Add(objExportExcel4UsersEN.FieldName);
+lviExportExcel4Users.SubItems.Add(objExportExcel4UsersEN.FieldCnName);
+lviExportExcel4Users.SubItems.Add(objExportExcel4UsersEN.IsExport.ToString());
+lviExportExcel4Users.SubItems.Add(objExportExcel4UsersEN.OrderNum.ToString());
+lviExportExcel4Users.SubItems.Add(objExportExcel4UsersEN.UpdDate);
+lviExportExcel4Users.SubItems.Add(objExportExcel4UsersEN.UpdUserId);
+lviExportExcel4Users.SubItems.Add(objExportExcel4UsersEN.Memo);
+lvExportExcel4Users.Items.Add(lviExportExcel4Users);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrExportExcel4UsersObjList.Count;
+}
+
+ /// <summary>
+ /// 检查对象字段值是否合法,1)检查是否可空;2)检查字段值长度是否超长,如果出错就抛出错误.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4WS_CheckPropertyNew)
+ /// </summary>
+public void CheckPropertyNew(clsExportExcel4UsersEN objExportExcel4UsersEN)
+{
+if (!Object.Equals(null, objExportExcel4UsersEN.id_ExportExcel4Users) && getStrLen(objExportExcel4UsersEN.id_ExportExcel4Users) > 8)
+{
+ throw new Exception("字段[导出Excel用户字段流水号]的长度不能超过8!");
+}
+if (!Object.Equals(null, objExportExcel4UsersEN.FieldName) && getStrLen(objExportExcel4UsersEN.FieldName) > 50)
+{
+ throw new Exception("字段[字段名]的长度不能超过50!");
+}
+if (!Object.Equals(null, objExportExcel4UsersEN.FieldCnName) && getStrLen(objExportExcel4UsersEN.FieldCnName) > 50)
+{
+ throw new Exception("字段[字段中文名称]的长度不能超过50!");
+}
+if (!Object.Equals(null, objExportExcel4UsersEN.UpdDate) && getStrLen(objExportExcel4UsersEN.UpdDate) > 14)
+{
+ throw new Exception("字段[修改日期]的长度不能超过14!");
+}
+if (!Object.Equals(null, objExportExcel4UsersEN.UpdUserId) && getStrLen(objExportExcel4UsersEN.UpdUserId) > 20)
+{
+ throw new Exception("字段[修改用户Id]的长度不能超过20!");
+}
+if (!Object.Equals(null, objExportExcel4UsersEN.Memo) && getStrLen(objExportExcel4UsersEN.Memo) > 1000)
+{
+ throw new Exception("字段[备注]的长度不能超过1000!");
+}
+ objExportExcel4UsersEN.IsCheckProperty = true;
+ }
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_ExportExcel4UsersWs(string strWhereCond)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objExportExcel4UsersService.ExportExcel4Users_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_GetDataSet", "clsExportExcel4UsersWS:GetDataTable_ExportExcel4UsersWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_ExportExcel4UsersByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objExportExcel4UsersService.ExportExcel4Users_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_GetDataSetByRange", "clsExportExcel4UsersWS:GetDataTable_ExportExcel4UsersByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetDataTable_ExportExcel4UsersVWs(string strWhereCond)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objExportExcel4UsersService.ExportExcel4Users_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_GetDataSetV", "clsExportExcel4UsersWS:GetDataTable_ExportExcel4UsersVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetExportExcel4UsersVWs(string strWhereCond)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objExportExcel4UsersService.ExportExcel4Users_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_GetDataSetV", "clsExportExcel4UsersWS:GetDataTable_ExportExcel4UsersVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabV2ByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_ExportExcel4UsersVByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objExportExcel4UsersService.ExportExcel4Users_GetDataSetVByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_GetDataSetVByRange", "clsExportExcel4UsersWS:GetDataTable_ExportExcel4UsersVByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objExportExcel4UsersEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetExportExcel4UsersWs(ref clsExportExcel4UsersEN objExportExcel4UsersEN)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+bool bolResult = objExportExcel4UsersService.ExportExcel4Users_GetExportExcel4Users(ref objExportExcel4UsersEN);
+return bolResult;
+}
+
+public static clsExportExcel4UsersEN GetExportExcel4UsersBymIdWs(long lngmId)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+clsExportExcel4UsersEN objExportExcel4UsersEN = objExportExcel4UsersService.ExportExcel4Users_GetExportExcel4UsersBymId(lngmId);
+return objExportExcel4UsersEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static long GetFirstID_S(string strWhereCond)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+try
+{
+long lngmId = objExportExcel4UsersService.ExportExcel4Users_GetFirstID_S(strWhereCond);
+return lngmId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_GetFirstID_S", "clsExportExcel4UsersWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsExportExcel4UsersEN GetFirstExportExcel4Users_S(string strWhereCond)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+try
+{
+clsExportExcel4UsersEN objExportExcel4UsersEN = objExportExcel4UsersService.ExportExcel4Users_GetFirstExportExcel4Users_S(strWhereCond);
+return objExportExcel4UsersEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_GetFirstExportExcel4Users_S", "clsExportExcel4UsersWS:GetFirstExportExcel4Users_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "lngmId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsExportExcel4UsersEN GetExportExcel4UsersObjBymId_Cache(long lngmId)
+{
+string strWhereCond = string.Format("1 = 1 order by mId");
+if (arrExportExcel4UsersObjLst_Cache == null)
+{
+arrExportExcel4UsersObjLst_Cache = clsExportExcel4UsersWS.GetExportExcel4UsersObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrExportExcel4UsersObjLst_Cache.Count - 1;
+int intMid = 0;
+clsExportExcel4UsersEN objExportExcel4UsersEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objExportExcel4UsersEN = arrExportExcel4UsersObjLst_Cache[intMid];
+if (objExportExcel4UsersEN.mId == lngmId)
+{
+intFindFailCount = 0;
+return objExportExcel4UsersEN;
+}
+else if (objExportExcel4UsersEN.mId.CompareTo(lngmId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrExportExcel4UsersObjLst_Cache = null;
+if (intFindFailCount == 1) return GetExportExcel4UsersObjBymId_Cache(lngmId);
+string strErrMsgForGetObjById = string.Format("在ExportExcel4Users对象缓存列表中,找不到记录[mId = {0}][intFindFailCount = {1}](函数:GetExportExcel4UsersObjBymId_Cache)", lngmId, intFindFailCount);
+if (objExportExcel4UsersEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objExportExcel4UsersEN.mId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsExportExcel4UsersBL", "GetExportExcel4UsersObjBymId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsExportExcel4UsersEN> GetExportExcel4UsersObjList(string strWhereCond)
+{
+ List<clsExportExcel4UsersEN> arrObjList = new List<clsExportExcel4UsersEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_ExportExcel4UsersWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsExportExcel4UsersEN objExportExcel4UsersEN = new clsExportExcel4UsersEN();
+objExportExcel4UsersEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objExportExcel4UsersEN.id_ExportExcel4Users = objRow["id_ExportExcel4Users"].ToString().Trim(); //导出Excel用户字段流水号
+objExportExcel4UsersEN.FieldName = objRow["FieldName"].ToString().Trim(); //字段名
+objExportExcel4UsersEN.FieldCnName = objRow["FieldCnName"].ToString().Trim(); //字段中文名称
+objExportExcel4UsersEN.IsExport = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsExport"].ToString().Trim()); //是否导出
+objExportExcel4UsersEN.OrderNum = Int32.Parse(objRow["OrderNum"].ToString().Trim()); //排序号
+objExportExcel4UsersEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objExportExcel4UsersEN.UpdUserId = objRow["UpdUserId"].ToString().Trim(); //修改用户Id
+objExportExcel4UsersEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objExportExcel4UsersEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsExportExcel4UsersEN> GetExportExcel4UsersObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsExportExcel4UsersEN> arrObjList = new List<clsExportExcel4UsersEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_ExportExcel4UsersByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsExportExcel4UsersEN objExportExcel4UsersEN = new clsExportExcel4UsersEN();
+objExportExcel4UsersEN.mId = Int32.Parse(objRow["mId"].ToString().Trim()); //流水号
+objExportExcel4UsersEN.id_ExportExcel4Users = objRow["id_ExportExcel4Users"].ToString().Trim(); //导出Excel用户字段流水号
+objExportExcel4UsersEN.FieldName = objRow["FieldName"].ToString().Trim(); //字段名
+objExportExcel4UsersEN.FieldCnName = objRow["FieldCnName"].ToString().Trim(); //字段中文名称
+objExportExcel4UsersEN.IsExport = com.taishsoft.common.clsTranslate.TransNullToBool_S(objRow["IsExport"].ToString().Trim()); //是否导出
+objExportExcel4UsersEN.OrderNum = Int32.Parse(objRow["OrderNum"].ToString().Trim()); //排序号
+objExportExcel4UsersEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objExportExcel4UsersEN.UpdUserId = objRow["UpdUserId"].ToString().Trim(); //修改用户Id
+objExportExcel4UsersEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objExportExcel4UsersEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool DelRecordWs(long lngmId)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+try
+{
+bool bolResult = objExportExcel4UsersService.ExportExcel4Users_DelRecord(lngmId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_DelRecord", "clsExportExcel4UsersWS:DelRecordWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool DelExportExcel4UserssWs(List<string> arrmId)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+try
+{
+string[] slngmId = (string[])(arrmId.ToArray());
+bool bolResult = objExportExcel4UsersService.ExportExcel4Users_DelExportExcel4Userss(slngmId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_DelExportExcel4Userss", "clsExportExcel4UsersWS:DelExportExcel4UserssWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static int DelExportExcel4UserssByCondWs(string strWhereCond)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+try
+{
+int intRecNum = objExportExcel4UsersService.ExportExcel4Users_DelExportExcel4UserssByCond(strWhereCond);
+return intRecNum;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_DelExportExcel4UserssByCond", "clsExportExcel4UsersWS:DelExportExcel4UserssByCondWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool AddNewRecordBySql2Ws(clsExportExcel4UsersEN objExportExcel4UsersEN)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+try
+{
+bool bolResult = objExportExcel4UsersService.ExportExcel4Users_AddNewRecordBySql2(objExportExcel4UsersEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_AddNewRecordBySql2", "clsExportExcel4UsersWS:AddNewRecordBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 把表对象添加到数据库中,并且返回该记录的关键字
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_AddNewRecordBySql2WithReturnKey)
+ /// </summary>
+ /// <param name = "objExportExcel4UsersEN">需要添加的表对象</param>
+ /// <returns>返回新添加记录的关键字</returns>
+public static string AddNewRecordBySql2WithReturnKey(clsExportExcel4UsersEN objExportExcel4UsersEN)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+try
+{
+string strKey = objExportExcel4UsersService.ExportExcel4Users_AddNewRecordBySql2WithReturnKey(objExportExcel4UsersEN);
+return strKey;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_AddNewRecordBySql2WithReturnKey", "clsExportExcel4UsersWS:AddNewRecordBySql2WithReturnKey", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool UpdateBySql2Ws(clsExportExcel4UsersEN objExportExcel4UsersEN)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+try
+{
+bool bolResult = objExportExcel4UsersService.ExportExcel4Users_UpdateBySql2(objExportExcel4UsersEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_UpdateBySql2", "clsExportExcel4UsersWS:UpdateBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_UpdateBySqlWithCondition)
+ /// </summary>
+ /// <param name = "objExportExcel4UsersEN">需要修改的对象</param>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static bool UpdateBySqlWithCondition(clsExportExcel4UsersEN objExportExcel4UsersEN, string strWhereCond)
+{
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+try
+{
+bool bolResult = objExportExcel4UsersService.ExportExcel4Users_UpdateBySqlWithCondition(objExportExcel4UsersEN, strWhereCond);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "ExportExcel4Users_UpdateBySqlWithCondition", "clsExportExcel4UsersWS:UpdateBySqlWithCondition", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+bool bolIsExist = objExportExcel4UsersService.ExportExcel4Users_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(long lngmId)
+{
+//检测记录是否存在
+ExportExcel4UsersServiceSoapClient objExportExcel4UsersService = GetExportExcel4UsersServiceSoapClient();
+bool bolIsExist = objExportExcel4UsersService.ExportExcel4Users_IsExist(lngmId);
+return bolIsExist;
+}
+
+
+
+ /// <summary>
+ /// 获取字符串长度,其中汉字为2个字节,英文为1个字节
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GengetStrLen)
+ /// </summary>
+ /// <param name = "strTemp">给定的原字符串</param>
+ /// <returns>返回字符串长度</returns>
+public static int getStrLen(string strTemp)
+{
+int len ;
+byte[] sarr = System.Text.Encoding.Default.GetBytes(strTemp);
+len = sarr.Length;//will output as 3+3*2 = 9
+return len;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/ExportExcel4UsersService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/ExportExcel4UsersService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

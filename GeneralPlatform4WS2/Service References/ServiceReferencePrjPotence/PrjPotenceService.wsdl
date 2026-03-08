@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="PrjPotence_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjPotence_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjPotence_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_GetPrjPotence">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjPotence" type="tns:clsPrjPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsPrjPotenceEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PrjPotence_GetPrjPotenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjPotence_GetPrjPotenceResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjPotence" type="tns:clsPrjPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_GetPrjPotenceV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjPotence" type="tns:clsPrjPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_GetPrjPotenceVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjPotence_GetPrjPotenceVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjPotence" type="tns:clsPrjPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjPotence_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjPotence_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_GetMaxStrId">
+        <s:complexType />
+      </s:element>
+      <s:element name="PrjPotence_GetMaxStrIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjPotence_GetMaxStrIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjPotence" type="tns:clsPrjPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjPotence_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjPotence" type="tns:clsPrjPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjPotence_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPotenceId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjPotence_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_DelPrjPotences">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrStdId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjPotence_DelPrjPotencesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjPotence_DelPrjPotencesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjPotence" type="tns:clsPrjPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsPrjPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PrjPotence_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjPotence_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjPotence_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjPotence_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjPotence_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_GetPrjPotenceSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjPotence_GetPrjPotence" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_GetPrjPotenceSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjPotence_GetPrjPotenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_GetPrjPotenceVSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjPotence_GetPrjPotenceV" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_GetPrjPotenceVSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjPotence_GetPrjPotenceVResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjPotence_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjPotence_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjPotence_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjPotence_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_GetMaxStrIdSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjPotence_GetMaxStrId" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_GetMaxStrIdSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjPotence_GetMaxStrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:PrjPotence_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:PrjPotence_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:PrjPotence_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:PrjPotence_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjPotence_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjPotence_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_DelPrjPotencesSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjPotence_DelPrjPotences" />
+  </wsdl:message>
+  <wsdl:message name="PrjPotence_DelPrjPotencesSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjPotence_DelPrjPotencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PrjPotenceServiceSoap">
+    <wsdl:operation name="PrjPotence_GetDataSet">
+      <wsdl:input message="tns:PrjPotence_GetDataSetSoapIn" />
+      <wsdl:output message="tns:PrjPotence_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_GetDataSetV">
+      <wsdl:input message="tns:PrjPotence_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:PrjPotence_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_GetPrjPotence">
+      <wsdl:input message="tns:PrjPotence_GetPrjPotenceSoapIn" />
+      <wsdl:output message="tns:PrjPotence_GetPrjPotenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_GetPrjPotenceV">
+      <wsdl:input message="tns:PrjPotence_GetPrjPotenceVSoapIn" />
+      <wsdl:output message="tns:PrjPotence_GetPrjPotenceVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_IsExistRecordByCond">
+      <wsdl:input message="tns:PrjPotence_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:PrjPotence_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_IsExist">
+      <wsdl:input message="tns:PrjPotence_IsExistSoapIn" />
+      <wsdl:output message="tns:PrjPotence_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_GetMaxStrId">
+      <wsdl:input message="tns:PrjPotence_GetMaxStrIdSoapIn" />
+      <wsdl:output message="tns:PrjPotence_GetMaxStrIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_AddNewRecordBySql2">
+      <wsdl:input message="tns:PrjPotence_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:PrjPotence_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_UpdateBySql2">
+      <wsdl:input message="tns:PrjPotence_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:PrjPotence_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_DelRecord">
+      <wsdl:input message="tns:PrjPotence_DelRecordSoapIn" />
+      <wsdl:output message="tns:PrjPotence_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_DelPrjPotences">
+      <wsdl:input message="tns:PrjPotence_DelPrjPotencesSoapIn" />
+      <wsdl:output message="tns:PrjPotence_DelPrjPotencesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PrjPotenceServiceSoap" type="tns:PrjPotenceServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrjPotence_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/PrjPotence_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/PrjPotence_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_GetPrjPotence">
+      <soap:operation soapAction="http://tempuri.org/PrjPotence_GetPrjPotence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_GetPrjPotenceV">
+      <soap:operation soapAction="http://tempuri.org/PrjPotence_GetPrjPotenceV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/PrjPotence_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_IsExist">
+      <soap:operation soapAction="http://tempuri.org/PrjPotence_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_GetMaxStrId">
+      <soap:operation soapAction="http://tempuri.org/PrjPotence_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/PrjPotence_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/PrjPotence_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/PrjPotence_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_DelPrjPotences">
+      <soap:operation soapAction="http://tempuri.org/PrjPotence_DelPrjPotences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PrjPotenceServiceSoap12" type="tns:PrjPotenceServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrjPotence_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/PrjPotence_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/PrjPotence_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_GetPrjPotence">
+      <soap12:operation soapAction="http://tempuri.org/PrjPotence_GetPrjPotence" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_GetPrjPotenceV">
+      <soap12:operation soapAction="http://tempuri.org/PrjPotence_GetPrjPotenceV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/PrjPotence_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/PrjPotence_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_GetMaxStrId">
+      <soap12:operation soapAction="http://tempuri.org/PrjPotence_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/PrjPotence_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/PrjPotence_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/PrjPotence_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjPotence_DelPrjPotences">
+      <soap12:operation soapAction="http://tempuri.org/PrjPotence_DelPrjPotences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PrjPotenceService">
+    <wsdl:port name="PrjPotenceServiceSoap" binding="tns:PrjPotenceServiceSoap">
+      <soap:address location="http://localhost:9259/PrjPotenceService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PrjPotenceServiceSoap12" binding="tns:PrjPotenceServiceSoap12">
+      <soap12:address location="http://localhost:9259/PrjPotenceService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

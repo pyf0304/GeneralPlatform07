@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<QxUserRolesListItem>
+ <RoleId>01010033</RoleId>
+ <RoleName>测试</RoleName>
+ <QxPrjId>0101</QxPrjId>
+ <IsInUse>false</IsInUse>
+ <UpdDate>20170206112159</UpdDate>
+ <UpdUserId>WebService</UpdUserId>
+ <Memo>由OA系统导入到统一平台:</Memo>
+</QxUserRolesListItem>

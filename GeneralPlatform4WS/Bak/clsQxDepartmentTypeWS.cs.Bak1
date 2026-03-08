@@ -1,0 +1,714 @@
+﻿
+//类名:clsQxDepartmentTypeWS
+ ///----------------------
+ ///生成代码版本:2017.01.19.1
+ ///生成日期:2017/01/28
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:系统参数
+ ///模块英文名:SysPara
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferenceQxDepartmentType;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// 部门类型(QxDepartmentType)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsQxDepartmentTypeWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsQxDepartmentTypeEN> arrQxDepartmentTypeObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static QxDepartmentTypeServiceSoapClient objQxDepartmentTypeServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static QxDepartmentTypeServiceSoapClient GetQxDepartmentTypeServiceSoapClient()
+{
+if (objQxDepartmentTypeServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "QxDepartmentTypeServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxDepartmentTypeService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxDepartmentTypeService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new QxDepartmentTypeServiceSoapClient(binding, address);
+}
+else
+{
+return objQxDepartmentTypeServiceSoapClient;
+}
+}
+
+ public clsQxDepartmentTypeWS()
+ {
+ }
+
+
+ /// <summary>
+ /// 绑定基于Web的下拉框
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GenDdlBindFunction)
+ /// </summary>
+ /// <param name = "objDDL">需要绑定当前表的下拉框</param>
+public static void BindDdl_DepartmentTypeId(System.Web.UI.WebControls.DropDownList objDDL)
+{
+//为数据源于表的下拉框设置内容
+System.Web.UI.WebControls.ListItem li = new System.Web.UI.WebControls.ListItem("请选择...","0");
+System.Data.DataTable objDT = GetDepartmentTypeId();
+objDDL.DataValueField = clsQxDepartmentTypeEN.con_DepartmentTypeId;
+objDDL.DataTextField = clsQxDepartmentTypeEN.con_DepartmentTypeName;
+objDDL.DataSource = objDT;
+objDDL.DataBind();
+objDDL.Items.Insert(0, li);
+objDDL.SelectedIndex = 0;
+}
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GenBindListView)
+ /// </summary>
+public static int BindLv_QxDepartmentType(System.Windows.Forms.ListView lvQxDepartmentType, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lviQxDepartmentType; 
+ArrayList arrQxDepartmentTypeObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrQxDepartmentTypeObjList = new clsQxDepartmentTypeBL.GetQxDepartmentTypeObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvQxDepartmentType.Items.Clear();//清除原来所有Item
+lvQxDepartmentType.Columns.Clear();//清除原来所有列头信息
+lvQxDepartmentType.Columns.Add("部门类型ID", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxDepartmentType.Columns.Add("部门类型名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxDepartmentType.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxDepartmentType.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsQxDepartmentTypeEN objQxDepartmentTypeEN in arrQxDepartmentTypeObjList)
+{
+lviQxDepartmentType = new System.Windows.Forms.ListViewItem();
+lviQxDepartmentType.Tag = objQxDepartmentTypeEN.DepartmentTypeId;
+lviQxDepartmentType.Text = objQxDepartmentTypeEN.DepartmentTypeId.ToString();
+lviQxDepartmentType.SubItems.Add(objQxDepartmentTypeEN.DepartmentTypeName);
+lviQxDepartmentType.SubItems.Add(objQxDepartmentTypeEN.Memo);
+lvQxDepartmentType.Items.Add(lviQxDepartmentType);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrQxDepartmentTypeObjList.Count;
+}
+
+ /// <summary>
+ /// 检查对象字段值是否合法,1)检查是否可空;2)检查字段值长度是否超长,如果出错就抛出错误.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4WS_CheckPropertyNew)
+ /// </summary>
+public void CheckPropertyNew(clsQxDepartmentTypeEN objQxDepartmentTypeEN)
+{
+if (!Object.Equals(null, objQxDepartmentTypeEN.DepartmentTypeId) && getStrLen(objQxDepartmentTypeEN.DepartmentTypeId) > 2)
+{
+ throw new Exception("字段[部门类型ID]的长度不能超过2!");
+}
+if (!Object.Equals(null, objQxDepartmentTypeEN.DepartmentTypeName) && getStrLen(objQxDepartmentTypeEN.DepartmentTypeName) > 50)
+{
+ throw new Exception("字段[部门类型名]的长度不能超过50!");
+}
+if (!Object.Equals(null, objQxDepartmentTypeEN.Memo) && getStrLen(objQxDepartmentTypeEN.Memo) > 1000)
+{
+ throw new Exception("字段[备注]的长度不能超过1000!");
+}
+ objQxDepartmentTypeEN.IsCheckProperty = true;
+ }
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxDepartmentTypeWs(string strWhereCond)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxDepartmentTypeService.QxDepartmentType_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_GetDataSet", "clsQxDepartmentTypeWS:GetDataTable_QxDepartmentTypeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxDepartmentTypeByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxDepartmentTypeService.QxDepartmentType_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_GetDataSetByRange", "clsQxDepartmentTypeWS:GetDataTable_QxDepartmentTypeByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetDataTable_QxDepartmentTypeVWs(string strWhereCond)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxDepartmentTypeService.QxDepartmentType_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_GetDataSetV", "clsQxDepartmentTypeWS:GetDataTable_QxDepartmentTypeVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetQxDepartmentTypeVWs(string strWhereCond)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxDepartmentTypeService.QxDepartmentType_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_GetDataSetV", "clsQxDepartmentTypeWS:GetDataTable_QxDepartmentTypeVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabV2ByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxDepartmentTypeVByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxDepartmentTypeService.QxDepartmentType_GetDataSetVByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_GetDataSetVByRange", "clsQxDepartmentTypeWS:GetDataTable_QxDepartmentTypeVByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objQxDepartmentTypeEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetQxDepartmentTypeWs(ref clsQxDepartmentTypeEN objQxDepartmentTypeEN)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+bool bolResult = objQxDepartmentTypeService.QxDepartmentType_GetQxDepartmentType(ref objQxDepartmentTypeEN);
+return bolResult;
+}
+
+public static clsQxDepartmentTypeEN GetQxDepartmentTypeByDepartmentTypeIdWs(string strDepartmentTypeId)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+clsQxDepartmentTypeEN objQxDepartmentTypeEN = objQxDepartmentTypeService.QxDepartmentType_GetQxDepartmentTypeByDepartmentTypeId(strDepartmentTypeId);
+return objQxDepartmentTypeEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static string GetFirstID_S(string strWhereCond)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+try
+{
+string strDepartmentTypeId = objQxDepartmentTypeService.QxDepartmentType_GetFirstID_S(strWhereCond);
+return strDepartmentTypeId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_GetFirstID_S", "clsQxDepartmentTypeWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsQxDepartmentTypeEN GetFirstQxDepartmentType_S(string strWhereCond)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+try
+{
+clsQxDepartmentTypeEN objQxDepartmentTypeEN = objQxDepartmentTypeService.QxDepartmentType_GetFirstQxDepartmentType_S(strWhereCond);
+return objQxDepartmentTypeEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_GetFirstQxDepartmentType_S", "clsQxDepartmentTypeWS:GetFirstQxDepartmentType_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据关键字获取相关名称, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecNameByKey_Cache)
+ /// </summary>
+ /// <param name = "strDepartmentTypeId">所给的关键字</param>
+ /// <returns>根据关键字获取的名称</returns>
+public static string GetDepartmentTypeNameByDepartmentTypeId_Cache(string strDepartmentTypeId)
+{
+if (string.IsNullOrEmpty(strDepartmentTypeId) == true) return "";
+string strWhereCond = string.Format("1 = 1 order by DepartmentTypeId");
+if (arrQxDepartmentTypeObjLst_Cache == null)
+{
+arrQxDepartmentTypeObjLst_Cache = clsQxDepartmentTypeWS.GetQxDepartmentTypeObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrQxDepartmentTypeObjLst_Cache.Count - 1;
+int intMid = 0;
+clsQxDepartmentTypeEN objQxDepartmentTypeEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objQxDepartmentTypeEN = arrQxDepartmentTypeObjLst_Cache[intMid];
+if (objQxDepartmentTypeEN.DepartmentTypeId == strDepartmentTypeId)
+{
+intFindFailCount = 0;
+return objQxDepartmentTypeEN.DepartmentTypeName;
+}
+else if (objQxDepartmentTypeEN.DepartmentTypeId.CompareTo(strDepartmentTypeId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrQxDepartmentTypeObjLst_Cache = null;
+if (intFindFailCount == 1) return GetDepartmentTypeNameByDepartmentTypeId_Cache(strDepartmentTypeId);
+string strErrMsgForGetObjById = string.Format("在QxDepartmentType对象缓存列表中,找不到记录[DepartmentTypeId = {0}][intFindFailCount = {1}](函数:GetDepartmentTypeNameByDepartmentTypeId_Cache)", strDepartmentTypeId, intFindFailCount);
+if (objQxDepartmentTypeEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objQxDepartmentTypeEN.DepartmentTypeId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsQxDepartmentTypeBL", "GetDepartmentTypeNameByDepartmentTypeId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "strDepartmentTypeId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsQxDepartmentTypeEN GetQxDepartmentTypeObjByDepartmentTypeId_Cache(string strDepartmentTypeId)
+{
+if (string.IsNullOrEmpty(strDepartmentTypeId) == true) return null;
+string strWhereCond = string.Format("1 = 1 order by DepartmentTypeId");
+if (arrQxDepartmentTypeObjLst_Cache == null)
+{
+arrQxDepartmentTypeObjLst_Cache = clsQxDepartmentTypeWS.GetQxDepartmentTypeObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrQxDepartmentTypeObjLst_Cache.Count - 1;
+int intMid = 0;
+clsQxDepartmentTypeEN objQxDepartmentTypeEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objQxDepartmentTypeEN = arrQxDepartmentTypeObjLst_Cache[intMid];
+if (objQxDepartmentTypeEN.DepartmentTypeId == strDepartmentTypeId)
+{
+intFindFailCount = 0;
+return objQxDepartmentTypeEN;
+}
+else if (objQxDepartmentTypeEN.DepartmentTypeId.CompareTo(strDepartmentTypeId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrQxDepartmentTypeObjLst_Cache = null;
+if (intFindFailCount == 1) return GetQxDepartmentTypeObjByDepartmentTypeId_Cache(strDepartmentTypeId);
+string strErrMsgForGetObjById = string.Format("在QxDepartmentType对象缓存列表中,找不到记录[DepartmentTypeId = {0}][intFindFailCount = {1}](函数:GetQxDepartmentTypeObjByDepartmentTypeId_Cache)", strDepartmentTypeId, intFindFailCount);
+if (objQxDepartmentTypeEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objQxDepartmentTypeEN.DepartmentTypeId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsQxDepartmentTypeBL", "GetQxDepartmentTypeObjByDepartmentTypeId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsQxDepartmentTypeEN> GetQxDepartmentTypeObjList(string strWhereCond)
+{
+ List<clsQxDepartmentTypeEN> arrObjList = new List<clsQxDepartmentTypeEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxDepartmentTypeWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxDepartmentTypeEN objQxDepartmentTypeEN = new clsQxDepartmentTypeEN();
+objQxDepartmentTypeEN.DepartmentTypeId = objRow["DepartmentTypeId"].ToString().Trim(); //部门类型ID
+objQxDepartmentTypeEN.DepartmentTypeName = objRow["DepartmentTypeName"].ToString().Trim(); //部门类型名
+objQxDepartmentTypeEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxDepartmentTypeEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsQxDepartmentTypeEN> GetQxDepartmentTypeObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsQxDepartmentTypeEN> arrObjList = new List<clsQxDepartmentTypeEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxDepartmentTypeByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxDepartmentTypeEN objQxDepartmentTypeEN = new clsQxDepartmentTypeEN();
+objQxDepartmentTypeEN.DepartmentTypeId = objRow["DepartmentTypeId"].ToString().Trim(); //部门类型ID
+objQxDepartmentTypeEN.DepartmentTypeName = objRow["DepartmentTypeName"].ToString().Trim(); //部门类型名
+objQxDepartmentTypeEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxDepartmentTypeEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool DelRecordWs(string strDepartmentTypeId)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+try
+{
+bool bolResult = objQxDepartmentTypeService.QxDepartmentType_DelRecord(strDepartmentTypeId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_DelRecord", "clsQxDepartmentTypeWS:DelRecordWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool DelQxDepartmentTypesWs(List<string> arrDepartmentTypeId)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+try
+{
+string[] sstrDepartmentTypeId = (string[])(arrDepartmentTypeId.ToArray());
+bool bolResult = objQxDepartmentTypeService.QxDepartmentType_DelQxDepartmentTypes(sstrDepartmentTypeId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_DelQxDepartmentTypes", "clsQxDepartmentTypeWS:DelQxDepartmentTypesWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static int DelQxDepartmentTypesByCondWs(string strWhereCond)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+try
+{
+int intRecNum = objQxDepartmentTypeService.QxDepartmentType_DelQxDepartmentTypesByCond(strWhereCond);
+return intRecNum;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_DelQxDepartmentTypesByCond", "clsQxDepartmentTypeWS:DelQxDepartmentTypesByCondWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool AddNewRecordBySql2Ws(clsQxDepartmentTypeEN objQxDepartmentTypeEN)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+try
+{
+bool bolResult = objQxDepartmentTypeService.QxDepartmentType_AddNewRecordBySql2(objQxDepartmentTypeEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_AddNewRecordBySql2", "clsQxDepartmentTypeWS:AddNewRecordBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 把表对象添加到数据库中,并且返回该记录的关键字
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_AddNewRecordBySql2WithReturnKey)
+ /// </summary>
+ /// <param name = "objQxDepartmentTypeEN">需要添加的表对象</param>
+ /// <returns>返回新添加记录的关键字</returns>
+public static string AddNewRecordBySql2WithReturnKey(clsQxDepartmentTypeEN objQxDepartmentTypeEN)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+try
+{
+string strKey = objQxDepartmentTypeService.QxDepartmentType_AddNewRecordBySql2WithReturnKey(objQxDepartmentTypeEN);
+return strKey;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_AddNewRecordBySql2WithReturnKey", "clsQxDepartmentTypeWS:AddNewRecordBySql2WithReturnKey", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool UpdateBySql2Ws(clsQxDepartmentTypeEN objQxDepartmentTypeEN)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+try
+{
+bool bolResult = objQxDepartmentTypeService.QxDepartmentType_UpdateBySql2(objQxDepartmentTypeEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_UpdateBySql2", "clsQxDepartmentTypeWS:UpdateBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_UpdateBySqlWithCondition)
+ /// </summary>
+ /// <param name = "objQxDepartmentTypeEN">需要修改的对象</param>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static bool UpdateBySqlWithCondition(clsQxDepartmentTypeEN objQxDepartmentTypeEN, string strWhereCond)
+{
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+try
+{
+bool bolResult = objQxDepartmentTypeService.QxDepartmentType_UpdateBySqlWithCondition(objQxDepartmentTypeEN, strWhereCond);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxDepartmentType_UpdateBySqlWithCondition", "clsQxDepartmentTypeWS:UpdateBySqlWithCondition", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+bool bolIsExist = objQxDepartmentTypeService.QxDepartmentType_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(string strDepartmentTypeId)
+{
+//检测记录是否存在
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+bool bolIsExist = objQxDepartmentTypeService.QxDepartmentType_IsExist(strDepartmentTypeId);
+return bolIsExist;
+}
+
+ /// <summary>
+ /// 获取当前表关键字值的最大值,再加1,避免重复
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetMaxStrId)
+ /// </summary>
+ /// <returns>当前表关键字值的最大值,再加1</returns>
+public static string GetMaxStrIdWs()
+{
+//检测记录是否存在
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+string strMaxDepartmentTypeId = objQxDepartmentTypeService.QxDepartmentType_GetMaxStrId();
+return strMaxDepartmentTypeId;
+}
+
+ /// <summary>
+ /// 根据前缀获取当前表关键字值的最大值,再加1,避免重复
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetMaxStrIdByPrefix)
+ /// </summary>
+ /// <returns>当前表关键字值的最大值,再加1</returns>
+public static string GetMaxStrIdByPrefixWs(string strPrefix)
+{
+//检测记录是否存在
+QxDepartmentTypeServiceSoapClient objQxDepartmentTypeService = GetQxDepartmentTypeServiceSoapClient();
+string strMaxDepartmentTypeId = objQxDepartmentTypeService.QxDepartmentType_GetMaxStrIdByPrefix(strPrefix);
+return strMaxDepartmentTypeId;
+}
+
+ /// <summary>
+ /// 获取字符串长度,其中汉字为2个字节,英文为1个字节
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GengetStrLen)
+ /// </summary>
+ /// <param name = "strTemp">给定的原字符串</param>
+ /// <returns>返回字符串长度</returns>
+public static int getStrLen(string strTemp)
+{
+int len ;
+byte[] sarr = System.Text.Encoding.Default.GetBytes(strTemp);
+len = sarr.Length;//will output as 3+3*2 = 9
+return len;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxDepartmentTypeService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxDepartmentTypeService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}

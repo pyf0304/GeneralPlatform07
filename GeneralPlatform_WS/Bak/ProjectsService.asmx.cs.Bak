@@ -1,0 +1,112 @@
+﻿///----------------------
+///生成代码版本：8.2.0.0
+///生成日期：2008/11/16
+///生成者：潘以锋
+///注意：需要数据底层（PubDataBase.dll）的版本：08.11.15.2
+///========================
+using System;
+using System.Data;
+using System.Text;
+using System.Collections;
+using System.Web.Services;
+using System.Web.Services.Protocols;
+using System.ComponentModel;
+using GeneralPlatform.Entity;
+using GeneralPlatform.BusinessLogic;
+using com.taishsoft.commdb;
+using System.Collections.Generic;
+
+namespace GeneralPlatform_WS
+{
+    /// <summary>
+    /// ProjectsService 的摘要说明
+    /// </summary>
+    [WebService(Namespace = "http://tempuri.org/")]
+    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    [ToolboxItem(false)]
+    public class ProjectsService : System.Web.Services.WebService
+    {
+
+        [WebMethod]
+        public DataSet Projects_GetDataSet(string strWhereCond)
+        {
+            DataSet objDS = clsProjectsBL.GetDataSet_Projects(strWhereCond);
+            return objDS;
+        }
+
+        [WebMethod]
+        public DataSet Projects_GetDataSetV(string strWhereCond)
+        {
+            DataSet objDS = clsProjectsBL.GetDataSet_ProjectsV(strWhereCond);
+            return objDS;
+        }
+
+        [WebMethod]
+        public bool Projects_GetProjects(ref clsProjectsEN objProjects)
+        {
+            bool bolResult = clsProjectsBL.GetProjects(ref objProjects);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public bool Projects_GetProjectsV(ref clsProjectsEN objProjects)
+        {
+            bool bolResult = clsProjectsBL.GetProjects(ref objProjects);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public bool Projects_IsExistRecordByCond(string strWhereCond)
+        {
+            bool bolIsExist = clsProjectsBL.IsExistRecord(strWhereCond);
+            return bolIsExist;
+        }
+
+        [WebMethod]
+        public bool Projects_IsExist(string strPrjId)
+        {
+            bool bolIsExist = clsProjectsBL.IsExist(strPrjId);
+            return bolIsExist;
+        }
+
+        [WebMethod]
+        public bool Projects_AddNewRecordBySql2(clsProjectsEN objProjects)
+        {
+            bool bolResult = clsProjectsBL.AddNewRecordBySql2(objProjects);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public bool Projects_UpdateBySql2(clsProjectsEN objProjects)
+        {
+            bool bolResult = clsProjectsBL.UpdateBySql2(objProjects);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public bool Projects_DelRecord(string strPrjId)
+        {
+            bool bolResult = clsProjectsBL.DelRecord(strPrjId);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public bool Projects_DelProjectss(List<string>  arrStdId)
+        {
+            bool bolResult = clsProjectsBL.DelProjectss(arrStdId);
+            return bolResult;
+        }
+
+        [WebMethod]
+        public clsProjectsEN ExposeLogicClass(clsProjectsEN objProjects)
+        {
+            return objProjects;
+        }
+
+        //[WebMethod]
+        //public clsProjectsEx ExposeLogicExClass(clsProjectsEx objProjects)
+        //{
+        //    return objProjects;
+        //}
+    }
+}

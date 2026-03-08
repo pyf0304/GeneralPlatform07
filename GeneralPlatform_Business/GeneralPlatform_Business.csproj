@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ACBC0C3E-5194-4444-9172-01A6BFD18C4B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeneralPlatform_Business</RootNamespace>
+    <AssemblyName>GeneralPlatform_Business</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>E:\TzAppData\GeneralPlatform07\GeneralPlatform_Business\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\..\TzAppData\GeneralPlatform07\GeneralPlatform_Business\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PubDataBase">
+      <HintPath>E:\PublicLib\PubDataBase.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TzPubFunction">
+      <HintPath>E:\PublicLib\TzPubFunction.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\DataSynch\clsQxPrjUserRelation4SynchBL.cs" />
+    <Compile Include="Class\DataSynch\clsQxServer4SynchBL.cs" />
+    <Compile Include="Class\DataSynch\clsQxUserRoleRelation4SynchBL.cs" />
+    <Compile Include="Class\DataSynch\clsQxUsers4SynchBL.cs" />
+    <Compile Include="Class\DataSynch\clsvQxPrjUserRelation4SynchBL.cs" />
+    <Compile Include="Class\DataSynch\clsvQxUserRoleRelation4SynchBL.cs" />
+    <Compile Include="Class\DataSynch\clsvQxUsers4SynchBL.cs" />
+    <Compile Include="Class\ErrorInformationBL.cs" />
+    <Compile Include="Class\InterfaceMan\clsQxViewInfoBL.cs" />
+    <Compile Include="Class\InterfaceMan\clsQxViewPotenceBL.cs" />
+    <Compile Include="Class\InterfaceMan\clsvQxViewInfoBL.cs" />
+    <Compile Include="Class\InterfaceMan\clsvQxViewPotenceBL.cs" />
+    <Compile Include="Class\LogManage\clsErrorInformationBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsPageDispModeBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxPageDispModeBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxPrjMenusBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxPrjMenuSetBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxPrjMenusV2BL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxRoleMenusBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxRoleMenusV2BL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxUserMenuDetailBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsQxUserMenusBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxPrjMenusBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxPrjMenuSetBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxPrjMenus_LeafBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxPrjMenus_SubBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxPrjMenus_UpBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxRoleMenusBL.cs" />
+    <Compile Include="Class\MenuManage_GP\clsvQxRoleMenus_SimBL.cs" />
+    <Compile Include="Class\PotenceMan\clsQxPotenceTypeBL.cs" />
+    <Compile Include="Class\PotenceMan\clsQxPrjPotenceBL.cs" />
+    <Compile Include="Class\PotenceMan\clsQxPrjPotenceV2BL.cs" />
+    <Compile Include="Class\PotenceMan\clsQxRelaOfPotenceAndSymbolBL.cs" />
+    <Compile Include="Class\PotenceMan\clsQxRolePotenceRelaBL.cs" />
+    <Compile Include="Class\PotenceMan\clsvQxPotenceSymbolForRoleBL.cs" />
+    <Compile Include="Class\PotenceMan\clsvQxPotenceTypeBL.cs" />
+    <Compile Include="Class\PotenceMan\clsvQxPrjPotenceBL.cs" />
+    <Compile Include="Class\PotenceMan\clsvQxRelaOfPotenceAndSymbolBL.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsQxCodeTypeBL.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsQxPrjFileRelaBL.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsQxPrjSite4DownLoadBL.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsQxUserDownLoadDetailLogBL.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsQxUserDownLoadLogBL.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsvQxPrjFileRelaBL.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsvQxPrjSite4DownLoadBL.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsvQxUserDownLoadDetailLogBL.cs" />
+    <Compile Include="Class\PrjFileDownLoad\clsvQxUserDownLoadLogBL.cs" />
+    <Compile Include="Class\PrjManage_GP\clsDataBaseTypeBL.cs" />
+    <Compile Include="Class\PrjManage_GP\clsQxFuncModuleBL.cs" />
+    <Compile Include="Class\PrjManage_GP\clsQxFuncModule_AgcBL.cs" />
+    <Compile Include="Class\PrjManage_GP\clsQxPrjDataBaseBL.cs" />
+    <Compile Include="Class\PrjManage_GP\clsQxPrjModuleBL.cs" />
+    <Compile Include="Class\PrjManage_GP\clsQxProjectsBL.cs" />
+    <Compile Include="Class\PrjManage_GP\clsvQxFuncModuleBL.cs" />
+    <Compile Include="Class\PrjManage_GP\clsvQxFuncModule_AgcBL.cs" />
+    <Compile Include="Class\PrjManage_GP\clsvQxPrjDataBaseBL.cs" />
+    <Compile Include="Class\PrjManage_GP\clsvQxPrjModuleBL.cs" />
+    <Compile Include="Class\SysManage\clsFuncModuleBL.cs" />
+    <Compile Include="Class\SysManage\clsvFuncModuleBL.cs" />
+    <Compile Include="Class\SysPara\clsQxApplicationTypeBL.cs" />
+    <Compile Include="Class\SysPara\clsQxDepartmentTypeBL.cs" />
+    <Compile Include="Class\SysPara\clsSubjectTypeBL.cs" />
+    <Compile Include="Class\SysPara\clsTSysParaBL.cs" />
+    <Compile Include="Class\SystemSet\clsExportExcel4UsersBL.cs" />
+    <Compile Include="Class\SystemSet\clsExportExcelSetBL.cs" />
+    <Compile Include="Class\SystemSet\clsQxUserCodePathBL.cs" />
+    <Compile Include="Class\SystemSet\clsSetFieldVisibilityBL.cs" />
+    <Compile Include="Class\SystemSet\clsvExportExcel4UsersBL.cs" />
+    <Compile Include="Class\SystemSet\clsvExportExcelSetBL.cs" />
+    <Compile Include="Class\SystemSet\clsvQxUserCodePathBL.cs" />
+    <Compile Include="Class\SystemSet\clsvSetFieldVisibilityBL.cs" />
+    <Compile Include="Class\SystemSet\clsXzSchoolBL.cs" />
+    <Compile Include="Class\Table_Field\clsQxPrjTabBL.cs" />
+    <Compile Include="Class\Table_Field\clsSQLDSTypeBL.cs" />
+    <Compile Include="Class\Table_Field\clsTabStateBL.cs" />
+    <Compile Include="Class\Table_Field\clsTabTypeBL.cs" />
+    <Compile Include="Class\Table_Field\clsvQxPrjTabBL.cs" />
+    <Compile Include="Class\UserManage\clsQxUserRolesV2BL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxDepartmentInfoBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxDepartmentInfoV2BL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxPrjUserRelationBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxRoleRightRelationBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxRolesBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxRolesV2BL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserGroupRelationBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserGroupsBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserIdentityBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserLoginNameBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserRoleRelationBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserRoleRelationV2BL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUsersBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUserStateBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUsersV2BL.cs" />
+    <Compile Include="Class\UserManage_GP\clsQxUsers_SchoolBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsSubjectRelationBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsUserDefaValueBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxDepartmentInfoBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxDepartmentInfoByUserNumBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxPrjUserRelationBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxPrjUserRelationByRoleBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUserLoginNameBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUserRoleRelationBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUserRolesBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUserRolesByMenuNumBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUserRolesByPotenceNumBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUserRolesByUserNumBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUsersBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUsersSimBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvQxUsers_SchoolBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsvSubjectRelationBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsXzClgBL.cs" />
+    <Compile Include="Class\UserManage_GP\clsXzGradeBaseBL.cs" />
+    <Compile Include="Class\UserPotenceMan\clsQxRolePotenceV2BL.cs" />
+    <Compile Include="Class\UserPotenceMan\clsQxUserGroupPotenceBL.cs" />
+    <Compile Include="Class\UserPotenceMan\clsvQxUserGroupPotenceBL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserManage\clsUserGroup_Functions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GeneralPlatform_DAL\GeneralPlatform_DAL.csproj">
+      <Project>{0F2B154E-DE03-413D-96AF-3364756735B9}</Project>
+      <Name>GeneralPlatform_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneralPlatform_Entity\GeneralPlatform_Entity.csproj">
+      <Project>{CAE7B0D5-0D60-4905-90C8-D0C76D8AB4E7}</Project>
+      <Name>GeneralPlatform_Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\GeneralPlatform_Business.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\GeneralPlatform_Business.dll" />
+    <Content Include="obj\GeneralPlatform_Business.csproj.FileListAbsolute.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\ResolveAssemblyReference.cache" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\Refactor\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

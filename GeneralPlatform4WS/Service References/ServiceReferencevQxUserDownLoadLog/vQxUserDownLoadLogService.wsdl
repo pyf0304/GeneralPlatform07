@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="vQxUserDownLoadLog_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUserDownLoadLog_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetTopDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetTopDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUserDownLoadLog_GetTopDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetDataSetByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetDataSetByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUserDownLoadLog_GetDataSetByRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetvQxUserDownLoadLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxUserDownLoadLogEN" type="tns:clsvQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsvQxUserDownLoadLogEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UserDownLoadLogId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjSiteId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjSiteName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="QxPrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DownLownDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LogInfo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsSuccess" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="FtpServer" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FtpUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FtpUserPassword" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sf_UpdFldSetStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checked" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="vQxUserDownLoadLog_GetvQxUserDownLoadLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxUserDownLoadLog_GetvQxUserDownLoadLogResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxUserDownLoadLogEN" type="tns:clsvQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetObjByUserDownLoadLogId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserDownLoadLogId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetObjByUserDownLoadLogIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUserDownLoadLog_GetObjByUserDownLoadLogIdResult" type="tns:clsvQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetvQxUserDownLoadLogV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxUserDownLoadLogEN" type="tns:clsvQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetvQxUserDownLoadLogVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxUserDownLoadLog_GetvQxUserDownLoadLogVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxUserDownLoadLogEN" type="tns:clsvQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUserDownLoadLog_GetObjLstResult" type="tns:ArrayOfClsvQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsvQxUserDownLoadLogEN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsvQxUserDownLoadLogEN" nillable="true" type="tns:clsvQxUserDownLoadLogEN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjLstByRangeResult" type="tns:ArrayOfClsvQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetTopObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetTopObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUserDownLoadLog_GetTopObjLstResult" type="tns:ArrayOfClsvQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetFirstID_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetFirstID_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUserDownLoadLog_GetFirstID_SResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetFirstObj_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_GetFirstObj_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUserDownLoadLog_GetFirstObj_SResult" type="tns:clsvQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByUserDownLoadLogId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserDownLoadLogId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByUserDownLoadLogIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjByUserDownLoadLogIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstJSONObjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intPageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByPagerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_funGetRecCountByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_funGetRecCountByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxUserDownLoadLog_funGetRecCountByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxUserDownLoadLog_IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserDownLoadLogId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxUserDownLoadLog_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxUserDownLoadLogEN" type="tns:clsvQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsvQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserDownLoadLogId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUserDownLoadLog_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_SerializeObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_SerializeObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUserDownLoadLog_SerializeObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_SerializeTopObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxUserDownLoadLog_SerializeTopObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxUserDownLoadLog_SerializeTopObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="vQxUserDownLoadLog_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetTopDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetTopDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetTopDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetTopDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetDataSetByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetDataSetByRange" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetDataSetByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetDataSetByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetvQxUserDownLoadLogSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetvQxUserDownLoadLog" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetvQxUserDownLoadLogSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetvQxUserDownLoadLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetObjByUserDownLoadLogIdSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetObjByUserDownLoadLogId" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetObjByUserDownLoadLogIdSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetObjByUserDownLoadLogIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetvQxUserDownLoadLogVSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetvQxUserDownLoadLogV" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetvQxUserDownLoadLogVSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetvQxUserDownLoadLogVResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetObjLst" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetTopObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetTopObjLst" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetTopObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetTopObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetFirstID_SSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetFirstID_S" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetFirstID_SSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetFirstID_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetFirstObj_SSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetFirstObj_S" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_GetFirstObj_SSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_GetFirstObj_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByUserDownLoadLogIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByUserDownLoadLogId" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByUserDownLoadLogIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByUserDownLoadLogIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObj" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPager" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_funGetRecCountByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_funGetRecCountByCond" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_funGetRecCountByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_funGetRecCountByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_SerializeObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_SerializeObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_SerializeObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_SerializeObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_SerializeTopObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_SerializeTopObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxUserDownLoadLog_SerializeTopObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxUserDownLoadLog_SerializeTopObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="vQxUserDownLoadLogServiceSoap">
+    <wsdl:operation name="vQxUserDownLoadLog_GetDataSet">
+      <wsdl:input message="tns:vQxUserDownLoadLog_GetDataSetSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetTopDataSet">
+      <wsdl:input message="tns:vQxUserDownLoadLog_GetTopDataSetSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_GetTopDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetDataSetByRange">
+      <wsdl:input message="tns:vQxUserDownLoadLog_GetDataSetByRangeSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_GetDataSetByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetvQxUserDownLoadLog">
+      <wsdl:input message="tns:vQxUserDownLoadLog_GetvQxUserDownLoadLogSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_GetvQxUserDownLoadLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetObjByUserDownLoadLogId">
+      <wsdl:input message="tns:vQxUserDownLoadLog_GetObjByUserDownLoadLogIdSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_GetObjByUserDownLoadLogIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetvQxUserDownLoadLogV">
+      <wsdl:input message="tns:vQxUserDownLoadLog_GetvQxUserDownLoadLogVSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_GetvQxUserDownLoadLogVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetObjLst">
+      <wsdl:input message="tns:vQxUserDownLoadLog_GetObjLstSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_GetObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <wsdl:input message="tns:GetObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetTopObjLst">
+      <wsdl:input message="tns:vQxUserDownLoadLog_GetTopObjLstSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_GetTopObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetFirstID_S">
+      <wsdl:input message="tns:vQxUserDownLoadLog_GetFirstID_SSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_GetFirstID_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetFirstObj_S">
+      <wsdl:input message="tns:vQxUserDownLoadLog_GetFirstObj_SSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_GetFirstObj_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByUserDownLoadLogId">
+      <wsdl:input message="tns:GetJSONObjByUserDownLoadLogIdSoapIn" />
+      <wsdl:output message="tns:GetJSONObjByUserDownLoadLogIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <wsdl:input message="tns:GetFirstJSONObjSoapIn" />
+      <wsdl:output message="tns:GetFirstJSONObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <wsdl:input message="tns:GetJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <wsdl:input message="tns:GetTopJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetTopJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <wsdl:input message="tns:GetJSONObjLstByPagerSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByPagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <wsdl:input message="tns:GetJSONObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_funGetRecCountByCond">
+      <wsdl:input message="tns:vQxUserDownLoadLog_funGetRecCountByCondSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_funGetRecCountByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_IsExistRecord">
+      <wsdl:input message="tns:vQxUserDownLoadLog_IsExistRecordSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_IsExistRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_IsExist">
+      <wsdl:input message="tns:vQxUserDownLoadLog_IsExistSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_SerializeObjToXMLStr">
+      <wsdl:input message="tns:vQxUserDownLoadLog_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_SerializeObjLstToXMLStr">
+      <wsdl:input message="tns:vQxUserDownLoadLog_SerializeObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_SerializeObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_SerializeTopObjLstToXMLStr">
+      <wsdl:input message="tns:vQxUserDownLoadLog_SerializeTopObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxUserDownLoadLog_SerializeTopObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="vQxUserDownLoadLogServiceSoap" type="tns:vQxUserDownLoadLogServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxUserDownLoadLog_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetTopDataSet">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetDataSetByRange">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetvQxUserDownLoadLog">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetvQxUserDownLoadLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetObjByUserDownLoadLogId">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetObjByUserDownLoadLogId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetvQxUserDownLoadLogV">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetvQxUserDownLoadLogV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetObjLst">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetTopObjLst">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetFirstID_S">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetFirstObj_S">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByUserDownLoadLogId">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjByUserDownLoadLogId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_funGetRecCountByCond">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_IsExist">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_SerializeObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_SerializeTopObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vQxUserDownLoadLogServiceSoap12" type="tns:vQxUserDownLoadLogServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxUserDownLoadLog_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetTopDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetDataSetByRange">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetvQxUserDownLoadLog">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetvQxUserDownLoadLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetObjByUserDownLoadLogId">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetObjByUserDownLoadLogId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetvQxUserDownLoadLogV">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetvQxUserDownLoadLogV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetObjLst">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetTopObjLst">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetFirstID_S">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_GetFirstObj_S">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByUserDownLoadLogId">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjByUserDownLoadLogId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_funGetRecCountByCond">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_SerializeObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxUserDownLoadLog_SerializeTopObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxUserDownLoadLog_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="vQxUserDownLoadLogService">
+    <wsdl:port name="vQxUserDownLoadLogServiceSoap" binding="tns:vQxUserDownLoadLogServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/PrjFileDownLoad/vQxUserDownLoadLogService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vQxUserDownLoadLogServiceSoap12" binding="tns:vQxUserDownLoadLogServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/PrjFileDownLoad/vQxUserDownLoadLogService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

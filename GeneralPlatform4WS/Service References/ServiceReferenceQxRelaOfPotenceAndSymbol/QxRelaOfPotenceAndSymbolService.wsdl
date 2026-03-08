@@ -1,0 +1,1662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="QxRelaOfPotenceAndSymbol_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetTopDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetTopDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_GetTopDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetDataSetByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetDataSetByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_GetDataSetByRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxRelaOfPotenceAndSymbolEN" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxRelaOfPotenceAndSymbolEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="RelaMid" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SymbolForProgramme" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SymbolName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="QxPrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUserId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sf_UpdFldSetStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checked" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objQxRelaOfPotenceAndSymbolEN" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetObjByRelaMid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngRelaMid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetObjByRelaMidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_GetObjByRelaMidResult" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxRelaOfPotenceAndSymbolEN" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objQxRelaOfPotenceAndSymbolEN" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_GetObjLstResult" type="tns:ArrayOfClsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsQxRelaOfPotenceAndSymbolEN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsQxRelaOfPotenceAndSymbolEN" nillable="true" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjLstByRangeResult" type="tns:ArrayOfClsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetTopObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetTopObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_GetTopObjLstResult" type="tns:ArrayOfClsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetFirstID_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetFirstID_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_GetFirstID_SResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetFirstObj_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_GetFirstObj_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_GetFirstObj_SResult" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByRelaMid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngRelaMid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByRelaMidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjByRelaMidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstJSONObjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intPageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByPagerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_funGetRecCountByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_funGetRecCountByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_funGetRecCountByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngRelaMid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxRelaOfPotenceAndSymbolEN" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxRelaOfPotenceAndSymbolJSONObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxRelaOfPotenceAndSymbolEN" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKeyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxRelaOfPotenceAndSymbolObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxRelaOfPotenceAndSymbolEN" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxRelaOfPotenceAndSymbolJSONObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_UpdateBySqlWithCondition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxRelaOfPotenceAndSymbolEN" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_UpdateBySqlWithConditionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_UpdateBySqlWithConditionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_UpdateBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strQxRelaOfPotenceAndSymbolObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_UpdateBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_UpdateBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngRelaMid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_DelRecordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbols">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strJSON4Keys" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelRecordsByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strKeyIdLst" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelRecordsByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelRecordsByJSONResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objQxRelaOfPotenceAndSymbolEN" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsQxRelaOfPotenceAndSymbolEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngRelaMid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetTopDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetTopDataSet" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetTopDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetTopDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetDataSetByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetDataSetByRange" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetDataSetByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetDataSetByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbol" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetObjByRelaMidSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetObjByRelaMid" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetObjByRelaMidSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetObjByRelaMidResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolVSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolV" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolVSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolVResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetObjLst" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetTopObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetTopObjLst" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetTopObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetTopObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetFirstID_SSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetFirstID_S" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetFirstID_SSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetFirstID_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetFirstObj_SSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetFirstObj_S" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_GetFirstObj_SSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_GetFirstObj_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByRelaMidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByRelaMid" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByRelaMidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByRelaMidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObj" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPager" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_funGetRecCountByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_funGetRecCountByCond" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_funGetRecCountByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_funGetRecCountByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSON" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKeySoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKey" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKeySoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSON" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_UpdateBySqlWithConditionSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_UpdateBySqlWithCondition" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_UpdateBySqlWithConditionSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_UpdateBySqlWithConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_UpdateBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_UpdateBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_UpdateBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_UpdateBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbols" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelRecordsByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:DelRecordsByJSON" />
+  </wsdl:message>
+  <wsdl:message name="DelRecordsByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:DelRecordsByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCond" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QxRelaOfPotenceAndSymbolServiceSoap">
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetDataSet">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_GetDataSetSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetTopDataSet">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_GetTopDataSetSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_GetTopDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetDataSetByRange">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_GetDataSetByRangeSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_GetDataSetByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetDataSetV">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbol">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetObjByRelaMid">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_GetObjByRelaMidSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_GetObjByRelaMidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolV">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolVSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetObjLst">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_GetObjLstSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_GetObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <wsdl:input message="tns:GetObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetTopObjLst">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_GetTopObjLstSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_GetTopObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetFirstID_S">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_GetFirstID_SSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_GetFirstID_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetFirstObj_S">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_GetFirstObj_SSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_GetFirstObj_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByRelaMid">
+      <wsdl:input message="tns:GetJSONObjByRelaMidSoapIn" />
+      <wsdl:output message="tns:GetJSONObjByRelaMidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <wsdl:input message="tns:GetFirstJSONObjSoapIn" />
+      <wsdl:output message="tns:GetFirstJSONObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <wsdl:input message="tns:GetJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <wsdl:input message="tns:GetTopJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetTopJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <wsdl:input message="tns:GetJSONObjLstByPagerSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByPagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <wsdl:input message="tns:GetJSONObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_funGetRecCountByCond">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_funGetRecCountByCondSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_funGetRecCountByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_IsExistRecord">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_IsExistRecordSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_IsExistRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_IsExist">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_IsExistSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSON">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSONSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKey">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKeySoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XML">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XMLSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_UpdateBySql2">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSON">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSONSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_UpdateBySqlWithCondition">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_UpdateBySqlWithConditionSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_UpdateBySqlWithConditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_UpdateBySql_XML">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_UpdateBySql_XMLSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_UpdateBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_DelRecord">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_DelRecordSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbols">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <wsdl:input message="tns:DelRecordsByJSONSoapIn" />
+      <wsdl:output message="tns:DelRecordsByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCond">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCondSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_SerializeObjToXMLStr">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStr">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStr">
+      <wsdl:input message="tns:QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QxRelaOfPotenceAndSymbolServiceSoap" type="tns:QxRelaOfPotenceAndSymbolServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetTopDataSet">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetDataSetByRange">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbol">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetObjByRelaMid">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetObjByRelaMid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolV">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetObjLst">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetTopObjLst">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetFirstID_S">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetFirstObj_S">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByRelaMid">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjByRelaMid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_funGetRecCountByCond">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_IsExist">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSON">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKey">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSON">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_UpdateBySqlWithCondition">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_UpdateBySqlWithCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_UpdateBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbols">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbols" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <soap:operation soapAction="http://tempuri.org/DelRecordsByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCond">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QxRelaOfPotenceAndSymbolServiceSoap12" type="tns:QxRelaOfPotenceAndSymbolServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetTopDataSet">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetDataSetByRange">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbol">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetObjByRelaMid">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetObjByRelaMid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolV">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetObjLst">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetTopObjLst">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetFirstID_S">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_GetFirstObj_S">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByRelaMid">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjByRelaMid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_funGetRecCountByCond">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSON">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_AddNewRecordBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKey">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSON">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_UpdateBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_UpdateBySqlWithCondition">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_UpdateBySqlWithCondition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_UpdateBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbols">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbols" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <soap12:operation soapAction="http://tempuri.org/DelRecordsByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCond">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/QxRelaOfPotenceAndSymbol_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QxRelaOfPotenceAndSymbolService">
+    <wsdl:port name="QxRelaOfPotenceAndSymbolServiceSoap" binding="tns:QxRelaOfPotenceAndSymbolServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/PotenceMan/QxRelaOfPotenceAndSymbolService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QxRelaOfPotenceAndSymbolServiceSoap12" binding="tns:QxRelaOfPotenceAndSymbolServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/PotenceMan/QxRelaOfPotenceAndSymbolService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

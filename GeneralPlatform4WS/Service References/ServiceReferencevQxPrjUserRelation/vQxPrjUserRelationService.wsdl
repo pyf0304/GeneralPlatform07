@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="vQxPrjUserRelation_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjUserRelation_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetTopDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetTopDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjUserRelation_GetTopDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetDataSetByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetDataSetByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjUserRelation_GetDataSetByRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetvQxPrjUserRelation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjUserRelationEN" type="tns:clsvQxPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsvQxPrjUserRelationEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="QxPrjId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DepartmentName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserStateName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IdentityDesc" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sf_UpdFldSetStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checked" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="vQxPrjUserRelation_GetvQxPrjUserRelationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjUserRelation_GetvQxPrjUserRelationResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjUserRelationEN" type="tns:clsvQxPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetObjBymId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetObjBymIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjUserRelation_GetObjBymIdResult" type="tns:clsvQxPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetvQxPrjUserRelationV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjUserRelationEN" type="tns:clsvQxPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetvQxPrjUserRelationVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjUserRelation_GetvQxPrjUserRelationVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjUserRelationEN" type="tns:clsvQxPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjUserRelation_GetObjLstResult" type="tns:ArrayOfClsvQxPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsvQxPrjUserRelationEN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsvQxPrjUserRelationEN" nillable="true" type="tns:clsvQxPrjUserRelationEN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjLstByRangeResult" type="tns:ArrayOfClsvQxPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetTopObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetTopObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjUserRelation_GetTopObjLstResult" type="tns:ArrayOfClsvQxPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetFirstID_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetFirstID_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjUserRelation_GetFirstID_SResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetFirstObj_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_GetFirstObj_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjUserRelation_GetFirstObj_SResult" type="tns:clsvQxPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjBymId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjBymIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjBymIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstJSONObjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intPageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByPagerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_funGetRecCountByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_funGetRecCountByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjUserRelation_funGetRecCountByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjUserRelation_IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vQxPrjUserRelation_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objvQxPrjUserRelationEN" type="tns:clsvQxPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsvQxPrjUserRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjUserRelation_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_SerializeObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_SerializeObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjUserRelation_SerializeObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_SerializeTopObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vQxPrjUserRelation_SerializeTopObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vQxPrjUserRelation_SerializeTopObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="vQxPrjUserRelation_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetTopDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetTopDataSet" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetTopDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetTopDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetDataSetByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetDataSetByRange" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetDataSetByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetDataSetByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetvQxPrjUserRelationSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetvQxPrjUserRelation" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetvQxPrjUserRelationSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetvQxPrjUserRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetObjBymIdSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetObjBymId" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetObjBymIdSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetObjBymIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetvQxPrjUserRelationVSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetvQxPrjUserRelationV" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetvQxPrjUserRelationVSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetvQxPrjUserRelationVResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetObjLst" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetTopObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetTopObjLst" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetTopObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetTopObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetFirstID_SSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetFirstID_S" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetFirstID_SSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetFirstID_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetFirstObj_SSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetFirstObj_S" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_GetFirstObj_SSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_GetFirstObj_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjBymIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjBymId" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjBymIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjBymIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObj" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPager" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_funGetRecCountByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_funGetRecCountByCond" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_funGetRecCountByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_funGetRecCountByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_SerializeObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_SerializeObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_SerializeObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_SerializeObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_SerializeTopObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_SerializeTopObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="vQxPrjUserRelation_SerializeTopObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:vQxPrjUserRelation_SerializeTopObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="vQxPrjUserRelationServiceSoap">
+    <wsdl:operation name="vQxPrjUserRelation_GetDataSet">
+      <wsdl:input message="tns:vQxPrjUserRelation_GetDataSetSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetTopDataSet">
+      <wsdl:input message="tns:vQxPrjUserRelation_GetTopDataSetSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_GetTopDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetDataSetByRange">
+      <wsdl:input message="tns:vQxPrjUserRelation_GetDataSetByRangeSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_GetDataSetByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetvQxPrjUserRelation">
+      <wsdl:input message="tns:vQxPrjUserRelation_GetvQxPrjUserRelationSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_GetvQxPrjUserRelationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetObjBymId">
+      <wsdl:input message="tns:vQxPrjUserRelation_GetObjBymIdSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_GetObjBymIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetvQxPrjUserRelationV">
+      <wsdl:input message="tns:vQxPrjUserRelation_GetvQxPrjUserRelationVSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_GetvQxPrjUserRelationVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetObjLst">
+      <wsdl:input message="tns:vQxPrjUserRelation_GetObjLstSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_GetObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <wsdl:input message="tns:GetObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetTopObjLst">
+      <wsdl:input message="tns:vQxPrjUserRelation_GetTopObjLstSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_GetTopObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetFirstID_S">
+      <wsdl:input message="tns:vQxPrjUserRelation_GetFirstID_SSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_GetFirstID_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetFirstObj_S">
+      <wsdl:input message="tns:vQxPrjUserRelation_GetFirstObj_SSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_GetFirstObj_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjBymId">
+      <wsdl:input message="tns:GetJSONObjBymIdSoapIn" />
+      <wsdl:output message="tns:GetJSONObjBymIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <wsdl:input message="tns:GetFirstJSONObjSoapIn" />
+      <wsdl:output message="tns:GetFirstJSONObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <wsdl:input message="tns:GetJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <wsdl:input message="tns:GetTopJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetTopJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <wsdl:input message="tns:GetJSONObjLstByPagerSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByPagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <wsdl:input message="tns:GetJSONObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_funGetRecCountByCond">
+      <wsdl:input message="tns:vQxPrjUserRelation_funGetRecCountByCondSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_funGetRecCountByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_IsExistRecord">
+      <wsdl:input message="tns:vQxPrjUserRelation_IsExistRecordSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_IsExistRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_IsExist">
+      <wsdl:input message="tns:vQxPrjUserRelation_IsExistSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_SerializeObjToXMLStr">
+      <wsdl:input message="tns:vQxPrjUserRelation_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_SerializeObjLstToXMLStr">
+      <wsdl:input message="tns:vQxPrjUserRelation_SerializeObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_SerializeObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_SerializeTopObjLstToXMLStr">
+      <wsdl:input message="tns:vQxPrjUserRelation_SerializeTopObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:vQxPrjUserRelation_SerializeTopObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="vQxPrjUserRelationServiceSoap" type="tns:vQxPrjUserRelationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxPrjUserRelation_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetTopDataSet">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetDataSetByRange">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetvQxPrjUserRelation">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetvQxPrjUserRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetObjBymId">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetObjBymId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetvQxPrjUserRelationV">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetvQxPrjUserRelationV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetObjLst">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetTopObjLst">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetFirstID_S">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetFirstObj_S">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjBymId">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjBymId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_funGetRecCountByCond">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_IsExist">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_SerializeObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_SerializeTopObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/vQxPrjUserRelation_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="vQxPrjUserRelationServiceSoap12" type="tns:vQxPrjUserRelationServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vQxPrjUserRelation_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetTopDataSet">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetDataSetByRange">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetvQxPrjUserRelation">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetvQxPrjUserRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetObjBymId">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetObjBymId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetvQxPrjUserRelationV">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetvQxPrjUserRelationV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetObjLst">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetTopObjLst">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetFirstID_S">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_GetFirstObj_S">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjBymId">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjBymId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_funGetRecCountByCond">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_SerializeObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vQxPrjUserRelation_SerializeTopObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/vQxPrjUserRelation_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="vQxPrjUserRelationService">
+    <wsdl:port name="vQxPrjUserRelationServiceSoap" binding="tns:vQxPrjUserRelationServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/UserManage/vQxPrjUserRelationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="vQxPrjUserRelationServiceSoap12" binding="tns:vQxPrjUserRelationServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/UserManage/vQxPrjUserRelationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

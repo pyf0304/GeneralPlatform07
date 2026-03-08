@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UserDownLoadLog_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserDownLoadLog_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserDownLoadLog_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_GetQxUserDownLoadLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserDownLoadLogEN" type="tns:clsQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxUserDownLoadLogEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UserDownLoadLogId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PrjSiteId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DownLownDate" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsSuccess" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="LogInfo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UserDownLoadLog_GetQxUserDownLoadLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserDownLoadLog_GetQxUserDownLoadLogResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserDownLoadLogEN" type="tns:clsQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_GetQxUserDownLoadLogV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserDownLoadLogEN" type="tns:clsQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_GetQxUserDownLoadLogVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserDownLoadLog_GetQxUserDownLoadLogVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objUserDownLoadLogEN" type="tns:clsQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserDownLoadLog_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserDownLoadLogId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserDownLoadLog_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_GetMaxStrId">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserDownLoadLog_GetMaxStrIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserDownLoadLog_GetMaxStrIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserDownLoadLogEN" type="tns:clsQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserDownLoadLog_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_AddNewRecordBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserDownLoadLogENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_AddNewRecordBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserDownLoadLog_AddNewRecordBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserDownLoadLogEN" type="tns:clsQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserDownLoadLog_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_UpdateBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserDownLoadLogENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_UpdateBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserDownLoadLog_UpdateBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserDownLoadLogId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserDownLoadLog_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_DelQxUserDownLoadLogs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrUserDownLoadLogId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_DelQxUserDownLoadLogsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserDownLoadLog_DelQxUserDownLoadLogsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_DelQxUserDownLoadLogsByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_DelQxUserDownLoadLogsByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserDownLoadLog_DelQxUserDownLoadLogsByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUserDownLoadLogEN" type="tns:clsQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsQxUserDownLoadLogEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserDownLoadLogId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserDownLoadLog_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_SerializeObjListToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDownLoadLog_SerializeObjListToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserDownLoadLog_SerializeObjListToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UserDownLoadLog_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_GetQxUserDownLoadLogSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_GetQxUserDownLoadLog" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_GetQxUserDownLoadLogSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_GetQxUserDownLoadLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_GetQxUserDownLoadLogVSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_GetQxUserDownLoadLogV" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_GetQxUserDownLoadLogVSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_GetQxUserDownLoadLogVResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_GetMaxStrIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_GetMaxStrId" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_GetMaxStrIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_GetMaxStrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_AddNewRecordBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_AddNewRecordBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_AddNewRecordBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_AddNewRecordBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_UpdateBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_UpdateBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_UpdateBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_UpdateBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_DelQxUserDownLoadLogsSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_DelQxUserDownLoadLogs" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_DelQxUserDownLoadLogsSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_DelQxUserDownLoadLogsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_DelQxUserDownLoadLogsByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_DelQxUserDownLoadLogsByCond" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_DelQxUserDownLoadLogsByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_DelQxUserDownLoadLogsByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_SerializeObjListToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_SerializeObjListToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="UserDownLoadLog_SerializeObjListToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDownLoadLog_SerializeObjListToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserDownLoadLogServiceSoap">
+    <wsdl:operation name="UserDownLoadLog_GetDataSet">
+      <wsdl:input message="tns:UserDownLoadLog_GetDataSetSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_GetDataSetV">
+      <wsdl:input message="tns:UserDownLoadLog_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_GetQxUserDownLoadLog">
+      <wsdl:input message="tns:UserDownLoadLog_GetQxUserDownLoadLogSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_GetQxUserDownLoadLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_GetQxUserDownLoadLogV">
+      <wsdl:input message="tns:UserDownLoadLog_GetQxUserDownLoadLogVSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_GetQxUserDownLoadLogVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_IsExistRecordByCond">
+      <wsdl:input message="tns:UserDownLoadLog_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_IsExist">
+      <wsdl:input message="tns:UserDownLoadLog_IsExistSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_GetMaxStrId">
+      <wsdl:input message="tns:UserDownLoadLog_GetMaxStrIdSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_GetMaxStrIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_AddNewRecordBySql2">
+      <wsdl:input message="tns:UserDownLoadLog_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_AddNewRecordBySql_XML">
+      <wsdl:input message="tns:UserDownLoadLog_AddNewRecordBySql_XMLSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_AddNewRecordBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_UpdateBySql2">
+      <wsdl:input message="tns:UserDownLoadLog_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_UpdateBySql_XML">
+      <wsdl:input message="tns:UserDownLoadLog_UpdateBySql_XMLSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_UpdateBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_DelRecord">
+      <wsdl:input message="tns:UserDownLoadLog_DelRecordSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_DelQxUserDownLoadLogs">
+      <wsdl:input message="tns:UserDownLoadLog_DelQxUserDownLoadLogsSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_DelQxUserDownLoadLogsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_DelQxUserDownLoadLogsByCond">
+      <wsdl:input message="tns:UserDownLoadLog_DelQxUserDownLoadLogsByCondSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_DelQxUserDownLoadLogsByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_SerializeObjToXMLStr">
+      <wsdl:input message="tns:UserDownLoadLog_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_SerializeObjListToXMLStr">
+      <wsdl:input message="tns:UserDownLoadLog_SerializeObjListToXMLStrSoapIn" />
+      <wsdl:output message="tns:UserDownLoadLog_SerializeObjListToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserDownLoadLogServiceSoap" type="tns:UserDownLoadLogServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserDownLoadLog_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_GetQxUserDownLoadLog">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_GetQxUserDownLoadLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_GetQxUserDownLoadLogV">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_GetQxUserDownLoadLogV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_IsExist">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_GetMaxStrId">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_AddNewRecordBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_UpdateBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_DelQxUserDownLoadLogs">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_DelQxUserDownLoadLogs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_DelQxUserDownLoadLogsByCond">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_DelQxUserDownLoadLogsByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_SerializeObjListToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/UserDownLoadLog_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserDownLoadLogServiceSoap12" type="tns:UserDownLoadLogServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserDownLoadLog_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_GetQxUserDownLoadLog">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_GetQxUserDownLoadLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_GetQxUserDownLoadLogV">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_GetQxUserDownLoadLogV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_GetMaxStrId">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_AddNewRecordBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_UpdateBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_DelQxUserDownLoadLogs">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_DelQxUserDownLoadLogs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_DelQxUserDownLoadLogsByCond">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_DelQxUserDownLoadLogsByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDownLoadLog_SerializeObjListToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/UserDownLoadLog_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserDownLoadLogService">
+    <wsdl:port name="UserDownLoadLogServiceSoap" binding="tns:UserDownLoadLogServiceSoap">
+      <soap:address location="http://localhost:9259/UserDownLoadLogService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserDownLoadLogServiceSoap12" binding="tns:UserDownLoadLogServiceSoap12">
+      <soap12:address location="http://localhost:9259/UserDownLoadLogService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

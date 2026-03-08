@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ViewPotence_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ViewPotence_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ViewPotence_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_GetViewPotence">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objViewPotenceEN" type="tns:clsQxViewPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxViewPotenceEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="ViewId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name=clsQxProjectsEN.con_QxPrjId type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PotenceId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Level" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ViewPotence_GetViewPotenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViewPotence_GetViewPotenceResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objViewPotenceEN" type="tns:clsQxViewPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_GetViewPotenceV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objViewPotenceEN" type="tns:clsQxViewPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_GetViewPotenceVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViewPotence_GetViewPotenceVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objViewPotenceEN" type="tns:clsQxViewPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViewPotence_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViewPotence_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_GetMaxStrId">
+        <s:complexType />
+      </s:element>
+      <s:element name="ViewPotence_GetMaxStrIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ViewPotence_GetMaxStrIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objViewPotenceEN" type="tns:clsQxViewPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViewPotence_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_AddNewRecordBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strViewPotenceENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_AddNewRecordBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViewPotence_AddNewRecordBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objViewPotenceEN" type="tns:clsQxViewPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViewPotence_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_UpdateBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strViewPotenceENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_UpdateBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViewPotence_UpdateBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViewPotence_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_DelViewPotences">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrStdId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_DelViewPotencesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViewPotence_DelViewPotencesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_DelViewPotencesByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_DelViewPotencesByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ViewPotence_DelViewPotencesByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objViewPotenceEN" type="tns:clsQxViewPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsQxViewPotenceEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ViewPotence_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_SerializeObjListToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewPotence_SerializeObjListToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ViewPotence_SerializeObjListToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ViewPotence_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_GetViewPotenceSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_GetViewPotence" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_GetViewPotenceSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_GetViewPotenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_GetViewPotenceVSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_GetViewPotenceV" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_GetViewPotenceVSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_GetViewPotenceVResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_GetMaxStrIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_GetMaxStrId" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_GetMaxStrIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_GetMaxStrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_AddNewRecordBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_AddNewRecordBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_AddNewRecordBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_AddNewRecordBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_UpdateBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_UpdateBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_UpdateBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_UpdateBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_DelViewPotencesSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_DelViewPotences" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_DelViewPotencesSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_DelViewPotencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_DelViewPotencesByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_DelViewPotencesByCond" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_DelViewPotencesByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_DelViewPotencesByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_SerializeObjListToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewPotence_SerializeObjListToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="ViewPotence_SerializeObjListToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewPotence_SerializeObjListToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ViewPotenceServiceSoap">
+    <wsdl:operation name="ViewPotence_GetDataSet">
+      <wsdl:input message="tns:ViewPotence_GetDataSetSoapIn" />
+      <wsdl:output message="tns:ViewPotence_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_GetDataSetV">
+      <wsdl:input message="tns:ViewPotence_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:ViewPotence_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_GetViewPotence">
+      <wsdl:input message="tns:ViewPotence_GetViewPotenceSoapIn" />
+      <wsdl:output message="tns:ViewPotence_GetViewPotenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_GetViewPotenceV">
+      <wsdl:input message="tns:ViewPotence_GetViewPotenceVSoapIn" />
+      <wsdl:output message="tns:ViewPotence_GetViewPotenceVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_IsExistRecordByCond">
+      <wsdl:input message="tns:ViewPotence_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:ViewPotence_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_IsExist">
+      <wsdl:input message="tns:ViewPotence_IsExistSoapIn" />
+      <wsdl:output message="tns:ViewPotence_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_GetMaxStrId">
+      <wsdl:input message="tns:ViewPotence_GetMaxStrIdSoapIn" />
+      <wsdl:output message="tns:ViewPotence_GetMaxStrIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_AddNewRecordBySql2">
+      <wsdl:input message="tns:ViewPotence_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:ViewPotence_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_AddNewRecordBySql_XML">
+      <wsdl:input message="tns:ViewPotence_AddNewRecordBySql_XMLSoapIn" />
+      <wsdl:output message="tns:ViewPotence_AddNewRecordBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_UpdateBySql2">
+      <wsdl:input message="tns:ViewPotence_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:ViewPotence_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_UpdateBySql_XML">
+      <wsdl:input message="tns:ViewPotence_UpdateBySql_XMLSoapIn" />
+      <wsdl:output message="tns:ViewPotence_UpdateBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_DelRecord">
+      <wsdl:input message="tns:ViewPotence_DelRecordSoapIn" />
+      <wsdl:output message="tns:ViewPotence_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_DelViewPotences">
+      <wsdl:input message="tns:ViewPotence_DelViewPotencesSoapIn" />
+      <wsdl:output message="tns:ViewPotence_DelViewPotencesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_DelViewPotencesByCond">
+      <wsdl:input message="tns:ViewPotence_DelViewPotencesByCondSoapIn" />
+      <wsdl:output message="tns:ViewPotence_DelViewPotencesByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_SerializeObjToXMLStr">
+      <wsdl:input message="tns:ViewPotence_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:ViewPotence_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_SerializeObjListToXMLStr">
+      <wsdl:input message="tns:ViewPotence_SerializeObjListToXMLStrSoapIn" />
+      <wsdl:output message="tns:ViewPotence_SerializeObjListToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ViewPotenceServiceSoap" type="tns:ViewPotenceServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ViewPotence_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_GetViewPotence">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_GetViewPotence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_GetViewPotenceV">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_GetViewPotenceV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_IsExist">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_GetMaxStrId">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_AddNewRecordBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_UpdateBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_DelViewPotences">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_DelViewPotences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_DelViewPotencesByCond">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_DelViewPotencesByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_SerializeObjListToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/ViewPotence_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ViewPotenceServiceSoap12" type="tns:ViewPotenceServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ViewPotence_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_GetViewPotence">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_GetViewPotence" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_GetViewPotenceV">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_GetViewPotenceV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_GetMaxStrId">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_AddNewRecordBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_UpdateBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_DelViewPotences">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_DelViewPotences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_DelViewPotencesByCond">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_DelViewPotencesByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewPotence_SerializeObjListToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/ViewPotence_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ViewPotenceService">
+    <wsdl:port name="ViewPotenceServiceSoap" binding="tns:ViewPotenceServiceSoap">
+      <soap:address location="http://localhost:9259/ViewPotenceService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ViewPotenceServiceSoap12" binding="tns:ViewPotenceServiceSoap12">
+      <soap12:address location="http://localhost:9259/ViewPotenceService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

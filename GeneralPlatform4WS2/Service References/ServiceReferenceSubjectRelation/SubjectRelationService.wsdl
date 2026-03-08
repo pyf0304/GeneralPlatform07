@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SubjectRelation_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubjectRelation_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubjectRelation_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_GetSubjectRelation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objSubjectRelation" type="tns:clsSubjectRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsSubjectRelationEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LeaderId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsDirectLeader" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SubjectRelation_GetSubjectRelationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubjectRelation_GetSubjectRelationResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objSubjectRelation" type="tns:clsSubjectRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_GetSubjectRelationV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objSubjectRelation" type="tns:clsSubjectRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_GetSubjectRelationVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubjectRelation_GetSubjectRelationVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objSubjectRelation" type="tns:clsSubjectRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubjectRelation_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubjectRelation_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objSubjectRelation" type="tns:clsSubjectRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubjectRelation_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objSubjectRelation" type="tns:clsSubjectRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubjectRelation_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubjectRelation_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_DelSubjectRelations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrStdId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubjectRelation_DelSubjectRelationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubjectRelation_DelSubjectRelationsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objSubjectRelation" type="tns:clsSubjectRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsSubjectRelationEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SubjectRelation_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_GetSubjectRelationSoapIn">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_GetSubjectRelation" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_GetSubjectRelationSoapOut">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_GetSubjectRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_GetSubjectRelationVSoapIn">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_GetSubjectRelationV" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_GetSubjectRelationVSoapOut">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_GetSubjectRelationVResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_DelSubjectRelationsSoapIn">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_DelSubjectRelations" />
+  </wsdl:message>
+  <wsdl:message name="SubjectRelation_DelSubjectRelationsSoapOut">
+    <wsdl:part name="parameters" element="tns:SubjectRelation_DelSubjectRelationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SubjectRelationServiceSoap">
+    <wsdl:operation name="SubjectRelation_GetDataSet">
+      <wsdl:input message="tns:SubjectRelation_GetDataSetSoapIn" />
+      <wsdl:output message="tns:SubjectRelation_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_GetDataSetV">
+      <wsdl:input message="tns:SubjectRelation_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:SubjectRelation_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_GetSubjectRelation">
+      <wsdl:input message="tns:SubjectRelation_GetSubjectRelationSoapIn" />
+      <wsdl:output message="tns:SubjectRelation_GetSubjectRelationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_GetSubjectRelationV">
+      <wsdl:input message="tns:SubjectRelation_GetSubjectRelationVSoapIn" />
+      <wsdl:output message="tns:SubjectRelation_GetSubjectRelationVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_IsExistRecordByCond">
+      <wsdl:input message="tns:SubjectRelation_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:SubjectRelation_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_IsExist">
+      <wsdl:input message="tns:SubjectRelation_IsExistSoapIn" />
+      <wsdl:output message="tns:SubjectRelation_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_AddNewRecordBySql2">
+      <wsdl:input message="tns:SubjectRelation_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:SubjectRelation_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_UpdateBySql2">
+      <wsdl:input message="tns:SubjectRelation_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:SubjectRelation_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_DelRecord">
+      <wsdl:input message="tns:SubjectRelation_DelRecordSoapIn" />
+      <wsdl:output message="tns:SubjectRelation_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_DelSubjectRelations">
+      <wsdl:input message="tns:SubjectRelation_DelSubjectRelationsSoapIn" />
+      <wsdl:output message="tns:SubjectRelation_DelSubjectRelationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SubjectRelationServiceSoap" type="tns:SubjectRelationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubjectRelation_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/SubjectRelation_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/SubjectRelation_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_GetSubjectRelation">
+      <soap:operation soapAction="http://tempuri.org/SubjectRelation_GetSubjectRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_GetSubjectRelationV">
+      <soap:operation soapAction="http://tempuri.org/SubjectRelation_GetSubjectRelationV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/SubjectRelation_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_IsExist">
+      <soap:operation soapAction="http://tempuri.org/SubjectRelation_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/SubjectRelation_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/SubjectRelation_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/SubjectRelation_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_DelSubjectRelations">
+      <soap:operation soapAction="http://tempuri.org/SubjectRelation_DelSubjectRelations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SubjectRelationServiceSoap12" type="tns:SubjectRelationServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubjectRelation_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/SubjectRelation_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/SubjectRelation_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_GetSubjectRelation">
+      <soap12:operation soapAction="http://tempuri.org/SubjectRelation_GetSubjectRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_GetSubjectRelationV">
+      <soap12:operation soapAction="http://tempuri.org/SubjectRelation_GetSubjectRelationV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/SubjectRelation_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/SubjectRelation_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/SubjectRelation_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/SubjectRelation_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/SubjectRelation_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubjectRelation_DelSubjectRelations">
+      <soap12:operation soapAction="http://tempuri.org/SubjectRelation_DelSubjectRelations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SubjectRelationService">
+    <wsdl:port name="SubjectRelationServiceSoap" binding="tns:SubjectRelationServiceSoap">
+      <soap:address location="http://localhost:9259/SubjectRelationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SubjectRelationServiceSoap12" binding="tns:SubjectRelationServiceSoap12">
+      <soap12:address location="http://localhost:9259/SubjectRelationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

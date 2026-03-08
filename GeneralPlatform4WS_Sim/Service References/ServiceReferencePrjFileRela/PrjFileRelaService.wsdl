@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="PrjFileRela_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjFileRela_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjFileRela_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_GetQxPrjFileRela">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjFileRelaEN" type="tns:clsQxPrjFileRelaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxPrjFileRelaEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name=clsQxProjectsEN.con_QxPrjId type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsNeedDownLoad" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdUserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PrjFileRela_GetQxPrjFileRelaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjFileRela_GetQxPrjFileRelaResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjFileRelaEN" type="tns:clsQxPrjFileRelaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_GetQxPrjFileRelaV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjFileRelaEN" type="tns:clsQxPrjFileRelaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_GetQxPrjFileRelaVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjFileRela_GetQxPrjFileRelaVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjFileRelaEN" type="tns:clsQxPrjFileRelaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjFileRela_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjFileRela_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjFileRelaEN" type="tns:clsQxPrjFileRelaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjFileRela_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_AddNewRecordBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjFileRelaENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_AddNewRecordBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjFileRela_AddNewRecordBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjFileRelaEN" type="tns:clsQxPrjFileRelaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjFileRela_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_UpdateBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrjFileRelaENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_UpdateBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjFileRela_UpdateBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjFileRela_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_DelPrjFileRelas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrmId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_DelPrjFileRelasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjFileRela_DelPrjFileRelasResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_DelPrjFileRelasByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_DelPrjFileRelasByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrjFileRela_DelPrjFileRelasByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPrjFileRelaEN" type="tns:clsQxPrjFileRelaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsQxPrjFileRelaEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lngmId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjFileRela_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_SerializeObjListToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrjFileRela_SerializeObjListToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrjFileRela_SerializeObjListToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PrjFileRela_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_GetQxPrjFileRelaSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_GetQxPrjFileRela" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_GetQxPrjFileRelaSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_GetQxPrjFileRelaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_GetQxPrjFileRelaVSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_GetQxPrjFileRelaV" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_GetQxPrjFileRelaVSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_GetQxPrjFileRelaVResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_AddNewRecordBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_AddNewRecordBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_AddNewRecordBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_AddNewRecordBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_UpdateBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_UpdateBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_UpdateBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_UpdateBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_DelPrjFileRelasSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_DelPrjFileRelas" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_DelPrjFileRelasSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_DelPrjFileRelasResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_DelPrjFileRelasByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_DelPrjFileRelasByCond" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_DelPrjFileRelasByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_DelPrjFileRelasByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_SerializeObjListToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_SerializeObjListToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="PrjFileRela_SerializeObjListToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:PrjFileRela_SerializeObjListToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PrjFileRelaServiceSoap">
+    <wsdl:operation name="PrjFileRela_GetDataSet">
+      <wsdl:input message="tns:PrjFileRela_GetDataSetSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_GetDataSetV">
+      <wsdl:input message="tns:PrjFileRela_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_GetQxPrjFileRela">
+      <wsdl:input message="tns:PrjFileRela_GetQxPrjFileRelaSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_GetQxPrjFileRelaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_GetQxPrjFileRelaV">
+      <wsdl:input message="tns:PrjFileRela_GetQxPrjFileRelaVSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_GetQxPrjFileRelaVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_IsExistRecordByCond">
+      <wsdl:input message="tns:PrjFileRela_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_IsExist">
+      <wsdl:input message="tns:PrjFileRela_IsExistSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_AddNewRecordBySql2">
+      <wsdl:input message="tns:PrjFileRela_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:PrjFileRela_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_AddNewRecordBySql_XML">
+      <wsdl:input message="tns:PrjFileRela_AddNewRecordBySql_XMLSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_AddNewRecordBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_UpdateBySql2">
+      <wsdl:input message="tns:PrjFileRela_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:PrjFileRela_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_UpdateBySql_XML">
+      <wsdl:input message="tns:PrjFileRela_UpdateBySql_XMLSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_UpdateBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_DelRecord">
+      <wsdl:input message="tns:PrjFileRela_DelRecordSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_DelPrjFileRelas">
+      <wsdl:input message="tns:PrjFileRela_DelPrjFileRelasSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_DelPrjFileRelasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_DelPrjFileRelasByCond">
+      <wsdl:input message="tns:PrjFileRela_DelPrjFileRelasByCondSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_DelPrjFileRelasByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_SerializeObjToXMLStr">
+      <wsdl:input message="tns:PrjFileRela_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_SerializeObjListToXMLStr">
+      <wsdl:input message="tns:PrjFileRela_SerializeObjListToXMLStrSoapIn" />
+      <wsdl:output message="tns:PrjFileRela_SerializeObjListToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PrjFileRelaServiceSoap" type="tns:PrjFileRelaServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrjFileRela_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_GetQxPrjFileRela">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_GetQxPrjFileRela" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_GetQxPrjFileRelaV">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_GetQxPrjFileRelaV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_IsExist">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_AddNewRecordBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_UpdateBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_DelPrjFileRelas">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_DelPrjFileRelas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_DelPrjFileRelasByCond">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_DelPrjFileRelasByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_SerializeObjListToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/PrjFileRela_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PrjFileRelaServiceSoap12" type="tns:PrjFileRelaServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PrjFileRela_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_GetQxPrjFileRela">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_GetQxPrjFileRela" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_GetQxPrjFileRelaV">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_GetQxPrjFileRelaV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_AddNewRecordBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_UpdateBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_DelPrjFileRelas">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_DelPrjFileRelas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_DelPrjFileRelasByCond">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_DelPrjFileRelasByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrjFileRela_SerializeObjListToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/PrjFileRela_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PrjFileRelaService">
+    <wsdl:port name="PrjFileRelaServiceSoap" binding="tns:PrjFileRelaServiceSoap">
+      <soap:address location="http://localhost:9259/PrjFileRelaService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PrjFileRelaServiceSoap12" binding="tns:PrjFileRelaServiceSoap12">
+      <soap12:address location="http://localhost:9259/PrjFileRelaService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,671 @@
+﻿
+//类名:clsQxRelaOfPotenceAndSymbolWS
+ ///----------------------
+ ///生成代码版本:2017.02.05.1
+ ///生成日期:2017/02/06
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:权限管理
+ ///模块英文名:PotenceMan
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferenceQxRelaOfPotenceAndSymbol;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// 权限编程标志关系表(QxRelaOfPotenceAndSymbol)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsQxRelaOfPotenceAndSymbolWS
+{
+private static string mstrPageName = "QxRelaOfPotenceAndSymbolService.asmx";
+private static string mstrDir = "0";
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsQxRelaOfPotenceAndSymbolEN> arrQxRelaOfPotenceAndSymbolObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static QxRelaOfPotenceAndSymbolServiceSoapClient GetQxRelaOfPotenceAndSymbolServiceSoapClient()
+{
+if (objQxRelaOfPotenceAndSymbolServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "QxRelaOfPotenceAndSymbolServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+string strServiceUrl = GetServiceUrl(mstrPageName, ref mstrDir);
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new QxRelaOfPotenceAndSymbolServiceSoapClient(binding, address);
+}
+else
+{
+return objQxRelaOfPotenceAndSymbolServiceSoapClient;
+}
+}
+
+ public clsQxRelaOfPotenceAndSymbolWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_BindListView)
+ /// </summary>
+public static int BindLv_QxRelaOfPotenceAndSymbol(System.Windows.Forms.ListView lvQxRelaOfPotenceAndSymbol, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lviQxRelaOfPotenceAndSymbol; 
+List<clsQxRelaOfPotenceAndSymbolEN> arrQxRelaOfPotenceAndSymbolObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrQxRelaOfPotenceAndSymbolObjList = GetQxRelaOfPotenceAndSymbolObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvQxRelaOfPotenceAndSymbol.Items.Clear();//清除原来所有Item
+lvQxRelaOfPotenceAndSymbol.Columns.Clear();//清除原来所有列头信息
+lvQxRelaOfPotenceAndSymbol.Columns.Add("流水号", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRelaOfPotenceAndSymbol.Columns.Add("权限ID", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRelaOfPotenceAndSymbol.Columns.Add("编程标志", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRelaOfPotenceAndSymbol.Columns.Add("标志名称", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRelaOfPotenceAndSymbol.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRelaOfPotenceAndSymbol.Columns.Add("项目Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRelaOfPotenceAndSymbol.Columns.Add("修改日期", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRelaOfPotenceAndSymbol.Columns.Add("修改用户Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxRelaOfPotenceAndSymbol.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsQxRelaOfPotenceAndSymbolEN objQxRelaOfPotenceAndSymbolEN in arrQxRelaOfPotenceAndSymbolObjList)
+{
+lviQxRelaOfPotenceAndSymbol = new System.Windows.Forms.ListViewItem();
+lviQxRelaOfPotenceAndSymbol.Tag = objQxRelaOfPotenceAndSymbolEN.RelaMid;
+lviQxRelaOfPotenceAndSymbol.Text = objQxRelaOfPotenceAndSymbolEN.RelaMid.ToString();
+lviQxRelaOfPotenceAndSymbol.SubItems.Add(objQxRelaOfPotenceAndSymbolEN.SymbolForProgramme);
+lviQxRelaOfPotenceAndSymbol.SubItems.Add(objQxRelaOfPotenceAndSymbolEN.SymbolName);
+lviQxRelaOfPotenceAndSymbol.SubItems.Add(objQxRelaOfPotenceAndSymbolEN.Memo);
+lviQxRelaOfPotenceAndSymbol.SubItems.Add(objQxRelaOfPotenceAndSymbolEN.UpdDate);
+lviQxRelaOfPotenceAndSymbol.SubItems.Add(objQxRelaOfPotenceAndSymbolEN.UpdUserId);
+lvQxRelaOfPotenceAndSymbol.Items.Add(lviQxRelaOfPotenceAndSymbol);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrQxRelaOfPotenceAndSymbolObjList.Count;
+}
+
+ /// <summary>
+ /// 检查对象字段值是否合法,1)检查是否可空;2)检查字段值长度是否超长,如果出错就抛出错误.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4WS_CheckPropertyNew)
+ /// </summary>
+public void CheckPropertyNew(clsQxRelaOfPotenceAndSymbolEN objQxRelaOfPotenceAndSymbolEN)
+{
+if (!Object.Equals(null, objQxRelaOfPotenceAndSymbolEN.PotenceId) && getStrLen(objQxRelaOfPotenceAndSymbolEN.PotenceId) > 8)
+{
+ throw new Exception("字段[权限ID]的长度不能超过8!");
+}
+if (!Object.Equals(null, objQxRelaOfPotenceAndSymbolEN.SymbolForProgramme) && getStrLen(objQxRelaOfPotenceAndSymbolEN.SymbolForProgramme) > 20)
+{
+ throw new Exception("字段[编程标志]的长度不能超过20!");
+}
+if (!Object.Equals(null, objQxRelaOfPotenceAndSymbolEN.SymbolName) && getStrLen(objQxRelaOfPotenceAndSymbolEN.SymbolName) > 200)
+{
+ throw new Exception("字段[标志名称]的长度不能超过200!");
+}
+if (!Object.Equals(null, objQxRelaOfPotenceAndSymbolEN.Memo) && getStrLen(objQxRelaOfPotenceAndSymbolEN.Memo) > 1000)
+{
+ throw new Exception("字段[备注]的长度不能超过1000!");
+}
+if (!Object.Equals(null, objQxRelaOfPotenceAndSymbolEN.QxPrjId) && getStrLen(objQxRelaOfPotenceAndSymbolEN.QxPrjId) > 4)
+{
+ throw new Exception("字段[项目Id]的长度不能超过4!");
+}
+if (!Object.Equals(null, objQxRelaOfPotenceAndSymbolEN.UpdDate) && getStrLen(objQxRelaOfPotenceAndSymbolEN.UpdDate) > 14)
+{
+ throw new Exception("字段[修改日期]的长度不能超过14!");
+}
+if (!Object.Equals(null, objQxRelaOfPotenceAndSymbolEN.UpdUserId) && getStrLen(objQxRelaOfPotenceAndSymbolEN.UpdUserId) > 20)
+{
+ throw new Exception("字段[修改用户Id]的长度不能超过20!");
+}
+ objQxRelaOfPotenceAndSymbolEN.IsCheckProperty = true;
+ }
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxRelaOfPotenceAndSymbolWs(string strWhereCond)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_GetDataSet", "clsQxRelaOfPotenceAndSymbolWS:GetDataTable_QxRelaOfPotenceAndSymbolWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxRelaOfPotenceAndSymbolByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_GetDataSetByRange", "clsQxRelaOfPotenceAndSymbolWS:GetDataTable_QxRelaOfPotenceAndSymbolByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetDataTable_QxRelaOfPotenceAndSymbolVWs(string strWhereCond)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_GetDataSetV", "clsQxRelaOfPotenceAndSymbolWS:GetDataTable_QxRelaOfPotenceAndSymbolVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetQxRelaOfPotenceAndSymbolVWs(string strWhereCond)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_GetDataSetV", "clsQxRelaOfPotenceAndSymbolWS:GetDataTable_QxRelaOfPotenceAndSymbolVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabV2ByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxRelaOfPotenceAndSymbolVByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_GetDataSetVByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_GetDataSetVByRange", "clsQxRelaOfPotenceAndSymbolWS:GetDataTable_QxRelaOfPotenceAndSymbolVByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objQxRelaOfPotenceAndSymbolEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetQxRelaOfPotenceAndSymbolWs(ref clsQxRelaOfPotenceAndSymbolEN objQxRelaOfPotenceAndSymbolEN)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+bool bolResult = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbol(ref objQxRelaOfPotenceAndSymbolEN);
+return bolResult;
+}
+
+public static clsQxRelaOfPotenceAndSymbolEN GetQxRelaOfPotenceAndSymbolByRelaMidWs(long lngRelaMid)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+clsQxRelaOfPotenceAndSymbolEN objQxRelaOfPotenceAndSymbolEN = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_GetQxRelaOfPotenceAndSymbolByRelaMid(lngRelaMid);
+return objQxRelaOfPotenceAndSymbolEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static long GetFirstID_S(string strWhereCond)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+try
+{
+long lngRelaMid = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_GetFirstID_S(strWhereCond);
+return lngRelaMid;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_GetFirstID_S", "clsQxRelaOfPotenceAndSymbolWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsQxRelaOfPotenceAndSymbolEN GetFirstQxRelaOfPotenceAndSymbol_S(string strWhereCond)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+try
+{
+clsQxRelaOfPotenceAndSymbolEN objQxRelaOfPotenceAndSymbolEN = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_GetFirstQxRelaOfPotenceAndSymbol_S(strWhereCond);
+return objQxRelaOfPotenceAndSymbolEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_GetFirstQxRelaOfPotenceAndSymbol_S", "clsQxRelaOfPotenceAndSymbolWS:GetFirstQxRelaOfPotenceAndSymbol_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "lngRelaMid">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsQxRelaOfPotenceAndSymbolEN GetQxRelaOfPotenceAndSymbolObjByRelaMid_Cache(long lngRelaMid)
+{
+string strWhereCond = string.Format("1 = 1 order by RelaMid");
+if (arrQxRelaOfPotenceAndSymbolObjLst_Cache == null)
+{
+arrQxRelaOfPotenceAndSymbolObjLst_Cache = clsQxRelaOfPotenceAndSymbolWS.GetQxRelaOfPotenceAndSymbolObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrQxRelaOfPotenceAndSymbolObjLst_Cache.Count - 1;
+int intMid = 0;
+clsQxRelaOfPotenceAndSymbolEN objQxRelaOfPotenceAndSymbolEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objQxRelaOfPotenceAndSymbolEN = arrQxRelaOfPotenceAndSymbolObjLst_Cache[intMid];
+if (objQxRelaOfPotenceAndSymbolEN.RelaMid == lngRelaMid)
+{
+intFindFailCount = 0;
+return objQxRelaOfPotenceAndSymbolEN;
+}
+else if (objQxRelaOfPotenceAndSymbolEN.RelaMid.CompareTo(lngRelaMid) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrQxRelaOfPotenceAndSymbolObjLst_Cache = null;
+if (intFindFailCount == 1) return GetQxRelaOfPotenceAndSymbolObjByRelaMid_Cache(lngRelaMid);
+string strErrMsgForGetObjById = string.Format("在QxRelaOfPotenceAndSymbol对象缓存列表中,找不到记录[RelaMid = {0}][intFindFailCount = {1}](函数:GetQxRelaOfPotenceAndSymbolObjByRelaMid_Cache)", lngRelaMid, intFindFailCount);
+if (objQxRelaOfPotenceAndSymbolEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objQxRelaOfPotenceAndSymbolEN.RelaMid, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsQxRelaOfPotenceAndSymbolBL", "GetQxRelaOfPotenceAndSymbolObjByRelaMid_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsQxRelaOfPotenceAndSymbolEN> GetQxRelaOfPotenceAndSymbolObjList(string strWhereCond)
+{
+ List<clsQxRelaOfPotenceAndSymbolEN> arrObjList = new List<clsQxRelaOfPotenceAndSymbolEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxRelaOfPotenceAndSymbolWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxRelaOfPotenceAndSymbolEN objQxRelaOfPotenceAndSymbolEN = new clsQxRelaOfPotenceAndSymbolEN();
+objQxRelaOfPotenceAndSymbolEN.RelaMid = Int32.Parse(objRow["RelaMid"].ToString().Trim()); //流水号
+objQxRelaOfPotenceAndSymbolEN.PotenceId = objRow["PotenceId"].ToString().Trim(); //权限ID
+objQxRelaOfPotenceAndSymbolEN.SymbolForProgramme = objRow["SymbolForProgramme"].ToString().Trim(); //编程标志
+objQxRelaOfPotenceAndSymbolEN.SymbolName = objRow["SymbolName"].ToString().Trim(); //标志名称
+objQxRelaOfPotenceAndSymbolEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+objQxRelaOfPotenceAndSymbolEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objQxRelaOfPotenceAndSymbolEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objQxRelaOfPotenceAndSymbolEN.UpdUserId = objRow["UpdUserId"].ToString().Trim(); //修改用户Id
+	arrObjList.Add(objQxRelaOfPotenceAndSymbolEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsQxRelaOfPotenceAndSymbolEN> GetQxRelaOfPotenceAndSymbolObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsQxRelaOfPotenceAndSymbolEN> arrObjList = new List<clsQxRelaOfPotenceAndSymbolEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxRelaOfPotenceAndSymbolByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxRelaOfPotenceAndSymbolEN objQxRelaOfPotenceAndSymbolEN = new clsQxRelaOfPotenceAndSymbolEN();
+objQxRelaOfPotenceAndSymbolEN.RelaMid = Int32.Parse(objRow["RelaMid"].ToString().Trim()); //流水号
+objQxRelaOfPotenceAndSymbolEN.PotenceId = objRow["PotenceId"].ToString().Trim(); //权限ID
+objQxRelaOfPotenceAndSymbolEN.SymbolForProgramme = objRow["SymbolForProgramme"].ToString().Trim(); //编程标志
+objQxRelaOfPotenceAndSymbolEN.SymbolName = objRow["SymbolName"].ToString().Trim(); //标志名称
+objQxRelaOfPotenceAndSymbolEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+objQxRelaOfPotenceAndSymbolEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objQxRelaOfPotenceAndSymbolEN.UpdDate = objRow["UpdDate"].ToString().Trim(); //修改日期
+objQxRelaOfPotenceAndSymbolEN.UpdUserId = objRow["UpdUserId"].ToString().Trim(); //修改用户Id
+	arrObjList.Add(objQxRelaOfPotenceAndSymbolEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool DelRecordWs(long lngRelaMid)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+try
+{
+bool bolResult = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_DelRecord(lngRelaMid);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_DelRecord", "clsQxRelaOfPotenceAndSymbolWS:DelRecordWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool DelQxRelaOfPotenceAndSymbolsWs(List<string> arrRelaMid)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+try
+{
+string[] slngRelaMid = (string[])(arrRelaMid.ToArray());
+bool bolResult = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbols(slngRelaMid);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbols", "clsQxRelaOfPotenceAndSymbolWS:DelQxRelaOfPotenceAndSymbolsWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static int DelQxRelaOfPotenceAndSymbolsByCondWs(string strWhereCond)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+try
+{
+int intRecNum = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCond(strWhereCond);
+return intRecNum;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_DelQxRelaOfPotenceAndSymbolsByCond", "clsQxRelaOfPotenceAndSymbolWS:DelQxRelaOfPotenceAndSymbolsByCondWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool AddNewRecordBySql2Ws(clsQxRelaOfPotenceAndSymbolEN objQxRelaOfPotenceAndSymbolEN)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+try
+{
+bool bolResult = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_AddNewRecordBySql2(objQxRelaOfPotenceAndSymbolEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_AddNewRecordBySql2", "clsQxRelaOfPotenceAndSymbolWS:AddNewRecordBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 把表对象添加到数据库中,并且返回该记录的关键字
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_AddNewRecordBySql2WithReturnKey)
+ /// </summary>
+ /// <param name = "objQxRelaOfPotenceAndSymbolEN">需要添加的表对象</param>
+ /// <returns>返回新添加记录的关键字</returns>
+public static string AddNewRecordBySql2WithReturnKey(clsQxRelaOfPotenceAndSymbolEN objQxRelaOfPotenceAndSymbolEN)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+try
+{
+string strKey = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKey(objQxRelaOfPotenceAndSymbolEN);
+return strKey;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_AddNewRecordBySql2WithReturnKey", "clsQxRelaOfPotenceAndSymbolWS:AddNewRecordBySql2WithReturnKey", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool UpdateBySql2Ws(clsQxRelaOfPotenceAndSymbolEN objQxRelaOfPotenceAndSymbolEN)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+try
+{
+bool bolResult = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_UpdateBySql2(objQxRelaOfPotenceAndSymbolEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_UpdateBySql2", "clsQxRelaOfPotenceAndSymbolWS:UpdateBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_UpdateBySqlWithCondition)
+ /// </summary>
+ /// <param name = "objQxRelaOfPotenceAndSymbolEN">需要修改的对象</param>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static bool UpdateBySqlWithCondition(clsQxRelaOfPotenceAndSymbolEN objQxRelaOfPotenceAndSymbolEN, string strWhereCond)
+{
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+try
+{
+bool bolResult = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_UpdateBySqlWithCondition(objQxRelaOfPotenceAndSymbolEN, strWhereCond);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(mstrPageName, ref mstrDir), "QxRelaOfPotenceAndSymbol_UpdateBySqlWithCondition", "clsQxRelaOfPotenceAndSymbolWS:UpdateBySqlWithCondition", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+bool bolIsExist = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(long lngRelaMid)
+{
+//检测记录是否存在
+QxRelaOfPotenceAndSymbolServiceSoapClient objQxRelaOfPotenceAndSymbolService = GetQxRelaOfPotenceAndSymbolServiceSoapClient();
+bool bolIsExist = objQxRelaOfPotenceAndSymbolService.QxRelaOfPotenceAndSymbol_IsExist(lngRelaMid);
+return bolIsExist;
+}
+
+
+
+ /// <summary>
+ /// 获取字符串长度,其中汉字为2个字节,英文为1个字节
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GengetStrLen)
+ /// </summary>
+ /// <param name = "strTemp">给定的原字符串</param>
+ /// <returns>返回字符串长度</returns>
+public static int getStrLen(string strTemp)
+{
+int len ;
+byte[] sarr = System.Text.Encoding.Default.GetBytes(strTemp);
+len = sarr.Length;//will output as 3+3*2 = 9
+return len;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl(string strPageName, ref string strDir)
+{
+String strServiceUrl = String.Empty;
+if (strDir == "0")
+{
+strDir = clsDict_PageName_Dic.GetDir4PageName(strPageName);
+}
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+if (string.IsNullOrEmpty(strDir) == true)
+{
+strServiceUrl = String.Format("http://{0}/{1}/{2}",
+clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx, strPageName);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/{1}/{2}/{3}",
+clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx, strDir, strPageName);
+}
+}
+else
+{
+if (string.IsNullOrEmpty(strDir) == true)
+{
+strServiceUrl = String.Format("http://{0}/{1}",
+clsSysPara4WS.strCurrIPAddressAndPort_Local,
+strPageName);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/{1}/{2}",
+clsSysPara4WS.strCurrIPAddressAndPort_Local, strDir, strPageName);
+}
+}
+return strServiceUrl;
+}
+}
+}

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9BD44FBD-751F-4389-8225-660BABEC2C63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeneralPlatform_Const</RootNamespace>
+    <AssemblyName>GeneralPlatform_Const</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class\DataSynch\conQxPrjUserRelation4Synch.cs" />
+    <Compile Include="Class\DataSynch\conQxServer4Synch.cs" />
+    <Compile Include="Class\DataSynch\conQxUserRoleRelation4Synch.cs" />
+    <Compile Include="Class\DataSynch\conQxUsers4Synch.cs" />
+    <Compile Include="Class\DataSynch\convQxPrjUserRelation4Synch.cs" />
+    <Compile Include="Class\DataSynch\convQxUserRoleRelation4Synch.cs" />
+    <Compile Include="Class\DataSynch\convQxUsers4Synch.cs" />
+    <Compile Include="Class\InterfaceMan\conQxViewInfo.cs" />
+    <Compile Include="Class\InterfaceMan\conQxViewPotence.cs" />
+    <Compile Include="Class\InterfaceMan\convQxViewInfo.cs" />
+    <Compile Include="Class\InterfaceMan\convQxViewPotence.cs" />
+    <Compile Include="Class\LogManage\conErrorInformation.cs" />
+    <Compile Include="Class\MenuManage\conQxPageDispMode.cs" />
+    <Compile Include="Class\MenuManage\conQxPrjMenus.cs" />
+    <Compile Include="Class\MenuManage\conQxPrjMenuSet.cs" />
+    <Compile Include="Class\MenuManage\conQxRoleMenus.cs" />
+    <Compile Include="Class\MenuManage\conQxUserMenuDetail.cs" />
+    <Compile Include="Class\MenuManage\conQxUserMenus.cs" />
+    <Compile Include="Class\MenuManage\constQxPageDispMode.cs" />
+    <Compile Include="Class\MenuManage\constQxPrjMenus.cs" />
+    <Compile Include="Class\MenuManage\constQxPrjMenuSet.cs" />
+    <Compile Include="Class\MenuManage\constQxRoleMenus.cs" />
+    <Compile Include="Class\MenuManage\constQxUserMenuDetail.cs" />
+    <Compile Include="Class\MenuManage\constQxUserMenus.cs" />
+    <Compile Include="Class\MenuManage\constvQxPrjMenus.cs" />
+    <Compile Include="Class\MenuManage\constvQxPrjMenuSet.cs" />
+    <Compile Include="Class\MenuManage\constvQxPrjMenus_Leaf.cs" />
+    <Compile Include="Class\MenuManage\constvQxPrjMenus_Sub.cs" />
+    <Compile Include="Class\MenuManage\constvQxPrjMenus_Up.cs" />
+    <Compile Include="Class\MenuManage\constvQxRoleMenus.cs" />
+    <Compile Include="Class\MenuManage\constvQxRoleMenus_Sim.cs" />
+    <Compile Include="Class\MenuManage\convQxPrjMenus.cs" />
+    <Compile Include="Class\MenuManage\convQxPrjMenuSet.cs" />
+    <Compile Include="Class\MenuManage\convQxPrjMenus_Leaf.cs" />
+    <Compile Include="Class\MenuManage\convQxPrjMenus_Sub.cs" />
+    <Compile Include="Class\MenuManage\convQxPrjMenus_Up.cs" />
+    <Compile Include="Class\MenuManage\convQxRoleMenus.cs" />
+    <Compile Include="Class\MenuManage\convQxRoleMenus_Sim.cs" />
+    <Compile Include="Class\PotenceMan\conQxPotenceType.cs" />
+    <Compile Include="Class\PotenceMan\conQxPrjPotence.cs" />
+    <Compile Include="Class\PotenceMan\conQxRelaOfPotenceAndSymbol.cs" />
+    <Compile Include="Class\PotenceMan\convQxPotenceSymbolForRole.cs" />
+    <Compile Include="Class\PotenceMan\convQxPotenceType.cs" />
+    <Compile Include="Class\PotenceMan\convQxPrjPotence.cs" />
+    <Compile Include="Class\PotenceMan\convQxRelaOfPotenceAndSymbol.cs" />
+    <Compile Include="Class\PrjFileDownLoad\conQxCodeType.cs" />
+    <Compile Include="Class\PrjFileDownLoad\conQxPrjFileRela.cs" />
+    <Compile Include="Class\PrjFileDownLoad\conQxPrjSite4DownLoad.cs" />
+    <Compile Include="Class\PrjFileDownLoad\conQxUserDownLoadDetailLog.cs" />
+    <Compile Include="Class\PrjFileDownLoad\conQxUserDownLoadLog.cs" />
+    <Compile Include="Class\PrjFileDownLoad\convQxPrjFileRela.cs" />
+    <Compile Include="Class\PrjFileDownLoad\convQxPrjSite4DownLoad.cs" />
+    <Compile Include="Class\PrjFileDownLoad\convQxUserDownLoadDetailLog.cs" />
+    <Compile Include="Class\PrjFileDownLoad\convQxUserDownLoadLog.cs" />
+    <Compile Include="Class\PrjManage\conDataBaseType.cs" />
+    <Compile Include="Class\PrjManage\conQxFuncModule.cs" />
+    <Compile Include="Class\PrjManage\conQxFuncModule_Agc.cs" />
+    <Compile Include="Class\PrjManage\conQxPrjDataBase.cs" />
+    <Compile Include="Class\PrjManage\conQxPrjModule.cs" />
+    <Compile Include="Class\PrjManage\conQxProjects.cs" />
+    <Compile Include="Class\PrjManage\constDataBaseType.cs" />
+    <Compile Include="Class\PrjManage\convQxFuncModule.cs" />
+    <Compile Include="Class\PrjManage\convQxFuncModule_Agc.cs" />
+    <Compile Include="Class\PrjManage\convQxPrjDataBase.cs" />
+    <Compile Include="Class\PrjManage\convQxPrjModule.cs" />
+    <Compile Include="Class\SysManage\conFuncModule.cs" />
+    <Compile Include="Class\SysManage\convFuncModule.cs" />
+    <Compile Include="Class\SysPara\conQxApplicationType.cs" />
+    <Compile Include="Class\SysPara\conQxDepartmentType.cs" />
+    <Compile Include="Class\SysPara\conSubjectType.cs" />
+    <Compile Include="Class\SysPara\conTSysPara.cs" />
+    <Compile Include="Class\SystemSet\conExportExcel4Users.cs" />
+    <Compile Include="Class\SystemSet\conExportExcelSet.cs" />
+    <Compile Include="Class\SystemSet\conQxUserCodePath.cs" />
+    <Compile Include="Class\SystemSet\conSetFieldVisibility.cs" />
+    <Compile Include="Class\SystemSet\convExportExcel4Users.cs" />
+    <Compile Include="Class\SystemSet\convExportExcelSet.cs" />
+    <Compile Include="Class\SystemSet\convQxUserCodePath.cs" />
+    <Compile Include="Class\SystemSet\convSetFieldVisibility.cs" />
+    <Compile Include="Class\SystemSet\conXzSchool.cs" />
+    <Compile Include="Class\Table_Field\conQxPrjTab.cs" />
+    <Compile Include="Class\Table_Field\conSQLDSType.cs" />
+    <Compile Include="Class\Table_Field\conTabState.cs" />
+    <Compile Include="Class\Table_Field\conTabType.cs" />
+    <Compile Include="Class\Table_Field\convQxPrjTab.cs" />
+    <Compile Include="Class\UserManage\conQxDepartmentInfo.cs" />
+    <Compile Include="Class\UserManage\conQxPrjUserRelation.cs" />
+    <Compile Include="Class\UserManage\conQxUserGroupRelation.cs" />
+    <Compile Include="Class\UserManage\conQxUserGroups.cs" />
+    <Compile Include="Class\UserManage\conQxUserIdentity.cs" />
+    <Compile Include="Class\UserManage\conQxUserLoginName.cs" />
+    <Compile Include="Class\UserManage\conQxUserRoleRelation.cs" />
+    <Compile Include="Class\UserManage\conQxUserRoles.cs" />
+    <Compile Include="Class\UserManage\conQxUsers.cs" />
+    <Compile Include="Class\UserManage\conQxUserState.cs" />
+    <Compile Include="Class\UserManage\conQxUsers_School.cs" />
+    <Compile Include="Class\UserManage\conSubjectRelation.cs" />
+    <Compile Include="Class\UserManage\conUserDefaValue.cs" />
+    <Compile Include="Class\UserManage\convQxDepartmentInfo.cs" />
+    <Compile Include="Class\UserManage\convQxDepartmentInfoByUserNum.cs" />
+    <Compile Include="Class\UserManage\convQxPrjUserRelation.cs" />
+    <Compile Include="Class\UserManage\convQxPrjUserRelationByRole.cs" />
+    <Compile Include="Class\UserManage\convQxUserLoginName.cs" />
+    <Compile Include="Class\UserManage\convQxUserRoleRelation.cs" />
+    <Compile Include="Class\UserManage\convQxUserRoles.cs" />
+    <Compile Include="Class\UserManage\convQxUserRolesByMenuNum.cs" />
+    <Compile Include="Class\UserManage\convQxUserRolesByPotenceNum.cs" />
+    <Compile Include="Class\UserManage\convQxUserRolesByUserNum.cs" />
+    <Compile Include="Class\UserManage\convQxUsers.cs" />
+    <Compile Include="Class\UserManage\convQxUsers_School.cs" />
+    <Compile Include="Class\UserManage\convSubjectRelation.cs" />
+    <Compile Include="Class\UserPotenceMan\conQxUserGroupPotence.cs" />
+    <Compile Include="Class\UserPotenceMan\convQxUserGroupPotence.cs" />
+    <Compile Include="constUserState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

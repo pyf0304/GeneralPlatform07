@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CodeType_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodeType_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodeType_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_GetCodeType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsQxCodeTypeEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="QxCodeTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CodeTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CodeType_GetCodeTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CodeType_GetCodeTypeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_GetCodeTypeV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_GetCodeTypeVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CodeType_GetCodeTypeVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_IsExistRecordByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_IsExistRecordByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CodeType_IsExistRecordByCondResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CodeType_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_GetMaxStrId">
+        <s:complexType />
+      </s:element>
+      <s:element name="CodeType_GetMaxStrIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodeType_GetMaxStrIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CodeType_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_AddNewRecordBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeTypeENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_AddNewRecordBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CodeType_AddNewRecordBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CodeType_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_UpdateBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeTypeENObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_UpdateBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CodeType_UpdateBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CodeType_DelRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_DelCodeTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrCodeTypeId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_DelCodeTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CodeType_DelCodeTypesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_DelCodeTypesByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_DelCodeTypesByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CodeType_DelCodeTypesByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objCodeTypeEN" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsQxCodeTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodeTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodeType_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_SerializeObjListToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodeType_SerializeObjListToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodeType_SerializeObjListToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CodeType_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_GetCodeTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_GetCodeType" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_GetCodeTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_GetCodeTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_GetCodeTypeVSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_GetCodeTypeV" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_GetCodeTypeVSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_GetCodeTypeVResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_IsExistRecordByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_IsExistRecordByCond" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_IsExistRecordByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_IsExistRecordByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_GetMaxStrIdSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_GetMaxStrId" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_GetMaxStrIdSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_GetMaxStrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_AddNewRecordBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_AddNewRecordBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_AddNewRecordBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_AddNewRecordBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_UpdateBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_UpdateBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_UpdateBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_UpdateBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_DelCodeTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_DelCodeTypes" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_DelCodeTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_DelCodeTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_DelCodeTypesByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_DelCodeTypesByCond" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_DelCodeTypesByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_DelCodeTypesByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_SerializeObjListToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:CodeType_SerializeObjListToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="CodeType_SerializeObjListToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:CodeType_SerializeObjListToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CodeTypeServiceSoap">
+    <wsdl:operation name="CodeType_GetDataSet">
+      <wsdl:input message="tns:CodeType_GetDataSetSoapIn" />
+      <wsdl:output message="tns:CodeType_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_GetDataSetV">
+      <wsdl:input message="tns:CodeType_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:CodeType_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_GetCodeType">
+      <wsdl:input message="tns:CodeType_GetCodeTypeSoapIn" />
+      <wsdl:output message="tns:CodeType_GetCodeTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_GetCodeTypeV">
+      <wsdl:input message="tns:CodeType_GetCodeTypeVSoapIn" />
+      <wsdl:output message="tns:CodeType_GetCodeTypeVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_IsExistRecordByCond">
+      <wsdl:input message="tns:CodeType_IsExistRecordByCondSoapIn" />
+      <wsdl:output message="tns:CodeType_IsExistRecordByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_IsExist">
+      <wsdl:input message="tns:CodeType_IsExistSoapIn" />
+      <wsdl:output message="tns:CodeType_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_GetMaxStrId">
+      <wsdl:input message="tns:CodeType_GetMaxStrIdSoapIn" />
+      <wsdl:output message="tns:CodeType_GetMaxStrIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_AddNewRecordBySql2">
+      <wsdl:input message="tns:CodeType_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:CodeType_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_AddNewRecordBySql_XML">
+      <wsdl:input message="tns:CodeType_AddNewRecordBySql_XMLSoapIn" />
+      <wsdl:output message="tns:CodeType_AddNewRecordBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_UpdateBySql2">
+      <wsdl:input message="tns:CodeType_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:CodeType_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_UpdateBySql_XML">
+      <wsdl:input message="tns:CodeType_UpdateBySql_XMLSoapIn" />
+      <wsdl:output message="tns:CodeType_UpdateBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_DelRecord">
+      <wsdl:input message="tns:CodeType_DelRecordSoapIn" />
+      <wsdl:output message="tns:CodeType_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_DelCodeTypes">
+      <wsdl:input message="tns:CodeType_DelCodeTypesSoapIn" />
+      <wsdl:output message="tns:CodeType_DelCodeTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_DelCodeTypesByCond">
+      <wsdl:input message="tns:CodeType_DelCodeTypesByCondSoapIn" />
+      <wsdl:output message="tns:CodeType_DelCodeTypesByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_SerializeObjToXMLStr">
+      <wsdl:input message="tns:CodeType_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:CodeType_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_SerializeObjListToXMLStr">
+      <wsdl:input message="tns:CodeType_SerializeObjListToXMLStrSoapIn" />
+      <wsdl:output message="tns:CodeType_SerializeObjListToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CodeTypeServiceSoap" type="tns:CodeTypeServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CodeType_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/CodeType_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/CodeType_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_GetCodeType">
+      <soap:operation soapAction="http://tempuri.org/CodeType_GetCodeType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_GetCodeTypeV">
+      <soap:operation soapAction="http://tempuri.org/CodeType_GetCodeTypeV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_IsExistRecordByCond">
+      <soap:operation soapAction="http://tempuri.org/CodeType_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_IsExist">
+      <soap:operation soapAction="http://tempuri.org/CodeType_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_GetMaxStrId">
+      <soap:operation soapAction="http://tempuri.org/CodeType_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/CodeType_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_AddNewRecordBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/CodeType_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/CodeType_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_UpdateBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/CodeType_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/CodeType_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_DelCodeTypes">
+      <soap:operation soapAction="http://tempuri.org/CodeType_DelCodeTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_DelCodeTypesByCond">
+      <soap:operation soapAction="http://tempuri.org/CodeType_DelCodeTypesByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/CodeType_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_SerializeObjListToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/CodeType_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CodeTypeServiceSoap12" type="tns:CodeTypeServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CodeType_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_GetCodeType">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_GetCodeType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_GetCodeTypeV">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_GetCodeTypeV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_IsExistRecordByCond">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_IsExistRecordByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_GetMaxStrId">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_AddNewRecordBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_UpdateBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_DelCodeTypes">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_DelCodeTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_DelCodeTypesByCond">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_DelCodeTypesByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodeType_SerializeObjListToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/CodeType_SerializeObjListToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CodeTypeService">
+    <wsdl:port name="CodeTypeServiceSoap" binding="tns:CodeTypeServiceSoap">
+      <soap:address location="http://localhost:9259/CodeTypeService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CodeTypeServiceSoap12" binding="tns:CodeTypeServiceSoap12">
+      <soap12:address location="http://localhost:9259/CodeTypeService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,676 @@
+﻿
+ /*-- -- -- -- -- -- -- -- -- -- --
+ 类名:clsQxUsers_SchoolEN
+ 表名:QxUsers_School(00140074)
+ 生成代码版本:2019.07.11.1
+ 生成日期:2019/07/12 09:59:08
+ 生成者:
+ 生成服务器IP:101.251.68.133
+ 工程名称:统一平台
+ 工程ID:0014
+ 相关数据库:101.251.68.133,9433EduHigh_Jsie
+ PrjDataBaseId:0170
+ 模块中文名:用户管理
+ 模块英文名:UserManage
+ 框架-层名:实体层(EntityLayer)
+ 编程语言:CSharp
+ 注意:1、需要数据底层(PubDataBase.dll)的版本:2019.03.07.01
+        2、需要公共函数层(TzPubFunction.dll)的版本:2017.12.21.01
+ == == == == == == == == == == == == 
+ */
+using System;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using com.taishsoft.comm_db_obj;
+using com.taishsoft.common;
+using com.taishsoft.datetime;
+using System.Runtime.Serialization;
+
+namespace GeneralPlatform.Entity
+{
+ /// <summary>
+ /// 表QxUsers_School的关键字(UserId)的类型定义. 以便检查类型以及操作方便.
+ /// (AutoGCLib.EntityLayer4CSharp:GeneCode)
+ /// </summary>
+public struct K_UserId_QxUsers_School
+{
+/// <summary>
+/// 关键字类型内面的值
+/// </summary>
+public string Value { get; }
+/// <summary>
+/// 关键字类型构造函数
+/// </summary>
+/// <param name="strUserId">表关键字</param>
+public K_UserId_QxUsers_School(string strUserId)
+{
+if (IsValid(strUserId)) Value = strUserId;
+else
+{
+Value = null;
+}
+}
+private static bool IsValid(string strUserId)
+{
+if (string.IsNullOrEmpty(strUserId) == true) return false;
+if (strUserId.Length > 18) return false;
+if (strUserId.IndexOf(' ') >= 0) return false;
+if (strUserId.IndexOf(')') >= 0) return false;
+if (strUserId.IndexOf('(') >= 0) return false;
+return true;
+}
+/// <summary>
+/// 实现隐式类型转换，把类型:[{0}]隐式转换成:[{1}]
+/// </summary>
+/// <param name="value">原类型表关键字</param>
+ /// <returns>返回:[K_UserId_QxUsers_School]类型的对象</returns>
+public static implicit operator K_UserId_QxUsers_School(string value)
+{
+return new K_UserId_QxUsers_School(value);
+}
+}
+ /// <summary>
+ /// 用户_学校(QxUsers_School)
+ /// (AutoGCLib.EntityLayer4CSharp:GeneCode)
+ /// </summary>
+[Serializable]
+[DataContractAttribute]
+public class clsQxUsers_SchoolEN : clsEntityBase2
+{
+public const string _CurrTabName_S = "QxUsers_School"; //当前表名,与该类相关的表名
+public const string _CurrTabKeyFldName_S = "UserId"; //当前表中的关键字名称,与该类相关的表中关键字名
+protected const int mintAttributeCount = 10;
+public static string[] AttributeName = new string[] {"UserId", "IdentityID", "CardNo", "StuTeacherId", "id_GradeBase", "Card_State", "IsLeaved", "UpdDate", "UpdUser", "Memo"};
+//以下是属性变量
+
+protected string mstrUserId;    //用户ID
+protected string mstrIdentityID;    //身份编号
+protected string mstrCardNo;    //卡号
+protected string mstrStuTeacherId;    //学工号
+protected string mstrid_GradeBase;    //年级流水号
+protected string mstrCard_State;    //卡状态
+protected bool mbolIsLeaved;    //IsLeaved
+protected string mstrUpdDate;    //修改日期
+protected string mstrUpdUser;    //修改用户
+protected string mstrMemo;    //备注
+
+
+ /// <summary>
+ /// 常量:"UserId"
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:DefPropertyNameConst)
+ /// </summary>
+ public const string con_UserId = "UserId";    //用户ID
+
+ /// <summary>
+ /// 常量:"IdentityID"
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:DefPropertyNameConst)
+ /// </summary>
+ public const string con_IdentityID = "IdentityID";    //身份编号
+
+ /// <summary>
+ /// 常量:"CardNo"
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:DefPropertyNameConst)
+ /// </summary>
+ public const string con_CardNo = "CardNo";    //卡号
+
+ /// <summary>
+ /// 常量:"StuTeacherId"
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:DefPropertyNameConst)
+ /// </summary>
+ public const string con_StuTeacherId = "StuTeacherId";    //学工号
+
+ /// <summary>
+ /// 常量:"id_GradeBase"
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:DefPropertyNameConst)
+ /// </summary>
+ public const string con_id_GradeBase = "id_GradeBase";    //年级流水号
+
+ /// <summary>
+ /// 常量:"Card_State"
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:DefPropertyNameConst)
+ /// </summary>
+ public const string con_Card_State = "Card_State";    //卡状态
+
+ /// <summary>
+ /// 常量:"IsLeaved"
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:DefPropertyNameConst)
+ /// </summary>
+ public const string con_IsLeaved = "IsLeaved";    //IsLeaved
+
+ /// <summary>
+ /// 常量:"UpdDate"
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:DefPropertyNameConst)
+ /// </summary>
+ public const string con_UpdDate = "UpdDate";    //修改日期
+
+ /// <summary>
+ /// 常量:"UpdUser"
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:DefPropertyNameConst)
+ /// </summary>
+ public const string con_UpdUser = "UpdUser";    //修改用户
+
+ /// <summary>
+ /// 常量:"Memo"
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:DefPropertyNameConst)
+ /// </summary>
+ public const string con_Memo = "Memo";    //备注
+
+/// <summary>
+/// 构造函数
+ /// (AutoGCLib.clsGeneCodeBase:GenClassConstructor1)
+/// </summary>
+ public clsQxUsers_SchoolEN()
+ {
+ SetInit();
+ mbolIsCheckProperty = false;
+ _CurrTabName = "QxUsers_School";
+ lstKeyFldNames.Add("UserId");
+ }
+
+/// <summary>
+/// 构造函数
+ /// (AutoGCLib.clsGeneCodeBase:GenClassConstructor2)
+/// </summary>
+/// <param name = "strUserId">关键字:用户ID</param>
+public clsQxUsers_SchoolEN(string strUserId)
+ {
+strUserId = strUserId.Replace("'", "''");
+if (strUserId.Length > 18)
+{
+throw new Exception("在表:QxUsers_School中,关键字长度不正确!");
+}
+if (string.IsNullOrEmpty(strUserId)  ==  true)
+{
+throw new Exception("在表:QxUsers_School中,关键字不能为空 或 null!");
+}
+try
+{
+clsCheckSql.CheckStrSQL_Weak(strUserId);
+}
+catch (Exception objException)
+{
+throw new Exception(string.Format("在关键字中含有{0},请检查!", objException.Message));
+}
+
+this.mstrUserId = strUserId;
+ SetInit();
+ mbolIsCheckProperty = false;
+ _CurrTabName = "QxUsers_School";
+ lstKeyFldNames.Add("UserId");
+ }
+
+public static int AttributeCount
+{
+get
+{
+return mintAttributeCount;
+}
+}
+public override object this[string strAttributeName]
+{
+get
+{
+if (strAttributeName  ==  con_UserId)
+{
+return mstrUserId;
+}
+else if (strAttributeName  ==  con_IdentityID)
+{
+return mstrIdentityID;
+}
+else if (strAttributeName  ==  con_CardNo)
+{
+return mstrCardNo;
+}
+else if (strAttributeName  ==  con_StuTeacherId)
+{
+return mstrStuTeacherId;
+}
+else if (strAttributeName  ==  con_id_GradeBase)
+{
+return mstrid_GradeBase;
+}
+else if (strAttributeName  ==  con_Card_State)
+{
+return mstrCard_State;
+}
+else if (strAttributeName  ==  con_IsLeaved)
+{
+return mbolIsLeaved;
+}
+else if (strAttributeName  ==  con_UpdDate)
+{
+return mstrUpdDate;
+}
+else if (strAttributeName  ==  con_UpdUser)
+{
+return mstrUpdUser;
+}
+else if (strAttributeName  ==  con_Memo)
+{
+return mstrMemo;
+}
+return null;
+}
+set
+{
+if (strAttributeName  ==  con_UserId)
+{
+mstrUserId = value.ToString();
+ AddUpdatedFld(con_UserId);
+}
+else if (strAttributeName  ==  con_IdentityID)
+{
+mstrIdentityID = value.ToString();
+ AddUpdatedFld(con_IdentityID);
+}
+else if (strAttributeName  ==  con_CardNo)
+{
+mstrCardNo = value.ToString();
+ AddUpdatedFld(con_CardNo);
+}
+else if (strAttributeName  ==  con_StuTeacherId)
+{
+mstrStuTeacherId = value.ToString();
+ AddUpdatedFld(con_StuTeacherId);
+}
+else if (strAttributeName  ==  con_id_GradeBase)
+{
+mstrid_GradeBase = value.ToString();
+ AddUpdatedFld(con_id_GradeBase);
+}
+else if (strAttributeName  ==  con_Card_State)
+{
+mstrCard_State = value.ToString();
+ AddUpdatedFld(con_Card_State);
+}
+else if (strAttributeName  ==  con_IsLeaved)
+{
+mbolIsLeaved = TransNullToBool(value.ToString());
+ AddUpdatedFld(con_IsLeaved);
+}
+else if (strAttributeName  ==  con_UpdDate)
+{
+mstrUpdDate = value.ToString();
+ AddUpdatedFld(con_UpdDate);
+}
+else if (strAttributeName  ==  con_UpdUser)
+{
+mstrUpdUser = value.ToString();
+ AddUpdatedFld(con_UpdUser);
+}
+else if (strAttributeName  ==  con_Memo)
+{
+mstrMemo = value.ToString();
+ AddUpdatedFld(con_Memo);
+}
+}
+}
+public object this[int intIndex]
+{
+get
+{
+if (con_UserId  ==  AttributeName[intIndex])
+{
+return mstrUserId;
+}
+else if (con_IdentityID  ==  AttributeName[intIndex])
+{
+return mstrIdentityID;
+}
+else if (con_CardNo  ==  AttributeName[intIndex])
+{
+return mstrCardNo;
+}
+else if (con_StuTeacherId  ==  AttributeName[intIndex])
+{
+return mstrStuTeacherId;
+}
+else if (con_id_GradeBase  ==  AttributeName[intIndex])
+{
+return mstrid_GradeBase;
+}
+else if (con_Card_State  ==  AttributeName[intIndex])
+{
+return mstrCard_State;
+}
+else if (con_IsLeaved  ==  AttributeName[intIndex])
+{
+return mbolIsLeaved;
+}
+else if (con_UpdDate  ==  AttributeName[intIndex])
+{
+return mstrUpdDate;
+}
+else if (con_UpdUser  ==  AttributeName[intIndex])
+{
+return mstrUpdUser;
+}
+else if (con_Memo  ==  AttributeName[intIndex])
+{
+return mstrMemo;
+}
+return null;
+}
+set
+{
+if (con_UserId  ==  AttributeName[intIndex])
+{
+mstrUserId = value.ToString();
+ AddUpdatedFld(con_UserId);
+}
+else if (con_IdentityID  ==  AttributeName[intIndex])
+{
+mstrIdentityID = value.ToString();
+ AddUpdatedFld(con_IdentityID);
+}
+else if (con_CardNo  ==  AttributeName[intIndex])
+{
+mstrCardNo = value.ToString();
+ AddUpdatedFld(con_CardNo);
+}
+else if (con_StuTeacherId  ==  AttributeName[intIndex])
+{
+mstrStuTeacherId = value.ToString();
+ AddUpdatedFld(con_StuTeacherId);
+}
+else if (con_id_GradeBase  ==  AttributeName[intIndex])
+{
+mstrid_GradeBase = value.ToString();
+ AddUpdatedFld(con_id_GradeBase);
+}
+else if (con_Card_State  ==  AttributeName[intIndex])
+{
+mstrCard_State = value.ToString();
+ AddUpdatedFld(con_Card_State);
+}
+else if (con_IsLeaved  ==  AttributeName[intIndex])
+{
+mbolIsLeaved = TransNullToBool(value.ToString());
+ AddUpdatedFld(con_IsLeaved);
+}
+else if (con_UpdDate  ==  AttributeName[intIndex])
+{
+mstrUpdDate = value.ToString();
+ AddUpdatedFld(con_UpdDate);
+}
+else if (con_UpdUser  ==  AttributeName[intIndex])
+{
+mstrUpdUser = value.ToString();
+ AddUpdatedFld(con_UpdUser);
+}
+else if (con_Memo  ==  AttributeName[intIndex])
+{
+mstrMemo = value.ToString();
+ AddUpdatedFld(con_Memo);
+}
+}
+}
+
+/// <summary>
+/// 用户ID(说明:;字段类型:varchar;字段长度:18;是否可空:False)
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:ToStringV2)
+/// </summary>
+  [DataMember]//非常重要
+ public string UserId
+{
+get
+{
+return mstrUserId;
+}
+set
+{
+if (value  ==  "")
+{
+mintErrNo = 1;
+ mstrUserId = value;
+}
+else
+{
+ mstrUserId = value;
+}
+//记录修改过的字段
+ AddUpdatedFld(con_UserId);
+}
+}
+/// <summary>
+/// 身份编号(说明:;字段类型:char;字段长度:2;是否可空:False)
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:ToStringV2)
+/// </summary>
+  [DataMember]//非常重要
+ public string IdentityID
+{
+get
+{
+return mstrIdentityID;
+}
+set
+{
+if (value  ==  "")
+{
+mintErrNo = 1;
+ mstrIdentityID = value;
+}
+else
+{
+ mstrIdentityID = value;
+}
+//记录修改过的字段
+ AddUpdatedFld(con_IdentityID);
+}
+}
+/// <summary>
+/// 卡号(说明:;字段类型:varchar;字段长度:10;是否可空:True)
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:ToStringV2)
+/// </summary>
+  [DataMember]//非常重要
+ public string CardNo
+{
+get
+{
+return mstrCardNo;
+}
+set
+{
+if (value  ==  "")
+{
+mintErrNo = 1;
+ mstrCardNo = value;
+}
+else
+{
+ mstrCardNo = value;
+}
+//记录修改过的字段
+ AddUpdatedFld(con_CardNo);
+}
+}
+/// <summary>
+/// 学工号(说明:;字段类型:varchar;字段长度:20;是否可空:False)
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:ToStringV2)
+/// </summary>
+  [DataMember]//非常重要
+ public string StuTeacherId
+{
+get
+{
+return mstrStuTeacherId;
+}
+set
+{
+if (value  ==  "")
+{
+mintErrNo = 1;
+ mstrStuTeacherId = value;
+}
+else
+{
+ mstrStuTeacherId = value;
+}
+//记录修改过的字段
+ AddUpdatedFld(con_StuTeacherId);
+}
+}
+/// <summary>
+/// 年级流水号(说明:;字段类型:char;字段长度:4;是否可空:True)
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:ToStringV2)
+/// </summary>
+  [DataMember]//非常重要
+ public string id_GradeBase
+{
+get
+{
+return mstrid_GradeBase;
+}
+set
+{
+if (value  ==  "")
+{
+mintErrNo = 1;
+ mstrid_GradeBase = value;
+}
+else
+{
+ mstrid_GradeBase = value;
+}
+//记录修改过的字段
+ AddUpdatedFld(con_id_GradeBase);
+}
+}
+/// <summary>
+/// 卡状态(说明:;字段类型:varchar;字段长度:10;是否可空:True)
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:ToStringV2)
+/// </summary>
+  [DataMember]//非常重要
+ public string Card_State
+{
+get
+{
+return mstrCard_State;
+}
+set
+{
+if (value  ==  "")
+{
+mintErrNo = 1;
+ mstrCard_State = value;
+}
+else
+{
+ mstrCard_State = value;
+}
+//记录修改过的字段
+ AddUpdatedFld(con_Card_State);
+}
+}
+/// <summary>
+/// IsLeaved(说明:;字段类型:bit;字段长度:1;是否可空:True)
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:ToStringV2)
+/// </summary>
+  [DataMember]//非常重要
+ public bool IsLeaved
+{
+get
+{
+return mbolIsLeaved;
+}
+set
+{
+ mbolIsLeaved = value;
+//记录修改过的字段
+ AddUpdatedFld(con_IsLeaved);
+}
+}
+/// <summary>
+/// 修改日期(说明:;字段类型:varchar;字段长度:14;是否可空:False)
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:ToStringV2)
+/// </summary>
+  [DataMember]//非常重要
+ public string UpdDate
+{
+get
+{
+return mstrUpdDate;
+}
+set
+{
+if (value  ==  "")
+{
+mintErrNo = 1;
+ mstrUpdDate = value;
+}
+else
+{
+ mstrUpdDate = value;
+}
+//记录修改过的字段
+ AddUpdatedFld(con_UpdDate);
+}
+}
+/// <summary>
+/// 修改用户(说明:;字段类型:varchar;字段长度:18;是否可空:True)
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:ToStringV2)
+/// </summary>
+  [DataMember]//非常重要
+ public string UpdUser
+{
+get
+{
+return mstrUpdUser;
+}
+set
+{
+if (value  ==  "")
+{
+mintErrNo = 1;
+ mstrUpdUser = value;
+}
+else
+{
+ mstrUpdUser = value;
+}
+//记录修改过的字段
+ AddUpdatedFld(con_UpdUser);
+}
+}
+/// <summary>
+/// 备注(说明:;字段类型:varchar;字段长度:1000;是否可空:True)
+ /// (AGC.BusinessLogicEx.clsPrjTabFldBLEx:ToStringV2)
+/// </summary>
+  [DataMember]//非常重要
+ public string Memo
+{
+get
+{
+return mstrMemo;
+}
+set
+{
+if (value  ==  "")
+{
+mintErrNo = 1;
+ mstrMemo = value;
+}
+else
+{
+ mstrMemo = value;
+}
+//记录修改过的字段
+ AddUpdatedFld(con_Memo);
+}
+}
+
+/// <summary>
+/// 获取关键字Id(KeyId)
+ /// (AutoGCLib.clsGeneCodeBase:GenGetKeyId)
+/// </summary>
+ public override string _KeyId
+ {
+ get
+ {
+  return mstrUserId;
+ }
+ }
+}
+}

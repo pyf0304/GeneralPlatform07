@@ -1,0 +1,1695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DataBaseType_GetDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_GetDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetTopDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetTopDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_GetTopDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetDataSetByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetDataSetByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_GetDataSetByRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetDataSetV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetDataSetVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_GetDataSetVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetDataBaseType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objDataBaseTypeEN" type="tns:clsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsDataBaseTypeEN">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:clsEntityBase2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="DataBaseTypeId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataBaseTypeName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="clsEntityBase2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sf_UpdFldSetStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IntTag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrTag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checked" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCheckProperty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabKeyFldNames" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DataBaseType_GetDataBaseTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_GetDataBaseTypeResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDataBaseTypeEN" type="tns:clsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetObjByDataBaseTypeId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDataBaseTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetObjByDataBaseTypeIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_GetObjByDataBaseTypeIdResult" type="tns:clsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetDataBaseTypeV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objDataBaseTypeEN" type="tns:clsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetDataBaseTypeVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_GetDataBaseTypeVResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="objDataBaseTypeEN" type="tns:clsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_GetObjLstResult" type="tns:ArrayOfClsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsDataBaseTypeEN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsDataBaseTypeEN" nillable="true" type="tns:clsDataBaseTypeEN" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetObjLstByRangeResult" type="tns:ArrayOfClsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetTopObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetTopObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_GetTopObjLstResult" type="tns:ArrayOfClsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetFirstID_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetFirstID_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_GetFirstID_SResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetFirstObj_S">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetFirstObj_SResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_GetFirstObj_SResult" type="tns:clsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByDataBaseTypeId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDataBaseTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjByDataBaseTypeIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjByDataBaseTypeIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirstJSONObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFirstJSONObjResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopJSONObjLstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopJSONObjLstResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intPageIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByPagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByPagerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrderBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMinNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intMaxNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJSONObjLstByRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJSONObjLstByRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_funGetRecCountByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_funGetRecCountByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_funGetRecCountByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_IsExistRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_IsExistRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_IsExistRecordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_IsExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDataBaseTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_IsExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_IsExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetMaxStrId">
+        <s:complexType />
+      </s:element>
+      <s:element name="DataBaseType_GetMaxStrIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_GetMaxStrIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetMaxStrIdByPrefix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPrefix" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_GetMaxStrIdByPrefixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_GetMaxStrIdByPrefixResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_AddNewRecordBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objDataBaseTypeEN" type="tns:clsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_AddNewRecordBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_AddNewRecordBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_AddNewRecordBySql2ByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDataBaseTypeJSONObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_AddNewRecordBySql2ByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_AddNewRecordBySql2ByJSONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_AddNewRecordBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDataBaseTypeObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_AddNewRecordBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_AddNewRecordBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_UpdateBySql2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objDataBaseTypeEN" type="tns:clsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_UpdateBySql2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_UpdateBySql2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_UpdateBySql2ByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDataBaseTypeJSONObj" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_UpdateBySql2ByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_UpdateBySql2ByJSONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_UpdateBySqlWithCondition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objDataBaseTypeEN" type="tns:clsDataBaseTypeEN" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_UpdateBySqlWithConditionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_UpdateBySqlWithConditionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_UpdateBySql_XML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDataBaseTypeObjXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_UpdateBySql_XMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_UpdateBySql_XMLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_DelRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDataBaseTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_DelRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_DelRecordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_DelDataBaseTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strJSON4Keys" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_DelDataBaseTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_DelDataBaseTypesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelRecordsByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strKeyIdLst" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelRecordsByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelRecordsByJSONResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_DelDataBaseTypesByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_DelDataBaseTypesByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DataBaseType_DelDataBaseTypesByCondResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objDataBaseTypeEN" type="tns:clsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExposeLogicClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExposeLogicClassResult" type="tns:clsDataBaseTypeEN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_SerializeObjToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDataBaseTypeId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_SerializeObjToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_SerializeObjToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_SerializeObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_SerializeObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_SerializeObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_SerializeTopObjLstToXMLStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intTopSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataBaseType_SerializeTopObjLstToXMLStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType_SerializeTopObjLstToXMLStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DataBaseType_GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetTopDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetTopDataSet" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetTopDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetTopDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetDataSetByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetDataSetByRange" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetDataSetByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetDataSetByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetDataSetVSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetDataSetV" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetDataSetVSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetDataSetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetDataBaseTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetDataBaseType" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetDataBaseTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetDataBaseTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetObjByDataBaseTypeIdSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetObjByDataBaseTypeId" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetObjByDataBaseTypeIdSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetObjByDataBaseTypeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetDataBaseTypeVSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetDataBaseTypeV" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetDataBaseTypeVSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetDataBaseTypeVResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetObjLst" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetTopObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetTopObjLst" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetTopObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetTopObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetFirstID_SSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetFirstID_S" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetFirstID_SSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetFirstID_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetFirstObj_SSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetFirstObj_S" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetFirstObj_SSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetFirstObj_SResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByDataBaseTypeIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByDataBaseTypeId" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjByDataBaseTypeIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjByDataBaseTypeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObj" />
+  </wsdl:message>
+  <wsdl:message name="GetFirstJSONObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFirstJSONObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTopJSONObjLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopJSONObjLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPager" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByPagerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByPagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRange" />
+  </wsdl:message>
+  <wsdl:message name="GetJSONObjLstByRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJSONObjLstByRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_funGetRecCountByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_funGetRecCountByCond" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_funGetRecCountByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_funGetRecCountByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_IsExistRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_IsExistRecord" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_IsExistRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_IsExistRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_IsExistSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_IsExist" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_IsExistSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_IsExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetMaxStrIdSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetMaxStrId" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetMaxStrIdSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetMaxStrIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetMaxStrIdByPrefixSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetMaxStrIdByPrefix" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_GetMaxStrIdByPrefixSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_GetMaxStrIdByPrefixResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_AddNewRecordBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_AddNewRecordBySql2" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_AddNewRecordBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_AddNewRecordBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_AddNewRecordBySql2ByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_AddNewRecordBySql2ByJSON" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_AddNewRecordBySql2ByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_AddNewRecordBySql2ByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_AddNewRecordBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_AddNewRecordBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_AddNewRecordBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_AddNewRecordBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_UpdateBySql2SoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_UpdateBySql2" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_UpdateBySql2SoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_UpdateBySql2Response" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_UpdateBySql2ByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_UpdateBySql2ByJSON" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_UpdateBySql2ByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_UpdateBySql2ByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_UpdateBySqlWithConditionSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_UpdateBySqlWithCondition" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_UpdateBySqlWithConditionSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_UpdateBySqlWithConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_UpdateBySql_XMLSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_UpdateBySql_XML" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_UpdateBySql_XMLSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_UpdateBySql_XMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_DelRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_DelRecord" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_DelRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_DelRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_DelDataBaseTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_DelDataBaseTypes" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_DelDataBaseTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_DelDataBaseTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelRecordsByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:DelRecordsByJSON" />
+  </wsdl:message>
+  <wsdl:message name="DelRecordsByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:DelRecordsByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_DelDataBaseTypesByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_DelDataBaseTypesByCond" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_DelDataBaseTypesByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_DelDataBaseTypesByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapIn">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClass" />
+  </wsdl:message>
+  <wsdl:message name="ExposeLogicClassSoapOut">
+    <wsdl:part name="parameters" element="tns:ExposeLogicClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_SerializeObjToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_SerializeObjToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_SerializeObjToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_SerializeObjToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_SerializeObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_SerializeObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_SerializeObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_SerializeObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_SerializeTopObjLstToXMLStrSoapIn">
+    <wsdl:part name="parameters" element="tns:DataBaseType_SerializeTopObjLstToXMLStr" />
+  </wsdl:message>
+  <wsdl:message name="DataBaseType_SerializeTopObjLstToXMLStrSoapOut">
+    <wsdl:part name="parameters" element="tns:DataBaseType_SerializeTopObjLstToXMLStrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DataBaseTypeServiceSoap">
+    <wsdl:operation name="DataBaseType_GetDataSet">
+      <wsdl:input message="tns:DataBaseType_GetDataSetSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetTopDataSet">
+      <wsdl:input message="tns:DataBaseType_GetTopDataSetSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetTopDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetDataSetByRange">
+      <wsdl:input message="tns:DataBaseType_GetDataSetByRangeSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetDataSetByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetDataSetV">
+      <wsdl:input message="tns:DataBaseType_GetDataSetVSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetDataSetVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetDataBaseType">
+      <wsdl:input message="tns:DataBaseType_GetDataBaseTypeSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetDataBaseTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetObjByDataBaseTypeId">
+      <wsdl:input message="tns:DataBaseType_GetObjByDataBaseTypeIdSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetObjByDataBaseTypeIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetDataBaseTypeV">
+      <wsdl:input message="tns:DataBaseType_GetDataBaseTypeVSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetDataBaseTypeVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetObjLst">
+      <wsdl:input message="tns:DataBaseType_GetObjLstSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <wsdl:input message="tns:GetObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetTopObjLst">
+      <wsdl:input message="tns:DataBaseType_GetTopObjLstSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetTopObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetFirstID_S">
+      <wsdl:input message="tns:DataBaseType_GetFirstID_SSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetFirstID_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetFirstObj_S">
+      <wsdl:input message="tns:DataBaseType_GetFirstObj_SSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetFirstObj_SSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByDataBaseTypeId">
+      <wsdl:input message="tns:GetJSONObjByDataBaseTypeIdSoapIn" />
+      <wsdl:output message="tns:GetJSONObjByDataBaseTypeIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <wsdl:input message="tns:GetFirstJSONObjSoapIn" />
+      <wsdl:output message="tns:GetFirstJSONObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <wsdl:input message="tns:GetJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <wsdl:input message="tns:GetTopJSONObjLstSoapIn" />
+      <wsdl:output message="tns:GetTopJSONObjLstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <wsdl:input message="tns:GetJSONObjLstByPagerSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByPagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <wsdl:input message="tns:GetJSONObjLstByRangeSoapIn" />
+      <wsdl:output message="tns:GetJSONObjLstByRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_funGetRecCountByCond">
+      <wsdl:input message="tns:DataBaseType_funGetRecCountByCondSoapIn" />
+      <wsdl:output message="tns:DataBaseType_funGetRecCountByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_IsExistRecord">
+      <wsdl:input message="tns:DataBaseType_IsExistRecordSoapIn" />
+      <wsdl:output message="tns:DataBaseType_IsExistRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_IsExist">
+      <wsdl:input message="tns:DataBaseType_IsExistSoapIn" />
+      <wsdl:output message="tns:DataBaseType_IsExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetMaxStrId">
+      <wsdl:input message="tns:DataBaseType_GetMaxStrIdSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetMaxStrIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetMaxStrIdByPrefix">
+      <wsdl:input message="tns:DataBaseType_GetMaxStrIdByPrefixSoapIn" />
+      <wsdl:output message="tns:DataBaseType_GetMaxStrIdByPrefixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_AddNewRecordBySql2">
+      <wsdl:input message="tns:DataBaseType_AddNewRecordBySql2SoapIn" />
+      <wsdl:output message="tns:DataBaseType_AddNewRecordBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_AddNewRecordBySql2ByJSON">
+      <wsdl:input message="tns:DataBaseType_AddNewRecordBySql2ByJSONSoapIn" />
+      <wsdl:output message="tns:DataBaseType_AddNewRecordBySql2ByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_AddNewRecordBySql_XML">
+      <wsdl:input message="tns:DataBaseType_AddNewRecordBySql_XMLSoapIn" />
+      <wsdl:output message="tns:DataBaseType_AddNewRecordBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_UpdateBySql2">
+      <wsdl:input message="tns:DataBaseType_UpdateBySql2SoapIn" />
+      <wsdl:output message="tns:DataBaseType_UpdateBySql2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_UpdateBySql2ByJSON">
+      <wsdl:input message="tns:DataBaseType_UpdateBySql2ByJSONSoapIn" />
+      <wsdl:output message="tns:DataBaseType_UpdateBySql2ByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_UpdateBySqlWithCondition">
+      <wsdl:input message="tns:DataBaseType_UpdateBySqlWithConditionSoapIn" />
+      <wsdl:output message="tns:DataBaseType_UpdateBySqlWithConditionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_UpdateBySql_XML">
+      <wsdl:input message="tns:DataBaseType_UpdateBySql_XMLSoapIn" />
+      <wsdl:output message="tns:DataBaseType_UpdateBySql_XMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_DelRecord">
+      <wsdl:input message="tns:DataBaseType_DelRecordSoapIn" />
+      <wsdl:output message="tns:DataBaseType_DelRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_DelDataBaseTypes">
+      <wsdl:input message="tns:DataBaseType_DelDataBaseTypesSoapIn" />
+      <wsdl:output message="tns:DataBaseType_DelDataBaseTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <wsdl:input message="tns:DelRecordsByJSONSoapIn" />
+      <wsdl:output message="tns:DelRecordsByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_DelDataBaseTypesByCond">
+      <wsdl:input message="tns:DataBaseType_DelDataBaseTypesByCondSoapIn" />
+      <wsdl:output message="tns:DataBaseType_DelDataBaseTypesByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <wsdl:input message="tns:ExposeLogicClassSoapIn" />
+      <wsdl:output message="tns:ExposeLogicClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_SerializeObjToXMLStr">
+      <wsdl:input message="tns:DataBaseType_SerializeObjToXMLStrSoapIn" />
+      <wsdl:output message="tns:DataBaseType_SerializeObjToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_SerializeObjLstToXMLStr">
+      <wsdl:input message="tns:DataBaseType_SerializeObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:DataBaseType_SerializeObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_SerializeTopObjLstToXMLStr">
+      <wsdl:input message="tns:DataBaseType_SerializeTopObjLstToXMLStrSoapIn" />
+      <wsdl:output message="tns:DataBaseType_SerializeTopObjLstToXMLStrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DataBaseTypeServiceSoap" type="tns:DataBaseTypeServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DataBaseType_GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetTopDataSet">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetDataSetByRange">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetDataSetV">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetDataBaseType">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetDataBaseType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetObjByDataBaseTypeId">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetObjByDataBaseTypeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetDataBaseTypeV">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetDataBaseTypeV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetObjLst">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetTopObjLst">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetFirstID_S">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetFirstObj_S">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByDataBaseTypeId">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjByDataBaseTypeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_funGetRecCountByCond">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_IsExistRecord">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_IsExist">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_IsExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetMaxStrId">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetMaxStrIdByPrefix">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_GetMaxStrIdByPrefix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_AddNewRecordBySql2">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_AddNewRecordBySql2ByJSON">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_AddNewRecordBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_AddNewRecordBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_UpdateBySql2">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_UpdateBySql2ByJSON">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_UpdateBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_UpdateBySqlWithCondition">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_UpdateBySqlWithCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_UpdateBySql_XML">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_DelRecord">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_DelRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_DelDataBaseTypes">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_DelDataBaseTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <soap:operation soapAction="http://tempuri.org/DelRecordsByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_DelDataBaseTypesByCond">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_DelDataBaseTypesByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_SerializeObjToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_SerializeObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_SerializeTopObjLstToXMLStr">
+      <soap:operation soapAction="http://tempuri.org/DataBaseType_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DataBaseTypeServiceSoap12" type="tns:DataBaseTypeServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DataBaseType_GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetTopDataSet">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetTopDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetDataSetByRange">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetDataSetByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetDataSetV">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetDataSetV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetDataBaseType">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetDataBaseType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetObjByDataBaseTypeId">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetObjByDataBaseTypeId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetDataBaseTypeV">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetDataBaseTypeV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetObjLst">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetTopObjLst">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetTopObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetFirstID_S">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetFirstID_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetFirstObj_S">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetFirstObj_S" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjByDataBaseTypeId">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjByDataBaseTypeId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstJSONObj">
+      <soap12:operation soapAction="http://tempuri.org/GetFirstJSONObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopJSONObjLst">
+      <soap12:operation soapAction="http://tempuri.org/GetTopJSONObjLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByPager">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByPager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJSONObjLstByRange">
+      <soap12:operation soapAction="http://tempuri.org/GetJSONObjLstByRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_funGetRecCountByCond">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_funGetRecCountByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_IsExistRecord">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_IsExistRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_IsExist">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_IsExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetMaxStrId">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetMaxStrId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_GetMaxStrIdByPrefix">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_GetMaxStrIdByPrefix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_AddNewRecordBySql2">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_AddNewRecordBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_AddNewRecordBySql2ByJSON">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_AddNewRecordBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_AddNewRecordBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_AddNewRecordBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_UpdateBySql2">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_UpdateBySql2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_UpdateBySql2ByJSON">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_UpdateBySql2ByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_UpdateBySqlWithCondition">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_UpdateBySqlWithCondition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_UpdateBySql_XML">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_UpdateBySql_XML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_DelRecord">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_DelRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_DelDataBaseTypes">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_DelDataBaseTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRecordsByJSON">
+      <soap12:operation soapAction="http://tempuri.org/DelRecordsByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_DelDataBaseTypesByCond">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_DelDataBaseTypesByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExposeLogicClass">
+      <soap12:operation soapAction="http://tempuri.org/ExposeLogicClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_SerializeObjToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_SerializeObjToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_SerializeObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_SerializeObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataBaseType_SerializeTopObjLstToXMLStr">
+      <soap12:operation soapAction="http://tempuri.org/DataBaseType_SerializeTopObjLstToXMLStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DataBaseTypeService">
+    <wsdl:port name="DataBaseTypeServiceSoap" binding="tns:DataBaseTypeServiceSoap">
+      <soap:address location="http://localhost/GP/WebSrv/PrjManage/DataBaseTypeService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DataBaseTypeServiceSoap12" binding="tns:DataBaseTypeServiceSoap12">
+      <soap12:address location="http://localhost/GP/WebSrv/PrjManage/DataBaseTypeService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

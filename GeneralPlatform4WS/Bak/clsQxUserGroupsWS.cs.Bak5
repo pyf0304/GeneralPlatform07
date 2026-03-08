@@ -1,0 +1,652 @@
+﻿
+//类名:clsQxUserGroupsWS
+ ///----------------------
+ ///生成代码版本:2017.02.05.1
+ ///生成日期:2017/02/05
+ ///生成者:
+ ///工程名称:统一平台
+ ///工程ID:0014
+ ///模块中文名:用户管理
+ ///模块英文名:UserManage
+ ///注意:1、需要数据底层(PubDataBase.dll)的版本:2016.12.13.01
+ ///       2、需要公共函数层(TzPubFunction.dll)的版本:2016.12.13.01
+ /// ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
+using System;
+using System.Data; 
+using System.Data.SqlClient;
+using System.Text; 
+using System.Collections; 
+using com.taishsoft.commdb;
+using System.ServiceModel;
+using GeneralPlatform4WS.ServiceReferenceQxUserGroups;
+using System.Collections.Generic;
+
+namespace GeneralPlatform4WS
+{
+ /// <summary>
+ /// 用户组(QxUserGroups)
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public class clsQxUserGroupsWS
+{
+ /// <summary>
+ /// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+public static List<clsQxUserGroupsEN> arrQxUserGroupsObjLst_Cache = null;
+ /// <summary>
+ /// 从缓存中查找失败的次数
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+protected static int intFindFailCount = 0;
+private static QxUserGroupsServiceSoapClient objQxUserGroupsServiceSoapClient = null;
+ /// <summary>
+ /// 
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:A_GenWebServiceTransCode)
+ /// </summary>
+ /// <returns></returns>
+public static QxUserGroupsServiceSoapClient GetQxUserGroupsServiceSoapClient()
+{
+if (objQxUserGroupsServiceSoapClient == null)
+{
+BasicHttpBinding binding = new BasicHttpBinding();
+binding.Name = "QxUserGroupsServiceSoap";
+binding.CloseTimeout = new System.TimeSpan(6000);
+binding.MaxReceivedMessageSize = 2147483647;
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxUserGroupsService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxUserGroupsService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+EndpointAddress address = new EndpointAddress(strServiceUrl);
+return new QxUserGroupsServiceSoapClient(binding, address);
+}
+else
+{
+return objQxUserGroupsServiceSoapClient;
+}
+}
+
+ public clsQxUserGroupsWS()
+ {
+ }
+
+
+
+ ///生成绑定ListView的代码
+ /// <summary>
+ /// 函数功能:根据界面上查询控件中所设置内容查询表记录,
+ ///			 并显示在ListView中。
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_BindListView)
+ /// </summary>
+public static int BindLv_QxUserGroups(System.Windows.Forms.ListView lvQxUserGroups, string strWhereCond)
+{
+//操作步骤:(共4步)
+//	1、组合界面条件串；
+//	2、根据条件串获取该表满足条件的DataTable；
+//	3、设置ListView的列头信息
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+//		在本界面中是把状态显示在控件lblRecCount中。
+
+System.Windows.Forms.ListViewItem lviQxUserGroups; 
+List<clsQxUserGroupsEN> arrQxUserGroupsObjList;
+//	2、根据条件串获取该表满足条件的DataTable；
+arrQxUserGroupsObjList = GetQxUserGroupsObjList(strWhereCond);
+//	3、设置ListView的列头信息
+lvQxUserGroups.Items.Clear();//清除原来所有Item
+lvQxUserGroups.Columns.Clear();//清除原来所有列头信息
+lvQxUserGroups.Columns.Add("组Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUserGroups.Columns.Add("组名", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUserGroups.Columns.Add("项目Id", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUserGroups.Columns.Add("备注", 100, System.Windows.Forms.HorizontalAlignment.Left);
+lvQxUserGroups.View = System.Windows.Forms.View.Details;
+//	4、设置ListView的Item信息。即把所有记录显示在ListView中
+foreach (clsQxUserGroupsEN objQxUserGroupsEN in arrQxUserGroupsObjList)
+{
+lviQxUserGroups = new System.Windows.Forms.ListViewItem();
+lviQxUserGroups.Tag = objQxUserGroupsEN.GroupId;
+lviQxUserGroups.Text = objQxUserGroupsEN.GroupId.ToString();
+lviQxUserGroups.SubItems.Add(objQxUserGroupsEN.GroupName);
+lviQxUserGroups.SubItems.Add(objQxUserGroupsEN.Memo);
+lvQxUserGroups.Items.Add(lviQxUserGroups);
+}
+//	4、设置记录数的状态,
+//		在本界面中是把状态显示在控件txtRecCount中。
+return arrQxUserGroupsObjList.Count;
+}
+
+ /// <summary>
+ /// 检查对象字段值是否合法,1)检查是否可空;2)检查字段值长度是否超长,如果出错就抛出错误.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4WS_CheckPropertyNew)
+ /// </summary>
+public void CheckPropertyNew(clsQxUserGroupsEN objQxUserGroupsEN)
+{
+if (!Object.Equals(null, objQxUserGroupsEN.GroupId) && getStrLen(objQxUserGroupsEN.GroupId) > 8)
+{
+ throw new Exception("字段[组Id]的长度不能超过8!");
+}
+if (!Object.Equals(null, objQxUserGroupsEN.GroupName) && getStrLen(objQxUserGroupsEN.GroupName) > 30)
+{
+ throw new Exception("字段[组名]的长度不能超过30!");
+}
+if (!Object.Equals(null, objQxUserGroupsEN.QxPrjId) && getStrLen(objQxUserGroupsEN.QxPrjId) > 4)
+{
+ throw new Exception("字段[项目Id]的长度不能超过4!");
+}
+if (!Object.Equals(null, objQxUserGroupsEN.Memo) && getStrLen(objQxUserGroupsEN.Memo) > 1000)
+{
+ throw new Exception("字段[备注]的长度不能超过1000!");
+}
+ objQxUserGroupsEN.IsCheckProperty = true;
+ }
+
+ /// <summary>
+ /// 根据条件获取数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4Tab)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxUserGroupsWs(string strWhereCond)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUserGroupsService.QxUserGroups_GetDataSet(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_GetDataSet", "clsQxUserGroupsWS:GetDataTable_QxUserGroupsWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxUserGroupsByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUserGroupsService.QxUserGroups_GetDataSetByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_GetDataSetByRange", "clsQxUserGroupsWS:GetDataTable_QxUserGroupsByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetDataTable_QxUserGroupsVWs(string strWhereCond)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUserGroupsService.QxUserGroups_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_GetDataSetV", "clsQxUserGroupsWS:GetDataTable_QxUserGroupsVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static DataTable GetQxUserGroupsVWs(string strWhereCond)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUserGroupsService.QxUserGroups_GetDataSetV(strWhereCond);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_GetDataSetV", "clsQxUserGroupsWS:GetDataTable_QxUserGroupsVWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据条件获取一定范围的数据表,用DataTable表示
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetDataTable4TabV2ByRange)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <param name = "lngMinNum">范围之最小值</param>
+ /// <param name = "lngMaxNum">范围之最大值</param>
+ /// <returns>返回满足条件一定范围的DataTable</returns>
+public static DataTable GetDataTable_QxUserGroupsVByRangeWs(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+DataSet objDS = null;
+try
+{
+objDS = objQxUserGroupsService.QxUserGroups_GetDataSetVByRange(strWhereCond, lngMinNum, lngMaxNum);
+DataTable objDT = objDS.Tables[0];
+return objDT;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_GetDataSetVByRange", "clsQxUserGroupsWS:GetDataTable_QxUserGroupsVByRangeWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 根据对象的关键字值,获取对象的全部属性
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecordProperty4Object)
+ /// </summary>
+ /// <param name = "objQxUserGroupsEN">相关对象</param>
+/// <returns>是否成功</returns>
+public static bool GetQxUserGroupsWs(ref clsQxUserGroupsEN objQxUserGroupsEN)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+bool bolResult = objQxUserGroupsService.QxUserGroups_GetQxUserGroups(ref objQxUserGroupsEN);
+return bolResult;
+}
+
+public static clsQxUserGroupsEN GetQxUserGroupsByGroupIdWs(string strGroupId)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+clsQxUserGroupsEN objQxUserGroupsEN = objQxUserGroupsService.QxUserGroups_GetQxUserGroupsByGroupId(strGroupId);
+return objQxUserGroupsEN;
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的关键字值
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstID_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static string GetFirstID_S(string strWhereCond)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+try
+{
+string strGroupId = objQxUserGroupsService.QxUserGroups_GetFirstID_S(strWhereCond);
+return strGroupId;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_GetFirstID_S", "clsQxUserGroupsWS:GetFirstID_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetFirstObject_S)
+ /// </summary>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static clsQxUserGroupsEN GetFirstQxUserGroups_S(string strWhereCond)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+try
+{
+clsQxUserGroupsEN objQxUserGroupsEN = objQxUserGroupsService.QxUserGroups_GetFirstQxUserGroups_S(strWhereCond);
+return objQxUserGroupsEN;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_GetFirstQxUserGroups_S", "clsQxUserGroupsWS:GetFirstQxUserGroups_S", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+
+ /// <summary>
+ /// 根据关键字获取相关对象, 从缓存的对象列表中获取.
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetRecObjByKey_Cache)
+ /// </summary>
+ /// <param name = "strGroupId">所给的关键字</param>
+ /// <returns>根据关键字获取的对象</returns>
+public static clsQxUserGroupsEN GetQxUserGroupsObjByGroupId_Cache(string strGroupId)
+{
+if (string.IsNullOrEmpty(strGroupId) == true) return null;
+string strWhereCond = string.Format("1 = 1 order by GroupId");
+if (arrQxUserGroupsObjLst_Cache == null)
+{
+arrQxUserGroupsObjLst_Cache = clsQxUserGroupsWS.GetQxUserGroupsObjList(strWhereCond);
+}
+int intStart = 0;
+int intEnd = arrQxUserGroupsObjLst_Cache.Count - 1;
+int intMid = 0;
+clsQxUserGroupsEN objQxUserGroupsEN = null;
+while (intEnd >= intStart)
+{
+intMid = (intStart + intEnd) / 2;
+objQxUserGroupsEN = arrQxUserGroupsObjLst_Cache[intMid];
+if (objQxUserGroupsEN.GroupId == strGroupId)
+{
+intFindFailCount = 0;
+return objQxUserGroupsEN;
+}
+else if (objQxUserGroupsEN.GroupId.CompareTo(strGroupId) > 0)
+{
+intEnd = intMid - 1;
+}
+else
+{
+intStart = intMid + 1;
+}
+}
+intFindFailCount++;
+// 静态的对象列表,用于缓存,针对记录较少,作为参数表可以使用
+arrQxUserGroupsObjLst_Cache = null;
+if (intFindFailCount == 1) return GetQxUserGroupsObjByGroupId_Cache(strGroupId);
+string strErrMsgForGetObjById = string.Format("在QxUserGroups对象缓存列表中,找不到记录[GroupId = {0}][intFindFailCount = {1}](函数:GetQxUserGroupsObjByGroupId_Cache)", strGroupId, intFindFailCount);
+if (objQxUserGroupsEN != null)
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象相关字段属性值:{0}.[intMid = {1}]", objQxUserGroupsEN.GroupId, intMid);
+}
+else
+{
+strErrMsgForGetObjById += string.Format("最后一次查找的对象为null, 请检查![intMid = {0}]", intMid);
+}
+clsGeneralTab2.LogErrorS2("clsQxUserGroupsBL", "GetQxUserGroupsObjByGroupId_Cache", strErrMsgForGetObjById, "", "");
+throw new Exception(strErrMsgForGetObjById);
+}
+
+public static List<clsQxUserGroupsEN> GetQxUserGroupsObjList(string strWhereCond)
+{
+ List<clsQxUserGroupsEN> arrObjList = new List<clsQxUserGroupsEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxUserGroupsWs(strWhereCond);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxUserGroupsEN objQxUserGroupsEN = new clsQxUserGroupsEN();
+objQxUserGroupsEN.GroupId = objRow["GroupId"].ToString().Trim(); //组Id
+objQxUserGroupsEN.GroupName = objRow["GroupName"].ToString().Trim(); //组名
+objQxUserGroupsEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objQxUserGroupsEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxUserGroupsEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static List<clsQxUserGroupsEN> GetQxUserGroupsObjListByRange(string strWhereCond, long lngMinNum, long lngMaxNum)
+{
+ List<clsQxUserGroupsEN> arrObjList = new List<clsQxUserGroupsEN>(); 
+System.Data.DataTable objDT = null; 
+ objDT = GetDataTable_QxUserGroupsByRangeWs(strWhereCond, lngMinNum, lngMaxNum);
+if (objDT.Rows.Count == 0)
+{
+objDT = null;
+return arrObjList;
+}
+foreach(DataRow objRow in objDT.Rows)
+{
+	clsQxUserGroupsEN objQxUserGroupsEN = new clsQxUserGroupsEN();
+objQxUserGroupsEN.GroupId = objRow["GroupId"].ToString().Trim(); //组Id
+objQxUserGroupsEN.GroupName = objRow["GroupName"].ToString().Trim(); //组名
+objQxUserGroupsEN.QxPrjId = objRow["QxPrjId"].ToString().Trim(); //项目Id
+objQxUserGroupsEN.Memo = objRow["Memo"].ToString().Trim(); //备注
+	arrObjList.Add(objQxUserGroupsEN);
+	}
+objDT = null;
+return arrObjList;
+}
+
+public static bool DelRecordWs(string strGroupId)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+try
+{
+bool bolResult = objQxUserGroupsService.QxUserGroups_DelRecord(strGroupId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_DelRecord", "clsQxUserGroupsWS:DelRecordWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool DelQxUserGroupssWs(List<string> arrGroupId)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+try
+{
+string[] sstrGroupId = (string[])(arrGroupId.ToArray());
+bool bolResult = objQxUserGroupsService.QxUserGroups_DelQxUserGroupss(sstrGroupId);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_DelQxUserGroupss", "clsQxUserGroupsWS:DelQxUserGroupssWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static int DelQxUserGroupssByCondWs(string strWhereCond)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+try
+{
+int intRecNum = objQxUserGroupsService.QxUserGroups_DelQxUserGroupssByCond(strWhereCond);
+return intRecNum;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_DelQxUserGroupssByCond", "clsQxUserGroupsWS:DelQxUserGroupssByCondWs", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool AddNewRecordBySql2Ws(clsQxUserGroupsEN objQxUserGroupsEN)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+try
+{
+bool bolResult = objQxUserGroupsService.QxUserGroups_AddNewRecordBySql2(objQxUserGroupsEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_AddNewRecordBySql2", "clsQxUserGroupsWS:AddNewRecordBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 把表对象添加到数据库中,并且返回该记录的关键字
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_AddNewRecordBySql2WithReturnKey)
+ /// </summary>
+ /// <param name = "objQxUserGroupsEN">需要添加的表对象</param>
+ /// <returns>返回新添加记录的关键字</returns>
+public static string AddNewRecordBySql2WithReturnKey(clsQxUserGroupsEN objQxUserGroupsEN)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+try
+{
+string strKey = objQxUserGroupsService.QxUserGroups_AddNewRecordBySql2WithReturnKey(objQxUserGroupsEN);
+return strKey;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_AddNewRecordBySql2WithReturnKey", "clsQxUserGroupsWS:AddNewRecordBySql2WithReturnKey", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool UpdateBySql2Ws(clsQxUserGroupsEN objQxUserGroupsEN)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+try
+{
+bool bolResult = objQxUserGroupsService.QxUserGroups_UpdateBySql2(objQxUserGroupsEN);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_UpdateBySql2", "clsQxUserGroupsWS:UpdateBySql2Ws", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+ /// <summary>
+ /// 获取当前表满足条件的第一条记录的对象
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_UpdateBySqlWithCondition)
+ /// </summary>
+ /// <param name = "objQxUserGroupsEN">需要修改的对象</param>
+ /// <param name = "strWhereCond">条件串</param>
+ /// <returns>返回的第一条记录的关键字值</returns>
+public static bool UpdateBySqlWithCondition(clsQxUserGroupsEN objQxUserGroupsEN, string strWhereCond)
+{
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+try
+{
+bool bolResult = objQxUserGroupsService.QxUserGroups_UpdateBySqlWithCondition(objQxUserGroupsEN, strWhereCond);
+return bolResult;
+}
+catch (Exception objException)
+{
+ string strMsg = string.Format("执行WebService功能出错。文件地址:{0},函数名:{1}. 调用函数名:{2}.", 
+      GetServiceUrl(), "QxUserGroups_UpdateBySqlWithCondition", "clsQxUserGroupsWS:UpdateBySqlWithCondition", objException.Message);
+ strMsg += string.Format("出错信息:{0}",
+      objException.Message);
+ throw new Exception(strMsg);
+}
+}
+
+public static bool IsExistRecordWs(string strWhereCond)
+{
+//检测记录是否存在
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+bool bolIsExist = objQxUserGroupsService.QxUserGroups_IsExistRecord(strWhereCond);
+return bolIsExist;
+}
+
+public static bool IsExistWs(string strGroupId)
+{
+//检测记录是否存在
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+bool bolIsExist = objQxUserGroupsService.QxUserGroups_IsExist(strGroupId);
+return bolIsExist;
+}
+
+ /// <summary>
+ /// 获取当前表关键字值的最大值,再加1,避免重复
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetMaxStrId)
+ /// </summary>
+ /// <returns>当前表关键字值的最大值,再加1</returns>
+public static string GetMaxStrIdWs()
+{
+//检测记录是否存在
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+string strMaxGroupId = objQxUserGroupsService.QxUserGroups_GetMaxStrId();
+return strMaxGroupId;
+}
+
+ /// <summary>
+ /// 根据前缀获取当前表关键字值的最大值,再加1,避免重复
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetMaxStrIdByPrefix)
+ /// </summary>
+ /// <returns>当前表关键字值的最大值,再加1</returns>
+public static string GetMaxStrIdByPrefixWs(string strPrefix)
+{
+//检测记录是否存在
+QxUserGroupsServiceSoapClient objQxUserGroupsService = GetQxUserGroupsServiceSoapClient();
+string strMaxGroupId = objQxUserGroupsService.QxUserGroups_GetMaxStrIdByPrefix(strPrefix);
+return strMaxGroupId;
+}
+
+ /// <summary>
+ /// 获取字符串长度,其中汉字为2个字节,英文为1个字节
+ /// (AGC_CSV7.BusinessLogicEx.AutoGCPubFuncV6:GengetStrLen)
+ /// </summary>
+ /// <param name = "strTemp">给定的原字符串</param>
+ /// <returns>返回字符串长度</returns>
+public static int getStrLen(string strTemp)
+{
+int len ;
+byte[] sarr = System.Text.Encoding.Default.GetBytes(strTemp);
+len = sarr.Length;//will output as 3+3*2 = 9
+return len;
+}
+
+ /// <summary>
+ /// 获取Web服务的地址
+ /// (AGC_CSV7.BusinessLogicEx.AutoGC6Cs_WS:Gen_4Ws_GetServiceUrl)
+ /// </summary>
+ /// <returns>返回当前文件中Web服务的地址</returns>
+public static string GetServiceUrl()
+{
+String strServiceUrl = String.Empty;
+if (clsSysPara4WS.bolIsLocalHost == false)
+{
+strServiceUrl = String.Format("http://{0}/{1}/QxUserGroupsService.asmx", clsSysPara4WS.strCurrIPAddressAndPort, clsSysPara4WS.strCurrPrx);
+}
+else
+{
+strServiceUrl = String.Format("http://{0}/QxUserGroupsService.asmx", clsSysPara4WS.strCurrIPAddressAndPort_Local);
+}
+ return strServiceUrl;
+}
+}
+}
